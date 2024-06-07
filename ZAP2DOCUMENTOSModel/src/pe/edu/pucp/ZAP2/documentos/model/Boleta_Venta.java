@@ -7,6 +7,7 @@ package pe.edu.pucp.ZAP2.documentos.model;
  *
  * @author Alejandro
  */
+import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
 import pe.edu.pucp.ZAP2.personas.model.Persona;
 public class Boleta_Venta extends Documento_de_Venta{
     private int numSerie;
@@ -17,7 +18,9 @@ public class Boleta_Venta extends Documento_de_Venta{
     public Boleta_Venta() {
     }
 
-    public Boleta_Venta(int numSerie, String detalles, double impuestos, Persona persona, int id_doc_venta, double montoTotal, Tarjeta tarjeta, Object empleado) {
+    public Boleta_Venta(int numSerie, String detalles, double impuestos, 
+            Persona persona, int id_doc_venta, double montoTotal, Tarjeta tarjeta, 
+            Empleado empleado) {
         super(id_doc_venta, montoTotal, tarjeta, empleado);
         this.numSerie = numSerie;
         this.detalles = detalles;

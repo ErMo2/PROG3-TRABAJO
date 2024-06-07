@@ -6,6 +6,7 @@ package pe.edu.pucp.ZAP2.documentos.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
 
 /**
  *
