@@ -11,7 +11,7 @@ import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
  *
  * @author Alejandro
  */
-public class Empleado extends PersonaNatural{
+public abstract class Empleado extends PersonaNatural{
     private int idEmpleado;
     private double salario;
     private Date fechaContratacion;
