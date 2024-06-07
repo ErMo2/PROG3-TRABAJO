@@ -13,13 +13,13 @@ public class PersonaJuridica extends Persona{
     private TipoEntidad tipoEntidad;
     private int numIdentificadorFiscal;
     private String direccionLegal;
-    private int RUC;
+    private String RUC;
 
     public PersonaJuridica() {
     }
 
     public PersonaJuridica(String nombreLegal, TipoEntidad tipoEntidad, 
-            int numIdentificadorFiscal, String direccionLegal, int RUC, 
+            int numIdentificadorFiscal, String direccionLegal, String RUC, 
             int id_Persona, String nombre, String apellido_paterno, 
             String apellido_materno, int telefono, String email, 
             TipoDocumento tipo_documento, int nro_documento) {
@@ -64,11 +64,11 @@ public class PersonaJuridica extends Persona{
         this.direccionLegal = direccionLegal;
     }
 
-    public int getRUC() {
+    public String getRUC() {
         return RUC;
     }
 
-    public void setRUC(int RUC) {
+    public void setRUC(String RUC) {
         this.RUC = RUC;
     }
 

@@ -35,5 +35,9 @@ public class Banco {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public void imprimir() {
+        System.out.println("Banco{" + "idBanco=" + idBanco + ", nombre=" + nombre + '}');
+    }
     
 }

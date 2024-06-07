@@ -45,7 +45,10 @@ public class Tarjeta {
     public void setBanco(Banco banco) {
         this.banco = banco;
     }
-    public void imprimir(){
-        System.out.println(codTarjeta+" " +tipoTarjeta+ " " + banco.getNombre());
+
+    public void imprimir() {
+        System.out.println("Tarjeta{" + "codTarjeta=" + codTarjeta +
+                ", tipoTarjeta=" + tipoTarjeta + ", banco=" + banco + '}');
     }
+    
 }

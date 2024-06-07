@@ -4,11 +4,14 @@
  */
 package pe.edu.pucp.ZAP2.documentos.model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
  * @author Alejandro
  */
-public class Documento_de_Venta {
+public abstract class Documento_de_Venta extends Documento{
     private int id_doc_venta;
     private double montoTotal;
     private Tarjeta tarjeta;
@@ -17,7 +20,18 @@ public class Documento_de_Venta {
     public Documento_de_Venta() {
     }
 
-    public Documento_de_Venta(int id_doc_venta, double montoTotal, Tarjeta tarjeta, Empleado empleado) {
+    public Documento_de_Venta(int id_doc_venta, double montoTotal, Tarjeta tarjeta, 
+            Empleado empleado) {
+        this.id_doc_venta = id_doc_venta;
+        this.montoTotal = montoTotal;
+        this.tarjeta = tarjeta;
+        this.empleado = empleado;
+    }
+
+    public Documento_de_Venta(int id_doc_venta, double montoTotal, Tarjeta tarjeta, 
+            Empleado empleado, int id_documento, Date fecha_emision, double total, 
+            Moneda moneda, ArrayList<LineaDoc> lineasDocVenta) {
+        super(id_documento, fecha_emision, total, moneda, lineasDocVenta);
         this.id_doc_venta = id_doc_venta;
         this.montoTotal = montoTotal;
         this.tarjeta = tarjeta;
@@ -56,7 +70,9 @@ public class Documento_de_Venta {
         this.empleado = empleado;
     }
 
+    @Override
     public void imprimir() {
+        super.imprimir();
         System.out.println("Documento_de_Venta{" + "id_doc_venta=" + id_doc_venta
                 + ", montoTotal=" + montoTotal + ", tarjeta=" + tarjeta +
                 ", empleado=" + empleado + '}');

@@ -8,17 +8,17 @@ package pe.edu.pucp.ZAP2.documentos.model;
  *
  * @author Alejandro
  */
-public class LineaDocVenta {
+public class LineaDoc {
     private double precioUnitario;
     private double precioTotal;
     private double cantidad;
     private double subTotal;
     private ProductoPrecio producto;
 
-    public LineaDocVenta() {
+    public LineaDoc() {
     }
 
-    public LineaDocVenta(double precioUnitario, double precioTotal, double cantidad, double subTotal, ProductoPrecio producto) {
+    public LineaDoc(double precioUnitario, double precioTotal, double cantidad, double subTotal, ProductoPrecio producto) {
         this.precioUnitario = precioUnitario;
         this.precioTotal = precioTotal;
         this.cantidad = cantidad;

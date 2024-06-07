@@ -16,12 +16,12 @@ public class Documento {
     private Date fecha_emision;
     private double total;
     private Moneda moneda;
-    private ArrayList<LineaDocVenta> lineasDocVenta;
+    private ArrayList<LineaDoc> lineasDocVenta;
 
     public Documento() {
     }
 
-    public Documento(int id_documento, Date fecha_emision, double total, Moneda moneda, ArrayList<LineaDocVenta> lineasDocVenta) {
+    public Documento(int id_documento, Date fecha_emision, double total, Moneda moneda, ArrayList<LineaDoc> lineasDocVenta) {
         this.id_documento = id_documento;
         this.fecha_emision = fecha_emision;
         this.total = total;
@@ -61,11 +61,11 @@ public class Documento {
         this.moneda = moneda;
     }
 
-    public ArrayList<LineaDocVenta> getLineasDocVenta() {
+    public ArrayList<LineaDoc> getLineasDocVenta() {
         return lineasDocVenta;
     }
 
-    public void setLineasDocVenta(ArrayList<LineaDocVenta> lineasDocVenta) {
+    public void setLineasDocVenta(ArrayList<LineaDoc> lineasDocVenta) {
         this.lineasDocVenta = lineasDocVenta;
     }
 

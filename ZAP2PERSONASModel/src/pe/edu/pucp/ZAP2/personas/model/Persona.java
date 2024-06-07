@@ -96,6 +96,7 @@ public abstract class Persona {
         this.nro_documento = nro_documento;
     }
 
+    
     public void imprimir() {
         System.out.println("Persona{" + "id_Persona=" + id_Persona + ", nombre=" 
                 + nombre + ", apellido_paterno=" + apellido_paterno 
