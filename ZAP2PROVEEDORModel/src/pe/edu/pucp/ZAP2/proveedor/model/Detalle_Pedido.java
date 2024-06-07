@@ -4,6 +4,8 @@
  */
 package pe.edu.pucp.ZAP2.proveedor.model;
 
+import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
+
 /**
  *
  * @author Alejandro
@@ -13,15 +15,17 @@ public class Detalle_Pedido {
     private double precioTotal;
     private double precioUnitario;
     private double subtotal;
-
+    private Producto producto;
     public Detalle_Pedido() {
     }
 
-    public Detalle_Pedido(int id_DetallePedido, double precioTotal, double precioUnitario, double subtotal) {
+    public Detalle_Pedido(int id_DetallePedido, double precioTotal, 
+            double precioUnitario, double subtotal, Producto producto) {
         this.id_DetallePedido = id_DetallePedido;
         this.precioTotal = precioTotal;
         this.precioUnitario = precioUnitario;
         this.subtotal = subtotal;
+        this.producto = producto;
     }
 
     public int getId_DetallePedido() {
@@ -56,11 +60,21 @@ public class Detalle_Pedido {
         this.subtotal = subtotal;
     }
 
-    public void imprimir() {
-        System.out.println("Detalle_Pedido{" + "id_DetallePedido=" + 
-                id_DetallePedido + ", precioTotal=" + precioTotal + 
-                ", precioUnitario=" + precioUnitario + ", subtotal=" + 
-                subtotal + '}');
+    public Producto getProducto() {
+        return producto;
     }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+    public void imprimir() {
+        System.out.println("Detalle_Pedido{" + "id_DetallePedido=" + id_DetallePedido 
+                + ", precioTotal=" + precioTotal + ", precioUnitario=" + 
+                precioUnitario + ", subtotal=" + subtotal + ", producto=" + 
+                producto.getIdProducto() + '}');
+    }
+
+   
     
 }
