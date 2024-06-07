@@ -78,7 +78,7 @@ public class ProductoPrecio {
 
     public void imprimir() {
         System.out.println("ProductoPrecio{" + "idProductoPrecio=" + idProductoPrecio + ", precio=" + precio + ", "
-                + "activo=" + activo + ", sucursal=" + sucursal.getNombre + ", descuento=" + descuento.getIdDescuento + ", producto=" + producto.getNombre());
+                + "activo=" + activo + ", sucursal=" + sucursal.getNombre() + ", descuento=" + descuento.getIdDescuento() + ", producto=" + producto.getNombre());
     }
     
 }

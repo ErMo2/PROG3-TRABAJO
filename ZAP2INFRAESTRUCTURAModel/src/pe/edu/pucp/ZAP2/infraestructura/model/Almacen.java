@@ -89,7 +89,7 @@ public class Almacen {
     public void impimrir() {
         System.out.println("Almacen{" + "id_almacen=" + id_almacen + ", tipoAlmacen=" + tipoAlmacen + 
                 ", capacidadMaximaProductos=" + capacidadMaximaProductos + ", capacidadActualProductos=" + 
-                capacidadActualProductos + ", activo=" + activo + ", sucursal=" + sucursal.getIdSucursal + ", lote=" + lote.getIdLote() );
+                capacidadActualProductos + ", activo=" + activo + ", sucursal=" + sucursal.getId_sucursal() + ", lote=" + lote.getIdLote() );
     }
     
     
