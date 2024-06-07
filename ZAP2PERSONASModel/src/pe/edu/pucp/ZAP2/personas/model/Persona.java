@@ -17,7 +17,8 @@ public abstract class Persona {
     private String email;
     private TipoDocumento tipo_documento;
     private int nro_documento;
-
+    private int activo;
+    
     public Persona() {
     }
 
@@ -30,6 +31,7 @@ public abstract class Persona {
         this.email = email;
         this.tipo_documento = tipo_documento;
         this.nro_documento = nro_documento;
+        this.activo = 1;
     }
 
     public int getId_Persona() {
@@ -94,6 +96,14 @@ public abstract class Persona {
 
     public void setNro_documento(int nro_documento) {
         this.nro_documento = nro_documento;
+    }
+
+    public int getActivo() {
+        return activo;
+    }
+
+    public void setActivo(int activo) {
+        this.activo = activo;
     }
 
     

@@ -4,6 +4,8 @@
  */
 package pe.edu.pucp.ZAP2.documentos.model;
 
+import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
+
 /**
  *
  * @author Alejandro
