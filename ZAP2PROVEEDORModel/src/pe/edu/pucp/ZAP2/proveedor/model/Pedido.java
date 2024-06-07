@@ -6,6 +6,7 @@ package pe.edu.pucp.ZAP2.proveedor.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import pe.edu.pucp.ZAP2.infraestructura.model.Lote;
 
 /**
  *
