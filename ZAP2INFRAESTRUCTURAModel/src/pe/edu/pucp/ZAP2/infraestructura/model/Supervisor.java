@@ -12,7 +12,7 @@ import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
  *
  * @author Alejandro
  */
-class Supervisor extends Empleado{
+public class Supervisor extends Empleado{
     private int numempleados;
     private ArrayList<Cajero> cajeros;
     private ArrayList<EmpleadoDeArea> empleadosArea;
