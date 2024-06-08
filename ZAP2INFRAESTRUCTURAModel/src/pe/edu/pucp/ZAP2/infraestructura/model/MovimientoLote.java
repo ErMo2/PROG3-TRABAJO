@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.ZAP2.infraestructura.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -11,23 +12,35 @@ import java.util.Date;
  * @author User
  */
 public class MovimientoLote {
+    private int idMovimientoLote;
     private Date fechaMovimiento;
     private boolean estado;
     private TipoDeMotivoMovimientoAlmacen motivo;
     private boolean movimientoEntrada;
     private double cantidadProductosMovidos;
+    private ArrayList<Almacen> almacenes;//Como máximo solo habrá dos almacenes
     private Lote lote;
 
     public MovimientoLote() {
     }
 
-    public MovimientoLote(Date fechaMovimiento, boolean estado, TipoDeMotivoMovimientoAlmacen motivo, boolean movimientoEntrada, double cantidadProductosMovidos, Lote lote) {
+    public MovimientoLote(int idMovimientoLote, Date fechaMovimiento, boolean estado, TipoDeMotivoMovimientoAlmacen motivo, boolean movimientoEntrada, double cantidadProductosMovidos, ArrayList<Almacen> almacenes, Lote lote) {
+        this.idMovimientoLote = idMovimientoLote;
         this.fechaMovimiento = fechaMovimiento;
         this.estado = estado;
         this.motivo = motivo;
         this.movimientoEntrada = movimientoEntrada;
         this.cantidadProductosMovidos = cantidadProductosMovidos;
+        this.almacenes = almacenes;
         this.lote = lote;
+    }
+
+    public int getIdMovimientoLote() {
+        return idMovimientoLote;
+    }
+
+    public void setIdMovimientoLote(int idMovimientoLote) {
+        this.idMovimientoLote = idMovimientoLote;
     }
 
     public Date getFechaMovimiento() {
@@ -38,7 +51,7 @@ public class MovimientoLote {
         this.fechaMovimiento = fechaMovimiento;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
@@ -70,6 +83,14 @@ public class MovimientoLote {
         this.cantidadProductosMovidos = cantidadProductosMovidos;
     }
 
+    public ArrayList<Almacen> getAlmacenes() {
+        return almacenes;
+    }
+
+    public void setAlmacenes(ArrayList<Almacen> almacenes) {
+        this.almacenes = almacenes;
+    }
+
     public Lote getLote() {
         return lote;
     }
@@ -79,9 +100,8 @@ public class MovimientoLote {
     }
 
     public void imprimir() {
-        System.out.println("MovimientoLote{" + "fechaMovimiento=" + fechaMovimiento + ", estado=" + estado + ", motivo=" + 
-                motivo + ", movimientoEntrada=" + movimientoEntrada + ", cantidadProductosMovidos=" + 
-                cantidadProductosMovidos + ", lote=" + lote.getIdLote());
+        System.out.println("MovimientoLote{" + "idMovimientoLote=" + idMovimientoLote + ", fechaMovimiento=" + 
+                fechaMovimiento + ", estado=" + estado + ", motivo=" + motivo + ", movimientoEntrada="
+                + movimientoEntrada + ", cantidadProductosMovidos=" + cantidadProductosMovidos + ", lote=" + lote.getIdLote() );
     }
-
 }

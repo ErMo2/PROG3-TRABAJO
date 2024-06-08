@@ -8,19 +8,19 @@ package pe.edu.pucp.ZAP2.infraestructura.model;
  *
  * @author User
  */
-public class ProductorParaElCuidadoPersonalYDelHogar extends Producto{
+public class ProductosParaElCuidadoPersonalYDelHogar extends Producto{
     private UnidadDeMedida unidadMedida;
     private String tipo;
 
-    public ProductorParaElCuidadoPersonalYDelHogar() {
+    public ProductosParaElCuidadoPersonalYDelHogar() {
     }
 
-    public ProductorParaElCuidadoPersonalYDelHogar(UnidadDeMedida unidadMedida, String tipo) {
+    public ProductosParaElCuidadoPersonalYDelHogar(UnidadDeMedida unidadMedida, String tipo) {
         this.unidadMedida = unidadMedida;
         this.tipo = tipo;
     }
 
-    public ProductorParaElCuidadoPersonalYDelHogar(UnidadDeMedida unidadMedida, String tipo, int idProducto, String nombre, String descripcion, byte[] imagen, int activo, ProductoPrecio prodPrecio) {
+    public ProductosParaElCuidadoPersonalYDelHogar(UnidadDeMedida unidadMedida, String tipo, int idProducto, String nombre, String descripcion, byte[] imagen, int activo, ProductoPrecio prodPrecio) {
         super(idProducto, nombre, descripcion, imagen, activo, prodPrecio);
         this.unidadMedida = unidadMedida;
         this.tipo = tipo;
