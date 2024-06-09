@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package pe.edu.pucp.ZAP2.DBManager;
-
 /**
  *
  * @author Alejandro
@@ -35,7 +34,7 @@ public class DBManager {
         return con;
     }
     //tmb estatic
-    private static void createInstance(){
+    public static void createInstance(){
         if(dbmanager==null){
             dbmanager = new DBManager();
         }
