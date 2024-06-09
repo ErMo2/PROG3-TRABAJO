@@ -34,7 +34,7 @@ public class DBManager {
         return con;
     }
     //tmb estatic
-    public static void createInstance(){
+    private static void createInstance(){
         if(dbmanager==null){
             dbmanager = new DBManager();
         }

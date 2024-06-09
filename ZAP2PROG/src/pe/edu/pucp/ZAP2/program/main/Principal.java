@@ -17,11 +17,11 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
  */
 public class Principal {
     public static void main(String[] args) {
-//        SucursalDao daoSucursal = new SucursalMySql();
+        SucursalDao daoSucursal = new SucursalMySql();
         Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
                 1300.4, "Pepe's shop",
                 null, null, null);
-//        daoSucursal.insertar(sucursal);
+        daoSucursal.insertar(sucursal);
         
         AreaDao daoArea = new AreaMySql();
         Area area = new Area(1, "Zona de alimentos",sucursal, null);
