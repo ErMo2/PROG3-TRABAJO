@@ -9,6 +9,7 @@ package pe.edu.pucp.ZAP2.documentos.model;
  * @author Alejandro
  */
 public class Tarjeta {
+    private int idTarjeta;
     private int codTarjeta;
     private Tipo_Tarjeta tipoTarjeta;
     private Banco banco;
@@ -46,9 +47,18 @@ public class Tarjeta {
         this.banco = banco;
     }
 
+    public int getIdTarjeta() {
+        return idTarjeta;
+    }
+
+    public void setIdTarjeta(int idTarjeta) {
+        this.idTarjeta = idTarjeta;
+    }
+
     public void imprimir() {
-        System.out.println("Tarjeta{" + "codTarjeta=" + codTarjeta +
-                ", tipoTarjeta=" + tipoTarjeta + ", banco=" + banco + '}');
+        System.out.println("Tarjeta{"+"idTarjeta=" + idTarjeta + "codTarjeta=" + 
+                codTarjeta +", tipoTarjeta=" + tipoTarjeta + ", banco=" + 
+                banco + '}');
     }
     
 }

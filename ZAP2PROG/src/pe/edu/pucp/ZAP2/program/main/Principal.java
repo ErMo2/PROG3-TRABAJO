@@ -21,7 +21,9 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
  * @author Alejandro
  */
 public class Principal {
+    //AREA
     public static void main(String[] args) {
+<<<<<<< Updated upstream
         SucursalDao daoSucursal = new SucursalMySql();
         Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
                 1300.4, "Pepe's shop",
@@ -39,6 +41,17 @@ public class Principal {
         daoAlmacen.insertar(almacen);
         
         
+=======
+//        SucursalDao daoSucursal = new SucursalMySql();
+//        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+//                1300.4, "Pepe's shop",
+//                null, null, null);
+//        daoSucursal.insertar(sucursal);
+//        
+//        AreaDao daoArea = new AreaMySql();
+//        Area area = new Area(1, "Zona de alimentos",sucursal, null);
+//        daoArea.insertar(area);
+>>>>>>> Stashed changes
     }
     
 }
