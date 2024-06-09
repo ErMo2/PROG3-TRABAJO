@@ -4,6 +4,8 @@
  */
 package pe.edu.pucp.ZAP2.infraestructura.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author User
@@ -13,6 +15,7 @@ public class Almacen {
     private TipoAlmacen tipoAlmacen;
     private int capacidadMaximaProductos;
     private int capacidadActualProductos;
+    ArrayList<MovimientoLote> movimientosLote;
     private boolean activo;
     private Sucursal sucursal;
     private Lote lote;
@@ -20,11 +23,12 @@ public class Almacen {
     public Almacen() {
     }
 
-    public Almacen(int id_almacen, TipoAlmacen tipoAlmacen, int capacidadMaximaProductos, int capacidadActualProductos, boolean activo, Sucursal sucursal, Lote lote) {
+    public Almacen(int id_almacen, TipoAlmacen tipoAlmacen, int capacidadMaximaProductos, int capacidadActualProductos, ArrayList<MovimientoLote> movimientosLote, boolean activo, Sucursal sucursal, Lote lote) {
         this.id_almacen = id_almacen;
         this.tipoAlmacen = tipoAlmacen;
         this.capacidadMaximaProductos = capacidadMaximaProductos;
         this.capacidadActualProductos = capacidadActualProductos;
+        this.movimientosLote = movimientosLote;
         this.activo = activo;
         this.sucursal = sucursal;
         this.lote = lote;
@@ -62,6 +66,14 @@ public class Almacen {
         this.capacidadActualProductos = capacidadActualProductos;
     }
 
+    public ArrayList<MovimientoLote> getMovimientosLote() {
+        return movimientosLote;
+    }
+
+    public void setMovimientosLote(ArrayList<MovimientoLote> movimientosLote) {
+        this.movimientosLote = movimientosLote;
+    }
+
     public boolean isActivo() {
         return activo;
     }
@@ -85,11 +97,11 @@ public class Almacen {
     public void setLote(Lote lote) {
         this.lote = lote;
     }
-    
-    public void impimrir() {
-        System.out.println("Almacen{" + "id_almacen=" + id_almacen + ", tipoAlmacen=" + tipoAlmacen + 
-                ", capacidadMaximaProductos=" + capacidadMaximaProductos + ", capacidadActualProductos=" + 
-                capacidadActualProductos + ", activo=" + activo + ", sucursal=" + sucursal.getId_sucursal() + ", lote=" + lote.getIdLote() );
+
+    public void imprimir() {
+        System.out.println("Almacen{" + "id_almacen=" + id_almacen + ", tipoAlmacen=" + tipoAlmacen + ", "
+                + "capacidadMaximaProductos=" + capacidadMaximaProductos + ", capacidadActualProductos=" + 
+                capacidadActualProductos + ", activo=" + activo + ", sucursal=" + sucursal.getId_sucursal() + ", lote=" + lote.getIdLote());
     }
     
     
