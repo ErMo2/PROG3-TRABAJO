@@ -72,19 +72,15 @@ public class Principal {
 //        Almacen almacen = new Almacen(0,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,lote);
 //        daoAlmacen.insertar(almacen);
 //        
-<<<<<<< Updated upstream
         /*==============*/
         /*=== Cliente ==*/
         /*==============*/
 
-=======
->>>>>>> Stashed changes
 //        ClienteDao daoCliente = new ClienteMySql();
 //        Cliente cliente = new Cliente(1,"12345678", 0, 'M', "su jato", null, 1, 
 //                "SoyUnCliente", "Apellido1", "Apellido2", 965456534, "email@gmail.com",
 //                TipoDocumento.DNI, 12432544);
 //        daoCliente.insertar(cliente);
-<<<<<<< Updated upstream
 
         /*=============*/
         /*=== Cajero ==*/
@@ -107,11 +103,9 @@ public class Principal {
 //                TipoDocumento.DNI, 75607208);
 //        daoSupervisor.insertar(supervisor);
         
-=======
     
                 
                 
->>>>>>> Stashed changes
  }
     
 }
