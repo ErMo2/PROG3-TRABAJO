@@ -49,7 +49,10 @@ public class Supervisor extends Empleado{
         this.empleadosArea = empleadosArea;
     }
 
-    public Supervisor(int numempleados, ArrayList<Cajero> cajeros, ArrayList<EmpleadoDeArea> empleadosArea, int idEmpleado, double salario, Date fechaContratacion, TipoContrato tipoContrato, TurnosHorario horario, Area area, char sexo, String direccion, CuentaUsuario cuenta_usuario, int id_Persona, String nombre, String apellido_paterno, String apellido_materno, int telefono, String email, TipoDocumento tipo_documento, int nro_documento) {
+    public Supervisor(int numempleados, ArrayList<Cajero> cajeros, ArrayList<EmpleadoDeArea> empleadosArea, int idEmpleado, double salario, 
+            Date fechaContratacion, TipoContrato tipoContrato, TurnosHorario horario, Area area, char sexo, String direccion, 
+            CuentaUsuario cuenta_usuario, int id_Persona, String nombre, String apellido_paterno, String apellido_materno, int telefono, 
+            String email, TipoDocumento tipo_documento, int nro_documento) {
         super(idEmpleado, salario, fechaContratacion, tipoContrato, horario, area, sexo, direccion, cuenta_usuario, id_Persona, nombre, apellido_paterno, apellido_materno, telefono, email, tipo_documento, nro_documento);
         this.numempleados = numempleados;
         this.cajeros = cajeros;

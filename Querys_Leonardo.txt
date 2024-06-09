@@ -1,0 +1,2 @@
+CALL INSERTAR_SUPERVISOR(@id,'Juan', 'Pérez', 'González', 987654321, 'juan.perez@example.com', 'DNI', 12345678, 'M',
+ 'Av. Siempre Viva 123', 1, 3500.00, '2024-06-09', 'TiempoCompleto', 'MAÑANA', 10);
