@@ -5,8 +5,7 @@
 /ZAP2DBManager/build/
 /ZAP2WS/nbproject/private/
 /ZAP2PROG/nbproject/private/
-/ZAP2PROG/src/pe/edu/pucp/ZAP2/program/lib/mysql-connector-j-8.3.0.jar
-/ZAP2WS/src/java/pe/edu/pucp/ZAP2/lib/jakarta.xml.ws-api-4.0.1.jar
-/ZAP2WS/src/java/pe/edu/pucp/ZAP2/lib/mysql-connector-j-8.3.0.jar
 /ZAP2WS/build/
 /ZAP2WS/dist/
+/ZAP2PROG/dist/
+/ZAP2PROG/build/
