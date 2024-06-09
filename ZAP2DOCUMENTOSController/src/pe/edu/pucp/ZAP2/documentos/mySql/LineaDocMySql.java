@@ -4,7 +4,12 @@
  */
 package pe.edu.pucp.ZAP2.documentos.mySql;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
+import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.LineaDocDao;
 import pe.edu.pucp.ZAP2.documentos.model.LineaDoc;
 
@@ -13,10 +18,29 @@ import pe.edu.pucp.ZAP2.documentos.model.LineaDoc;
  * @author Alejandro
  */
 public class LineaDocMySql implements LineaDocDao{
-
+    private Connection con;
+    private Statement st;
+    private ResultSet rs;
+    private CallableStatement cs;
     @Override
     public int insertar(LineaDoc lineaDoc) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call INSERTAR_LINEADOC(?,?,?,?)}");
+            cs.registerOutParameter("_id_lineaDoc",java.sql.Types.INTEGER);
+            cs.setInt("_fid_producto_precio", lineaDoc.getProducto().getIdProductoPrecio());
+            cs.setInt("_fid_id_doc", lineaDoc.getDocumento().getId_documento());
+            cs.setDouble("_cantidad", lineaDoc.getCantidad());
+            cs.executeUpdate();
+            lineaDoc.setIdLineDoc(cs.getInt("_id_lineaDoc"));
+            resultado = lineaDoc.getIdLineDoc();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

@@ -14,24 +14,26 @@ import java.util.Date;
 public class MovimientoLote {
     private int idMovimientoLote;
     private Date fechaMovimiento;
-    private boolean estado;
+    private int activo;
     private TipoDeMotivoMovimientoAlmacen motivo;
-    private boolean movimientoEntrada;
+    private int movimientoEntrada;
     private double cantidadProductosMovidos;
-    private ArrayList<Almacen> almacenes;//Como máximo solo habrá dos almacenes
+    private Almacen almacenEntrada;
+    private Almacen almacenSalida;
     private Lote lote;
 
     public MovimientoLote() {
     }
 
-    public MovimientoLote(int idMovimientoLote, Date fechaMovimiento, boolean estado, TipoDeMotivoMovimientoAlmacen motivo, boolean movimientoEntrada, double cantidadProductosMovidos, ArrayList<Almacen> almacenes, Lote lote) {
+    public MovimientoLote(int idMovimientoLote, Date fechaMovimiento, int activo, TipoDeMotivoMovimientoAlmacen motivo, int movimientoEntrada, double cantidadProductosMovidos, Almacen almacenEntrada, Almacen almacenSalida, Lote lote) {
         this.idMovimientoLote = idMovimientoLote;
         this.fechaMovimiento = fechaMovimiento;
-        this.estado = estado;
+        this.activo = activo;
         this.motivo = motivo;
         this.movimientoEntrada = movimientoEntrada;
         this.cantidadProductosMovidos = cantidadProductosMovidos;
-        this.almacenes = almacenes;
+        this.almacenEntrada = almacenEntrada;
+        this.almacenSalida = almacenSalida;
         this.lote = lote;
     }
 
@@ -51,12 +53,12 @@ public class MovimientoLote {
         this.fechaMovimiento = fechaMovimiento;
     }
 
-    public boolean getEstado() {
-        return estado;
+    public int getActivo() {
+        return activo;
     }
 
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public void setActivo(int activo) {
+        this.activo = activo;
     }
 
     public TipoDeMotivoMovimientoAlmacen getMotivo() {
@@ -67,11 +69,11 @@ public class MovimientoLote {
         this.motivo = motivo;
     }
 
-    public boolean isMovimientoEntrada() {
+    public int getMovimientoEntrada() {
         return movimientoEntrada;
     }
 
-    public void setMovimientoEntrada(boolean movimientoEntrada) {
+    public void setMovimientoEntrada(int movimientoEntrada) {
         this.movimientoEntrada = movimientoEntrada;
     }
 
@@ -83,12 +85,20 @@ public class MovimientoLote {
         this.cantidadProductosMovidos = cantidadProductosMovidos;
     }
 
-    public ArrayList<Almacen> getAlmacenes() {
-        return almacenes;
+    public Almacen getAlmacenEntrada() {
+        return almacenEntrada;
     }
 
-    public void setAlmacenes(ArrayList<Almacen> almacenes) {
-        this.almacenes = almacenes;
+    public void setAlmacenEntrada(Almacen almacenEntrada) {
+        this.almacenEntrada = almacenEntrada;
+    }
+
+    public Almacen getAlmacenSalida() {
+        return almacenSalida;
+    }
+
+    public void setAlmacenSalida(Almacen almacenSalida) {
+        this.almacenSalida = almacenSalida;
     }
 
     public Lote getLote() {
@@ -100,8 +110,14 @@ public class MovimientoLote {
     }
 
     public void imprimir() {
-        System.out.println("MovimientoLote{" + "idMovimientoLote=" + idMovimientoLote + ", fechaMovimiento=" + 
-                fechaMovimiento + ", estado=" + estado + ", motivo=" + motivo + ", movimientoEntrada="
-                + movimientoEntrada + ", cantidadProductosMovidos=" + cantidadProductosMovidos + ", lote=" + lote.getIdLote() );
+        System.out.println("MovimientoLote{" + "idMovimientoLote=" +
+                idMovimientoLote + ", fechaMovimiento=" + 
+                fechaMovimiento + ", activo=" + activo + ", motivo=" + motivo +
+                ", movimientoEntrada=" + movimientoEntrada +
+                ", cantidadProductosMovidos=" + cantidadProductosMovidos +
+                ", almacenEntrada=" + almacenEntrada.getId_almacen() + ", almacenSalida=" + 
+                almacenSalida.getId_almacen() + ", lote=" + lote.getIdLote() + '}');
     }
+
+    
 }

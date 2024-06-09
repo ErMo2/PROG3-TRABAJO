@@ -15,19 +15,21 @@ public class Lote {
     private Almacen almacen;
     private Producto producto;
     private MovimientoLote movLote;
-
+    private int idPedido;
     public Lote() {
     }
 
-    public Lote(int idLote, int stockInicial, int stockActual, Almacen almacen,
-            Producto producto, MovimientoLote movLote) {
+    public Lote(int idLote, int stockInicial, int stockActual, Almacen almacen, Producto producto, MovimientoLote movLote, int idPedido) {
         this.idLote = idLote;
         this.stockInicial = stockInicial;
         this.stockActual = stockActual;
         this.almacen = almacen;
         this.producto = producto;
         this.movLote = movLote;
+        this.idPedido = idPedido;
     }
+
+   
 
     public int getIdLote() {
         return idLote;
@@ -75,6 +77,14 @@ public class Lote {
 
     public void setMovLote(MovimientoLote movLote) {
         this.movLote = movLote;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
 
     public void imprimir() {

@@ -11,22 +11,29 @@ import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
  * @author Alejandro
  */
 public class LineaDoc {
+    private int idLineDoc;
     private double precioUnitario;
     private double precioTotal;
     private double cantidad;
     private double subTotal;
     private ProductoPrecio producto;
-
+    private Documento documento;
     public LineaDoc() {
     }
 
-    public LineaDoc(double precioUnitario, double precioTotal, double cantidad, double subTotal, ProductoPrecio producto) {
+    public LineaDoc(int idLineDoc, double precioUnitario, double precioTotal, 
+            double cantidad, double subTotal, ProductoPrecio producto, 
+            Documento documento) {
+        this.idLineDoc = idLineDoc;
         this.precioUnitario = precioUnitario;
         this.precioTotal = precioTotal;
         this.cantidad = cantidad;
         this.subTotal = subTotal;
         this.producto = producto;
+        this.documento = documento;
     }
+
+    
 
     public double getPrecioUnitario() {
         return precioUnitario;
@@ -66,6 +73,22 @@ public class LineaDoc {
 
     public void setProducto(ProductoPrecio producto) {
         this.producto = producto;
+    }
+
+    public int getIdLineDoc() {
+        return idLineDoc;
+    }
+
+    public void setIdLineDoc(int idLineDoc) {
+        this.idLineDoc = idLineDoc;
+    }
+
+    public Documento getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(Documento documento) {
+        this.documento = documento;
     }
 
     public void imprimir() {
