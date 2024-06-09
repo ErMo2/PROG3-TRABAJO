@@ -13,8 +13,8 @@ import java.util.ArrayList;
 public class Almacen {
     private int id_almacen;
     private TipoAlmacen tipoAlmacen;
-    private int capacidadMaximaProductos;
-    private int capacidadActualProductos;
+    private double capacidadMaximaProductos;
+    private double capacidadActualProductos;
     ArrayList<MovimientoLote> movimientosLote;
     private boolean activo;
     private Sucursal sucursal;
@@ -23,7 +23,8 @@ public class Almacen {
     public Almacen() {
     }
 
-    public Almacen(int id_almacen, TipoAlmacen tipoAlmacen, int capacidadMaximaProductos, int capacidadActualProductos, ArrayList<MovimientoLote> movimientosLote, boolean activo, Sucursal sucursal, Lote lote) {
+    public Almacen(int id_almacen, TipoAlmacen tipoAlmacen, double capacidadMaximaProductos, double capacidadActualProductos, 
+            ArrayList<MovimientoLote> movimientosLote, boolean activo, Sucursal sucursal, Lote lote) {
         this.id_almacen = id_almacen;
         this.tipoAlmacen = tipoAlmacen;
         this.capacidadMaximaProductos = capacidadMaximaProductos;
@@ -50,19 +51,19 @@ public class Almacen {
         this.tipoAlmacen = tipoAlmacen;
     }
 
-    public int getCapacidadMaximaProductos() {
+    public double getCapacidadMaximaProductos() {
         return capacidadMaximaProductos;
     }
 
-    public void setCapacidadMaximaProductos(int capacidadMaximaProductos) {
+    public void setCapacidadMaximaProductos(double capacidadMaximaProductos) {
         this.capacidadMaximaProductos = capacidadMaximaProductos;
     }
 
-    public int getCapacidadActualProductos() {
+    public double getCapacidadActualProductos() {
         return capacidadActualProductos;
     }
 
-    public void setCapacidadActualProductos(int capacidadActualProductos) {
+    public void setCapacidadActualProductos(double capacidadActualProductos) {
         this.capacidadActualProductos = capacidadActualProductos;
     }
 

@@ -4,10 +4,15 @@
  */
 package pe.edu.pucp.ZAP2.program.main;
 
+import pe.edu.pucp.ZAP2.infraestructura.dao.AlmacenDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.SucursalDao;
+import pe.edu.pucp.ZAP2.infraestructura.model.Almacen;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Lote;
 import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoAlmacen;
+import pe.edu.pucp.ZAP2.infraestructura.mysql.AlmacenMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.AreaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
 
@@ -26,6 +31,14 @@ public class Principal {
         AreaDao daoArea = new AreaMySql();
         Area area = new Area(1, "Zona de alimentos",sucursal, null);
         daoArea.insertar(area);
+        
+        Lote lote = new Lote();
+        
+        AlmacenDao daoAlmacen = new AlmacenMySql();
+        Almacen almacen = new Almacen(0,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,lote);
+        daoAlmacen.insertar(almacen);
+        
+        
     }
     
 }
