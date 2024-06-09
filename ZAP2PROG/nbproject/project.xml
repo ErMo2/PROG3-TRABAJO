@@ -21,6 +21,22 @@
                 <id>jar</id>
             </reference>
             <reference>
+                <foreign-project>ZAP2DOCUMENTOSController</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>ZAP2DOCUMENTOSModel</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
                 <foreign-project>ZAP2INFRAESTRUCTURAController</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>build.xml</script>
@@ -30,6 +46,22 @@
             </reference>
             <reference>
                 <foreign-project>ZAP2INFRAESTRUCTURAModel</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>ZAP2PERSONASController</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>jar</target>
+                <clean-target>clean</clean-target>
+                <id>jar</id>
+            </reference>
+            <reference>
+                <foreign-project>ZAP2PERSONASModel</foreign-project>
                 <artifact-type>jar</artifact-type>
                 <script>build.xml</script>
                 <target>jar</target>

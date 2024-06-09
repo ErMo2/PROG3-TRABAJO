@@ -18,6 +18,8 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.AlmacenMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.AreaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.ClienteMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
+
 /**
  *
  * @author Alejandro
@@ -41,11 +43,14 @@ public class Principal {
 //        Almacen almacen = new Almacen(0,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,lote);
 //        daoAlmacen.insertar(almacen);
 //        
-//        ClienteDao daoCliente = new ClienteMySql();
-//        Cliente cliente = new Cliente(1,"12345678", 0, 'M', "su jato", null, 1, 
-//                "SoyUnCliente", "Apellido1", "Apellido2", 965456534, "email@gmail.com",
-//                TipoDocument, 0)daoCliente, 0), email, 
-//                daoCliente, 0), nombre, apellido_paterno, apellido_materno, 0, email, daoCliente, 0)
-    }
+        ClienteDao daoCliente = new ClienteMySql();
+        Cliente cliente = new Cliente(1,"12345678", 0, 'M', "su jato", null, 1, 
+                "SoyUnCliente", "Apellido1", "Apellido2", 965456534, "email@gmail.com",
+                TipoDocumento.DNI, 12432544);
+        daoCliente.insertar(cliente);
+    
+                
+                
+ }
     
 }

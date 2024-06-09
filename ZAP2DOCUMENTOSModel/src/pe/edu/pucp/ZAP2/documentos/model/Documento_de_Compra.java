@@ -48,6 +48,7 @@ public class Documento_de_Compra extends Documento{
 
     @Override
     public void imprimir() {
+        super.imprimir();
         System.out.println("Documento_de_Compra{" + "id_doc_compra=" + 
                 id_doc_compra + ", pedido=" + pedido + '}');
     }
