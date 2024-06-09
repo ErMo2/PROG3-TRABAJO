@@ -24,28 +24,29 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
     private CallableStatement cs;
     @Override
     public int insertar(MovimientoLote movLote) {
-//        int resultado = 0;
-//        try{
-//            con = DBManager.getInstance().getConnection();
-//            cs = con.prepareCall("{call INSERTAR_MOVIMIENTO_LOTE"
-//                    +"(?,?,?,?,?,?,?,?)}");
-//            cs.registerOutParameter("_idMovimientoLote", java.sql.Types.INTEGER);
-//            cs.setInt("_idAlmacenEntrada",movLote.get);
-//            cs.setInt("_idAlmacenSalida",lote.getAlmacen().getId_almacen());
-//            cs.setInt("_fechaMovimiento", lote.getProducto().getIdProducto());
-//            cs.setInt("_motivo", lote.getProducto().getIdProducto());
-//            cs.setInt("_movimientoEntrada", lote.getProducto().getIdProducto());
-//            cs.setInt("_cantidadProductosMovidos", lote.getProducto().getIdProducto());
-//            cs.setInt("_fid_lote", lote.getProducto().getIdProducto());
-//            resultado = cs.executeUpdate();
-//            movLote.setIdMovimientoLote(cs.getInt("_idMovimientoLote"));
-//        }catch(Exception ex){
-//            System.out.println(ex.getMessage());
-//        }finally{
-//            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
-//        }
-//        return resultado;
-        throw new UnsupportedOperationException("Not supported yet.");
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call INSERTAR_MOVIMIENTO_LOTE"
+                    +"(?,?,?,?,?,?,?,?)}");
+            cs.registerOutParameter("_idMovimientoLote", java.sql.Types.INTEGER);
+            cs.setInt("_idAlmacenEntrada",movLote.getAlmacenEntrada().getId_almacen());
+            cs.setInt("_idAlmacenSalida",movLote.getAlmacenSalida().getId_almacen());
+            java.sql.Date sqlDate = new java.sql.Date(movLote.getFechaMovimiento().getTime());
+            cs.setDate("_fechaMovimiento",sqlDate);
+            
+            cs.setString("_motivo", movLote.getMotivo().toString());
+            cs.setInt("_movimientoEntrada", movLote.getMovimientoEntrada());
+            cs.setDouble("_cantidadProductosMovidos", movLote.getCantidadProductosMovidos());
+            cs.setInt("_fid_lote", movLote.getLote().getIdLote());
+            resultado = cs.executeUpdate();
+            movLote.setIdMovimientoLote(cs.getInt("_idMovimientoLote"));
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
