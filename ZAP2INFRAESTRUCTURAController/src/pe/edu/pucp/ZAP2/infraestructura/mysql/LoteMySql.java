@@ -48,7 +48,24 @@ public class LoteMySql implements LoteDao{
 
     @Override
     public int modificar(Lote lote) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_LOTE"
+                    +"(?,?,?,?,?,?)}");
+            cs.setInt("_id_lote", lote.getIdLote());
+            cs.setInt("_fid_pedido",lote.getIdPedido());
+            cs.setInt("_fid_almacen",lote.getAlmacen().getId_almacen());
+            cs.setInt("_fid_producto", lote.getProducto().getIdProducto());
+            cs.setDouble("_stockInicial", lote.getStockInicial());
+            cs.setDouble("_stockActual", lote.getStockActual());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
