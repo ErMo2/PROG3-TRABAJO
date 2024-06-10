@@ -66,7 +66,7 @@ public class BancoMySql implements BancoDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_BANCO(?)}");
             cs.setInt("_id_banco",idBanco);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

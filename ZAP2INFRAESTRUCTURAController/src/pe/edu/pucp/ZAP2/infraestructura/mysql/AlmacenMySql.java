@@ -74,7 +74,7 @@ public class AlmacenMySql implements AlmacenDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_ALMACEN(?)}");
             cs.setInt("_id_almacen",idAlmacen);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

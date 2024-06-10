@@ -57,7 +57,7 @@ public class PedidoMySql implements PedidoDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_PEDIDO(?)}");
             cs.setInt("_id_pedido",idpedido);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

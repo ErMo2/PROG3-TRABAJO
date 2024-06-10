@@ -59,7 +59,7 @@ public class ProductoPerecibleMySql implements ProductoPerecibleDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_PRODUCTO(?)}");
             cs.setInt("_id_productoPerecible",idProdPere);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

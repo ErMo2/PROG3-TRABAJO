@@ -69,7 +69,7 @@ public class MonedaMySql implements MonedaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_MONEDA(?)}");
             cs.setInt("_id_moneda",idmoneda);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

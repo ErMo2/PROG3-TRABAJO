@@ -93,7 +93,7 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_PERSONA(?)}");
             cs.setInt("_id_persona",idPersonaJuridica);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

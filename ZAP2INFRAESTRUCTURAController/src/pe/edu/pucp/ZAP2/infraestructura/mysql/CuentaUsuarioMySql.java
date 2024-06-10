@@ -70,7 +70,7 @@ public class CuentaUsuarioMySql implements CuentaUsuarioDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_CUENTAUSUARIO(?)}");
             cs.setInt("_id_cuentaUsuario",idCuenta);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

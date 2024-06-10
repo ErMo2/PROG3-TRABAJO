@@ -58,7 +58,7 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_PRODUCTO(?)}");
             cs.setInt("_id_PCH",idProducto);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

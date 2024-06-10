@@ -55,7 +55,7 @@ public class ProductoPrecioMySql implements ProductoPrecioDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_PRODUCTO_PRECIO(?)}");
             cs.setInt("_id_producto_precio",idProductoPrecio);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

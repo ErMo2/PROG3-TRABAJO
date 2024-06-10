@@ -104,7 +104,7 @@ public class SupervisorMySql implements SupervisorDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_PERSONA(?)}");
             cs.setInt("_id_persona",idSupervisor);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

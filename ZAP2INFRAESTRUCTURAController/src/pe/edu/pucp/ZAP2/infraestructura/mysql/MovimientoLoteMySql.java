@@ -60,7 +60,7 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_CLIENTE (?)}");
+            cs = con.prepareCall("{call ELIMINAR_MOVIMIENTO_LOTE(?)}");
             cs.setInt("_idMovimientoLote",idMovimientoLote);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
