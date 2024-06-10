@@ -31,7 +31,7 @@ public class AreaMySql implements AreaDao{
                     +"(?,?,?)}");
             cs.registerOutParameter("_id_area", java.sql.Types.INTEGER);
             cs.setString("_nombre", area.getNombre());
-            cs.setInt("_fid_surcursal",area.getSucursal().getId_sucursal());   
+            cs.setInt("_fid_sucursal",area.getSucursal().getId_sucursal());   
             resultado = cs.executeUpdate();
             area.setIdArea(cs.getInt("_id_area"));
         }catch(Exception ex){

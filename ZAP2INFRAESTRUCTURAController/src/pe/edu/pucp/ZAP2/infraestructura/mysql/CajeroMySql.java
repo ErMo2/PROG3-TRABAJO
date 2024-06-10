@@ -53,7 +53,7 @@ public class CajeroMySql implements CajeroDao{
             
             cs.setInt("_fid_supervisor",cajero.getSupervisor().getIdEmpleado());
             cs.setInt("_numeroCaja",cajero.getNumeroCaja());
-            cs.setDouble("_cantidadaCaja",cajero.getCantidadCaja());
+            cs.setDouble("_cantidadCaja",cajero.getCantidadCaja());
             
             resultado = cs.executeUpdate();
             
