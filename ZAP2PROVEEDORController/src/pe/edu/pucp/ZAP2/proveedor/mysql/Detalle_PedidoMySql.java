@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.proveedor.dao.Detalle_PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.model.Detalle_Pedido;
@@ -36,7 +37,7 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
             cs.setDouble("_precioTotal", detallePedido.getPrecioTotal());
             resultado = cs.executeUpdate();
             detallePedido.setId_DetallePedido(cs.getInt("_id_DetallePedido"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -51,7 +52,19 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
 
     @Override
     public int eliminar(int idDetallePedido) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_DetallePedido",idDetallePedido);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override
