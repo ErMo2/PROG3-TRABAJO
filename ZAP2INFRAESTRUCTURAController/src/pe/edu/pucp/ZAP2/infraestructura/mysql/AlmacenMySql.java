@@ -32,7 +32,7 @@ public class AlmacenMySql implements AlmacenDao{
             con=DBManager.getInstance().getConnection();
             cs=con.prepareCall("{call INSERTAR_ALMACEN(?,?,?,?)}");
             cs.registerOutParameter("_id_almacen", java.sql.Types.INTEGER);
-            cs.setInt("_fid_surcursal",almacen.getSucursal().getId_sucursal());
+            cs.setInt("_fid_sucursal",almacen.getSucursal().getId_sucursal());
             cs.setString("_tipoAlmacen",almacen.getTipoAlmacen().toString());
             cs.setDouble("_capacidadMaximaProductos",almacen.getCapacidadMaximaProductos());
             
