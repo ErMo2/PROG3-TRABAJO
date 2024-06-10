@@ -56,7 +56,7 @@ public class Documento_de_CompraMySql implements Documento_de_CompraDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_DOCUMENTO_COMPRA (?,?,?,?,?)}");
-            cs.setInt("",DocCompra.getId_doc_compra());
+            cs.setInt("_id_documento",DocCompra.getId_doc_compra());
             cs.setInt("_fid_moneda", DocCompra.getMoneda().getIdMoneda());
             cs.setInt("_fid_pedido", DocCompra.getPedido().getId_pedido());
             Date fechaEmisionSQL = new Date(DocCompra.getFecha_emision().getTime());
@@ -73,7 +73,19 @@ public class Documento_de_CompraMySql implements Documento_de_CompraDao{
 
     @Override
     public int eliminar(int idDocCompra) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_documento",idDocCompra);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override

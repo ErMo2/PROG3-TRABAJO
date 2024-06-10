@@ -70,8 +70,20 @@ public class TarjetaMySql implements TarjetaDao{
     }
 
     @Override
-    public int eliminar(int codTarjeta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idTarjeta) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_CLIENTE (?)}");
+            cs.setInt("_id_tarjeta",idTarjeta);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override
