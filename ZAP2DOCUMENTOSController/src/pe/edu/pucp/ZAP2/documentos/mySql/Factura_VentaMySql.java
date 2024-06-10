@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
@@ -61,7 +62,34 @@ public class Factura_VentaMySql implements Factura_VentaDao{
 
     @Override
     public int modificar(Factura_Venta facturaVenta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_FACTURA_VENTA (?,?,?,?,?,?,?,?,?,?,?)}");
+            cs.setInt("_id_documento",facturaVenta.getId_documento());
+            cs.setInt("_fid_persona_juridica", facturaVenta.getPersonaJuridica().getId_Persona());
+            cs.setString("_detalles", facturaVenta.getDetalles());
+            
+            java.sql.Date sqlDate = new java.sql.Date(facturaVenta.getFechaVenc().getTime());
+            cs.setDate("_fechaVenc", sqlDate);
+            
+            cs.setInt("_ruc", Integer.parseInt(facturaVenta.getPersonaJuridica().getRUC()));
+            
+            cs.setInt("_fid_id_tarjeta", facturaVenta.getTarjeta().getCodTarjeta());
+            cs.setInt("_fid_empleado", facturaVenta.getEmpleado().getIdEmpleado());
+            cs.setDouble("_montoTotal", facturaVenta.getMontoTotal());
+            
+            cs.setInt("_fid_moneda", facturaVenta.getMoneda().getIdMoneda());
+            java.sql.Date sqlDate2 = new java.sql.Date(facturaVenta.getFecha_emision().getTime());
+            cs.setDate("_fecha_emision",sqlDate2);
+            cs.setDouble("_total", facturaVenta.getTotal());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

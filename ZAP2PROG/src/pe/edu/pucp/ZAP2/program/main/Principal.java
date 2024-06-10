@@ -8,6 +8,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.LocalDate;
+import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
+import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
+import pe.edu.pucp.ZAP2.documentos.model.Moneda;
+import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AlmacenDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.CajeroDao;
@@ -326,6 +330,21 @@ public class Principal {
 //        banco.setNombre("MIFARMA");
 //        banco.setIdBanco(2);
 //        daoBanco.modificar(banco);
+
+          /*===============*/
+        /*==== Documento De Compra ====*/
+        /*==============*/
+        
+//        Moneda moneda = new Moneda();
+//        moneda.setIdMoneda(1);
+//        moneda.setAbreviacion("PEN");
+//        moneda.setNombre("Soles");
+//
+//        Documento_de_Compra doc_Compra = new Documento_de_Compra(1,pedido,1,fecha,200,moneda,null);
+//        Documento_de_CompraDao daoDoc_Comra = new Documento_de_CompraMySql();
+//        
+//        daoDoc_Comra.insertar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
+//        daoDoc_Comra.modificar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
  }
     
 }
