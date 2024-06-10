@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.MovimientoLoteDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.MovimientoLote;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoDeMotivoMovimientoAlmacen;
 
 /**
  *
@@ -32,7 +33,10 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
                     +"(?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_idMovimientoLote", java.sql.Types.INTEGER);
             cs.setInt("_idAlmacenEntrada",movLote.getAlmacenEntrada().getId_almacen());
-            cs.setInt("_idAlmacenSalida",movLote.getAlmacenSalida().getId_almacen());
+            if(movLote.getMotivo()==TipoDeMotivoMovimientoAlmacen.TRASLADO || movLote.getMotivo()==TipoDeMotivoMovimientoAlmacen.REPOSICIONANAQUELES)
+                cs.setInt("_idAlmacenSalida",movLote.getAlmacenSalida().getId_almacen());
+            else
+                cs.setNull("_idAlmacenSalida",1);
             java.sql.Date sqlDate = new java.sql.Date(movLote.getFechaMovimiento().getTime());
             cs.setDate("_fechaMovimiento",sqlDate);
             

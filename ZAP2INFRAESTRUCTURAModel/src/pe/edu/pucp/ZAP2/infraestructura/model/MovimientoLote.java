@@ -25,7 +25,8 @@ public class MovimientoLote {
     public MovimientoLote() {
     }
 
-    public MovimientoLote(int idMovimientoLote, Date fechaMovimiento, int activo, TipoDeMotivoMovimientoAlmacen motivo, int movimientoEntrada, double cantidadProductosMovidos, Almacen almacenEntrada, Almacen almacenSalida, Lote lote) {
+    public MovimientoLote(int idMovimientoLote, Date fechaMovimiento, int activo, TipoDeMotivoMovimientoAlmacen motivo, int movimientoEntrada,
+            double cantidadProductosMovidos, Almacen almacenEntrada, Almacen almacenSalida, Lote lote) {
         this.idMovimientoLote = idMovimientoLote;
         this.fechaMovimiento = fechaMovimiento;
         this.activo = activo;

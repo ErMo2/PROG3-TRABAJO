@@ -24,7 +24,8 @@ public class ProductoPerecible extends Producto{
         this.unidad_de_medida = unidad_de_medida;
     }
 
-    public ProductoPerecible(Date fechVencimiento, TipoProductoPerecible tipo_producto_perecible, UnidadDeMedida unidad_de_medida, int idProducto, String nombre, String descripcion, byte[] imagen, int activo, ProductoPrecio prodPrecio) {
+    public ProductoPerecible(Date fechVencimiento, TipoProductoPerecible tipo_producto_perecible, UnidadDeMedida unidad_de_medida, 
+            int idProducto, String nombre, String descripcion, byte[] imagen, int activo, ProductoPrecio prodPrecio) {
         super(idProducto, nombre, descripcion, imagen, activo, prodPrecio);
         this.fechVencimiento = fechVencimiento;
         this.tipo_producto_perecible = tipo_producto_perecible;
