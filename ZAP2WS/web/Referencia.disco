@@ -66,4 +66,7 @@ ref="http://localhost:8080/ZAP2WS/SucursalWS?WSDL" />
     <contractRef 
 xmlns="http://schemas.xmlsoap.org/disco/scl/" 
 ref="http://localhost:8080/ZAP2WS/SupervisorWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/PersonaJuridicaWS?WSDL" />
 </discovery>
