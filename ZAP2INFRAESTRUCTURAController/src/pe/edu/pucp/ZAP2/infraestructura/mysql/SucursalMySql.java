@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.SucursalDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
@@ -37,7 +38,7 @@ public class SucursalMySql implements SucursalDao{
             cs.setDouble("_tam_metros", sucursal.getTam_metros());
             resultado = cs.executeUpdate();
             sucursal.setId_sucursal(cs.getInt("_id_sucursal"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -66,7 +67,19 @@ public class SucursalMySql implements SucursalDao{
 
     @Override
     public int eliminar(int idSucursal) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_CLIENTE (?)}");
+            cs.setInt("_id_sucursal",idSucursal);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override

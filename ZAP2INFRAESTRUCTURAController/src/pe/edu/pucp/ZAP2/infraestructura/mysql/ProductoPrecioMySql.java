@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ProductoPrecioDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
@@ -36,7 +37,7 @@ public class ProductoPrecioMySql implements ProductoPrecioDao{
             cs.setDouble("_precio", productoPrecio.getPrecio());
             resultado = cs.executeUpdate();
             productoPrecio.setIdProductoPrecio(cs.getInt("_id_producto_precio"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -51,7 +52,19 @@ public class ProductoPrecioMySql implements ProductoPrecioDao{
 
     @Override
     public int eliminar(int idProductoPrecio) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_producto_precio",idProductoPrecio);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override

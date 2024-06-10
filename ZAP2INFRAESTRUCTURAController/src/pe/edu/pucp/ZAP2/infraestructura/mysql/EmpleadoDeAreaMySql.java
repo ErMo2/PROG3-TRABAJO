@@ -53,7 +53,7 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
             empleadoDeArea.setIdEmpleado(cs.getInt("_id_empleadoDeArea"));
             empleadoDeArea.setId_Persona(cs.getInt("_id_empleadoDeArea"));
             resultado = cs.getInt("_id_empleadoDeArea");
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -96,7 +96,19 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
 
     @Override
     public int eliminar(int idEmpleadoDeArea) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_persona",idEmpleadoDeArea);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override
