@@ -97,7 +97,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_DOCUMENTO(?)}");
             cs.setInt("_id_documento",idFacturaVenta);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

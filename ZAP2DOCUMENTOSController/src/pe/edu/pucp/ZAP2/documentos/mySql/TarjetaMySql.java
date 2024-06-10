@@ -74,7 +74,7 @@ public class TarjetaMySql implements TarjetaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_CLIENTE (?)}");
+            cs = con.prepareCall("{call ELIMINAR_TARJETA(?)}");
             cs.setInt("_id_tarjeta",idTarjeta);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

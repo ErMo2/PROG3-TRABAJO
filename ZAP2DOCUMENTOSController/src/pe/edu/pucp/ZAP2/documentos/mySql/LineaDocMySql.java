@@ -68,7 +68,7 @@ public class LineaDocMySql implements LineaDocDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_LINEA_DOC(?)}");
             cs.setInt("_id_lineaDoc",idLineaDoc);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

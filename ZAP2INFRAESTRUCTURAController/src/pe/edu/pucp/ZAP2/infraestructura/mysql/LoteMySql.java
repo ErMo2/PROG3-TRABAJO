@@ -73,7 +73,7 @@ public class LoteMySql implements LoteDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_LOTE(?)}");
             cs.setInt("_id_lote",idLote);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

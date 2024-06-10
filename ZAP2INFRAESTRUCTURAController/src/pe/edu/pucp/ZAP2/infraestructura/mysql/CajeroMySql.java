@@ -108,7 +108,7 @@ public class CajeroMySql implements CajeroDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_PERSONA(?)}");
             cs.setInt("_id_persona",idCajero);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

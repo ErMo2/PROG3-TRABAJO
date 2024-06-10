@@ -66,7 +66,7 @@ public class AreaMySql implements AreaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call  ELIMINAR_AREA(?)}");
             cs.setInt("_id_area",idArea);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
