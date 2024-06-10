@@ -47,7 +47,22 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
 
     @Override
     public int modificar(Detalle_Pedido detallePedido) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_DETALLE_PEDIDO"
+                    +"(?,?,?,?)}");
+            cs.setInt("_id_DetallePedido", detallePedido.getId_DetallePedido());
+            cs.setInt("_fid_pedido", detallePedido.getPedido().getId_pedido());
+            cs.setDouble("_precioUnitario", detallePedido.getPrecioUnitario());
+            cs.setDouble("_precioTotal", detallePedido.getPrecioTotal());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
