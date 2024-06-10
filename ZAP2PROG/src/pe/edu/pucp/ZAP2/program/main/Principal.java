@@ -43,26 +43,32 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-        Area area = new Area();
-        area.setIdArea(1);
-        
-        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha_Contratacion = formato.parse(fechaStr);
-        
-        /*===============*/
-        /*==== Area ====*/
-        /*==============*/
-//        SucursalDao daoSucursal = new SucursalMySql();
+//        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        Date fecha_Contratacion = formato.parse(fechaStr);
+//        
 //        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
 //                1300.4, "Pepe's shop",
 //                null, null, null);
-//        daoSucursal.insertar(sucursal);
 //        
-//        AreaDao daoArea = new AreaMySql();
 //        Area area = new Area(1, "Zona de alimentos",sucursal, null);
-//        daoArea.insertar(area);
 //        
+//        Supervisor supervisor = new Supervisor(5,null,null, 0, 456.5, fecha_Contratacion, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
+//                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
+//                TipoDocumento.DNI, 75607208);
+        
+        /*==================*/
+        /*==== Sucursal ====*/
+        /*=================*/
+//        SucursalDao daoSucursal = new SucursalMySql();
+//        daoSucursal.insertar(sucursal);
+        
+        /*===============*/
+        /*==== Area ====*/
+        /*==============*/   
+//        AreaDao daoArea = new AreaMySql();
+//        daoArea.insertar(area);
+        
         /*=================*/
         /*==== Almacen ====*/
         /*=================*/
@@ -82,27 +88,35 @@ public class Principal {
 //                TipoDocumento.DNI, 12432544);
 //        daoCliente.insertar(cliente);
 
+        /*=================*/
+        /*=== Supervisor ==*/
+        /*=================*/
+//        SupervisorDao daoSupervisor = new SupervisorMySql();
+//        daoSupervisor.insertar(supervisor);
+
         /*=============*/
         /*=== Cajero ==*/
         /*=============*/
-//        Supervisor supervisor = new Supervisor();
-//        supervisor.setIdEmpleado(2);
-//        
-//        
 //        CajeroDao daoCajero = new CajeroMySql();
 //        Cajero cajero = new Cajero(1, 2, supervisor, 0, 456.5, fecha_Contratacion, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
 //                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", TipoDocumento.DNI, 75607208);
 //        daoCajero.insertar(cajero);
         
-        /*=================*/
-        /*=== Supervisor ==*/
-        /*=================*/
-//        SupervisorDao daoSupervisor = new SupervisorMySql();
-//        Supervisor supervisor = new Supervisor(5,null,null, 0, 456.5, fecha_Contratacion, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
+        /*========================*/
+        /*=== EmpleadoDeArea ===*/
+        /*========================*/
+//        EmpleadoDeAreaDao daoEmpleadoDeArea = new EmpleadoDeAreaMySql();
+//        EmpleadoDeArea empDeArea = new EmpleadoDeArea(supervisor, TipoPuesto.Consultor, 0, 456.5, fecha_Contratacion, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
 //                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
 //                TipoDocumento.DNI, 75607208);
-//        daoSupervisor.insertar(supervisor);
-        
+//        daoEmpleadoDeArea.insertar(empDeArea);
+
+        /*========================*/
+        /*==== CuentaUsuario =====*/
+        /*========================*/
+//        CuentaUsuarioDao daoCuentaUsu = new CuentaUsuarioMySql();
+//        CuentaUsuario cuentaUsu = new CuentaUsuario(0, "jorge123", "paraalo456*4", true, supervisor);
+//        daoCuentaUsu.insertar(cuentaUsu);
     
                 
                 
