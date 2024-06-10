@@ -8,6 +8,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.LocalDate;
+import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
+import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
+import pe.edu.pucp.ZAP2.documentos.model.Banco;
+import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
+import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
+import pe.edu.pucp.ZAP2.documentos.model.Moneda;
+import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
+import pe.edu.pucp.ZAP2.documentos.mySql.Factura_VentaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AlmacenDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.CajeroDao;
@@ -63,6 +73,7 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.ProductosParaElCuidadoPersonalYDel
 import pe.edu.pucp.ZAP2.infraestructura.mysql.RopaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SupervisorMySql;
+import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
 import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 import pe.edu.pucp.ZAP2.proveedor.dao.PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.model.Estado_Pedido;
@@ -326,6 +337,62 @@ public class Principal {
 //        banco.setNombre("MIFARMA");
 //        banco.setIdBanco(2);
 //        daoBanco.modificar(banco);
+
+          /*===============*/
+        /*==== Documento De Compra ====*/
+        /*==============*/
+        
+//        Moneda moneda = new Moneda();
+//        moneda.setIdMoneda(1);
+//        moneda.setAbreviacion("PEN");
+//        moneda.setNombre("Soles");
+//
+//        Documento_de_Compra doc_Compra = new Documento_de_Compra(1,pedido,1,fecha,200,moneda,null);
+//        Documento_de_CompraDao daoDoc_Comra = new Documento_de_CompraMySql();
+//        
+//        daoDoc_Comra.insertar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
+//        daoDoc_Comra.modificar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
+
+        /*===============*/
+        /*==== Factura de Venta ====*/
+        /*==============*/
+//        Moneda moneda = new Moneda();
+//        moneda.setIdMoneda(1);
+//        moneda.setAbreviacion("PEN");
+//        moneda.setNombre("Soles");
+//        
+//        
+//        PersonaJuridica persona_juridica = new PersonaJuridica();
+//        persona_juridica.setRUC("123");
+//        
+//        Banco banco = new Banco(1,"BBVA");
+//        
+//        Tarjeta tarjeta = new Tarjeta();
+//        tarjeta.setCodTarjeta(777);
+//        tarjeta.setIdTarjeta(1);
+//        tarjeta.setBanco(banco);
+//        tarjeta.setTipoTarjeta(Tipo_Tarjeta.DEBITO);
+//        
+//        Factura_Venta fact_venta = new Factura_Venta(1,"CAMBIAR",fecha,persona_juridica);
+//        fact_venta.setTarjeta(tarjeta);
+//        fact_venta.setEmpleado(supervisor);
+//        fact_venta.setMoneda(moneda);
+//        fact_venta.setFecha_emision(fecha);
+//        Factura_VentaDao daoFac_Venta = new Factura_VentaMySql();
+//        
+//        daoFac_Venta.insertar(fact_venta); // ERROR EN EL PROCEDURE FALTA PROBAR 
+//        daoFac_Venta.modificar(fact_venta); // ERROR EN EL PROCEDURE FALTA PROBAR 
+        /*===============*/
+        /*==== Moneda ====*/
+        /*==============*/
+        
+        /*===============*/
+        /*==== Tarjeta ====*/
+        /*==============*/
+        
+        /*===============*/
+        /*==== Persona Juridica ====*/
+        /*==============*/
  }
     
 }

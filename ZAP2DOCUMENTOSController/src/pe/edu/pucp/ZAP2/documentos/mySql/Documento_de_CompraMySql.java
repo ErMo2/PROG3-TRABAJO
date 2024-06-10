@@ -10,6 +10,7 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
@@ -51,7 +52,23 @@ public class Documento_de_CompraMySql implements Documento_de_CompraDao{
 
     @Override
     public int modificar(Documento_de_Compra DocCompra) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_DOCUMENTO_COMPRA (?,?,?,?,?)}");
+            cs.setInt("",DocCompra.getId_doc_compra());
+            cs.setInt("_fid_moneda", DocCompra.getMoneda().getIdMoneda());
+            cs.setInt("_fid_pedido", DocCompra.getPedido().getId_pedido());
+            Date fechaEmisionSQL = new Date(DocCompra.getFecha_emision().getTime());
+            cs.setDate("_fecha_emision", fechaEmisionSQL);
+            cs.setDouble("_total", DocCompra.getTotal());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
