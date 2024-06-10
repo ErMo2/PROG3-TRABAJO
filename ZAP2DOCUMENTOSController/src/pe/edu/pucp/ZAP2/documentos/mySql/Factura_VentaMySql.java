@@ -39,7 +39,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
             
             cs.setInt("_ruc", Integer.parseInt(facturaVenta.getPersonaJuridica().getRUC()));
             
-            cs.setInt("_fid_id_tarjeta", facturaVenta.getTarjeta().getCodTarjeta());
+            cs.setInt("_fid_id_tarjeta", facturaVenta.getTarjeta().getIdTarjeta());
             cs.setInt("_fid_empleado", facturaVenta.getEmpleado().getIdEmpleado());
             cs.setDouble("_montoTotal", facturaVenta.getMontoTotal());
             
@@ -52,7 +52,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
             facturaVenta.setId_doc_venta(cs.getInt("_id_boleta_venta"));
             facturaVenta.setId_documento(cs.getInt("_id_boleta_venta"));
             resultado = facturaVenta.getId_doc_venta();
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
