@@ -136,13 +136,16 @@ public class Principal {
         /*==== Almacen ====*/
         /*=================*/
 //        Lote lote = new Lote();
+
 //        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,lote);
 //        AlmacenDao daoAlmacen = new AlmacenMySql();
+
 //        Sucursal sucursal = new Sucursal(1,"San Borja",20,"Tottus_San_Borja",null,null,null);
 //        SucursalDao daoSucursal = new SucursalMySql();
 //        daoSucursal.insertar(sucursal);
 //        sucursal.setNombre("AQUI");
 //        daoSucursal.modificar(sucursal);
+
 //        daoAlmacen.insertar(almacen);
 //        sucursal.setId_sucursal(1);
 //        Almacen almacen = new Almacen(0,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,null);
@@ -300,7 +303,7 @@ public class Principal {
 //                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
 //                TipoDocumento.DNI, 75607208);
 //        supervisor.setIdEmpleado(6);
-//        supervisor.setId_Persona(1);
+//        supervisor.setId_Persona(6);
 //        
 //        Banco banco = new Banco(1,"BBVA");
 //        
@@ -349,9 +352,9 @@ public class Principal {
 //        banco.setIdBanco(2);
 //        daoBanco.modificar(banco);
 
-          /*===============*/
+         /*============================*/
         /*==== Documento De Compra ====*/
-        /*==============*/
+        /*=============================*/
         
 //        Moneda moneda = new Moneda();
 //        moneda.setIdMoneda(1);
@@ -365,9 +368,9 @@ public class Principal {
 ////        daoDoc_Comra.modificar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
 //        daoDoc_Comra.eliminar(20);
 
-        /*===============*/
+        /*==========================*/
         /*==== Factura de Venta ====*/
-        /*==============*/
+        /*==========================*/
 //        Moneda moneda = new Moneda();
 //        moneda.setIdMoneda(1);
 //        moneda.setAbreviacion("PEN");
@@ -394,9 +397,10 @@ public class Principal {
 //        
 //        daoFac_Venta.insertar(fact_venta); // ERROR EN EL PROCEDURE FALTA PROBAR 
 //        daoFac_Venta.modificar(fact_venta); // ERROR EN EL PROCEDURE FALTA PROBAR 
-        /*===============*/
+
+        /*================*/
         /*==== Moneda ====*/
-        /*==============*/
+        /*================*/
 //        Moneda moneda = new Moneda();
 //        moneda.setIdMoneda(1);
 //        moneda.setAbreviacion("PEN");
@@ -407,9 +411,9 @@ public class Principal {
 //        moneda.setNombre("AQUI");
 //        daoMoneda.modificar(moneda);
                 
-        /*===============*/
+        /*=================*/
         /*==== Tarjeta ====*/
-        /*==============*/
+        /*=================*/
 //        Banco banco = new Banco(1,"BBVA");
 //        
 //        Tarjeta tarjeta = new Tarjeta();
@@ -423,9 +427,9 @@ public class Principal {
 //        tarjeta.setCodTarjeta(666);
 //        daoTarjeta.modificar(tarjeta);
         
-        /*===============*/
+        /*==========================*/
         /*==== Persona Juridica ====*/
-        /*==============*/
+        /*==========================*/
 //        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociacion,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
 //                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
 //        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
@@ -435,9 +439,9 @@ public class Principal {
 //        persona_juridica.setId_Persona(12);
 //        daopersona_juridica.modificar(persona_juridica);
 
-        /*===============*/
+        /*=========================*/
         /*==== Linea Doc Venta ====*/
-        /*==============*/
+        /*=========================*/
  }
     
 }
