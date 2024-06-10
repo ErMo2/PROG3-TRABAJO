@@ -8,16 +8,19 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.LocalDate;
+import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.MonedaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.TarjetaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Banco;
+import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
 import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
 import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.mySql.Boleta_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Factura_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.MonedaMySql;
@@ -293,7 +296,7 @@ public class Principal {
         /*===============*/
         /*==== Boleta de Venta ====*/
         /*==============*/ 
-//        Supervisor supervisor = new Supervisor(5,null,null, 0, 456.5, fecha_Contratacion, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
+//        Supervisor supervisor = new Supervisor(5,null,null, 0, 456.5, fecha, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
 //                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
 //                TipoDocumento.DNI, 75607208);
 //        supervisor.setIdEmpleado(6);
@@ -318,10 +321,11 @@ public class Principal {
 //        
 //        Boleta_Venta bol_venta = new Boleta_Venta(1,"CAMBIAR",18,supervisor,1,200,tarjeta,supervisor);
 //        bol_venta.setMoneda(moneda);
-//        bol_venta.setFecha_emision(fecha_Contratacion);
+//        bol_venta.setFecha_emision(fecha);
 //        Boleta_VentaDao daoBol_Venta = new Boleta_VentaMySql();
 //        daoBol_Venta.insertar(bol_venta);
 //        bol_venta.setDetalles("AQUI");
+//        daoBol_Venta.eliminar(21);
 //        daoBol_Venta.modificar(bol_venta); // FALTA PROBAR, ERROR EN EL PROCEDURE
 
           /*===============*/
@@ -357,8 +361,9 @@ public class Principal {
 //        Documento_de_Compra doc_Compra = new Documento_de_Compra(1,pedido,1,fecha,200,moneda,null);
 //        Documento_de_CompraDao daoDoc_Comra = new Documento_de_CompraMySql();
 //        
-//        daoDoc_Comra.insertar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
-//        daoDoc_Comra.modificar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
+////        daoDoc_Comra.insertar(doc_Compra); 
+////        daoDoc_Comra.modificar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
+//        daoDoc_Comra.eliminar(20);
 
         /*===============*/
         /*==== Factura de Venta ====*/
@@ -429,6 +434,10 @@ public class Principal {
 //        persona_juridica.setDireccionLegal("AQUI");
 //        persona_juridica.setId_Persona(12);
 //        daopersona_juridica.modificar(persona_juridica);
+
+        /*===============*/
+        /*==== Linea Doc Venta ====*/
+        /*==============*/
  }
     
 }

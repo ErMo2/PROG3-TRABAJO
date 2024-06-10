@@ -36,7 +36,7 @@ public class LineaDocMySql implements LineaDocDao{
             cs.executeUpdate();
             lineaDoc.setIdLineDoc(cs.getInt("_id_lineaDoc"));
             resultado = lineaDoc.getIdLineDoc();
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
