@@ -10,6 +10,8 @@ import java.util.Date;
 import java.time.LocalDate;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
+import pe.edu.pucp.ZAP2.documentos.dao.MonedaDao;
+import pe.edu.pucp.ZAP2.documentos.dao.TarjetaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Banco;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
 import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
@@ -18,6 +20,8 @@ import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
 import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
 import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Factura_VentaMySql;
+import pe.edu.pucp.ZAP2.documentos.mySql.MonedaMySql;
+import pe.edu.pucp.ZAP2.documentos.mySql.TarjetaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AlmacenDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.dao.CajeroDao;
@@ -73,8 +77,11 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.ProductosParaElCuidadoPersonalYDel
 import pe.edu.pucp.ZAP2.infraestructura.mysql.RopaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SupervisorMySql;
+import pe.edu.pucp.ZAP2.personas.dao.PersonaJuridicaDao;
 import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
 import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
+import pe.edu.pucp.ZAP2.personas.model.TipoEntidad;
+import pe.edu.pucp.ZAP2.personas.mysql.PersonaJuridicaMySql;
 import pe.edu.pucp.ZAP2.proveedor.dao.PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.model.Estado_Pedido;
 import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
@@ -385,14 +392,43 @@ public class Principal {
         /*===============*/
         /*==== Moneda ====*/
         /*==============*/
-        
+//        Moneda moneda = new Moneda();
+//        moneda.setIdMoneda(1);
+//        moneda.setAbreviacion("PEN");
+//        moneda.setNombre("Soles");
+//        MonedaDao daoMoneda = new MonedaMySql();
+//        
+//        daoMoneda.insertar(moneda);
+//        moneda.setNombre("AQUI");
+//        daoMoneda.modificar(moneda);
+                
         /*===============*/
         /*==== Tarjeta ====*/
         /*==============*/
+//        Banco banco = new Banco(1,"BBVA");
+//        
+//        Tarjeta tarjeta = new Tarjeta();
+//        tarjeta.setCodTarjeta(777);
+//        tarjeta.setIdTarjeta(1);
+//        tarjeta.setBanco(banco);
+//        tarjeta.setTipoTarjeta(Tipo_Tarjeta.DEBITO);
+//        
+//        TarjetaDao daoTarjeta = new TarjetaMySql();
+//        daoTarjeta.insertar(tarjeta);
+//        tarjeta.setCodTarjeta(666);
+//        daoTarjeta.modificar(tarjeta);
         
         /*===============*/
         /*==== Persona Juridica ====*/
         /*==============*/
+//        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociacion,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
+//                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
+//        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
+        
+//        daopersona_juridica.insertar(persona_juridica);
+//        persona_juridica.setDireccionLegal("AQUI");
+//        persona_juridica.setId_Persona(12);
+//        daopersona_juridica.modificar(persona_juridica);
  }
     
 }

@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.personas.dao.PersonaJuridicaDao;
 import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
@@ -60,7 +61,31 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
 
     @Override
     public int modificar(PersonaJuridica personaJuridica) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_PERSONA_JURIDICA (?,?,?,?,?,?,?,?,?,?,?,?)}");
+            cs.setInt("_id_persona", personaJuridica.getId_Persona());
+            cs.setString("_nombre", personaJuridica.getNombre());
+            cs.setString("_apellido_paterno", personaJuridica.getApellido_paterno());
+            cs.setString("_apellido_materno", personaJuridica.getApellido_materno());
+            cs.setString("_telefono", String.valueOf(personaJuridica.getTelefono()));
+            cs.setString("_email", personaJuridica.getEmail());
+            cs.setString("_tipoDocumento", personaJuridica.getTipo_documento().toString());    
+            cs.setString("_numDocumento", String.valueOf(personaJuridica.getNro_documento()));
+            
+            
+            cs.setString("_tipoEntidad", personaJuridica.getTipoEntidad().toString());
+            cs.setInt("_numIdentificadorFiscal", personaJuridica.getNumIdentificadorFiscal());
+            cs.setString("_direccionLegal", personaJuridica.getDireccionLegal());
+            cs.setString("_RUC", personaJuridica.getRUC());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

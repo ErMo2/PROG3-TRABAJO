@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.MonedaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
@@ -47,7 +48,20 @@ public class MonedaMySql implements MonedaDao{
 
     @Override
     public int modificar(Moneda moneda) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_MONEDA (?,?,?)}");
+            cs.setInt("_id_moneda", moneda.getIdMoneda());
+            cs.setString("_nombre", moneda.getNombre());
+            cs.setString("_abreviacion", moneda.getAbreviacion());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
