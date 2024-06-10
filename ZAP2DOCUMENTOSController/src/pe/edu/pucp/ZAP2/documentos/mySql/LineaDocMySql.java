@@ -46,7 +46,21 @@ public class LineaDocMySql implements LineaDocDao{
 
     @Override
     public int modificar(LineaDoc lineaDoc) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_LINEA_DOC (?,?,?,?)}");
+            cs.setInt("_id_lineaDoc",lineaDoc.getIdLineDoc());
+            cs.setInt("_fid_producto_precio",lineaDoc.getProducto().getIdProductoPrecio());
+            cs.setInt("_fid_id_doc",lineaDoc.getDocumento().getId_documento());
+            cs.setDouble("_cantidad",lineaDoc.getCantidad());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

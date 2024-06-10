@@ -51,8 +51,26 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
     }
 
     @Override
-    public int modificar(Electrodomesticos electrodomestico) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(Electrodomesticos electrodomesticos) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_ELECTRODOMESTICOS"
+                    +"(?,?,?,?,?,?)}");
+            cs.setInt("_id_producto", electrodomesticos.getIdProducto());
+            cs.setString("_nombre", electrodomesticos.getNombre());
+            cs.setString("_descripcion", electrodomesticos.getDescripcion());
+            Date fecha1 = new Date(electrodomesticos.getTiempoGarantia().getTime());
+            cs.setString("_modelo", electrodomesticos.getModelo());
+            cs.setDate("_tiempoGarantia", fecha1);
+            cs.setBoolean("_tieneGarantia", electrodomesticos.getTieneGarantia());
+            resultado = cs.executeUpdate();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
