@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
+    <service name="Documento_de_CompraWS">
+      <implementation-class>pe.edu.pucp.ZAP2.documentos.services.Documento_de_CompraWS</implementation-class>
+    </service>
+    <service name="Factura_VentaWS">
+      <implementation-class>pe.edu.pucp.ZAP2.documentos.services.Factura_VentaWS</implementation-class>
+    </service>
+    <service name="LineaDocWS">
+      <implementation-class>pe.edu.pucp.ZAP2.documentos.services.LineaDocWS</implementation-class>
+    </service>
+    <service name="MonedaWS">
+      <implementation-class>pe.edu.pucp.ZAP2.documentos.services.MonedaWS</implementation-class>
+    </service>
+    <service name="TarjetaWS">
+      <implementation-class>pe.edu.pucp.ZAP2.documentos.services.TarjetaWS</implementation-class>
+    </service>
+    <service name="ClienteWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.ClienteWS</implementation-class>
+    </service>
+    <service name="CuentaUsuarioWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.CuentaUsuarioWS</implementation-class>
+    </service>
+    <service name="ElectrodomesticosWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.ElectrodomesticosWS</implementation-class>
+    </service>
+    <service name="EmpleadoDeAreaWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.EmpleadoDeAreaWS</implementation-class>
+    </service>
+    <service name="LoteWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.LoteWS</implementation-class>
+    </service>
+    <service name="MovimientoLoteWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.MovimientoLoteWS</implementation-class>
+    </service>
+    <service name="ProductoPerecibleWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.ProductoPerecibleWS</implementation-class>
+    </service>
+    <service name="ProductoPrecioWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.ProductoPrecioWS</implementation-class>
+    </service>
+    <service name="ProductosParaElCuidadoPersonalYDelHogarWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.ProductosParaElCuidadoPersonalYDelHogarWS</implementation-class>
+    </service>
+    <service name="RopaWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.RopaWS</implementation-class>
+    </service>
+    <service name="SupervisorWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.SupervisorWS</implementation-class>
+    </service>
+    <service name="PersonaJuridicaWS">
+      <implementation-class>pe.edu.pucp.ZAP2.personas.services.PersonaJuridicaWS</implementation-class>
+    </service>
+    <service name="Detalle_PedidoWS">
+      <implementation-class>pe.edu.pucp.ZAP2.proveedor.services.Detalle_PedidoWS</implementation-class>
+    </service>
+    <service name="PedidoWS">
+      <implementation-class>pe.edu.pucp.ZAP2.proveedor.services.PedidoWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
