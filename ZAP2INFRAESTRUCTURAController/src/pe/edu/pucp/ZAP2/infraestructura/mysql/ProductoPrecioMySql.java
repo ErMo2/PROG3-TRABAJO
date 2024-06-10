@@ -4,34 +4,61 @@
  */
 package pe.edu.pucp.ZAP2.infraestructura.mysql;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
-import pe.edu.pucp.ZAP2.infraestructura.dao.ProductoPerecibleDao;
-import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPerecible;
+import pe.edu.pucp.ZAP2.DBManager.DBManager;
+import pe.edu.pucp.ZAP2.infraestructura.dao.ProductoPrecioDao;
+import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
 
 /**
  *
  * @author User
  */
-public class ProductoPrecioMySql implements ProductoPerecibleDao{
+public class ProductoPrecioMySql implements ProductoPrecioDao{
+
+    private Connection con;
+    private Statement st;
+    private ResultSet rs;
+    private CallableStatement cs;
+    @Override
+    public int insertar(ProductoPrecio productoPrecio) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call INSERTAR_PRODUCTOPRECIO"
+                    +"(?,?,?,?)}");
+            cs.registerOutParameter("_id_producto_precio", java.sql.Types.INTEGER);
+            cs.setInt("_fid_producto", productoPrecio.getProducto().getIdProducto());
+            cs.setInt("_fid_sucursal", productoPrecio.getSucursal().getId_sucursal());
+            cs.setDouble("_precio", productoPrecio.getPrecio());
+            resultado = cs.executeUpdate();
+            productoPrecio.setIdProductoPrecio(cs.getInt("_id_producto_precio"));
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
 
     @Override
-    public int insertar(ProductoPerecible prodPerecible) {
+    public int modificar(ProductoPrecio productoPrecio) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public int modificar(ProductoPerecible prodPerecible) {
+    public int eliminar(int idProductoPrecio) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public int eliminar(int idProdPere) {
+    public ArrayList<ProductoPrecio> listarTodos() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public ArrayList<ProductoPerecible> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
     
 }
