@@ -12,7 +12,7 @@ import jakarta.jws.WebParam;
  *
  * @author Coco
  */
-@WebService(serviceName = "LineaDocWS")
+@WebService(serviceName = "LineaDocWS", targetNamespace = "ZAP2WS")
 public class LineaDocWS {
 
     /**

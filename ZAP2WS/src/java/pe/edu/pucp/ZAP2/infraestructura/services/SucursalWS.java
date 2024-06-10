@@ -15,7 +15,7 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
  *
  * @author Alejandro
  */
-@WebService(serviceName = "SucursalWS")
+@WebService(serviceName = "SucursalWS", targetNamespace = "ZAP2WS")
 public class SucursalWS {
 
     /**
