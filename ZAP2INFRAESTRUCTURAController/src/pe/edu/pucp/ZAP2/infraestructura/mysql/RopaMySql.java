@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.RopaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Ropa;
@@ -37,7 +38,7 @@ public class RopaMySql implements RopaDao{
             cs.setString("_tipo", ropa.getTipo().toString());
             resultado = cs.executeUpdate();
             ropa.setIdProducto(cs.getInt("_id_ropa"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -52,7 +53,19 @@ public class RopaMySql implements RopaDao{
 
     @Override
     public int eliminar(int idRopa) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_ropa",idRopa);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ElectrodomesticosDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Electrodomesticos;
+import java.sql.SQLException;
 
 /**
  *
@@ -40,7 +41,7 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
             cs.setBoolean("_tieneGarantia", electrodomesticos.getTieneGarantia());
             resultado = cs.executeUpdate();
             electrodomesticos.setIdProducto(cs.getInt("_id_electrodomesticos"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -56,7 +57,19 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
 
     @Override
     public int eliminar(int idElectrodomestico) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_electrodomesticos",idElectrodomestico);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override

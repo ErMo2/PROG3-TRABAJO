@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.LoteDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Lote;
+import java.sql.SQLException;
 
 /**
  *
@@ -37,7 +38,7 @@ public class LoteMySql implements LoteDao{
             cs.setDouble("_stockInicial", lote.getStockInicial());
             resultado = cs.executeUpdate();
             lote.setIdLote(cs.getInt("_id_lote"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -52,7 +53,19 @@ public class LoteMySql implements LoteDao{
 
     @Override
     public int eliminar(int idLote) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_lote",idLote);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override

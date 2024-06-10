@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.MovimientoLoteDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.MovimientoLote;
@@ -41,7 +42,7 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
             cs.setInt("_fid_lote", movLote.getLote().getIdLote());
             resultado = cs.executeUpdate();
             movLote.setIdMovimientoLote(cs.getInt("_idMovimientoLote"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -56,7 +57,19 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
 
     @Override
     public int eliminar(int idMovimientoLote) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_CLIENTE (?)}");
+            cs.setInt("_idMovimientoLote",idMovimientoLote);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override

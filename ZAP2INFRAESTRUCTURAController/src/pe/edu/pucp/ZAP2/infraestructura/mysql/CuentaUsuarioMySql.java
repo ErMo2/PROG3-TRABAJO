@@ -37,7 +37,7 @@ public class CuentaUsuarioMySql implements CuentaUsuarioDao{
             cs.setString("_contraseña", cuenta.getContrasena());
             resultado = cs.executeUpdate();
             cuenta.setIdCuenta(cs.getInt("_id_cuentaUsuario"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}            
@@ -66,8 +66,20 @@ public class CuentaUsuarioMySql implements CuentaUsuarioDao{
     }
 
     @Override
-    public int eliminar(int Cuenta) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int eliminar(int idCuenta) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  (?)}");
+            cs.setInt("_id_cuentaUsuario",idCuenta);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+
     }
 
     @Override
