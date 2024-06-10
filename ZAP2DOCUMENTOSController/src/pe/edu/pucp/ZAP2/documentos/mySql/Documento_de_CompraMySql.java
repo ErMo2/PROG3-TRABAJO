@@ -76,7 +76,7 @@ public class Documento_de_CompraMySql implements Documento_de_CompraDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call ELIMINAR_DOCUMENTO(?)}");
             cs.setInt("_id_documento",idDocCompra);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){

@@ -88,7 +88,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call  (?)}");
+            cs = con.prepareCall("{call ELIMINAR_DOCUMENTO(?)}");
             cs.setInt("_id_documento",idBoleta_Venta);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
