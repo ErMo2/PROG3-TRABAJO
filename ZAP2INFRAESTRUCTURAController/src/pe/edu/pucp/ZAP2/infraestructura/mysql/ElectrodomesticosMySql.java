@@ -10,7 +10,6 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ElectrodomesticosDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Electrodomesticos;

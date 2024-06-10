@@ -18,13 +18,13 @@ public class Almacen {
     ArrayList<MovimientoLote> movimientosLote;
     private boolean activo;
     private Sucursal sucursal;
-    private ArrayList<Lote> lotes;
+    private Lote lote;
 
     public Almacen() {
     }
 
     public Almacen(int id_almacen, TipoAlmacen tipoAlmacen, double capacidadMaximaProductos, double capacidadActualProductos, 
-            ArrayList<MovimientoLote> movimientosLote, boolean activo, Sucursal sucursal, ArrayList<Lote> lotes) {
+            ArrayList<MovimientoLote> movimientosLote, boolean activo, Sucursal sucursal, Lote lote) {
         this.id_almacen = id_almacen;
         this.tipoAlmacen = tipoAlmacen;
         this.capacidadMaximaProductos = capacidadMaximaProductos;
@@ -32,7 +32,7 @@ public class Almacen {
         this.movimientosLote = movimientosLote;
         this.activo = activo;
         this.sucursal = sucursal;
-        this.lotes = lotes;
+        this.lote = lote;
     }
 
     public int getId_almacen() {
@@ -91,18 +91,18 @@ public class Almacen {
         this.sucursal = sucursal;
     }
 
-    public ArrayList<Lote> getLote() {
-        return lotes;
+    public Lote getLote() {
+        return lote;
     }
 
-    public void setLote(ArrayList<Lote> lotes) {
-        this.lotes = lotes;
+    public void setLote(Lote lote) {
+        this.lote = lote;
     }
 
     public void imprimir() {
         System.out.println("Almacen{" + "id_almacen=" + id_almacen + ", tipoAlmacen=" + tipoAlmacen + ", "
                 + "capacidadMaximaProductos=" + capacidadMaximaProductos + ", capacidadActualProductos=" + 
-                capacidadActualProductos + ", activo=" + activo + ", sucursal=" + sucursal.getId_sucursal() +" \n");
+                capacidadActualProductos + ", activo=" + activo + ", sucursal=" + sucursal.getId_sucursal() + ", lote=" + lote.getIdLote());
     }
     
     

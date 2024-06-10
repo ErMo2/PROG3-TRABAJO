@@ -8,7 +8,6 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
@@ -45,20 +44,7 @@ public class AreaMySql implements AreaDao{
     
     @Override
     public int modificar(Area area) {
-        int resultado = 0;
-        try{
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_AREA (?,?,?)}");
-            cs.setInt("_id_area",area.getIdArea());
-            cs.setInt("_fid_sucursal",area.getSucursal().getId_sucursal());
-            cs.setString("_nombre",area.getNombre());
-            resultado = cs.executeUpdate();
-        }catch(SQLException ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
-        }
-        return resultado;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override

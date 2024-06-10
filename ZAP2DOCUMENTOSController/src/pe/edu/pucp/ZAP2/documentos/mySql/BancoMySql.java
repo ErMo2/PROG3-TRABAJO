@@ -8,7 +8,6 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.BancoDao;
@@ -46,19 +45,7 @@ public class BancoMySql implements BancoDao{
 
     @Override
     public int modificar(Banco banco) {
-        int resultado = 0;
-        try{
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_BANCO(?,?)}");
-            cs.setString("_nombre",banco.getNombre());
-            cs.setInt("_id_banco",banco.getIdBanco());
-            resultado = cs.executeUpdate();
-        }catch(SQLException ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
-        }
-        return resultado;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override

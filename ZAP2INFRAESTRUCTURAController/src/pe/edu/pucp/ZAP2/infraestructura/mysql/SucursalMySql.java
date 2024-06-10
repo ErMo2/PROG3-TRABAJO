@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.SucursalDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
-import java.sql.SQLException;
 
 /**
  *
@@ -47,21 +46,7 @@ public class SucursalMySql implements SucursalDao{
 
     @Override
     public int modificar(Sucursal sucursal) {
-        int resultado = 0;
-        try{
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_SUCURSAL (?,?,?,?)}");
-            cs.setInt("_id_sucursal",sucursal.getId_sucursal());
-            cs.setString("_nombre", sucursal.getNombre());
-            cs.setString("_direccion", sucursal.getDireccion());
-            cs.setDouble("_tam_metros", sucursal.getTam_metros());
-            resultado = cs.executeUpdate();
-        }catch(SQLException ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
-        }
-        return resultado;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override

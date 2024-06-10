@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
-import java.sql.SQLException;
 /**
  *
  * @author Alejandro
@@ -36,7 +35,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
             cs.setString("_detalles", boletaVenta.getDetalles());
             cs.setDouble("_impuestos", boletaVenta.getImpuestos());
             
-            cs.setInt("_fid_id_tarjeta", boletaVenta.getTarjeta().getIdTarjeta());
+            cs.setInt("_fid_id_tarjeta", boletaVenta.getTarjeta().getCodTarjeta());
             cs.setInt("_fid_empleado", boletaVenta.getEmpleado().getIdEmpleado());
             cs.setDouble("_montoTotal", boletaVenta.getMontoTotal());
             
@@ -59,28 +58,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
 
     @Override
     public int modificar(Boleta_Venta boletaVenta) {
-        int resultado = 0;
-        try{
-            con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_BOLETA_VENTA (?,?,?,?,?,?,?,?)}");
-            cs.setInt("_id_documento",boletaVenta.getId_documento());
-            cs.setInt("_fid_id_persona", boletaVenta.getPersona().getId_Persona());
-            cs.setInt("_numSerie", boletaVenta.getNumSerie());
-            cs.setString("_detalles", boletaVenta.getDetalles());
-            
-            cs.setInt("_fid_id_tarjeta", boletaVenta.getTarjeta().getIdTarjeta());
-            cs.setInt("_fid_empleado", boletaVenta.getEmpleado().getIdEmpleado());
-            
-            cs.setInt("_fid_moneda", boletaVenta.getMoneda().getIdMoneda());
-            java.sql.Date sqlDate = new java.sql.Date(boletaVenta.getFecha_emision().getTime());
-            cs.setDate("_fecha_emision",sqlDate);
-            resultado = cs.executeUpdate();
-        }catch(SQLException ex){
-            System.out.println(ex.getMessage());
-        }finally{
-            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
-        }
-        return resultado;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
