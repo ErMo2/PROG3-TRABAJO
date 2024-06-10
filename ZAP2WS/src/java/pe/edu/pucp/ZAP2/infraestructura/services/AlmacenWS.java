@@ -15,7 +15,7 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.AlmacenMySql;
  *
  * @author User
  */
-@WebService(serviceName = "AlmacenWS")
+@WebService(serviceName = "AlmacenWS", targetNamespace = "ZAP2WS")
 public class AlmacenWS {
     private AlmacenDao daoAlmacen;
     @WebMethod(operationName = "insertarAlmacen")

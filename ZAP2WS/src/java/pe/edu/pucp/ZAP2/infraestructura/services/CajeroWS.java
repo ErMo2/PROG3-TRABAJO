@@ -12,7 +12,7 @@ import jakarta.jws.WebParam;
  *
  * @author User
  */
-@WebService(serviceName = "CajeroWS")
+@WebService(serviceName = "CajeroWS", targetNamespace = "ZAP2WS")
 public class CajeroWS {
     
     @WebMethod(operationName = "insertarCajero")

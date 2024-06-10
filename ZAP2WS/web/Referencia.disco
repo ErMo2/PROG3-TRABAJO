@@ -1,0 +1,24 @@
+<discovery xmlns="http://schemas.xmlsoap.org/disco/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/BancoWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/Boleta_VentaWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/Documento_de_CompraWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/Factura_VentaWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/LineaDocWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/MonedaWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/TarjetaWS?WSDL" />
+</discovery>
