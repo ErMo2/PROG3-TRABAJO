@@ -49,7 +49,7 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
         }
         return resultado;
     }
-
+    //FALTA PROCEDURE MOVIMIENTO LOTE 
     @Override
     public int modificar(MovimientoLote movLote) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

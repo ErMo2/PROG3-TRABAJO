@@ -49,7 +49,23 @@ public class PedidoMySql implements PedidoDao{
 
     @Override
     public int modificar(Pedido pedido) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_PEDIDO"
+                    +"(?,?,?,?)}");
+            cs.setInt("_id_pedido", pedido.getId_pedido());
+            cs.setDouble("_saldo", pedido.getSaldo());
+            cs.setString("_estado", pedido.getEstado().toString());
+            java.sql.Date fechaPedido = new java.sql.Date(pedido.getFecha_Pedido().getTime()); 
+            cs.setDate("_fecha_pedido", fechaPedido);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

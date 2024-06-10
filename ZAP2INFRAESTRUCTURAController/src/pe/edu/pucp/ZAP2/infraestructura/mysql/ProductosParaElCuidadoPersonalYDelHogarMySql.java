@@ -31,12 +31,10 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_PCH"
                     +"(?,?,?,?,?)}");
-            
             cs.registerOutParameter("_id_PCH", java.sql.Types.INTEGER);
-            
             cs.setString("_nombre", productoParaElCuidadoPersonalYDelHogar.getNombre());
             cs.setString("_descripcion", productoParaElCuidadoPersonalYDelHogar.getDescripcion());
-            cs.setInt("_unidad_de_medida", productoParaElCuidadoPersonalYDelHogar.getUnidadMedida().ordinal()+1);
+            cs.setString("_unidad_de_medida", String.valueOf(productoParaElCuidadoPersonalYDelHogar.getUnidadMedida()));
             cs.setString("_tipo", productoParaElCuidadoPersonalYDelHogar.getTipo());
             resultado = cs.executeUpdate();
             productoParaElCuidadoPersonalYDelHogar.setIdProducto(cs.getInt("_id_PCH"));
@@ -49,8 +47,25 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
     }
 
     @Override
-    public int modificar(ProductosParaElCuidadoPersonalYDelHogar prodParaElCuidado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int modificar(ProductosParaElCuidadoPersonalYDelHogar productoParaElCuidadoPersonalYDelHogar) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_PCH"
+                    +"(?,?,?,?,?)}");
+            cs.setInt("_id_PCH", productoParaElCuidadoPersonalYDelHogar.getIdProducto());
+            cs.setString("_nombre", productoParaElCuidadoPersonalYDelHogar.getNombre());
+            cs.setString("_descripcion", productoParaElCuidadoPersonalYDelHogar.getDescripcion());
+            cs.setString("_unidad_de_medida", String.valueOf(productoParaElCuidadoPersonalYDelHogar.getUnidadMedida()));
+            cs.setString("_tipo", productoParaElCuidadoPersonalYDelHogar.getTipo());
+            resultado = cs.executeUpdate();
+            productoParaElCuidadoPersonalYDelHogar.setIdProducto(cs.getInt("_id_PCH"));
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
