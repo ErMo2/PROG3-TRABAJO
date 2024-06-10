@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.EmpleadoDeAreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.EmpleadoDeArea;
+import java.sql.SQLException;
 
 /**
  *
@@ -62,7 +63,35 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
 
     @Override
     public int modificar(EmpleadoDeArea empleadoDeArea) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_EMPLEADO_DE_AREA (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            cs.setInt("_id_persona",empleadoDeArea.getId_Persona());
+            cs.setString("_nombre", empleadoDeArea.getNombre());
+            cs.setString("_apellido_paterno", empleadoDeArea.getApellido_paterno());
+            cs.setString("_apellido_materno", empleadoDeArea.getApellido_materno());
+            cs.setInt("_telefono", empleadoDeArea.getTelefono());
+            cs.setString("_email", empleadoDeArea.getEmail());
+            cs.setString("_tipoDocumento", empleadoDeArea.getTipo_documento().toString());
+            cs.setInt("_numDocumento", empleadoDeArea.getNro_documento());
+            cs.setString("_sexo", String.valueOf(empleadoDeArea.getSexo()));
+            cs.setString("_direccion", empleadoDeArea.getDireccion());
+            cs.setDouble("_salario", empleadoDeArea.getSalario());
+            java.sql.Date sqlDate = new java.sql.Date(empleadoDeArea.getFechaContratacion().getTime());
+            cs.setDate("_fechaContratacion", sqlDate);
+            cs.setString("_tipoContrato", empleadoDeArea.getTipoContrato().toString());
+            cs.setString("_horario", empleadoDeArea.getHorario().toString());
+            cs.setInt("_fid_supervisor",empleadoDeArea.getSupervisor().getId_Persona());
+            cs.setInt("_fid_area",empleadoDeArea.getArea().getIdArea());
+            cs.setString("_puesto",empleadoDeArea.getPuesto().toString());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

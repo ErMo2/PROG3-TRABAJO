@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ClienteDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
+import java.sql.SQLException;
 
 /**
  *
@@ -56,7 +57,30 @@ public class ClienteMySql implements ClienteDao{
 
     @Override
     public int modificar(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_CLIENTE (?,?,?,?,?,?,?,?,?,?,?)}");
+            cs.setInt("_id_persona",cliente.getId_Persona());
+            cs.setInt("_dni", Integer.parseInt(cliente.getDni()));   
+            
+            cs.setString("_sexo", String.valueOf(cliente.getSexo()));
+            cs.setString("_direccion", cliente.getDireccion());
+            
+            cs.setString("_nombre", cliente.getNombre());
+            cs.setString("_apellido_paterno", cliente.getApellido_paterno());
+            cs.setString("_apellido_materno", cliente.getApellido_materno());
+            cs.setString("_telefono", String.valueOf(cliente.getTelefono()));
+            cs.setString("_email", cliente.getEmail());
+            cs.setString("_tipoDocumento", cliente.getTipo_documento().toString());    
+            cs.setString("_numDocumento", String.valueOf(cliente.getNro_documento()));
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

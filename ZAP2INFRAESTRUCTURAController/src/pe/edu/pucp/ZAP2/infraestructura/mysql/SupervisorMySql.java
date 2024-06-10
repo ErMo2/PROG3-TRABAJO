@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.SupervisorDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
-
+import java.sql.SQLException;
 /**
  *
  * @author Alejandro
@@ -68,7 +68,35 @@ public class SupervisorMySql implements SupervisorDao{
 
     @Override
     public int modificar(Supervisor supervisor) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_SUPERVISOR (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            cs.setInt("_id_persona",supervisor.getId_Persona());
+            cs.setString("_nombre", supervisor.getNombre());
+            cs.setString("_apellido_paterno", supervisor.getApellido_paterno());
+            cs.setString("_apellido_materno", supervisor.getApellido_materno());
+            cs.setInt("_telefono", supervisor.getTelefono());
+            cs.setString("_email", supervisor.getEmail());
+            cs.setString("_tipoDocumento", supervisor.getTipo_documento().toString());
+            cs.setInt("_numDocumento", supervisor.getNro_documento());
+            
+            cs.setString("_sexo", String.valueOf(supervisor.getSexo()));
+            cs.setString("_direccion",supervisor.getDireccion());
+            
+            cs.setInt("_fid_area",supervisor.getArea().getIdArea());
+            cs.setDouble("_salario",supervisor.getSalario());
+            java.sql.Date sqlDate = new java.sql.Date(supervisor.getFechaContratacion().getTime());
+            cs.setDate("_fechaContratacion",sqlDate);
+            cs.setString("_tipoContrato",supervisor.getTipoContrato().toString());
+            cs.setString("_horario",supervisor.getHorario().toString());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override

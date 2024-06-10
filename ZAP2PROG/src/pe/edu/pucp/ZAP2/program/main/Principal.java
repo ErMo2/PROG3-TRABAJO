@@ -117,7 +117,18 @@ public class Principal {
 //        Lote lote = new Lote();
 //        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,lote);
 //        AlmacenDao daoAlmacen = new AlmacenMySql();
+//        Sucursal sucursal = new Sucursal(1,"San Borja",20,"Tottus_San_Borja",null,null,null);
+//        SucursalDao daoSucursal = new SucursalMySql();
+//        daoSucursal.insertar(sucursal);
+//        sucursal.setNombre("AQUI");
+//        daoSucursal.modificar(sucursal);
 //        daoAlmacen.insertar(almacen);
+//        sucursal.setId_sucursal(1);
+//        Almacen almacen = new Almacen(0,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,null);
+//        daoAlmacen.insertar(almacen); 
+//        almacen.setId_almacen(1); 
+//        almacen.setCapacidadMaximaProductos(777);
+//        daoAlmacen.modificar(almacen); 
 //        
         /*==============*/
         /*=== Cliente ==*/
@@ -134,6 +145,9 @@ public class Principal {
         /*=================*/
 //        SupervisorDao daoSupervisor = new SupervisorMySql();
 //        daoSupervisor.insertar(supervisor);
+//        supervisor.setId_Persona(6);
+//        supervisor.setNombre("AQUI");
+//        daoSupervisor.modificar(supervisor);
 
         /*=============*/
         /*=== Cajero ==*/
@@ -151,6 +165,17 @@ public class Principal {
 //                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
 //                TipoDocumento.DNI, 75607208);
 //        daoEmpleadoDeArea.insertar(empDeArea);
+
+//        Supervisor supervisor = new Supervisor(5,null,null, 0, 456.5, fecha_Contratacion, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
+//                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
+//                TipoDocumento.DNI, 75607208);
+//        supervisor.setId_Persona(6);
+//        EmpleadoDeArea emplArea = new EmpleadoDeArea(supervisor,TipoPuesto.Consultor,1,2000,fecha_Contratacion,TipoContrato.ContratoEspecial,TurnosHorario.NOCHE,area);
+//        EmpleadoDeAreaDao daoEmpArae = new EmpleadoDeAreaMySql();
+//        emplArea.setId_Persona(11);
+//        emplArea.setTipo_documento(TipoDocumento.DNI);
+//        emplArea.setPuesto(TipoPuesto.Empacador);
+//        daoEmpArae.modificar(emplArea);
 
         /*========================*/
         /*==== CuentaUsuario =====*/
@@ -245,6 +270,62 @@ public class Principal {
         //Ojo: Cómo hariamos para insertar un movimiento que tenga relación con solo 1 almacen y que no salga ERROR
         /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
         /*============================*/
+        
+        
+        /*===============*/
+        /*==== Boleta de Venta ====*/
+        /*==============*/ 
+//        Supervisor supervisor = new Supervisor(5,null,null, 0, 456.5, fecha_Contratacion, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
+//                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
+//                TipoDocumento.DNI, 75607208);
+//        supervisor.setIdEmpleado(6);
+//        supervisor.setId_Persona(1);
+//        
+//        Banco banco = new Banco(1,"BBVA");
+//        
+//        Tarjeta tarjeta = new Tarjeta();
+//        tarjeta.setCodTarjeta(777);
+//        tarjeta.setIdTarjeta(1);
+//        tarjeta.setBanco(banco);
+//        tarjeta.setTipoTarjeta(Tipo_Tarjeta.DEBITO);
+//        TarjetaDao daoTarjeta = new TarjetaMySql();
+//        daoTarjeta.insertar(tarjeta);
+//        
+//        Moneda moneda = new Moneda();
+//        moneda.setIdMoneda(1);
+//        moneda.setAbreviacion("PEN");
+//        moneda.setNombre("Soles");
+//        MonedaDao daoMoneda = new MonedaMySql();
+//        daoMoneda.insertar(moneda);
+//        
+//        Boleta_Venta bol_venta = new Boleta_Venta(1,"CAMBIAR",18,supervisor,1,200,tarjeta,supervisor);
+//        bol_venta.setMoneda(moneda);
+//        bol_venta.setFecha_emision(fecha_Contratacion);
+//        Boleta_VentaDao daoBol_Venta = new Boleta_VentaMySql();
+//        daoBol_Venta.insertar(bol_venta);
+//        bol_venta.setDetalles("AQUI");
+//        daoBol_Venta.modificar(bol_venta); // FALTA PROBAR, ERROR EN EL PROCEDURE
+
+          /*===============*/
+        /*==== Cuenta Usuario ====*/
+        /*==============*/   
+//        CuentaUsuario cuenta = new CuentaUsuario(1,"PRUEBA_USUARIO","PRUEBA_CONTRA",true,cliente);
+//        CuentaUsuarioDao daoCuenta = new CuentaUsuarioMySql();
+//        cuenta.setIdCuenta(5);
+//        cuenta.setPersonaNatural(cliente);
+//        daoCuenta.insertar(cuenta);
+//        cuenta.setUsuario("AQUI");
+//        daoCuenta.modificar(cuenta);
+
+          /*===============*/
+        /*==== Banco ====*/
+        /*==============*/   
+//        Banco banco = new Banco(1,"BBVA");
+//        BancoDao daoBanco = new BancoMySql();
+//        daoBanco.insertar(banco);
+//        banco.setNombre("MIFARMA");
+//        banco.setIdBanco(2);
+//        daoBanco.modificar(banco);
  }
     
 }

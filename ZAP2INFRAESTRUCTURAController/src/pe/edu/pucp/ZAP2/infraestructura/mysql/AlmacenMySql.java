@@ -8,11 +8,13 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.CallableStatement;
+import java.sql.SQLException;
 
 import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AlmacenDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Almacen;
+
 /**
  *
  * @author User
@@ -49,7 +51,22 @@ public class AlmacenMySql implements AlmacenDao{
 
     @Override
     public int modificar(Almacen almacen) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call MODIFICAR_ALMACEN (?,?,?,?,?)}");
+            cs.setInt("_id_almacen",almacen.getId_almacen());
+            cs.setInt("_fid_surcursal",almacen.getSucursal().getId_sucursal());
+            cs.setString("_tipoAlmacen",almacen.getTipoAlmacen().toString());
+            cs.setDouble("_capacidadMaximaProductos",almacen.getCapacidadMaximaProductos());
+            cs.setDouble("_capacidadActualProductos",almacen.getCapacidadActualProductos());
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
