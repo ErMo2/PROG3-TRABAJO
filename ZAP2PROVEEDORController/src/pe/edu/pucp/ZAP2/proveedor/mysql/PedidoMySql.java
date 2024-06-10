@@ -4,7 +4,12 @@
  */
 package pe.edu.pucp.ZAP2.proveedor.mysql;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
+import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.proveedor.dao.PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
 
@@ -14,9 +19,31 @@ import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
  */
 public class PedidoMySql implements PedidoDao{
 
+    private Connection con;
+    private Statement st;
+    private ResultSet rs;
+    private CallableStatement cs;
     @Override
     public int insertar(Pedido pedido) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call INSERTAR_PEDIDO"
+                    +"(?,?,?,?,?)}");
+            cs.registerOutParameter("_id_pedido", java.sql.Types.INTEGER);
+            cs.setDouble("_saldo", pedido.getSaldo());
+            cs.setString("_estado", pedido.getEstado().toString());
+            java.sql.Date fechaPedido = new java.sql.Date(pedido.getFecha_Pedido().getTime()); 
+            cs.setDate("_fecha_pedido", fechaPedido);
+            cs.setDouble("_total", pedido.getTotal());
+            resultado = cs.executeUpdate();
+            pedido.setId_pedido(cs.getInt("_id_pedido"));
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
     }
 
     @Override
