@@ -21,4 +21,49 @@ ref="http://localhost:8080/ZAP2WS/MonedaWS?WSDL" />
     <contractRef 
 xmlns="http://schemas.xmlsoap.org/disco/scl/" 
 ref="http://localhost:8080/ZAP2WS/TarjetaWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/AlmacenWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/AreaWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/CajeroWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/ClienteWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/CuentaUsuarioWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/ElectrodomesticosWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/EmpleadoDeAreaWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/LoteWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/MovimientoLoteWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/ProductoPerecibleWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/ProductoPrecioWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/RopaWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/SucursalWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/SupervisorWS?WSDL" />
 </discovery>
