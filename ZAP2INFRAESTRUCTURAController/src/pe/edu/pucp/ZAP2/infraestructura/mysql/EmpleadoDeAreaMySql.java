@@ -13,6 +13,12 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.EmpleadoDeAreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.EmpleadoDeArea;
 import java.sql.SQLException;
+import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoPuesto;
+import pe.edu.pucp.ZAP2.infraestructura.model.TurnosHorario;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 
 /**
  *
@@ -113,7 +119,40 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
 
     @Override
     public ArrayList<EmpleadoDeArea> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<EmpleadoDeArea> empleados =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_EMPLEADODEAREA"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                EmpleadoDeArea empleado = new EmpleadoDeArea();
+                
+                empleado.setId_Persona(rs.getInt("id_persona"));
+                empleado.setIdEmpleado(rs.getInt("id_persona"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellido_paterno(rs.getString("apellido_paterno"));
+                empleado.setApellido_materno(rs.getString("apellido_materno"));
+                empleado.setSexo(rs.getString("sexo").charAt(0));
+                empleado.setSalario(rs.getDouble("salario"));
+                String puesto = rs.getString("puesto");
+                TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
+                empleado.setPuesto(tipopuesto);
+                Supervisor supervisor = new Supervisor();
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                
+                empleados.add(empleado);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return empleados;
+//throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

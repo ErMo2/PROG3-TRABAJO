@@ -102,7 +102,31 @@ public class ClienteMySql implements ClienteDao{
 
     @Override
     public ArrayList<Cliente> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Cliente> clientes =  new ArrayList<>();
+        try{
+            
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_CLIENTE( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Cliente cliente = new Cliente();
+                cliente.setId_cliente(rs.getInt("id_persona"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido_paterno(rs.getString("apellido_paterno"));
+                cliente.setApellido_materno(rs.getString("apellido_materno"));
+                
+                cliente.setSexo(rs.getString("sexo").charAt(0));
+                cliente.setDni(String.valueOf(rs.getInt("dni")));
+                clientes.add(cliente);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return clientes;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

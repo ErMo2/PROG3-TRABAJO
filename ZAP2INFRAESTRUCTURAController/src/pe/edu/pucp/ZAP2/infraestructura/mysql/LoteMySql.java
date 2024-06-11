@@ -13,6 +13,8 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.LoteDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Lote;
 import java.sql.SQLException;
+import pe.edu.pucp.ZAP2.infraestructura.model.Almacen;
+import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
 
 /**
  *
@@ -87,7 +89,38 @@ public class LoteMySql implements LoteDao{
 
     @Override
     public ArrayList<Lote> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Lote> lotes =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+
+            cs = con.prepareCall("{call LISTAR_LOTE"
+                    +"( )}");
+
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Lote lote = new Lote();
+                lote.setIdLote(rs.getInt("id_lote"));
+                //Pedido
+                lote.setIdPedido(rs.getInt("fid_pedido"));
+                Almacen almacen = new Almacen();
+                almacen.setId_almacen(rs.getInt("fid_almacen"));
+                lote.setAlmacen(almacen);
+                Producto producto = new Producto() ;
+                producto.setIdProducto(rs.getInt("fid_producto"));
+                lote.setProducto(producto);
+
+                lote.setStockActual(rs.getInt("stockInicial"));
+                lote.setStockActual(rs.getInt("stockActual"));
+                lotes.add(lote);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return lotes;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

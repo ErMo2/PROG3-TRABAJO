@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.DescuentoDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Descuento;
+import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
 
 /**
  *
@@ -79,7 +80,32 @@ public class DescuentoMySql implements DescuentoDao{
 
     @Override
     public ArrayList<Descuento> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Descuento> ld =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_DESCUENTO"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Descuento d = new Descuento();
+                d.setIdDescuento(rs.getInt("id_descuento"));
+                ProductoPrecio prodPre = new ProductoPrecio();
+                prodPre.setIdProductoPrecio(rs.getInt("fid_productoPrecio"));
+                d.setDescuentoAplicado(rs.getDouble("descuentoAplicado"));
+                d.setFechaInicial(rs.getDate("fechaInicial"));
+                d.setFechaFinal(rs.getDate("fechaFinal"));
+                
+                ld.add(d);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return ld;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

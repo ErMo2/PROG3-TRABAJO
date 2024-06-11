@@ -8,7 +8,7 @@ package pe.edu.pucp.ZAP2.infraestructura.model;
  *
  * @author User
  */
-public abstract class Producto {
+public class Producto {
     private int idProducto;
     private String nombre;
     private String descripcion;
