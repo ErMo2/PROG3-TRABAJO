@@ -23,8 +23,8 @@ public class LineaDocWS {
      * This is a sample web service operation
      */
     private LineaDocDao daoLineaDoc;
-    @WebMethod(operationName = "insertarFacturaVenta")
-    public int insertarFacturaVenta(@WebParam(name = "lineaDoc") LineaDoc lineaDoc) {
+    @WebMethod(operationName = "insertarLineaDoc")
+    public int insertarLineaDoc(@WebParam(name = "lineaDoc") LineaDoc lineaDoc) {
         int resultado = 0;
         try{
             daoLineaDoc = new LineaDocMySql();
@@ -35,8 +35,8 @@ public class LineaDocWS {
         return resultado;
     }
     
-    @WebMethod(operationName = "modificarFacturaVenta")
-    public int modificarFacturaVenta(@WebParam(name = "lineaDoc") LineaDoc lineaDoc) {
+    @WebMethod(operationName = "modificarLineaDoc")
+    public int modificarLineaDoc(@WebParam(name = "lineaDoc") LineaDoc lineaDoc) {
         int resultado = 0;
         try{
             daoLineaDoc = new LineaDocMySql();
@@ -47,8 +47,8 @@ public class LineaDocWS {
         return resultado;
     }
     
-    @WebMethod(operationName = "eliminarFacturaVenta")
-    public int eliminarFacturaVenta(@WebParam(name = "idLineaDoc") int idLineaDoc) {
+    @WebMethod(operationName = "eliminarLineaDoc")
+    public int eliminarLineaDoc(@WebParam(name = "idLineaDoc") int idLineaDoc) {
         int resultado = 0;
         try{
             daoLineaDoc = new LineaDocMySql();

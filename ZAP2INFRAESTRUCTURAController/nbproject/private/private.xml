@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/MovimientoLoteMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ElectrodomesticosMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/AlmacenMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/EmpleadoDeAreaMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/AreaMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ClienteMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/LoteMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/CuentaUsuarioMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/DescuentoMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/CajeroMySql.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

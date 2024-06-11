@@ -21,6 +21,7 @@ public class BancoWS {
      private BancoDao daoBanco;
     /**
      * This is a sample web service operation
+     * @param banco
      */
     @WebMethod(operationName = "insertarBanco")
     public int insertarBanco(@WebParam(name = "banco") Banco banco) {
