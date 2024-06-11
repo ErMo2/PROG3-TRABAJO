@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.documentos.dao.BancoDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
@@ -115,9 +116,9 @@ public class Principal {
 //        Date fecha1 = formato.parse(fechaStr);
 //        Date fecha2 = formato.parse(fechaStr2);
 //        
-//        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
-//                1300.4, "Pepe's shop",
-//                null, null, null);
+        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+                1300.4, "Pepe's shop",
+                null, null, null);
 //        
 //        Area area = new Area(1, "Zona de alimentos",sucursal, null);
 //        
@@ -131,53 +132,72 @@ public class Principal {
 //        daoSucursal.insertar(sucursalB);
 
         /*######## Modificar ########*/
-//        Sucursal sucursalB = new Sucursal(1,"San Borja",20,"Tottus_San_Borja",null,null,null);
+//        Sucursal sucursalB = new Sucursal(2,"San Borja",20,"Tottus_San_Borja",null,null,null);
 //        sucursalB.setNombre("AQUISITO");
 //        daoSucursal.modificar(sucursalB);
         
         /*######## Eliminar #########*/
+//        daoSucursal.eliminar(1);
         
         /*########## Listar #########*/
-        
-
+//        ArrayList<Sucursal> sucursales;
+//        sucursales = daoSucursal.listarTodas();
+//        for(Sucursal sucursalLB : sucursales){
+//            System.out.println("id: " + sucursalLB.getId_sucursal() + " Direccion: " + sucursalLB.getDireccion() + " Nombre: " + sucursalLB.getNombre() + "\n");
+//        }
+        /********FALTA IMPLEMENTAR LISTAR*****/
         
         /*======================================================================*/
         /*================================ Area ================================*/
         /*======================================================================*/
-//        AreaDao daoArea = new AreaMySql();
+        AreaDao daoArea = new AreaMySql();
         
         /*######### Insertar ########*/
-//        Area areaB = new Area(1, "Zona de alimentos",sucursal, null);
+//        Area areaB = new Area(1, "Zona de Electrodomesticos",sucursal, null);
 //        daoArea.insertar(areaB);
         
         /*######## Modificar ########*/
+//        Area areaB = new Area(2, "CAMBIO",sucursal, null);
+//        daoArea.modificar(areaB);
         
         /*######## Eliminar #########*/
+//        daoArea.eliminar(1);
         
         /*########## Listar #########*/
-        
+//        ArrayList<Area> areas = new ArrayList();
+//        areas = daoArea.listarTodas();
+//        for(Area area : areas){
+//            System.out.println("ID: " + area.getIdArea() + " Nombre: " + area.getNombre() + "\n");
+//        }
+        /****FALTA IMPLEMENTAR LISTAR*********/
         /*======================================================================*/
         /*============================== Almacen ===============================*/
         /*======================================================================*/
 //        AlmacenDao daoAlmacen = new AlmacenMySql();
         
         /*######### Insertar ########*/
-//        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENCOMUN,500.0,0.0,null,true,sucursal,null);
+//        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENSECO,500.0,0.0,null,true,sucursal,null);
 //        daoAlmacen.insertar(almacen);
         
         /*######## Modificar ########*/
-//        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENCOMUN,856.0,0.0,null,true,sucursal,null);
+//        Almacen almacen = new Almacen(2,TipoAlmacen.REFRIGERADORA,856.0,0.0,null,true,sucursal,null);
 //        almacen.setCapacidadMaximaProductos(560);
 //        daoAlmacen.modificar(almacen); 
         
         /*######## Eliminar #########*/
-        
+//        daoAlmacen.eliminar(1);
+
         /*########## Listar #########*/
- 
+//        ArrayList<Almacen> almcaenes = new ArrayList<Almacen>();
+//        almcaenes = daoAlmacen.listarTodos();
+//        for(Almacen almacen: almcaenes){
+//            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos());
+//        }
+        /****FALTA IMPLEMENTAR LISTAR******/
         /*======================================================================*/
         /*============================== Cliente ===============================*/
         /*======================================================================*/
-//        ClienteDao daoCliente = new ClienteMySql();
+        ClienteDao daoCliente = new ClienteMySql();
 
         /*######### Insertar ########*/
 //        Cliente cliente = new Cliente(1,"12345678", 0, 'M', "su jato", null, 1, 
@@ -186,9 +206,16 @@ public class Principal {
 //        daoCliente.insertar(cliente);
         
         /*######## Modificar ########*/
-        
+//        Cliente cliente = new Cliente(17,"9991", 0, 'M', "su jato", null, 1, 
+//                "SoyUnAdministrador", "Apellido1", "Apellido2", 965456534, "email@gmail.com",
+//                TipoDocumento.DNI, 12432544);
+//        cliente.setId_Persona(17);
+//        cliente.setDni("987345");
+//        daoCliente.modificar(cliente);
+
         /*######## Eliminar #########*/
-        
+//        daoCliente.eliminar(17);
+
         /*########## Listar #########*/   
 
         /*======================================================================*/
