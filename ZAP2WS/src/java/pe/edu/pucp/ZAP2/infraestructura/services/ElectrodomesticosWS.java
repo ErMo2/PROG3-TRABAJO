@@ -7,6 +7,10 @@ package pe.edu.pucp.ZAP2.infraestructura.services;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.util.ArrayList;
+import pe.edu.pucp.ZAP2.infraestructura.dao.ElectrodomesticosDao;
+import pe.edu.pucp.ZAP2.infraestructura.model.Electrodomesticos;
+import pe.edu.pucp.ZAP2.infraestructura.mysql.ElectrodomesticosMySql;
 
 /**
  *
@@ -18,8 +22,49 @@ public class ElectrodomesticosWS {
     /**
      * This is a sample web service operation
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+     private ElectrodomesticosDao daoElectrodomesticos;
+    @WebMethod(operationName = "insertarElectrodomestico")
+    public int insertarElectrodomestico(@WebParam(name = "electrodomestico") Electrodomesticos electrodomestico) {
+        int resultado = 0;
+        try{
+            daoElectrodomesticos = new ElectrodomesticosMySql();
+            resultado = daoElectrodomesticos.insertar(electrodomestico);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "modificarElectrodomestico")
+    public int modificarElectrodomestico(@WebParam(name = "electrodomestico") Electrodomesticos electrodomestico) {
+        int resultado = 0;
+        try{
+            daoElectrodomesticos = new ElectrodomesticosMySql();
+            resultado = daoElectrodomesticos.modificar(electrodomestico);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "eliminarElectrodomestico")
+    public int eliminarElectrodomestico(@WebParam(name = "idElectrodomestico") int idElectrodomestico) {
+        int resultado = 0;
+        try{
+            daoElectrodomesticos = new ElectrodomesticosMySql();
+            resultado = daoElectrodomesticos.eliminar(idElectrodomestico);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "listarElectrodomesticos")
+    public ArrayList<Electrodomesticos> listarElectrodomesticos() {
+        ArrayList<Electrodomesticos> electrodomesticos = null;
+        try{
+            daoElectrodomesticos = new ElectrodomesticosMySql();
+            electrodomesticos = daoElectrodomesticos.listarTodos();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return electrodomesticos;
     }
 }

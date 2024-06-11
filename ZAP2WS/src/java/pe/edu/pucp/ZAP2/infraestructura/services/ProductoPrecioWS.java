@@ -7,6 +7,10 @@ package pe.edu.pucp.ZAP2.infraestructura.services;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.util.ArrayList;
+import pe.edu.pucp.ZAP2.infraestructura.dao.ProductoPrecioDao;
+import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
+import pe.edu.pucp.ZAP2.infraestructura.mysql.ProductoPrecioMySql;
 
 /**
  *
@@ -15,11 +19,49 @@ import jakarta.jws.WebParam;
 @WebService(serviceName = "ProductoPrecioWS", targetNamespace = "ZAP2WS")
 public class ProductoPrecioWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    private ProductoPrecioDao daoProductoPrecio;
+    @WebMethod(operationName = "insertarProductoPrecio")
+    public int insertarProductoPrecio(@WebParam(name = "productoPrecio") ProductoPrecio productoPrecio) {
+        int resultado = 0;
+        try{
+            daoProductoPrecio = new ProductoPrecioMySql();
+            resultado = daoProductoPrecio.insertar(productoPrecio);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "modificarProductoPrecio")
+    public int modificarProductoPrecio(@WebParam(name = "productoPrecio") ProductoPrecio productoPrecio) {
+        int resultado = 0;
+        try{
+            daoProductoPrecio = new ProductoPrecioMySql();
+            resultado = daoProductoPrecio.modificar(productoPrecio);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "eliminarProductoPrecio")
+    public int eliminarProductoPrecio(@WebParam(name = "idProductoPrecio") int idProductoPrecio) {
+        int resultado = 0;
+        try{
+            daoProductoPrecio = new ProductoPrecioMySql();
+            resultado = daoProductoPrecio.eliminar(idProductoPrecio);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "listarProductoPrecio")
+    public ArrayList<ProductoPrecio> listarProductoPrecio() {
+        ArrayList<ProductoPrecio> prodPere = null;
+        try{
+            daoProductoPrecio = new ProductoPrecioMySql();
+            prodPere = daoProductoPrecio.listarTodos();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return prodPere;
     }
 }
