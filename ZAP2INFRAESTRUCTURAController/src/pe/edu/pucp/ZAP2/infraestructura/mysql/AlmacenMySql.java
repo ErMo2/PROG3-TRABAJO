@@ -43,7 +43,7 @@ public class AlmacenMySql implements AlmacenDao{
             resultado = cs.executeUpdate();
             
             almacen.setId_almacen(cs.getInt("_id_almacen"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
              try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}  
