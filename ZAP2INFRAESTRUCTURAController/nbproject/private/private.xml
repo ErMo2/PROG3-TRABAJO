@@ -3,7 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/hteio/OneDrive/Documentos/PUCP/Programacion%20-%203/PROG3-TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/CuentaUsuarioMySql.java</file>
+=======
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/MovimientoLoteMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/SupervisorMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ProductoPrecioMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/RopaMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/EmpleadoDeAreaMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ProductosParaElCuidadoPersonalYDelHogarMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/AreaMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/LoteMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/SucursalMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/CajeroMySql.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ProductoPerecibleMySql.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
