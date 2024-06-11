@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ProductosParaElCuidadoPersonalYDelHogarDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.ProductosParaElCuidadoPersonalYDelHogar;
+import pe.edu.pucp.ZAP2.infraestructura.model.UnidadDeMedida;
 
 /**
  *
@@ -87,7 +88,38 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
 
     @Override
     public ArrayList<ProductosParaElCuidadoPersonalYDelHogar> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<ProductosParaElCuidadoPersonalYDelHogar> Productos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PCH"
+                    +"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                ProductosParaElCuidadoPersonalYDelHogar producto = new ProductosParaElCuidadoPersonalYDelHogar();
+                producto.setIdProducto(rs.getInt("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
+                producto.setDescripcion(rs.getString("descripcion")); 
+                
+               
+                
+                String tipoUnidad = rs.getString("unidad_de_medida");
+                
+                UnidadDeMedida unidad = UnidadDeMedida.valueOf(tipoUnidad);
+                producto.setUnidadMedida(unidad);
+                
+                producto.setTipo(rs.getString("tipo")); 
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return Productos;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

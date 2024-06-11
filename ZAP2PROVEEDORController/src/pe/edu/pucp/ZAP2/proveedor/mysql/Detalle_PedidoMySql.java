@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.proveedor.dao.Detalle_PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.model.Detalle_Pedido;
+import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
 
 /**
  *
@@ -84,7 +85,34 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
 
     @Override
     public ArrayList<Detalle_Pedido> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Detalle_Pedido> detallesArray =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_DETALLE_PEDIDO"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Detalle_Pedido detalles = new Detalle_Pedido();
+                detalles.setId_DetallePedido(rs.getInt("id_DetallePedido"));
+                Pedido ped = new Pedido();
+                ped.setId_pedido(rs.getInt("fid_pedido"));
+                detalles.setPedido(ped);
+                detalles.setPrecioTotal(rs.getDouble("precioTotal"));
+                detalles.setPrecioUnitario(rs.getDouble("precioUnitario"));
+                detalles.setSubtotal(rs.getDouble("subtotal"));
+                
+                detallesArray.add(detalles);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return detallesArray;
+
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

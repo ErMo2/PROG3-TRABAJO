@@ -13,6 +13,10 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.SupervisorDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
 import java.sql.SQLException;
+import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
+import pe.edu.pucp.ZAP2.infraestructura.model.TurnosHorario;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 /**
  *
  * @author Alejandro
@@ -118,7 +122,52 @@ public class SupervisorMySql implements SupervisorDao{
 
     @Override
     public ArrayList<Supervisor> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Supervisor> supervisores =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_SUPERVISOR"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Supervisor supervisor = new Supervisor();
+                supervisor.setId_Persona(rs.getInt("id_persona"));
+                supervisor.setIdEmpleado(rs.getInt("id_persona"));
+                supervisor.setNombre(rs.getString("nombre"));
+                supervisor.setApellido_paterno(rs.getString("apellido_paterno"));
+                supervisor.setApellido_materno(rs.getString("apellido_materno"));
+                supervisor.setTelefono(rs.getInt("telefono"));
+                supervisor.setEmail(rs.getString("email"));
+                String aux = rs.getString("tipoDocumento");
+                TipoDocumento doc = TipoDocumento.valueOf(aux);
+                supervisor.setTipo_documento(doc);
+                supervisor.setNro_documento(rs.getInt("numDocumento"));
+                supervisor.setSexo(rs.getString("sexo").charAt(0));
+                supervisor.setDireccion(rs.getString("direccion"));
+                supervisor.setSalario(rs.getDouble("salario"));
+                supervisor.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String aux2 = rs.getString("tipoContrato");
+                TipoContrato tipCont = TipoContrato.valueOf(aux2);
+                supervisor.setTipoContrato(tipCont);
+                String aux3 = rs.getString("horario");
+                TurnosHorario horario = TurnosHorario.valueOf(aux3);
+                supervisor.setHorario(horario);
+                supervisor.setNumempleados(rs.getInt("num_empleados"));
+                Area area = new Area();
+                area.setIdArea(rs.getInt("fid_area"));
+                supervisor.setArea(area);
+                
+                supervisores.add(supervisor);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return supervisores;
+
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

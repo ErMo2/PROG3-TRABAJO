@@ -20,8 +20,8 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.CajeroMySql;
 public class CajeroWS {
     
     private CajeroDao daoCajero;
-    @WebMethod(operationName = "insertarArea")
-    public int insertarArea(@WebParam(name = "cajero") Cajero cajero) {
+    @WebMethod(operationName = "insertarCajero")
+    public int insertarCajero(@WebParam(name = "cajero") Cajero cajero) {
         int resultado = 0;
         try{
             daoCajero = new CajeroMySql();
@@ -31,8 +31,8 @@ public class CajeroWS {
         }
         return resultado;
     }
-    @WebMethod(operationName = "modificarArea")
-    public int modificarArea(@WebParam(name = "cajero") Cajero cajero) {
+    @WebMethod(operationName = "modificarCajero")
+    public int modificarCajero(@WebParam(name = "cajero") Cajero cajero) {
         int resultado = 0;
         try{
             daoCajero = new CajeroMySql();
@@ -42,8 +42,8 @@ public class CajeroWS {
         }
         return resultado;
     }
-    @WebMethod(operationName = "eliminarArea")
-    public int eliminarArea(@WebParam(name = "idCajero") int idCajero) {
+    @WebMethod(operationName = "eliminarCajero")
+    public int eliminarCajero(@WebParam(name = "idCajero") int idCajero) {
         int resultado = 0;
         try{
             daoCajero = new CajeroMySql();

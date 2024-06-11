@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.personas.dao.PersonaJuridicaDao;
 import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
+import pe.edu.pucp.ZAP2.personas.model.TipoEntidad;
 
 /**
  *
@@ -107,7 +109,33 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
 
     @Override
     public ArrayList<PersonaJuridica> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<PersonaJuridica> supervisores =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PERSONA_JURIDICA"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                PersonaJuridica supervisor = new PersonaJuridica();
+                supervisor.setId_Persona(rs.getInt("id_persona"));
+                supervisor.setNombre(rs.getString("nombre"));
+                supervisor.setApellido_paterno(rs.getString("apellido_paterno"));
+                supervisor.setApellido_materno(rs.getString("apellido_materno"));
+                TipoEntidad tip = TipoEntidad.valueOf(rs.getString("tipoEntidad"));
+                supervisor.setTipoEntidad(tip);
+                supervisor.setDireccionLegal(rs.getString("direccionLegal"));
+                
+                supervisores.add(supervisor);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return supervisores;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

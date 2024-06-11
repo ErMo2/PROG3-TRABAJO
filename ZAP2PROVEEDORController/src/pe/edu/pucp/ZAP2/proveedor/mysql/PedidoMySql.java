@@ -10,8 +10,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.SQLException;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.proveedor.dao.PedidoDao;
+import pe.edu.pucp.ZAP2.proveedor.model.Estado_Pedido;
 import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
 
 /**
@@ -87,7 +89,33 @@ public class PedidoMySql implements PedidoDao{
 
     @Override
     public ArrayList<Pedido> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Pedido> pedidos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PEDIDO"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Pedido ped = new Pedido();
+                ped.setId_pedido(rs.getInt("id_pedido"));
+                ped.setSaldo(rs.getDouble("saldo"));
+                Estado_Pedido estPed = Estado_Pedido.valueOf("estado");
+                ped.setEstado(estPed);
+                Date fecha = rs.getDate("fecha_pedido");
+                ped.setFecha_Pedido(fecha);
+                ped.setTotal(rs.getDouble("total"));
+                
+                pedidos.add(ped);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return pedidos;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.RopaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Ropa;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoRopa;
 
 /**
  *
@@ -51,7 +52,7 @@ public class RopaMySql implements RopaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_ROPA"
+            cs = con.prepareCall("{call MODIFICAR_ROPA"
                     +"(?,?,?,?,?)}");
             cs.setInt("_id_ropa", ropa.getIdProducto());
             cs.setString("_nombre", ropa.getNombre());
@@ -86,7 +87,33 @@ public class RopaMySql implements RopaDao{
 
     @Override
     public ArrayList<Ropa> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Ropa> ropas =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_ROPA"
+                    +"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Ropa ropa = new Ropa();
+                ropa.setIdProducto(rs.getInt("id_producto"));
+                ropa.setNombre(rs.getString("nombre"));
+                ropa.setDescripcion(rs.getString("descripcion"));
+                ropa.setMaterial(rs.getString("material"));
+                String tipoRopa = rs.getString("tipo");
+                TipoRopa tipo = TipoRopa.valueOf(tipoRopa);
+                ropa.setTipo(tipo);
+                ropas.add(ropa);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return ropas;
+//throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
