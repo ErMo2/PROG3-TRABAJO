@@ -8,6 +8,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.time.LocalDate;
+import pe.edu.pucp.ZAP2.documentos.dao.BancoDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
@@ -20,6 +21,7 @@ import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
 import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.mySql.BancoMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Boleta_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Factura_VentaMySql;
@@ -125,13 +127,13 @@ public class Principal {
 //        SucursalDao daoSucursal = new SucursalMySql();
         
         /*######### Insertar ########*/
-//        Sucursal sucursal = new Sucursal(1,"San Borja",20,"Tottus_San_Borja",null,null,null);
-//        daoSucursal.insertar(sucursal);
+//        Sucursal sucursalB = new Sucursal(1,"San Borja",20,"Tottus_San_Borja",null,null,null);
+//        daoSucursal.insertar(sucursalB);
 
         /*######## Modificar ########*/
-//        Sucursal sucursal = new Sucursal(1,"San Borja",20,"Tottus_San_Borja",null,null,null);
-//        sucursal.setNombre("AQUI");
-//        daoSucursal.modificar(sucursal);
+//        Sucursal sucursalB = new Sucursal(1,"San Borja",20,"Tottus_San_Borja",null,null,null);
+//        sucursalB.setNombre("AQUISITO");
+//        daoSucursal.modificar(sucursalB);
         
         /*######## Eliminar #########*/
         
@@ -145,7 +147,8 @@ public class Principal {
 //        AreaDao daoArea = new AreaMySql();
         
         /*######### Insertar ########*/
-//        daoArea.insertar(area);
+//        Area areaB = new Area(1, "Zona de alimentos",sucursal, null);
+//        daoArea.insertar(areaB);
         
         /*######## Modificar ########*/
         
@@ -164,7 +167,7 @@ public class Principal {
         
         /*######## Modificar ########*/
 //        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENCOMUN,856.0,0.0,null,true,sucursal,null);
-//        almacen.setCapacidadMaximaProductos(800);
+//        almacen.setCapacidadMaximaProductos(560);
 //        daoAlmacen.modificar(almacen); 
         
         /*######## Eliminar #########*/
@@ -175,19 +178,18 @@ public class Principal {
         /*============================== Cliente ===============================*/
         /*======================================================================*/
 //        ClienteDao daoCliente = new ClienteMySql();
+
         /*######### Insertar ########*/
 //        Cliente cliente = new Cliente(1,"12345678", 0, 'M', "su jato", null, 1, 
 //                "SoyUnCliente", "Apellido1", "Apellido2", 965456534, "email@gmail.com",
 //                TipoDocumento.DNI, 12432544);
+//        daoCliente.insertar(cliente);
         
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
         
-        /*########## Listar #########*/
-
-
-//        daoCliente.insertar(cliente);
+        /*########## Listar #########*/   
 
         /*======================================================================*/
         /*============================= Supervisor =============================*/
@@ -214,6 +216,10 @@ public class Principal {
         /*======================================================================*/
         /*=============================== Cajero ===============================*/
         /*======================================================================*/
+//        Supervisor supervisor = new Supervisor();
+//        supervisor.setIdEmpleado(6);
+//        supervisor.setId_Persona(6);
+//        
 //        CajeroDao daoCajero = new CajeroMySql();
         
         /*######### Insertar ########*/
@@ -250,7 +256,7 @@ public class Principal {
 //        empDeArea.setId_Persona(11);
 //        empDeArea.setIdEmpleado(11);
 //        empDeArea.setTipo_documento(TipoDocumento.DNI);
-//        empDeArea.setPuesto(TipoPuesto.Empacador);
+//        empDeArea.setPuesto(TipoPuesto.Consultor);
 //        daoEmpleadoDeArea.modificar(empDeArea);
         
         /*######## Eliminar #########*/
@@ -328,8 +334,8 @@ public class Principal {
         /*========================= ProductoPerecible ==========================*/
         /*======================================================================*/
 //        ProductoPerecibleDao daoProdPerec = new ProductoPerecibleMySql();
-//        /*######### Insertar ########*/
-//        ProductoPerecible prodPerecible = new ProductoPerecible(fecha, TipoProductoPerecible.DESPENSA, UnidadDeMedida.UNIDAD, 
+        /*######### Insertar ########*/
+//        ProductoPerecible prodPerecible = new ProductoPerecible(fecha1, TipoProductoPerecible.DESPENSA, UnidadDeMedida.UNIDAD, 
 //                0, "Lata atún", "Lata Atún Florida En Trozos", null, 1, null);
 //        daoProdPerec.insertar(prodPerecible);
         
@@ -362,7 +368,7 @@ public class Principal {
 //        RopaDao daoRopa = new RopaMySql();
         
         /*######### Insertar ########*/
-//        Ropa ropa = new Ropa("invierno", "algodon", TipoRopa.CALZADO, 0, "Jeans", "skinny jeans", null, 1, null);
+//        Ropa ropa = new Ropa("invierno", "algodon", TipoRopa.ROPAHOMBRE, 0, "Jeans", "skinny jeans", null, 1, null);
 //        daoRopa.insertar(ropa);
         
         /*######## Modificar ########*/
@@ -462,127 +468,124 @@ public class Principal {
 //        daoBol_Venta.eliminar(23);
         
         /*########## Listar #########*/
-        
-        /*
-        
-        LOS PUSE ENTENDIBLE HASTA ACÁ (SOY LEONARDO)
-        
-        */
-
-        /*======================================================================*/
-        /*============================ CuentaUsuario ===========================*/
-        /*======================================================================*/
-        /*######### Insertar ########*/
-        
-        /*######## Modificar ########*/
-        
-        /*######## Eliminar #########*/
-        
-        /*########## Listar #########*/
-//        CuentaUsuario cuenta = new CuentaUsuario(1,"PRUEBA_USUARIO","PRUEBA_CONTRA",true,cliente);
-//        CuentaUsuarioDao daoCuenta = new CuentaUsuarioMySql();
-//        cuenta.setIdCuenta(5);
-//        cuenta.setPersonaNatural(cliente);
-//        daoCuenta.insertar(cuenta);
-//        cuenta.setUsuario("AQUI");
-//        daoCuenta.modificar(cuenta);
 
         /*======================================================================*/
         /*================================ Banco ===============================*/
         /*======================================================================*/
+//        BancoDao daoBanco = new BancoMySql();
+        
         /*######### Insertar ########*/
+//        Banco banco = new Banco(0,"BANBIF");
+//        daoBanco.insertar(banco);
         
         /*######## Modificar ########*/
+//        Banco banco = new Banco(8,"BBVA");
+//        banco.setNombre("Pichincha");
+//        daoBanco.modificar(banco);
         
         /*######## Eliminar #########*/
         
-        /*########## Listar #########*/
-//        Banco banco = new Banco(1,"BBVA");
-//        BancoDao daoBanco = new BancoMySql();
-//        daoBanco.insertar(banco);
-//        banco.setNombre("MIFARMA");
-//        banco.setIdBanco(2);
-//        daoBanco.modificar(banco);
+        /*########## Listar #########*/ 
 
         /*======================================================================*/
         /*========================= Documento_de_Compra ========================*/
         /*======================================================================*/
-        /*######### Insertar ########*/
-        
-        /*######## Modificar ########*/
-        
-        /*######## Eliminar #########*/
-        
-        /*########## Listar #########*/
-        
+//        Supervisor supervisor = new Supervisor();
+//        supervisor.setIdEmpleado(6);
+//        supervisor.setId_Persona(6);
+//        
+//        Tarjeta tarjeta = new Tarjeta();
+//        tarjeta.setIdTarjeta(1);
+//        
 //        Moneda moneda = new Moneda();
 //        moneda.setIdMoneda(1);
-//        moneda.setAbreviacion("PEN");
-//        moneda.setNombre("Soles");
-//
-//        Documento_de_Compra doc_Compra = new Documento_de_Compra(1,pedido,1,fecha,200,moneda,null);
-//        Documento_de_CompraDao daoDoc_Comra = new Documento_de_CompraMySql();
 //        
-////        daoDoc_Comra.insertar(doc_Compra); 
-////        daoDoc_Comra.modificar(doc_Compra); // ERRPR EN EL PROCEDURE, FALTA PROBAR
-//        daoDoc_Comra.eliminar(20);
+//        Persona cli = new Cliente();
+//        cli.setId_Persona(5);
+//        
+//        Pedido pedido = new Pedido();
+//        pedido.setId_pedido(1);
+//        
+//        Documento_de_CompraDao daoDoc_Comra = new Documento_de_CompraMySql();
+        
+        /*######### Insertar ########*/
+//        Documento_de_Compra doc_Compra = new Documento_de_Compra(1,pedido,1,fecha1,200,moneda,null);
+//        daoDoc_Comra.insertar(doc_Compra); 
+        
+        /*######## Modificar ########*/
+//        pedido.setId_pedido(2);
+//        Documento_de_Compra doc_Compra = new Documento_de_Compra(20,pedido,1,fecha1,200,moneda,null);
+//        daoDoc_Comra.modificar(doc_Compra);
+        
+        
+        /*######## Eliminar #########*/
+//        daoDoc_Comra.eliminar(25);
+        
+        /*########## Listar #########*/
 
         /*======================================================================*/
         /*============================ Factura_Venta ===========================*/
         /*======================================================================*/
-        /*######### Insertar ########*/
+//        Supervisor supervisor = new Supervisor();
+//        supervisor.setIdEmpleado(6);
+//        supervisor.setId_Persona(6);
+//        
+//        Tarjeta tarjeta = new Tarjeta();
+//        tarjeta.setIdTarjeta(1);
+//        
+//        Moneda moneda = new Moneda();
+//        moneda.setIdMoneda(1);
+//        
+//        Persona cli = new Cliente();
+//        cli.setId_Persona(5);
+//        
+//        Pedido pedido = new Pedido();
+//        pedido.setId_pedido(1);
+//        
+//        PersonaJuridica perJur = new PersonaJuridica();
+//        perJur.setRUC("123");
+//        
+//        Factura_VentaDao daofacVenta = new Factura_VentaMySql();
+//        
+//        /*######### Insertar ########*/
+//        Factura_Venta facVenta = new Factura_Venta(0, "detallitos bonitos", fecha1, perJur, 
+//                0, 568.8, tarjeta, supervisor, 0, fecha1, 568.8, moneda, null);
+//        daofacVenta.insertar(facVenta);
+        
+        /**********************************************/
+        /**********************************************/
+        /*************** HAY ERROR ******************/
+        /********** SEBAS TIENE QUE CORREGIR ***********/
+        /**********************************************/
+        /**********************************************/
         
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
         
         /*########## Listar #########*/
-//        Moneda moneda = new Moneda();
-//        moneda.setIdMoneda(1);
-//        moneda.setAbreviacion("PEN");
-//        moneda.setNombre("Soles");
-//        
-//        
-//        PersonaJuridica persona_juridica = new PersonaJuridica();
-//        persona_juridica.setRUC("123");
-//        
-//        Banco banco = new Banco(1,"BBVA");
-//        
-//        Tarjeta tarjeta = new Tarjeta();
-//        tarjeta.setCodTarjeta(777);
-//        tarjeta.setIdTarjeta(1);
-//        tarjeta.setBanco(banco);
-//        tarjeta.setTipoTarjeta(Tipo_Tarjeta.DEBITO);
-//        
-//        Factura_Venta fact_venta = new Factura_Venta(1,"CAMBIAR",fecha,persona_juridica);
-//        fact_venta.setTarjeta(tarjeta);
-//        fact_venta.setEmpleado(supervisor);
-//        fact_venta.setMoneda(moneda);
-//        fact_venta.setFecha_emision(fecha);
-//        Factura_VentaDao daoFac_Venta = new Factura_VentaMySql();
-//        
-//        daoFac_Venta.insertar(fact_venta); // ERROR EN EL PROCEDURE FALTA PROBAR 
-//        daoFac_Venta.modificar(fact_venta); // ERROR EN EL PROCEDURE FALTA PROBAR 
+           
 
         /*======================================================================*/
         /*=============================== Moneda ===============================*/
         /*======================================================================*/
+//        MonedaDao daoMoneda = new MonedaMySql();    
+        
         /*######### Insertar ########*/
+//        Moneda moneda = new Moneda("NUEVO SOL", "S/", 0);
+//        daoMoneda.insertar(moneda);
         
         /*######## Modificar ########*/
+//        Moneda moneda = new Moneda("NUEVO SOL", "S/", 0);
+//        moneda.setIdMoneda(19);
+//        moneda.setNombre("DOLAR");
+//        moneda.setAbreviacion("$");
+//        daoMoneda.modificar(moneda);
         
         /*######## Eliminar #########*/
+//        daoMoneda.eliminar(19);
         
         /*########## Listar #########*/
-//        Moneda moneda = new Moneda();
-//        moneda.setIdMoneda(1);
-//        moneda.setAbreviacion("PEN");
-//        moneda.setNombre("Soles");
-//        MonedaDao daoMoneda = new MonedaMySql();
-//        
-//        daoMoneda.insertar(moneda);
-//        moneda.setNombre("AQUI");
-//        daoMoneda.modificar(moneda);
                 
         /*======================================================================*/
         /*=============================== Tarjeta ==============================*/

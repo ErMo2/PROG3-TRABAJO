@@ -22,23 +22,6 @@ public class Factura_Venta extends Documento_de_Venta{
     public Factura_Venta() {
     }
 
-    public Factura_Venta(int idFactura, String detalles, Date fechaVenc, PersonaJuridica personaJuridica) {
-        this.idFactura = idFactura;
-        this.detalles = detalles;
-        this.fechaVenc = fechaVenc;
-        this.personaJuridica = personaJuridica;
-    }
-
-    public Factura_Venta(int idFactura, String detalles, Date fechaVenc, 
-            PersonaJuridica personaJuridica, int id_doc_venta, double montoTotal, 
-            Tarjeta tarjeta, Empleado empleado) {
-        super(id_doc_venta, montoTotal, tarjeta, empleado);
-        this.idFactura = idFactura;
-        this.detalles = detalles;
-        this.fechaVenc = fechaVenc;
-        this.personaJuridica = personaJuridica;
-    }
-
     public Factura_Venta(int idFactura, String detalles, Date fechaVenc, 
             PersonaJuridica personaJuridica, int id_doc_venta, double montoTotal, 
             Tarjeta tarjeta, Empleado empleado, int id_documento, Date fecha_emision, 

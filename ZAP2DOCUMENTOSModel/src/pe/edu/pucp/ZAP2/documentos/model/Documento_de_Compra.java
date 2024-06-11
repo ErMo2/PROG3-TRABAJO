@@ -19,12 +19,8 @@ public class Documento_de_Compra extends Documento{
     public Documento_de_Compra() {
     }
 
-    public Documento_de_Compra(int id_doc_compra, Pedido pedido) {
-        this.id_doc_compra = id_doc_compra;
-        this.pedido = pedido;
-    }
-
-    public Documento_de_Compra(int id_doc_compra, Pedido pedido, int id_documento, Date fecha_emision, double total, Moneda moneda, ArrayList<LineaDoc> lineasDocVenta) {
+    public Documento_de_Compra(int id_doc_compra, Pedido pedido, int id_documento, Date fecha_emision, 
+            double total, Moneda moneda, ArrayList<LineaDoc> lineasDocVenta) {
         super(id_documento, fecha_emision, total, moneda, lineasDocVenta);
         this.id_doc_compra = id_doc_compra;
         this.pedido = pedido;

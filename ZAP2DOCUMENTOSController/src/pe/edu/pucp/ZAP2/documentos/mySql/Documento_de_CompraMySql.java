@@ -55,13 +55,12 @@ public class Documento_de_CompraMySql implements Documento_de_CompraDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_DOCUMENTO_COMPRA (?,?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_DOCUMENTO_COMPRA (?,?,?,?)}");
             cs.setInt("_id_documento",DocCompra.getId_doc_compra());
             cs.setInt("_fid_moneda", DocCompra.getMoneda().getIdMoneda());
             cs.setInt("_fid_pedido", DocCompra.getPedido().getId_pedido());
             Date fechaEmisionSQL = new Date(DocCompra.getFecha_emision().getTime());
             cs.setDate("_fecha_emision", fechaEmisionSQL);
-            cs.setDouble("_total", DocCompra.getTotal());
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
