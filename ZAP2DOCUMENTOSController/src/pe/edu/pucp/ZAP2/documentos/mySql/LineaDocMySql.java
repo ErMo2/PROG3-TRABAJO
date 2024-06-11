@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.LineaDocDao;
+import pe.edu.pucp.ZAP2.documentos.model.Documento;
 import pe.edu.pucp.ZAP2.documentos.model.LineaDoc;
+import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
 
 /**
  *
@@ -82,7 +84,36 @@ public class LineaDocMySql implements LineaDocDao{
 
     @Override
     public ArrayList<LineaDoc> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<LineaDoc> lineas =  new ArrayList<>();
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_LINEADOC()}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                LineaDoc linea = new LineaDoc();
+                
+                linea.setIdLineDoc(rs.getInt("id_lineaDoc"));
+                ProductoPrecio prodPrecio = new ProductoPrecio();
+                prodPrecio.setIdProductoPrecio(rs.getInt("fid_producto_precio"));
+                linea.setProducto(prodPrecio);
+                Documento doc = new Documento();
+                doc.setId_documento(rs.getInt("fid_id_doc"));
+                linea.setDocumento(doc);
+                
+                linea.setPrecioUnitario(rs.getDouble("precioUnitario"));
+                linea.setPrecioTotal(rs.getDouble("precioTotal"));
+                linea.setCantidad(rs.getDouble("cantidad"));
+                linea.setSubTotal(rs.getDouble("subtotal"));
+                lineas.add(linea);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return lineas;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

@@ -79,7 +79,26 @@ public class BancoMySql implements BancoDao{
 
     @Override
     public ArrayList<Banco> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Banco> bancos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();           
+            cs = con.prepareCall("{call LISTAR_BANCO"
+                    +"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Banco banco = new Banco();
+                banco.setIdBanco(rs.getInt("id_banco"));
+                banco.setNombre(rs.getString("nombre"));
+                bancos.add(banco);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return bancos;
     }
     
 }

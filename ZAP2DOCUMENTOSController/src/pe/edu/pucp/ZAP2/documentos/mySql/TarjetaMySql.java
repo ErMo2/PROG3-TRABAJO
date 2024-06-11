@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.TarjetaDao;
+import pe.edu.pucp.ZAP2.documentos.model.Banco;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
 
 /**
  *
@@ -88,7 +90,33 @@ public class TarjetaMySql implements TarjetaDao{
 
     @Override
     public ArrayList<Tarjeta> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Tarjeta> tarjetas =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_TARJETA"+"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                
+                Tarjeta tarjeta = new Tarjeta();
+                tarjeta.setIdTarjeta(rs.getInt("id_tarjeta"));
+                tarjeta.setCodTarjeta(rs.getInt("codTarjeta"));
+                Banco banco = new Banco();
+                banco.setIdBanco(rs.getInt("fid_banco"));
+                tarjeta.setBanco(banco);
+                tarjeta.setTipoTarjeta(Tipo_Tarjeta.valueOf(rs.getString("tipoTarjeta")));
+                
+                tarjetas.add(tarjeta);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return tarjetas;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

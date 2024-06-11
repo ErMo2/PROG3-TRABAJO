@@ -106,21 +106,21 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-        Producto producto = new ProductoPerecible();
-        producto.setIdProducto(1);
-        
-        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
-        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha1 = formato.parse(fechaStr);
-        Date fecha2 = formato.parse(fechaStr2);
-        
-        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
-                1300.4, "Pepe's shop",
-                null, null, null);
-        
-        Area area = new Area(1, "Zona de alimentos",sucursal, null);
-        
+//        Producto producto = new ProductoPerecible();
+//        producto.setIdProducto(1);
+//        
+//        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
+//        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        Date fecha1 = formato.parse(fechaStr);
+//        Date fecha2 = formato.parse(fechaStr2);
+//        
+//        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+//                1300.4, "Pepe's shop",
+//                null, null, null);
+//        
+//        Area area = new Area(1, "Zona de alimentos",sucursal, null);
+//        
         /*======================================================================*/
         /*============================== Sucursal ==============================*/
         /*======================================================================*/

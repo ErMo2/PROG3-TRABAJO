@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author Alejandro
  */
-public abstract class Documento {
+public class Documento {
     private int id_documento;
     private Date fecha_emision;
     private double total;

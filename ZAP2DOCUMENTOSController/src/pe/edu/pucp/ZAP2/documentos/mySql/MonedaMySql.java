@@ -82,7 +82,28 @@ public class MonedaMySql implements MonedaDao{
 
     @Override
     public ArrayList<Moneda> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Moneda> monedas =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();           
+            cs = con.prepareCall("{call LISTAR_MONEDA"
+                    +"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Moneda moneda = new Moneda();
+                moneda.setIdMoneda(rs.getInt("id_moneda"));
+                moneda.setNombre(rs.getString("nombre"));
+                moneda.setAbreviacion(rs.getString("abreviacion"));           
+                monedas.add(moneda);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return monedas;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

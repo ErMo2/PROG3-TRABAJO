@@ -10,9 +10,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.SQLException;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
+import pe.edu.pucp.ZAP2.documentos.model.Moneda;
+import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
 
 /**
  *
@@ -111,7 +115,46 @@ public class Factura_VentaMySql implements Factura_VentaDao{
 
     @Override
     public ArrayList<Factura_Venta> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         ArrayList<Factura_Venta> facturasVentas =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();           
+            cs = con.prepareCall("{call LISTAR_FACTURA_VENTA"
+                    +"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Factura_Venta factVent = new Factura_Venta();
+                factVent.setIdFactura(rs.getInt("id_factura"));
+                factVent.setId_doc_venta(rs.getInt("id_factura"));
+                factVent.setId_documento(rs.getInt("id_factura"));
+                PersonaJuridica personaJuridica = new PersonaJuridica();
+                personaJuridica.setId_Persona(rs.getInt("fid_persona_juridica"));
+                factVent.setPersonaJuridica(personaJuridica);
+                factVent.setDetalles(rs.getString("detalles"));
+                Date fechaVenc = rs.getDate("fechaVenc");
+                factVent.setFechaVenc(fechaVenc);
+                Tarjeta tarjeta = new Tarjeta();
+                tarjeta.setIdTarjeta(rs.getInt("fid_id_tarjeta"));
+                factVent.setTarjeta(tarjeta);
+                factVent.setMontoTotal(rs.getDouble("montoTotal"));
+                Moneda moneda = new Moneda();
+                moneda.setIdMoneda(rs.getInt("fid_moneda"));
+                factVent.setMoneda(moneda);
+                Date fechaEmi = rs.getDate("fecha_emision");
+                factVent.setFecha_emision(fechaEmi);
+                factVent.setTotal(rs.getDouble("total"));
+                
+                facturasVentas.add(factVent);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return facturasVentas;
+    
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

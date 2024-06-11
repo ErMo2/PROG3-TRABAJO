@@ -13,6 +13,9 @@ import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
+import pe.edu.pucp.ZAP2.documentos.model.Moneda;
+import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
 /**
  *
  * @author Alejandro
@@ -102,7 +105,44 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
 
     @Override
     public ArrayList<Boleta_Venta> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Boleta_Venta> boletasVenta =  new ArrayList<>();
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_BOLETA_VENTA( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Boleta_Venta bolVenta = new Boleta_Venta();
+                bolVenta.setId_doc_venta(rs.getInt("id_boleta_venta"));
+                
+                Empleado empleado = new Empleado(){};
+                empleado.setId_Persona(rs.getInt("fid_id_persona"));
+                empleado.setIdEmpleado(rs.getInt("fid_id_persona"));
+                bolVenta.setEmpleado(empleado);
+                
+                bolVenta.setNumSerie(rs.getInt("numSerie"));
+                bolVenta.setDetalles(rs.getString("detalles"));
+                bolVenta.setImpuestos(rs.getDouble("impuestos"));
+                
+                Tarjeta tarjeta = new Tarjeta();
+                tarjeta.setIdTarjeta(rs.getInt("fid_id_tarjeta"));
+                bolVenta.setTarjeta(tarjeta);
+                bolVenta.setMontoTotal(rs.getDouble("montoTotal"));
+                
+                Moneda moneda = new Moneda();
+                moneda.setIdMoneda(rs.getInt("fid_moneda"));
+                bolVenta.setMoneda(moneda);
+                bolVenta.setFecha_emision(rs.getDate("fecha_emision"));
+                bolVenta.setTotal(rs.getDouble("total"));
+                
+                boletasVenta.add(bolVenta);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return boletasVenta;
     }
     
 }
