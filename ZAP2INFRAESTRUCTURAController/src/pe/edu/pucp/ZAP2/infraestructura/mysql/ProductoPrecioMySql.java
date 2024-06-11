@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ProductoPrecioDao;
+import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
 import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
 
 /**
  *
@@ -69,7 +71,37 @@ public class ProductoPrecioMySql implements ProductoPrecioDao{
 
     @Override
     public ArrayList<ProductoPrecio> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<ProductoPrecio> productosPrecios =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTOPRECIO"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                ProductoPrecio productoPrecio = new ProductoPrecio();
+                
+                productoPrecio.setIdProductoPrecio(rs.getInt("id_producto_precio"));
+                //PRODUCTO ASOCIADO    
+                Producto producto = new Producto();
+                producto.setIdProducto(rs.getInt("fid_producto"));                   
+                productoPrecio.setProducto(producto);
+                //SUCURSAL ASOCIADO
+                Sucursal sucursal = new Sucursal();
+                sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                productoPrecio.setSucursal(sucursal);
+                //DATOS PROPIOS
+                productoPrecio.setPrecio(rs.getDouble("precio"));
+                productosPrecios.add(productoPrecio);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return productosPrecios;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     

@@ -10,8 +10,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.SQLException;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.MovimientoLoteDao;
+import pe.edu.pucp.ZAP2.infraestructura.model.Almacen;
+import pe.edu.pucp.ZAP2.infraestructura.model.Lote;
 import pe.edu.pucp.ZAP2.infraestructura.model.MovimientoLote;
 import pe.edu.pucp.ZAP2.infraestructura.model.TipoDeMotivoMovimientoAlmacen;
 
@@ -78,7 +81,42 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
 
     @Override
     public ArrayList<MovimientoLote> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<MovimientoLote> lotes =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+
+            cs = con.prepareCall("{call LISTAR_MOVIMIENTO_LOTE"
+                    +"( )}");
+
+            rs = cs.executeQuery();
+            while(rs.next()){
+                MovimientoLote MovLote = new MovimientoLote();
+                MovLote.setIdMovimientoLote(rs.getInt("idMovimientoLote"));
+                Almacen entrada = new Almacen();
+                Almacen salida = new Almacen();
+                entrada.setId_almacen(rs.getInt("idAlmacenEntrada"));
+                salida.setId_almacen(rs.getInt("idAlmacenSalida"));
+                MovLote.setAlmacenEntrada(entrada);
+                MovLote.setAlmacenSalida(salida);
+                Date fecha = rs.getDate("fechaMovimiento");
+                MovLote.setFechaMovimiento(fecha);
+                TipoDeMotivoMovimientoAlmacen tip = TipoDeMotivoMovimientoAlmacen.valueOf(rs.getString("motivo"));
+                MovLote.setMotivo(tip);
+                MovLote.setMovimientoEntrada(rs.getInt("movimientoEntrada"));
+                MovLote.setCantidadProductosMovidos(rs.getDouble("cantidadProductosMovidos"));
+                Lote lote = new Lote();
+                lote.setIdLote(rs.getInt("fid_lote"));
+                MovLote.setLote(lote);
+                lotes.add(MovLote);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return lotes;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
