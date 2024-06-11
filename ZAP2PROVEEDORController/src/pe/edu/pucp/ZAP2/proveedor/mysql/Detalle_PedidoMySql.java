@@ -114,5 +114,32 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
 
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public ArrayList<Detalle_Pedido> listarXIDPedido(int idPedido) {
+        ArrayList<Detalle_Pedido> detallesArray =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_DETALLE_DE_UN_PEDIDO_X_ID"
+                    +"(?)}");
+            cs.setInt("_id_pedido", idPedido);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Detalle_Pedido detalles = new Detalle_Pedido();
+                detalles.setId_DetallePedido(rs.getInt("id_DetallePedido"));
+                detalles.setPrecioTotal(rs.getDouble("precioTotal"));
+                detalles.setPrecioUnitario(rs.getDouble("precioUnitario"));
+                detalles.setSubtotal(rs.getDouble("subtotal"));
+                detallesArray.add(detalles);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return detallesArray;
+    }
     
 }

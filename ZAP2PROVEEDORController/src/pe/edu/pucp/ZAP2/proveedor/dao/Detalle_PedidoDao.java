@@ -16,4 +16,5 @@ public interface Detalle_PedidoDao {
     int modificar(Detalle_Pedido detallePedido);
     int eliminar(int idDetallePedido);
     ArrayList<Detalle_Pedido> listarTodas();
+    ArrayList<Detalle_Pedido> listarXIDPedido(int idPedido);
 }

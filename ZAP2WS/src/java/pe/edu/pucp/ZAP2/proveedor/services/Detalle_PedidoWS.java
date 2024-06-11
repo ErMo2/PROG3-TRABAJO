@@ -64,4 +64,16 @@ public class Detalle_PedidoWS {
         }
         return detallesPedidos;
     }
+    @WebMethod(operationName = "listarDetallePedidosXId")
+    public ArrayList<Detalle_Pedido> listarDetallePedidosXId(
+            @WebParam(name="idPedido") int idPedido) {
+        ArrayList<Detalle_Pedido> detallesPedidos = null;
+        try{
+            daoDetallePedido = new Detalle_PedidoMySql();
+            detallesPedidos = daoDetallePedido.listarXIDPedido(idPedido);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return detallesPedidos;
+    }
 }

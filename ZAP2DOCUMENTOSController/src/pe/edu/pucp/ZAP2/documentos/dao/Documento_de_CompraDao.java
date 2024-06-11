@@ -5,6 +5,7 @@
 package pe.edu.pucp.ZAP2.documentos.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
 
 /**
@@ -16,4 +17,5 @@ public interface Documento_de_CompraDao {
     int modificar(Documento_de_Compra DocCompra);
     int eliminar(int idDocCompra);
     ArrayList<Documento_de_Compra> listarTodos();
+    ArrayList<Documento_de_Compra> listarEgresos(Date fechaInicial,Date fechaFinal);
 }

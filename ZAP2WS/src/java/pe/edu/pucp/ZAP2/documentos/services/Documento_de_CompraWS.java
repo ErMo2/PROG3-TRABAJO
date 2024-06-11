@@ -8,6 +8,7 @@ import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
 import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
@@ -68,5 +69,18 @@ public class Documento_de_CompraWS {
             System.out.println(ex.getMessage());
         }
         return boletasVentas;
+    }
+    @WebMethod(operationName = "listarEgresos")
+    public ArrayList<Documento_de_Compra> 
+        listarEgresos(@WebParam(name = "fechaIni") Date fechaIni, 
+                @WebParam(name = "fechaFin") Date fechaFin) {
+        ArrayList<Documento_de_Compra> docCompras = null;
+        try{
+            daoDocumentoCompras = new Documento_de_CompraMySql();
+            docCompras = daoDocumentoCompras.listarEgresos(fechaIni, fechaFin);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return docCompras;
     }
 }

@@ -12,7 +12,7 @@ import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
  *
  * @author Alejandro
  */
-public abstract class Documento_de_Venta extends Documento{
+public class Documento_de_Venta extends Documento{
     private int id_doc_venta;
     private double montoTotal;
     private Tarjeta tarjeta;

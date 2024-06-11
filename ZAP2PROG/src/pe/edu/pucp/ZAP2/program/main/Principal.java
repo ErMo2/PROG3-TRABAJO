@@ -12,12 +12,14 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.documentos.dao.BancoDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
+import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.MonedaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.TarjetaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Banco;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
+import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
@@ -25,6 +27,7 @@ import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
 import pe.edu.pucp.ZAP2.documentos.mySql.BancoMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Boleta_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
+import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Factura_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.MonedaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.TarjetaMySql;
@@ -91,9 +94,12 @@ import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
 import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 import pe.edu.pucp.ZAP2.personas.model.TipoEntidad;
 import pe.edu.pucp.ZAP2.personas.mysql.PersonaJuridicaMySql;
+import pe.edu.pucp.ZAP2.proveedor.dao.Detalle_PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.dao.PedidoDao;
+import pe.edu.pucp.ZAP2.proveedor.model.Detalle_Pedido;
 import pe.edu.pucp.ZAP2.proveedor.model.Estado_Pedido;
 import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
+import pe.edu.pucp.ZAP2.proveedor.mysql.Detalle_PedidoMySql;
 import pe.edu.pucp.ZAP2.proveedor.mysql.PedidoMySql;
 
 /**
@@ -116,9 +122,9 @@ public class Principal {
 //        Date fecha1 = formato.parse(fechaStr);
 //        Date fecha2 = formato.parse(fechaStr2);
 //        
-        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
-                1300.4, "Pepe's shop",
-                null, null, null);
+//        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+//                1300.4, "Pepe's shop",
+//                null, null, null);
 //        
 //        Area area = new Area(1, "Zona de alimentos",sucursal, null);
 //        
@@ -150,7 +156,7 @@ public class Principal {
         /*======================================================================*/
         /*================================ Area ================================*/
         /*======================================================================*/
-        AreaDao daoArea = new AreaMySql();
+//        AreaDao daoArea = new AreaMySql();
         
         /*######### Insertar ########*/
 //        Area areaB = new Area(1, "Zona de Electrodomesticos",sucursal, null);
@@ -197,7 +203,7 @@ public class Principal {
         /*======================================================================*/
         /*============================== Cliente ===============================*/
         /*======================================================================*/
-        ClienteDao daoCliente = new ClienteMySql();
+//        ClienteDao daoCliente = new ClienteMySql();
 
         /*######### Insertar ########*/
 //        Cliente cliente = new Cliente(1,"12345678", 0, 'M', "su jato", null, 1, 
@@ -323,7 +329,23 @@ public class Principal {
         /*######## Eliminar #########*/
         
         /*########## Listar #########*/    
-
+        /*======================================================================*/
+        /*=========================== Detalle_Pedido ==========================*/
+        /*======================================================================*/
+        /*######### Insertar ########*/
+        
+        /*######## Modificar ########*/
+        
+        /*######## Eliminar #########*/
+        
+        /*########## Listar #########*/  
+        
+        /*########## ListarXId #########*/  
+        Detalle_PedidoDao daoDetPed=new Detalle_PedidoMySql();
+        ArrayList<Detalle_Pedido> extra = daoDetPed.listarXIDPedido(1);
+        for(Detalle_Pedido ped:extra){
+            ped.imprimir();
+        }
         /*======================================================================*/
         /*============================= Descuento ==============================*/
         /*======================================================================*/
@@ -550,6 +572,34 @@ public class Principal {
         
         /*########## Listar #########*/
 
+        /*########## Listar Egresos#########*/
+//        String fechaStr = "2022-05-05"; // Formato de fecha: "yyyy-MM-dd"
+//        String fechaStr2 = "2022-08-20"; // Formato de fecha: "yyyy-MM-dd"
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        Date fecha1 = formato.parse(fechaStr);
+//        Date fecha2 = formato.parse(fechaStr2);
+//        ArrayList<Documento_de_Compra> extra;
+//        extra = daoDoc_Comra.listarEgresos(fecha1, fecha2);
+//        for(Documento_de_Compra doc : extra){
+//            doc.imprimir();
+//        }
+        /*======================================================================*/
+        /*============================ Documento_de_Venta ===========================*/
+        /*======================================================================*/
+ 
+        /*########## Listar Ingresos#########*/
+//        String fechaStr = "2022-05-05"; // Formato de fecha: "yyyy-MM-dd"
+//        String fechaStr2 = "2022-08-20"; // Formato de fecha: "yyyy-MM-dd"
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        Date fecha1 = formato.parse(fechaStr);
+//        Date fecha2 = formato.parse(fechaStr2);
+//        Documento_de_VentaDao daoDocVenta = new Documento_de_VentaMySql();
+//        ArrayList<Documento_de_Venta> extra;
+//        extra = daoDocVenta.listarIngresos( fecha1, fecha2);
+//        for(Documento_de_Venta doc:extra){
+//            doc.imprimir();
+//        }        
+        
         /*======================================================================*/
         /*============================ Factura_Venta ===========================*/
         /*======================================================================*/
