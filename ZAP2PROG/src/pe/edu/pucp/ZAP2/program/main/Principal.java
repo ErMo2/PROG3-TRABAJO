@@ -430,20 +430,20 @@ public class Principal {
         /*======================================================================*/
         /*============================ Boleta_Venta ============================*/
         /*======================================================================*/
-        Supervisor supervisor = new Supervisor();
-        supervisor.setIdEmpleado(6);
-        supervisor.setId_Persona(6);
-        
-        Tarjeta tarjeta = new Tarjeta();
-        tarjeta.setIdTarjeta(1);
-        
-        Moneda moneda = new Moneda();
-        moneda.setIdMoneda(1);
-        
-        Persona cli = new Cliente();
-        cli.setId_Persona(5);
-        
-        Boleta_VentaDao daoBol_Venta = new Boleta_VentaMySql();
+//        Supervisor supervisor = new Supervisor();
+//        supervisor.setIdEmpleado(6);
+//        supervisor.setId_Persona(6);
+//        
+//        Tarjeta tarjeta = new Tarjeta();
+//        tarjeta.setIdTarjeta(1);
+//        
+//        Moneda moneda = new Moneda();
+//        moneda.setIdMoneda(1);
+//        
+//        Persona cli = new Cliente();
+//        cli.setId_Persona(5);
+//        
+//        Boleta_VentaDao daoBol_Venta = new Boleta_VentaMySql();
         
         /*######### Insertar ########*/
 //        Boleta_Venta bol_venta = new Boleta_Venta(6485, "Pago a tiempo", 145.6, cli, 0, 684.8, tarjeta, supervisor
@@ -451,17 +451,23 @@ public class Principal {
 //        daoBol_Venta.insertar(bol_venta);
         
         /*######## Modificar ########*/
-        Boleta_Venta bol_venta = new Boleta_Venta(6485, "Pago a tiempo", 145.6, cli, 0, 684.8, tarjeta, supervisor
-                                , 0, fecha1, 684.8, moneda, null);
-        bol_venta.setId_doc_venta(23);
-        bol_venta.setId_documento(23);
-        bol_venta.setDetalles("AQUI");
-        daoBol_Venta.modificar(bol_venta);
+//        Boleta_Venta bol_venta = new Boleta_Venta(6485, "Pago a tiempo", 145.6, cli, 0, 684.8, tarjeta, supervisor
+//                                , 0, fecha1, 684.8, moneda, null);
+//        bol_venta.setId_doc_venta(23);
+//        bol_venta.setId_documento(23);
+//        bol_venta.setDetalles("AQUI");
+//        daoBol_Venta.modificar(bol_venta);
         
         /*######## Eliminar #########*/
-//        daoBol_Venta.eliminar(21);
+//        daoBol_Venta.eliminar(23);
         
         /*########## Listar #########*/
+        
+        /*
+        
+        LOS PUSE ENTENDIBLE HASTA ACÁ (SOY LEONARDO)
+        
+        */
 
         /*======================================================================*/
         /*============================ CuentaUsuario ===========================*/
