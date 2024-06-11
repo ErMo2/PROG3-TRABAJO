@@ -11,7 +11,7 @@ import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
  *
  * @author Alejandro
  */
-public abstract class PersonaNatural extends Persona{
+public class PersonaNatural extends Persona{
     private char sexo;
     private String direccion;
     private CuentaUsuario cuenta_usuario;

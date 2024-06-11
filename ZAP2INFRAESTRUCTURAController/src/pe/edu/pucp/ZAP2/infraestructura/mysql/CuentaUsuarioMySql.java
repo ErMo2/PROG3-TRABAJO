@@ -13,6 +13,7 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.CuentaUsuarioDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.CuentaUsuario;
 import java.sql.SQLException;
+import pe.edu.pucp.ZAP2.infraestructura.model.PersonaNatural;
 
 /**
  *
@@ -84,7 +85,32 @@ public class CuentaUsuarioMySql implements CuentaUsuarioDao{
 
     @Override
     public ArrayList<CuentaUsuario> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<CuentaUsuario> cuentas =  new ArrayList<>();
+        try{
+            
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call LISTAR_CUENTAUSUARIO( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                CuentaUsuario cuentaUsu = new CuentaUsuario();
+                cuentaUsu.setIdCuenta(rs.getInt("id_cuentaUsuario"));
+                cuentaUsu.setUsuario(rs.getString("usuario"));
+                cuentaUsu.setContrasena(rs.getString("contraseña"));
+                PersonaNatural persNat = new PersonaNatural();
+                persNat.setId_Persona(rs.getInt("fid_personaNatural"));
+                persNat.setNombre(rs.getString("nombre"));
+                persNat.setApellido_paterno(rs.getString("apellido_paterno"));
+                cuentaUsu.setPersonaNatural(persNat);
+                cuentas.add(cuentaUsu);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return cuentas;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
 
 /**
  *
@@ -80,7 +81,32 @@ public class AreaMySql implements AreaDao{
 
     @Override
     public ArrayList<Area> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Area> areas =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_AREA"
+                    +"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Area area = new Area();
+                Sucursal sucursal = new Sucursal();
+                area.setIdArea(rs.getInt("id_area"));
+                sucursal.setId_sucursal(rs.getInt("fid_surcursal"));
+                area.setSucursal(sucursal);
+                area.setNombre(rs.getString("nombre"));
+                
+                areas.add(area);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return areas;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

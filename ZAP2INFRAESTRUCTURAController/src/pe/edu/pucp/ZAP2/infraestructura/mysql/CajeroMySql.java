@@ -14,6 +14,11 @@ import pe.edu.pucp.ZAP2.infraestructura.dao.CajeroDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Cajero;
 import java.sql.Date;
 import java.sql.SQLException;
+import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
+import pe.edu.pucp.ZAP2.infraestructura.model.TurnosHorario;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 /**
  *
  * @author Alejandro
@@ -122,7 +127,40 @@ public class CajeroMySql implements CajeroDao{
 
     @Override
     public ArrayList<Cajero> listarTodas() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Cajero> cajeros =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_CAJERO"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Cajero cajero = new Cajero();
+                
+                cajero.setId_Persona(rs.getInt("id_persona"));
+                cajero.setNombre(rs.getString("nombre"));
+                cajero.setIdEmpleado(rs.getInt("id_persona"));
+                
+                cajero.setApellido_paterno(rs.getString("apellido_paterno"));
+                cajero.setApellido_materno(rs.getString("apellido_materno"));
+                cajero.setSexo(rs.getString("sexo").charAt(0));
+                cajero.setSalario(rs.getDouble("salario"));
+                
+                Supervisor supervisor = new Supervisor();
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                cajero.setNumeroCaja(rs.getInt("numeroCaja"));
+                
+                cajeros.add(cajero);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return cajeros;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

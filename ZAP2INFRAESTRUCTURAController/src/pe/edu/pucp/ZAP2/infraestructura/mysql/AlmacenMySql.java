@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AlmacenDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Almacen;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoAlmacen;
 
 /**
  *
@@ -88,7 +90,36 @@ public class AlmacenMySql implements AlmacenDao{
 
     @Override
     public ArrayList<Almacen> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        ArrayList<Almacen> almacenes =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_ALMACEN( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Almacen almacen = new Almacen();
+                Sucursal sucursal = new Sucursal();
+                almacen.setId_almacen(rs.getInt("id_almacen"));
+                sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                almacen.setSucursal(sucursal);
+                
+                almacen.setCapacidadMaximaProductos(rs.getDouble("capacidadMaximaProductos"));
+                almacen.setCapacidadActualProductos(rs.getDouble("capacidadActualProductos"));
+                String tipoAlmacenStr = rs.getString("tipoAlmacen");
+                TipoAlmacen tipoAlmacen = TipoAlmacen.valueOf(tipoAlmacenStr);
+                almacen.setTipoAlmacen(tipoAlmacen);
+                
+                almacenes.add(almacen);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return almacenes;
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
