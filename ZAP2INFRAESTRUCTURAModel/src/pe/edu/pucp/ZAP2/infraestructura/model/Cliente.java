@@ -15,6 +15,9 @@ public class Cliente extends PersonaNatural{
     private String dni;
     private int puntosBonus;
 
+    public Cliente() {
+    }
+
     public Cliente(int id_cliente, String dni, int puntosBonus) {
         this.id_cliente = id_cliente;
         this.dni = dni;

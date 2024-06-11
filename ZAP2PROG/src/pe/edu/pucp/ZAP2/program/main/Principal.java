@@ -83,6 +83,7 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.RopaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SucursalMySql;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.SupervisorMySql;
 import pe.edu.pucp.ZAP2.personas.dao.PersonaJuridicaDao;
+import pe.edu.pucp.ZAP2.personas.model.Persona;
 import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
 import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 import pe.edu.pucp.ZAP2.personas.model.TipoEntidad;
@@ -429,44 +430,38 @@ public class Principal {
         /*======================================================================*/
         /*============================ Boleta_Venta ============================*/
         /*======================================================================*/
+        Supervisor supervisor = new Supervisor();
+        supervisor.setIdEmpleado(6);
+        supervisor.setId_Persona(6);
+        
+        Tarjeta tarjeta = new Tarjeta();
+        tarjeta.setIdTarjeta(1);
+        
+        Moneda moneda = new Moneda();
+        moneda.setIdMoneda(1);
+        
+        Persona cli = new Cliente();
+        cli.setId_Persona(5);
+        
+        Boleta_VentaDao daoBol_Venta = new Boleta_VentaMySql();
+        
         /*######### Insertar ########*/
+//        Boleta_Venta bol_venta = new Boleta_Venta(6485, "Pago a tiempo", 145.6, cli, 0, 684.8, tarjeta, supervisor
+//                                , 0, fecha1, 684.8, moneda, null);
+//        daoBol_Venta.insertar(bol_venta);
         
         /*######## Modificar ########*/
+        Boleta_Venta bol_venta = new Boleta_Venta(6485, "Pago a tiempo", 145.6, cli, 0, 684.8, tarjeta, supervisor
+                                , 0, fecha1, 684.8, moneda, null);
+        bol_venta.setId_doc_venta(23);
+        bol_venta.setId_documento(23);
+        bol_venta.setDetalles("AQUI");
+        daoBol_Venta.modificar(bol_venta);
         
         /*######## Eliminar #########*/
+//        daoBol_Venta.eliminar(21);
         
         /*########## Listar #########*/
-//        Supervisor supervisor = new Supervisor(5,null,null, 0, 456.5, fecha, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
-//                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 0, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
-//                TipoDocumento.DNI, 75607208);
-//        supervisor.setIdEmpleado(6);
-//        supervisor.setId_Persona(6);
-//        
-//        Banco banco = new Banco(1,"BBVA");
-//        
-//        Tarjeta tarjeta = new Tarjeta();
-//        tarjeta.setCodTarjeta(777);
-//        tarjeta.setIdTarjeta(1);
-//        tarjeta.setBanco(banco);
-//        tarjeta.setTipoTarjeta(Tipo_Tarjeta.DEBITO);
-//        TarjetaDao daoTarjeta = new TarjetaMySql();
-//        daoTarjeta.insertar(tarjeta);
-//        
-//        Moneda moneda = new Moneda();
-//        moneda.setIdMoneda(1);
-//        moneda.setAbreviacion("PEN");
-//        moneda.setNombre("Soles");
-//        MonedaDao daoMoneda = new MonedaMySql();
-//        daoMoneda.insertar(moneda);
-//        
-//        Boleta_Venta bol_venta = new Boleta_Venta(1,"CAMBIAR",18,supervisor,1,200,tarjeta,supervisor);
-//        bol_venta.setMoneda(moneda);
-//        bol_venta.setFecha_emision(fecha);
-//        Boleta_VentaDao daoBol_Venta = new Boleta_VentaMySql();
-//        daoBol_Venta.insertar(bol_venta);
-//        bol_venta.setDetalles("AQUI");
-//        daoBol_Venta.eliminar(21);
-//        daoBol_Venta.modificar(bol_venta); // FALTA PROBAR, ERROR EN EL PROCEDURE
 
         /*======================================================================*/
         /*============================ CuentaUsuario ===========================*/
