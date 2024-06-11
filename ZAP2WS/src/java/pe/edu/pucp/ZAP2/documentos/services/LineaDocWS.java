@@ -7,6 +7,10 @@ package pe.edu.pucp.ZAP2.documentos.services;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.util.ArrayList;
+import pe.edu.pucp.ZAP2.documentos.dao.LineaDocDao;
+import pe.edu.pucp.ZAP2.documentos.model.LineaDoc;
+import pe.edu.pucp.ZAP2.documentos.mySql.LineaDocMySql;
 
 /**
  *
@@ -18,8 +22,51 @@ public class LineaDocWS {
     /**
      * This is a sample web service operation
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    private LineaDocDao daoLineaDoc;
+    @WebMethod(operationName = "insertarFacturaVenta")
+    public int insertarFacturaVenta(@WebParam(name = "lineaDoc") LineaDoc lineaDoc) {
+        int resultado = 0;
+        try{
+            daoLineaDoc = new LineaDocMySql();
+            resultado = daoLineaDoc.insertar(lineaDoc);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "modificarFacturaVenta")
+    public int modificarFacturaVenta(@WebParam(name = "lineaDoc") LineaDoc lineaDoc) {
+        int resultado = 0;
+        try{
+            daoLineaDoc = new LineaDocMySql();
+            resultado = daoLineaDoc.modificar(lineaDoc);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "eliminarFacturaVenta")
+    public int eliminarFacturaVenta(@WebParam(name = "idLineaDoc") int idLineaDoc) {
+        int resultado = 0;
+        try{
+            daoLineaDoc = new LineaDocMySql();
+            resultado = daoLineaDoc.eliminar(idLineaDoc);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "listarLineaDoc")
+    public ArrayList<LineaDoc> listarLineaDoc() {
+        ArrayList<LineaDoc> lineasDoc = null;
+        try{
+            daoLineaDoc = new LineaDocMySql();
+            lineasDoc = daoLineaDoc.listarTodos();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return lineasDoc;
     }
 }

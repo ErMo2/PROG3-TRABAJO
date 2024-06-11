@@ -7,6 +7,7 @@ package pe.edu.pucp.ZAP2.infraestructura.services;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.AreaMySql;
@@ -32,5 +33,38 @@ public class AreaWS {
             System.out.println(ex.getMessage());
         }
         return resultado;
+    }
+    @WebMethod(operationName = "modificarArea")
+    public int modificarArea(@WebParam(name = "area") Area area) {
+        int resultado = 0;
+        try{
+            daoArea = new AreaMySql();
+            resultado = daoArea.modificar(area);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "eliminarArea")
+    public int eliminarArea(@WebParam(name = "idArea") int idArea) {
+        int resultado = 0;
+        try{
+            daoArea = new AreaMySql();
+            resultado = daoArea.eliminar(idArea);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "listarArea")
+    public ArrayList<Area> listarArea() {
+        ArrayList<Area> areas = null;
+        try{
+            daoArea = new AreaMySql();
+            areas = daoArea.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return areas;
     }
 }

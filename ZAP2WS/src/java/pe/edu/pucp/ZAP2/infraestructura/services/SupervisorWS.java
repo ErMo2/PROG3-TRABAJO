@@ -7,6 +7,10 @@ package pe.edu.pucp.ZAP2.infraestructura.services;
 import jakarta.jws.WebService;
 import jakarta.jws.WebMethod;
 import jakarta.jws.WebParam;
+import java.util.ArrayList;
+import pe.edu.pucp.ZAP2.infraestructura.dao.SupervisorDao;
+import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
+import pe.edu.pucp.ZAP2.infraestructura.mysql.SupervisorMySql;
 
 /**
  *
@@ -15,11 +19,49 @@ import jakarta.jws.WebParam;
 @WebService(serviceName = "SupervisorWS", targetNamespace = "ZAP2WS")
 public class SupervisorWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    SupervisorDao daoSupervisor;
+    @WebMethod(operationName = "insertarSupervisor")
+    public int insertarSupervisor(@WebParam(name="supervisor") Supervisor supervisor) {
+        int resultado = 0;
+        try{
+            daoSupervisor = new SupervisorMySql();
+            resultado = daoSupervisor.insertar(supervisor);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "modificarSupervisor")
+    public int modificarSupervisor(@WebParam(name="supervisor") Supervisor supervisor) {
+        int resultado = 0;
+        try{
+            daoSupervisor = new SupervisorMySql();
+            resultado = daoSupervisor.modificar(supervisor);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "eliminarSupervisor")
+    public int eliminarSupervisor(@WebParam(name="idSupervisor") int idSupervisor) {
+        int resultado = 0;
+        try{
+            daoSupervisor = new SupervisorMySql();
+            resultado = daoSupervisor.eliminar(idSupervisor);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    @WebMethod(operationName = "listarSupervisores")
+    public ArrayList<Supervisor> listarSupervisores() {
+        ArrayList<Supervisor> supervisores = null;
+        try{
+            daoSupervisor = new SupervisorMySql();
+            supervisores = daoSupervisor.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return supervisores;
     }
 }
