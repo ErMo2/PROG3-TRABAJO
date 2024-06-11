@@ -101,24 +101,24 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-        Producto producto = new ProductoPerecible();
-        producto.setIdProducto(1);
-        
-        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha = formato.parse(fechaStr);
-        
-        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
-                1300.4, "Pepe's shop",
-                null, null, null);
-        
-        Area area = new Area(1, "Zona de alimentos",sucursal, null);
-        
-        Supervisor supervisor = new Supervisor(5,null,null, 6, 456.5, fecha, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
-                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 6, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
-                TipoDocumento.DNI, 75607208);
-        
-        Pedido pedido = new Pedido(1, 500.6, Estado_Pedido.COMPLETADO, fecha, 468.8, null);
+//        Producto producto = new ProductoPerecible();
+//        producto.setIdProducto(1);
+//        
+//        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        Date fecha = formato.parse(fechaStr);
+//        
+//        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+//                1300.4, "Pepe's shop",
+//                null, null, null);
+//        
+//        Area area = new Area(1, "Zona de alimentos",sucursal, null);
+//        
+//        Supervisor supervisor = new Supervisor(5,null,null, 6, 456.5, fecha, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
+//                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 6, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
+//                TipoDocumento.DNI, 75607208);
+//        
+//        Pedido pedido = new Pedido(1, 500.6, Estado_Pedido.COMPLETADO, fecha, 468.8, null);
         
         /*======================================================================*/
         /*============================== Sucursal ==============================*/
