@@ -29,7 +29,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_FACTURA_VENTA(?,?,?,?,?,?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_FACTURA_VENTA(?,?,?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_factura_venta",java.sql.Types.INTEGER);
             cs.setInt("_fid_persona_juridica", facturaVenta.getPersonaJuridica().getId_Persona());
             cs.setString("_detalles", facturaVenta.getDetalles());
@@ -37,7 +37,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
             java.sql.Date sqlDate = new java.sql.Date(facturaVenta.getFechaVenc().getTime());
             cs.setDate("_fechaVenc", sqlDate);
             
-            cs.setInt("_ruc", Integer.parseInt(facturaVenta.getPersonaJuridica().getRUC()));
+            //cs.setInt("_ruc", Integer.parseInt(facturaVenta.getPersonaJuridica().getRUC()));
             
             cs.setInt("_fid_id_tarjeta", facturaVenta.getTarjeta().getIdTarjeta());
             cs.setInt("_fid_empleado", facturaVenta.getEmpleado().getIdEmpleado());
@@ -49,9 +49,9 @@ public class Factura_VentaMySql implements Factura_VentaDao{
             cs.setDouble("_total", facturaVenta.getTotal());
             
             cs.executeUpdate();
-            facturaVenta.setId_doc_venta(cs.getInt("_id_boleta_venta"));
-            facturaVenta.setId_documento(cs.getInt("_id_boleta_venta"));
-            resultado = facturaVenta.getId_doc_venta();
+            //facturaVenta.setId_doc_venta(cs.getInt("_id_boleta_venta"));
+            //facturaVenta.setId_documento(cs.getInt("_id_boleta_venta"));
+            //resultado = facturaVenta.getId_doc_venta();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
