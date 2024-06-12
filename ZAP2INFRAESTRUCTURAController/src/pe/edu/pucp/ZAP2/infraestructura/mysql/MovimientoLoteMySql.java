@@ -36,7 +36,7 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
                     +"(?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_idMovimientoLote", java.sql.Types.INTEGER);
             cs.setInt("_idAlmacenEntrada",movLote.getAlmacenEntrada().getId_almacen());
-            if(movLote.getMotivo()==TipoDeMotivoMovimientoAlmacen.TRASLADO || movLote.getMotivo()==TipoDeMotivoMovimientoAlmacen.REPOSICIONANAQUELES)
+            if(movLote.getMotivo()==TipoDeMotivoMovimientoAlmacen.traslado || movLote.getMotivo()==TipoDeMotivoMovimientoAlmacen.reposicionAnaqueles)
                 cs.setInt("_idAlmacenSalida",movLote.getAlmacenSalida().getId_almacen());
             else
                 cs.setNull("_idAlmacenSalida",1);

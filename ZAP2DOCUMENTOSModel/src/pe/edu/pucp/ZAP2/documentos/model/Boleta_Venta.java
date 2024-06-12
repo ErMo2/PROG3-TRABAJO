@@ -9,24 +9,25 @@ package pe.edu.pucp.ZAP2.documentos.model;
  */
 import java.util.ArrayList;
 import java.util.Date;
+import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
 import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
 import pe.edu.pucp.ZAP2.personas.model.Persona;
 public class Boleta_Venta extends Documento_de_Venta{
     private int numSerie;
     private String detalles;
     private double impuestos;
-    private Persona persona;
+    private Cliente cliente;
 
     public Boleta_Venta() {
     }
 
-    public Boleta_Venta(int numSerie, String detalles, double impuestos, Persona persona, int id_doc_venta, double montoTotal, 
+    public Boleta_Venta(int numSerie, String detalles, double impuestos, Cliente cliente, int id_doc_venta, double montoTotal, 
             Tarjeta tarjeta, Empleado empleado, int id_documento, Date fecha_emision, double total, Moneda moneda, ArrayList<LineaDoc> lineasDocVenta) {
         super(id_doc_venta, montoTotal, tarjeta, empleado, id_documento, fecha_emision, total, moneda, lineasDocVenta);
         this.numSerie = numSerie;
         this.detalles = detalles;
         this.impuestos = impuestos;
-        this.persona = persona;
+        this.cliente = cliente;
     }
 
     public int getNumSerie() {
@@ -53,12 +54,12 @@ public class Boleta_Venta extends Documento_de_Venta{
         this.impuestos = impuestos;
     }
 
-    public Persona getPersona() {
-        return persona;
+    public Persona getCliente() {
+        return cliente;
     }
 
-    public void setPersona(Persona persona) {
-        this.persona = persona;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     @Override
@@ -66,7 +67,7 @@ public class Boleta_Venta extends Documento_de_Venta{
         super.imprimir();
         System.out.println("Boleta_Venta{" + "numSerie=" + numSerie + ", detalles=" 
                 + detalles + ", impuestos=" + impuestos + ", persona=" + 
-                persona.getId_Persona() + '}');
+                cliente.getId_Persona() + '}');
     }
     
 }
