@@ -116,10 +116,14 @@ public class Principal {
 //        Date fecha1 = formato.parse(fechaStr);
 //        Date fecha2 = formato.parse(fechaStr2);
 //        
-        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+      /*  Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
                 1300.4, "Pepe's shop",
                 null, null, null);
-//        
+//      */
+        SucursalDao sucursales=new SucursalMySql();
+      for(Sucursal s: sucursales.listarTodas()){
+          System.out.println(s.getId_sucursal());
+      }
 //        Area area = new Area(1, "Zona de alimentos",sucursal, null);
 //        
         /*======================================================================*/
