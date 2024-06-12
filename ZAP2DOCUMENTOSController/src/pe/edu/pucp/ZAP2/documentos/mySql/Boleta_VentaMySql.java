@@ -34,7 +34,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_BOLETA_VENTA(?,?,?,?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_boleta_venta",java.sql.Types.INTEGER);
-            cs.setInt("_fid_id_persona", boletaVenta.getCliente().getId_Persona());
+            cs.setInt("_fid_id_persona", boletaVenta.getPersona().getId_Persona());
             cs.setInt("_numSerie", boletaVenta.getNumSerie());
             cs.setString("_detalles", boletaVenta.getDetalles());
             cs.setDouble("_impuestos", boletaVenta.getImpuestos());
@@ -52,7 +52,6 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
             boletaVenta.setId_doc_venta(cs.getInt("_id_boleta_venta"));
             boletaVenta.setId_documento(cs.getInt("_id_boleta_venta"));
             resultado = boletaVenta.getId_doc_venta();
-            //Calcular puntos bonus
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -68,7 +67,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_BOLETA_VENTA (?,?,?,?,?,?,?,?)}");
             cs.setInt("_id_documento",boletaVenta.getId_documento());
-            cs.setInt("_fid_id_persona", boletaVenta.getCliente().getId_Persona());
+            cs.setInt("_fid_id_persona", boletaVenta.getPersona().getId_Persona());
             cs.setInt("_numSerie", boletaVenta.getNumSerie());
             cs.setString("_detalles", boletaVenta.getDetalles());
             
