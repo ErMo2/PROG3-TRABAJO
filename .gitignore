@@ -9,3 +9,21 @@
 /ZAP2WS/dist/
 /ZAP2PROG/dist/
 /ZAP2PROG/build/
+
+# Compiled class file
+*.class
+
+# C# files
+*.suo
+[Dd]ebug/
+[Rr]elease/
+.vs/
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
