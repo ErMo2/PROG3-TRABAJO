@@ -15,7 +15,7 @@ public class Producto {
     private byte[] imagen;
     private int activo;
     private ProductoPrecio prodPrecio;
-
+    private int cantidadComprada;
     public Producto() {
     }
 
@@ -74,6 +74,14 @@ public class Producto {
 
     public void setProdPrecio(ProductoPrecio prodPrecio) {
         this.prodPrecio = prodPrecio;
+    }
+
+    public int getCantidadComprada() {
+        return cantidadComprada;
+    }
+
+    public void setCantidadComprada(int cantidadComprada) {
+        this.cantidadComprada = cantidadComprada;
     }
 
     public void imprimir() {

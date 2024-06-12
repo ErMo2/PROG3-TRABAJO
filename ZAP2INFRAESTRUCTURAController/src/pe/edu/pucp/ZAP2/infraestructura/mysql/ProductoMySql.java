@@ -138,6 +138,33 @@ public class ProductoMySql implements ProductoDao{
         }
         return prodConDescuento;
     }
+
+    @Override
+    public ArrayList<Producto> listarProductosMasConsumidos() {
+        ArrayList<Producto> prodMasConsumidos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call RF_PRODUCTOS_MAS_CONSUMIDOS"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Producto prod = new Producto();
+                prod.setIdProducto(rs.getInt("id_producto"));
+                prod.setNombre(rs.getString("nombre"));
+                prod.setDescripcion(rs.getString("descripcion"));
+                prod.setCantidadComprada(rs.getInt("cantidadComprada"));
+                
+                prodMasConsumidos.add(prod);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return prodMasConsumidos;
+    }
     
     
 }

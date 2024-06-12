@@ -53,4 +53,16 @@ public class ProductoWS {
         }
         return productos;
     }
+    
+    @WebMethod(operationName = "listarProductosMasConsumidos")
+    public ArrayList<Producto> listarProductosMasConsumidos() {
+        ArrayList<Producto> productos = null;
+        try{
+            daoProducto = new ProductoMySql();
+            productos = daoProducto.listarProductosMasConsumidos();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return productos;
+    }
 }

@@ -15,4 +15,5 @@ public interface ProductoDao {
     ArrayList<Producto> listarProductosConDescuento();
     ArrayList<Producto> listarProductosConDescuentoEnFecha();
     ArrayList<Producto> listarDescuentoDeUnProducto(int idProducto);
+    ArrayList<Producto> listarProductosMasConsumidos();
 }
