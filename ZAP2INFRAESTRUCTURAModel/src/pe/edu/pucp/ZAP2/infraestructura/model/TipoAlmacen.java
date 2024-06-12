@@ -9,5 +9,5 @@ package pe.edu.pucp.ZAP2.infraestructura.model;
  * @author User
  */
 public enum TipoAlmacen {
-    AlmacenComun,Congeladora,Refrigeradora,AlmacenSeco,AlmacenDeProductosQuimicos,AlmacenElectronicos
+    ALMACENCOMUN,CONGELADORA,REFRIGERADORA,ALMACENSECO,ALMACENDEPRODUCTOSQUIMICOS,ALMACENELECTRONICOS
 }

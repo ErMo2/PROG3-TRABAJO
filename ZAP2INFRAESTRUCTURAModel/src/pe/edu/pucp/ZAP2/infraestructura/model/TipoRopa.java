@@ -9,5 +9,5 @@ package pe.edu.pucp.ZAP2.infraestructura.model;
  * @author User
  */
 public enum TipoRopa {
-    RopaMujer,RopaHombre,Calzado
+    ROPAMUJER,ROPAHOMBRE,CALZADO
 }

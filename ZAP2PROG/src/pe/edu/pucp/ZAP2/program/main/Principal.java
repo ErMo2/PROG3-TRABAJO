@@ -113,14 +113,20 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-        Producto producto = new ProductoPerecible();
-        producto.setIdProducto(1);
-        
-        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
-        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha1 = formato.parse(fechaStr);
-        Date fecha2 = formato.parse(fechaStr2);
+//        Producto producto = new ProductoPerecible();
+//        producto.setIdProducto(1);
+//        
+//        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
+//        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        Date fecha1 = formato.parse(fechaStr);
+//        Date fecha2 = formato.parse(fechaStr2);
+//        
+//        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+//                1300.4, "Pepe's shop",
+//                null, null, null);
+//        
+//        Area area = new Area(1, "Zona de alimentos",sucursal, null);
 //        
         /*======================================================================*/
         /*============================== Sucursal ==============================*/
@@ -145,6 +151,7 @@ public class Principal {
 //        for(Sucursal sucursalLB : sucursales){
 //            System.out.println("id: " + sucursalLB.getId_sucursal() + " Direccion: " + sucursalLB.getDireccion() + " Nombre: " + sucursalLB.getNombre() + "\n");
 //        }
+        /********FALTA IMPLEMENTAR LISTAR*****/
         
         /*======================================================================*/
         /*================================ Area ================================*/
@@ -168,7 +175,7 @@ public class Principal {
 //        for(Area area : areas){
 //            System.out.println("ID: " + area.getIdArea() + " Nombre: " + area.getNombre() + "\n");
 //        }
-
+        /****FALTA IMPLEMENTAR LISTAR*********/
         /*======================================================================*/
         /*============================== Almacen ===============================*/
         /*======================================================================*/
@@ -190,10 +197,9 @@ public class Principal {
 //        ArrayList<Almacen> almcaenes = new ArrayList<Almacen>();
 //        almcaenes = daoAlmacen.listarTodos();
 //        for(Almacen almacen: almcaenes){
-//            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + 
-//                    almacen.getCapacidadMaximaProductos() + " TipoAlmacen: " + almacen.getTipoAlmacen());
+//            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos());
 //        }
-
+        /****FALTA IMPLEMENTAR LISTAR******/
         /*======================================================================*/
         /*============================== Cliente ===============================*/
         /*======================================================================*/
@@ -221,19 +227,13 @@ public class Principal {
         /*======================================================================*/
         /*============================= Supervisor =============================*/
         /*======================================================================*/
-//        Area area = new Area();
-//        area.setIdArea(1);
-//        
 //        SupervisorDao daoSupervisor = new SupervisorMySql();
 
         /*######### Insertar ########*/
-//        Supervisor supervisor1 = new Supervisor(0,null,null, 6, 456.5, fecha1, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
+//        Supervisor supervisor = new Supervisor(0,null,null, 6, 456.5, fecha1, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
 //                area, 'M', "Mz C Lt9 Señor de los Milagros", null, 6, "Juan", "Vega", "Suares", 456485489, "juan.perez@example.com", 
 //                TipoDocumento.DNI, 75607208);
-//        Supervisor supervisor2 = new Supervisor(34,null,null, 6, 567.5, fecha1, TipoContrato.ContratoEspecial, TurnosHorario.NOCHE, 
-//                        area, 'F', "Avenida Cantilla SMP", null, 6, "Rosalia", "Vega", "Rosales", 456485489, "rosa.vega@example.com", 
-//                        TipoDocumento.DNI, 78475847);
-//        daoSupervisor.insertar(supervisor2);
+//        daoSupervisor.insertar(supervisor);
         
         /*######## Modificar ########*/
 //        Supervisor supervisor = new Supervisor(6,null,null, 6, 456.5, fecha1, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
@@ -243,7 +243,6 @@ public class Principal {
 //        daoSupervisor.modificar(supervisor);
         
         /*######## Eliminar #########*/
-//        daoSupervisor.eliminar(20);
         
         /*########## Listar #########*/
 
@@ -330,7 +329,6 @@ public class Principal {
         /*######## Eliminar #########*/
         
         /*########## Listar #########*/    
-        
         /*======================================================================*/
         /*=========================== Detalle_Pedido ==========================*/
         /*======================================================================*/
@@ -343,12 +341,11 @@ public class Principal {
         /*########## Listar #########*/  
         
         /*########## ListarXId #########*/  
-//        Detalle_PedidoDao daoDetPed=new Detalle_PedidoMySql();
-//        ArrayList<Detalle_Pedido> extra = daoDetPed.listarXIDPedido(1);
-//        for(Detalle_Pedido ped:extra){
-//            ped.imprimir();
-//        }
-
+        Detalle_PedidoDao daoDetPed=new Detalle_PedidoMySql();
+        ArrayList<Detalle_Pedido> extra = daoDetPed.listarXIDPedido(1);
+        for(Detalle_Pedido ped:extra){
+            ped.imprimir();
+        }
         /*======================================================================*/
         /*============================= Descuento ==============================*/
         /*======================================================================*/
@@ -590,7 +587,7 @@ public class Principal {
         /*============================ Documento_de_Venta ===========================*/
         /*======================================================================*/
  
-        /*########## Listar Ingresos #########*/
+        /*########## Listar Ingresos#########*/
 //        String fechaStr = "2022-05-05"; // Formato de fecha: "yyyy-MM-dd"
 //        String fechaStr2 = "2022-08-20"; // Formato de fecha: "yyyy-MM-dd"
 //        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");

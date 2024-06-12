@@ -9,5 +9,5 @@ package pe.edu.pucp.ZAP2.infraestructura.model;
  * @author User
  */
 public enum UnidadDeMedida {
-   unidad,paquete,KG,LT,NA 
+   UNIDAD,PAQUETE,KG,LT,NA 
 }
