@@ -179,7 +179,7 @@ public class Principal {
         /*======================================================================*/
         /*============================== Almacen ===============================*/
         /*======================================================================*/
-//        AlmacenDao daoAlmacen = new AlmacenMySql();
+        AlmacenDao daoAlmacen = new AlmacenMySql();
         
         /*######### Insertar ########*/
 //        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENSECO,500.0,0.0,null,true,sucursal,null);
@@ -194,11 +194,11 @@ public class Principal {
 //        daoAlmacen.eliminar(1);
 
         /*########## Listar #########*/
-//        ArrayList<Almacen> almcaenes = new ArrayList<Almacen>();
-//        almcaenes = daoAlmacen.listarTodos();
-//        for(Almacen almacen: almcaenes){
-//            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos());
-//        }
+        ArrayList<Almacen> almcaenes = new ArrayList<Almacen>();
+        almcaenes = daoAlmacen.listarTodos();
+        for(Almacen almacen: almcaenes){
+            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos());
+        }
         /****FALTA IMPLEMENTAR LISTAR******/
         /*======================================================================*/
         /*============================== Cliente ===============================*/
@@ -245,11 +245,11 @@ public class Principal {
         /*######## Eliminar #########*/
         
         /*########## Listar #########*/
-        ArrayList<Supervisor> supervisores = new ArrayList<Supervisor>();
-        supervisores = daoSupervisor.listarTodas();
-        for(Supervisor supervisor : supervisores){
-            System.out.println("ID: " + supervisor.getId_Persona() + " Nombre: " + supervisor.getNombre() + "\n");
-        }
+//        ArrayList<Supervisor> supervisores = new ArrayList<Supervisor>();
+//        supervisores = daoSupervisor.listarTodas();
+//        for(Supervisor supervisor : supervisores){
+//            System.out.println("ID: " + supervisor.getId_Persona() + " Nombre: " + supervisor.getNombre() + "\n");
+//        }
         /*======================================================================*/
         /*=============================== Cajero ===============================*/
         /*======================================================================*/
@@ -345,11 +345,11 @@ public class Principal {
         /*########## Listar #########*/  
         
         /*########## ListarXId #########*/  
-        Detalle_PedidoDao daoDetPed=new Detalle_PedidoMySql();
-        ArrayList<Detalle_Pedido> extra = daoDetPed.listarXIDPedido(1);
-        for(Detalle_Pedido ped:extra){
-            ped.imprimir();
-        }
+//        Detalle_PedidoDao daoDetPed=new Detalle_PedidoMySql();
+//        ArrayList<Detalle_Pedido> extra = daoDetPed.listarXIDPedido(1);
+//        for(Detalle_Pedido ped:extra){
+//            ped.imprimir();
+//        }
         /*======================================================================*/
         /*============================= Descuento ==============================*/
         /*======================================================================*/
