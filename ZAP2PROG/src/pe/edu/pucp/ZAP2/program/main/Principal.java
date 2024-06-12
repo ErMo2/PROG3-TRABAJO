@@ -179,7 +179,7 @@ public class Principal {
         /*======================================================================*/
         /*============================== Almacen ===============================*/
         /*======================================================================*/
-        AlmacenDao daoAlmacen = new AlmacenMySql();
+//        AlmacenDao daoAlmacen = new AlmacenMySql();
         
         /*######### Insertar ########*/
 //        Almacen almacen = new Almacen(1,TipoAlmacen.ALMACENSECO,500.0,0.0,null,true,sucursal,null);
@@ -194,11 +194,11 @@ public class Principal {
 //        daoAlmacen.eliminar(1);
 
         /*########## Listar #########*/
-        ArrayList<Almacen> almcaenes = new ArrayList<Almacen>();
-        almcaenes = daoAlmacen.listarTodos();
-        for(Almacen almacen: almcaenes){
-            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos());
-        }
+//        ArrayList<Almacen> almcaenes = new ArrayList<Almacen>();
+//        almcaenes = daoAlmacen.listarTodos();
+//        for(Almacen almacen: almcaenes){
+//            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos());
+//        }
         /****FALTA IMPLEMENTAR LISTAR******/
         /*======================================================================*/
         /*============================== Cliente ===============================*/
@@ -694,9 +694,9 @@ public class Principal {
         /*======================================================================*/
         /*=========================== PersonaJuridica ==========================*/
         /*======================================================================*/
-        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociacion,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
-                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
-        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
+//        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociacion,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
+//                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
+//        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
         /*######### Insertar ########*/
 //        daopersona_juridica.insertar(persona_juridica);
         /*######## Modificar ########*/
