@@ -580,7 +580,7 @@ public class Principal {
         
         /*########## Listar #########*/
 
-        /*########## Listar Egresos#########*/
+        /*########## Listar Egresos #########*/
 //        String fechaStr = "2022-05-05"; // Formato de fecha: "yyyy-MM-dd"
 //        String fechaStr2 = "2022-08-20"; // Formato de fecha: "yyyy-MM-dd"
 //        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
