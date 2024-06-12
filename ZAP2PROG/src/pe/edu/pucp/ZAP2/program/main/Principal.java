@@ -126,12 +126,6 @@ public class Principal {
         Date fecha1 = formato.parse(fechaStr);
         Date fecha2 = formato.parse(fechaStr2);
         
-        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
-                1300.4, "Pepe's shop",
-                null, null, null);
-        
-        Area area = new Area(1, "Zona de alimentos",sucursal, null);
-//        
         /*======================================================================*/
         /*============================== Sucursal ==============================*/
         /*======================================================================*/
@@ -155,7 +149,6 @@ public class Principal {
 //        for(Sucursal sucursalLB : sucursales){
 //            System.out.println("id: " + sucursalLB.getId_sucursal() + " Direccion: " + sucursalLB.getDireccion() + " Nombre: " + sucursalLB.getNombre() + "\n");
 //        }
-        /********FALTA IMPLEMENTAR LISTAR*****/
         
         /*======================================================================*/
         /*================================ Area ================================*/
@@ -179,7 +172,7 @@ public class Principal {
 //        for(Area area : areas){
 //            System.out.println("ID: " + area.getIdArea() + " Nombre: " + area.getNombre() + "\n");
 //        }
-        /****FALTA IMPLEMENTAR LISTAR*********/
+        
         /*======================================================================*/
         /*============================== Almacen ===============================*/
         /*======================================================================*/
@@ -201,9 +194,10 @@ public class Principal {
 //        ArrayList<Almacen> almcaenes = new ArrayList<Almacen>();
 //        almcaenes = daoAlmacen.listarTodos();
 //        for(Almacen almacen: almcaenes){
-//            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos());
+//            System.out.println("ID: " + almacen.getId_almacen() + " Cpacidad Maxima: " + almacen.getCapacidadMaximaProductos()
+//            + " Tipo Almacen: " + almacen.getTipoAlmacen());
 //        }
-        /****FALTA IMPLEMENTAR LISTAR******/
+        
         /*======================================================================*/
         /*============================== Cliente ===============================*/
         /*======================================================================*/
@@ -247,6 +241,7 @@ public class Principal {
 //        daoSupervisor.modificar(supervisor);
         
         /*######## Eliminar #########*/
+//        daoSupervisor.eliminar(20);
         
         /*########## Listar #########*/
 //        ArrayList<Supervisor> supervisores = new ArrayList<Supervisor>();
@@ -254,6 +249,7 @@ public class Principal {
 //        for(Supervisor supervisor : supervisores){
 //            System.out.println("ID: " + supervisor.getId_Persona() + " Nombre: " + supervisor.getNombre() + "\n");
 //        }
+
         /*======================================================================*/
         /*=============================== Cajero ===============================*/
         /*======================================================================*/
@@ -336,7 +332,8 @@ public class Principal {
         
         /*######## Eliminar #########*/
         
-        /*########## Listar #########*/    
+        /*########## Listar #########*/
+        
         /*======================================================================*/
         /*=========================== Detalle_Pedido ==========================*/
         /*======================================================================*/
@@ -354,6 +351,7 @@ public class Principal {
 //        for(Detalle_Pedido ped:extra){
 //            ped.imprimir();
 //        }
+
         /*======================================================================*/
         /*============================= Descuento ==============================*/
         /*======================================================================*/
@@ -525,6 +523,7 @@ public class Principal {
 //        daoBol_Venta.eliminar(23);
         
         /*########## Listar #########*/
+        
 
         /*======================================================================*/
         /*================================ Banco ===============================*/
@@ -595,7 +594,7 @@ public class Principal {
         /*============================ Documento_de_Venta ===========================*/
         /*======================================================================*/
  
-        /*########## Listar Ingresos#########*/
+        /*########## Listar Ingresos #########*/
 //        String fechaStr = "2022-05-05"; // Formato de fecha: "yyyy-MM-dd"
 //        String fechaStr2 = "2022-08-20"; // Formato de fecha: "yyyy-MM-dd"
 //        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
@@ -636,7 +635,7 @@ public class Principal {
 //        
 //        Factura_VentaDao daofacVenta = new Factura_VentaMySql();
 //        
-//        /*######### Insertar ########*/  
+        /*######### Insertar ########*/  
 //        daofacVenta.insertar(facVenta);
         
         /*######## Modificar ########*/
@@ -646,6 +645,7 @@ public class Principal {
         
         /*######## Eliminar #########*/
 //        daofacVenta.eliminar(33);
+
         /*########## Listar #########*/
 //        ArrayList<Factura_Venta> fac_ventas = new ArrayList<Factura_Venta>();
 //        fac_ventas = daofacVenta.listarTodos();
@@ -700,6 +700,7 @@ public class Principal {
         
         /*######## Eliminar #########*/
 //        daoTarjeta.eliminar(1);
+
         /*########## Listar #########*/
 //        ArrayList<Tarjeta> tarjetas = new ArrayList<Tarjeta>();
 //        tarjetas = daoTarjeta.listarTodas();
@@ -713,19 +714,24 @@ public class Principal {
 //        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociación,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
 //                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
 //        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
+
         /*######### Insertar ########*/
 //        daopersona_juridica.insertar(persona_juridica);
+
         /*######## Modificar ########*/
 //        persona_juridica.setDireccionLegal("CAMBIO");
 //        daopersona_juridica.modificar(persona_juridica);
+
         /*######## Eliminar #########*/
 //        daopersona_juridica.eliminar(23);
+
         /*########## Listar #########*/
 //        ArrayList<PersonaJuridica> personas_juridicas = new ArrayList<PersonaJuridica>();
 //        personas_juridicas = daopersona_juridica.listarTodas();
 //        for(PersonaJuridica persona : personas_juridicas){
 //            System.out.println("ID: " + persona.getId_Persona() + " Direccion: " + persona.getDireccionLegal() + "\n");
 //        }
+
         /*======================================================================*/
         /*=============================== LineaDoc =============================*/
         /*======================================================================*/
@@ -738,8 +744,10 @@ public class Principal {
 //        LineaDoc linea_doc = new LineaDoc(1,200,500,10,2,producPrecio,doc);
 //        
 //        LineaDocDao daoLineaDoc = new LineaDocMySql();
+
         /*######### Insertar ########*/
 //        daoLineaDoc.insertar(linea_doc);
+
         /*######## Modificar ########*/
 //        linea_doc.setCantidad(1);
 //        linea_doc.setIdLineDoc(2);
