@@ -27,3 +27,16 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+!/ZAP2PROG/src/pe/edu/pucp/ZAP2/program/lib/mysql-connector-j-8.3.0.jar
+!/ZAP2WS/src/java/pe/edu/pucp/ZAP2/lib/mysql-connector-j-8.3.0.jar
+!/ZAP2WS/src/java/pe/edu/pucp/ZAP2/lib/jakarta.xml.ws-api-4.0.1.jar
