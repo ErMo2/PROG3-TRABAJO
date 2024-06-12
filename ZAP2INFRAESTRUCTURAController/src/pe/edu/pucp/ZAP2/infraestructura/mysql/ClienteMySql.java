@@ -47,7 +47,7 @@ public class ClienteMySql implements ClienteDao{
             resultado = cs.executeUpdate();
             cliente.setId_cliente(cs.getInt("_id_cliente"));
             cliente.setId_Persona(cs.getInt("_id_cliente"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}

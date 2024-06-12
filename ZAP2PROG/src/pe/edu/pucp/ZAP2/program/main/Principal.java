@@ -14,13 +14,16 @@ import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_CompraDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Documento_de_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
+import pe.edu.pucp.ZAP2.documentos.dao.LineaDocDao;
 import pe.edu.pucp.ZAP2.documentos.dao.MonedaDao;
 import pe.edu.pucp.ZAP2.documentos.dao.TarjetaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Banco;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
+import pe.edu.pucp.ZAP2.documentos.model.Documento;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Compra;
 import pe.edu.pucp.ZAP2.documentos.model.Documento_de_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
+import pe.edu.pucp.ZAP2.documentos.model.LineaDoc;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
 import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
@@ -29,6 +32,7 @@ import pe.edu.pucp.ZAP2.documentos.mySql.Boleta_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_CompraMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_VentaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.Factura_VentaMySql;
+import pe.edu.pucp.ZAP2.documentos.mySql.LineaDocMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.MonedaMySql;
 import pe.edu.pucp.ZAP2.documentos.mySql.TarjetaMySql;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AlmacenDao;
@@ -113,20 +117,20 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-//        Producto producto = new ProductoPerecible();
-//        producto.setIdProducto(1);
-//        
-//        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
-//        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
-//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-//        Date fecha1 = formato.parse(fechaStr);
-//        Date fecha2 = formato.parse(fechaStr2);
-//        
-//        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
-//                1300.4, "Pepe's shop",
-//                null, null, null);
-//        
-//        Area area = new Area(1, "Zona de alimentos",sucursal, null);
+        Producto producto = new ProductoPerecible();
+        producto.setIdProducto(1);
+        
+        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
+        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        Date fecha1 = formato.parse(fechaStr);
+        Date fecha2 = formato.parse(fechaStr2);
+        
+        Sucursal sucursal = new Sucursal(1, "Av. Pepito Valle",
+                1300.4, "Pepe's shop",
+                null, null, null);
+        
+        Area area = new Area(1, "Zona de alimentos",sucursal, null);
 //        
         /*======================================================================*/
         /*============================== Sucursal ==============================*/
@@ -227,7 +231,7 @@ public class Principal {
         /*======================================================================*/
         /*============================= Supervisor =============================*/
         /*======================================================================*/
-        SupervisorDao daoSupervisor = new SupervisorMySql();
+//        SupervisorDao daoSupervisor = new SupervisorMySql();
 
         /*######### Insertar ########*/
 //        Supervisor supervisor = new Supervisor(0,null,null, 6, 456.5, fecha1, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
@@ -625,28 +629,30 @@ public class Principal {
 //        
 //        PersonaJuridica perJur = new PersonaJuridica();
 //        perJur.setRUC("123");
+//        perJur.setId_Persona(12);
+//        
+//        Factura_Venta facVenta = new Factura_Venta(0, "detallitos bonitos", fecha1, perJur, 
+//                0, 568.8, tarjeta, supervisor, 0, fecha1, 568.8, moneda, null);
 //        
 //        Factura_VentaDao daofacVenta = new Factura_VentaMySql();
 //        
-//        /*######### Insertar ########*/
-//        Factura_Venta facVenta = new Factura_Venta(0, "detallitos bonitos", fecha1, perJur, 
-//                0, 568.8, tarjeta, supervisor, 0, fecha1, 568.8, moneda, null);
+//        /*######### Insertar ########*/  
 //        daofacVenta.insertar(facVenta);
         
-        /**********************************************/
-        /**********************************************/
-        /*************** HAY ERROR ******************/
-        /********** SEBAS TIENE QUE CORREGIR ***********/
-        /**********************************************/
-        /**********************************************/
-        
         /*######## Modificar ########*/
+//        facVenta.setDetalles("CAMBIO AQUI");
+//        facVenta.setId_documento(34);
+//        daofacVenta.modificar(facVenta);
         
         /*######## Eliminar #########*/
-        
+//        daofacVenta.eliminar(33);
         /*########## Listar #########*/
-           
-
+//        ArrayList<Factura_Venta> fac_ventas = new ArrayList<Factura_Venta>();
+//        fac_ventas = daofacVenta.listarTodos();
+//        for(Factura_Venta fac : fac_ventas){
+//            System.out.println("ID: " + fac.getIdFactura() + " Detalles: " + fac.getDetalles() + "\n");
+//        }
+        
         /*======================================================================*/
         /*=============================== Moneda ===============================*/
         /*======================================================================*/
@@ -664,37 +670,47 @@ public class Principal {
 //        daoMoneda.modificar(moneda);
         
         /*######## Eliminar #########*/
-//        daoMoneda.eliminar(19);
+//        daoMoneda.eliminar(12);
         
         /*########## Listar #########*/
-                
+//        ArrayList<Moneda> monedas = new ArrayList<Moneda>();
+//        monedas = daoMoneda.listarTodos();
+//        for(Moneda moneda : monedas){
+//            System.out.println("ID: " + moneda.getIdMoneda() + " Abreviacion: " + moneda.getAbreviacion());
+//        }
+        
         /*======================================================================*/
         /*=============================== Tarjeta ==============================*/
         /*======================================================================*/
-        /*######### Insertar ########*/
-        
-        /*######## Modificar ########*/
-        
-        /*######## Eliminar #########*/
-        
-        /*########## Listar #########*/
 //        Banco banco = new Banco(1,"BBVA");
 //        
 //        Tarjeta tarjeta = new Tarjeta();
 //        tarjeta.setCodTarjeta(777);
-//        tarjeta.setIdTarjeta(1);
+//        tarjeta.setIdTarjeta(2);
 //        tarjeta.setBanco(banco);
 //        tarjeta.setTipoTarjeta(Tipo_Tarjeta.DEBITO);
 //        
 //        TarjetaDao daoTarjeta = new TarjetaMySql();
+        /*######### Insertar ########*/
 //        daoTarjeta.insertar(tarjeta);
+        
+        /*######## Modificar ########*/
 //        tarjeta.setCodTarjeta(666);
 //        daoTarjeta.modificar(tarjeta);
         
+        /*######## Eliminar #########*/
+//        daoTarjeta.eliminar(1);
+        /*########## Listar #########*/
+//        ArrayList<Tarjeta> tarjetas = new ArrayList<Tarjeta>();
+//        tarjetas = daoTarjeta.listarTodas();
+//        for(Tarjeta tarjetaL : tarjetas){
+//            System.out.println("ID: " + tarjetaL.getIdTarjeta() + " Cod Tarjeta: " + tarjetaL.getCodTarjeta());
+//        }
+
         /*======================================================================*/
         /*=========================== PersonaJuridica ==========================*/
         /*======================================================================*/
-//        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociacion,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
+//        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociación,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
 //                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
 //        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
         /*######### Insertar ########*/
@@ -713,18 +729,31 @@ public class Principal {
         /*======================================================================*/
         /*=============================== LineaDoc =============================*/
         /*======================================================================*/
+//        ProductoPrecio producPrecio = new ProductoPrecio();
+//        producPrecio.setIdProductoPrecio(1);
+//        
+//        Documento doc = new Documento();
+//        doc.setId_documento(3);
+//        
+//        LineaDoc linea_doc = new LineaDoc(1,200,500,10,2,producPrecio,doc);
+//        
+//        LineaDocDao daoLineaDoc = new LineaDocMySql();
         /*######### Insertar ########*/
-        
+//        daoLineaDoc.insertar(linea_doc);
         /*######## Modificar ########*/
+//        linea_doc.setCantidad(1);
+//        linea_doc.setIdLineDoc(2);
+//        daoLineaDoc.modificar(linea_doc);
         
         /*######## Eliminar #########*/
+//        daoLineaDoc.eliminar(2);
         
         /*########## Listar #########*/
-        
-        
-        
-        
-        
+//        ArrayList<LineaDoc> lineas = new ArrayList<LineaDoc>();
+//        lineas = daoLineaDoc.listarTodos();
+//        for(LineaDoc linea : lineas){
+//            System.out.println("ID: " + linea.getIdLineDoc() + " Cantidad: " + linea.getCantidad());
+//        }
  }
     
 }
