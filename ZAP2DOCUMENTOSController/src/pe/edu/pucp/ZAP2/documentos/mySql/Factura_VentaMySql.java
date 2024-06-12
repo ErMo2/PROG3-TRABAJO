@@ -69,7 +69,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_FACTURA_VENTA (?,?,?,?,?,?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_FACTURA_VENTA (?,?,?,?,?,?,?,?)}");
             cs.setInt("_id_documento",facturaVenta.getId_documento());
             cs.setInt("_fid_persona_juridica", facturaVenta.getPersonaJuridica().getId_Persona());
             cs.setString("_detalles", facturaVenta.getDetalles());
@@ -77,16 +77,16 @@ public class Factura_VentaMySql implements Factura_VentaDao{
             java.sql.Date sqlDate = new java.sql.Date(facturaVenta.getFechaVenc().getTime());
             cs.setDate("_fechaVenc", sqlDate);
             
-            cs.setInt("_ruc", Integer.parseInt(facturaVenta.getPersonaJuridica().getRUC()));
+//            cs.setInt("_ruc", Integer.parseInt(facturaVenta.getPersonaJuridica().getRUC()));
             
-            cs.setInt("_fid_id_tarjeta", facturaVenta.getTarjeta().getCodTarjeta());
+            cs.setInt("_fid_id_tarjeta", facturaVenta.getTarjeta().getIdTarjeta());
             cs.setInt("_fid_empleado", facturaVenta.getEmpleado().getIdEmpleado());
-            cs.setDouble("_montoTotal", facturaVenta.getMontoTotal());
+//            cs.setDouble("_montoTotal", facturaVenta.getMontoTotal());
             
             cs.setInt("_fid_moneda", facturaVenta.getMoneda().getIdMoneda());
             java.sql.Date sqlDate2 = new java.sql.Date(facturaVenta.getFecha_emision().getTime());
             cs.setDate("_fecha_emision",sqlDate2);
-            cs.setDouble("_total", facturaVenta.getTotal());
+//            cs.setDouble("_total", facturaVenta.getTotal());
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
