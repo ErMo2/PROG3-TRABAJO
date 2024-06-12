@@ -4,6 +4,9 @@
     <service name="Documento_de_VentaWS">
       <implementation-class>pe.edu.pucp.ZAP2.documentos.services.Documento_de_VentaWS</implementation-class>
     </service>
+    <service name="ProductoWS">
+      <implementation-class>pe.edu.pucp.ZAP2.infraestructura.services.ProductoWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

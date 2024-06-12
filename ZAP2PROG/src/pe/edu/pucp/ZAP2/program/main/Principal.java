@@ -341,11 +341,11 @@ public class Principal {
         /*########## Listar #########*/  
         
         /*########## ListarXId #########*/  
-        Detalle_PedidoDao daoDetPed=new Detalle_PedidoMySql();
-        ArrayList<Detalle_Pedido> extra = daoDetPed.listarXIDPedido(1);
-        for(Detalle_Pedido ped:extra){
-            ped.imprimir();
-        }
+//        Detalle_PedidoDao daoDetPed=new Detalle_PedidoMySql();
+//        ArrayList<Detalle_Pedido> extra = daoDetPed.listarXIDPedido(1);
+//        for(Detalle_Pedido ped:extra){
+//            ped.imprimir();
+//        }
         /*======================================================================*/
         /*============================= Descuento ==============================*/
         /*======================================================================*/
