@@ -50,7 +50,7 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
             cs.setString("_RUC", personaJuridica.getRUC());
             resultado = cs.executeUpdate();
             personaJuridica.setId_Persona(cs.getInt("_id_persona_juridica"));
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
@@ -128,7 +128,7 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
                 
                 supervisores.add(supervisor);
             }
-        }catch(Exception ex){
+        }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
             try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}

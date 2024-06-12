@@ -154,7 +154,7 @@ public class SupervisorMySql implements SupervisorDao{
                 supervisor.setHorario(horario);
                 supervisor.setNumempleados(rs.getInt("num_empleados"));
                 Area area = new Area();
-                area.setIdArea(rs.getInt("fid_area"));
+                //area.setIdArea(rs.getInt("fid_area"));
                 supervisor.setArea(area);
                 
                 supervisores.add(supervisor);

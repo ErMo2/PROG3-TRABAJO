@@ -227,7 +227,7 @@ public class Principal {
         /*======================================================================*/
         /*============================= Supervisor =============================*/
         /*======================================================================*/
-//        SupervisorDao daoSupervisor = new SupervisorMySql();
+        SupervisorDao daoSupervisor = new SupervisorMySql();
 
         /*######### Insertar ########*/
 //        Supervisor supervisor = new Supervisor(0,null,null, 6, 456.5, fecha1, TipoContrato.TiempoCompleto, TurnosHorario.MAÑANA, 
@@ -245,7 +245,11 @@ public class Principal {
         /*######## Eliminar #########*/
         
         /*########## Listar #########*/
-
+        ArrayList<Supervisor> supervisores = new ArrayList<Supervisor>();
+        supervisores = daoSupervisor.listarTodas();
+        for(Supervisor supervisor : supervisores){
+            System.out.println("ID: " + supervisor.getId_Persona() + " Nombre: " + supervisor.getNombre() + "\n");
+        }
         /*======================================================================*/
         /*=============================== Cajero ===============================*/
         /*======================================================================*/
@@ -690,22 +694,22 @@ public class Principal {
         /*======================================================================*/
         /*=========================== PersonaJuridica ==========================*/
         /*======================================================================*/
+        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociacion,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
+                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
+        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
         /*######### Insertar ########*/
-        
-        /*######## Modificar ########*/
-        
-        /*######## Eliminar #########*/
-        
-        /*########## Listar #########*/
-//        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociacion,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
-//                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
-//        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
-        
 //        daopersona_juridica.insertar(persona_juridica);
-//        persona_juridica.setDireccionLegal("AQUI");
-//        persona_juridica.setId_Persona(12);
+        /*######## Modificar ########*/
+//        persona_juridica.setDireccionLegal("CAMBIO");
 //        daopersona_juridica.modificar(persona_juridica);
-
+        /*######## Eliminar #########*/
+//        daopersona_juridica.eliminar(23);
+        /*########## Listar #########*/
+//        ArrayList<PersonaJuridica> personas_juridicas = new ArrayList<PersonaJuridica>();
+//        personas_juridicas = daopersona_juridica.listarTodas();
+//        for(PersonaJuridica persona : personas_juridicas){
+//            System.out.println("ID: " + persona.getId_Persona() + " Direccion: " + persona.getDireccionLegal() + "\n");
+//        }
         /*======================================================================*/
         /*=============================== LineaDoc =============================*/
         /*======================================================================*/
