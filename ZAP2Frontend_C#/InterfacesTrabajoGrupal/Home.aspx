@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="InterfacesTrabajoGrupal.Home" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="InterfacesTrabajoGrupal.Home" %>
 <asp:Content ID="cTitulo" ContentPlaceHolderID="cphTitulo" runat="server">
     Home
 </asp:Content>

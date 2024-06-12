@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ZAP3WA.Master.cs" Inherits="InterfacesTrabajoGrupal.SoftProg" %>
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/css/all.css" rel="stylesheet" />
+
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+
+    <title>
+        <asp:ContentPlaceHolder ID="cphTitulo" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="cphScripts" runat="server">
+    </asp:ContentPlaceHolder>
+    <div class="container-fluid d-flex p-0 h-150">
+        <!--Menu Lateral -->
+        <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-success text-white offcanvas-md offcanvas-start">
+            <a href="home.aspx" class="navbar-brand">
+                <img src="Imagenes/WhatsApp Image 2024-04-16 at 21.43.57.jpeg" width="150" />
+            </a>
+            <hr>
+            <ul class="mynav nav nav-pills flex-column mb-auto">
+                <li class="nav-item mb-1">
+                    <a href="ListarAreas.aspx"><i class="fa-solid fa-building pe-2"></i>Areas</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarEmpleados.aspx"><i class="fa-solid fa-people-group pe-2"></i>Empleados</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarClientes.aspx"><i class="fa-solid fa-people-group pe-2"></i>Clientes</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarPedidos.aspx"><i class="fa-solid fa-shopping-cart pe-2"></i>Pedidos</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarProductos.aspx"><i class="fa-solid fa-box pe-2"></i>Productos</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarSucursales.aspx"><i class="fa-solid fa-map-marker-alt pe-2"></i>Sucursales</a>
+                </li>
+
+                <li class="nav-item mb-1">
+                    <a href="SeleccionarTipoDeDocumento.aspx"><i class="fa-solid fa-receipt pe-2"></i>Tipo de Documento</a>
+                </li>
+
+                <li class="nav-item mb-1">
+                    <a href="ListarBancos.aspx"><i class="fa-solid fa-university pe-2"></i>Bancos Afiliados</a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarAlmacenes.aspx"><i class="fa-solid fa-warehouse pe-2"></i>Almacenes</a>
+                </li>
+            </ul>
+            <hr>
+            <div class="d-flex">
+                <i class="fa-solid fa-book me-2"></i>
+                <h6 class="mt-1 mb-0">ZAP2-Tu mejor opcion</h6>
+            </div>
+        </div>
+
+        <!--Contenido Derecha-->
+        <div class="bg-light flex-fill">
+            <div class="p-2 d-md-none d-flex text-white bg-success">
+                <a data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" class="text-white" href="#">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+            <nav></nav>
+            <!-- Barra de Usuario -->
+            <nav class="navbar navbar-dark bg-success">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-sm-none d-md-block d-none d-sm-block">Zap2 Pagina Principal</a>
+                    <form class="d-flex">
+                        <div class="dropdown ps-3">
+                            <button class="btn btn-outline-light dropdown-toggle"
+                                id="btnUsuario" data-bs-toggle="dropdown" type="button"
+                                aria-expanded="false">
+                                <i class="fas fa-user me-2"></i>Iniciar Sesion  
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="btnUsuario">
+                                <li><a class="dropdown-item" href="CrearCuenta.aspx">Crear Cuenta</a></li>
+                                <li><a class="dropdown-item" href="PerfilUsuario.aspx">Perfil</a></li>
+                                <li><a class="dropdown-item" href="CambiarContrasenia.aspx">Cambiar Contraseña</a></li>
+                                <li><a class="dropdown-item" href="CerrarSesion.aspx">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+            <!-- Contenid de la Página Web -->
+
+            <div class="p-4">
+                <form runat="server">
+                    <asp:ContentPlaceHolder ID="cphContenido" runat="server">
+                    </asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
