@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ZAP2WS" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="Factura_VentaWS" targetNamespace="ZAP2WS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/Factura_VentaWS?xsd=1" namespace="ZAP2WS" />
+    </xsd:schema>
+  </types>
+  <message name="listarFacturaVenta">
+    <part name="parameters" element="tns:listarFacturaVenta" />
+  </message>
+  <message name="listarFacturaVentaResponse">
+    <part name="parameters" element="tns:listarFacturaVentaResponse" />
+  </message>
+  <message name="insertarFacturaVenta">
+    <part name="parameters" element="tns:insertarFacturaVenta" />
+  </message>
+  <message name="insertarFacturaVentaResponse">
+    <part name="parameters" element="tns:insertarFacturaVentaResponse" />
+  </message>
+  <message name="modificarFacturaVenta">
+    <part name="parameters" element="tns:modificarFacturaVenta" />
+  </message>
+  <message name="modificarFacturaVentaResponse">
+    <part name="parameters" element="tns:modificarFacturaVentaResponse" />
+  </message>
+  <message name="eliminarFacturaVenta">
+    <part name="parameters" element="tns:eliminarFacturaVenta" />
+  </message>
+  <message name="eliminarFacturaVentaResponse">
+    <part name="parameters" element="tns:eliminarFacturaVentaResponse" />
+  </message>
+  <portType name="Factura_VentaWS">
+    <operation name="listarFacturaVenta">
+      <input wsam:Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaRequest" message="tns:listarFacturaVenta" />
+      <output wsam:Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaResponse" message="tns:listarFacturaVentaResponse" />
+    </operation>
+    <operation name="insertarFacturaVenta">
+      <input wsam:Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaRequest" message="tns:insertarFacturaVenta" />
+      <output wsam:Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaResponse" message="tns:insertarFacturaVentaResponse" />
+    </operation>
+    <operation name="modificarFacturaVenta">
+      <input wsam:Action="ZAP2WS/Factura_VentaWS/modificarFacturaVentaRequest" message="tns:modificarFacturaVenta" />
+      <output wsam:Action="ZAP2WS/Factura_VentaWS/modificarFacturaVentaResponse" message="tns:modificarFacturaVentaResponse" />
+    </operation>
+    <operation name="eliminarFacturaVenta">
+      <input wsam:Action="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaRequest" message="tns:eliminarFacturaVenta" />
+      <output wsam:Action="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaResponse" message="tns:eliminarFacturaVentaResponse" />
+    </operation>
+  </portType>
+  <binding name="Factura_VentaWSPortBinding" type="tns:Factura_VentaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarFacturaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarFacturaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarFacturaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarFacturaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Factura_VentaWS">
+    <port name="Factura_VentaWSPort" binding="tns:Factura_VentaWSPortBinding">
+      <soap:address location="http://localhost:8080/ZAP2WS/Factura_VentaWS" />
+    </port>
+  </service>
+</definitions>

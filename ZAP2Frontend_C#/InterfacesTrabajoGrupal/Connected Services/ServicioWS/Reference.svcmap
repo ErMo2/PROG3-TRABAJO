@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="93ffcf92-6bd5-4372-8f89-ddef17c0cbe0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/ZAP2WS/Referencia.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Documento_de_CompraWS.xsd" MetadataType="Schema" ID="6f41fbbe-7b45-494e-a97f-d8b9ed54a0c2" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Documento_de_CompraWS?xsd=1" />
+    <MetadataFile FileName="EmpleadoDeAreaWS.xsd" MetadataType="Schema" ID="c9672e3a-f424-4d12-9734-ed46cf633c89" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/EmpleadoDeAreaWS?xsd=1" />
+    <MetadataFile FileName="EmpleadoDeAreaWS.wsdl" MetadataType="Wsdl" ID="d8c7eef7-114d-4013-8667-542cb9a49b7d" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/EmpleadoDeAreaWS?WSDL" />
+    <MetadataFile FileName="PersonaJuridicaWS.wsdl" MetadataType="Wsdl" ID="18d75d01-4c41-4b87-987a-3716a86f6af9" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/PersonaJuridicaWS?WSDL" />
+    <MetadataFile FileName="SupervisorWS.xsd" MetadataType="Schema" ID="77debc56-9613-417c-878c-8f36b79ccf0e" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/SupervisorWS?xsd=1" />
+    <MetadataFile FileName="ProductosParaElCuidadoPersonalYDelHogarWS.xsd" MetadataType="Schema" ID="ec104b58-8354-47b7-b27f-721442440b68" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS?xsd=1" />
+    <MetadataFile FileName="Boleta_VentaWS.wsdl" MetadataType="Wsdl" ID="c2b77390-f303-4dce-addb-c2716af9db0d" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Boleta_VentaWS?WSDL" />
+    <MetadataFile FileName="MonedaWS.xsd" MetadataType="Schema" ID="7d9dacdd-e9b7-493a-bde3-cd7620cc732c" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/MonedaWS?xsd=1" />
+    <MetadataFile FileName="AreaWS.xsd" MetadataType="Schema" ID="0ddaa139-5d3b-4b4c-b313-807aabe8be2c" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/AreaWS?xsd=1" />
+    <MetadataFile FileName="TarjetaWS.wsdl" MetadataType="Wsdl" ID="fbe8c2ca-b30c-4cc8-9a54-78d83b9d77ca" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/TarjetaWS?WSDL" />
+    <MetadataFile FileName="ElectrodomesticosWS.xsd" MetadataType="Schema" ID="bd3f59a2-105a-49e1-a9d5-2cf1ad73c53e" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ElectrodomesticosWS?xsd=1" />
+    <MetadataFile FileName="MonedaWS.wsdl" MetadataType="Wsdl" ID="7867ff12-1048-4185-9d7f-d2224905955b" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/MonedaWS?WSDL" />
+    <MetadataFile FileName="ProductosParaElCuidadoPersonalYDelHogarWS.wsdl" MetadataType="Wsdl" ID="ffd7754f-a39f-4967-8fb3-9ed714258886" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS?WSDL" />
+    <MetadataFile FileName="Factura_VentaWS.xsd" MetadataType="Schema" ID="3583d351-f988-437a-a177-82db543646dd" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Factura_VentaWS?xsd=1" />
+    <MetadataFile FileName="LineaDocWS.wsdl" MetadataType="Wsdl" ID="6f68b38a-0ec8-4827-a0fd-de45d1e39506" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/LineaDocWS?WSDL" />
+    <MetadataFile FileName="Boleta_VentaWS.xsd" MetadataType="Schema" ID="37bcde52-08cb-4f3f-a04b-47eb91b8fa0c" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Boleta_VentaWS?xsd=1" />
+    <MetadataFile FileName="ProductoPrecioWS.xsd" MetadataType="Schema" ID="188e4da2-abd7-4415-8631-3ab34a285c5c" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoPrecioWS?xsd=1" />
+    <MetadataFile FileName="Detalle_PedidoWS.wsdl" MetadataType="Wsdl" ID="d24ff0af-bb88-4120-bde0-8611df729980" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Detalle_PedidoWS?WSDL" />
+    <MetadataFile FileName="CajeroWS.xsd" MetadataType="Schema" ID="e7073207-5369-4b03-b125-e266a3c5231e" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/CajeroWS?xsd=1" />
+    <MetadataFile FileName="RopaWS.xsd" MetadataType="Schema" ID="080c48da-965c-434e-aebc-6c4012cae7cd" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/RopaWS?xsd=1" />
+    <MetadataFile FileName="SupervisorWS.wsdl" MetadataType="Wsdl" ID="aaadb1a2-8504-420b-b81a-2989c6172388" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/SupervisorWS?WSDL" />
+    <MetadataFile FileName="Documento_de_CompraWS.wsdl" MetadataType="Wsdl" ID="161f2255-8340-47ca-9343-27eb3be489fe" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Documento_de_CompraWS?WSDL" />
+    <MetadataFile FileName="AlmacenWS.wsdl" MetadataType="Wsdl" ID="104c710d-d4ef-4c7c-bc78-aaeb9ff7d424" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/AlmacenWS?WSDL" />
+    <MetadataFile FileName="BancoWS.wsdl" MetadataType="Wsdl" ID="912442e7-d2a4-473f-b0fc-3109a7b1dbd6" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/BancoWS?WSDL" />
+    <MetadataFile FileName="Detalle_PedidoWS.xsd" MetadataType="Schema" ID="718d8912-9f19-4392-80a0-a142301df4a0" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Detalle_PedidoWS?xsd=1" />
+    <MetadataFile FileName="AlmacenWS.xsd" MetadataType="Schema" ID="a91f4136-efcc-4613-b95e-3a8938e9039f" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/AlmacenWS?xsd=1" />
+    <MetadataFile FileName="LoteWS.wsdl" MetadataType="Wsdl" ID="a5327f35-bcc9-4cdf-a7f0-93546793dc05" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/LoteWS?WSDL" />
+    <MetadataFile FileName="CuentaUsuarioWS.xsd" MetadataType="Schema" ID="505436ef-ec38-424b-9bbc-ce0e63377faf" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/CuentaUsuarioWS?xsd=1" />
+    <MetadataFile FileName="PedidoWS.xsd" MetadataType="Schema" ID="13631be7-6b28-4d5b-97b0-14dd1c0a4ff9" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/PedidoWS?xsd=1" />
+    <MetadataFile FileName="Referencia.disco" MetadataType="Disco" ID="6e8d0ad2-eb59-433a-9eb3-e4f75c523090" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Referencia.disco" />
+    <MetadataFile FileName="Factura_VentaWS.wsdl" MetadataType="Wsdl" ID="14145163-4309-4682-9215-f131b600bc22" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Factura_VentaWS?WSDL" />
+    <MetadataFile FileName="MovimientoLoteWS.wsdl" MetadataType="Wsdl" ID="27af9e89-ba31-43d4-aeba-fe8ce8a87ff0" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/MovimientoLoteWS?WSDL" />
+    <MetadataFile FileName="AreaWS.wsdl" MetadataType="Wsdl" ID="006916da-d119-40c8-9cd3-6295bc489e86" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/AreaWS?WSDL" />
+    <MetadataFile FileName="ProductoPerecibleWS.xsd" MetadataType="Schema" ID="a3c98910-4c58-4553-9bb1-609a693e7cfd" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoPerecibleWS?xsd=1" />
+    <MetadataFile FileName="ElectrodomesticosWS.wsdl" MetadataType="Wsdl" ID="17949573-6faf-4c02-a418-b1baf1972194" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ElectrodomesticosWS?WSDL" />
+    <MetadataFile FileName="PersonaJuridicaWS.xsd" MetadataType="Schema" ID="69d1d3c6-dcc1-4f56-9c80-337c793eb563" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/PersonaJuridicaWS?xsd=1" />
+    <MetadataFile FileName="MovimientoLoteWS.xsd" MetadataType="Schema" ID="01b45be3-d017-426e-a068-4967f2c29690" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/MovimientoLoteWS?xsd=1" />
+    <MetadataFile FileName="ClienteWS.xsd" MetadataType="Schema" ID="96244f96-ff63-4a09-aafb-5cab5ddf1286" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ClienteWS?xsd=1" />
+    <MetadataFile FileName="SucursalWS.xsd" MetadataType="Schema" ID="21d0a8c6-2f2a-4296-b50a-19758298316f" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/SucursalWS?xsd=1" />
+    <MetadataFile FileName="TarjetaWS.xsd" MetadataType="Schema" ID="f7ec0f12-2fd0-4483-8905-4c1aa7390da7" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/TarjetaWS?xsd=1" />
+    <MetadataFile FileName="ClienteWS.wsdl" MetadataType="Wsdl" ID="c28dd523-1524-4842-a7b9-c75b18c0eae7" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ClienteWS?WSDL" />
+    <MetadataFile FileName="SucursalWS.wsdl" MetadataType="Wsdl" ID="3701df2f-4a0b-4a6f-a443-0d6f5130d7fb" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/SucursalWS?WSDL" />
+    <MetadataFile FileName="BancoWS.xsd" MetadataType="Schema" ID="cb157b5d-5519-4f53-bc01-03abb04af1ec" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/BancoWS?xsd=1" />
+    <MetadataFile FileName="LineaDocWS.xsd" MetadataType="Schema" ID="8d80d03f-6d37-4cbb-97e3-9b53cadb8523" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/LineaDocWS?xsd=1" />
+    <MetadataFile FileName="PedidoWS.wsdl" MetadataType="Wsdl" ID="aa035bb0-7de7-4f98-8787-5b18a835c696" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/PedidoWS?WSDL" />
+    <MetadataFile FileName="CajeroWS.wsdl" MetadataType="Wsdl" ID="1a5b754f-4d48-4975-893c-a88ef416cdb2" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/CajeroWS?WSDL" />
+    <MetadataFile FileName="CuentaUsuarioWS.wsdl" MetadataType="Wsdl" ID="e404b797-e406-48e6-ba39-68aac4425013" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/CuentaUsuarioWS?WSDL" />
+    <MetadataFile FileName="RopaWS.wsdl" MetadataType="Wsdl" ID="9dc04b88-a133-4df6-bf99-50c11ba164a9" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/RopaWS?WSDL" />
+    <MetadataFile FileName="LoteWS.xsd" MetadataType="Schema" ID="33ac461e-60ad-4196-adad-7485bd8265cc" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/LoteWS?xsd=1" />
+    <MetadataFile FileName="ProductoPerecibleWS.wsdl" MetadataType="Wsdl" ID="3b918929-f1ee-4974-97f4-30eff87e92f7" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoPerecibleWS?WSDL" />
+    <MetadataFile FileName="ProductoPrecioWS.wsdl" MetadataType="Wsdl" ID="2bcafe8f-210c-45a9-a2d7-c95d4bed4d08" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoPrecioWS?WSDL" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

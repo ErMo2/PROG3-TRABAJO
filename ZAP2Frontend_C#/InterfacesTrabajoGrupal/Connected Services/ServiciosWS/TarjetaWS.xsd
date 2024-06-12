@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarTarjeta" type="tns:eliminarTarjeta" />
+  <xs:element name="eliminarTarjetaResponse" type="tns:eliminarTarjetaResponse" />
+  <xs:element name="insertarTarjeta" type="tns:insertarTarjeta" />
+  <xs:element name="insertarTarjetaResponse" type="tns:insertarTarjetaResponse" />
+  <xs:element name="listarTarjetasTodas" type="tns:listarTarjetasTodas" />
+  <xs:element name="listarTarjetasTodasResponse" type="tns:listarTarjetasTodasResponse" />
+  <xs:element name="modificarTarjeta" type="tns:modificarTarjeta" />
+  <xs:element name="modificarTarjetaResponse" type="tns:modificarTarjetaResponse" />
+  <xs:complexType name="eliminarTarjeta">
+    <xs:sequence>
+      <xs:element name="idTarjeta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTarjetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTarjetasTodas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTarjetasTodasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="banco" type="tns:banco" />
+      <xs:element name="codTarjeta" type="xs:int" />
+      <xs:element name="idTarjeta" type="xs:int" />
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoTarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="banco">
+    <xs:sequence>
+      <xs:element name="idBanco" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tarjeta" type="tns:tarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarTarjetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tarjeta" type="tns:tarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTarjetaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipoTarjeta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEBITO" />
+      <xs:enumeration value="CREDITO" />
+      <xs:enumeration value="CUENTA_CORRIENTE" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,22 @@
+﻿body {
+    background-color: #f8f9fa;
+}
+
+.form-control, .btn {
+    border-radius: 0.25rem;
+}
+
+.card-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn-success {
+    background-color: #28a745; /* Verde oscuro para el botón de registrar */
+    border-color: #28a745;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gris para el botón de regresar */
+    border-color: #6c757d;
+}

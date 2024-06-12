@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ZAP2WS" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="RopaWS" targetNamespace="ZAP2WS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/RopaWS?xsd=1" namespace="ZAP2WS" />
+    </xsd:schema>
+  </types>
+  <message name="listarRopa">
+    <part name="parameters" element="tns:listarRopa" />
+  </message>
+  <message name="listarRopaResponse">
+    <part name="parameters" element="tns:listarRopaResponse" />
+  </message>
+  <message name="insertarRopa">
+    <part name="parameters" element="tns:insertarRopa" />
+  </message>
+  <message name="insertarRopaResponse">
+    <part name="parameters" element="tns:insertarRopaResponse" />
+  </message>
+  <message name="modificarRopa">
+    <part name="parameters" element="tns:modificarRopa" />
+  </message>
+  <message name="modificarRopaResponse">
+    <part name="parameters" element="tns:modificarRopaResponse" />
+  </message>
+  <message name="eliminarRopa">
+    <part name="parameters" element="tns:eliminarRopa" />
+  </message>
+  <message name="eliminarRopaResponse">
+    <part name="parameters" element="tns:eliminarRopaResponse" />
+  </message>
+  <portType name="RopaWS">
+    <operation name="listarRopa">
+      <input wsam:Action="ZAP2WS/RopaWS/listarRopaRequest" message="tns:listarRopa" />
+      <output wsam:Action="ZAP2WS/RopaWS/listarRopaResponse" message="tns:listarRopaResponse" />
+    </operation>
+    <operation name="insertarRopa">
+      <input wsam:Action="ZAP2WS/RopaWS/insertarRopaRequest" message="tns:insertarRopa" />
+      <output wsam:Action="ZAP2WS/RopaWS/insertarRopaResponse" message="tns:insertarRopaResponse" />
+    </operation>
+    <operation name="modificarRopa">
+      <input wsam:Action="ZAP2WS/RopaWS/modificarRopaRequest" message="tns:modificarRopa" />
+      <output wsam:Action="ZAP2WS/RopaWS/modificarRopaResponse" message="tns:modificarRopaResponse" />
+    </operation>
+    <operation name="eliminarRopa">
+      <input wsam:Action="ZAP2WS/RopaWS/eliminarRopaRequest" message="tns:eliminarRopa" />
+      <output wsam:Action="ZAP2WS/RopaWS/eliminarRopaResponse" message="tns:eliminarRopaResponse" />
+    </operation>
+  </portType>
+  <binding name="RopaWSPortBinding" type="tns:RopaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarRopa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarRopa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarRopa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarRopa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="RopaWS">
+    <port name="RopaWSPort" binding="tns:RopaWSPortBinding">
+      <soap:address location="http://localhost:8080/ZAP2WS/RopaWS" />
+    </port>
+  </service>
+</definitions>

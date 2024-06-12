@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ZAP2WS" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ProductoPerecibleWS" targetNamespace="ZAP2WS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ProductoPerecibleWS?xsd=1" namespace="ZAP2WS" />
+    </xsd:schema>
+  </types>
+  <message name="insertarProductoPerecible">
+    <part name="parameters" element="tns:insertarProductoPerecible" />
+  </message>
+  <message name="insertarProductoPerecibleResponse">
+    <part name="parameters" element="tns:insertarProductoPerecibleResponse" />
+  </message>
+  <message name="listarProductoPerecible">
+    <part name="parameters" element="tns:listarProductoPerecible" />
+  </message>
+  <message name="listarProductoPerecibleResponse">
+    <part name="parameters" element="tns:listarProductoPerecibleResponse" />
+  </message>
+  <message name="modificarProductoPerecible">
+    <part name="parameters" element="tns:modificarProductoPerecible" />
+  </message>
+  <message name="modificarProductoPerecibleResponse">
+    <part name="parameters" element="tns:modificarProductoPerecibleResponse" />
+  </message>
+  <message name="eliminarProductoPerecible">
+    <part name="parameters" element="tns:eliminarProductoPerecible" />
+  </message>
+  <message name="eliminarProductoPerecibleResponse">
+    <part name="parameters" element="tns:eliminarProductoPerecibleResponse" />
+  </message>
+  <portType name="ProductoPerecibleWS">
+    <operation name="insertarProductoPerecible">
+      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleRequest" message="tns:insertarProductoPerecible" />
+      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleResponse" message="tns:insertarProductoPerecibleResponse" />
+    </operation>
+    <operation name="listarProductoPerecible">
+      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleRequest" message="tns:listarProductoPerecible" />
+      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleResponse" message="tns:listarProductoPerecibleResponse" />
+    </operation>
+    <operation name="modificarProductoPerecible">
+      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest" message="tns:modificarProductoPerecible" />
+      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse" message="tns:modificarProductoPerecibleResponse" />
+    </operation>
+    <operation name="eliminarProductoPerecible">
+      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest" message="tns:eliminarProductoPerecible" />
+      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse" message="tns:eliminarProductoPerecibleResponse" />
+    </operation>
+  </portType>
+  <binding name="ProductoPerecibleWSPortBinding" type="tns:ProductoPerecibleWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarProductoPerecible">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductoPerecible">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarProductoPerecible">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarProductoPerecible">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProductoPerecibleWS">
+    <port name="ProductoPerecibleWSPort" binding="tns:ProductoPerecibleWSPortBinding">
+      <soap:address location="http://localhost:8080/ZAP2WS/ProductoPerecibleWS" />
+    </port>
+  </service>
+</definitions>

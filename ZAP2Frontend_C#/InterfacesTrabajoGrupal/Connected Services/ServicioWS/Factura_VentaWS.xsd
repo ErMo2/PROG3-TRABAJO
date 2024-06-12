@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="eliminarFacturaVenta" type="tns:eliminarFacturaVenta" />
+  <xs:element name="eliminarFacturaVentaResponse" type="tns:eliminarFacturaVentaResponse" />
+  <xs:element name="insertarFacturaVenta" type="tns:insertarFacturaVenta" />
+  <xs:element name="insertarFacturaVentaResponse" type="tns:insertarFacturaVentaResponse" />
+  <xs:element name="listarFacturaVenta" type="tns:listarFacturaVenta" />
+  <xs:element name="listarFacturaVentaResponse" type="tns:listarFacturaVentaResponse" />
+  <xs:element name="modificarFacturaVenta" type="tns:modificarFacturaVenta" />
+  <xs:element name="modificarFacturaVentaResponse" type="tns:modificarFacturaVentaResponse" />
+  <xs:complexType name="modificarFacturaVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="facturaVenta" type="tns:facturaVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="facturaVenta">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:documentoDeVenta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="detalles" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaVenc" type="xs:dateTime" />
+          <xs:element name="idFactura" type="xs:int" />
+          <xs:element minOccurs="0" name="personaJuridica" type="tns:personaJuridica" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="documentoDeVenta">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:documento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="empleado" type="tns:empleado" />
+          <xs:element name="id_doc_venta" type="xs:int" />
+          <xs:element name="montoTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="tarjeta" type="tns:tarjeta" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="documento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha_emision" type="xs:dateTime" />
+      <xs:element name="id_documento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasDocVenta" nillable="true" type="tns:lineaDoc" />
+      <xs:element minOccurs="0" name="moneda" type="tns:moneda" />
+      <xs:element name="total" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="personaJuridica">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="direccionLegal" type="xs:string" />
+          <xs:element minOccurs="0" name="nombreLegal" type="xs:string" />
+          <xs:element name="numIdentificadorFiscal" type="xs:int" />
+          <xs:element minOccurs="0" name="RUC" type="xs:string" />
+          <xs:element minOccurs="0" name="tipoEntidad" type="tns:tipoEntidad" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="apellido_materno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellido_paterno" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element name="id_Persona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="nro_documento" type="xs:int" />
+      <xs:element name="telefono" type="xs:int" />
+      <xs:element minOccurs="0" name="tipo_documento" type="tns:tipoDocumento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleado" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:personaNatural">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="area" type="tns:area" />
+          <xs:element minOccurs="0" name="fechaContratacion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="horario" type="tns:turnosHorario" />
+          <xs:element name="idEmpleado" type="xs:int" />
+          <xs:element name="salario" type="xs:double" />
+          <xs:element minOccurs="0" name="tipoContrato" type="tns:tipoContrato" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="personaNatural">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cuenta_usuario" type="tns:cuentaUsuario" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element name="sexo" type="xs:unsignedShort" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="area">
+    <xs:sequence>
+      <xs:element name="idArea" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productos" nillable="true" type="tns:producto" />
+      <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="producto">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element name="cantidadComprada" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="productoPrecio">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="descuento" type="tns:descuento" />
+      <xs:element name="idProductoPrecio" type="xs:int" />
+      <xs:element name="precio" type="xs:double" />
+      <xs:element minOccurs="0" name="producto" type="tns:producto" />
+      <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descuento">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element name="descuentoAplicado" type="xs:double" />
+      <xs:element minOccurs="0" name="fechaFinal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicial" type="xs:dateTime" />
+      <xs:element name="idDescuento" type="xs:int" />
+      <xs:element name="pp" type="xs:double" />
+      <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sucursal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="almacenes" nillable="true" type="tns:almacen" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="areas" nillable="true" type="tns:area" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element name="id_sucursal" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="producto" nillable="true" type="tns:productoPrecio" />
+      <xs:element name="tam_metros" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="almacen">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="capacidadActualProductos" type="xs:double" />
+      <xs:element name="capacidadMaximaProductos" type="xs:double" />
+      <xs:element name="id_almacen" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lote" nillable="true" type="tns:lote" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="movimientosLote" nillable="true" type="tns:movimientoLote" />
+      <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
+      <xs:element minOccurs="0" name="tipoAlmacen" type="tns:tipoAlmacen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="almacen" type="tns:almacen" />
+      <xs:element name="idLote" type="xs:int" />
+      <xs:element name="idPedido" type="xs:int" />
+      <xs:element minOccurs="0" name="movLote" type="tns:movimientoLote" />
+      <xs:element minOccurs="0" name="producto" type="tns:producto" />
+      <xs:element name="stockActual" type="xs:int" />
+      <xs:element name="stockInicial" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="movimientoLote">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="almacenEntrada" type="tns:almacen" />
+      <xs:element minOccurs="0" name="almacenSalida" type="tns:almacen" />
+      <xs:element name="cantidadProductosMovidos" type="xs:double" />
+      <xs:element minOccurs="0" name="fechaMovimiento" type="xs:dateTime" />
+      <xs:element name="idMovimientoLote" type="xs:int" />
+      <xs:element minOccurs="0" name="lote" type="tns:lote" />
+      <xs:element minOccurs="0" name="motivo" type="tns:tipoDeMotivoMovimientoAlmacen" />
+      <xs:element name="movimientoEntrada" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cuentaUsuario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+      <xs:element name="idCuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="personaNatural" type="tns:personaNatural" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="banco" type="tns:banco" />
+      <xs:element name="codTarjeta" type="xs:int" />
+      <xs:element name="idTarjeta" type="xs:int" />
+      <xs:element minOccurs="0" name="tipoTarjeta" type="tns:tipoTarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="banco">
+    <xs:sequence>
+      <xs:element name="idBanco" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineaDoc">
+    <xs:sequence>
+      <xs:element name="cantidad" type="xs:double" />
+      <xs:element minOccurs="0" name="documento" type="tns:documento" />
+      <xs:element name="idLineDoc" type="xs:int" />
+      <xs:element name="precioTotal" type="xs:double" />
+      <xs:element name="precioUnitario" type="xs:double" />
+      <xs:element minOccurs="0" name="producto" type="tns:productoPrecio" />
+      <xs:element name="subTotal" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="moneda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="abreviacion" type="xs:string" />
+      <xs:element name="idMoneda" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarFacturaVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarFacturaVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="facturaVenta" type="tns:facturaVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarFacturaVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVenta">
+    <xs:sequence>
+      <xs:element name="idFacturaVenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarFacturaVenta">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarFacturaVentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:facturaVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipoEntidad">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Corporacion" />
+      <xs:enumeration value="Asociación" />
+      <xs:enumeration value="Fundacion" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoDocumento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DNI" />
+      <xs:enumeration value="CARNET_EXTRANJERIA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoDeMotivoMovimientoAlmacen">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="traslado" />
+      <xs:enumeration value="compra" />
+      <xs:enumeration value="venta" />
+      <xs:enumeration value="perdida" />
+      <xs:enumeration value="devolucionCliente" />
+      <xs:enumeration value="devolucionProveedor" />
+      <xs:enumeration value="daño" />
+      <xs:enumeration value="donacion" />
+      <xs:enumeration value="inventario" />
+      <xs:enumeration value="reposicionAnaqueles" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoAlmacen">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AlmacenComun" />
+      <xs:enumeration value="Congeladora" />
+      <xs:enumeration value="Refrigeradora" />
+      <xs:enumeration value="AlmacenSeco" />
+      <xs:enumeration value="AlmacenDeProductosQuimicos" />
+      <xs:enumeration value="AlmacenElectronicos" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="turnosHorario">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MAÑANA" />
+      <xs:enumeration value="NOCHE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoContrato">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TiempoParcial" />
+      <xs:enumeration value="TiempoCompleto" />
+      <xs:enumeration value="ContratoEspecial" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoTarjeta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEBITO" />
+      <xs:enumeration value="CREDITO" />
+      <xs:enumeration value="CUENTA_CORRIENTE" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

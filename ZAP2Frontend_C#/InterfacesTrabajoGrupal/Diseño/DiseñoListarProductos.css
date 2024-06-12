@@ -1,0 +1,107 @@
+﻿/* Colores y fuentes básicas */
+:root {
+    --color-primary: #4CAF50; /* Verde, asociado a frescura */
+    --color-secondary: #ff8c00; /* Naranja, para llamados a la acción */
+    --font-primary: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* Estilos de cabecera */
+.header {
+    background: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Estilos para botones */
+.btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--color-secondary);
+    border: none;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background-color: darken(var(--color-secondary), 10%);
+    }
+
+/* Estilos de tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+/* Responsive design */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Footer estilizado */
+.footer {
+    background: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+.btn-edit {
+    background-color: #4CAF50; /* Verde */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+}
+
+.btn-edit:hover {
+    background-color: #45a049; /* Un verde un poco más oscuro para el hover */
+}
+
+.btn-delete {
+    background-color: #f44336; /* Rojo */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: #da190b; /* Un rojo un poco más oscuro para el hover */
+}

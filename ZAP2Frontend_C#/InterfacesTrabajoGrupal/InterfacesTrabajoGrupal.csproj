@@ -1,0 +1,1148 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7B4E7F6-4BF2-4A08-B825-ABE7272CDAAE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InterfacesTrabajoGrupal</RootNamespace>
+    <AssemblyName>InterfacesTrabajoGrupal</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44362</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1652.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BoletaVenta.aspx" />
+    <Content Include="bootstrap-5.3.3-examples\album-rtl\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\album\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\assets\brand\bootstrap-logo-white.svg" />
+    <Content Include="bootstrap-5.3.3-examples\assets\brand\bootstrap-logo.svg" />
+    <Content Include="bootstrap-5.3.3-examples\assets\dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-5.3.3-examples\assets\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="bootstrap-5.3.3-examples\assets\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap-5.3.3-examples\assets\js\color-modes.js" />
+    <Content Include="bootstrap-5.3.3-examples\badges\badges.css" />
+    <Content Include="bootstrap-5.3.3-examples\badges\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\blog-rtl\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\blog\blog.css" />
+    <Content Include="bootstrap-5.3.3-examples\blog\blog.rtl.css" />
+    <Content Include="bootstrap-5.3.3-examples\blog\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\breadcrumbs\breadcrumbs.css" />
+    <Content Include="bootstrap-5.3.3-examples\breadcrumbs\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\buttons\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\carousel-rtl\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\carousel\carousel.css" />
+    <Content Include="bootstrap-5.3.3-examples\carousel\carousel.rtl.css" />
+    <Content Include="bootstrap-5.3.3-examples\carousel\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\cheatsheet-rtl\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\cheatsheet\cheatsheet.css" />
+    <Content Include="bootstrap-5.3.3-examples\cheatsheet\cheatsheet.js" />
+    <Content Include="bootstrap-5.3.3-examples\cheatsheet\cheatsheet.rtl.css" />
+    <Content Include="bootstrap-5.3.3-examples\cheatsheet\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\checkout-rtl\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\checkout\checkout.css" />
+    <Content Include="bootstrap-5.3.3-examples\checkout\checkout.js" />
+    <Content Include="bootstrap-5.3.3-examples\checkout\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\cover\cover.css" />
+    <Content Include="bootstrap-5.3.3-examples\cover\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\dashboard-rtl\dashboard.js" />
+    <Content Include="bootstrap-5.3.3-examples\dashboard-rtl\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\dashboard\dashboard.css" />
+    <Content Include="bootstrap-5.3.3-examples\dashboard\dashboard.js" />
+    <Content Include="bootstrap-5.3.3-examples\dashboard\dashboard.rtl.css" />
+    <Content Include="bootstrap-5.3.3-examples\dashboard\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\dropdowns\dropdowns.css" />
+    <Content Include="bootstrap-5.3.3-examples\dropdowns\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\features\features.css" />
+    <Content Include="bootstrap-5.3.3-examples\features\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\features\unsplash-photo-1.jpg" />
+    <Content Include="bootstrap-5.3.3-examples\features\unsplash-photo-2.jpg" />
+    <Content Include="bootstrap-5.3.3-examples\features\unsplash-photo-3.jpg" />
+    <Content Include="bootstrap-5.3.3-examples\footers\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\grid\grid.css" />
+    <Content Include="bootstrap-5.3.3-examples\grid\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\headers\headers.css" />
+    <Content Include="bootstrap-5.3.3-examples\headers\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\heroes\bootstrap-docs.png" />
+    <Content Include="bootstrap-5.3.3-examples\heroes\bootstrap-themes.png" />
+    <Content Include="bootstrap-5.3.3-examples\heroes\heroes.css" />
+    <Content Include="bootstrap-5.3.3-examples\heroes\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\jumbotrons\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\jumbotrons\jumbotrons.css" />
+    <Content Include="bootstrap-5.3.3-examples\jumbotron\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\list-groups\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\list-groups\list-groups.css" />
+    <Content Include="bootstrap-5.3.3-examples\masonry\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\modals\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\modals\modals.css" />
+    <Content Include="bootstrap-5.3.3-examples\navbar-bottom\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\navbar-fixed\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\navbar-fixed\navbar-fixed.css" />
+    <Content Include="bootstrap-5.3.3-examples\navbar-static\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\navbar-static\navbar-static.css" />
+    <Content Include="bootstrap-5.3.3-examples\navbars-offcanvas\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\navbars-offcanvas\navbars-offcanvas.css" />
+    <Content Include="bootstrap-5.3.3-examples\navbars\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\navbars\navbars.css" />
+    <Content Include="bootstrap-5.3.3-examples\offcanvas-navbar\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\offcanvas-navbar\offcanvas-navbar.css" />
+    <Content Include="bootstrap-5.3.3-examples\offcanvas-navbar\offcanvas-navbar.js" />
+    <Content Include="bootstrap-5.3.3-examples\offcanvas\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\pricing\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\pricing\pricing.css" />
+    <Content Include="bootstrap-5.3.3-examples\product\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\product\product.css" />
+    <Content Include="bootstrap-5.3.3-examples\sidebars\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\sidebars\sidebars.css" />
+    <Content Include="bootstrap-5.3.3-examples\sidebars\sidebars.js" />
+    <Content Include="bootstrap-5.3.3-examples\sign-in\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\sign-in\sign-in.css" />
+    <Content Include="bootstrap-5.3.3-examples\starter-template\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\sticky-footer-navbar\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="bootstrap-5.3.3-examples\sticky-footer\index.html" />
+    <Content Include="bootstrap-5.3.3-examples\sticky-footer\sticky-footer.css" />
+    <Content Include="Cajero.aspx" />
+    <Content Include="CambiarContrasenia.aspx" />
+    <Content Include="CerrarSesion.aspx" />
+    <None Include="Connected Services\ServicioWS\AreaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\BancoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\CajeroWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ClienteWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ClienteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\CuentaUsuarioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ElectrodomesticosWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Factura_VentaWS.wsdl" />
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.almacen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.area.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.banco.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.boletaVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.cajero.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.detallePedido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.electrodomesticos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarBancoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarBoletaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarCajeroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarDetallePedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarDocumentoCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarElectrodomesticoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarEmpleadoDeAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarFacturaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarLineaDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarMovimientoLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarPersonaJuridicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPrecioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.empleadoDeArea.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.facturaVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarBancoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarBoletaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarDetallePedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarEmpleadoDeAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarPCHResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarPersonaJuridicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarProductoPerecibleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.insertarTarjetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.lineaDoc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarCajerosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarLineaDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarMovimientoLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductoPerecibleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarRopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.lote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarAlmacenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarBoletaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarCajeroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarDocumentoCompraResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarElectrodomesticoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarEmpleadoDeAreaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarFacturaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarLineaDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarMovimientoLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarPedidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarPersonaJuridicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.moneda.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.movimientoLote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.pedido.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.personaJuridica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.productoPerecible.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.productoPrecio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.ropa.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.sucursal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.supervisor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.tarjeta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\LoteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\MovimientoLoteWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\MovimientoLoteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\PedidoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\PersonaJuridicaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ProductoPerecibleWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ProductoPerecibleWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ProductoPrecioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Referencia.disco" />
+    <None Include="Connected Services\ServicioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioWS\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\css\all.css" />
+    <Content Include="Content\css\all.min.css" />
+    <Content Include="Content\css\brands.css" />
+    <Content Include="Content\css\brands.min.css" />
+    <Content Include="Content\css\fontawesome.css" />
+    <Content Include="Content\css\fontawesome.min.css" />
+    <Content Include="Content\css\regular.css" />
+    <Content Include="Content\css\regular.min.css" />
+    <Content Include="Content\css\solid.css" />
+    <Content Include="Content\css\solid.min.css" />
+    <Content Include="Content\css\svg-with-js.css" />
+    <Content Include="Content\css\svg-with-js.min.css" />
+    <Content Include="Content\css\v4-font-face.css" />
+    <Content Include="Content\css\v4-font-face.min.css" />
+    <Content Include="Content\css\v4-shims.css" />
+    <Content Include="Content\css\v4-shims.min.css" />
+    <Content Include="Content\css\v5-font-face.css" />
+    <Content Include="Content\css\v5-font-face.min.css" />
+    <Content Include="Content\Site - Copia.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="CrearCuenta.aspx" />
+    <Content Include="Electrodomestico.aspx" />
+    <Content Include="EmpleadoArea.aspx" />
+    <Content Include="FacturaVenta.aspx" />
+    <Content Include="Gerente.aspx" />
+    <Content Include="GestionarAreas.aspx" />
+    <Content Include="GestionarBancos.aspx" />
+    <Content Include="GestionarClientes.aspx" />
+    <Content Include="GestionarDocumentoDeCompra.aspx" />
+    <Content Include="GestionarDocumentoDeVenta.aspx" />
+    <Content Include="GestionarPedido.aspx" />
+    <Content Include="GestionarProductos.aspx" />
+    <Content Include="GestionarAlmacenes.aspx" />
+    <Content Include="GestionarSucursales.aspx" />
+    <Content Include="ListarAreas.aspx" />
+    <Content Include="ListarBancos.aspx" />
+    <Content Include="ListarDocumentoDeCompra.aspx" />
+    <Content Include="ListarDocumentoDeVenta.aspx" />
+    <Content Include="ListarEmpleados.aspx" />
+    <Content Include="ListarPedidos.aspx" />
+    <Content Include="ListarProductos.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="ListarClientes.aspx" />
+    <Content Include="ListarAlmacenes.aspx" />
+    <Content Include="ListarSucursales.aspx" />
+    <Content Include="PerfilUsuario.aspx" />
+    <Content Include="ProdPerecible.aspx" />
+    <Content Include="ProductoPersonalYHogar.aspx" />
+    <Content Include="Ropa.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Content\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="bootstrap-5.3.3-examples\assets\dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-5.3.3-examples\assets\dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap-5.3.3-examples\assets\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="Connected Services\ServicioWS\AlmacenWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\AlmacenWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\AreaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\BancoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Boleta_VentaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Boleta_VentaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\CajeroWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\CuentaUsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\Detalle_PedidoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Detalle_PedidoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\Documento_de_CompraWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Documento_de_CompraWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ElectrodomesticosWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\EmpleadoDeAreaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\EmpleadoDeAreaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\Factura_VentaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\LineaDocWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\LoteWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\MonedaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\MonedaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\PedidoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\PersonaJuridicaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ProductoPrecioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ProductosParaElCuidadoPersonalYDelHogarWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ProductosParaElCuidadoPersonalYDelHogarWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\RopaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\RopaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\SucursalWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\SucursalWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\SupervisorWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\SupervisorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\TarjetaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\TarjetaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\EstiloSucursales.css" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="SeleccionarTipoDeDocumento.aspx" />
+    <Content Include="SeleccionarTipoDeDocumentoDeVenta.aspx" />
+    <Content Include="SeleccionarTipoDeEmpleado.aspx" />
+    <Content Include="SeleccionarTipoDeProducto.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoletaVenta.aspx.cs">
+      <DependentUpon>BoletaVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BoletaVenta.aspx.designer.cs">
+      <DependentUpon>BoletaVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cajero.aspx.cs">
+      <DependentUpon>Cajero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cajero.aspx.designer.cs">
+      <DependentUpon>Cajero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarContrasenia.aspx.cs">
+      <DependentUpon>CambiarContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambiarContrasenia.aspx.designer.cs">
+      <DependentUpon>CambiarContrasenia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CerrarSesion.aspx.designer.cs">
+      <DependentUpon>CerrarSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServicioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="CrearCuenta.aspx.cs">
+      <DependentUpon>CrearCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearCuenta.aspx.designer.cs">
+      <DependentUpon>CrearCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Electrodomestico.aspx.cs">
+      <DependentUpon>Electrodomestico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Electrodomestico.aspx.designer.cs">
+      <DependentUpon>Electrodomestico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmpleadoArea.aspx.cs">
+      <DependentUpon>EmpleadoArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmpleadoArea.aspx.designer.cs">
+      <DependentUpon>EmpleadoArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs" />
+    <Compile Include="FacturaVenta.aspx.cs">
+      <DependentUpon>FacturaVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacturaVenta.aspx.designer.cs">
+      <DependentUpon>FacturaVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gerente.aspx.cs">
+      <DependentUpon>Gerente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gerente.aspx.designer.cs">
+      <DependentUpon>Gerente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarAreas.aspx.cs">
+      <DependentUpon>GestionarAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarAreas.aspx.designer.cs">
+      <DependentUpon>GestionarAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarBancos.aspx.cs">
+      <DependentUpon>GestionarBancos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarBancos.aspx.designer.cs">
+      <DependentUpon>GestionarBancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarClientes.aspx.cs">
+      <DependentUpon>GestionarClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarClientes.aspx.designer.cs">
+      <DependentUpon>GestionarClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarDocumentoDeCompra.aspx.cs">
+      <DependentUpon>GestionarDocumentoDeCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarDocumentoDeCompra.aspx.designer.cs">
+      <DependentUpon>GestionarDocumentoDeCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarDocumentoDeVenta.aspx.cs">
+      <DependentUpon>GestionarDocumentoDeVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarDocumentoDeVenta.aspx.designer.cs">
+      <DependentUpon>GestionarDocumentoDeVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarPedido.aspx.cs">
+      <DependentUpon>GestionarPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarPedido.aspx.designer.cs">
+      <DependentUpon>GestionarPedido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarProductos.aspx.cs">
+      <DependentUpon>GestionarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarProductos.aspx.designer.cs">
+      <DependentUpon>GestionarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarAlmacenes.aspx.cs">
+      <DependentUpon>GestionarAlmacenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarAlmacenes.aspx.designer.cs">
+      <DependentUpon>GestionarAlmacenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarSucursales.aspx.cs">
+      <DependentUpon>GestionarSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarSucursales.aspx.designer.cs">
+      <DependentUpon>GestionarSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarAreas.aspx.cs">
+      <DependentUpon>ListarAreas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarAreas.aspx.designer.cs">
+      <DependentUpon>ListarAreas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarBancos.aspx.cs">
+      <DependentUpon>ListarBancos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarBancos.aspx.designer.cs">
+      <DependentUpon>ListarBancos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarDocumentoDeCompra.aspx.cs">
+      <DependentUpon>ListarDocumentoDeCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarDocumentoDeCompra.aspx.designer.cs">
+      <DependentUpon>ListarDocumentoDeCompra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarDocumentoDeVenta.aspx.cs">
+      <DependentUpon>ListarDocumentoDeVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarDocumentoDeVenta.aspx.designer.cs">
+      <DependentUpon>ListarDocumentoDeVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEmpleados.aspx.cs">
+      <DependentUpon>ListarEmpleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEmpleados.aspx.designer.cs">
+      <DependentUpon>ListarEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarPedidos.aspx.cs">
+      <DependentUpon>ListarPedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarPedidos.aspx.designer.cs">
+      <DependentUpon>ListarPedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarProductos.aspx.cs">
+      <DependentUpon>ListarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarProductos.aspx.designer.cs">
+      <DependentUpon>ListarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarClientes.aspx.cs">
+      <DependentUpon>ListarClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarClientes.aspx.designer.cs">
+      <DependentUpon>ListarClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarAlmacenes.aspx.cs">
+      <DependentUpon>ListarAlmacenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarAlmacenes.aspx.designer.cs">
+      <DependentUpon>ListarAlmacenes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarSucursales.aspx.cs">
+      <DependentUpon>ListarSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarSucursales.aspx.designer.cs">
+      <DependentUpon>ListarSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProdPerecible.aspx.cs">
+      <DependentUpon>ProdPerecible.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProdPerecible.aspx.designer.cs">
+      <DependentUpon>ProdPerecible.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoPersonalYHogar.aspx.cs">
+      <DependentUpon>ProductoPersonalYHogar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoPersonalYHogar.aspx.designer.cs">
+      <DependentUpon>ProductoPersonalYHogar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ropa.aspx.cs">
+      <DependentUpon>Ropa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ropa.aspx.designer.cs">
+      <DependentUpon>Ropa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeDocumento.aspx.cs">
+      <DependentUpon>SeleccionarTipoDeDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeDocumento.aspx.designer.cs">
+      <DependentUpon>SeleccionarTipoDeDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeDocumentoDeVenta.aspx.cs">
+      <DependentUpon>SeleccionarTipoDeDocumentoDeVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeDocumentoDeVenta.aspx.designer.cs">
+      <DependentUpon>SeleccionarTipoDeDocumentoDeVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeEmpleado.aspx.cs">
+      <DependentUpon>SeleccionarTipoDeEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeEmpleado.aspx.designer.cs">
+      <DependentUpon>SeleccionarTipoDeEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeProducto.aspx.cs">
+      <DependentUpon>SeleccionarTipoDeProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SeleccionarTipoDeProducto.aspx.designer.cs">
+      <DependentUpon>SeleccionarTipoDeProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SoftProg.Master.cs">
+      <DependentUpon>SoftProg.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SoftProg.Master.designer.cs">
+      <DependentUpon>SoftProg.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <Content Include="SoftProg.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Estilos\" />
+    <Folder Include="Imagenes\" />
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SoftProgRHHController\SoftProgRHHController.csproj">
+      <Project>{26a4574a-54f5-4304-81f0-0f3f22296aff}</Project>
+      <Name>SoftProgRHHController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoftProgRRHHModel\SoftProgRRHHModel.csproj">
+      <Project>{817428bd-cca6-4eb0-b04a-643b6c9972fc}</Project>
+      <Name>SoftProgRRHHModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioWS\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60432</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44362/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

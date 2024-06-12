@@ -1,0 +1,20 @@
+﻿<style >
+.table {
+    margin-top: 20px;
+}
+
+.pager {
+    padding-top: 10px;
+    font-size: 1.1em;
+}
+
+.pagination {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #007BFF;
+    color: white;
+}
+
+</style >

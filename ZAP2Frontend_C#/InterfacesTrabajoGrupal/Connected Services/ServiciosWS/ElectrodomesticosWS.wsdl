@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ZAP2WS" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ElectrodomesticosWS" targetNamespace="ZAP2WS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ElectrodomesticosWS?xsd=1" namespace="ZAP2WS" />
+    </xsd:schema>
+  </types>
+  <message name="modificarElectrodomestico">
+    <part name="parameters" element="tns:modificarElectrodomestico" />
+  </message>
+  <message name="modificarElectrodomesticoResponse">
+    <part name="parameters" element="tns:modificarElectrodomesticoResponse" />
+  </message>
+  <message name="eliminarElectrodomesticos">
+    <part name="parameters" element="tns:eliminarElectrodomesticos" />
+  </message>
+  <message name="eliminarElectrodomesticosResponse">
+    <part name="parameters" element="tns:eliminarElectrodomesticosResponse" />
+  </message>
+  <message name="insertarElectrodomestico">
+    <part name="parameters" element="tns:insertarElectrodomestico" />
+  </message>
+  <message name="insertarElectrodomesticoResponse">
+    <part name="parameters" element="tns:insertarElectrodomesticoResponse" />
+  </message>
+  <message name="listarElectrodomesticosTodos">
+    <part name="parameters" element="tns:listarElectrodomesticosTodos" />
+  </message>
+  <message name="listarElectrodomesticosTodosResponse">
+    <part name="parameters" element="tns:listarElectrodomesticosTodosResponse" />
+  </message>
+  <portType name="ElectrodomesticosWS">
+    <operation name="modificarElectrodomestico">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoRequest" message="tns:modificarElectrodomestico" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoResponse" message="tns:modificarElectrodomesticoResponse" />
+    </operation>
+    <operation name="eliminarElectrodomesticos">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/eliminarElectrodomesticosRequest" message="tns:eliminarElectrodomesticos" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/eliminarElectrodomesticosResponse" message="tns:eliminarElectrodomesticosResponse" />
+    </operation>
+    <operation name="insertarElectrodomestico">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest" message="tns:insertarElectrodomestico" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse" message="tns:insertarElectrodomesticoResponse" />
+    </operation>
+    <operation name="listarElectrodomesticosTodos">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosTodosRequest" message="tns:listarElectrodomesticosTodos" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosTodosResponse" message="tns:listarElectrodomesticosTodosResponse" />
+    </operation>
+  </portType>
+  <binding name="ElectrodomesticosWSPortBinding" type="tns:ElectrodomesticosWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="modificarElectrodomestico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarElectrodomesticos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarElectrodomestico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarElectrodomesticosTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ElectrodomesticosWS">
+    <port name="ElectrodomesticosWSPort" binding="tns:ElectrodomesticosWSPortBinding">
+      <soap:address location="http://localhost:8080/ZAP2WS/ElectrodomesticosWS" />
+    </port>
+  </service>
+</definitions>
