@@ -9,5 +9,5 @@ package pe.edu.pucp.ZAP2.infraestructura.model;
  * @author User
  */
 public enum TipoProductoPerecible {
-    CEREALES,LACTEOS,FRUTAS,VERDURAS,CONGELADOS,DESPENSA
+    Cereales,Lacteos,Frutas,Verduras,Congelados,Despensa
 }
