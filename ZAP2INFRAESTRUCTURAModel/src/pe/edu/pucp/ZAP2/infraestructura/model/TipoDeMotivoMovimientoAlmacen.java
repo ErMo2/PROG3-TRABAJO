@@ -9,5 +9,5 @@ package pe.edu.pucp.ZAP2.infraestructura.model;
  * @author User
  */
 public enum TipoDeMotivoMovimientoAlmacen {
-    TRASLADO,COMPRA,VENTA,PERDIDA,DEVOLUCIONCLIENTE,DEVOLUCIONPROVEEDOR,DAÑO,DONACION,INVENTARIO,REPOSICIONANAQUELES
+    traslado,compra,venta,perdida,devolucionCliente,devolucionProveedor,daño,donacion,inventario,reposicionAnaqueles
 }
