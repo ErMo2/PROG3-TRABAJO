@@ -1,14 +1,14 @@
-/ZAP2INFRAESTRUCTURAModel/nbproject/private/
-/ZAP2INFRAESTRUCTURAController/nbproject/private/
-/ZAP2DBManager/nbproject/private/
-/ZAP2DBManager/dist/
-/ZAP2DBManager/build/
-/ZAP2WS/nbproject/private/
-/ZAP2PROG/nbproject/private/
-/ZAP2WS/build/
-/ZAP2WS/dist/
-/ZAP2PROG/dist/
-/ZAP2PROG/build/
+/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/nbproject/private/
+/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/nbproject/private/
+/ZAP2Backend_JAVA/ZAP2DBManager/nbproject/private/
+/ZAP2Backend_JAVA/ZAP2DBManager/dist/
+/ZAP2Backend_JAVA/ZAP2DBManager/build/
+/ZAP2Backend_JAVA/ZAP2WS/nbproject/private/
+/ZAP2Backend_JAVA/ZAP2PROG/nbproject/private/
+/ZAP2Backend_JAVA/ZAP2WS/build/
+/ZAP2Backend_JAVA/ZAP2WS/dist/
+/ZAP2Backend_JAVA/ZAP2PROG/dist/
+/ZAP2Backend_JAVA/ZAP2PROG/build/
 
 # Compiled class file
 *.class
