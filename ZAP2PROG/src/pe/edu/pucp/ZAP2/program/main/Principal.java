@@ -523,8 +523,18 @@ public class Principal {
 //        daoBol_Venta.eliminar(23);
         
         /*########## Listar #########*/
+//        ArrayList<Boleta_Venta> boletasVenta = daoBol_Venta.listarTodas();
+//        for(Boleta_Venta bolVent:boletasVenta){
+//            bolVent.imprimir();
+//        }
+        //############################################################################
+        //############################################################################
+        //############################################################################
+        //########## Sebas tiene que corregir el LISTAR_BOLETA_VENTA() #########
+        //################# Una vez arreglado eso, corrigue el listarTodas de Boleta_VentaMySql ###########################
+        //############################################################################
+        //############################################################################
         
-
         /*======================================================================*/
         /*================================ Banco ===============================*/
         /*======================================================================*/
@@ -540,8 +550,13 @@ public class Principal {
 //        daoBanco.modificar(banco);
         
         /*######## Eliminar #########*/
+//        daoBanco.eliminar(3);
         
-        /*########## Listar #########*/ 
+        /*########## Listar #########*/
+//        ArrayList<Banco> bancos = daoBanco.listarTodos();
+//        for(Banco banco:bancos){
+//            banco.imprimir();
+//        }
 
         /*======================================================================*/
         /*========================= Documento_de_Compra ========================*/
@@ -578,7 +593,11 @@ public class Principal {
 //        daoDoc_Comra.eliminar(25);
         
         /*########## Listar #########*/
-
+//        ArrayList<Documento_de_Compra> documentosCompra = daoDoc_Comra.listarTodos();
+//        for(Documento_de_Compra docCompra:documentosCompra){
+//            docCompra.imprimir();
+//        }
+        
         /*########## Listar Egresos #########*/
 //        String fechaStr = "2022-05-05"; // Formato de fecha: "yyyy-MM-dd"
 //        String fechaStr2 = "2022-08-20"; // Formato de fecha: "yyyy-MM-dd"

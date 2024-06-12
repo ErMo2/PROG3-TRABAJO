@@ -15,7 +15,9 @@ import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
 import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
+import pe.edu.pucp.ZAP2.personas.model.Persona;
 /**
  *
  * @author Alejandro
@@ -115,9 +117,14 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
                 bolVenta.setId_doc_venta(rs.getInt("id_boleta_venta"));
                 
                 Empleado empleado = new Empleado(){};
-                empleado.setId_Persona(rs.getInt("fid_id_persona"));
-                empleado.setIdEmpleado(rs.getInt("fid_id_persona"));
+                empleado.setId_Persona(rs.getInt("fid_id_persona"));//Cambiar el fid_id_persona por fid_id_empleado
+                empleado.setIdEmpleado(rs.getInt("fid_id_persona"));//Cambiar el fid_id_persona por fid_id_empleado
                 bolVenta.setEmpleado(empleado);
+                
+                Cliente cliente = new Cliente(){};
+                cliente.setId_cliente(rs.getInt("fid_id_persona"));
+                cliente.setId_Persona(rs.getInt("fid_id_persona"));
+                bolVenta.setCliente(cliente);
                 
                 bolVenta.setNumSerie(rs.getInt("numSerie"));
                 bolVenta.setDetalles(rs.getString("detalles"));
