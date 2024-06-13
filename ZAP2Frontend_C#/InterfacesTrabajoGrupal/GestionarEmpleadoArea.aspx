@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="Gerente.aspx.cs" Inherits="InterfacesTrabajoGrupal.Gerente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="GestionarEmpleadoArea.aspx.cs" Inherits="InterfacesTrabajoGrupal.EmpleadoArea" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="card-header">
-        <h2>Gerente</h2>
+        <h2>Empleado de Area</h2>
     </div>
     <hr />
     <div class="card-body">
@@ -118,9 +118,9 @@
         <hr />
         <div class="card-footer clearfix">
 
-            <asp:Button ID="Button1" runat="server" Text="Regresar"
+            <asp:Button ID="btnRegresar" runat="server" Text="Regresar"
                 CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
-            <asp:Button ID="Button2" runat="server" Text="Registrar"
+            <asp:Button ID="btnRegistrar" runat="server" Text="Registrar"
                 CssClass="float-end btn btn-primary" OnClick="btnRegistrar_Click" />
         </div>
 

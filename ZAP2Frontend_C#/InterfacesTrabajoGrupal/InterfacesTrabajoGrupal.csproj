@@ -94,7 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BoletaVenta.aspx" />
+    <Content Include="GestionarBoletaVenta.aspx" />
     <Content Include="bootstrap-5.3.3-examples\album-rtl\index.html" />
     <Content Include="bootstrap-5.3.3-examples\album\index.html" />
     <Content Include="bootstrap-5.3.3-examples\assets\brand\bootstrap-logo-white.svg" />
@@ -184,7 +184,7 @@
     <Content Include="bootstrap-5.3.3-examples\sticky-footer-navbar\sticky-footer-navbar.css" />
     <Content Include="bootstrap-5.3.3-examples\sticky-footer\index.html" />
     <Content Include="bootstrap-5.3.3-examples\sticky-footer\sticky-footer.css" />
-    <Content Include="Cajero.aspx" />
+    <Content Include="GestionarCajero.aspx" />
     <Content Include="CambiarContrasenia.aspx" />
     <Content Include="CerrarSesion.aspx" />
     <None Include="Connected Services\ServicioWS\AreaWS.wsdl" />
@@ -643,10 +643,10 @@
     <Content Include="Content\Site - Copia.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CrearCuenta.aspx" />
-    <Content Include="Electrodomestico.aspx" />
-    <Content Include="EmpleadoArea.aspx" />
-    <Content Include="FacturaVenta.aspx" />
-    <Content Include="Gerente.aspx" />
+    <Content Include="GestionarElectrodomestico.aspx" />
+    <Content Include="GestionarEmpleadoArea.aspx" />
+    <Content Include="GestionarFacturaVenta.aspx" />
+    <Content Include="GestionarGerente.aspx" />
     <Content Include="GestionarAreas.aspx" />
     <Content Include="GestionarBancos.aspx" />
     <Content Include="GestionarClientes.aspx" />
@@ -668,9 +668,9 @@
     <Content Include="ListarAlmacenes.aspx" />
     <Content Include="ListarSucursales.aspx" />
     <Content Include="PerfilUsuario.aspx" />
-    <Content Include="ProdPerecible.aspx" />
-    <Content Include="ProductoPersonalYHogar.aspx" />
-    <Content Include="Ropa.aspx" />
+    <Content Include="GestionarProdPerecible.aspx" />
+    <Content Include="GestionarProductoPersonalYHogar.aspx" />
+    <Content Include="GestionarRopa.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -783,19 +783,19 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoletaVenta.aspx.cs">
-      <DependentUpon>BoletaVenta.aspx</DependentUpon>
+    <Compile Include="GestionarBoletaVenta.aspx.cs">
+      <DependentUpon>GestionarBoletaVenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BoletaVenta.aspx.designer.cs">
-      <DependentUpon>BoletaVenta.aspx</DependentUpon>
+    <Compile Include="GestionarBoletaVenta.aspx.designer.cs">
+      <DependentUpon>GestionarBoletaVenta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cajero.aspx.cs">
-      <DependentUpon>Cajero.aspx</DependentUpon>
+    <Compile Include="GestionarCajero.aspx.cs">
+      <DependentUpon>GestionarCajero.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cajero.aspx.designer.cs">
-      <DependentUpon>Cajero.aspx</DependentUpon>
+    <Compile Include="GestionarCajero.aspx.designer.cs">
+      <DependentUpon>GestionarCajero.aspx</DependentUpon>
     </Compile>
     <Compile Include="CambiarContrasenia.aspx.cs">
       <DependentUpon>CambiarContrasenia.aspx</DependentUpon>
@@ -823,34 +823,34 @@
     <Compile Include="CrearCuenta.aspx.designer.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Electrodomestico.aspx.cs">
-      <DependentUpon>Electrodomestico.aspx</DependentUpon>
+    <Compile Include="GestionarElectrodomestico.aspx.cs">
+      <DependentUpon>GestionarElectrodomestico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Electrodomestico.aspx.designer.cs">
-      <DependentUpon>Electrodomestico.aspx</DependentUpon>
+    <Compile Include="GestionarElectrodomestico.aspx.designer.cs">
+      <DependentUpon>GestionarElectrodomestico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EmpleadoArea.aspx.cs">
-      <DependentUpon>EmpleadoArea.aspx</DependentUpon>
+    <Compile Include="GestionarEmpleadoArea.aspx.cs">
+      <DependentUpon>GestionarEmpleadoArea.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EmpleadoArea.aspx.designer.cs">
-      <DependentUpon>EmpleadoArea.aspx</DependentUpon>
+    <Compile Include="GestionarEmpleadoArea.aspx.designer.cs">
+      <DependentUpon>GestionarEmpleadoArea.aspx</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
-    <Compile Include="FacturaVenta.aspx.cs">
-      <DependentUpon>FacturaVenta.aspx</DependentUpon>
+    <Compile Include="GestionarFacturaVenta.aspx.cs">
+      <DependentUpon>GestionarFacturaVenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FacturaVenta.aspx.designer.cs">
-      <DependentUpon>FacturaVenta.aspx</DependentUpon>
+    <Compile Include="GestionarFacturaVenta.aspx.designer.cs">
+      <DependentUpon>GestionarFacturaVenta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Gerente.aspx.cs">
-      <DependentUpon>Gerente.aspx</DependentUpon>
+    <Compile Include="GestionarGerente.aspx.cs">
+      <DependentUpon>GestionarGerente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Gerente.aspx.designer.cs">
-      <DependentUpon>Gerente.aspx</DependentUpon>
+    <Compile Include="GestionarGerente.aspx.designer.cs">
+      <DependentUpon>GestionarGerente.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionarAreas.aspx.cs">
       <DependentUpon>GestionarAreas.aspx</DependentUpon>
@@ -999,27 +999,27 @@
     <Compile Include="PerfilUsuario.aspx.designer.cs">
       <DependentUpon>PerfilUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProdPerecible.aspx.cs">
-      <DependentUpon>ProdPerecible.aspx</DependentUpon>
+    <Compile Include="GestionarProdPerecible.aspx.cs">
+      <DependentUpon>GestionarProdPerecible.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProdPerecible.aspx.designer.cs">
-      <DependentUpon>ProdPerecible.aspx</DependentUpon>
+    <Compile Include="GestionarProdPerecible.aspx.designer.cs">
+      <DependentUpon>GestionarProdPerecible.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductoPersonalYHogar.aspx.cs">
-      <DependentUpon>ProductoPersonalYHogar.aspx</DependentUpon>
+    <Compile Include="GestionarProductoPersonalYHogar.aspx.cs">
+      <DependentUpon>GestionarProductoPersonalYHogar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductoPersonalYHogar.aspx.designer.cs">
-      <DependentUpon>ProductoPersonalYHogar.aspx</DependentUpon>
+    <Compile Include="GestionarProductoPersonalYHogar.aspx.designer.cs">
+      <DependentUpon>GestionarProductoPersonalYHogar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ropa.aspx.cs">
-      <DependentUpon>Ropa.aspx</DependentUpon>
+    <Compile Include="GestionarRopa.aspx.cs">
+      <DependentUpon>GestionarRopa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Ropa.aspx.designer.cs">
-      <DependentUpon>Ropa.aspx</DependentUpon>
+    <Compile Include="GestionarRopa.aspx.designer.cs">
+      <DependentUpon>GestionarRopa.aspx</DependentUpon>
     </Compile>
     <Compile Include="SeleccionarTipoDeDocumento.aspx.cs">
       <DependentUpon>SeleccionarTipoDeDocumento.aspx</DependentUpon>

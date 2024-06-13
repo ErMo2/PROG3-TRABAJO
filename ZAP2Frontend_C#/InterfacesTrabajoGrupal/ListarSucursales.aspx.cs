@@ -1,8 +1,4 @@
-﻿//using SoftProgRHHController.DAO;
-//using SoftProgRHHController.MySQL;
-//using SoftProgRRHHModel;
-using InterfacesTrabajoGrupal.ServicioWS;
-using SoftProgRRHHModel;
+﻿using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
