@@ -120,7 +120,41 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return electrodomesticos;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
+    }
+
+    @Override
+    public Electrodomesticos buscarProducto(int idProd) {
+        Electrodomesticos electrodomestico = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_ELECTRODOMESTICO_X_ID"
+                    +"(?)}");
+            cs.setInt("_id_producto", idProd);
+            rs = cs.executeQuery();
+            electrodomestico = new Electrodomesticos();
+            while(rs.next()){
+                
+                electrodomestico.setIdProducto(rs.getInt("id_producto"));
+                electrodomestico.setNombre(rs.getString("nombre"));
+                electrodomestico.setDescripcion(rs.getString("descripcion"));
+                electrodomestico.setModelo(rs.getString("modelo"));
+                
+                Date fechaGarantia = rs.getDate("tiempoGarantia");
+                electrodomestico.setTiempoGarantia(fechaGarantia);
+                
+                electrodomestico.setTieneGarantia(rs.getBoolean("tieneGarantia"));
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return electrodomestico;
+    
     }
     
 }

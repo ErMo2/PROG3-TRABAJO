@@ -117,6 +117,7 @@ public class ClienteMySql implements ClienteDao{
                 
                 cliente.setSexo(rs.getString("sexo").charAt(0));
                 cliente.setDni(String.valueOf(rs.getInt("dni")));
+                cliente.setPuntosBonus(rs.getInt("puntosBonus"));
                 clientes.add(cliente);
             }
         }catch(Exception ex){
@@ -127,6 +128,37 @@ public class ClienteMySql implements ClienteDao{
         }
         return clientes;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Cliente buscar(int id) {
+        Cliente cliente = null;
+        try{
+            
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call BUSCAR_CLIENTE_X_ID(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            cliente = new Cliente();
+            while(rs.next()){
+                 
+                cliente.setId_cliente(rs.getInt("id_persona"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido_paterno(rs.getString("apellido_paterno"));
+                cliente.setApellido_materno(rs.getString("apellido_materno"));
+                
+                cliente.setSexo(rs.getString("sexo").charAt(0));
+                cliente.setDni(String.valueOf(rs.getInt("dni")));
+                cliente.setPuntosBonus(rs.getInt("puntosBonus"));
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return cliente;
     }
     
 }

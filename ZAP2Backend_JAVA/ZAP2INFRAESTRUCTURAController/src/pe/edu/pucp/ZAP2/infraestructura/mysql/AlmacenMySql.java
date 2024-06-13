@@ -121,5 +121,39 @@ public class AlmacenMySql implements AlmacenDao{
         return almacenes;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Almacen buscar(int id) {
+        Almacen almacen = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_ALMACEN_X_ID(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            almacen =  new Almacen();
+            while(rs.next()){
+                
+                Sucursal sucursal = new Sucursal();
+                almacen.setId_almacen(rs.getInt("id_almacen"));
+                sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                almacen.setSucursal(sucursal);
+                
+                almacen.setCapacidadMaximaProductos(rs.getDouble("capacidadMaximaProductos"));
+                almacen.setCapacidadActualProductos(rs.getDouble("capacidadActualProductos"));
+                String tipoAlmacenStr = rs.getString("tipoAlmacen");
+                TipoAlmacen tipoAlmacen = TipoAlmacen.valueOf(tipoAlmacenStr);
+                almacen.setTipoAlmacen(tipoAlmacen);
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return almacen;
+    }
     
 }

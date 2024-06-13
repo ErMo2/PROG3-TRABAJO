@@ -16,4 +16,5 @@ public interface CuentaUsuarioDao {
     int modificar(CuentaUsuario Cuenta);
     int eliminar(int Cuenta);
     ArrayList<CuentaUsuario> listarTodas();
+    int verificar(String usuario,String pass);
 }

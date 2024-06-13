@@ -16,4 +16,5 @@ public interface ClienteDao {
     int modificar(Cliente cliente);
     int eliminar(int idPersona);
     ArrayList<Cliente> listarTodos();
+    Cliente buscar(int id);
 }

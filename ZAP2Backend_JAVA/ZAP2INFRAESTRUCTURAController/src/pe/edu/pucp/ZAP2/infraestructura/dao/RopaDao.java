@@ -16,4 +16,5 @@ public interface RopaDao {
     int modificar(Ropa ropa);
     int eliminar(int idRopa);
     ArrayList<Ropa> listarTodas();
+    Ropa buscarProducto(int idProd);
 }
