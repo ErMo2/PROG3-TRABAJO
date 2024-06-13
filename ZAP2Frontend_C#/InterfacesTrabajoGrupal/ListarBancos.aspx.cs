@@ -11,6 +11,7 @@ namespace InterfacesTrabajoGrupal
 {
     public partial class ListarBancos : System.Web.UI.Page
     {
+
         private BancoWSClient daoBanco;
         private BindingList<banco> bancos;
 
@@ -40,26 +41,24 @@ namespace InterfacesTrabajoGrupal
             CargarBancos();
         }
 
-        /*protected void gvBancos_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvBancos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
+            daoBanco = new BancoWSClient();
             int idBanco = Convert.ToInt32(e.CommandArgument);
             if (e.CommandName == "Modificar")
             {
-                Response.Redirect($"ModificarBanco.aspx?id={idBanco}");
+                Response.Redirect($"GestionarBancos.aspx?id={idBanco}");
             }
             else if (e.CommandName == "Eliminar")
             {
-
                 daoBanco.eliminarBanco(idBanco);
                 CargarBancos();
             }
-        }*/
-       
+        }
 
         protected void lbRegistrarBanco_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegistrarBanco.aspx");
+            Response.Redirect("GestionarBancos.aspx");
         }
     }
 }
