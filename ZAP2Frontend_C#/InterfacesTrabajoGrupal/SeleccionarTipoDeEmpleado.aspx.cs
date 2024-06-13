@@ -17,18 +17,18 @@ namespace InterfacesTrabajoGrupal
 
         protected void lblGerente_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Gerente.aspx");
+            Response.Redirect("GestionarSupervisor.aspx");
         }
 
         protected void lblEmpleadoArea_Click(object sender, EventArgs e)
         {
-            Response.Redirect("EmpleadoArea.aspx");
+            Response.Redirect("GestionarEmpleadoArea.aspx");
 
         }
 
         protected void lblCajero_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Cajero.aspx");
+            Response.Redirect("GestionarCajero.aspx");
 
         }
     }

@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="ListarSucursales.aspx.cs" Inherits="InterfacesTrabajoGrupal.ListarSucursales" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="ListarSucursales.aspx.cs" Inherits="InterfacesTrabajoGrupal.ListarSucursales" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="Scripts/EstiloSucursales.css" rel="stylesheet" />
     <div class="container">
         <h2>Listado de Sucursales</h2>
@@ -12,7 +14,7 @@
         <div class="container row">
             <div class="text-end p-3">
                 <asp:LinkButton ID="lbRegistrarSucursal" runat="server" CssClass="btn btn-success"
-                    Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Sucursal" OnClick="lbRegistrarSucursal_Click"/>
+                    Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Sucursal" OnClick="lbRegistrarSucursal_Click" />
             </div>
         </div>
 

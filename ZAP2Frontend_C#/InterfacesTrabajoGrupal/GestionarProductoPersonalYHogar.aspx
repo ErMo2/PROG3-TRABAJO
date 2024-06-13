@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="GestionarProductos.aspx.cs" Inherits="InterfacesTrabajoGrupal.GestionarProductos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="GestionarProductoPersonalYHogar.aspx.cs" Inherits="InterfacesTrabajoGrupal.ProductoPersonalYHogar" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
@@ -8,11 +8,12 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="container">
         <div class="card">
-            <h2>Registrar Producto
+            <h2>Registrar Producto Para el cuidado Personal y del Hogar:
             </h2>
         </div>
-        <hr />
+        <br />
         <div class="card-body">
+
             <div class="mb-3 row">
                 <asp:Label ID="lblIdProducto" runat="server" Text="Id Producto:" CssClass="col-sm-2 col-form-label" />
                 <div class="col-sm-4">
@@ -47,31 +48,52 @@
                     <asp:TextBox ID="txtStock" runat="server" CssClass="form-control" />
                 </div>
             </div>
-            <h2>Seleccionar Tipo de Producto:
-            </h2>
-            <div class="card-footer clearfix">
-                <asp:Button ID="Button1" runat="server" Text="Producto Perecible" OnClick="btnRegPP_Click" />
-                <hr />
-                <asp:Button ID="Button2" runat="server" Text="Producto para el cuidado personal y del hogar" OnClick="btnRegPCPH_Click" />
-                <hr />
-                <asp:Button ID="Button3" runat="server" Text="Ropa" OnClick="btnRegRopa_Click" />
-                <hr />
-                <asp:Button ID="Button4" runat="server" Text="Electrodomestico" OnClick="btnRegELec_Click" />
 
+            <div class="mb-3 row">
+                <asp:Label ID="lblUnidadMedida" runat="server" Text="Unidad de Medida:" CssClass="col-sm-2 col-form-label" />
+                <div class="col-sm-4">
+                    <asp:DropDownList ID="ddlUnidadMedida" runat="server" CssClass="form-control">
+                        <asp:ListItem Text="Unidad" Value="Unidad"></asp:ListItem>
+                        <asp:ListItem Text="Paquete" Value="Paquete"></asp:ListItem>
+                        <asp:ListItem Text="KG" Value="KG"></asp:ListItem>
+                        <asp:ListItem Text="LT" Value="LT"></asp:ListItem>
+                        <asp:ListItem Text="NA" Value="NA"></asp:ListItem>
+                    </asp:DropDownList>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <asp:Label ID="lblTipo" runat="server" Text="Tipo:" CssClass="col-sm-2 col-form-label" />
+                <div class="col-sm-4">
+                    <asp:TextBox ID="txtTipo" runat="server" CssClass="form-control" />
+                </div>
+            </div>
+            <!-- New field for selecting a Sucursal -->
+            <div class="form-group row">
+                <label for="ddlSucursal" class="col-sm-2 col-form-label">Sucursal:</label>
+                <div class="col-sm-10">
+                    <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control">
+                    </asp:DropDownList>
+                </div>
+            </div>
+            <br />
+            <!-- New field for applying a Discount -->
+            <div class="form-group row">
+                <label for="txtDescuento" class="col-sm-2 col-form-label">Descuento (%):</label>
+                <div class="col-sm-10">
+                    <asp:TextBox ID="txtDescuento" runat="server" CssClass="form-control" TextMode="Number" />
+                </div>
             </div>
 
 
         </div>
-
+        <hr />
         <div class="card-footer clearfix">
-            <hr />
-            <hr />
             <asp:Button ID="btnRegresar" runat="server" Text="Regresar"
                 CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
-            <!--<asp:Button ID="btnRegistrar" runat="server" Text="Siguiente" 
-            CssClass="float-end btn btn-primary" OnClick="btnRegistrar_Click"/>
-            </div>
-        -->
+            <asp:Button ID="btnRegistrar" runat="server" Text="Registrar"
+                CssClass="float-end btn btn-primary" OnClick="btnRegistrar_Click" />
         </div>
+
     </div>
 </asp:Content>
