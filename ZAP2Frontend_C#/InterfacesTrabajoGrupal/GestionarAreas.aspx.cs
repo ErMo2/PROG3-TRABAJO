@@ -32,9 +32,9 @@ namespace InterfacesTrabajoGrupal
             area = daoArea.buscarArea(idArea);
             if (area != null)
             {
-                txtIdAmbiente.Text = area.idArea.ToString();
-                txtNombreAmbiente.Text = area.nombre;
-                txtSucursal.Text = area.sucursal.id_sucursal.ToString();
+                txtIdArea.Text = area.idArea.ToString();
+                txtNombreArea.Text = area.nombre;
+                txtIdSucursal.Text = area.sucursal.id_sucursal.ToString();
             }
             
         }
@@ -44,6 +44,26 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            daoArea = new AreaWSClient();
+            area = new area();
+            if (!string.IsNullOrEmpty(txtIdArea.Text))
+            {
+                area.idArea = int.Parse(txtIdArea.Text);
+            }
+            area.nombre = txtNombreArea.Text;
+            area.sucursal = new sucursal();
+            area.sucursal.id_sucursal = int.Parse(txtIdSucursal.Text);
+
+            if (area.idArea > 0)
+            {
+                // Actualizar sucursal existente
+                daoArea.modificarArea(area);
+            }
+            else
+            {
+                // Insertar nueva sucursal
+                area.idArea = daoArea.insertarArea(area);
+            }
             Response.Redirect("ListarAreas.aspx");
         }
         protected void btnRegresar_Click(object senmder,EventArgs e)
