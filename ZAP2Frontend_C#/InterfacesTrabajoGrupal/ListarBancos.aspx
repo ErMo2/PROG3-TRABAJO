@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SoftProg.Master" AutoEventWireup="true" CodeBehind="ListarBancos.aspx.cs" Inherits="InterfacesTrabajoGrupal.ListarBancos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="ListarBancos.aspx.cs" Inherits="InterfacesTrabajoGrupal.ListarBancos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="design/estilosPersonalizados.css" rel="stylesheet" />
     <link href="design/bancoEstilo.css" rel="stylesheet" />
     <div class="container mt-5">
@@ -15,18 +16,18 @@
             <div class="card-body">
                 <div class="text-right mb-3">
                     <asp:LinkButton ID="lbRegistrarBanco" runat="server" CssClass="btn btn-success"
-                        Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Banco" OnClick="lbRegistrarBanco_Click"/>
+                        Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Banco" OnClick="lbRegistrarBanco_Click" />
                 </div>
 
                 <asp:GridView ID="gvBancos" runat="server"
-                    AutoGenerateColumns="false" 
+                    AutoGenerateColumns="false"
                     CssClass="table table-hover table-responsive-sm table-striped"
                     AllowPaging="true"
                     PageSize="5"
                     OnPageIndexChanging="gvBancos_PageIndexChanging"
                     OnRowCommand="gvBancos_RowCommand">
                     <Columns>
-                        <asp:BoundField HeaderText="Id Banco" DataField="idBanco"/>
+                        <asp:BoundField HeaderText="Id Banco" DataField="idBanco" />
                         <asp:BoundField HeaderText="Nombre" DataField="nombre" />
                         <asp:TemplateField>
                             <ItemTemplate>
