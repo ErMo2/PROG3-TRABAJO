@@ -114,22 +114,5 @@ namespace InterfacesTrabajoGrupal
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
-        protected void lbModificarEmpleadoArea_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("GestionarEmpleadoArea.aspx");
-        }
-        protected void lbEliminarEmpleadoArea_Click(object sender, EventArgs e)
-        {
-
-            //daoEmpleadoArea.eliminarEmpleadoDeArea();
-        }
-        protected void lbModificarEmpleadoCajero_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("GestionarCajero.aspx");
-        }
-        protected void lbModificarEmpleadoSupervisor_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("GestionarSupervisor.aspx");
-        }
     }
 }

@@ -145,6 +145,8 @@ public class CajeroMySql implements CajeroDao{
                 cajero.setApellido_materno(rs.getString("apellido_materno"));
                 cajero.setSexo(rs.getString("sexo").charAt(0));
                 cajero.setSalario(rs.getDouble("salario"));
+//                cajero.setEmail(rs.getString("email"));
+//                cajero.setTelefono(rs.getInt("telefono"));
                 
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
