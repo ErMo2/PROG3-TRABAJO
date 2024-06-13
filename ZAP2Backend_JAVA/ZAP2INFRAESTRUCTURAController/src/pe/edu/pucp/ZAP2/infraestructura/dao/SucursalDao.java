@@ -16,4 +16,5 @@ public interface SucursalDao {
     int modificar(Sucursal sucursal);
     int eliminar(int idSucursal);
     ArrayList<Sucursal> listarTodas();
+    Sucursal buscar(int id);
 }

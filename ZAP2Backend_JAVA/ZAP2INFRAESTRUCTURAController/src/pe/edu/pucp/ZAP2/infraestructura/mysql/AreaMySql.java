@@ -108,5 +108,35 @@ public class AreaMySql implements AreaDao{
         return areas;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Area buscar(int id) {
+        Area area = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_AREA_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            area = new Area();
+            while(rs.next()){
+                
+                Sucursal sucursal = new Sucursal();
+                area.setIdArea(rs.getInt("id_area"));
+                sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                area.setSucursal(sucursal);
+                area.setNombre(rs.getString("nombre"));
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }    
+        return area;
+    }
     
 }

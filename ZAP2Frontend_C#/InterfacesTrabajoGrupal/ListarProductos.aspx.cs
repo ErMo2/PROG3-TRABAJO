@@ -116,7 +116,9 @@ namespace InterfacesTrabajoGrupal
 
         protected void VerProductPerecible_Click(object sender, EventArgs e)
         {
+
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
+            Response.Redirect($"DetalleProductoPerecible.aspx?idProducto={idProducto}");
             if (listaProdPerecibles != null)
             {
                 var producto = listaProdPerecibles.FirstOrDefault(p => p.idProducto == idProducto);

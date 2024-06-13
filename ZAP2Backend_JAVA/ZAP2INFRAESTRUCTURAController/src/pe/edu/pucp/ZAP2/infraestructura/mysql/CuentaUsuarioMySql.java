@@ -27,7 +27,7 @@ public class CuentaUsuarioMySql implements CuentaUsuarioDao{
     private CallableStatement cs;
     @Override
     public int insertar(CuentaUsuario cuenta) {
-         int resultado = 0;
+        int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_CUENTAUSUARIO"
@@ -111,6 +111,30 @@ public class CuentaUsuarioMySql implements CuentaUsuarioDao{
         }
         return cuentas;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public int verificar(String usuario, String pass) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call VERIFICAR_USUARIO"
+                    +"(?,?,?)}");
+            cs.registerOutParameter("_fid_personaNatural", java.sql.Types.INTEGER);
+            
+            cs.setString("_usuario", usuario);
+            cs.setString("_contrasena", pass);
+            cs.executeUpdate();
+            resultado= cs.getInt("_fid_personaNatural");
+            
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}            
+        }
+       
+        return resultado; 
+    
     }
     
 }

@@ -115,5 +115,36 @@ public class RopaMySql implements RopaDao{
         return ropas;
 //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Ropa buscarProducto(int idProd) {
+        Ropa ropa = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_ROPA_X_ID"
+                    +"(?)}");
+            cs.setInt("_id_producto", idProd);
+            rs = cs.executeQuery();
+            ropa = new Ropa();
+            while(rs.next()){
+                
+                ropa.setIdProducto(rs.getInt("id_producto"));
+                ropa.setNombre(rs.getString("nombre"));
+                ropa.setDescripcion(rs.getString("descripcion"));
+                ropa.setMaterial(rs.getString("material"));
+                String tipoRopa = rs.getString("tipo");
+                TipoRopa tipo = TipoRopa.valueOf(tipoRopa);
+                ropa.setTipo(tipo);
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return ropa;
+    }
     
 }

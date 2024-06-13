@@ -68,4 +68,16 @@ public class SucursalWS {
         }
         return sucursales;
     }
+    
+    @WebMethod(operationName = "buscarSucursal")
+    public Sucursal buscarSucursal(@WebParam(name = "idSucursal") int id) {
+        Sucursal dato = null;
+        try{
+            daoSucursal = new SucursalMySql();
+            dato = daoSucursal.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }
