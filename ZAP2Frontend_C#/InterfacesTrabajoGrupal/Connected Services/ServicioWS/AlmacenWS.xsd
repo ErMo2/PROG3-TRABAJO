@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarAlmacen" type="tns:buscarAlmacen" />
+  <xs:element name="buscarAlmacenResponse" type="tns:buscarAlmacenResponse" />
   <xs:element name="eliminarAlmacen" type="tns:eliminarAlmacen" />
   <xs:element name="eliminarAlmacenResponse" type="tns:eliminarAlmacenResponse" />
   <xs:element name="insertarAlmacen" type="tns:insertarAlmacen" />
@@ -8,12 +10,14 @@
   <xs:element name="listarAlmacenResponse" type="tns:listarAlmacenResponse" />
   <xs:element name="modificarAlmacen" type="tns:modificarAlmacen" />
   <xs:element name="modificarAlmacenResponse" type="tns:modificarAlmacenResponse" />
-  <xs:complexType name="listarAlmacen">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarAlmacenResponse">
+  <xs:complexType name="buscarAlmacen">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
+      <xs:element name="idAlmacen" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarAlmacenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="almacen">
@@ -103,14 +107,12 @@
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarAlmacen">
-    <xs:sequence>
-      <xs:element name="idAlmacen" type="xs:int" />
-    </xs:sequence>
+  <xs:complexType name="listarAlmacen">
+    <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="eliminarAlmacenResponse">
+  <xs:complexType name="listarAlmacenResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarAlmacen">
@@ -119,6 +121,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarAlmacenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAlmacen">
+    <xs:sequence>
+      <xs:element name="idAlmacen" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAlmacenResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

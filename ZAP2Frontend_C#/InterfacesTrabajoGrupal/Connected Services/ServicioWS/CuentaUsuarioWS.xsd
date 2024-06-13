@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="VerificarCuenta" type="tns:VerificarCuenta" />
+  <xs:element name="VerificarCuentaResponse" type="tns:VerificarCuentaResponse" />
   <xs:element name="eliminarCuentaUsuario" type="tns:eliminarCuentaUsuario" />
   <xs:element name="eliminarCuentaUsuarioResponse" type="tns:eliminarCuentaUsuarioResponse" />
   <xs:element name="insertarCuentaUsuario" type="tns:insertarCuentaUsuario" />
@@ -8,6 +10,17 @@
   <xs:element name="listarCuentaUsuariosResponse" type="tns:listarCuentaUsuariosResponse" />
   <xs:element name="modificarCuentaUsuario" type="tns:modificarCuentaUsuario" />
   <xs:element name="modificarCuentaUsuarioResponse" type="tns:modificarCuentaUsuarioResponse" />
+  <xs:complexType name="VerificarCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Contra" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="VerificarCuentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarCuentaUsuarios">
     <xs:sequence />
   </xs:complexType>

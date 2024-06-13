@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarProductoPerecible" type="tns:buscarProductoPerecible" />
+  <xs:element name="buscarProductoPerecibleResponse" type="tns:buscarProductoPerecibleResponse" />
   <xs:element name="eliminarProductoPerecible" type="tns:eliminarProductoPerecible" />
   <xs:element name="eliminarProductoPerecibleResponse" type="tns:eliminarProductoPerecibleResponse" />
   <xs:element name="insertarProductoPerecible" type="tns:insertarProductoPerecible" />
@@ -142,6 +144,16 @@
   <xs:complexType name="listarProductoPerecibleResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productoPerecible" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarProductoPerecible">
+    <xs:sequence>
+      <xs:element name="idProductoPerecible" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarProductoPerecibleResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:productoPerecible" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoProductoPerecible">
