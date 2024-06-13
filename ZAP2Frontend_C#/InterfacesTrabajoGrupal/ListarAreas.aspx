@@ -36,28 +36,4 @@
             </asp:GridView>
         </div>
     </div>
-<<<<<<< HEAD
-
-    <div class="container row">
-        <asp:GridView ID="gvAreas" runat="server"
-            AutoGenerateColumns="false" CssClass="table table-hover table-responsive"
-            AllowPaging="true" PageSize="10"  OnPageIndexChanging="gvAreas_PageIndexChanging">
-            
-             <Columns>
-            <asp:BoundField HeaderText="IdAmbiente" DataField="idArea"/>
-             <asp:BoundField HeaderText="NombreAmbiente" DataField="nombre" />
-            
-                 <asp:TemplateField>
-       <ItemTemplate>
-           <asp:LinkButton runat="server" Text="<i class='fa-solid fa-edit ps-2'></i>"  CommandArgument='<%# Eval("idArea") %>' OnClick="lbEditarArea_Click"/>
-           <asp:LinkButton runat="server" Text="<i class='fa-solid fa-trash ps-2'></i>" CommandArgument='<%# Eval("idArea") %>' OnClick="lbEliminarArea_Cick"/>
-       </ItemTemplate>
-   </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
-    </div>
-</div>
-
-=======
->>>>>>> main
 </asp:Content>

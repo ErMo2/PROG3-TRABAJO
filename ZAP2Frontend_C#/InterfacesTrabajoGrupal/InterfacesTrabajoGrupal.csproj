@@ -643,18 +643,10 @@
     <Content Include="Content\Site - Copia.css" />
     <Content Include="Content\Site.css" />
     <Content Include="CrearCuenta.aspx" />
-<<<<<<< HEAD
-    <Content Include="DetalleProductoPerecible.aspx" />
-    <Content Include="Electrodomestico.aspx" />
-    <Content Include="EmpleadoArea.aspx" />
-    <Content Include="FacturaVenta.aspx" />
-    <Content Include="Gerente.aspx" />
-=======
     <Content Include="GestionarElectrodomestico.aspx" />
     <Content Include="GestionarEmpleadoArea.aspx" />
     <Content Include="GestionarFacturaVenta.aspx" />
     <Content Include="GestionarSupervisor.aspx" />
->>>>>>> main
     <Content Include="GestionarAreas.aspx" />
     <Content Include="GestionarBancos.aspx" />
     <Content Include="GestionarClientes.aspx" />
@@ -831,20 +823,8 @@
     <Compile Include="CrearCuenta.aspx.designer.cs">
       <DependentUpon>CrearCuenta.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="DetalleProductoPerecible.aspx.cs">
-      <DependentUpon>DetalleProductoPerecible.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DetalleProductoPerecible.aspx.designer.cs">
-      <DependentUpon>DetalleProductoPerecible.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Electrodomestico.aspx.cs">
-      <DependentUpon>Electrodomestico.aspx</DependentUpon>
-=======
     <Compile Include="GestionarElectrodomestico.aspx.cs">
       <DependentUpon>GestionarElectrodomestico.aspx</DependentUpon>
->>>>>>> main
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GestionarElectrodomestico.aspx.designer.cs">
