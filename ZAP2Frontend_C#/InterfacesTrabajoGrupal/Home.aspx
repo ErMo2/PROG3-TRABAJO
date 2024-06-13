@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="InterfacesTrabajoGrupal.Home" %>
+
 <asp:Content ID="cTitulo" ContentPlaceHolderID="cphTitulo" runat="server">
     Home
 </asp:Content>
@@ -8,17 +9,17 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <!--<h1>Contenido de la pagina</h1>-->
-    <h1 style="background-color:darkblue;">
+    <h1 style="background-color: darkblue;">
         <br />
         <br />
-     <div>
-    <img src="Imagenes/WhatsApp Image 2024-04-16 at 21.43.57.jpeg" alt="Imagen de Ejemplo" width="300" height="300">
+        <div>
+            <img src="Imagenes/WhatsApp Image 2024-04-16 at 21.43.57.jpeg" alt="Imagen de Ejemplo" width="300" height="300">
         </div>
         <br />
         <br />
-        </h1>
+    </h1>
 
-    <div class="container" style="background-color:darkcyan">
+    <div class="container" style="background-color: darkcyan">
         <h2>Nuestros Servicios</h2>
         <p>Descubre todo lo que tenemos para ti:</p>
         <style>

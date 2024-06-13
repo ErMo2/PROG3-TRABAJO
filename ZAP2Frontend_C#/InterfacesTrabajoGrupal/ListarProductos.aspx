@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="ListarProductos.aspx.cs" Inherits="InterfacesTrabajoGrupal.GestionProducto" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
@@ -6,17 +7,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-     <link href="Diseño/DiseñoListarProductos.css" rel="stylesheet" />
+    <link href="Diseño/DiseñoListarProductos.css" rel="stylesheet" />
     <div class="container mt-4">
         <h2 class="mb-4 text-center">Listado de Productos</h2>
-        
+
         <div class="text-end mb-3">
             <asp:LinkButton ID="lbRegistrarProducto" runat="server" CssClass="btn btn-success"
-                Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Producto" OnClick="lbRegistrarProducto_Click"/>
+                Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Producto" OnClick="lbRegistrarProducto_Click" />
         </div>
 
         <h3>Productos Perecibles</h3>

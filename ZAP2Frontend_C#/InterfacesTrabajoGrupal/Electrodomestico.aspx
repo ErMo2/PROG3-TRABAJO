@@ -1,17 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="Electrodomestico.aspx.cs" Inherits="InterfacesTrabajoGrupal.Electrodomestico" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-                  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-                <div class="container">
-     <div class="card">
-        <div class="card-header bg-primary text-white">
-            <h2>Registrar Electrodoméstico</h2>
-        </div>
-        <div class="card-body">
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2>Registrar Electrodoméstico</h2>
+            </div>
+            <div class="card-body">
                 <div class="form-group row">
                     <label for="txtIdProducto" class="col-sm-2 col-form-label">Id Producto:</label>
                     <div class="col-sm-10">
@@ -70,30 +71,30 @@
                         </asp:RadioButtonList>
                     </div>
                 </div>
-                     <!-- New field for selecting a Sucursal -->
-   <div class="form-group row">
-       <label for="ddlSucursal" class="col-sm-2 col-form-label">Sucursal:</label>
-       <div class="col-sm-10">
-           <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control">
-           </asp:DropDownList>
-       </div>
-   </div>
-            <br />
-   <!-- New field for applying a Discount -->
-   <div class="form-group row">
-       <label for="txtDescuento" class="col-sm-2 col-form-label">Descuento (%):</label>
-       <div class="col-sm-10">
-           <asp:TextBox ID="txtDescuento" runat="server" CssClass="form-control" TextMode="Number" />
-       </div>
-   </div>
-            <br />
+                <!-- New field for selecting a Sucursal -->
+                <div class="form-group row">
+                    <label for="ddlSucursal" class="col-sm-2 col-form-label">Sucursal:</label>
+                    <div class="col-sm-10">
+                        <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <br />
+                <!-- New field for applying a Discount -->
+                <div class="form-group row">
+                    <label for="txtDescuento" class="col-sm-2 col-form-label">Descuento (%):</label>
+                    <div class="col-sm-10">
+                        <asp:TextBox ID="txtDescuento" runat="server" CssClass="form-control" TextMode="Number" />
+                    </div>
+                </div>
+                <br />
                 <div class="form-group row">
                     <div class="col-sm-10 offset-sm-2">
                         <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />
                         <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary" OnClick="btnRegresar_Click" />
                     </div>
                 </div>
+            </div>
         </div>
     </div>
-</div>
 </asp:Content>
