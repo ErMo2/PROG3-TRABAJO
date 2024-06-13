@@ -110,7 +110,7 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
                 producto.setUnidadMedida(unidad);
                 
                 producto.setTipo(rs.getString("tipo")); 
-                
+                Productos.add(producto);
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -119,7 +119,43 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return Productos;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+    }
+
+    @Override
+    public ProductosParaElCuidadoPersonalYDelHogar buscarProducto(int idProd) {
+        ProductosParaElCuidadoPersonalYDelHogar producto = null;
+        try{
+            producto = new ProductosParaElCuidadoPersonalYDelHogar();
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_PRODUCTO_PCH_X_ID"
+                    +"(?)}");
+            cs.setInt("_id_producto", idProd);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                
+                producto.setIdProducto(rs.getInt("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
+                producto.setDescripcion(rs.getString("descripcion")); 
+                
+               
+                
+                String tipoUnidad = rs.getString("unidad_de_medida");
+                
+                UnidadDeMedida unidad = UnidadDeMedida.valueOf(tipoUnidad);
+                producto.setUnidadMedida(unidad);
+                
+                producto.setTipo(rs.getString("tipo")); 
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return producto;
     }
     
 }

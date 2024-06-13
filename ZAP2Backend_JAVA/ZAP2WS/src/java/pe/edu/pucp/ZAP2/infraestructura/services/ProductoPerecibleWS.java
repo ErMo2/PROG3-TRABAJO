@@ -64,4 +64,16 @@ public class ProductoPerecibleWS {
         }
         return prodPere;
     }
+    
+    @WebMethod(operationName = "buscarProductoPerecible")
+    public ProductoPerecible buscarProductoPerecible(@WebParam(name = "idProductoPerecible") int idProductoPerecible) {
+        ProductoPerecible prodPere = null;
+        try{
+            daoProductoPerecible = new ProductoPerecibleMySql();
+            prodPere = daoProductoPerecible.buscarProducto(idProductoPerecible);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return prodPere;
+    }
 }

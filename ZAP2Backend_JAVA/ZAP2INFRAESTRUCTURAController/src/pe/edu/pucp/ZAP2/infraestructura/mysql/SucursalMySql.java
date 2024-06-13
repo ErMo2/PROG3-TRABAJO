@@ -109,5 +109,33 @@ public class SucursalMySql implements SucursalDao{
         return sucursales;        
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Sucursal buscar(int id) {
+        Sucursal sucursal = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+
+            cs = con.prepareCall("{call BUSCAR_SUCURSAL_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            sucursal = new Sucursal();
+            while(rs.next()){
+                
+                sucursal.setId_sucursal(rs.getInt("id_sucursal"));
+                sucursal.setDireccion(rs.getString("direccion"));
+                sucursal.setNombre(rs.getString("nombre"));
+                sucursal.setTam_metros(rs.getDouble("tam_metros"));        
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return sucursal;
+    }
     
 }

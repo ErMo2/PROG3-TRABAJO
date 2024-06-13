@@ -64,4 +64,17 @@ public class CuentaUsuarioWS {
         }
         return cuentas;
     }
+    
+    
+    @WebMethod(operationName = "VerificarCuenta")
+    public int VerificarCuenta(@WebParam(name = "Usuario") String usuario,@WebParam(name = "Contra")String contra) {
+        int resultado = 0;
+        try{
+            daoCuentaUsuario = new CuentaUsuarioMySql();
+            resultado = daoCuentaUsuario.verificar(usuario,contra);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
 }

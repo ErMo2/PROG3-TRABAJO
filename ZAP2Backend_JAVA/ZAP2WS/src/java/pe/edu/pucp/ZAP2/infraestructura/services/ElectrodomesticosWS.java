@@ -67,4 +67,16 @@ public class ElectrodomesticosWS {
         }
         return electrodomesticos;
     }
+    
+    @WebMethod(operationName = "buscarElectrodomestico")
+    public Electrodomesticos buscarElectrodomestico(@WebParam(name = "idElectrodomestico") int idProd) {
+        Electrodomesticos prod = null;
+        try{
+            daoElectrodomesticos = new ElectrodomesticosMySql();
+            prod = daoElectrodomesticos.buscarProducto(idProd);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return prod;
+    }
 }

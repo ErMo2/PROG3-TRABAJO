@@ -64,4 +64,16 @@ public class RopaWS {
         }
         return ropas;
     }
+    
+    @WebMethod(operationName = "buscarRopa")
+    public Ropa buscarRopa(@WebParam(name = "idRopa") int idProd) {
+        Ropa prod = null;
+        try{
+            daoRopa = new RopaMySql();
+            prod = daoRopa.buscarProducto(idProd);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return prod;
+    }
 }

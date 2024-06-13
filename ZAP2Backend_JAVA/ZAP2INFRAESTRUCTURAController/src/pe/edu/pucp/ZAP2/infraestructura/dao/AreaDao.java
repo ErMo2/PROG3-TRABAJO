@@ -16,4 +16,5 @@ public interface AreaDao {
     int modificar(Area area);
     int eliminar(int idArea);
     ArrayList<Area> listarTodas();
+    Area buscar(int id);
 }

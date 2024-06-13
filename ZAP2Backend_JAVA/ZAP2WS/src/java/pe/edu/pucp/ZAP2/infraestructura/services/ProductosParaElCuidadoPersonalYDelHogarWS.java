@@ -64,4 +64,16 @@ public class ProductosParaElCuidadoPersonalYDelHogarWS {
         }
         return PCHs;
     }
+    
+    @WebMethod(operationName = "buscarProductoPCH")
+    public ProductosParaElCuidadoPersonalYDelHogar buscarProductoPCH(@WebParam(name = "idProductoPCH") int idProd) {
+        ProductosParaElCuidadoPersonalYDelHogar prod = null;
+        try{
+            daoPCH = new ProductosParaElCuidadoPersonalYDelHogarMySql();
+            prod = daoPCH.buscarProducto(idProd);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return prod;
+    }
 }

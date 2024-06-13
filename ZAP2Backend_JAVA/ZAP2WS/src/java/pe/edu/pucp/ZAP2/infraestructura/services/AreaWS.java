@@ -67,4 +67,16 @@ public class AreaWS {
         }
         return areas;
     }
+    
+    @WebMethod(operationName = "buscarArea")
+    public Area buscarArea(@WebParam(name = "idArea") int id) {
+        Area dato = null;
+        try{
+            daoArea = new AreaMySql();
+            dato = daoArea.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }
