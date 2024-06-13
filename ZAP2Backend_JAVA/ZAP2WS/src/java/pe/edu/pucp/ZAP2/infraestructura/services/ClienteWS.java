@@ -76,4 +76,16 @@ public class ClienteWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "listarClientesPorNombre")
+    public ArrayList<Cliente> listarClientesPorNombre(String nombre) {
+        ArrayList<Cliente> clientes = null;
+        try{
+            daoCliente = new ClienteMySql();
+            clientes = daoCliente.listarPorNombre(nombre);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return clientes;
+    }
 }
