@@ -40,8 +40,9 @@ namespace InterfacesTrabajoGrupal
             CargarBancos();
         }
 
-        protected void gvBancos_RowCommand(object sender, GridViewCommandEventArgs e)
+        /*protected void gvBancos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            
             int idBanco = Convert.ToInt32(e.CommandArgument);
             if (e.CommandName == "Modificar")
             {
@@ -49,10 +50,12 @@ namespace InterfacesTrabajoGrupal
             }
             else if (e.CommandName == "Eliminar")
             {
+
                 daoBanco.eliminarBanco(idBanco);
                 CargarBancos();
             }
-        }
+        }*/
+       
 
         protected void lbRegistrarBanco_Click(object sender, EventArgs e)
         {
