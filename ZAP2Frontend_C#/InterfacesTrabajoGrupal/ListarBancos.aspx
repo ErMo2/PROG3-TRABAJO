@@ -25,8 +25,7 @@
                     CssClass="table table-hover table-responsive-sm table-striped"
                     AllowPaging="true"
                     PageSize="5"
-                    OnPageIndexChanging="gvBancos_PageIndexChanging"
-                    OnRowCommand="gvBancos_RowCommand">
+                    OnPageIndexChanging="gvBancos_PageIndexChanging">
                     <Columns>
                         <asp:BoundField HeaderText="Id Banco" DataField="idBanco" />
                         <asp:BoundField HeaderText="Nombre" DataField="nombre" />
@@ -34,7 +33,7 @@
                             <ItemTemplate>
                                 <div class="btn-group" role="group">
                                     <asp:LinkButton ID="lbModificar" runat="server" CommandName="Modificar" CommandArgument='<%# Eval("idBanco") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" />
-                                    <asp:LinkButton ID="lbEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("idBanco") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este banco?');" />
+                                    <asp:LinkButton ID="lbEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("idBanco") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este banco?');"/>
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>

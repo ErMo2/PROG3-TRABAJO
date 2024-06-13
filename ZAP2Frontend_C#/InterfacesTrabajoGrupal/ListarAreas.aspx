@@ -20,7 +20,7 @@
         <div class="container row">
             <asp:GridView ID="gvAreas" runat="server"
                 AutoGenerateColumns="false" CssClass="table table-hover table-responsive"
-                AllowPaging="true" PageSize="3" OnPageIndexChanging="gvAreas_PageIndexChanging">
+                AllowPaging="true" PageSize="5" OnPageIndexChanging="gvAreas_PageIndexChanging">
 
                 <Columns>
                     <asp:BoundField HeaderText="IdAmbiente" DataField="idArea" />
