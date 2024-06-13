@@ -15,58 +15,58 @@ namespace InterfacesTrabajoGrupal
     {
 
         /// <summary>
-        /// Control lblIdAmbiente.
+        /// Control lblIdArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdAmbiente;
+        protected global::System.Web.UI.WebControls.Label lblIdArea;
 
         /// <summary>
-        /// Control txtIdAmbiente.
+        /// Control txtIdArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdAmbiente;
+        protected global::System.Web.UI.WebControls.TextBox txtIdArea;
 
         /// <summary>
-        /// Control lblNombreAmbiente.
+        /// Control lblNombreArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreAmbiente;
+        protected global::System.Web.UI.WebControls.Label lblNombreArea;
 
         /// <summary>
-        /// Control txtNombreAmbiente.
+        /// Control txtNombreArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreAmbiente;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreArea;
 
         /// <summary>
-        /// Control lblSucursal.
+        /// Control lblArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSucursal;
+        protected global::System.Web.UI.WebControls.Label lblArea;
 
         /// <summary>
-        /// Control txtSucursal.
+        /// Control txtIdSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSucursal;
+        protected global::System.Web.UI.WebControls.TextBox txtIdSucursal;
 
         /// <summary>
         /// Control btnRegresar.

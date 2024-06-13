@@ -16,24 +16,24 @@
 
         <div class="card-body">
             <div class="mb-3 row">
-                <asp:Label ID="lblIdAmbiente" runat="server" Text="Id Ambiente:" CssClass="col-sm-2 col-form-label" />
+                <asp:Label ID="lblIdArea" runat="server" Text="Id Area:" CssClass="col-sm-2 col-form-label" />
                 <div class="col-sm-4">
-                    <asp:TextBox ID="txtIdAmbiente" runat="server" Enabled="false" CssClass="form-control" />
+                    <asp:TextBox ID="txtIdArea" runat="server" Enabled="false" CssClass="form-control" />
                 </div>
             </div>
 
             <div class="mb-3 row">
-                <asp:Label ID="lblNombreAmbiente" runat="server" Text="Nombre del Ambiente:" CssClass="col-sm-2 col-form-label" />
+                <asp:Label ID="lblNombreArea" runat="server" Text="Nombre del Area:" CssClass="col-sm-2 col-form-label" />
                 <div class="col-sm-8">
-                    <asp:TextBox ID="txtNombreAmbiente" runat="server" CssClass="form-control" />
+                    <asp:TextBox ID="txtNombreArea" runat="server" CssClass="form-control" />
                 </div>
             </div>
 
 
             <div class="mb-3 row">
-                <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+                <asp:Label ID="lblArea" runat="server" Text="Id Sucursal:" CssClass="col-sm-2 col-form-label" />
                 <div class="col-sm-8">
-                    <asp:TextBox ID="txtSucursal" runat="server" CssClass="form-control" />
+                    <asp:TextBox ID="txtIdSucursal" runat="server" CssClass="form-control" />
                 </div>
             </div>
 

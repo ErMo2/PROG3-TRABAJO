@@ -11,11 +11,11 @@
   <message name="listarEmpleadoAreaResponse">
     <part name="parameters" element="tns:listarEmpleadoAreaResponse" />
   </message>
-  <message name="modificarEmpleadoDeArea">
-    <part name="parameters" element="tns:modificarEmpleadoDeArea" />
+  <message name="insertarEmpleadoDeArea">
+    <part name="parameters" element="tns:insertarEmpleadoDeArea" />
   </message>
-  <message name="modificarEmpleadoDeAreaResponse">
-    <part name="parameters" element="tns:modificarEmpleadoDeAreaResponse" />
+  <message name="insertarEmpleadoDeAreaResponse">
+    <part name="parameters" element="tns:insertarEmpleadoDeAreaResponse" />
   </message>
   <message name="eliminarEmpleadoDeArea">
     <part name="parameters" element="tns:eliminarEmpleadoDeArea" />
@@ -23,28 +23,28 @@
   <message name="eliminarEmpleadoDeAreaResponse">
     <part name="parameters" element="tns:eliminarEmpleadoDeAreaResponse" />
   </message>
-  <message name="insertarEmpleadoDeArea">
-    <part name="parameters" element="tns:insertarEmpleadoDeArea" />
+  <message name="modificarEmpleadoDeArea">
+    <part name="parameters" element="tns:modificarEmpleadoDeArea" />
   </message>
-  <message name="insertarEmpleadoDeAreaResponse">
-    <part name="parameters" element="tns:insertarEmpleadoDeAreaResponse" />
+  <message name="modificarEmpleadoDeAreaResponse">
+    <part name="parameters" element="tns:modificarEmpleadoDeAreaResponse" />
   </message>
   <portType name="EmpleadoDeAreaWS">
     <operation name="listarEmpleadoArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest" message="tns:listarEmpleadoArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaResponse" message="tns:listarEmpleadoAreaResponse" />
     </operation>
-    <operation name="modificarEmpleadoDeArea">
-      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaRequest" message="tns:modificarEmpleadoDeArea" />
-      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaResponse" message="tns:modificarEmpleadoDeAreaResponse" />
+    <operation name="insertarEmpleadoDeArea">
+      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaRequest" message="tns:insertarEmpleadoDeArea" />
+      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaResponse" message="tns:insertarEmpleadoDeAreaResponse" />
     </operation>
     <operation name="eliminarEmpleadoDeArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaRequest" message="tns:eliminarEmpleadoDeArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaResponse" message="tns:eliminarEmpleadoDeAreaResponse" />
     </operation>
-    <operation name="insertarEmpleadoDeArea">
-      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaRequest" message="tns:insertarEmpleadoDeArea" />
-      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaResponse" message="tns:insertarEmpleadoDeAreaResponse" />
+    <operation name="modificarEmpleadoDeArea">
+      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaRequest" message="tns:modificarEmpleadoDeArea" />
+      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaResponse" message="tns:modificarEmpleadoDeAreaResponse" />
     </operation>
   </portType>
   <binding name="EmpleadoDeAreaWSPortBinding" type="tns:EmpleadoDeAreaWS">
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarEmpleadoDeArea">
+    <operation name="insertarEmpleadoDeArea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarEmpleadoDeArea">
+    <operation name="modificarEmpleadoDeArea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

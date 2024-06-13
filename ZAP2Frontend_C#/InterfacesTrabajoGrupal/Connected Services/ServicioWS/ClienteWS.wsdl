@@ -11,6 +11,12 @@
   <message name="insertarClienteResponse">
     <part name="parameters" element="tns:insertarClienteResponse" />
   </message>
+  <message name="eliminarCliente">
+    <part name="parameters" element="tns:eliminarCliente" />
+  </message>
+  <message name="eliminarClienteResponse">
+    <part name="parameters" element="tns:eliminarClienteResponse" />
+  </message>
   <message name="modificarCliente">
     <part name="parameters" element="tns:modificarCliente" />
   </message>
@@ -23,16 +29,20 @@
   <message name="listarClientesResponse">
     <part name="parameters" element="tns:listarClientesResponse" />
   </message>
-  <message name="eliminarCliente">
-    <part name="parameters" element="tns:eliminarCliente" />
+  <message name="buscarCliente">
+    <part name="parameters" element="tns:buscarCliente" />
   </message>
-  <message name="eliminarClienteResponse">
-    <part name="parameters" element="tns:eliminarClienteResponse" />
+  <message name="buscarClienteResponse">
+    <part name="parameters" element="tns:buscarClienteResponse" />
   </message>
   <portType name="ClienteWS">
     <operation name="insertarCliente">
       <input wsam:Action="ZAP2WS/ClienteWS/insertarClienteRequest" message="tns:insertarCliente" />
       <output wsam:Action="ZAP2WS/ClienteWS/insertarClienteResponse" message="tns:insertarClienteResponse" />
+    </operation>
+    <operation name="eliminarCliente">
+      <input wsam:Action="ZAP2WS/ClienteWS/eliminarClienteRequest" message="tns:eliminarCliente" />
+      <output wsam:Action="ZAP2WS/ClienteWS/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
     </operation>
     <operation name="modificarCliente">
       <input wsam:Action="ZAP2WS/ClienteWS/modificarClienteRequest" message="tns:modificarCliente" />
@@ -42,9 +52,9 @@
       <input wsam:Action="ZAP2WS/ClienteWS/listarClientesRequest" message="tns:listarClientes" />
       <output wsam:Action="ZAP2WS/ClienteWS/listarClientesResponse" message="tns:listarClientesResponse" />
     </operation>
-    <operation name="eliminarCliente">
-      <input wsam:Action="ZAP2WS/ClienteWS/eliminarClienteRequest" message="tns:eliminarCliente" />
-      <output wsam:Action="ZAP2WS/ClienteWS/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
+    <operation name="buscarCliente">
+      <input wsam:Action="ZAP2WS/ClienteWS/buscarClienteRequest" message="tns:buscarCliente" />
+      <output wsam:Action="ZAP2WS/ClienteWS/buscarClienteResponse" message="tns:buscarClienteResponse" />
     </operation>
   </portType>
   <binding name="ClienteWSPortBinding" type="tns:ClienteWS">
@@ -58,6 +68,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="eliminarCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="modificarCliente">
       <soap:operation soapAction="" />
       <input>
@@ -76,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarCliente">
+    <operation name="buscarCliente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

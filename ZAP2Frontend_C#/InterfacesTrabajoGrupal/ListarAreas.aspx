@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="container">
@@ -19,17 +20,20 @@
 
         <div class="container row">
             <asp:GridView ID="gvAreas" runat="server"
-                AutoGenerateColumns="false" CssClass="table table-hover table-responsive"
-                AllowPaging="true" PageSize="5" OnPageIndexChanging="gvAreas_PageIndexChanging">
-
+                AutoGenerateColumns="false" 
+                CssClass="table table-hover table-responsive"
+                AllowPaging="true" 
+                PageSize="5" 
+                OnPageIndexChanging="gvAreas_PageIndexChanging"
+                OnRowCommand="gvAreas_RowCommand">
                 <Columns>
                     <asp:BoundField HeaderText="IdAmbiente" DataField="idArea" />
                     <asp:BoundField HeaderText="NombreAmbiente" DataField="nombre" />
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton runat="server" Text="<i class='fa-solid fa-edit ps-2'></i>" CommandArgument='<%# Eval("idArea") %>' OnClick="lbEditarArea_Click" />
-                            <asp:LinkButton runat="server" Text="<i class='fa-solid fa-trash ps-2'></i>" CommandArgument='<%# Eval("idArea") %>' OnClick="lbEliminarArea_Cick" />
+                            <asp:LinkButton ID="lbModificar" runat="server" CommandName="Modificar" CommandArgument='<%# Eval("idArea") %>' Text="Modificar" CssClass="btn btn-primary btn-sm"  />
+                            <asp:LinkButton ID="lbEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("idArea") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar esta sucursal?');"/>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>
