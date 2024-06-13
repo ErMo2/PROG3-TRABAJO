@@ -64,4 +64,16 @@ public class SupervisorWS {
         }
         return supervisores;
     }
+    
+    @WebMethod(operationName = "buscarSupervisor")
+    public Supervisor buscarSupervisor(@WebParam(name = "idSupervisor") int id) {
+        Supervisor dato = null;
+        try{
+            daoSupervisor = new SupervisorMySql();
+            dato = daoSupervisor.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

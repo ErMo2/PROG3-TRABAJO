@@ -66,4 +66,16 @@ public class TarjetaWS {
         }
         return tarjetas;
     }
+    
+    @WebMethod(operationName = "buscarTarjeta")
+    public Tarjeta buscarTarjeta(@WebParam(name = "idTarjeta") int id) {
+        Tarjeta dato = null;
+        try{
+            daoTarjeta = new TarjetaMySql();
+            dato = daoTarjeta.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

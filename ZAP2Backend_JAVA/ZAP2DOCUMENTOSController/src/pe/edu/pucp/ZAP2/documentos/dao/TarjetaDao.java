@@ -16,4 +16,5 @@ public interface TarjetaDao {
     int modificar(Tarjeta tarjeta);
     int eliminar(int codTarjeta);
     ArrayList<Tarjeta> listarTodas();
+    Tarjeta buscar(int id);
 }

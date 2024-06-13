@@ -16,4 +16,5 @@ public interface BancoDao {
     int modificar(Banco banco);
     int eliminar(int idBanco);
     ArrayList<Banco> listarTodos();
+    Banco buscar(int id);
 }
