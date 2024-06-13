@@ -134,6 +134,9 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 empleado.setNombre(rs.getString("nombre"));
                 empleado.setApellido_paterno(rs.getString("apellido_paterno"));
                 empleado.setApellido_materno(rs.getString("apellido_materno"));
+                empleado.setTelefono(rs.getInt("telefono"));
+                empleado.setEmail(rs.getString("email"));
+                
                 empleado.setSexo(rs.getString("sexo").charAt(0));
                 empleado.setSalario(rs.getDouble("salario"));
                 String puesto = rs.getString("puesto");
@@ -152,7 +155,7 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return empleados;
-//throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 
     @Override

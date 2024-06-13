@@ -64,4 +64,16 @@ public class PedidoWS {
         }
         return pedidos;
     }
+    
+    @WebMethod(operationName = "buscarPedido")
+    public Pedido buscarPedido(@WebParam(name = "idPedido") int id) {
+        Pedido dato = null;
+        try{
+            daoPedido = new PedidoMySql();
+            dato = daoPedido.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

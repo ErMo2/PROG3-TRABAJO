@@ -109,7 +109,7 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
 
     @Override
     public ArrayList<PersonaJuridica> listarTodas() {
-        ArrayList<PersonaJuridica> supervisores =  new ArrayList<>();
+        ArrayList<PersonaJuridica> PJs =  new ArrayList<>();
         try{
             con=DBManager.getInstance().getConnection();
             
@@ -117,16 +117,23 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
                     +"( )}");
             rs = cs.executeQuery();
             while(rs.next()){
-                PersonaJuridica supervisor = new PersonaJuridica();
-                supervisor.setId_Persona(rs.getInt("id_persona"));
-                supervisor.setNombre(rs.getString("nombre"));
-                supervisor.setApellido_paterno(rs.getString("apellido_paterno"));
-                supervisor.setApellido_materno(rs.getString("apellido_materno"));
-                TipoEntidad tip = TipoEntidad.valueOf(rs.getString("tipoEntidad"));
-                supervisor.setTipoEntidad(tip);
-                supervisor.setDireccionLegal(rs.getString("direccionLegal"));
+                PersonaJuridica PJ = new PersonaJuridica();
+                PJ.setId_Persona(rs.getInt("id_persona"));
+                PJ.setNombre(rs.getString("nombre"));
+                PJ.setApellido_paterno(rs.getString("apellido_paterno"));
+                PJ.setApellido_materno(rs.getString("apellido_materno"));
+                PJ.setEmail(rs.getString("email"));
+                PJ.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                PJ.setNro_documento(rs.getInt("numDocumento"));
+                PJ.setTelefono(rs.getInt("telefono"));
                 
-                supervisores.add(supervisor);
+                TipoEntidad tip = TipoEntidad.valueOf(rs.getString("tipoEntidad"));
+                PJ.setTipoEntidad(tip);
+                PJ.setDireccionLegal(rs.getString("direccionLegal"));
+                PJ.setNumIdentificadorFiscal(rs.getInt("numIdentificadorFiscal"));
+                PJ.setRUC(rs.getString("RUC"));
+                
+                PJs.add(PJ);
             }
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -134,8 +141,8 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
             try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
-        return supervisores;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return PJs;
+        
     }
     
 }
