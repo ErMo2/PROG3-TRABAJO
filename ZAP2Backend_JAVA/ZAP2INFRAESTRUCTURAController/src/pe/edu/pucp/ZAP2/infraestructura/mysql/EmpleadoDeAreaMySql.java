@@ -154,5 +154,44 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
         return empleados;
 //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public EmpleadoDeArea buscar(int id) {
+        EmpleadoDeArea empleado = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_EMPLEADODEAREA_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            empleado = new EmpleadoDeArea();
+            while(rs.next()){
+                
+                
+                empleado.setId_Persona(rs.getInt("id_persona"));
+                empleado.setIdEmpleado(rs.getInt("id_persona"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellido_paterno(rs.getString("apellido_paterno"));
+                empleado.setApellido_materno(rs.getString("apellido_materno"));
+                empleado.setSexo(rs.getString("sexo").charAt(0));
+                empleado.setSalario(rs.getDouble("salario"));
+                String puesto = rs.getString("puesto");
+                TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
+                empleado.setPuesto(tipopuesto);
+                Supervisor supervisor = new Supervisor();
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return empleado;
+    }
     
 }

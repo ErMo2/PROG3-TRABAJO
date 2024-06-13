@@ -100,5 +100,30 @@ public class BancoMySql implements BancoDao{
         }
         return bancos;
     }
+
+    @Override
+    public Banco buscar(int id) {
+        Banco banco = null;
+        try{
+            con=DBManager.getInstance().getConnection();           
+            cs = con.prepareCall("{call BUSCAR_BANCO_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            banco = new Banco();
+            while(rs.next()){
+                 
+                banco.setIdBanco(rs.getInt("id_banco"));
+                banco.setNombre(rs.getString("nombre"));
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }    
+        return banco;
+    }
     
 }

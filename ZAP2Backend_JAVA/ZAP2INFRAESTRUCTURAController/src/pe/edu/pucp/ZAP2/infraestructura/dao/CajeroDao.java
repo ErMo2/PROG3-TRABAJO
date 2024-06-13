@@ -16,4 +16,5 @@ public interface CajeroDao {
     int modificar(Cajero cajero);
     int eliminar(int idCajero);
     ArrayList<Cajero> listarTodas();
+    Cajero buscar(int id);
 }
