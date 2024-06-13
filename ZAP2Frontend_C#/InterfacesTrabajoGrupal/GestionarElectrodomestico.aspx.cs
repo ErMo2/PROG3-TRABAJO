@@ -1,7 +1,4 @@
 ﻿using InterfacesTrabajoGrupal.ServicioWS;
-using SoftProgRHHController.DAO;
-using SoftProgRHHController.MySQL;
-using SoftProgRRHHModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
