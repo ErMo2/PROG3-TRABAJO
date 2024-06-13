@@ -15,20 +15,20 @@ namespace InterfacesTrabajoGrupal
         }
         protected void lblRopa_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Ropa.aspx");
+            Response.Redirect("GestionarRopa.aspx");
         }
         protected void lblElectrodomestico_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Electrodomestico.aspx");
+            Response.Redirect("GestionarElectrodomestico.aspx");
 
         }
         protected void lblLimpieza_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ProductoPersonalYHogar.aspx");
+            Response.Redirect("GestionarProductoPersonalYHogar.aspx");
         }
         protected void lblPerecible_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ProdPerecible.aspx");
+            Response.Redirect("GestionarProdPerecible.aspx");
         }
 
     }

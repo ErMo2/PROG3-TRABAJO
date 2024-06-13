@@ -646,7 +646,7 @@
     <Content Include="GestionarElectrodomestico.aspx" />
     <Content Include="GestionarEmpleadoArea.aspx" />
     <Content Include="GestionarFacturaVenta.aspx" />
-    <Content Include="GestionarGerente.aspx" />
+    <Content Include="GestionarSupervisor.aspx" />
     <Content Include="GestionarAreas.aspx" />
     <Content Include="GestionarBancos.aspx" />
     <Content Include="GestionarClientes.aspx" />
@@ -845,12 +845,12 @@
     <Compile Include="GestionarFacturaVenta.aspx.designer.cs">
       <DependentUpon>GestionarFacturaVenta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GestionarGerente.aspx.cs">
-      <DependentUpon>GestionarGerente.aspx</DependentUpon>
+    <Compile Include="GestionarSupervisor.aspx.cs">
+      <DependentUpon>GestionarSupervisor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GestionarGerente.aspx.designer.cs">
-      <DependentUpon>GestionarGerente.aspx</DependentUpon>
+    <Compile Include="GestionarSupervisor.aspx.designer.cs">
+      <DependentUpon>GestionarSupervisor.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionarAreas.aspx.cs">
       <DependentUpon>GestionarAreas.aspx</DependentUpon>
