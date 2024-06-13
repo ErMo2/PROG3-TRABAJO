@@ -164,5 +164,44 @@ public class CajeroMySql implements CajeroDao{
         return cajeros;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Cajero buscar(int id) {
+        Cajero cajero = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_CAJERO_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            cajero = new Cajero();
+                
+            while(rs.next()){
+                 
+                cajero.setId_Persona(rs.getInt("id_persona"));
+                cajero.setNombre(rs.getString("nombre"));
+                cajero.setIdEmpleado(rs.getInt("id_persona"));
+                
+                cajero.setApellido_paterno(rs.getString("apellido_paterno"));
+                cajero.setApellido_materno(rs.getString("apellido_materno"));
+                cajero.setSexo(rs.getString("sexo").charAt(0));
+                cajero.setSalario(rs.getDouble("salario"));
+                
+                Supervisor supervisor = new Supervisor();
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                cajero.setNumeroCaja(rs.getInt("numeroCaja"));
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return cajero;
+    }
     
 }

@@ -65,4 +65,16 @@ public class EmpleadoDeAreaWS {
         }
         return empleadosArea;
     }
+    
+    @WebMethod(operationName = "buscarEmpleadoArea")
+    public EmpleadoDeArea buscarEmpleadoArea(@WebParam(name = "idEmpleadoArea") int id) {
+        EmpleadoDeArea dato = null;
+        try{
+            daoEmpleadoDeArea = new EmpleadoDeAreaMySql();
+            dato = daoEmpleadoDeArea.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

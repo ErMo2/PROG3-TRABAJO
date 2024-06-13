@@ -13,6 +13,7 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ClienteDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
 import java.sql.SQLException;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 
 /**
  *
@@ -114,8 +115,12 @@ public class ClienteMySql implements ClienteDao{
                 cliente.setNombre(rs.getString("nombre"));
                 cliente.setApellido_paterno(rs.getString("apellido_paterno"));
                 cliente.setApellido_materno(rs.getString("apellido_materno"));
-                
+                cliente.setEmail(rs.getString("email"));
+                cliente.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                cliente.setNro_documento(rs.getInt("numDocumento"));
+                cliente.setTelefono(rs.getInt("telefono"));
                 cliente.setSexo(rs.getString("sexo").charAt(0));
+                cliente.setDireccion(rs.getString("direccion"));
                 cliente.setDni(String.valueOf(rs.getInt("dni")));
                 cliente.setPuntosBonus(rs.getInt("puntosBonus"));
                 clientes.add(cliente);

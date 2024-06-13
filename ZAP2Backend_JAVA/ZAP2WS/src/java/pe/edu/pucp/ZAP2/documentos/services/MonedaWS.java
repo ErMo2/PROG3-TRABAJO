@@ -69,4 +69,16 @@ public class MonedaWS {
         }
         return monedas;
     }
+    
+    @WebMethod(operationName = "buscarMoneda")
+    public Moneda buscarMoneda(@WebParam(name = "idMoneda") int id) {
+        Moneda dato = null;
+        try{
+            daoMoneda = new MonedaMySql();
+            dato = daoMoneda.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

@@ -68,4 +68,16 @@ public class BancoWS {
         }
         return bancos;
     }
+    
+    @WebMethod(operationName = "buscarBanco")
+    public Banco buscarBanco(@WebParam(name = "idBanco") int id) {
+        Banco dato = null;
+        try{
+            daoBanco = new BancoMySql();
+            dato = daoBanco.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

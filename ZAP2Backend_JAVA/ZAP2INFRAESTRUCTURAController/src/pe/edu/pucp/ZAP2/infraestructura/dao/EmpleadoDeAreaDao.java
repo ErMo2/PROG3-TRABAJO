@@ -16,4 +16,5 @@ public interface EmpleadoDeAreaDao {
     int modificar(EmpleadoDeArea empleadoDeArea);
     int eliminar(int idEmpleadoDeArea);
     ArrayList<EmpleadoDeArea> listarTodas();
+    EmpleadoDeArea buscar(int id);
 }
