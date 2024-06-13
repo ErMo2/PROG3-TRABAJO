@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarRopa" type="tns:buscarRopa" />
+  <xs:element name="buscarRopaResponse" type="tns:buscarRopaResponse" />
   <xs:element name="eliminarRopa" type="tns:eliminarRopa" />
   <xs:element name="eliminarRopaResponse" type="tns:eliminarRopaResponse" />
   <xs:element name="insertarRopa" type="tns:insertarRopa" />
@@ -114,6 +116,16 @@
   <xs:complexType name="insertarRopaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarRopa">
+    <xs:sequence>
+      <xs:element name="idRopa" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarRopaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:ropa" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarRopa">

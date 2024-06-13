@@ -150,6 +150,8 @@ public class CajeroMySql implements CajeroDao{
                 
                 cajero.setSexo(rs.getString("sexo").charAt(0));
                 cajero.setSalario(rs.getDouble("salario"));
+//                cajero.setEmail(rs.getString("email"));
+//                cajero.setTelefono(rs.getInt("telefono"));
                 
                 
                 

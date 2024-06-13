@@ -1,8 +1,4 @@
-﻿//using SoftProgRHHController.DAO;
-//using SoftProgRHHController.MySQL;
-//using SoftProgRRHHModel;
-using InterfacesTrabajoGrupal.ServicioWS;
-using SoftProgRRHHModel;
+﻿using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +11,7 @@ namespace InterfacesTrabajoGrupal
 {
     public partial class ListarSucursales : System.Web.UI.Page
     {
+
         private SucursalWSClient daoSucursal;
         private BindingList<sucursal> sucursales;
         protected void Page_Load(object sender, EventArgs e)
@@ -38,10 +35,11 @@ namespace InterfacesTrabajoGrupal
 
         protected void gvSucursales_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            daoSucursal = new SucursalWSClient();
             int idSucursal = Convert.ToInt32(e.CommandArgument);
             if (e.CommandName == "Modificar")
             {
-                Response.Redirect($"ModificarSucursal.aspx?id={idSucursal}");
+                Response.Redirect($"GestionarSucursales.aspx?id={idSucursal}");
             }
             else if (e.CommandName == "Eliminar")
             {
@@ -51,7 +49,7 @@ namespace InterfacesTrabajoGrupal
         }
         private void CargarSucursales()
         {
-            daoSucursal =new SucursalWSClient();
+            daoSucursal = new SucursalWSClient();
             sucursal[] arregloSucursales = daoSucursal.listarSucursal();
             if (arregloSucursales != null)
             {

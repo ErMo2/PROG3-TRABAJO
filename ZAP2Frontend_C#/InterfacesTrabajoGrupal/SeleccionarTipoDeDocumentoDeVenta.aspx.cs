@@ -19,11 +19,11 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnBoletaVenta_Click(object sender, EventArgs e)
         {
-            Response.Redirect("BoletaVenta.aspx");
+            Response.Redirect("GestionarBoletaVenta.aspx");
         }
         protected void btnFacturaVenta_Click(object sender, EventArgs e)
         {
-            Response.Redirect("FacturaVenta.aspx");
+            Response.Redirect("GestionarFacturaVenta.aspx");
         }
     }
 }

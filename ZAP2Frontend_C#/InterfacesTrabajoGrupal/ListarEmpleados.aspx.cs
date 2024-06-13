@@ -69,14 +69,13 @@ namespace InterfacesTrabajoGrupal
             var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleado);
             if (empleado != null)
             {
-                lblNombreArea.Text = empleado.nombre;
-                lblTelefonoArea.Text = empleado.telefono.ToString();
-                lblEmailArea.Text = empleado.email;
-                lblSexoArea.Text = empleado.sexo.ToString();
-                lblSalarioArea.Text = empleado.salario.ToString();
-                lblHorarioArea.Text = empleado.horario.ToString();
-
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#detallesArea').modal('show');", true);
+                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
+                                          $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
+                                          $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
+                                          $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                          $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                          $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
 
@@ -87,14 +86,14 @@ namespace InterfacesTrabajoGrupal
             var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleado);
             if (empleado != null)
             {
-                lblNombreCajero.Text = empleado.nombre;
-                lblTelefonoCajero.Text = empleado.telefono.ToString();
-                lblEmailCajero.Text = empleado.email.ToString();
-                lblSexoCajero.Text = empleado.sexo.ToString();
-                lblSalarioCajero.Text = empleado.salario.ToString();
-                lblHorarioCajero.Text = empleado.horario.ToString();
+                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
+                                          $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
+                                          $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
+                                          $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                          $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                          $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#detallesCajero').modal('show');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
 
@@ -105,14 +104,14 @@ namespace InterfacesTrabajoGrupal
             var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleado);
             if (empleado != null)
             {
-                lblNombreSupervisor.Text = empleado.nombre;
-                lblTelefonoSupervisor.Text = empleado.telefono.ToString();
-                lblEmailSupervisor.Text = empleado.email;
-                lblSexoSupervisor.Text = empleado.sexo.ToString();
-                lblSalarioSupervisor.Text = empleado.salario.ToString();
-                lblHorarioSupervisor.Text = empleado.horario.ToString();
+                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
+                                          $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
+                                          $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
+                                          $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                          $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                          $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
 
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#detallesSupervisor').modal('show');", true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
     }

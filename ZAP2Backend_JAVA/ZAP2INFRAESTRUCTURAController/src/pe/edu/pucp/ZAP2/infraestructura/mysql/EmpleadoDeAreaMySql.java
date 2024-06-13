@@ -139,6 +139,8 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 
                 empleado.setSexo(rs.getString("sexo").charAt(0));
                 empleado.setSalario(rs.getDouble("salario"));
+//                empleado.setEmail(rs.getString("email"));
+//                empleado.setTelefono(rs.getInt("telefono"));
                 String puesto = rs.getString("puesto");
                 TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
                 empleado.setPuesto(tipopuesto);
