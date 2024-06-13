@@ -5,6 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="cScripts" ContentPlaceHolderID="cphScripts" runat="server">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
