@@ -13,6 +13,7 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.EmpleadoDeAreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.EmpleadoDeArea;
 import java.sql.SQLException;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
 import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
 import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
@@ -179,11 +180,25 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 empleado.setNombre(rs.getString("nombre"));
                 empleado.setApellido_paterno(rs.getString("apellido_paterno"));
                 empleado.setApellido_materno(rs.getString("apellido_materno"));
+                empleado.setTelefono(rs.getInt("telefono"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                empleado.setNro_documento(rs.getInt("numDocumento"));
+                
                 empleado.setSexo(rs.getString("sexo").charAt(0));
+                empleado.setDireccion(rs.getString("direccion"));
+                
                 empleado.setSalario(rs.getDouble("salario"));
+                Date fecha = rs.getDate("fechaContratacion");
+                empleado.setFechaContratacion(fecha);
+                empleado.setTipoContrato(TipoContrato.valueOf(rs.getString("tipoContrato")));
+                empleado.setHorario(TurnosHorario.valueOf(rs.getString("horario")));
+                
                 String puesto = rs.getString("puesto");
                 TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
                 empleado.setPuesto(tipopuesto);
+                
+                
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
                 supervisor.setId_Persona(rs.getInt("fid_supervisor"));
