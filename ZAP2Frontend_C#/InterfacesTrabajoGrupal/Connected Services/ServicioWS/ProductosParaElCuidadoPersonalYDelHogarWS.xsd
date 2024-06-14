@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarProductoPCH" type="tns:buscarProductoPCH" />
+  <xs:element name="buscarProductoPCHResponse" type="tns:buscarProductoPCHResponse" />
   <xs:element name="eliminarPCH" type="tns:eliminarPCH" />
   <xs:element name="eliminarPCHResponse" type="tns:eliminarPCHResponse" />
   <xs:element name="insertarPCH" type="tns:insertarPCH" />
@@ -141,6 +143,16 @@
   <xs:complexType name="eliminarPCHResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarProductoPCH">
+    <xs:sequence>
+      <xs:element name="idProductoPCH" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarProductoPCHResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:productosParaElCuidadoPersonalYDelHogar" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="unidadDeMedida">

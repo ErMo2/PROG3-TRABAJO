@@ -47,6 +47,8 @@ public class CajeroMySql implements CajeroDao{
             cs.setString("_tipoDocumento",cajero.getTipo_documento().toString());
             cs.setInt("_numDocumento",cajero.getNro_documento());
             
+            
+            
             cs.setString("_sexo", String.valueOf(cajero.getSexo()));
             cs.setString("_direccion",cajero.getDireccion());
             
@@ -143,8 +145,15 @@ public class CajeroMySql implements CajeroDao{
                 
                 cajero.setApellido_paterno(rs.getString("apellido_paterno"));
                 cajero.setApellido_materno(rs.getString("apellido_materno"));
+                cajero.setTelefono(rs.getInt("telefono"));
+                cajero.setEmail(rs.getString("email"));
+                
                 cajero.setSexo(rs.getString("sexo").charAt(0));
                 cajero.setSalario(rs.getDouble("salario"));
+                cajero.setEmail(rs.getString("email"));
+                cajero.setTelefono(rs.getInt("telefono"));
+                
+                
                 
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
@@ -160,7 +169,71 @@ public class CajeroMySql implements CajeroDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return cajeros;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
+    }
+
+    @Override
+    public Cajero buscar(int id) {
+        Cajero cajero = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_CAJERO_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            cajero = new Cajero();
+                
+            while(rs.next()){
+                 
+                cajero.setId_Persona(rs.getInt("id_persona"));
+                cajero.setIdEmpleado(rs.getInt("id_persona"));
+                cajero.setNombre(rs.getString("nombre"));
+                cajero.setApellido_paterno(rs.getString("apellido_paterno"));
+                cajero.setApellido_materno(rs.getString("apellido_materno"));
+                cajero.setTelefono(rs.getInt("telefono"));
+                cajero.setEmail(rs.getString("email"));
+                cajero.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                cajero.setNro_documento(rs.getInt("numDocumento"));
+                
+                cajero.setSexo(rs.getString("sexo").charAt(0));
+                cajero.setDireccion(rs.getString("direccion"));
+                
+                cajero.setSalario(rs.getDouble("salario"));
+                Date fecha = rs.getDate("fechaContratacion");
+                cajero.setFechaContratacion(fecha);
+                cajero.setTipoContrato(TipoContrato.valueOf(rs.getString("tipoContrato")));
+                cajero.setHorario(TurnosHorario.valueOf(rs.getString("horario")));
+                
+                                String tipo_doc = rs.getString("tipoDocumento");
+                TipoDocumento tipoDoc = TipoDocumento.valueOf(tipo_doc);
+                cajero.setTipo_documento(tipoDoc);
+                cajero.setNro_documento(rs.getInt("numDocumento"));
+                cajero.setDireccion("direccion");
+                cajero.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String tipo_horario = rs.getString("horario");
+                TurnosHorario tipoHorario = TurnosHorario.valueOf(tipo_horario);
+                cajero.setHorario(tipoHorario);
+                String tipo_contrato = rs.getString("tipoContrato");
+                TipoContrato tipoContrato = TipoContrato.valueOf(tipo_contrato);
+                cajero.setTipoContrato(tipoContrato);
+                cajero.setEmail(rs.getString("email"));
+                cajero.setTelefono(rs.getInt("telefono"));
+                
+                Supervisor supervisor = new Supervisor();
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                cajero.setNumeroCaja(rs.getInt("numeroCaja"));
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return cajero;
     }
     
 }

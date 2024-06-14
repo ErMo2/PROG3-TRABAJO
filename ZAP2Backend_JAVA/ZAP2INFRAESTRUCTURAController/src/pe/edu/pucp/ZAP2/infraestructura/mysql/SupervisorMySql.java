@@ -169,5 +169,71 @@ public class SupervisorMySql implements SupervisorDao{
 
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Supervisor buscar(int id) {
+        Supervisor supervisor = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_SUPERVISOR_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            supervisor = new Supervisor();
+            while(rs.next()){
+                
+                supervisor.setId_Persona(rs.getInt("id_persona"));
+                supervisor.setIdEmpleado(rs.getInt("id_persona"));
+                supervisor.setNombre(rs.getString("nombre"));
+                supervisor.setApellido_paterno(rs.getString("apellido_paterno"));
+                supervisor.setApellido_materno(rs.getString("apellido_materno"));
+                supervisor.setTelefono(rs.getInt("telefono"));
+                supervisor.setEmail(rs.getString("email"));
+                
+                String tipo_doc = rs.getString("tipoDocumento");
+                TipoDocumento tipoDoc = TipoDocumento.valueOf(tipo_doc);
+                supervisor.setTipo_documento(tipoDoc);
+                supervisor.setNro_documento(rs.getInt("numDocumento"));
+                supervisor.setDireccion("direccion");
+                supervisor.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String tipo_horario = rs.getString("horario");
+                TurnosHorario tipoHorario = TurnosHorario.valueOf(tipo_horario);
+                supervisor.setHorario(tipoHorario);
+                String tipo_contrato = rs.getString("tipoContrato");
+                TipoContrato tipoContrato = TipoContrato.valueOf(tipo_contrato);
+                supervisor.setTipoContrato(tipoContrato);
+                supervisor.setEmail(rs.getString("email"));
+                supervisor.setTelefono(rs.getInt("telefono"));
+                
+                String aux = rs.getString("tipoDocumento");
+                TipoDocumento doc = TipoDocumento.valueOf(aux);
+                supervisor.setTipo_documento(doc);
+                supervisor.setNro_documento(rs.getInt("numDocumento"));
+                supervisor.setSexo(rs.getString("sexo").charAt(0));
+                supervisor.setDireccion(rs.getString("direccion"));
+                supervisor.setSalario(rs.getDouble("salario"));
+                supervisor.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String aux2 = rs.getString("tipoContrato");
+                TipoContrato tipCont = TipoContrato.valueOf(aux2);
+                supervisor.setTipoContrato(tipCont);
+                String aux3 = rs.getString("horario");
+                TurnosHorario horario = TurnosHorario.valueOf(aux3);
+                supervisor.setHorario(horario);
+                supervisor.setNumempleados(rs.getInt("num_empleados"));
+                Area area = new Area();
+                //area.setIdArea(rs.getInt("fid_area"));
+                supervisor.setArea(area);
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return supervisor;
+    }
     
 }

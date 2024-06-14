@@ -117,5 +117,38 @@ public class PedidoMySql implements PedidoDao{
         return pedidos;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Pedido buscar(int id) {
+    Pedido ped = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_PEDIDO_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            ped = new Pedido();
+            while(rs.next()){
+                
+                 
+                ped.setId_pedido(rs.getInt("id_pedido"));
+                ped.setSaldo(rs.getDouble("saldo"));
+                
+                ped.setEstado(Estado_Pedido.valueOf(rs.getString("estado")));
+                Date fecha = rs.getDate("fecha_pedido");
+                ped.setFecha_Pedido(fecha);
+                ped.setTotal(rs.getDouble("total"));
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return ped;
+    }
     
 }

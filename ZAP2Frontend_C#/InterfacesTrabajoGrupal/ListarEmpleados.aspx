@@ -22,7 +22,13 @@
                 <h3 class="card-title">Empleados de Área</h3>
             </div>
             <div class="card-body">
-                <asp:GridView ID="gvEmpleadosArea" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive-sm table-striped">
+                <asp:GridView ID="gvEmpleadosArea" runat="server"
+                    AutoGenerateColumns="False"
+                    CssClass="table table-hover table-responsive-sm table-striped"
+                    AllowPaging="true"
+                    PageSize="4"
+                    OnPageIndexChanging="gvEmpleadosArea_PageIndexChanging"
+                    OnRowCommand="gvEmpleadosArea_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="idempleado" HeaderText="Id Empleado" />
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" />
@@ -35,8 +41,8 @@
                             <ItemTemplate>
                                 <div class="btn-group" role="group">
                                     <asp:LinkButton ID="lbVerEmpleadoArea" runat="server" CommandName="VerEmpleadoArea" CommandArgument='<%# Eval("idempleado") %>' Text="Ver" CssClass="btn btn-info btn-sm" OnClick="VerArea_Click"/>
-                                    <asp:LinkButton ID="lbModificarEmpleadoArea" runat="server" CommandName="ModificarEmpleadoArea" CommandArgument='<%# Eval("idempleado") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" OnClick="lbModificarEmpleadoArea_Click"/>
-                                    <asp:LinkButton ID="lbEliminarEmpleadoArea" runat="server" CommandName="EliminarEmpleadoArea" CommandArgument='<%# Eval("idempleado") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este empleado?');" OnClick="lbEliminarEmpleadoArea_Click"/>
+                                    <asp:LinkButton ID="lbModificarEmpleadoArea" runat="server" CommandName="ModificarEmpleadoArea" CommandArgument='<%# Eval("idempleado") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" />
+                                    <asp:LinkButton ID="lbEliminarEmpleadoArea" runat="server" CommandName="EliminarEmpleadoArea" CommandArgument='<%# Eval("idempleado") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este empleado?');" />
                                 </div>
                             </ItemTemplate>
                         </asp:TemplateField>
@@ -65,7 +71,13 @@
                 <h3 class="card-title">Cajeros</h3>
             </div>
             <div class="card-body">
-                <asp:GridView ID="gvCajeros" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive-sm table-striped">
+                <asp:GridView ID="gvCajeros" runat="server"
+                    AutoGenerateColumns="False"
+                    CssClass="table table-hover table-responsive-sm table-striped"
+                    AllowPaging="true"
+                    PageSize="4"
+                    OnPageIndexChanging="gvCajeros_PageIndexChanging"
+                    OnRowCommand="gvCajeros_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="idempleado" HeaderText="Id Empleado" />
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" />
@@ -78,7 +90,7 @@
                             <ItemTemplate>
                                 <div class="btn-group" role="group">
                                     <asp:LinkButton ID="lbVerEmpleadoCajero" runat="server" CommandName="VerCajero" CommandArgument='<%# Eval("idempleado") %>' Text="Ver" CssClass="btn btn-info btn-sm" OnClick="VerCajero_Click"/>
-                                    <asp:LinkButton ID="lbModificarEmpleadoCajero" runat="server" CommandName="ModificarCajero" CommandArgument='<%# Eval("idempleado") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" OnClick="lbModificarEmpleadoCajero_Click"/>
+                                    <asp:LinkButton ID="lbModificarEmpleadoCajero" runat="server" CommandName="ModificarCajero" CommandArgument='<%# Eval("idempleado") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" />
                                     <asp:LinkButton ID="lbEliminarEmpleadoCajero" runat="server" CommandName="EliminarCajero" CommandArgument='<%# Eval("idempleado") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este cajero?');" />
                                 </div>
                             </ItemTemplate>
@@ -108,7 +120,14 @@
                 <h3 class="card-title">Supervisores</h3>
             </div>
             <div class="card-body">
-                <asp:GridView ID="gvSupervisores" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive-sm table-striped">
+                <asp:GridView ID="gvSupervisores"
+                    runat="server"
+                    AutoGenerateColumns="False"
+                    CssClass="table table-hover table-responsive-sm table-striped"
+                    AllowPaging="true"
+                    PageSize="4"
+                    OnPageIndexChanging="gvSupervisores_PageIndexChanging"
+                    OnRowCommand="gvSupervisores_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="idempleado" HeaderText="Id Empleado" />
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" />
@@ -121,7 +140,7 @@
                             <ItemTemplate>
                                 <div class="btn-group" role="group">
                                     <asp:LinkButton ID="lbVerEmpleadoSupervisor" runat="server" CommandName="VerSupervisor" CommandArgument='<%# Eval("idempleado") %>' Text="Ver" CssClass="btn btn-info btn-sm" OnClick="VerSupervisor_Click"/>
-                                    <asp:LinkButton ID="lbModificarEmpleadoSupervisor" runat="server" CommandName="ModificarSupervisor" CommandArgument='<%# Eval("idempleado") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" OnClick="lbModificarEmpleadoSupervisor_Click"/>
+                                    <asp:LinkButton ID="lbModificarEmpleadoSupervisor" runat="server" CommandName="ModificarSupervisor" CommandArgument='<%# Eval("idempleado") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" />
                                     <asp:LinkButton ID="lbEliminarEmpleadoSupervisor" runat="server" CommandName="EliminarSupervisor" CommandArgument='<%# Eval("idempleado") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este supervisor?');" />
                                 </div>
                             </ItemTemplate>

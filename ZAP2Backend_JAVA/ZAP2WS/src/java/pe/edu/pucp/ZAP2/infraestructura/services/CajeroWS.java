@@ -64,4 +64,16 @@ public class CajeroWS {
         }
         return cajeros;
     }
+    
+    @WebMethod(operationName = "buscarCajero")
+    public Cajero buscarCajero(@WebParam(name = "idCajero") int id) {
+        Cajero dato = null;
+        try{
+            daoCajero = new CajeroMySql();
+            dato = daoCajero.buscar(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

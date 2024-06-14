@@ -12,23 +12,38 @@ namespace InterfacesTrabajoGrupal
     public partial class ListarClientes : System.Web.UI.Page
     {
         private ClienteWSClient daoCliente;
-        private BindingList<cliente> clientes;
+        private BindingList<cliente> listaClientes;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                BindGridView();
+                CargarDatos();
             }
         }
 
+        private void CargarDatos()
+        {
+            daoCliente = new ClienteWSClient();
+            cliente[] arregloClientes = daoCliente.listarClientes();
+            if (arregloClientes != null)
+                listaClientes = new BindingList<cliente>(arregloClientes);
+
+            gvClientes.DataSource = listaClientes;
+            gvClientes.DataBind();
+        }
+        protected void gvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvClientes.PageIndex = e.NewPageIndex;
+            CargarDatos();
+        }
         private void BindGridView()
         {
             daoCliente = new ClienteWSClient();
             cliente[] listaClientes = daoCliente.listarClientes();
             if (listaClientes != null)
             {
-                clientes = new BindingList<cliente>(listaClientes);
+                BindingList<cliente>clientes = new BindingList<cliente>(listaClientes);
                 gvClientes.DataSource = clientes;
                 gvClientes.DataBind();
                 ViewState["Clientes"] = clientes; // Guardar en ViewState

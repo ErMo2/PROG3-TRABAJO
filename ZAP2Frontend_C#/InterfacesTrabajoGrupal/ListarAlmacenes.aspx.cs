@@ -66,7 +66,10 @@ namespace InterfacesTrabajoGrupal
                         <strong>Tipo de Almacén:</strong> {almacenSeleccionado.tipoAlmacen}<br />
                         <strong>Capacidad Máxima de Productos:</strong> {almacenSeleccionado.capacidadMaximaProductos}<br />
                         <strong>Capacidad Actual de Productos:</strong> {almacenSeleccionado.capacidadActualProductos}<br />
-                        <strong>Sucursal:</strong> {almacenSeleccionado.sucursal.nombre}
+                        <strong>Id Sucursal:</strong> {almacenSeleccionado.sucursal.id_sucursal}<br/>
+                        <strong>Direccion Sucursal:</strong> {almacenSeleccionado.sucursal.direccion}<br/>
+                       <strong>Tamaño metros cuadrados Sucursal:</strong> {almacenSeleccionado.sucursal.tam_metros}
+
                     ";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#detallesAlmacenModal').modal('show');", true);
                 }

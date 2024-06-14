@@ -105,5 +105,31 @@ public class MonedaMySql implements MonedaDao{
         return monedas;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Moneda buscar(int id) {
+        Moneda moneda = null;
+        try{
+            con=DBManager.getInstance().getConnection();           
+            cs = con.prepareCall("{call BUSCAR_MONEDA_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            moneda =  new Moneda();
+            while(rs.next()){
+                 
+                moneda.setIdMoneda(rs.getInt("id_moneda"));
+                moneda.setNombre(rs.getString("nombre"));
+                moneda.setAbreviacion(rs.getString("abreviacion"));           
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return moneda;
+    }
     
 }

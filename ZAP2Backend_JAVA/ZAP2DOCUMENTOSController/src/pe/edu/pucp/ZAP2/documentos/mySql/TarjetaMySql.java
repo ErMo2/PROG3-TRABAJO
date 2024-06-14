@@ -118,5 +118,39 @@ public class TarjetaMySql implements TarjetaDao{
         return tarjetas;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public Tarjeta buscar(int id) {
+        Tarjeta tarjeta = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_TARJETA_X_ID"+"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            tarjeta = new Tarjeta();
+            while(rs.next()){
+                
+                
+                tarjeta.setIdTarjeta(rs.getInt("id_tarjeta"));
+                tarjeta.setCodTarjeta(rs.getInt("codTarjeta"));
+                Banco banco = new Banco();
+                int numero;
+                
+                banco.setIdBanco(rs.getInt("fid_banco"));
+                
+                tarjeta.setBanco(banco);
+                tarjeta.setTipoTarjeta(Tipo_Tarjeta.valueOf(rs.getString("tipoTarjeta")));
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return tarjeta;
+    }
     
 }

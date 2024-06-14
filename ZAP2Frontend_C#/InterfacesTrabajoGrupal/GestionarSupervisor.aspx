@@ -29,14 +29,14 @@
         <div class="mb-3 row">
             <asp:Label ID="LblApellidos" runat="server" Text="Apellido Paterno:" CssClass="col-sm-2 col-form-label" />
             <div class="col-sm-8">
-                <asp:TextBox ID="txtApellidos" runat="server" CssClass="form-control" />
+                <asp:TextBox ID="txtApellido_Paterno" runat="server" CssClass="form-control" />
             </div>
         </div>
 
         <div class="mb-3 row">
             <asp:Label ID="Label1" runat="server" Text="Apellido Materno:" CssClass="col-sm-2 col-form-label" />
             <div class="col-sm-8">
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" />
+                <asp:TextBox ID="txtApellido_Materno" runat="server" CssClass="form-control" />
             </div>
         </div>
 
@@ -98,7 +98,7 @@
         <div class="mb-3 row">
             <asp:Label ID="lblFechaContratacion" runat="server" Text="Fecha de Contratacion:" CssClass="col-sm-2 col-form-label" />
             <div class="col-sm-8">
-                <input class="form-control" type="date" id="dtpFechaNacimiento" runat="server">
+                <input class="form-control" type="date" id="dtpFechaContratacion" runat="server">
             </div>
         </div>
         <div class="mb-3 row">

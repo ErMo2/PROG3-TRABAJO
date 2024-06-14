@@ -102,6 +102,9 @@ public class AlmacenMySql implements AlmacenDao{
                 Sucursal sucursal = new Sucursal();
                 almacen.setId_almacen(rs.getInt("id_almacen"));
                 sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                sucursal.setNombre(rs.getString("nombre"));
+                sucursal.setDireccion(rs.getString("direccion"));
+                sucursal.setTam_metros(rs.getDouble("tam_metros"));
                 almacen.setSucursal(sucursal);
                 
                 almacen.setCapacidadMaximaProductos(rs.getDouble("capacidadMaximaProductos"));
@@ -134,9 +137,13 @@ public class AlmacenMySql implements AlmacenDao{
             almacen =  new Almacen();
             while(rs.next()){
                 
-                Sucursal sucursal = new Sucursal();
+                
                 almacen.setId_almacen(rs.getInt("id_almacen"));
+                
+                Sucursal sucursal = new Sucursal();
                 sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                
+                
                 almacen.setSucursal(sucursal);
                 
                 almacen.setCapacidadMaximaProductos(rs.getDouble("capacidadMaximaProductos"));

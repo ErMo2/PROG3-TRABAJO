@@ -51,40 +51,40 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
 
         /// <summary>
-        /// Control LblApellidos.
+        /// Control LblApellido_Paterno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblApellidos;
+        protected global::System.Web.UI.WebControls.Label LblApellido_Paterno;
 
         /// <summary>
-        /// Control txtApellidos.
+        /// Control txtApellido_Paterno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidos;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido_Paterno;
 
         /// <summary>
-        /// Control Label1.
+        /// Control LblApellido_Materno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label LblApellido_Materno;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control txtApellido_Materno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtApellido_Materno;
 
         /// <summary>
         /// Control lblTelefono.
@@ -231,13 +231,13 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblFechaContratacion;
 
         /// <summary>
-        /// Control dtpFechaNacimiento.
+        /// Control dtpFechaContratacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpFechaNacimiento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpFechaContratacion;
 
         /// <summary>
         /// Control lblTurno.

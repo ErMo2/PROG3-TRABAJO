@@ -13,6 +13,7 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.ClienteDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
 import java.sql.SQLException;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 
 /**
  *
@@ -114,8 +115,12 @@ public class ClienteMySql implements ClienteDao{
                 cliente.setNombre(rs.getString("nombre"));
                 cliente.setApellido_paterno(rs.getString("apellido_paterno"));
                 cliente.setApellido_materno(rs.getString("apellido_materno"));
-                
+                cliente.setEmail(rs.getString("email"));
+                cliente.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                cliente.setNro_documento(rs.getInt("numDocumento"));
+                cliente.setTelefono(rs.getInt("telefono"));
                 cliente.setSexo(rs.getString("sexo").charAt(0));
+                cliente.setDireccion(rs.getString("direccion"));
                 cliente.setDni(String.valueOf(rs.getInt("dni")));
                 cliente.setPuntosBonus(rs.getInt("puntosBonus"));
                 clientes.add(cliente);
@@ -159,6 +164,43 @@ public class ClienteMySql implements ClienteDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return cliente;
+    }
+
+    @Override
+    public ArrayList<Cliente> listarPorNombre(String nombre) {
+        
+        ArrayList<Cliente> clientes =  new ArrayList<>();
+        try{
+            
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call RF_BUSCAR_CLIENTE_X_NOMBRE(?)}");
+            cs.setString("_nombre", nombre);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Cliente cliente = new Cliente();
+                cliente.setId_cliente(rs.getInt("id_persona"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido_paterno(rs.getString("apellido_paterno"));
+                cliente.setApellido_materno(rs.getString("apellido_materno"));
+                cliente.setEmail(rs.getString("email"));
+                cliente.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                cliente.setNro_documento(rs.getInt("numDocumento"));
+                cliente.setTelefono(rs.getInt("telefono"));
+                cliente.setSexo(rs.getString("sexo").charAt(0));
+                cliente.setDireccion(rs.getString("direccion"));
+                cliente.setDni(String.valueOf(rs.getInt("dni")));
+                cliente.setPuntosBonus(rs.getInt("puntosBonus"));
+                clientes.add(cliente);
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return clientes;   
+    
     }
     
 }

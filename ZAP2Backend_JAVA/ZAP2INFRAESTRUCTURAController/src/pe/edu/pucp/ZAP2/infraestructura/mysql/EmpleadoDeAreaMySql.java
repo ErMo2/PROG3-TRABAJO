@@ -13,6 +13,7 @@ import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.EmpleadoDeAreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.EmpleadoDeArea;
 import java.sql.SQLException;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
 import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
 import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
@@ -134,8 +135,13 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 empleado.setNombre(rs.getString("nombre"));
                 empleado.setApellido_paterno(rs.getString("apellido_paterno"));
                 empleado.setApellido_materno(rs.getString("apellido_materno"));
+                empleado.setTelefono(rs.getInt("telefono"));
+                empleado.setEmail(rs.getString("email"));
+                
                 empleado.setSexo(rs.getString("sexo").charAt(0));
                 empleado.setSalario(rs.getDouble("salario"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setTelefono(rs.getInt("telefono"));
                 String puesto = rs.getString("puesto");
                 TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
                 empleado.setPuesto(tipopuesto);
@@ -152,7 +158,76 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return empleados;
-//throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+    }
+
+    @Override
+    public EmpleadoDeArea buscar(int id) {
+        EmpleadoDeArea empleado = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call BUSCAR_EMPLEADODEAREA_X_ID"
+                    +"(?)}");
+            cs.setInt("_id", id);
+            rs = cs.executeQuery();
+            empleado = new EmpleadoDeArea();
+            while(rs.next()){
+                
+                
+                empleado.setId_Persona(rs.getInt("id_persona"));
+                empleado.setIdEmpleado(rs.getInt("id_persona"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellido_paterno(rs.getString("apellido_paterno"));
+                empleado.setApellido_materno(rs.getString("apellido_materno"));
+                empleado.setTelefono(rs.getInt("telefono"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                empleado.setNro_documento(rs.getInt("numDocumento"));
+                
+                empleado.setSexo(rs.getString("sexo").charAt(0));
+                empleado.setDireccion(rs.getString("direccion"));
+                
+                empleado.setSalario(rs.getDouble("salario"));
+                Date fecha = rs.getDate("fechaContratacion");
+                empleado.setFechaContratacion(fecha);
+                empleado.setTipoContrato(TipoContrato.valueOf(rs.getString("tipoContrato")));
+                empleado.setHorario(TurnosHorario.valueOf(rs.getString("horario")));
+                
+                String puesto = rs.getString("puesto");
+                TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
+                empleado.setPuesto(tipopuesto);
+                
+
+                String tipo_doc = rs.getString("tipoDocumento");
+                TipoDocumento tipoDoc = TipoDocumento.valueOf(tipo_doc);
+                empleado.setTipo_documento(tipoDoc);
+                empleado.setNro_documento(rs.getInt("numDocumento"));
+                empleado.setDireccion("direccion");
+                empleado.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String tipo_horario = rs.getString("horario");
+                TurnosHorario tipoHorario = TurnosHorario.valueOf(tipo_horario);
+                empleado.setHorario(tipoHorario);
+                String tipo_contrato = rs.getString("tipoContrato");
+                TipoContrato tipoContrato = TipoContrato.valueOf(tipo_contrato);
+                empleado.setTipoContrato(tipoContrato);
+                empleado.setEmail(rs.getString("email"));
+                empleado.setTelefono(rs.getInt("telefono"));
+
+                
+                Supervisor supervisor = new Supervisor();
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return empleado;
     }
     
 }

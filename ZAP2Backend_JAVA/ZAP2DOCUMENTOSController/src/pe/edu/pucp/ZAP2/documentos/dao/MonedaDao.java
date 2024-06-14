@@ -16,4 +16,5 @@ public interface MonedaDao {
     int modificar(Moneda moneda);
     int eliminar(int idmoneda);
     ArrayList<Moneda> listarTodos();
+    Moneda buscar(int id);
 }

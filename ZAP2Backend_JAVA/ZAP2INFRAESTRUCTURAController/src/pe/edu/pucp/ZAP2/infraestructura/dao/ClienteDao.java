@@ -17,4 +17,5 @@ public interface ClienteDao {
     int eliminar(int idPersona);
     ArrayList<Cliente> listarTodos();
     Cliente buscar(int id);
+    ArrayList<Cliente> listarPorNombre(String nombre);
 }

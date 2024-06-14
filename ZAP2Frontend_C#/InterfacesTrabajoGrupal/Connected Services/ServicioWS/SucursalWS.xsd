@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarSucursal" type="tns:buscarSucursal" />
+  <xs:element name="buscarSucursalResponse" type="tns:buscarSucursalResponse" />
   <xs:element name="eliminarSucursal" type="tns:eliminarSucursal" />
   <xs:element name="eliminarSucursalResponse" type="tns:eliminarSucursalResponse" />
   <xs:element name="insertarSucursal" type="tns:insertarSucursal" />
@@ -111,6 +113,16 @@
   <xs:complexType name="insertarSucursalResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarSucursal">
+    <xs:sequence>
+      <xs:element name="idSucursal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarSucursalResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarSucursal">

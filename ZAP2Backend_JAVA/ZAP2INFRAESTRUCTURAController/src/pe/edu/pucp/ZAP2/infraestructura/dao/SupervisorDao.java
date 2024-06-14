@@ -16,4 +16,5 @@ public interface SupervisorDao {
     int modificar(Supervisor supervisor);
     int eliminar(int idSupervisor);
     ArrayList<Supervisor> listarTodas();
+    Supervisor buscar(int id);
 }

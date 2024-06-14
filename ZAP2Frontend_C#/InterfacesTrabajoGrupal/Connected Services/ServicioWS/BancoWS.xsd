@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarBanco" type="tns:buscarBanco" />
+  <xs:element name="buscarBancoResponse" type="tns:buscarBancoResponse" />
   <xs:element name="eliminarBanco" type="tns:eliminarBanco" />
   <xs:element name="eliminarBancoResponse" type="tns:eliminarBancoResponse" />
   <xs:element name="insertarBanco" type="tns:insertarBanco" />
@@ -18,9 +20,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarBanco">
+  <xs:complexType name="buscarBanco">
     <xs:sequence>
-      <xs:element minOccurs="0" name="banco" type="tns:banco" />
+      <xs:element name="idBanco" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarBancoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:banco" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="banco">
@@ -29,17 +36,12 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarBancoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarBanco">
+  <xs:complexType name="insertarBanco">
     <xs:sequence>
       <xs:element minOccurs="0" name="banco" type="tns:banco" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarBancoResponse">
+  <xs:complexType name="insertarBancoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -50,6 +52,16 @@
   <xs:complexType name="listarBancosTodosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:banco" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarBanco">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="banco" type="tns:banco" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarBancoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>
