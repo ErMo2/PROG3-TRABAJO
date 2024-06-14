@@ -12,7 +12,7 @@
         <h2>Seleccionar Tipo de Empleado</h2>
         <div class="row justify-content-center mt-4">
             <div class="col-md-4 mb-3">
-                <asp:Button ID="lblGerente" class="btn btn-outline-primary btn-lg w-100" runat="server" Text="Gerente" OnClick="lblGerente_Click" />
+                <asp:Button ID="lblSupervisor" class="btn btn-outline-primary btn-lg w-100" runat="server" Text="Supervisor" OnClick="lblSupervisor_Click" />
             </div>
             <div class="col-md-4 mb-3">
                 <asp:Button ID="lblEmpleadoArea" class="btn btn-outline-primary btn-lg w-100" runat="server" Text="Empleado de Area" OnClick="lblEmpleadoArea_Click" />

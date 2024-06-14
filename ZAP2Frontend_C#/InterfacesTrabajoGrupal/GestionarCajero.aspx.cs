@@ -49,8 +49,21 @@ namespace InterfacesTrabajoGrupal
                 txtDireccion.Text = empleado.direccion.ToString();
                 txtSalario.Text = empleado.salario.ToString();
                 dtpFechaContratacion.Value = empleado.fechaContratacion.ToString("yyyy-MM-dd");
-                txtTurno.Text = empleado.horario.ToString();
-                txtContrato.Text = empleado.tipoContrato.ToString();
+                if (empleado.horario.ToString() == "MAÑANA")
+                    rbMañana.Checked = true;
+                else
+                    rbNoche.Checked = true;
+
+                if (empleado.tipoContrato.ToString() == "TiempoCompleto")
+                    rbTiempoCompleto.Checked = true;
+                else
+                {
+                    if (empleado.tipoContrato.ToString() == "TiempoParcial")
+                        rbTiempoParcial.Checked = true;
+                    else
+                        rbContratoEspecial.Checked = true;
+                }
+                txtIdSupervisor.Text = empleado.supervisor.id_Persona.ToString();
             }
 
         }
@@ -81,19 +94,17 @@ namespace InterfacesTrabajoGrupal
             cajero.salario = Double.Parse(txtSalario.Text);
             cajero.fechaContratacion = DateTime.Parse(dtpFechaContratacion.Value);
             cajero.fechaContratacionSpecified = true;
-            if (txtTurno.Text == "MAÑANA")
+            if (rbMañana.Checked == true)
                 cajero.horario = turnosHorario.MAÑANA;
             else
                 cajero.horario = turnosHorario.NOCHE;
             cajero.horarioSpecified = true;
-            if(txtContrato.Text == "TiempoParcial")
-            {
-                cajero.tipoContrato = tipoContrato.TiempoParcial;
-            }
+            if (rbTiempoCompleto.Checked == true)
+                cajero.tipoContrato = tipoContrato.TiempoCompleto;
             else
             {
-                if (txtContrato.Text == "TiempoCompleto")
-                    cajero.tipoContrato = tipoContrato.TiempoCompleto;
+                if (rbTiempoParcial.Checked == true)
+                    cajero.tipoContrato = tipoContrato.TiempoParcial;
                 else
                     cajero.tipoContrato = tipoContrato.ContratoEspecial;
             }
@@ -106,6 +117,7 @@ namespace InterfacesTrabajoGrupal
             supervisor superv = new supervisor();
             superv.idEmpleado = 1;
             cajero.supervisor = superv;
+            cajero.supervisor.id_Persona = int.Parse(txtIdSupervisor.Text);
             resultado = daoCajero.insertarCajero(cajero);
             if(resultado != 0)
             {
