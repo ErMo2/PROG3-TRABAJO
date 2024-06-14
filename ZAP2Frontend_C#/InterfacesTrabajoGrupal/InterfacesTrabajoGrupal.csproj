@@ -709,7 +709,6 @@
     <Content Include="GestionarSucursales.aspx" />
     <Content Include="ListarAreas.aspx" />
     <Content Include="ListarBancos.aspx" />
-    <Content Include="ListarDocumentoDeCompra.aspx" />
     <Content Include="ListarDocumentoDeVenta.aspx" />
     <Content Include="ListarEmpleados.aspx" />
     <Content Include="ListarPedidos.aspx" />
@@ -979,13 +978,6 @@
     </Compile>
     <Compile Include="ListarBancos.aspx.designer.cs">
       <DependentUpon>ListarBancos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ListarDocumentoDeCompra.aspx.cs">
-      <DependentUpon>ListarDocumentoDeCompra.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListarDocumentoDeCompra.aspx.designer.cs">
-      <DependentUpon>ListarDocumentoDeCompra.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarDocumentoDeVenta.aspx.cs">
       <DependentUpon>ListarDocumentoDeVenta.aspx</DependentUpon>

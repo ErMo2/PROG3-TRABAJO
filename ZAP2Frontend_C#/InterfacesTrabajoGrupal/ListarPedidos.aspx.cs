@@ -11,27 +11,46 @@ namespace InterfacesTrabajoGrupal
 {
     public partial class GestionPedidos : System.Web.UI.Page
     {
-        private PedidoWSClient pedidoDao;
-        private BindingList<pedido> listaPedidos;
-        private pedido pedido;
+        private Documento_de_CompraWSClient documentoCompraDAO;
+        private BindingList<documentoDeCompra> listarDocumentosDeCompra;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            pedidoDao= new PedidoWSClient();
-            pedido[] arregloPedidos=pedidoDao.listarPedidos();
-            if (arregloPedidos != null)
-                listaPedidos = new BindingList<pedido>(arregloPedidos);
-            
-            gvPedidos.DataSource = listaPedidos;
-            gvPedidos.DataBind();
+            if (!IsPostBack)
+            {
+                CargarDatos();
+            }
         }
-        protected void lbRegistrarPedido_Click(object sender, EventArgs e)
+
+        private void CargarDatos()
         {
-            Response.Redirect("GestionarPedido.aspx");
+            try
+            {
+                documentoCompraDAO = new Documento_de_CompraWSClient();
+                documentoDeCompra[] arregloDocumentos = documentoCompraDAO.listarDocumentosCompras();
+                if (arregloDocumentos != null)
+                    listarDocumentosDeCompra = new BindingList<documentoDeCompra>(arregloDocumentos);
+
+                gvListaDocumentoDeCompra.DataSource = listarDocumentosDeCompra;
+                gvListaDocumentoDeCompra.DataBind();
+                ViewState["DocumentosDeCompra"] = listarDocumentosDeCompra; // Guardar en ViewState
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                //lblError.Text = "Error al cargar datos: " + ex.Message;
+            }
         }
-        protected void gvPedidos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+
+        protected void gvListaDocumentoDeCompra_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gvPedidos.PageIndex = e.NewPageIndex;
-            // Recarga tus datos aquí para refrescar el GridView
+            gvListaDocumentoDeCompra.PageIndex = e.NewPageIndex;
+            CargarDatos();
+        }
+
+        protected void lbRegistrarDocumentoDeCompra_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegistrarDocumentoDeCompra.aspx");
         }
 
     }

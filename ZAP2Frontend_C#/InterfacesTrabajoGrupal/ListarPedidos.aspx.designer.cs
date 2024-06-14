@@ -15,21 +15,21 @@ namespace InterfacesTrabajoGrupal
     {
 
         /// <summary>
-        /// Control lbRegistrarPedido.
+        /// Control lbRegistrarDocumentoDeCompra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbRegistrarPedido;
+        protected global::System.Web.UI.WebControls.LinkButton lbRegistrarDocumentoDeCompra;
 
         /// <summary>
-        /// Control gvPedidos.
+        /// Control gvListaDocumentoDeCompra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPedidos;
+        protected global::System.Web.UI.WebControls.GridView gvListaDocumentoDeCompra;
     }
 }

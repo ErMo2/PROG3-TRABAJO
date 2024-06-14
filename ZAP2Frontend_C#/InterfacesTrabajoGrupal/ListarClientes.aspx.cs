@@ -24,15 +24,15 @@ namespace InterfacesTrabajoGrupal
 
         private void BindGridView()
         {
-            daoCliente = new ClienteWSClient();
-            cliente[] arregloClientes = daoCliente.listarClientes();
+           /* daoCliente = new ClienteWSClient();
+           cliente[] arregloClientes = daoCliente.listarClientes();
             if (arregloClientes != null)
             {
                 listaClientes = new BindingList<cliente>(arregloClientes);
                 gvClientes.DataSource = listaClientes;
                 gvClientes.DataBind();
                 ViewState["Clientes"] = listaClientes; // Guardar en ViewState
-            }
+            }*/
         }
 
         protected void gvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
