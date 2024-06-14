@@ -4,6 +4,7 @@
  */
 package pe.edu.pucp.ZAP2.infraestructura.model;
 
+import jakarta.xml.bind.annotation.XmlSeeAlso;
 import java.util.Date;
 import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 
@@ -11,6 +12,7 @@ import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
  *
  * @author Alejandro
  */
+@XmlSeeAlso({Cajero.class,Supervisor.class,EmpleadoDeArea.class})
 public abstract class Empleado extends PersonaNatural{
     private int idEmpleado;
     private double salario;
