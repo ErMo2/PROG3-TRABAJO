@@ -190,6 +190,22 @@ public class SupervisorMySql implements SupervisorDao{
                 supervisor.setApellido_materno(rs.getString("apellido_materno"));
                 supervisor.setTelefono(rs.getInt("telefono"));
                 supervisor.setEmail(rs.getString("email"));
+                
+                String tipo_doc = rs.getString("tipoDocumento");
+                TipoDocumento tipoDoc = TipoDocumento.valueOf(tipo_doc);
+                supervisor.setTipo_documento(tipoDoc);
+                supervisor.setNro_documento(rs.getInt("numDocumento"));
+                supervisor.setDireccion("direccion");
+                supervisor.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String tipo_horario = rs.getString("horario");
+                TurnosHorario tipoHorario = TurnosHorario.valueOf(tipo_horario);
+                supervisor.setHorario(tipoHorario);
+                String tipo_contrato = rs.getString("tipoContrato");
+                TipoContrato tipoContrato = TipoContrato.valueOf(tipo_contrato);
+                supervisor.setTipoContrato(tipoContrato);
+                supervisor.setEmail(rs.getString("email"));
+                supervisor.setTelefono(rs.getInt("telefono"));
+                
                 String aux = rs.getString("tipoDocumento");
                 TipoDocumento doc = TipoDocumento.valueOf(aux);
                 supervisor.setTipo_documento(doc);

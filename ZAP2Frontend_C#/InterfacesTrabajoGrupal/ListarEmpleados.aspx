@@ -24,7 +24,11 @@
             <div class="card-body">
                 <asp:GridView ID="gvEmpleadosArea" runat="server"
                     AutoGenerateColumns="False"
-                    CssClass="table table-hover table-responsive-sm table-striped">
+                    CssClass="table table-hover table-responsive-sm table-striped"
+                    AllowPaging="true"
+                    PageSize="4"
+                    OnPageIndexChanging="gvEmpleadosArea_PageIndexChanging"
+                    OnRowCommand="gvEmpleadosArea_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="idempleado" HeaderText="Id Empleado" />
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" />
@@ -67,7 +71,13 @@
                 <h3 class="card-title">Cajeros</h3>
             </div>
             <div class="card-body">
-                <asp:GridView ID="gvCajeros" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive-sm table-striped">
+                <asp:GridView ID="gvCajeros" runat="server"
+                    AutoGenerateColumns="False"
+                    CssClass="table table-hover table-responsive-sm table-striped"
+                    AllowPaging="true"
+                    PageSize="4"
+                    OnPageIndexChanging="gvCajeros_PageIndexChanging"
+                    OnRowCommand="gvCajeros_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="idempleado" HeaderText="Id Empleado" />
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" />
@@ -110,7 +120,14 @@
                 <h3 class="card-title">Supervisores</h3>
             </div>
             <div class="card-body">
-                <asp:GridView ID="gvSupervisores" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive-sm table-striped">
+                <asp:GridView ID="gvSupervisores"
+                    runat="server"
+                    AutoGenerateColumns="False"
+                    CssClass="table table-hover table-responsive-sm table-striped"
+                    AllowPaging="true"
+                    PageSize="4"
+                    OnPageIndexChanging="gvSupervisores_PageIndexChanging"
+                    OnRowCommand="gvSupervisores_RowCommand">
                     <Columns>
                         <asp:BoundField DataField="idempleado" HeaderText="Id Empleado" />
                         <asp:BoundField DataField="nombre" HeaderText="Nombre" />

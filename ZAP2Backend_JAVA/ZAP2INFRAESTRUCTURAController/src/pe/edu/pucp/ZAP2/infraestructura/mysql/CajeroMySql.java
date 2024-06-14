@@ -150,8 +150,8 @@ public class CajeroMySql implements CajeroDao{
                 
                 cajero.setSexo(rs.getString("sexo").charAt(0));
                 cajero.setSalario(rs.getDouble("salario"));
-//                cajero.setEmail(rs.getString("email"));
-//                cajero.setTelefono(rs.getInt("telefono"));
+                cajero.setEmail(rs.getString("email"));
+                cajero.setTelefono(rs.getInt("telefono"));
                 
                 
                 
@@ -194,6 +194,21 @@ public class CajeroMySql implements CajeroDao{
                 cajero.setApellido_materno(rs.getString("apellido_materno"));
                 cajero.setSexo(rs.getString("sexo").charAt(0));
                 cajero.setSalario(rs.getDouble("salario"));
+                
+                                String tipo_doc = rs.getString("tipoDocumento");
+                TipoDocumento tipoDoc = TipoDocumento.valueOf(tipo_doc);
+                cajero.setTipo_documento(tipoDoc);
+                cajero.setNro_documento(rs.getInt("numDocumento"));
+                cajero.setDireccion("direccion");
+                cajero.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String tipo_horario = rs.getString("horario");
+                TurnosHorario tipoHorario = TurnosHorario.valueOf(tipo_horario);
+                cajero.setHorario(tipoHorario);
+                String tipo_contrato = rs.getString("tipoContrato");
+                TipoContrato tipoContrato = TipoContrato.valueOf(tipo_contrato);
+                cajero.setTipoContrato(tipoContrato);
+                cajero.setEmail(rs.getString("email"));
+                cajero.setTelefono(rs.getInt("telefono"));
                 
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));

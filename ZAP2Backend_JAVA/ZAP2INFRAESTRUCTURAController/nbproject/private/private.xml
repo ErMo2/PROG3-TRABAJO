@@ -2,16 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/CuentaUsuarioMySql.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/dao/SucursalDao.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/dao/ClienteDao.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ClienteMySql.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/dao/CuentaUsuarioDao.java</file>
+            <file>file:/C:/Users/hteio/OneDrive/Documentos/PUCP/Programacion%20-%203/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/EmpleadoDeAreaMySql.java</file>
+            <file>file:/C:/Users/hteio/OneDrive/Documentos/PUCP/Programacion%20-%203/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/CajeroMySql.java</file>
+            <file>file:/C:/Users/hteio/OneDrive/Documentos/PUCP/Programacion%20-%203/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/SupervisorMySql.java</file>
         </group>
-=======
-        <group/>
->>>>>>> main
     </open-files>
 </project-private>

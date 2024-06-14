@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/CajeroWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+  <message name="buscarCajero">
+    <part name="parameters" element="tns:buscarCajero" />
+  </message>
+  <message name="buscarCajeroResponse">
+    <part name="parameters" element="tns:buscarCajeroResponse" />
+  </message>
   <message name="modificarCajero">
     <part name="parameters" element="tns:modificarCajero" />
   </message>
@@ -30,6 +36,10 @@
     <part name="parameters" element="tns:insertarCajeroResponse" />
   </message>
   <portType name="CajeroWS">
+    <operation name="buscarCajero">
+      <input wsam:Action="ZAP2WS/CajeroWS/buscarCajeroRequest" message="tns:buscarCajero" />
+      <output wsam:Action="ZAP2WS/CajeroWS/buscarCajeroResponse" message="tns:buscarCajeroResponse" />
+    </operation>
     <operation name="modificarCajero">
       <input wsam:Action="ZAP2WS/CajeroWS/modificarCajeroRequest" message="tns:modificarCajero" />
       <output wsam:Action="ZAP2WS/CajeroWS/modificarCajeroResponse" message="tns:modificarCajeroResponse" />
@@ -49,6 +59,15 @@
   </portType>
   <binding name="CajeroWSPortBinding" type="tns:CajeroWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="buscarCajero">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="modificarCajero">
       <soap:operation soapAction="" />
       <input>
