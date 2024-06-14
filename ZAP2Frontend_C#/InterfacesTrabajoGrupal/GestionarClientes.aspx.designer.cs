@@ -141,24 +141,6 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoDocumento;
 
         /// <summary>
-        /// Control lblDni.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDni;
-
-        /// <summary>
-        /// Control txtDNI.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDNI;
-
-        /// <summary>
         /// Control lblNumeroDocumento.
         /// </summary>
         /// <remarks>

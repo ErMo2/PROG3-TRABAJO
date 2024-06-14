@@ -65,13 +65,6 @@
                 </div>
 
                 <div class="mb-3 row">
-                    <asp:Label ID="lblDni" runat="server" Text="DNI:" CssClass="col-sm-2 col-form-label" />
-                    <div class="col-sm-8">
-                        <asp:TextBox ID="txtDNI" runat="server" CssClass="form-control" />
-                    </div>
-                </div>
-
-                <div class="mb-3 row">
                     <asp:Label ID="lblNumeroDocumento" runat="server" Text="Número de Documento:" CssClass="col-sm-2 col-form-label" />
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtNumeroDocumento" runat="server" CssClass="form-control" />

@@ -1,6 +1,7 @@
 ﻿using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,41 +12,87 @@ namespace InterfacesTrabajoGrupal
     public partial class GestionarClientes : System.Web.UI.Page
     {
         private ClienteWSClient daoCliente;
+        private BindingList<cliente> listaClientes;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                // Código para inicializar la página si es necesario
+                daoCliente = new ClienteWSClient();
+
+                if (Request.QueryString["id"] != null)
+                {
+                    int idCliente = int.Parse(Request.QueryString["id"]);
+                    CargarDatosCliente(idCliente);
+                }
             }
         }
 
-        protected void btnRegresar_Click(object sender, EventArgs e)
+        private void CargarDatosCliente(int idCliente)
         {
-            Response.Redirect("ListarClientes.aspx");
+            cliente[] arregloClientes = daoCliente.listarClientes(); // Método para obtener la lista de clientes
+            if (arregloClientes != null)
+                listaClientes = new BindingList<cliente>(arregloClientes);
+
+            cliente cliente = listaClientes.SingleOrDefault(c => c.id_cliente == idCliente);
+            if (cliente != null)
+            {
+                // Asigna los valores del cliente a los controles
+                txtIdCliente.Text = cliente.id_cliente.ToString();
+                txtNombre.Text = cliente.nombre;
+                txtApellidoPaterno.Text = cliente.apellido_paterno;
+                txtApellidoMaterno.Text = cliente.apellido_materno;
+                txtTelefono.Text = cliente.telefono.ToString();
+                txtEmail.Text = cliente.email;
+                ddlTipoDocumento.SelectedValue = cliente.tipo_documento.ToString();
+                txtNumeroDocumento.Text = cliente.nro_documento.ToString();
+                ddlGenero.SelectedValue = cliente.sexo.ToString();
+                txtDireccion.Text = cliente.direccion;
+            }
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             daoCliente = new ClienteWSClient();
-            cliente nuevoCliente = new cliente();
+            cliente cliente = new cliente();
 
-            nuevoCliente.nombre = txtNombre.Text;
-            nuevoCliente.apellido_paterno = txtApellidoPaterno.Text;
-            nuevoCliente.apellido_materno = txtApellidoMaterno.Text;
-            nuevoCliente.telefono =int.Parse(txtTelefono.Text);
-            nuevoCliente.email = txtEmail.Text;
-            if (ddlTipoDocumento.SelectedValue == "DNI")
-                nuevoCliente.tipo_documento = tipoDocumento.DNI;
-            else nuevoCliente.tipo_documento = tipoDocumento.CARNET_EXTRANJERIA;
-            nuevoCliente.dni = txtDNI.Text;
-            nuevoCliente.nro_documento = int.Parse(txtNumeroDocumento.Text);
-            nuevoCliente.sexo=ddlGenero.SelectedValue=="M"?'M':'F';
-            nuevoCliente.direccion = txtDireccion.Text;
-            
-            nuevoCliente.activo = 1;
-            nuevoCliente.tipo_documentoSpecified = true;
-            
-            nuevoCliente.id_Persona=daoCliente.insertarCliente(nuevoCliente);
+            cliente.nombre = txtNombre.Text;
+            cliente.apellido_paterno = txtApellidoPaterno.Text;
+            cliente.apellido_materno = txtApellidoMaterno.Text;
+            cliente.telefono=int.Parse(txtTelefono.Text);
+            cliente.email = txtEmail.Text;
+            cliente.tipo_documento = ddlTipoDocumento.SelectedValue == "DNI" ? tipoDocumento.DNI : tipoDocumento.CARNET_EXTRANJERIA;
+            if (cliente.tipo_documento == tipoDocumento.DNI)
+            {
+                cliente.dni = (txtNumeroDocumento.Text);
+            }
+            else
+            {
+                cliente.nro_documento = int.Parse(txtNumeroDocumento.Text);
+            }
+            cliente.sexo = ddlGenero.SelectedValue == "M" ? 'M' : 'F';
+            cliente.direccion = txtDireccion.Text;
+            cliente.activo = 1;
+            cliente.tipo_documentoSpecified = true;
+
+            if (Request.QueryString["id"] != null)
+            {
+                // Modificar el cliente existente
+                cliente.id_cliente = int.Parse(txtIdCliente.Text);
+                daoCliente.modificarCliente(cliente); // Método para modificar cliente
+            }
+            else
+            {
+                // Insertar un nuevo cliente
+                cliente.id_cliente = daoCliente.insertarCliente(cliente);
+            }
+
+            // Redireccionar a la página de listado
+            Response.Redirect("ListarClientes.aspx");
+        }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
             Response.Redirect("ListarClientes.aspx");
         }
     }

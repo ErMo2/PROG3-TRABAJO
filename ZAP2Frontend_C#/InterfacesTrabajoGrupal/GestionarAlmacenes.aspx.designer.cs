@@ -42,13 +42,13 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblTipoAlmacen;
 
         /// <summary>
-        /// Control txtTipoAlmacen.
+        /// Control ddlTipoAlmacen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipoAlmacen;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoAlmacen;
 
         /// <summary>
         /// Control lblCapacidadMaxima.
@@ -96,13 +96,49 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblSucursal;
 
         /// <summary>
-        /// Control txtSucursal.
+        /// Control ddlSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSucursal;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
+
+        /// <summary>
+        /// Control lblMovimientoLote.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMovimientoLote;
+
+        /// <summary>
+        /// Control ddlMovimientoLote.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMovimientoLote;
+
+        /// <summary>
+        /// Control lblLote.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLote;
+
+        /// <summary>
+        /// Control ddlLote.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlLote;
 
         /// <summary>
         /// Control btnRegresar.
