@@ -27,20 +27,19 @@ namespace InterfacesTrabajoGrupal
         private void CargarDatos()
         {
             // Cargar Boletas de Venta
-           /* daoBoletaDeVenta = new Boleta_VentaWSClient();
+            daoBoletaDeVenta = new Boleta_VentaWSClient();
             boletaVenta[] arregloBoletas = daoBoletaDeVenta.listarBoletaVentaTodos();
             if (arregloBoletas != null)
                 listaBoletasDeVenta = new BindingList<boletaVenta>(arregloBoletas);
 
             gvBoletasDeVenta.DataSource = listaBoletasDeVenta;
             gvBoletasDeVenta.DataBind();
-           */
+           
             // Cargar Facturas de Venta
             daoFacturaVenta = new Factura_VentaWSClient();
             facturaVenta[] arregloFacturas = daoFacturaVenta.listarFacturaVenta();
             if (arregloFacturas != null)
                 listaFacturasDeVenta = new BindingList<facturaVenta>(arregloFacturas);
-
             gvFacturasDeVenta.DataSource = listaFacturasDeVenta;
             gvFacturasDeVenta.DataBind();
         }

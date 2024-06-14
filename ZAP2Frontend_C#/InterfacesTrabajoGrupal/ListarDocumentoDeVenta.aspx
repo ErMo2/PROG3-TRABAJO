@@ -39,7 +39,7 @@
             <Columns>
                 <asp:BoundField HeaderText="Id Documento" DataField="id_documento" />
                 <asp:BoundField HeaderText="Fecha de Emisión" DataField="fecha_emision" />
-                <asp:BoundField HeaderText="Monto Total" DataField="monto_total" />
+                <asp:BoundField HeaderText="Monto Total" DataField="montoTotal" />
                 <asp:BoundField HeaderText="Moneda" DataField="moneda" />
   
             </Columns>
