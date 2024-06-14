@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/EmpleadoDeAreaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+  <message name="listarEmpleadoArea">
+    <part name="parameters" element="tns:listarEmpleadoArea" />
+  </message>
+  <message name="listarEmpleadoAreaResponse">
+    <part name="parameters" element="tns:listarEmpleadoAreaResponse" />
+  </message>
   <message name="buscarEmpleadoArea">
     <part name="parameters" element="tns:buscarEmpleadoArea" />
   </message>
@@ -29,13 +35,11 @@
   <message name="insertarEmpleadoDeAreaResponse">
     <part name="parameters" element="tns:insertarEmpleadoDeAreaResponse" />
   </message>
-  <message name="listarEmpleadoArea">
-    <part name="parameters" element="tns:listarEmpleadoArea" />
-  </message>
-  <message name="listarEmpleadoAreaResponse">
-    <part name="parameters" element="tns:listarEmpleadoAreaResponse" />
-  </message>
   <portType name="EmpleadoDeAreaWS">
+    <operation name="listarEmpleadoArea">
+      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest" message="tns:listarEmpleadoArea" />
+      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaResponse" message="tns:listarEmpleadoAreaResponse" />
+    </operation>
     <operation name="buscarEmpleadoArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/buscarEmpleadoAreaRequest" message="tns:buscarEmpleadoArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/buscarEmpleadoAreaResponse" message="tns:buscarEmpleadoAreaResponse" />
@@ -52,13 +56,18 @@
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaRequest" message="tns:insertarEmpleadoDeArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaResponse" message="tns:insertarEmpleadoDeAreaResponse" />
     </operation>
-    <operation name="listarEmpleadoArea">
-      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest" message="tns:listarEmpleadoArea" />
-      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaResponse" message="tns:listarEmpleadoAreaResponse" />
-    </operation>
   </portType>
   <binding name="EmpleadoDeAreaWSPortBinding" type="tns:EmpleadoDeAreaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarEmpleadoArea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="buscarEmpleadoArea">
       <soap:operation soapAction="" />
       <input>
@@ -87,15 +96,6 @@
       </output>
     </operation>
     <operation name="insertarEmpleadoDeArea">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarEmpleadoArea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

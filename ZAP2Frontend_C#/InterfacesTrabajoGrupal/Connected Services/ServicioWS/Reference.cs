@@ -16,6 +16,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     public interface EmpleadoDeAreaWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest", ReplyAction="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse listarEmpleadoArea(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest", ReplyAction="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse> listarEmpleadoAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/EmpleadoDeAreaWS/buscarEmpleadoAreaRequest", ReplyAction="ZAP2WS/EmpleadoDeAreaWS/buscarEmpleadoAreaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -54,20 +64,10 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaRequest", ReplyAction="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarEmpleadoDeAreaResponse> insertarEmpleadoDeAreaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarEmpleadoDeAreaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest", ReplyAction="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse listarEmpleadoArea(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest", ReplyAction="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse> listarEmpleadoAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request);
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -118,7 +118,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoPuesto {
@@ -131,7 +131,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -182,7 +182,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -236,7 +236,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(cajero))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(supervisor))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(empleadoDeArea))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -371,7 +371,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -449,7 +449,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ropa))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(electrodomesticos))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(productosParaElCuidadoPersonalYDelHogar))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -565,7 +565,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -667,7 +667,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -811,7 +811,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -857,7 +857,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -945,7 +945,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoTarjeta {
@@ -961,7 +961,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1063,7 +1063,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1193,7 +1193,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum estadoPedido {
@@ -1212,7 +1212,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1272,7 +1272,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1392,7 +1392,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(facturaVenta))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(boletaVenta))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(documentoDeCompra))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1496,7 +1496,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(facturaVenta))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(boletaVenta))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1561,7 +1561,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1640,7 +1640,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1733,7 +1733,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoEntidad {
@@ -1756,7 +1756,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(cajero))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(supervisor))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(empleadoDeArea))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1914,7 +1914,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoDocumento {
@@ -1932,7 +1932,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(cajero))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(supervisor))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(empleadoDeArea))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1983,7 +1983,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2071,7 +2071,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2122,7 +2122,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2173,7 +2173,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2210,7 +2210,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2382,7 +2382,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2526,7 +2526,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2642,7 +2642,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2758,7 +2758,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoAlmacen {
@@ -2783,7 +2783,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoDeMotivoMovimientoAlmacen {
@@ -2820,7 +2820,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2913,7 +2913,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoProductoPerecible {
@@ -2938,7 +2938,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum unidadDeMedida {
@@ -2960,7 +2960,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3025,7 +3025,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoRopa {
@@ -3041,7 +3041,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3106,7 +3106,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3157,7 +3157,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum turnosHorario {
@@ -3170,7 +3170,7 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9037.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="ZAP2WS")]
     public enum tipoContrato {
@@ -3183,6 +3183,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         /// <remarks/>
         ContratoEspecial,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadoArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarEmpleadoAreaRequest {
+        
+        public listarEmpleadoAreaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadoAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarEmpleadoAreaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.empleadoDeArea[] @return;
+        
+        public listarEmpleadoAreaResponse() {
+        }
+        
+        public listarEmpleadoAreaResponse(InterfacesTrabajoGrupal.ServicioWS.empleadoDeArea[] @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3329,34 +3357,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadoArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarEmpleadoAreaRequest {
-        
-        public listarEmpleadoAreaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadoAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarEmpleadoAreaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.empleadoDeArea[] @return;
-        
-        public listarEmpleadoAreaResponse() {
-        }
-        
-        public listarEmpleadoAreaResponse(InterfacesTrabajoGrupal.ServicioWS.empleadoDeArea[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EmpleadoDeAreaWSChannel : InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS, System.ServiceModel.IClientChannel {
     }
@@ -3382,6 +3382,27 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public EmpleadoDeAreaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS.listarEmpleadoArea(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request) {
+            return base.Channel.listarEmpleadoArea(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.empleadoDeArea[] listarEmpleadoArea() {
+            InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS)(this)).listarEmpleadoArea(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse> InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS.listarEmpleadoAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request) {
+            return base.Channel.listarEmpleadoAreaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse> listarEmpleadoAreaAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS)(this)).listarEmpleadoAreaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3475,32 +3496,21 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.empleadoDeArea = empleadoDeArea;
             return ((InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS)(this)).insertarEmpleadoDeAreaAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS.listarEmpleadoArea(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request) {
-            return base.Channel.listarEmpleadoArea(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.empleadoDeArea[] listarEmpleadoArea() {
-            InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS)(this)).listarEmpleadoArea(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse> InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS.listarEmpleadoAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest request) {
-            return base.Channel.listarEmpleadoAreaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaResponse> listarEmpleadoAreaAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEmpleadoAreaRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.EmpleadoDeAreaWS)(this)).listarEmpleadoAreaAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.PersonaJuridicaWS")]
     public interface PersonaJuridicaWS {
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest", ReplyAction="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse listarPersonasJuridicas(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest", ReplyAction="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse> listarPersonasJuridicasAsync(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaRequest", ReplyAction="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaResponse")]
@@ -3531,16 +3541,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaRequest", ReplyAction="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPersonaJuridicaResponse> modificarPersonaJuridicaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarPersonaJuridicaRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasJuridicas", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarPersonasJuridicasRequest {
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest", ReplyAction="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse listarPersonasJuridicas(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request);
+        public listarPersonasJuridicasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasJuridicasResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarPersonasJuridicasResponse {
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest", ReplyAction="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse> listarPersonasJuridicasAsync(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.personaJuridica[] @return;
+        
+        public listarPersonasJuridicasResponse() {
+        }
+        
+        public listarPersonasJuridicasResponse(InterfacesTrabajoGrupal.ServicioWS.personaJuridica[] @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3651,34 +3679,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasJuridicas", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarPersonasJuridicasRequest {
-        
-        public listarPersonasJuridicasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPersonasJuridicasResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarPersonasJuridicasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.personaJuridica[] @return;
-        
-        public listarPersonasJuridicasResponse() {
-        }
-        
-        public listarPersonasJuridicasResponse(InterfacesTrabajoGrupal.ServicioWS.personaJuridica[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PersonaJuridicaWSChannel : InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS, System.ServiceModel.IClientChannel {
     }
@@ -3704,6 +3704,27 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public PersonaJuridicaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS.listarPersonasJuridicas(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request) {
+            return base.Channel.listarPersonasJuridicas(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.personaJuridica[] listarPersonasJuridicas() {
+            InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS)(this)).listarPersonasJuridicas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse> InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS.listarPersonasJuridicasAsync(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request) {
+            return base.Channel.listarPersonasJuridicasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse> listarPersonasJuridicasAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS)(this)).listarPersonasJuridicasAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3774,27 +3795,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.personaJuridica = personaJuridica;
             return ((InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS)(this)).modificarPersonaJuridicaAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS.listarPersonasJuridicas(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request) {
-            return base.Channel.listarPersonasJuridicas(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.personaJuridica[] listarPersonasJuridicas() {
-            InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS)(this)).listarPersonasJuridicas(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse> InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS.listarPersonasJuridicasAsync(InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest request) {
-            return base.Channel.listarPersonasJuridicasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasResponse> listarPersonasJuridicasAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPersonasJuridicasRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.PersonaJuridicaWS)(this)).listarPersonasJuridicasAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3810,16 +3810,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaRequest", ReplyAction="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarBoletaVentaResponse> insertarBoletaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarBoletaVentaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest", ReplyAction="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse listarBoletaVentaTodos(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest", ReplyAction="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse> listarBoletaVentaTodosAsync(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaRequest", ReplyAction="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaResponse")]
@@ -3840,6 +3830,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaRequest", ReplyAction="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarBoletaVentaResponse> eliminarBoletaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarBoletaVentaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest", ReplyAction="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse listarBoletaVentaTodos(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest", ReplyAction="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse> listarBoletaVentaTodosAsync(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3874,34 +3874,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         public insertarBoletaVentaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBoletaVentaTodos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarBoletaVentaTodosRequest {
-        
-        public listarBoletaVentaTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBoletaVentaTodosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarBoletaVentaTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.boletaVenta[] @return;
-        
-        public listarBoletaVentaTodosResponse() {
-        }
-        
-        public listarBoletaVentaTodosResponse(InterfacesTrabajoGrupal.ServicioWS.boletaVenta[] @return) {
             this.@return = @return;
         }
     }
@@ -3978,6 +3950,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBoletaVentaTodos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarBoletaVentaTodosRequest {
+        
+        public listarBoletaVentaTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBoletaVentaTodosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarBoletaVentaTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.boletaVenta[] @return;
+        
+        public listarBoletaVentaTodosResponse() {
+        }
+        
+        public listarBoletaVentaTodosResponse(InterfacesTrabajoGrupal.ServicioWS.boletaVenta[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Boleta_VentaWSChannel : InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS, System.ServiceModel.IClientChannel {
     }
@@ -4029,27 +4029,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS.listarBoletaVentaTodos(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request) {
-            return base.Channel.listarBoletaVentaTodos(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.boletaVenta[] listarBoletaVentaTodos() {
-            InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS)(this)).listarBoletaVentaTodos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse> InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS.listarBoletaVentaTodosAsync(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request) {
-            return base.Channel.listarBoletaVentaTodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse> listarBoletaVentaTodosAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS)(this)).listarBoletaVentaTodosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.modificarBoletaVentaResponse InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS.modificarBoletaVenta(InterfacesTrabajoGrupal.ServicioWS.modificarBoletaVentaRequest request) {
             return base.Channel.modificarBoletaVenta(request);
         }
@@ -4094,6 +4073,27 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idBoletaVenta = idBoletaVenta;
             return ((InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS)(this)).eliminarBoletaVentaAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS.listarBoletaVentaTodos(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request) {
+            return base.Channel.listarBoletaVentaTodos(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.boletaVenta[] listarBoletaVentaTodos() {
+            InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS)(this)).listarBoletaVentaTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse> InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS.listarBoletaVentaTodosAsync(InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest request) {
+            return base.Channel.listarBoletaVentaTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosResponse> listarBoletaVentaTodosAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBoletaVentaTodosRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.Boleta_VentaWS)(this)).listarBoletaVentaTodosAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4111,16 +4111,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarTarjetaResponse> buscarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.buscarTarjetaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/eliminarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/eliminarTarjetaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse eliminarTarjeta(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/eliminarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/eliminarTarjetaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse> eliminarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/insertarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/insertarTarjetaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -4129,6 +4119,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/insertarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/insertarTarjetaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarTarjetaResponse> insertarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarTarjetaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/modificarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/modificarTarjetaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaResponse modificarTarjeta(InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/modificarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/modificarTarjetaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaResponse> modificarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/listarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/listarTarjetaResponse")]
@@ -4141,14 +4141,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse> listarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/modificarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/modificarTarjetaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/eliminarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/eliminarTarjetaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaResponse modificarTarjeta(InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse eliminarTarjeta(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/modificarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/modificarTarjetaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaResponse> modificarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarTarjetaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/TarjetaWS/eliminarTarjetaRequest", ReplyAction="ZAP2WS/TarjetaWS/eliminarTarjetaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse> eliminarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4183,42 +4183,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         public buscarTarjetaResponse(InterfacesTrabajoGrupal.ServicioWS.tarjeta @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTarjeta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarTarjetaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idTarjeta;
-        
-        public eliminarTarjetaRequest() {
-        }
-        
-        public eliminarTarjetaRequest(int idTarjeta) {
-            this.idTarjeta = idTarjeta;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTarjetaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarTarjetaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarTarjetaResponse() {
-        }
-        
-        public eliminarTarjetaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4262,34 +4226,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTarjeta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarTarjetaRequest {
-        
-        public listarTarjetaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTarjetaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarTarjetaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.tarjeta[] @return;
-        
-        public listarTarjetaResponse() {
-        }
-        
-        public listarTarjetaResponse(InterfacesTrabajoGrupal.ServicioWS.tarjeta[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="modificarTarjeta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
     public partial class modificarTarjetaRequest {
         
@@ -4319,6 +4255,70 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         public modificarTarjetaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTarjeta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarTarjetaRequest {
+        
+        public listarTarjetaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTarjetaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarTarjetaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.tarjeta[] @return;
+        
+        public listarTarjetaResponse() {
+        }
+        
+        public listarTarjetaResponse(InterfacesTrabajoGrupal.ServicioWS.tarjeta[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTarjeta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarTarjetaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idTarjeta;
+        
+        public eliminarTarjetaRequest() {
+        }
+        
+        public eliminarTarjetaRequest(int idTarjeta) {
+            this.idTarjeta = idTarjeta;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTarjetaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarTarjetaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarTarjetaResponse() {
+        }
+        
+        public eliminarTarjetaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4374,29 +4374,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.eliminarTarjeta(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request) {
-            return base.Channel.eliminarTarjeta(request);
-        }
-        
-        public int eliminarTarjeta(int idTarjeta) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest();
-            inValue.idTarjeta = idTarjeta;
-            InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).eliminarTarjeta(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse> InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.eliminarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request) {
-            return base.Channel.eliminarTarjetaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse> eliminarTarjetaAsync(int idTarjeta) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest();
-            inValue.idTarjeta = idTarjeta;
-            return ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).eliminarTarjetaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.insertarTarjetaResponse InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.insertarTarjeta(InterfacesTrabajoGrupal.ServicioWS.insertarTarjetaRequest request) {
             return base.Channel.insertarTarjeta(request);
         }
@@ -4417,27 +4394,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.insertarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarTarjetaRequest();
             inValue.tarjeta = tarjeta;
             return ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).insertarTarjetaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.listarTarjeta(InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest request) {
-            return base.Channel.listarTarjeta(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.tarjeta[] listarTarjeta() {
-            InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).listarTarjeta(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse> InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.listarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest request) {
-            return base.Channel.listarTarjetaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse> listarTarjetaAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).listarTarjetaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4462,6 +4418,50 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.tarjeta = tarjeta;
             return ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).modificarTarjetaAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.listarTarjeta(InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest request) {
+            return base.Channel.listarTarjeta(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.tarjeta[] listarTarjeta() {
+            InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).listarTarjeta(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse> InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.listarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest request) {
+            return base.Channel.listarTarjetaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarTarjetaResponse> listarTarjetaAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarTarjetaRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).listarTarjetaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.eliminarTarjeta(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request) {
+            return base.Channel.eliminarTarjeta(request);
+        }
+        
+        public int eliminarTarjeta(int idTarjeta) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest();
+            inValue.idTarjeta = idTarjeta;
+            InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).eliminarTarjeta(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse> InterfacesTrabajoGrupal.ServicioWS.TarjetaWS.eliminarTarjetaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest request) {
+            return base.Channel.eliminarTarjetaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaResponse> eliminarTarjetaAsync(int idTarjeta) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarTarjetaRequest();
+            inValue.idTarjeta = idTarjeta;
+            return ((InterfacesTrabajoGrupal.ServicioWS.TarjetaWS)(this)).eliminarTarjetaAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -4479,14 +4479,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarMonedaResponse> buscarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.buscarMonedaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/modificarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/modificarMonedaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/insertarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/insertarMonedaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse modificarMoneda(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse insertarMoneda(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/modificarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/modificarMonedaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse> modificarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/insertarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/insertarMonedaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse> insertarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/eliminarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/eliminarMonedaResponse")]
@@ -4499,14 +4499,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarMonedaResponse> eliminarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarMonedaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/insertarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/insertarMonedaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/modificarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/modificarMonedaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse insertarMoneda(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse modificarMoneda(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/insertarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/insertarMonedaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse> insertarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/modificarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/modificarMonedaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse> modificarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MonedaWS/listarMonedaRequest", ReplyAction="ZAP2WS/MonedaWS/listarMonedaResponse")]
@@ -4558,17 +4558,17 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMoneda", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarMonedaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMoneda", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarMonedaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public InterfacesTrabajoGrupal.ServicioWS.moneda moneda;
         
-        public modificarMonedaRequest() {
+        public insertarMonedaRequest() {
         }
         
-        public modificarMonedaRequest(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
+        public insertarMonedaRequest(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
             this.moneda = moneda;
         }
     }
@@ -4576,17 +4576,17 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMonedaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarMonedaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMonedaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarMonedaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarMonedaResponse() {
+        public insertarMonedaResponse() {
         }
         
-        public modificarMonedaResponse(int @return) {
+        public insertarMonedaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4630,17 +4630,17 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMoneda", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarMonedaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMoneda", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarMonedaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public InterfacesTrabajoGrupal.ServicioWS.moneda moneda;
         
-        public insertarMonedaRequest() {
+        public modificarMonedaRequest() {
         }
         
-        public insertarMonedaRequest(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
+        public modificarMonedaRequest(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
             this.moneda = moneda;
         }
     }
@@ -4648,17 +4648,17 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMonedaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarMonedaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarMonedaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarMonedaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarMonedaResponse() {
+        public modificarMonedaResponse() {
         }
         
-        public insertarMonedaResponse(int @return) {
+        public modificarMonedaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -4742,26 +4742,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse InterfacesTrabajoGrupal.ServicioWS.MonedaWS.modificarMoneda(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request) {
-            return base.Channel.modificarMoneda(request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse InterfacesTrabajoGrupal.ServicioWS.MonedaWS.insertarMoneda(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request) {
+            return base.Channel.insertarMoneda(request);
         }
         
-        public int modificarMoneda(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest();
+        public int insertarMoneda(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest();
             inValue.moneda = moneda;
-            InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).modificarMoneda(inValue);
+            InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).insertarMoneda(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse> InterfacesTrabajoGrupal.ServicioWS.MonedaWS.modificarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request) {
-            return base.Channel.modificarMonedaAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse> InterfacesTrabajoGrupal.ServicioWS.MonedaWS.insertarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request) {
+            return base.Channel.insertarMonedaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse> modificarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest();
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse> insertarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest();
             inValue.moneda = moneda;
-            return ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).modificarMonedaAsync(inValue);
+            return ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).insertarMonedaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4788,26 +4788,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse InterfacesTrabajoGrupal.ServicioWS.MonedaWS.insertarMoneda(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request) {
-            return base.Channel.insertarMoneda(request);
+        InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse InterfacesTrabajoGrupal.ServicioWS.MonedaWS.modificarMoneda(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request) {
+            return base.Channel.modificarMoneda(request);
         }
         
-        public int insertarMoneda(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest();
+        public int modificarMoneda(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest();
             inValue.moneda = moneda;
-            InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).insertarMoneda(inValue);
+            InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).modificarMoneda(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse> InterfacesTrabajoGrupal.ServicioWS.MonedaWS.insertarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest request) {
-            return base.Channel.insertarMonedaAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse> InterfacesTrabajoGrupal.ServicioWS.MonedaWS.modificarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest request) {
+            return base.Channel.modificarMonedaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMonedaResponse> insertarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMonedaRequest();
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarMonedaResponse> modificarMonedaAsync(InterfacesTrabajoGrupal.ServicioWS.moneda moneda) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarMonedaRequest();
             inValue.moneda = moneda;
-            return ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).insertarMonedaAsync(inValue);
+            return ((InterfacesTrabajoGrupal.ServicioWS.MonedaWS)(this)).modificarMonedaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -4837,24 +4837,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     public interface ProductosParaElCuidadoPersonalYDelHogarWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse listarPCH(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse modificarPCH(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse> listarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse eliminarPCH(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse> eliminarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse> modificarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/buscarProductoPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/buscarProductoPCHResponse")]
@@ -4877,76 +4867,58 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarPCHResponse> insertarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.insertarPCHRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse modificarPCH(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse eliminarPCH(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse> modificarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse> eliminarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse listarPCH(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHRequest", ReplyAction="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse> listarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPCH", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarPCHRequest {
-        
-        public listarPCHRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPCHResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarPCHResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar[] @return;
-        
-        public listarPCHResponse() {
-        }
-        
-        public listarPCHResponse(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPCH", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarPCHRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPCH", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarPCHRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPCH;
+        public InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH;
         
-        public eliminarPCHRequest() {
+        public modificarPCHRequest() {
         }
         
-        public eliminarPCHRequest(int idPCH) {
-            this.idPCH = idPCH;
+        public modificarPCHRequest(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH) {
+            this.PCH = PCH;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPCHResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarPCHResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPCHResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarPCHResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarPCHResponse() {
+        public modificarPCHResponse() {
         }
         
-        public eliminarPCHResponse(int @return) {
+        public modificarPCHResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -5026,35 +4998,63 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPCH", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarPCHRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPCH", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarPCHRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH;
+        public int idPCH;
         
-        public modificarPCHRequest() {
+        public eliminarPCHRequest() {
         }
         
-        public modificarPCHRequest(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH) {
-            this.PCH = PCH;
+        public eliminarPCHRequest(int idPCH) {
+            this.idPCH = idPCH;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarPCHResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarPCHResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarPCHResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarPCHResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public modificarPCHResponse() {
+        public eliminarPCHResponse() {
         }
         
-        public modificarPCHResponse(int @return) {
+        public eliminarPCHResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPCH", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarPCHRequest {
+        
+        public listarPCHRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPCHResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarPCHResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar[] @return;
+        
+        public listarPCHResponse() {
+        }
+        
+        public listarPCHResponse(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar[] @return) {
             this.@return = @return;
         }
     }
@@ -5087,47 +5087,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.listarPCH(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request) {
-            return base.Channel.listarPCH(request);
+        InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.modificarPCH(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request) {
+            return base.Channel.modificarPCH(request);
         }
         
-        public InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar[] listarPCH() {
-            InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).listarPCH(inValue);
+        public int modificarPCH(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest();
+            inValue.PCH = PCH;
+            InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).modificarPCH(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse> InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.listarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request) {
-            return base.Channel.listarPCHAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse> InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.modificarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request) {
+            return base.Channel.modificarPCHAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse> listarPCHAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).listarPCHAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.eliminarPCH(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request) {
-            return base.Channel.eliminarPCH(request);
-        }
-        
-        public int eliminarPCH(int idPCH) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest();
-            inValue.idPCH = idPCH;
-            InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).eliminarPCH(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse> InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.eliminarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request) {
-            return base.Channel.eliminarPCHAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse> eliminarPCHAsync(int idPCH) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest();
-            inValue.idPCH = idPCH;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).eliminarPCHAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse> modificarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest();
+            inValue.PCH = PCH;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).modificarPCHAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5177,42 +5156,53 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.modificarPCH(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request) {
-            return base.Channel.modificarPCH(request);
+        InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.eliminarPCH(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request) {
+            return base.Channel.eliminarPCH(request);
         }
         
-        public int modificarPCH(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest();
-            inValue.PCH = PCH;
-            InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).modificarPCH(inValue);
+        public int eliminarPCH(int idPCH) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest();
+            inValue.idPCH = idPCH;
+            InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).eliminarPCH(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse> InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.modificarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest request) {
-            return base.Channel.modificarPCHAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse> InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.eliminarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest request) {
+            return base.Channel.eliminarPCHAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPCHResponse> modificarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar PCH) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarPCHRequest();
-            inValue.PCH = PCH;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).modificarPCHAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPCHResponse> eliminarPCHAsync(int idPCH) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarPCHRequest();
+            inValue.idPCH = idPCH;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).eliminarPCHAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.listarPCH(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request) {
+            return base.Channel.listarPCH(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.productosParaElCuidadoPersonalYDelHogar[] listarPCH() {
+            InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).listarPCH(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse> InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS.listarPCHAsync(InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest request) {
+            return base.Channel.listarPCHAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPCHResponse> listarPCHAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPCHRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.ProductosParaElCuidadoPersonalYDelHogarWS)(this)).listarPCHAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.LineaDocWS")]
     public interface LineaDocWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest", ReplyAction="ZAP2WS/LineaDocWS/insertarLineaDocResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse insertarLineaDoc(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest", ReplyAction="ZAP2WS/LineaDocWS/insertarLineaDocResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse> insertarLineaDocAsync(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LineaDocWS/modificarLineaDocRequest", ReplyAction="ZAP2WS/LineaDocWS/modificarLineaDocResponse")]
@@ -5243,42 +5233,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LineaDocWS/listarLineaDocRequest", ReplyAction="ZAP2WS/LineaDocWS/listarLineaDocResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarLineaDocResponse> listarLineaDocAsync(InterfacesTrabajoGrupal.ServicioWS.listarLineaDocRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaDoc", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarLineaDocRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest", ReplyAction="ZAP2WS/LineaDocWS/insertarLineaDocResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse insertarLineaDoc(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request);
         
-        public insertarLineaDocRequest() {
-        }
-        
-        public insertarLineaDocRequest(InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc) {
-            this.lineaDoc = lineaDoc;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaDocResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarLineaDocResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarLineaDocResponse() {
-        }
-        
-        public insertarLineaDocResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest", ReplyAction="ZAP2WS/LineaDocWS/insertarLineaDocResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse> insertarLineaDocAsync(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5381,6 +5345,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaDoc", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarLineaDocRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc;
+        
+        public insertarLineaDocRequest() {
+        }
+        
+        public insertarLineaDocRequest(InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc) {
+            this.lineaDoc = lineaDoc;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarLineaDocResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarLineaDocResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarLineaDocResponse() {
+        }
+        
+        public insertarLineaDocResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface LineaDocWSChannel : InterfacesTrabajoGrupal.ServicioWS.LineaDocWS, System.ServiceModel.IClientChannel {
     }
@@ -5406,29 +5406,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public LineaDocWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse InterfacesTrabajoGrupal.ServicioWS.LineaDocWS.insertarLineaDoc(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request) {
-            return base.Channel.insertarLineaDoc(request);
-        }
-        
-        public int insertarLineaDoc(InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest();
-            inValue.lineaDoc = lineaDoc;
-            InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.LineaDocWS)(this)).insertarLineaDoc(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse> InterfacesTrabajoGrupal.ServicioWS.LineaDocWS.insertarLineaDocAsync(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request) {
-            return base.Channel.insertarLineaDocAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse> insertarLineaDocAsync(InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest();
-            inValue.lineaDoc = lineaDoc;
-            return ((InterfacesTrabajoGrupal.ServicioWS.LineaDocWS)(this)).insertarLineaDocAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -5497,6 +5474,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.listarLineaDocRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarLineaDocRequest();
             return ((InterfacesTrabajoGrupal.ServicioWS.LineaDocWS)(this)).listarLineaDocAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse InterfacesTrabajoGrupal.ServicioWS.LineaDocWS.insertarLineaDoc(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request) {
+            return base.Channel.insertarLineaDoc(request);
+        }
+        
+        public int insertarLineaDoc(InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest();
+            inValue.lineaDoc = lineaDoc;
+            InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.LineaDocWS)(this)).insertarLineaDoc(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse> InterfacesTrabajoGrupal.ServicioWS.LineaDocWS.insertarLineaDocAsync(InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest request) {
+            return base.Channel.insertarLineaDocAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocResponse> insertarLineaDocAsync(InterfacesTrabajoGrupal.ServicioWS.lineaDoc lineaDoc) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarLineaDocRequest();
+            inValue.lineaDoc = lineaDoc;
+            return ((InterfacesTrabajoGrupal.ServicioWS.LineaDocWS)(this)).insertarLineaDocAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5512,26 +5512,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/eliminarDetallePedidoRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/eliminarDetallePedidoResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarDetallePedidoResponse> eliminarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarDetallePedidoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse modificarDetallePedido(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse> modificarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse listarDetallePedidosXId(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse> listarDetallePedidosXIdAsync(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosResponse")]
@@ -5552,6 +5532,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarDetallePedidoResponse> insertarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarDetallePedidoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse listarDetallePedidosXId(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse> listarDetallePedidosXIdAsync(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse modificarDetallePedido(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoRequest", ReplyAction="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse> modificarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5586,78 +5586,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         public eliminarDetallePedidoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDetallePedido", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarDetallePedidoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido;
-        
-        public modificarDetallePedidoRequest() {
-        }
-        
-        public modificarDetallePedidoRequest(InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido) {
-            this.detalle_Pedido = detalle_Pedido;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDetallePedidoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarDetallePedidoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarDetallePedidoResponse() {
-        }
-        
-        public modificarDetallePedidoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDetallePedidosXId", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarDetallePedidosXIdRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPedido;
-        
-        public listarDetallePedidosXIdRequest() {
-        }
-        
-        public listarDetallePedidosXIdRequest(int idPedido) {
-            this.idPedido = idPedido;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDetallePedidosXIdResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarDetallePedidosXIdResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.detallePedido[] @return;
-        
-        public listarDetallePedidosXIdResponse() {
-        }
-        
-        public listarDetallePedidosXIdResponse(InterfacesTrabajoGrupal.ServicioWS.detallePedido[] @return) {
             this.@return = @return;
         }
     }
@@ -5726,6 +5654,78 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDetallePedidosXId", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarDetallePedidosXIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idPedido;
+        
+        public listarDetallePedidosXIdRequest() {
+        }
+        
+        public listarDetallePedidosXIdRequest(int idPedido) {
+            this.idPedido = idPedido;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDetallePedidosXIdResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarDetallePedidosXIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.detallePedido[] @return;
+        
+        public listarDetallePedidosXIdResponse() {
+        }
+        
+        public listarDetallePedidosXIdResponse(InterfacesTrabajoGrupal.ServicioWS.detallePedido[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDetallePedido", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarDetallePedidoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido;
+        
+        public modificarDetallePedidoRequest() {
+        }
+        
+        public modificarDetallePedidoRequest(InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido) {
+            this.detalle_Pedido = detalle_Pedido;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarDetallePedidoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarDetallePedidoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarDetallePedidoResponse() {
+        }
+        
+        public modificarDetallePedidoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Detalle_PedidoWSChannel : InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS, System.ServiceModel.IClientChannel {
     }
@@ -5777,52 +5777,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.modificarDetallePedido(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request) {
-            return base.Channel.modificarDetallePedido(request);
-        }
-        
-        public int modificarDetallePedido(InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest();
-            inValue.detalle_Pedido = detalle_Pedido;
-            InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).modificarDetallePedido(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse> InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.modificarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request) {
-            return base.Channel.modificarDetallePedidoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse> modificarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest();
-            inValue.detalle_Pedido = detalle_Pedido;
-            return ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).modificarDetallePedidoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.listarDetallePedidosXId(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request) {
-            return base.Channel.listarDetallePedidosXId(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.detallePedido[] listarDetallePedidosXId(int idPedido) {
-            InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest();
-            inValue.idPedido = idPedido;
-            InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).listarDetallePedidosXId(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse> InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.listarDetallePedidosXIdAsync(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request) {
-            return base.Channel.listarDetallePedidosXIdAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse> listarDetallePedidosXIdAsync(int idPedido) {
-            InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest();
-            inValue.idPedido = idPedido;
-            return ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).listarDetallePedidosXIdAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosResponse InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.listarDetallePedidos(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosRequest request) {
             return base.Channel.listarDetallePedidos(request);
         }
@@ -5865,41 +5819,57 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.detalle_Pedido = detalle_Pedido;
             return ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).insertarDetallePedidoAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.listarDetallePedidosXId(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request) {
+            return base.Channel.listarDetallePedidosXId(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.detallePedido[] listarDetallePedidosXId(int idPedido) {
+            InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest();
+            inValue.idPedido = idPedido;
+            InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).listarDetallePedidosXId(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse> InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.listarDetallePedidosXIdAsync(InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest request) {
+            return base.Channel.listarDetallePedidosXIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdResponse> listarDetallePedidosXIdAsync(int idPedido) {
+            InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDetallePedidosXIdRequest();
+            inValue.idPedido = idPedido;
+            return ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).listarDetallePedidosXIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.modificarDetallePedido(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request) {
+            return base.Channel.modificarDetallePedido(request);
+        }
+        
+        public int modificarDetallePedido(InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest();
+            inValue.detalle_Pedido = detalle_Pedido;
+            InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).modificarDetallePedido(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse> InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS.modificarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest request) {
+            return base.Channel.modificarDetallePedidoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoResponse> modificarDetallePedidoAsync(InterfacesTrabajoGrupal.ServicioWS.detallePedido detalle_Pedido) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarDetallePedidoRequest();
+            inValue.detalle_Pedido = detalle_Pedido;
+            return ((InterfacesTrabajoGrupal.ServicioWS.Detalle_PedidoWS)(this)).modificarDetallePedidoAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.SupervisorWS")]
     public interface SupervisorWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/buscarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/buscarSupervisorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse buscarSupervisor(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/buscarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/buscarSupervisorResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse> buscarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/modificarSupervisorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse modificarSupervisor(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/modificarSupervisorResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse> modificarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest", ReplyAction="ZAP2WS/SupervisorWS/listarSupervisoresResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse listarSupervisores(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest", ReplyAction="ZAP2WS/SupervisorWS/listarSupervisoresResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse> listarSupervisoresAsync(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/insertarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/insertarSupervisorResponse")]
@@ -5912,6 +5882,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarSupervisorResponse> insertarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.insertarSupervisorRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/buscarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/buscarSupervisorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse buscarSupervisor(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/buscarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/buscarSupervisorResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse> buscarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/eliminarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/eliminarSupervisorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -5920,106 +5900,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/eliminarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/eliminarSupervisorResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarSupervisorResponse> eliminarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarSupervisorRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSupervisor", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarSupervisorRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idSupervisor;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest", ReplyAction="ZAP2WS/SupervisorWS/listarSupervisoresResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse listarSupervisores(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request);
         
-        public buscarSupervisorRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest", ReplyAction="ZAP2WS/SupervisorWS/listarSupervisoresResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse> listarSupervisoresAsync(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request);
         
-        public buscarSupervisorRequest(int idSupervisor) {
-            this.idSupervisor = idSupervisor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSupervisorResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarSupervisorResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/modificarSupervisorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse modificarSupervisor(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.supervisor @return;
-        
-        public buscarSupervisorResponse() {
-        }
-        
-        public buscarSupervisorResponse(InterfacesTrabajoGrupal.ServicioWS.supervisor @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSupervisor", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarSupervisorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor;
-        
-        public modificarSupervisorRequest() {
-        }
-        
-        public modificarSupervisorRequest(InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor) {
-            this.supervisor = supervisor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSupervisorResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarSupervisorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarSupervisorResponse() {
-        }
-        
-        public modificarSupervisorResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSupervisores", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarSupervisoresRequest {
-        
-        public listarSupervisoresRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSupervisoresResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarSupervisoresResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.supervisor[] @return;
-        
-        public listarSupervisoresResponse() {
-        }
-        
-        public listarSupervisoresResponse(InterfacesTrabajoGrupal.ServicioWS.supervisor[] @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest", ReplyAction="ZAP2WS/SupervisorWS/modificarSupervisorResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse> modificarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6061,6 +5961,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSupervisor", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarSupervisorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idSupervisor;
+        
+        public buscarSupervisorRequest() {
+        }
+        
+        public buscarSupervisorRequest(int idSupervisor) {
+            this.idSupervisor = idSupervisor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSupervisorResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarSupervisorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.supervisor @return;
+        
+        public buscarSupervisorResponse() {
+        }
+        
+        public buscarSupervisorResponse(InterfacesTrabajoGrupal.ServicioWS.supervisor @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSupervisor", WrapperNamespace="ZAP2WS", IsWrapped=true)]
     public partial class eliminarSupervisorRequest {
         
@@ -6094,6 +6030,70 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSupervisores", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarSupervisoresRequest {
+        
+        public listarSupervisoresRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarSupervisoresResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarSupervisoresResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.supervisor[] @return;
+        
+        public listarSupervisoresResponse() {
+        }
+        
+        public listarSupervisoresResponse(InterfacesTrabajoGrupal.ServicioWS.supervisor[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSupervisor", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarSupervisorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor;
+        
+        public modificarSupervisorRequest() {
+        }
+        
+        public modificarSupervisorRequest(InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor) {
+            this.supervisor = supervisor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarSupervisorResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarSupervisorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarSupervisorResponse() {
+        }
+        
+        public modificarSupervisorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface SupervisorWSChannel : InterfacesTrabajoGrupal.ServicioWS.SupervisorWS, System.ServiceModel.IClientChannel {
     }
@@ -6122,73 +6122,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.buscarSupervisor(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request) {
-            return base.Channel.buscarSupervisor(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.supervisor buscarSupervisor(int idSupervisor) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest();
-            inValue.idSupervisor = idSupervisor;
-            InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).buscarSupervisor(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse> InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.buscarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request) {
-            return base.Channel.buscarSupervisorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse> buscarSupervisorAsync(int idSupervisor) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest();
-            inValue.idSupervisor = idSupervisor;
-            return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).buscarSupervisorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.modificarSupervisor(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request) {
-            return base.Channel.modificarSupervisor(request);
-        }
-        
-        public int modificarSupervisor(InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest();
-            inValue.supervisor = supervisor;
-            InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).modificarSupervisor(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse> InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.modificarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request) {
-            return base.Channel.modificarSupervisorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse> modificarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest();
-            inValue.supervisor = supervisor;
-            return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).modificarSupervisorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.listarSupervisores(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request) {
-            return base.Channel.listarSupervisores(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.supervisor[] listarSupervisores() {
-            InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).listarSupervisores(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse> InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.listarSupervisoresAsync(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request) {
-            return base.Channel.listarSupervisoresAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse> listarSupervisoresAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).listarSupervisoresAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.insertarSupervisorResponse InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.insertarSupervisor(InterfacesTrabajoGrupal.ServicioWS.insertarSupervisorRequest request) {
             return base.Channel.insertarSupervisor(request);
         }
@@ -6209,6 +6142,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.insertarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarSupervisorRequest();
             inValue.supervisor = supervisor;
             return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).insertarSupervisorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.buscarSupervisor(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request) {
+            return base.Channel.buscarSupervisor(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.supervisor buscarSupervisor(int idSupervisor) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest();
+            inValue.idSupervisor = idSupervisor;
+            InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).buscarSupervisor(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse> InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.buscarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest request) {
+            return base.Channel.buscarSupervisorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorResponse> buscarSupervisorAsync(int idSupervisor) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSupervisorRequest();
+            inValue.idSupervisor = idSupervisor;
+            return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).buscarSupervisorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -6233,6 +6189,50 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idSupervisor = idSupervisor;
             return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).eliminarSupervisorAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.listarSupervisores(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request) {
+            return base.Channel.listarSupervisores(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.supervisor[] listarSupervisores() {
+            InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).listarSupervisores(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse> InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.listarSupervisoresAsync(InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest request) {
+            return base.Channel.listarSupervisoresAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresResponse> listarSupervisoresAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarSupervisoresRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).listarSupervisoresAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.modificarSupervisor(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request) {
+            return base.Channel.modificarSupervisor(request);
+        }
+        
+        public int modificarSupervisor(InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest();
+            inValue.supervisor = supervisor;
+            InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).modificarSupervisor(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse> InterfacesTrabajoGrupal.ServicioWS.SupervisorWS.modificarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest request) {
+            return base.Channel.modificarSupervisorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorResponse> modificarSupervisorAsync(InterfacesTrabajoGrupal.ServicioWS.supervisor supervisor) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarSupervisorRequest();
+            inValue.supervisor = supervisor;
+            return ((InterfacesTrabajoGrupal.ServicioWS.SupervisorWS)(this)).modificarSupervisorAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6240,14 +6240,24 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     public interface Documento_de_CompraWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarEgresosResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse insertarDocumentoCompra(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse listarEgresos(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse> insertarDocumentoCompraAsync(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarEgresosResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse> listarEgresosAsync(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse listarDocumentosCompras(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse> listarDocumentosComprasAsync(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraResponse")]
@@ -6270,58 +6280,81 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarDocumentoCompraResponse> eliminarDocumentoCompraAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarDocumentoCompraRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse listarDocumentosCompras(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse insertarDocumentoCompra(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse> listarDocumentosComprasAsync(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarEgresosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse listarEgresos(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/listarEgresosResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse> listarEgresosAsync(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraRequest", ReplyAction="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse> insertarDocumentoCompraAsync(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarDocumentoCompra", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarDocumentoCompraRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEgresos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarEgresosRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra;
+        public System.DateTime fechaIni;
         
-        public insertarDocumentoCompraRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime fechaFin;
+        
+        public listarEgresosRequest() {
         }
         
-        public insertarDocumentoCompraRequest(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra) {
-            this.documentoCompra = documentoCompra;
+        public listarEgresosRequest(System.DateTime fechaIni, System.DateTime fechaFin) {
+            this.fechaIni = fechaIni;
+            this.fechaFin = fechaFin;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarDocumentoCompraResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarDocumentoCompraResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEgresosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarEgresosResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return;
         
-        public insertarDocumentoCompraResponse() {
+        public listarEgresosResponse() {
         }
         
-        public insertarDocumentoCompraResponse(int @return) {
+        public listarEgresosResponse(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDocumentosCompras", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarDocumentosComprasRequest {
+        
+        public listarDocumentosComprasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDocumentosComprasResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarDocumentosComprasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return;
+        
+        public listarDocumentosComprasResponse() {
+        }
+        
+        public listarDocumentosComprasResponse(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return) {
             this.@return = @return;
         }
     }
@@ -6401,68 +6434,35 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDocumentosCompras", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarDocumentosComprasRequest {
-        
-        public listarDocumentosComprasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarDocumentosComprasResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarDocumentosComprasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return;
-        
-        public listarDocumentosComprasResponse() {
-        }
-        
-        public listarDocumentosComprasResponse(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEgresos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarEgresosRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarDocumentoCompra", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarDocumentoCompraRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime fechaIni;
+        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public System.DateTime fechaFin;
-        
-        public listarEgresosRequest() {
+        public insertarDocumentoCompraRequest() {
         }
         
-        public listarEgresosRequest(System.DateTime fechaIni, System.DateTime fechaFin) {
-            this.fechaIni = fechaIni;
-            this.fechaFin = fechaFin;
+        public insertarDocumentoCompraRequest(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra) {
+            this.documentoCompra = documentoCompra;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEgresosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarEgresosResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarDocumentoCompraResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarDocumentoCompraResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarEgresosResponse() {
+        public insertarDocumentoCompraResponse() {
         }
         
-        public listarEgresosResponse(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] @return) {
+        public insertarDocumentoCompraResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -6495,26 +6495,49 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.insertarDocumentoCompra(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request) {
-            return base.Channel.insertarDocumentoCompra(request);
+        InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarEgresos(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request) {
+            return base.Channel.listarEgresos(request);
         }
         
-        public int insertarDocumentoCompra(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest();
-            inValue.documentoCompra = documentoCompra;
-            InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).insertarDocumentoCompra(inValue);
+        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] listarEgresos(System.DateTime fechaIni, System.DateTime fechaFin) {
+            InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest();
+            inValue.fechaIni = fechaIni;
+            inValue.fechaFin = fechaFin;
+            InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarEgresos(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse> InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.insertarDocumentoCompraAsync(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request) {
-            return base.Channel.insertarDocumentoCompraAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse> InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarEgresosAsync(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request) {
+            return base.Channel.listarEgresosAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse> insertarDocumentoCompraAsync(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest();
-            inValue.documentoCompra = documentoCompra;
-            return ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).insertarDocumentoCompraAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse> listarEgresosAsync(System.DateTime fechaIni, System.DateTime fechaFin) {
+            InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest();
+            inValue.fechaIni = fechaIni;
+            inValue.fechaFin = fechaFin;
+            return ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarEgresosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarDocumentosCompras(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request) {
+            return base.Channel.listarDocumentosCompras(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] listarDocumentosCompras() {
+            InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarDocumentosCompras(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse> InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarDocumentosComprasAsync(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request) {
+            return base.Channel.listarDocumentosComprasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse> listarDocumentosComprasAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarDocumentosComprasAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -6564,55 +6587,52 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarDocumentosCompras(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request) {
-            return base.Channel.listarDocumentosCompras(request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.insertarDocumentoCompra(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request) {
+            return base.Channel.insertarDocumentoCompra(request);
         }
         
-        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] listarDocumentosCompras() {
-            InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarDocumentosCompras(inValue);
+        public int insertarDocumentoCompra(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest();
+            inValue.documentoCompra = documentoCompra;
+            InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).insertarDocumentoCompra(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse> InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarDocumentosComprasAsync(InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest request) {
-            return base.Channel.listarDocumentosComprasAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse> InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.insertarDocumentoCompraAsync(InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest request) {
+            return base.Channel.insertarDocumentoCompraAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasResponse> listarDocumentosComprasAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarDocumentosComprasRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarDocumentosComprasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarEgresos(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request) {
-            return base.Channel.listarEgresos(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra[] listarEgresos(System.DateTime fechaIni, System.DateTime fechaFin) {
-            InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest();
-            inValue.fechaIni = fechaIni;
-            inValue.fechaFin = fechaFin;
-            InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarEgresos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse> InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS.listarEgresosAsync(InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest request) {
-            return base.Channel.listarEgresosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarEgresosResponse> listarEgresosAsync(System.DateTime fechaIni, System.DateTime fechaFin) {
-            InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarEgresosRequest();
-            inValue.fechaIni = fechaIni;
-            inValue.fechaFin = fechaFin;
-            return ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).listarEgresosAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraResponse> insertarDocumentoCompraAsync(InterfacesTrabajoGrupal.ServicioWS.documentoDeCompra documentoCompra) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarDocumentoCompraRequest();
+            inValue.documentoCompra = documentoCompra;
+            return ((InterfacesTrabajoGrupal.ServicioWS.Documento_de_CompraWS)(this)).insertarDocumentoCompraAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.AlmacenWS")]
     public interface AlmacenWS {
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/listarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/listarAlmacenResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse listarAlmacen(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/listarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/listarAlmacenResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse> listarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/buscarAlmacenResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse buscarAlmacen(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/buscarAlmacenResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse> buscarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/insertarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/insertarAlmacenResponse")]
@@ -6635,16 +6655,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarAlmacenResponse> modificarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.modificarAlmacenRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/listarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/listarAlmacenResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse listarAlmacen(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/listarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/listarAlmacenResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse> listarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/eliminarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/eliminarAlmacenResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -6653,16 +6663,70 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/eliminarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/eliminarAlmacenResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarAlmacenResponse> eliminarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarAlmacenRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAlmacen", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarAlmacenRequest {
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/buscarAlmacenResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse buscarAlmacen(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request);
+        public listarAlmacenRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAlmacenResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarAlmacenResponse {
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest", ReplyAction="ZAP2WS/AlmacenWS/buscarAlmacenResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse> buscarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.almacen[] @return;
+        
+        public listarAlmacenResponse() {
+        }
+        
+        public listarAlmacenResponse(InterfacesTrabajoGrupal.ServicioWS.almacen[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarAlmacen", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarAlmacenRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idAlmacen;
+        
+        public buscarAlmacenRequest() {
+        }
+        
+        public buscarAlmacenRequest(int idAlmacen) {
+            this.idAlmacen = idAlmacen;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarAlmacenResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarAlmacenResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.almacen @return;
+        
+        public buscarAlmacenResponse() {
+        }
+        
+        public buscarAlmacenResponse(InterfacesTrabajoGrupal.ServicioWS.almacen @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -6740,34 +6804,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAlmacen", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarAlmacenRequest {
-        
-        public listarAlmacenRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAlmacenResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarAlmacenResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.almacen[] @return;
-        
-        public listarAlmacenResponse() {
-        }
-        
-        public listarAlmacenResponse(InterfacesTrabajoGrupal.ServicioWS.almacen[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAlmacen", WrapperNamespace="ZAP2WS", IsWrapped=true)]
     public partial class eliminarAlmacenRequest {
         
@@ -6801,42 +6837,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarAlmacen", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarAlmacenRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idAlmacen;
-        
-        public buscarAlmacenRequest() {
-        }
-        
-        public buscarAlmacenRequest(int idAlmacen) {
-            this.idAlmacen = idAlmacen;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarAlmacenResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarAlmacenResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.almacen @return;
-        
-        public buscarAlmacenResponse() {
-        }
-        
-        public buscarAlmacenResponse(InterfacesTrabajoGrupal.ServicioWS.almacen @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface AlmacenWSChannel : InterfacesTrabajoGrupal.ServicioWS.AlmacenWS, System.ServiceModel.IClientChannel {
     }
@@ -6862,6 +6862,50 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public AlmacenWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.listarAlmacen(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request) {
+            return base.Channel.listarAlmacen(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.almacen[] listarAlmacen() {
+            InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).listarAlmacen(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse> InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.listarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request) {
+            return base.Channel.listarAlmacenAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse> listarAlmacenAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).listarAlmacenAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.buscarAlmacen(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request) {
+            return base.Channel.buscarAlmacen(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.almacen buscarAlmacen(int idAlmacen) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest();
+            inValue.idAlmacen = idAlmacen;
+            InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).buscarAlmacen(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse> InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.buscarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request) {
+            return base.Channel.buscarAlmacenAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse> buscarAlmacenAsync(int idAlmacen) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest();
+            inValue.idAlmacen = idAlmacen;
+            return ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).buscarAlmacenAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -6911,27 +6955,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.listarAlmacen(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request) {
-            return base.Channel.listarAlmacen(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.almacen[] listarAlmacen() {
-            InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).listarAlmacen(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse> InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.listarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest request) {
-            return base.Channel.listarAlmacenAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAlmacenResponse> listarAlmacenAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAlmacenRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).listarAlmacenAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.eliminarAlmacenResponse InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.eliminarAlmacen(InterfacesTrabajoGrupal.ServicioWS.eliminarAlmacenRequest request) {
             return base.Channel.eliminarAlmacen(request);
         }
@@ -6953,44 +6976,11 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idAlmacen = idAlmacen;
             return ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).eliminarAlmacenAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.buscarAlmacen(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request) {
-            return base.Channel.buscarAlmacen(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.almacen buscarAlmacen(int idAlmacen) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest();
-            inValue.idAlmacen = idAlmacen;
-            InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).buscarAlmacen(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse> InterfacesTrabajoGrupal.ServicioWS.AlmacenWS.buscarAlmacenAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest request) {
-            return base.Channel.buscarAlmacenAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenResponse> buscarAlmacenAsync(int idAlmacen) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenRequest();
-            inValue.idAlmacen = idAlmacen;
-            return ((InterfacesTrabajoGrupal.ServicioWS.AlmacenWS)(this)).buscarAlmacenAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.BancoWS")]
     public interface BancoWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/buscarBancoRequest", ReplyAction="ZAP2WS/BancoWS/buscarBancoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse buscarBanco(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/buscarBancoRequest", ReplyAction="ZAP2WS/BancoWS/buscarBancoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse> buscarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/insertarBancoRequest", ReplyAction="ZAP2WS/BancoWS/insertarBancoResponse")]
@@ -7003,14 +6993,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarBancoResponse> insertarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarBancoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/eliminarBancoRequest", ReplyAction="ZAP2WS/BancoWS/eliminarBancoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/modificarBancoRequest", ReplyAction="ZAP2WS/BancoWS/modificarBancoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarBancoResponse eliminarBanco(InterfacesTrabajoGrupal.ServicioWS.eliminarBancoRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse modificarBanco(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/eliminarBancoRequest", ReplyAction="ZAP2WS/BancoWS/eliminarBancoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarBancoResponse> eliminarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarBancoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/modificarBancoRequest", ReplyAction="ZAP2WS/BancoWS/modificarBancoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse> modificarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/listarBancosTodosRequest", ReplyAction="ZAP2WS/BancoWS/listarBancosTodosResponse")]
@@ -7023,50 +7013,24 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse> listarBancosTodosAsync(InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/modificarBancoRequest", ReplyAction="ZAP2WS/BancoWS/modificarBancoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/eliminarBancoRequest", ReplyAction="ZAP2WS/BancoWS/eliminarBancoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse modificarBanco(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.eliminarBancoResponse eliminarBanco(InterfacesTrabajoGrupal.ServicioWS.eliminarBancoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/modificarBancoRequest", ReplyAction="ZAP2WS/BancoWS/modificarBancoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse> modificarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarBanco", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarBancoRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/eliminarBancoRequest", ReplyAction="ZAP2WS/BancoWS/eliminarBancoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarBancoResponse> eliminarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarBancoRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idBanco;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/buscarBancoRequest", ReplyAction="ZAP2WS/BancoWS/buscarBancoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse buscarBanco(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request);
         
-        public buscarBancoRequest() {
-        }
-        
-        public buscarBancoRequest(int idBanco) {
-            this.idBanco = idBanco;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarBancoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarBancoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.banco @return;
-        
-        public buscarBancoResponse() {
-        }
-        
-        public buscarBancoResponse(InterfacesTrabajoGrupal.ServicioWS.banco @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/BancoWS/buscarBancoRequest", ReplyAction="ZAP2WS/BancoWS/buscarBancoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse> buscarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7101,6 +7065,70 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         public insertarBancoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBanco", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarBancoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.banco banco;
+        
+        public modificarBancoRequest() {
+        }
+        
+        public modificarBancoRequest(InterfacesTrabajoGrupal.ServicioWS.banco banco) {
+            this.banco = banco;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBancoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarBancoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarBancoResponse() {
+        }
+        
+        public modificarBancoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBancosTodos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarBancosTodosRequest {
+        
+        public listarBancosTodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBancosTodosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarBancosTodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.banco[] @return;
+        
+        public listarBancosTodosResponse() {
+        }
+        
+        public listarBancosTodosResponse(InterfacesTrabajoGrupal.ServicioWS.banco[] @return) {
             this.@return = @return;
         }
     }
@@ -7144,63 +7172,35 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBancosTodos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarBancosTodosRequest {
-        
-        public listarBancosTodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarBancosTodosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarBancosTodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.banco[] @return;
-        
-        public listarBancosTodosResponse() {
-        }
-        
-        public listarBancosTodosResponse(InterfacesTrabajoGrupal.ServicioWS.banco[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBanco", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarBancoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarBanco", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarBancoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.banco banco;
+        public int idBanco;
         
-        public modificarBancoRequest() {
+        public buscarBancoRequest() {
         }
         
-        public modificarBancoRequest(InterfacesTrabajoGrupal.ServicioWS.banco banco) {
-            this.banco = banco;
+        public buscarBancoRequest(int idBanco) {
+            this.idBanco = idBanco;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarBancoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarBancoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarBancoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarBancoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        public InterfacesTrabajoGrupal.ServicioWS.banco @return;
         
-        public modificarBancoResponse() {
+        public buscarBancoResponse() {
         }
         
-        public modificarBancoResponse(int @return) {
+        public buscarBancoResponse(InterfacesTrabajoGrupal.ServicioWS.banco @return) {
             this.@return = @return;
         }
     }
@@ -7233,29 +7233,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse InterfacesTrabajoGrupal.ServicioWS.BancoWS.buscarBanco(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request) {
-            return base.Channel.buscarBanco(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.banco buscarBanco(int idBanco) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest();
-            inValue.idBanco = idBanco;
-            InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).buscarBanco(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse> InterfacesTrabajoGrupal.ServicioWS.BancoWS.buscarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request) {
-            return base.Channel.buscarBancoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse> buscarBancoAsync(int idBanco) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest();
-            inValue.idBanco = idBanco;
-            return ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).buscarBancoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.insertarBancoResponse InterfacesTrabajoGrupal.ServicioWS.BancoWS.insertarBanco(InterfacesTrabajoGrupal.ServicioWS.insertarBancoRequest request) {
             return base.Channel.insertarBanco(request);
         }
@@ -7276,6 +7253,50 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.insertarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarBancoRequest();
             inValue.banco = banco;
             return ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).insertarBancoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse InterfacesTrabajoGrupal.ServicioWS.BancoWS.modificarBanco(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request) {
+            return base.Channel.modificarBanco(request);
+        }
+        
+        public int modificarBanco(InterfacesTrabajoGrupal.ServicioWS.banco banco) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest();
+            inValue.banco = banco;
+            InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).modificarBanco(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse> InterfacesTrabajoGrupal.ServicioWS.BancoWS.modificarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request) {
+            return base.Channel.modificarBancoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse> modificarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.banco banco) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest();
+            inValue.banco = banco;
+            return ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).modificarBancoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse InterfacesTrabajoGrupal.ServicioWS.BancoWS.listarBancosTodos(InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest request) {
+            return base.Channel.listarBancosTodos(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.banco[] listarBancosTodos() {
+            InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).listarBancosTodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse> InterfacesTrabajoGrupal.ServicioWS.BancoWS.listarBancosTodosAsync(InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest request) {
+            return base.Channel.listarBancosTodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse> listarBancosTodosAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).listarBancosTodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7302,73 +7323,32 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse InterfacesTrabajoGrupal.ServicioWS.BancoWS.listarBancosTodos(InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest request) {
-            return base.Channel.listarBancosTodos(request);
+        InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse InterfacesTrabajoGrupal.ServicioWS.BancoWS.buscarBanco(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request) {
+            return base.Channel.buscarBanco(request);
         }
         
-        public InterfacesTrabajoGrupal.ServicioWS.banco[] listarBancosTodos() {
-            InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).listarBancosTodos(inValue);
+        public InterfacesTrabajoGrupal.ServicioWS.banco buscarBanco(int idBanco) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest();
+            inValue.idBanco = idBanco;
+            InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).buscarBanco(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse> InterfacesTrabajoGrupal.ServicioWS.BancoWS.listarBancosTodosAsync(InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest request) {
-            return base.Channel.listarBancosTodosAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse> InterfacesTrabajoGrupal.ServicioWS.BancoWS.buscarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest request) {
+            return base.Channel.buscarBancoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosResponse> listarBancosTodosAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarBancosTodosRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).listarBancosTodosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse InterfacesTrabajoGrupal.ServicioWS.BancoWS.modificarBanco(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request) {
-            return base.Channel.modificarBanco(request);
-        }
-        
-        public int modificarBanco(InterfacesTrabajoGrupal.ServicioWS.banco banco) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest();
-            inValue.banco = banco;
-            InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).modificarBanco(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse> InterfacesTrabajoGrupal.ServicioWS.BancoWS.modificarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest request) {
-            return base.Channel.modificarBancoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarBancoResponse> modificarBancoAsync(InterfacesTrabajoGrupal.ServicioWS.banco banco) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarBancoRequest();
-            inValue.banco = banco;
-            return ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).modificarBancoAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarBancoResponse> buscarBancoAsync(int idBanco) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarBancoRequest();
+            inValue.idBanco = idBanco;
+            return ((InterfacesTrabajoGrupal.ServicioWS.BancoWS)(this)).buscarBancoAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.LoteWS")]
     public interface LoteWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/listarLoteRequest", ReplyAction="ZAP2WS/LoteWS/listarLoteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse listarLote(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/listarLoteRequest", ReplyAction="ZAP2WS/LoteWS/listarLoteResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse> listarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/modificarLoteRequest", ReplyAction="ZAP2WS/LoteWS/modificarLoteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse modificarLote(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/modificarLoteRequest", ReplyAction="ZAP2WS/LoteWS/modificarLoteResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse> modificarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/insertarLoteRequest", ReplyAction="ZAP2WS/LoteWS/insertarLoteResponse")]
@@ -7389,70 +7369,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/eliminarLoteRequest", ReplyAction="ZAP2WS/LoteWS/eliminarLoteResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarLoteResponse> eliminarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarLoteRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarLote", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarLoteRequest {
         
-        public listarLoteRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarLoteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarLoteResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/modificarLoteRequest", ReplyAction="ZAP2WS/LoteWS/modificarLoteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse modificarLote(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.lote[] @return;
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/modificarLoteRequest", ReplyAction="ZAP2WS/LoteWS/modificarLoteResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse> modificarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request);
         
-        public listarLoteResponse() {
-        }
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/listarLoteRequest", ReplyAction="ZAP2WS/LoteWS/listarLoteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse listarLote(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request);
         
-        public listarLoteResponse(InterfacesTrabajoGrupal.ServicioWS.lote[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLote", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarLoteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.lote lote;
-        
-        public modificarLoteRequest() {
-        }
-        
-        public modificarLoteRequest(InterfacesTrabajoGrupal.ServicioWS.lote lote) {
-            this.lote = lote;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLoteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarLoteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarLoteResponse() {
-        }
-        
-        public modificarLoteResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/LoteWS/listarLoteRequest", ReplyAction="ZAP2WS/LoteWS/listarLoteResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse> listarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7527,6 +7463,70 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLote", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarLoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.lote lote;
+        
+        public modificarLoteRequest() {
+        }
+        
+        public modificarLoteRequest(InterfacesTrabajoGrupal.ServicioWS.lote lote) {
+            this.lote = lote;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarLoteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarLoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarLoteResponse() {
+        }
+        
+        public modificarLoteResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarLote", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarLoteRequest {
+        
+        public listarLoteRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarLoteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarLoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.lote[] @return;
+        
+        public listarLoteResponse() {
+        }
+        
+        public listarLoteResponse(InterfacesTrabajoGrupal.ServicioWS.lote[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface LoteWSChannel : InterfacesTrabajoGrupal.ServicioWS.LoteWS, System.ServiceModel.IClientChannel {
     }
@@ -7552,50 +7552,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public LoteWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse InterfacesTrabajoGrupal.ServicioWS.LoteWS.listarLote(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request) {
-            return base.Channel.listarLote(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.lote[] listarLote() {
-            InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).listarLote(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse> InterfacesTrabajoGrupal.ServicioWS.LoteWS.listarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request) {
-            return base.Channel.listarLoteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse> listarLoteAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).listarLoteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse InterfacesTrabajoGrupal.ServicioWS.LoteWS.modificarLote(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request) {
-            return base.Channel.modificarLote(request);
-        }
-        
-        public int modificarLote(InterfacesTrabajoGrupal.ServicioWS.lote lote) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest();
-            inValue.lote = lote;
-            InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).modificarLote(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse> InterfacesTrabajoGrupal.ServicioWS.LoteWS.modificarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request) {
-            return base.Channel.modificarLoteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse> modificarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.lote lote) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest();
-            inValue.lote = lote;
-            return ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).modificarLoteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7643,6 +7599,50 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idLote = idLote;
             return ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).eliminarLoteAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse InterfacesTrabajoGrupal.ServicioWS.LoteWS.modificarLote(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request) {
+            return base.Channel.modificarLote(request);
+        }
+        
+        public int modificarLote(InterfacesTrabajoGrupal.ServicioWS.lote lote) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest();
+            inValue.lote = lote;
+            InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).modificarLote(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse> InterfacesTrabajoGrupal.ServicioWS.LoteWS.modificarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest request) {
+            return base.Channel.modificarLoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarLoteResponse> modificarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.lote lote) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarLoteRequest();
+            inValue.lote = lote;
+            return ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).modificarLoteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse InterfacesTrabajoGrupal.ServicioWS.LoteWS.listarLote(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request) {
+            return base.Channel.listarLote(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.lote[] listarLote() {
+            InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).listarLote(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse> InterfacesTrabajoGrupal.ServicioWS.LoteWS.listarLoteAsync(InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest request) {
+            return base.Channel.listarLoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarLoteResponse> listarLoteAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarLoteRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.LoteWS)(this)).listarLoteAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7650,14 +7650,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     public interface Factura_VentaWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/insertarFacturaVentaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/listarFacturaVentaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse insertarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse listarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/insertarFacturaVentaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse> insertarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/listarFacturaVentaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse> listarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/modificarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/modificarFacturaVentaResponse")]
@@ -7670,6 +7670,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarFacturaVentaResponse> modificarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarFacturaVentaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/insertarFacturaVentaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse insertarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/insertarFacturaVentaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse> insertarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -7678,50 +7688,32 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarFacturaVentaResponse> eliminarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarFacturaVentaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/listarFacturaVentaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse listarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaRequest", ReplyAction="ZAP2WS/Factura_VentaWS/listarFacturaVentaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse> listarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFacturaVenta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarFacturaVentaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFacturaVenta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarFacturaVentaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta;
-        
-        public insertarFacturaVentaRequest() {
-        }
-        
-        public insertarFacturaVentaRequest(InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta) {
-            this.facturaVenta = facturaVenta;
+        public listarFacturaVentaRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFacturaVentaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarFacturaVentaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFacturaVentaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarFacturaVentaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.facturaVenta[] @return;
         
-        public insertarFacturaVentaResponse() {
+        public listarFacturaVentaResponse() {
         }
         
-        public insertarFacturaVentaResponse(int @return) {
+        public listarFacturaVentaResponse(InterfacesTrabajoGrupal.ServicioWS.facturaVenta[] @return) {
             this.@return = @return;
         }
     }
@@ -7765,6 +7757,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFacturaVenta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarFacturaVentaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta;
+        
+        public insertarFacturaVentaRequest() {
+        }
+        
+        public insertarFacturaVentaRequest(InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta) {
+            this.facturaVenta = facturaVenta;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarFacturaVentaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarFacturaVentaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarFacturaVentaResponse() {
+        }
+        
+        public insertarFacturaVentaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarFacturaVenta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
     public partial class eliminarFacturaVentaRequest {
         
@@ -7798,34 +7826,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFacturaVenta", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarFacturaVentaRequest {
-        
-        public listarFacturaVentaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarFacturaVentaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarFacturaVentaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.facturaVenta[] @return;
-        
-        public listarFacturaVentaResponse() {
-        }
-        
-        public listarFacturaVentaResponse(InterfacesTrabajoGrupal.ServicioWS.facturaVenta[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface Factura_VentaWSChannel : InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS, System.ServiceModel.IClientChannel {
     }
@@ -7854,26 +7854,24 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.insertarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request) {
-            return base.Channel.insertarFacturaVenta(request);
+        InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.listarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request) {
+            return base.Channel.listarFacturaVenta(request);
         }
         
-        public int insertarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest();
-            inValue.facturaVenta = facturaVenta;
-            InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).insertarFacturaVenta(inValue);
+        public InterfacesTrabajoGrupal.ServicioWS.facturaVenta[] listarFacturaVenta() {
+            InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).listarFacturaVenta(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse> InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.insertarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request) {
-            return base.Channel.insertarFacturaVentaAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse> InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.listarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request) {
+            return base.Channel.listarFacturaVentaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse> insertarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest();
-            inValue.facturaVenta = facturaVenta;
-            return ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).insertarFacturaVentaAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse> listarFacturaVentaAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).listarFacturaVentaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -7900,6 +7898,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.insertarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request) {
+            return base.Channel.insertarFacturaVenta(request);
+        }
+        
+        public int insertarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest();
+            inValue.facturaVenta = facturaVenta;
+            InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).insertarFacturaVenta(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse> InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.insertarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest request) {
+            return base.Channel.insertarFacturaVentaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaResponse> insertarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.facturaVenta facturaVenta) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarFacturaVentaRequest();
+            inValue.facturaVenta = facturaVenta;
+            return ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).insertarFacturaVentaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.eliminarFacturaVentaResponse InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.eliminarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.eliminarFacturaVentaRequest request) {
             return base.Channel.eliminarFacturaVenta(request);
         }
@@ -7921,42 +7942,11 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idFacturaVenta = idFacturaVenta;
             return ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).eliminarFacturaVentaAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.listarFacturaVenta(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request) {
-            return base.Channel.listarFacturaVenta(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.facturaVenta[] listarFacturaVenta() {
-            InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).listarFacturaVenta(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse> InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS.listarFacturaVentaAsync(InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest request) {
-            return base.Channel.listarFacturaVentaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaResponse> listarFacturaVentaAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarFacturaVentaRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.Factura_VentaWS)(this)).listarFacturaVentaAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.MovimientoLoteWS")]
     public interface MovimientoLoteWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteRequest", ReplyAction="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse insertarMovimientoLote(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteRequest", ReplyAction="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse> insertarMovimientoLoteAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteRequest", ReplyAction="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteResponse")]
@@ -7987,42 +7977,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MovimientoLoteWS/modificarMovimientoLoteRequest", ReplyAction="ZAP2WS/MovimientoLoteWS/modificarMovimientoLoteResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarMovimientoLoteResponse> modificarMovimientoLoteAsync(InterfacesTrabajoGrupal.ServicioWS.modificarMovimientoLoteRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMovimientoLote", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarMovimientoLoteRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteRequest", ReplyAction="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse insertarMovimientoLote(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request);
         
-        public insertarMovimientoLoteRequest() {
-        }
-        
-        public insertarMovimientoLoteRequest(InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote) {
-            this.movimientoLote = movimientoLote;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMovimientoLoteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarMovimientoLoteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarMovimientoLoteResponse() {
-        }
-        
-        public insertarMovimientoLoteResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteRequest", ReplyAction="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse> insertarMovimientoLoteAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8125,6 +8089,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMovimientoLote", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarMovimientoLoteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote;
+        
+        public insertarMovimientoLoteRequest() {
+        }
+        
+        public insertarMovimientoLoteRequest(InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote) {
+            this.movimientoLote = movimientoLote;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarMovimientoLoteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarMovimientoLoteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarMovimientoLoteResponse() {
+        }
+        
+        public insertarMovimientoLoteResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MovimientoLoteWSChannel : InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS, System.ServiceModel.IClientChannel {
     }
@@ -8150,29 +8150,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public MovimientoLoteWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS.insertarMovimientoLote(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request) {
-            return base.Channel.insertarMovimientoLote(request);
-        }
-        
-        public int insertarMovimientoLote(InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest();
-            inValue.movimientoLote = movimientoLote;
-            InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS)(this)).insertarMovimientoLote(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse> InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS.insertarMovimientoLoteAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request) {
-            return base.Channel.insertarMovimientoLoteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse> insertarMovimientoLoteAsync(InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest();
-            inValue.movimientoLote = movimientoLote;
-            return ((InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS)(this)).insertarMovimientoLoteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8241,41 +8218,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.movimientoLote = movimientoLote;
             return ((InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS)(this)).modificarMovimientoLoteAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS.insertarMovimientoLote(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request) {
+            return base.Channel.insertarMovimientoLote(request);
+        }
+        
+        public int insertarMovimientoLote(InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest();
+            inValue.movimientoLote = movimientoLote;
+            InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS)(this)).insertarMovimientoLote(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse> InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS.insertarMovimientoLoteAsync(InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest request) {
+            return base.Channel.insertarMovimientoLoteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteResponse> insertarMovimientoLoteAsync(InterfacesTrabajoGrupal.ServicioWS.movimientoLote movimientoLote) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarMovimientoLoteRequest();
+            inValue.movimientoLote = movimientoLote;
+            return ((InterfacesTrabajoGrupal.ServicioWS.MovimientoLoteWS)(this)).insertarMovimientoLoteAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.AreaWS")]
     public interface AreaWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/listarAreaRequest", ReplyAction="ZAP2WS/AreaWS/listarAreaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse listarArea(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/listarAreaRequest", ReplyAction="ZAP2WS/AreaWS/listarAreaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse> listarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/buscarAreaRequest", ReplyAction="ZAP2WS/AreaWS/buscarAreaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse buscarArea(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/buscarAreaRequest", ReplyAction="ZAP2WS/AreaWS/buscarAreaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse> buscarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/insertarAreaRequest", ReplyAction="ZAP2WS/AreaWS/insertarAreaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse insertarArea(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/insertarAreaRequest", ReplyAction="ZAP2WS/AreaWS/insertarAreaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse> insertarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/modificarAreaRequest", ReplyAction="ZAP2WS/AreaWS/modificarAreaResponse")]
@@ -8296,106 +8266,36 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/eliminarAreaRequest", ReplyAction="ZAP2WS/AreaWS/eliminarAreaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarAreaResponse> eliminarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarAreaRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarAreaRequest {
         
-        public listarAreaRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarAreaResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/buscarAreaRequest", ReplyAction="ZAP2WS/AreaWS/buscarAreaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse buscarArea(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.area[] @return;
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/buscarAreaRequest", ReplyAction="ZAP2WS/AreaWS/buscarAreaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse> buscarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request);
         
-        public listarAreaResponse() {
-        }
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/listarAreaRequest", ReplyAction="ZAP2WS/AreaWS/listarAreaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse listarArea(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request);
         
-        public listarAreaResponse(InterfacesTrabajoGrupal.ServicioWS.area[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarAreaRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/listarAreaRequest", ReplyAction="ZAP2WS/AreaWS/listarAreaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse> listarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idArea;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/insertarAreaRequest", ReplyAction="ZAP2WS/AreaWS/insertarAreaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse insertarArea(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request);
         
-        public buscarAreaRequest() {
-        }
-        
-        public buscarAreaRequest(int idArea) {
-            this.idArea = idArea;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarAreaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.area @return;
-        
-        public buscarAreaResponse() {
-        }
-        
-        public buscarAreaResponse(InterfacesTrabajoGrupal.ServicioWS.area @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarAreaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.area area;
-        
-        public insertarAreaRequest() {
-        }
-        
-        public insertarAreaRequest(InterfacesTrabajoGrupal.ServicioWS.area area) {
-            this.area = area;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarAreaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarAreaResponse() {
-        }
-        
-        public insertarAreaResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/AreaWS/insertarAreaRequest", ReplyAction="ZAP2WS/AreaWS/insertarAreaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse> insertarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8470,6 +8370,106 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarAreaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idArea;
+        
+        public buscarAreaRequest() {
+        }
+        
+        public buscarAreaRequest(int idArea) {
+            this.idArea = idArea;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarAreaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.area @return;
+        
+        public buscarAreaResponse() {
+        }
+        
+        public buscarAreaResponse(InterfacesTrabajoGrupal.ServicioWS.area @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarAreaRequest {
+        
+        public listarAreaRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarAreaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.area[] @return;
+        
+        public listarAreaResponse() {
+        }
+        
+        public listarAreaResponse(InterfacesTrabajoGrupal.ServicioWS.area[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarArea", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarAreaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.area area;
+        
+        public insertarAreaRequest() {
+        }
+        
+        public insertarAreaRequest(InterfacesTrabajoGrupal.ServicioWS.area area) {
+            this.area = area;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarAreaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarAreaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarAreaResponse() {
+        }
+        
+        public insertarAreaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface AreaWSChannel : InterfacesTrabajoGrupal.ServicioWS.AreaWS, System.ServiceModel.IClientChannel {
     }
@@ -8495,73 +8495,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public AreaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse InterfacesTrabajoGrupal.ServicioWS.AreaWS.listarArea(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request) {
-            return base.Channel.listarArea(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.area[] listarArea() {
-            InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).listarArea(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse> InterfacesTrabajoGrupal.ServicioWS.AreaWS.listarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request) {
-            return base.Channel.listarAreaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse> listarAreaAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).listarAreaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse InterfacesTrabajoGrupal.ServicioWS.AreaWS.buscarArea(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request) {
-            return base.Channel.buscarArea(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.area buscarArea(int idArea) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest();
-            inValue.idArea = idArea;
-            InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).buscarArea(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse> InterfacesTrabajoGrupal.ServicioWS.AreaWS.buscarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request) {
-            return base.Channel.buscarAreaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse> buscarAreaAsync(int idArea) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest();
-            inValue.idArea = idArea;
-            return ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).buscarAreaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse InterfacesTrabajoGrupal.ServicioWS.AreaWS.insertarArea(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request) {
-            return base.Channel.insertarArea(request);
-        }
-        
-        public int insertarArea(InterfacesTrabajoGrupal.ServicioWS.area area) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest();
-            inValue.area = area;
-            InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).insertarArea(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse> InterfacesTrabajoGrupal.ServicioWS.AreaWS.insertarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request) {
-            return base.Channel.insertarAreaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse> insertarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.area area) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest();
-            inValue.area = area;
-            return ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).insertarAreaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8609,11 +8542,88 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idArea = idArea;
             return ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).eliminarAreaAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse InterfacesTrabajoGrupal.ServicioWS.AreaWS.buscarArea(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request) {
+            return base.Channel.buscarArea(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.area buscarArea(int idArea) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest();
+            inValue.idArea = idArea;
+            InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).buscarArea(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse> InterfacesTrabajoGrupal.ServicioWS.AreaWS.buscarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest request) {
+            return base.Channel.buscarAreaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarAreaResponse> buscarAreaAsync(int idArea) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarAreaRequest();
+            inValue.idArea = idArea;
+            return ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).buscarAreaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse InterfacesTrabajoGrupal.ServicioWS.AreaWS.listarArea(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request) {
+            return base.Channel.listarArea(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.area[] listarArea() {
+            InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).listarArea(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse> InterfacesTrabajoGrupal.ServicioWS.AreaWS.listarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest request) {
+            return base.Channel.listarAreaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarAreaResponse> listarAreaAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarAreaRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).listarAreaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse InterfacesTrabajoGrupal.ServicioWS.AreaWS.insertarArea(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request) {
+            return base.Channel.insertarArea(request);
+        }
+        
+        public int insertarArea(InterfacesTrabajoGrupal.ServicioWS.area area) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest();
+            inValue.area = area;
+            InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).insertarArea(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse> InterfacesTrabajoGrupal.ServicioWS.AreaWS.insertarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest request) {
+            return base.Channel.insertarAreaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarAreaResponse> insertarAreaAsync(InterfacesTrabajoGrupal.ServicioWS.area area) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarAreaRequest();
+            inValue.area = area;
+            return ((InterfacesTrabajoGrupal.ServicioWS.AreaWS)(this)).insertarAreaAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.ElectrodomesticosWS")]
     public interface ElectrodomesticosWS {
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse insertarElectrodomestico(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse> insertarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoResponse")]
@@ -8636,26 +8646,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarElectrodomesticoResponse> eliminarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarElectrodomesticoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse listarElectrodomesticos(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse> listarElectrodomesticosAsync(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse insertarElectrodomestico(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse> insertarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -8664,6 +8654,52 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarElectrodomesticoResponse> buscarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarElectrodomesticoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse listarElectrodomesticos(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest", ReplyAction="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse> listarElectrodomesticosAsync(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarElectrodomestico", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarElectrodomesticoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico;
+        
+        public insertarElectrodomesticoRequest() {
+        }
+        
+        public insertarElectrodomesticoRequest(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico) {
+            this.electrodomestico = electrodomestico;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarElectrodomesticoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarElectrodomesticoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarElectrodomesticoResponse() {
+        }
+        
+        public insertarElectrodomesticoResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -8741,70 +8777,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarElectrodomesticos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarElectrodomesticosRequest {
-        
-        public listarElectrodomesticosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarElectrodomesticosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarElectrodomesticosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.electrodomesticos[] @return;
-        
-        public listarElectrodomesticosResponse() {
-        }
-        
-        public listarElectrodomesticosResponse(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarElectrodomestico", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarElectrodomesticoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico;
-        
-        public insertarElectrodomesticoRequest() {
-        }
-        
-        public insertarElectrodomesticoRequest(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico) {
-            this.electrodomestico = electrodomestico;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarElectrodomesticoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarElectrodomesticoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarElectrodomesticoResponse() {
-        }
-        
-        public insertarElectrodomesticoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="buscarElectrodomestico", WrapperNamespace="ZAP2WS", IsWrapped=true)]
     public partial class buscarElectrodomesticoRequest {
         
@@ -8838,6 +8810,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarElectrodomesticos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarElectrodomesticosRequest {
+        
+        public listarElectrodomesticosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarElectrodomesticosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarElectrodomesticosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.electrodomesticos[] @return;
+        
+        public listarElectrodomesticosResponse() {
+        }
+        
+        public listarElectrodomesticosResponse(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ElectrodomesticosWSChannel : InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS, System.ServiceModel.IClientChannel {
     }
@@ -8863,6 +8863,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public ElectrodomesticosWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.insertarElectrodomestico(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request) {
+            return base.Channel.insertarElectrodomestico(request);
+        }
+        
+        public int insertarElectrodomestico(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest();
+            inValue.electrodomestico = electrodomestico;
+            InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).insertarElectrodomestico(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse> InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.insertarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request) {
+            return base.Channel.insertarElectrodomesticoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse> insertarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest();
+            inValue.electrodomestico = electrodomestico;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).insertarElectrodomesticoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -8912,50 +8935,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.listarElectrodomesticos(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request) {
-            return base.Channel.listarElectrodomesticos(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.electrodomesticos[] listarElectrodomesticos() {
-            InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).listarElectrodomesticos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse> InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.listarElectrodomesticosAsync(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request) {
-            return base.Channel.listarElectrodomesticosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse> listarElectrodomesticosAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).listarElectrodomesticosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.insertarElectrodomestico(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request) {
-            return base.Channel.insertarElectrodomestico(request);
-        }
-        
-        public int insertarElectrodomestico(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest();
-            inValue.electrodomestico = electrodomestico;
-            InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).insertarElectrodomestico(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse> InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.insertarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest request) {
-            return base.Channel.insertarElectrodomesticoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoResponse> insertarElectrodomesticoAsync(InterfacesTrabajoGrupal.ServicioWS.electrodomesticos electrodomestico) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarElectrodomesticoRequest();
-            inValue.electrodomestico = electrodomestico;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).insertarElectrodomesticoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.buscarElectrodomesticoResponse InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.buscarElectrodomestico(InterfacesTrabajoGrupal.ServicioWS.buscarElectrodomesticoRequest request) {
             return base.Channel.buscarElectrodomestico(request);
         }
@@ -8977,31 +8956,32 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idElectrodomestico = idElectrodomestico;
             return ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).buscarElectrodomesticoAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.listarElectrodomesticos(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request) {
+            return base.Channel.listarElectrodomesticos(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.electrodomesticos[] listarElectrodomesticos() {
+            InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).listarElectrodomesticos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse> InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS.listarElectrodomesticosAsync(InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest request) {
+            return base.Channel.listarElectrodomesticosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosResponse> listarElectrodomesticosAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.ElectrodomesticosWS)(this)).listarElectrodomesticosAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.ClienteWS")]
     public interface ClienteWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/eliminarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/eliminarClienteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse eliminarCliente(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/eliminarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/eliminarClienteResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse> eliminarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/buscarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/buscarClienteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse buscarCliente(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/buscarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/buscarClienteResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse> buscarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/insertarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/insertarClienteResponse")]
@@ -9014,16 +8994,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarClienteResponse> insertarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.insertarClienteRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/modificarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/modificarClienteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarClienteResponse modificarCliente(InterfacesTrabajoGrupal.ServicioWS.modificarClienteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/modificarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/modificarClienteResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarClienteResponse> modificarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.modificarClienteRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/listarClientesRequest", ReplyAction="ZAP2WS/ClienteWS/listarClientesResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -9034,6 +9004,36 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse> listarClientesAsync(InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/modificarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/modificarClienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarClienteResponse modificarCliente(InterfacesTrabajoGrupal.ServicioWS.modificarClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/modificarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/modificarClienteResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarClienteResponse> modificarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.modificarClienteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/buscarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/buscarClienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse buscarCliente(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/buscarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/buscarClienteResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse> buscarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/eliminarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/eliminarClienteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse eliminarCliente(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/eliminarClienteRequest", ReplyAction="ZAP2WS/ClienteWS/eliminarClienteResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse> eliminarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/listarClientesPorNombreRequest", ReplyAction="ZAP2WS/ClienteWS/listarClientesPorNombreResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -9042,78 +9042,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ClienteWS/listarClientesPorNombreRequest", ReplyAction="ZAP2WS/ClienteWS/listarClientesPorNombreResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarClientesPorNombreResponse> listarClientesPorNombreAsync(InterfacesTrabajoGrupal.ServicioWS.listarClientesPorNombreRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCliente", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarClienteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idCliente;
-        
-        public eliminarClienteRequest() {
-        }
-        
-        public eliminarClienteRequest(int idCliente) {
-            this.idCliente = idCliente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarClienteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarClienteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarClienteResponse() {
-        }
-        
-        public eliminarClienteResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarCliente", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarClienteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idCliente;
-        
-        public buscarClienteRequest() {
-        }
-        
-        public buscarClienteRequest(int idCliente) {
-            this.idCliente = idCliente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarClienteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarClienteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.cliente @return;
-        
-        public buscarClienteResponse() {
-        }
-        
-        public buscarClienteResponse(InterfacesTrabajoGrupal.ServicioWS.cliente @return) {
-            this.@return = @return;
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -9148,6 +9076,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         public insertarClienteResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClientes", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarClientesRequest {
+        
+        public listarClientesRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClientesResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarClientesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.cliente[] @return;
+        
+        public listarClientesResponse() {
+        }
+        
+        public listarClientesResponse(InterfacesTrabajoGrupal.ServicioWS.cliente[] @return) {
             this.@return = @return;
         }
     }
@@ -9191,27 +9147,71 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClientes", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarClientesRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarCliente", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarClienteRequest {
         
-        public listarClientesRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idCliente;
+        
+        public buscarClienteRequest() {
+        }
+        
+        public buscarClienteRequest(int idCliente) {
+            this.idCliente = idCliente;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarClientesResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarClientesResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarClienteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarClienteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.cliente[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.cliente @return;
         
-        public listarClientesResponse() {
+        public buscarClienteResponse() {
         }
         
-        public listarClientesResponse(InterfacesTrabajoGrupal.ServicioWS.cliente[] @return) {
+        public buscarClienteResponse(InterfacesTrabajoGrupal.ServicioWS.cliente @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCliente", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarClienteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idCliente;
+        
+        public eliminarClienteRequest() {
+        }
+        
+        public eliminarClienteRequest(int idCliente) {
+            this.idCliente = idCliente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarClienteResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarClienteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarClienteResponse() {
+        }
+        
+        public eliminarClienteResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -9280,52 +9280,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse InterfacesTrabajoGrupal.ServicioWS.ClienteWS.eliminarCliente(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request) {
-            return base.Channel.eliminarCliente(request);
-        }
-        
-        public int eliminarCliente(int idCliente) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest();
-            inValue.idCliente = idCliente;
-            InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).eliminarCliente(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse> InterfacesTrabajoGrupal.ServicioWS.ClienteWS.eliminarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request) {
-            return base.Channel.eliminarClienteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse> eliminarClienteAsync(int idCliente) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest();
-            inValue.idCliente = idCliente;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).eliminarClienteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse InterfacesTrabajoGrupal.ServicioWS.ClienteWS.buscarCliente(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request) {
-            return base.Channel.buscarCliente(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.cliente buscarCliente(int idCliente) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest();
-            inValue.idCliente = idCliente;
-            InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).buscarCliente(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse> InterfacesTrabajoGrupal.ServicioWS.ClienteWS.buscarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request) {
-            return base.Channel.buscarClienteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse> buscarClienteAsync(int idCliente) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest();
-            inValue.idCliente = idCliente;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).buscarClienteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.insertarClienteResponse InterfacesTrabajoGrupal.ServicioWS.ClienteWS.insertarCliente(InterfacesTrabajoGrupal.ServicioWS.insertarClienteRequest request) {
             return base.Channel.insertarCliente(request);
         }
@@ -9346,6 +9300,27 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.insertarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarClienteRequest();
             inValue.cliente = cliente;
             return ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).insertarClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse InterfacesTrabajoGrupal.ServicioWS.ClienteWS.listarClientes(InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest request) {
+            return base.Channel.listarClientes(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.cliente[] listarClientes() {
+            InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).listarClientes(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse> InterfacesTrabajoGrupal.ServicioWS.ClienteWS.listarClientesAsync(InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest request) {
+            return base.Channel.listarClientesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse> listarClientesAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).listarClientesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -9372,24 +9347,49 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse InterfacesTrabajoGrupal.ServicioWS.ClienteWS.listarClientes(InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest request) {
-            return base.Channel.listarClientes(request);
+        InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse InterfacesTrabajoGrupal.ServicioWS.ClienteWS.buscarCliente(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request) {
+            return base.Channel.buscarCliente(request);
         }
         
-        public InterfacesTrabajoGrupal.ServicioWS.cliente[] listarClientes() {
-            InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).listarClientes(inValue);
+        public InterfacesTrabajoGrupal.ServicioWS.cliente buscarCliente(int idCliente) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest();
+            inValue.idCliente = idCliente;
+            InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).buscarCliente(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse> InterfacesTrabajoGrupal.ServicioWS.ClienteWS.listarClientesAsync(InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest request) {
-            return base.Channel.listarClientesAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse> InterfacesTrabajoGrupal.ServicioWS.ClienteWS.buscarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest request) {
+            return base.Channel.buscarClienteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarClientesResponse> listarClientesAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarClientesRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).listarClientesAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarClienteResponse> buscarClienteAsync(int idCliente) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarClienteRequest();
+            inValue.idCliente = idCliente;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).buscarClienteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse InterfacesTrabajoGrupal.ServicioWS.ClienteWS.eliminarCliente(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request) {
+            return base.Channel.eliminarCliente(request);
+        }
+        
+        public int eliminarCliente(int idCliente) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest();
+            inValue.idCliente = idCliente;
+            InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).eliminarCliente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse> InterfacesTrabajoGrupal.ServicioWS.ClienteWS.eliminarClienteAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest request) {
+            return base.Channel.eliminarClienteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarClienteResponse> eliminarClienteAsync(int idCliente) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarClienteRequest();
+            inValue.idCliente = idCliente;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ClienteWS)(this)).eliminarClienteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -9421,24 +9421,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     public interface SucursalWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/eliminarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/eliminarSucursalResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/insertarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/insertarSucursalResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse eliminarSucursal(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse insertarSucursal(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/eliminarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/eliminarSucursalResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse> eliminarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/buscarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/buscarSucursalResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse buscarSucursal(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/buscarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/buscarSucursalResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse> buscarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/insertarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/insertarSucursalResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse> insertarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/modificarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/modificarSucursalResponse")]
@@ -9461,84 +9451,58 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarSucursalResponse> listarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.listarSucursalRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/insertarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/insertarSucursalResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/buscarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/buscarSucursalResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse insertarSucursal(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse buscarSucursal(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/insertarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/insertarSucursalResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse> insertarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/buscarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/buscarSucursalResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse> buscarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/eliminarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/eliminarSucursalResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse eliminarSucursal(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/SucursalWS/eliminarSucursalRequest", ReplyAction="ZAP2WS/SucursalWS/eliminarSucursalResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse> eliminarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSucursal", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarSucursalRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarSucursal", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarSucursalRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idSucursal;
+        public InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal;
         
-        public eliminarSucursalRequest() {
+        public insertarSucursalRequest() {
         }
         
-        public eliminarSucursalRequest(int idSucursal) {
-            this.idSucursal = idSucursal;
+        public insertarSucursalRequest(InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal) {
+            this.sucursal = sucursal;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSucursalResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarSucursalResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarSucursalResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarSucursalResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarSucursalResponse() {
+        public insertarSucursalResponse() {
         }
         
-        public eliminarSucursalResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSucursal", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarSucursalRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idSucursal;
-        
-        public buscarSucursalRequest() {
-        }
-        
-        public buscarSucursalRequest(int idSucursal) {
-            this.idSucursal = idSucursal;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSucursalResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarSucursalResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.sucursal @return;
-        
-        public buscarSucursalResponse() {
-        }
-        
-        public buscarSucursalResponse(InterfacesTrabajoGrupal.ServicioWS.sucursal @return) {
+        public insertarSucursalResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -9610,35 +9574,71 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarSucursal", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarSucursalRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSucursal", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarSucursalRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal;
+        public int idSucursal;
         
-        public insertarSucursalRequest() {
+        public buscarSucursalRequest() {
         }
         
-        public insertarSucursalRequest(InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal) {
-            this.sucursal = sucursal;
+        public buscarSucursalRequest(int idSucursal) {
+            this.idSucursal = idSucursal;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarSucursalResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarSucursalResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarSucursalResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarSucursalResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.sucursal @return;
+        
+        public buscarSucursalResponse() {
+        }
+        
+        public buscarSucursalResponse(InterfacesTrabajoGrupal.ServicioWS.sucursal @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSucursal", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarSucursalRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idSucursal;
+        
+        public eliminarSucursalRequest() {
+        }
+        
+        public eliminarSucursalRequest(int idSucursal) {
+            this.idSucursal = idSucursal;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarSucursalResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarSucursalResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarSucursalResponse() {
+        public eliminarSucursalResponse() {
         }
         
-        public insertarSucursalResponse(int @return) {
+        public eliminarSucursalResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -9671,49 +9671,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse InterfacesTrabajoGrupal.ServicioWS.SucursalWS.eliminarSucursal(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request) {
-            return base.Channel.eliminarSucursal(request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse InterfacesTrabajoGrupal.ServicioWS.SucursalWS.insertarSucursal(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request) {
+            return base.Channel.insertarSucursal(request);
         }
         
-        public int eliminarSucursal(int idSucursal) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest();
-            inValue.idSucursal = idSucursal;
-            InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).eliminarSucursal(inValue);
+        public int insertarSucursal(InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest();
+            inValue.sucursal = sucursal;
+            InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).insertarSucursal(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse> InterfacesTrabajoGrupal.ServicioWS.SucursalWS.eliminarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request) {
-            return base.Channel.eliminarSucursalAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse> InterfacesTrabajoGrupal.ServicioWS.SucursalWS.insertarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request) {
+            return base.Channel.insertarSucursalAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse> eliminarSucursalAsync(int idSucursal) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest();
-            inValue.idSucursal = idSucursal;
-            return ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).eliminarSucursalAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse InterfacesTrabajoGrupal.ServicioWS.SucursalWS.buscarSucursal(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request) {
-            return base.Channel.buscarSucursal(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.sucursal buscarSucursal(int idSucursal) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest();
-            inValue.idSucursal = idSucursal;
-            InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).buscarSucursal(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse> InterfacesTrabajoGrupal.ServicioWS.SucursalWS.buscarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request) {
-            return base.Channel.buscarSucursalAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse> buscarSucursalAsync(int idSucursal) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest();
-            inValue.idSucursal = idSucursal;
-            return ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).buscarSucursalAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse> insertarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest();
+            inValue.sucursal = sucursal;
+            return ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).insertarSucursalAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -9761,52 +9738,55 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse InterfacesTrabajoGrupal.ServicioWS.SucursalWS.insertarSucursal(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request) {
-            return base.Channel.insertarSucursal(request);
+        InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse InterfacesTrabajoGrupal.ServicioWS.SucursalWS.buscarSucursal(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request) {
+            return base.Channel.buscarSucursal(request);
         }
         
-        public int insertarSucursal(InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest();
-            inValue.sucursal = sucursal;
-            InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).insertarSucursal(inValue);
+        public InterfacesTrabajoGrupal.ServicioWS.sucursal buscarSucursal(int idSucursal) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest();
+            inValue.idSucursal = idSucursal;
+            InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).buscarSucursal(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse> InterfacesTrabajoGrupal.ServicioWS.SucursalWS.insertarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest request) {
-            return base.Channel.insertarSucursalAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse> InterfacesTrabajoGrupal.ServicioWS.SucursalWS.buscarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest request) {
+            return base.Channel.buscarSucursalAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarSucursalResponse> insertarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.sucursal sucursal) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarSucursalRequest();
-            inValue.sucursal = sucursal;
-            return ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).insertarSucursalAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarSucursalResponse> buscarSucursalAsync(int idSucursal) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarSucursalRequest();
+            inValue.idSucursal = idSucursal;
+            return ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).buscarSucursalAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse InterfacesTrabajoGrupal.ServicioWS.SucursalWS.eliminarSucursal(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request) {
+            return base.Channel.eliminarSucursal(request);
+        }
+        
+        public int eliminarSucursal(int idSucursal) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest();
+            inValue.idSucursal = idSucursal;
+            InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).eliminarSucursal(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse> InterfacesTrabajoGrupal.ServicioWS.SucursalWS.eliminarSucursalAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest request) {
+            return base.Channel.eliminarSucursalAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalResponse> eliminarSucursalAsync(int idSucursal) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarSucursalRequest();
+            inValue.idSucursal = idSucursal;
+            return ((InterfacesTrabajoGrupal.ServicioWS.SucursalWS)(this)).eliminarSucursalAsync(inValue);
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.PedidoWS")]
     public interface PedidoWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/buscarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/buscarPedidoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse buscarPedido(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/buscarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/buscarPedidoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse> buscarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/eliminarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/eliminarPedidoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoResponse eliminarPedido(InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/eliminarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/eliminarPedidoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoResponse> eliminarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/insertarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/insertarPedidoResponse")]
@@ -9819,16 +9799,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse> insertarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/modificarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/modificarPedidoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarPedidoResponse modificarPedido(InterfacesTrabajoGrupal.ServicioWS.modificarPedidoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/modificarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/modificarPedidoResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPedidoResponse> modificarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarPedidoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/listarPedidosRequest", ReplyAction="ZAP2WS/PedidoWS/listarPedidosResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -9837,40 +9807,98 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/listarPedidosRequest", ReplyAction="ZAP2WS/PedidoWS/listarPedidosResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse> listarPedidosAsync(InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/eliminarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/eliminarPedidoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoResponse eliminarPedido(InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/eliminarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/eliminarPedidoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoResponse> eliminarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarPedidoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/buscarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/buscarPedidoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse buscarPedido(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/buscarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/buscarPedidoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse> buscarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/modificarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/modificarPedidoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarPedidoResponse modificarPedido(InterfacesTrabajoGrupal.ServicioWS.modificarPedidoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/PedidoWS/modificarPedidoRequest", ReplyAction="ZAP2WS/PedidoWS/modificarPedidoResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarPedidoResponse> modificarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.modificarPedidoRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPedido", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarPedidoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPedido", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarPedidoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idPedido;
+        public InterfacesTrabajoGrupal.ServicioWS.pedido pedido;
         
-        public buscarPedidoRequest() {
+        public insertarPedidoRequest() {
         }
         
-        public buscarPedidoRequest(int idPedido) {
-            this.idPedido = idPedido;
+        public insertarPedidoRequest(InterfacesTrabajoGrupal.ServicioWS.pedido pedido) {
+            this.pedido = pedido;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPedidoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class buscarPedidoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPedidoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarPedidoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.pedido @return;
+        public int @return;
         
-        public buscarPedidoResponse() {
+        public insertarPedidoResponse() {
         }
         
-        public buscarPedidoResponse(InterfacesTrabajoGrupal.ServicioWS.pedido @return) {
+        public insertarPedidoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarPedidosRequest {
+        
+        public listarPedidosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarPedidosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.pedido[] @return;
+        
+        public listarPedidosResponse() {
+        }
+        
+        public listarPedidosResponse(InterfacesTrabajoGrupal.ServicioWS.pedido[] @return) {
             this.@return = @return;
         }
     }
@@ -9914,35 +9942,35 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPedido", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarPedidoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPedido", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarPedidoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.pedido pedido;
+        public int idPedido;
         
-        public insertarPedidoRequest() {
+        public buscarPedidoRequest() {
         }
         
-        public insertarPedidoRequest(InterfacesTrabajoGrupal.ServicioWS.pedido pedido) {
-            this.pedido = pedido;
+        public buscarPedidoRequest(int idPedido) {
+            this.idPedido = idPedido;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPedidoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarPedidoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPedidoResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class buscarPedidoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        public InterfacesTrabajoGrupal.ServicioWS.pedido @return;
         
-        public insertarPedidoResponse() {
+        public buscarPedidoResponse() {
         }
         
-        public insertarPedidoResponse(int @return) {
+        public buscarPedidoResponse(InterfacesTrabajoGrupal.ServicioWS.pedido @return) {
             this.@return = @return;
         }
     }
@@ -9983,34 +10011,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidos", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarPedidosRequest {
-        
-        public listarPedidosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPedidosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarPedidosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.pedido[] @return;
-        
-        public listarPedidosResponse() {
-        }
-        
-        public listarPedidosResponse(InterfacesTrabajoGrupal.ServicioWS.pedido[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PedidoWSChannel : InterfacesTrabajoGrupal.ServicioWS.PedidoWS, System.ServiceModel.IClientChannel {
     }
@@ -10039,26 +10039,47 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse InterfacesTrabajoGrupal.ServicioWS.PedidoWS.buscarPedido(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request) {
-            return base.Channel.buscarPedido(request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse InterfacesTrabajoGrupal.ServicioWS.PedidoWS.insertarPedido(InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest request) {
+            return base.Channel.insertarPedido(request);
         }
         
-        public InterfacesTrabajoGrupal.ServicioWS.pedido buscarPedido(int idPedido) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest();
-            inValue.idPedido = idPedido;
-            InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).buscarPedido(inValue);
+        public int insertarPedido(InterfacesTrabajoGrupal.ServicioWS.pedido pedido) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest();
+            inValue.pedido = pedido;
+            InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).insertarPedido(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse> InterfacesTrabajoGrupal.ServicioWS.PedidoWS.buscarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request) {
-            return base.Channel.buscarPedidoAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse> InterfacesTrabajoGrupal.ServicioWS.PedidoWS.insertarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest request) {
+            return base.Channel.insertarPedidoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse> buscarPedidoAsync(int idPedido) {
-            InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest();
-            inValue.idPedido = idPedido;
-            return ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).buscarPedidoAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse> insertarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.pedido pedido) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest();
+            inValue.pedido = pedido;
+            return ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).insertarPedidoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse InterfacesTrabajoGrupal.ServicioWS.PedidoWS.listarPedidos(InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest request) {
+            return base.Channel.listarPedidos(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.pedido[] listarPedidos() {
+            InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).listarPedidos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse> InterfacesTrabajoGrupal.ServicioWS.PedidoWS.listarPedidosAsync(InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest request) {
+            return base.Channel.listarPedidosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse> listarPedidosAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).listarPedidosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -10085,26 +10106,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse InterfacesTrabajoGrupal.ServicioWS.PedidoWS.insertarPedido(InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest request) {
-            return base.Channel.insertarPedido(request);
+        InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse InterfacesTrabajoGrupal.ServicioWS.PedidoWS.buscarPedido(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request) {
+            return base.Channel.buscarPedido(request);
         }
         
-        public int insertarPedido(InterfacesTrabajoGrupal.ServicioWS.pedido pedido) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest();
-            inValue.pedido = pedido;
-            InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).insertarPedido(inValue);
+        public InterfacesTrabajoGrupal.ServicioWS.pedido buscarPedido(int idPedido) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest();
+            inValue.idPedido = idPedido;
+            InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).buscarPedido(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse> InterfacesTrabajoGrupal.ServicioWS.PedidoWS.insertarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest request) {
-            return base.Channel.insertarPedidoAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse> InterfacesTrabajoGrupal.ServicioWS.PedidoWS.buscarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest request) {
+            return base.Channel.buscarPedidoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarPedidoResponse> insertarPedidoAsync(InterfacesTrabajoGrupal.ServicioWS.pedido pedido) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarPedidoRequest();
-            inValue.pedido = pedido;
-            return ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).insertarPedidoAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarPedidoResponse> buscarPedidoAsync(int idPedido) {
+            InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.buscarPedidoRequest();
+            inValue.idPedido = idPedido;
+            return ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).buscarPedidoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -10129,32 +10150,21 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.pedido = pedido;
             return ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).modificarPedidoAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse InterfacesTrabajoGrupal.ServicioWS.PedidoWS.listarPedidos(InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest request) {
-            return base.Channel.listarPedidos(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.pedido[] listarPedidos() {
-            InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).listarPedidos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse> InterfacesTrabajoGrupal.ServicioWS.PedidoWS.listarPedidosAsync(InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest request) {
-            return base.Channel.listarPedidosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarPedidosResponse> listarPedidosAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarPedidosRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.PedidoWS)(this)).listarPedidosAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.CajeroWS")]
     public interface CajeroWS {
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CajeroWS/insertarCajeroRequest", ReplyAction="ZAP2WS/CajeroWS/insertarCajeroResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse insertarCajero(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CajeroWS/insertarCajeroRequest", ReplyAction="ZAP2WS/CajeroWS/insertarCajeroResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse> insertarCajeroAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CajeroWS/buscarCajeroRequest", ReplyAction="ZAP2WS/CajeroWS/buscarCajeroResponse")]
@@ -10195,16 +10205,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CajeroWS/listarCajerosRequest", ReplyAction="ZAP2WS/CajeroWS/listarCajerosResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarCajerosResponse> listarCajerosAsync(InterfacesTrabajoGrupal.ServicioWS.listarCajerosRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCajero", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarCajeroRequest {
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CajeroWS/insertarCajeroRequest", ReplyAction="ZAP2WS/CajeroWS/insertarCajeroResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse insertarCajero(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.cajero cajero;
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CajeroWS/insertarCajeroRequest", ReplyAction="ZAP2WS/CajeroWS/insertarCajeroResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse> insertarCajeroAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request);
+        public insertarCajeroRequest() {
+        }
+        
+        public insertarCajeroRequest(InterfacesTrabajoGrupal.ServicioWS.cajero cajero) {
+            this.cajero = cajero;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCajeroResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarCajeroResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarCajeroResponse() {
+        }
+        
+        public insertarCajeroResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10343,42 +10379,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCajero", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarCajeroRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.cajero cajero;
-        
-        public insertarCajeroRequest() {
-        }
-        
-        public insertarCajeroRequest(InterfacesTrabajoGrupal.ServicioWS.cajero cajero) {
-            this.cajero = cajero;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCajeroResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarCajeroResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarCajeroResponse() {
-        }
-        
-        public insertarCajeroResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CajeroWSChannel : InterfacesTrabajoGrupal.ServicioWS.CajeroWS, System.ServiceModel.IClientChannel {
     }
@@ -10404,6 +10404,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public CajeroWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse InterfacesTrabajoGrupal.ServicioWS.CajeroWS.insertarCajero(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request) {
+            return base.Channel.insertarCajero(request);
+        }
+        
+        public int insertarCajero(InterfacesTrabajoGrupal.ServicioWS.cajero cajero) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest();
+            inValue.cajero = cajero;
+            InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CajeroWS)(this)).insertarCajero(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse> InterfacesTrabajoGrupal.ServicioWS.CajeroWS.insertarCajeroAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request) {
+            return base.Channel.insertarCajeroAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse> insertarCajeroAsync(InterfacesTrabajoGrupal.ServicioWS.cajero cajero) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest();
+            inValue.cajero = cajero;
+            return ((InterfacesTrabajoGrupal.ServicioWS.CajeroWS)(this)).insertarCajeroAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -10495,29 +10518,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.listarCajerosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarCajerosRequest();
             return ((InterfacesTrabajoGrupal.ServicioWS.CajeroWS)(this)).listarCajerosAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse InterfacesTrabajoGrupal.ServicioWS.CajeroWS.insertarCajero(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request) {
-            return base.Channel.insertarCajero(request);
-        }
-        
-        public int insertarCajero(InterfacesTrabajoGrupal.ServicioWS.cajero cajero) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest();
-            inValue.cajero = cajero;
-            InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CajeroWS)(this)).insertarCajero(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse> InterfacesTrabajoGrupal.ServicioWS.CajeroWS.insertarCajeroAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest request) {
-            return base.Channel.insertarCajeroAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCajeroResponse> insertarCajeroAsync(InterfacesTrabajoGrupal.ServicioWS.cajero cajero) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCajeroRequest();
-            inValue.cajero = cajero;
-            return ((InterfacesTrabajoGrupal.ServicioWS.CajeroWS)(this)).insertarCajeroAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10525,34 +10525,14 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     public interface CuentaUsuarioWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse insertarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse VerificarCuenta(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse> insertarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioResponse modificarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioResponse> modificarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioResponse eliminarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioResponse> eliminarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse> VerificarCuentaAsync(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosResponse")]
@@ -10565,150 +10545,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse> listarCuentaUsuariosAsync(InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse VerificarCuenta(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request);
+        InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioResponse modificarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse> VerificarCuentaAsync(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuentaUsuario", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarCuentaUsuarioRequest {
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioResponse> modificarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.modificarCuentaUsuarioRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse insertarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request);
         
-        public insertarCuentaUsuarioRequest() {
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse> insertarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request);
         
-        public insertarCuentaUsuarioRequest(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
-            this.cuentaUsuario = cuentaUsuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuentaUsuarioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarCuentaUsuarioResponse {
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioResponse eliminarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarCuentaUsuarioResponse() {
-        }
-        
-        public insertarCuentaUsuarioResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCuentaUsuario", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarCuentaUsuarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario;
-        
-        public modificarCuentaUsuarioRequest() {
-        }
-        
-        public modificarCuentaUsuarioRequest(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
-            this.cuentaUsuario = cuentaUsuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCuentaUsuarioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarCuentaUsuarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarCuentaUsuarioResponse() {
-        }
-        
-        public modificarCuentaUsuarioResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCuentaUsuario", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarCuentaUsuarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idCuentaUsuario;
-        
-        public eliminarCuentaUsuarioRequest() {
-        }
-        
-        public eliminarCuentaUsuarioRequest(int idCuentaUsuario) {
-            this.idCuentaUsuario = idCuentaUsuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCuentaUsuarioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarCuentaUsuarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarCuentaUsuarioResponse() {
-        }
-        
-        public eliminarCuentaUsuarioResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuentaUsuarios", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarCuentaUsuariosRequest {
-        
-        public listarCuentaUsuariosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuentaUsuariosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarCuentaUsuariosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario[] @return;
-        
-        public listarCuentaUsuariosResponse() {
-        }
-        
-        public listarCuentaUsuariosResponse(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario[] @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioRequest", ReplyAction="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioResponse> eliminarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10752,6 +10616,142 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuentaUsuarios", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarCuentaUsuariosRequest {
+        
+        public listarCuentaUsuariosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCuentaUsuariosResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarCuentaUsuariosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario[] @return;
+        
+        public listarCuentaUsuariosResponse() {
+        }
+        
+        public listarCuentaUsuariosResponse(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCuentaUsuario", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarCuentaUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario;
+        
+        public modificarCuentaUsuarioRequest() {
+        }
+        
+        public modificarCuentaUsuarioRequest(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
+            this.cuentaUsuario = cuentaUsuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarCuentaUsuarioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarCuentaUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarCuentaUsuarioResponse() {
+        }
+        
+        public modificarCuentaUsuarioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuentaUsuario", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarCuentaUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario;
+        
+        public insertarCuentaUsuarioRequest() {
+        }
+        
+        public insertarCuentaUsuarioRequest(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
+            this.cuentaUsuario = cuentaUsuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCuentaUsuarioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarCuentaUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarCuentaUsuarioResponse() {
+        }
+        
+        public insertarCuentaUsuarioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCuentaUsuario", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarCuentaUsuarioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idCuentaUsuario;
+        
+        public eliminarCuentaUsuarioRequest() {
+        }
+        
+        public eliminarCuentaUsuarioRequest(int idCuentaUsuario) {
+            this.idCuentaUsuario = idCuentaUsuario;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCuentaUsuarioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarCuentaUsuarioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarCuentaUsuarioResponse() {
+        }
+        
+        public eliminarCuentaUsuarioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CuentaUsuarioWSChannel : InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS, System.ServiceModel.IClientChannel {
     }
@@ -10780,26 +10780,49 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.insertarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request) {
-            return base.Channel.insertarCuentaUsuario(request);
+        InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.VerificarCuenta(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request) {
+            return base.Channel.VerificarCuenta(request);
         }
         
-        public int insertarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest();
-            inValue.cuentaUsuario = cuentaUsuario;
-            InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).insertarCuentaUsuario(inValue);
+        public int VerificarCuenta(string Usuario, string Contra) {
+            InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest();
+            inValue.Usuario = Usuario;
+            inValue.Contra = Contra;
+            InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).VerificarCuenta(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse> InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.insertarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request) {
-            return base.Channel.insertarCuentaUsuarioAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse> InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.VerificarCuentaAsync(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request) {
+            return base.Channel.VerificarCuentaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse> insertarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest();
-            inValue.cuentaUsuario = cuentaUsuario;
-            return ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).insertarCuentaUsuarioAsync(inValue);
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse> VerificarCuentaAsync(string Usuario, string Contra) {
+            InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest();
+            inValue.Usuario = Usuario;
+            inValue.Contra = Contra;
+            return ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).VerificarCuentaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.listarCuentaUsuarios(InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest request) {
+            return base.Channel.listarCuentaUsuarios(request);
+        }
+        
+        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario[] listarCuentaUsuarios() {
+            InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest();
+            InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).listarCuentaUsuarios(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse> InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.listarCuentaUsuariosAsync(InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest request) {
+            return base.Channel.listarCuentaUsuariosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse> listarCuentaUsuariosAsync() {
+            InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest();
+            return ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).listarCuentaUsuariosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -10826,6 +10849,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.insertarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request) {
+            return base.Channel.insertarCuentaUsuario(request);
+        }
+        
+        public int insertarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest();
+            inValue.cuentaUsuario = cuentaUsuario;
+            InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).insertarCuentaUsuario(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse> InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.insertarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest request) {
+            return base.Channel.insertarCuentaUsuarioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioResponse> insertarCuentaUsuarioAsync(InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario cuentaUsuario) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarCuentaUsuarioRequest();
+            inValue.cuentaUsuario = cuentaUsuario;
+            return ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).insertarCuentaUsuarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioResponse InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.eliminarCuentaUsuario(InterfacesTrabajoGrupal.ServicioWS.eliminarCuentaUsuarioRequest request) {
             return base.Channel.eliminarCuentaUsuario(request);
         }
@@ -10847,57 +10893,41 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idCuentaUsuario = idCuentaUsuario;
             return ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).eliminarCuentaUsuarioAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.listarCuentaUsuarios(InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest request) {
-            return base.Channel.listarCuentaUsuarios(request);
-        }
-        
-        public InterfacesTrabajoGrupal.ServicioWS.cuentaUsuario[] listarCuentaUsuarios() {
-            InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest();
-            InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).listarCuentaUsuarios(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse> InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.listarCuentaUsuariosAsync(InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest request) {
-            return base.Channel.listarCuentaUsuariosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosResponse> listarCuentaUsuariosAsync() {
-            InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarCuentaUsuariosRequest();
-            return ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).listarCuentaUsuariosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.VerificarCuenta(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request) {
-            return base.Channel.VerificarCuenta(request);
-        }
-        
-        public int VerificarCuenta(string Usuario, string Contra) {
-            InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest();
-            inValue.Usuario = Usuario;
-            inValue.Contra = Contra;
-            InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).VerificarCuenta(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse> InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS.VerificarCuentaAsync(InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest request) {
-            return base.Channel.VerificarCuentaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaResponse> VerificarCuentaAsync(string Usuario, string Contra) {
-            InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.VerificarCuentaRequest();
-            inValue.Usuario = Usuario;
-            inValue.Contra = Contra;
-            return ((InterfacesTrabajoGrupal.ServicioWS.CuentaUsuarioWS)(this)).VerificarCuentaAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.RopaWS")]
     public interface RopaWS {
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/insertarRopaRequest", ReplyAction="ZAP2WS/RopaWS/insertarRopaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse insertarRopa(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/insertarRopaRequest", ReplyAction="ZAP2WS/RopaWS/insertarRopaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse> insertarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/modificarRopaRequest", ReplyAction="ZAP2WS/RopaWS/modificarRopaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse modificarRopa(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/modificarRopaRequest", ReplyAction="ZAP2WS/RopaWS/modificarRopaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse> modificarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/eliminarRopaRequest", ReplyAction="ZAP2WS/RopaWS/eliminarRopaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse eliminarRopa(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/eliminarRopaRequest", ReplyAction="ZAP2WS/RopaWS/eliminarRopaResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse> eliminarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/buscarRopaRequest", ReplyAction="ZAP2WS/RopaWS/buscarRopaResponse")]
@@ -10918,36 +10948,114 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/listarRopaRequest", ReplyAction="ZAP2WS/RopaWS/listarRopaResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarRopaResponse> listarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.listarRopaRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRopa", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarRopaRequest {
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/modificarRopaRequest", ReplyAction="ZAP2WS/RopaWS/modificarRopaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse modificarRopa(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.ropa ropa;
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/modificarRopaRequest", ReplyAction="ZAP2WS/RopaWS/modificarRopaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse> modificarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request);
+        public insertarRopaRequest() {
+        }
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/insertarRopaRequest", ReplyAction="ZAP2WS/RopaWS/insertarRopaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse insertarRopa(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request);
+        public insertarRopaRequest(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
+            this.ropa = ropa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRopaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class insertarRopaResponse {
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/insertarRopaRequest", ReplyAction="ZAP2WS/RopaWS/insertarRopaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse> insertarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/eliminarRopaRequest", ReplyAction="ZAP2WS/RopaWS/eliminarRopaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse eliminarRopa(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request);
+        public insertarRopaResponse() {
+        }
         
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/RopaWS/eliminarRopaRequest", ReplyAction="ZAP2WS/RopaWS/eliminarRopaResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse> eliminarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request);
+        public insertarRopaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRopa", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarRopaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.ropa ropa;
+        
+        public modificarRopaRequest() {
+        }
+        
+        public modificarRopaRequest(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
+            this.ropa = ropa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRopaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarRopaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarRopaResponse() {
+        }
+        
+        public modificarRopaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRopa", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarRopaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idRopa;
+        
+        public eliminarRopaRequest() {
+        }
+        
+        public eliminarRopaRequest(int idRopa) {
+            this.idRopa = idRopa;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRopaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarRopaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarRopaResponse() {
+        }
+        
+        public eliminarRopaResponse(int @return) {
+            this.@return = @return;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11014,114 +11122,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRopa", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarRopaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.ropa ropa;
-        
-        public modificarRopaRequest() {
-        }
-        
-        public modificarRopaRequest(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
-            this.ropa = ropa;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarRopaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarRopaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarRopaResponse() {
-        }
-        
-        public modificarRopaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRopa", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarRopaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.ropa ropa;
-        
-        public insertarRopaRequest() {
-        }
-        
-        public insertarRopaRequest(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
-            this.ropa = ropa;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRopaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class insertarRopaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarRopaResponse() {
-        }
-        
-        public insertarRopaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRopa", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarRopaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idRopa;
-        
-        public eliminarRopaRequest() {
-        }
-        
-        public eliminarRopaRequest(int idRopa) {
-            this.idRopa = idRopa;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarRopaResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarRopaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarRopaResponse() {
-        }
-        
-        public eliminarRopaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface RopaWSChannel : InterfacesTrabajoGrupal.ServicioWS.RopaWS, System.ServiceModel.IClientChannel {
     }
@@ -11147,6 +11147,75 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         public RopaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse InterfacesTrabajoGrupal.ServicioWS.RopaWS.insertarRopa(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request) {
+            return base.Channel.insertarRopa(request);
+        }
+        
+        public int insertarRopa(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest();
+            inValue.ropa = ropa;
+            InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).insertarRopa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse> InterfacesTrabajoGrupal.ServicioWS.RopaWS.insertarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request) {
+            return base.Channel.insertarRopaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse> insertarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest();
+            inValue.ropa = ropa;
+            return ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).insertarRopaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse InterfacesTrabajoGrupal.ServicioWS.RopaWS.modificarRopa(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request) {
+            return base.Channel.modificarRopa(request);
+        }
+        
+        public int modificarRopa(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest();
+            inValue.ropa = ropa;
+            InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).modificarRopa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse> InterfacesTrabajoGrupal.ServicioWS.RopaWS.modificarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request) {
+            return base.Channel.modificarRopaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse> modificarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest();
+            inValue.ropa = ropa;
+            return ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).modificarRopaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse InterfacesTrabajoGrupal.ServicioWS.RopaWS.eliminarRopa(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request) {
+            return base.Channel.eliminarRopa(request);
+        }
+        
+        public int eliminarRopa(int idRopa) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest();
+            inValue.idRopa = idRopa;
+            InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).eliminarRopa(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse> InterfacesTrabajoGrupal.ServicioWS.RopaWS.eliminarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request) {
+            return base.Channel.eliminarRopaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse> eliminarRopaAsync(int idRopa) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest();
+            inValue.idRopa = idRopa;
+            return ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).eliminarRopaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -11192,90 +11261,11 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.listarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.listarRopaRequest();
             return ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).listarRopaAsync(inValue);
         }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse InterfacesTrabajoGrupal.ServicioWS.RopaWS.modificarRopa(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request) {
-            return base.Channel.modificarRopa(request);
-        }
-        
-        public int modificarRopa(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest();
-            inValue.ropa = ropa;
-            InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).modificarRopa(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse> InterfacesTrabajoGrupal.ServicioWS.RopaWS.modificarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest request) {
-            return base.Channel.modificarRopaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarRopaResponse> modificarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarRopaRequest();
-            inValue.ropa = ropa;
-            return ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).modificarRopaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse InterfacesTrabajoGrupal.ServicioWS.RopaWS.insertarRopa(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request) {
-            return base.Channel.insertarRopa(request);
-        }
-        
-        public int insertarRopa(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest();
-            inValue.ropa = ropa;
-            InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).insertarRopa(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse> InterfacesTrabajoGrupal.ServicioWS.RopaWS.insertarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest request) {
-            return base.Channel.insertarRopaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarRopaResponse> insertarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.ropa ropa) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarRopaRequest();
-            inValue.ropa = ropa;
-            return ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).insertarRopaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse InterfacesTrabajoGrupal.ServicioWS.RopaWS.eliminarRopa(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request) {
-            return base.Channel.eliminarRopa(request);
-        }
-        
-        public int eliminarRopa(int idRopa) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest();
-            inValue.idRopa = idRopa;
-            InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).eliminarRopa(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse> InterfacesTrabajoGrupal.ServicioWS.RopaWS.eliminarRopaAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest request) {
-            return base.Channel.eliminarRopaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarRopaResponse> eliminarRopaAsync(int idRopa) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarRopaRequest();
-            inValue.idRopa = idRopa;
-            return ((InterfacesTrabajoGrupal.ServicioWS.RopaWS)(this)).eliminarRopaAsync(inValue);
-        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.ProductoPerecibleWS")]
     public interface ProductoPerecibleWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse modificarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse> modificarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleResponse")]
@@ -11288,16 +11278,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarProductoPerecibleResponse> insertarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.insertarProductoPerecibleRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse eliminarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse> eliminarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -11308,6 +11288,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarProductoPerecibleResponse> listarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.listarProductoPerecibleRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse modificarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse> modificarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -11316,42 +11306,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.buscarProductoPerecibleResponse> buscarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.buscarProductoPerecibleRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPerecible", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarProductoPerecibleRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse eliminarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request);
         
-        public modificarProductoPerecibleRequest() {
-        }
-        
-        public modificarProductoPerecibleRequest(InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible) {
-            this.productoPerecible = productoPerecible;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPerecibleResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarProductoPerecibleResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarProductoPerecibleResponse() {
-        }
-        
-        public modificarProductoPerecibleResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest", ReplyAction="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse> eliminarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11393,42 +11357,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoPerecible", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarProductoPerecibleRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idProductoPerecible;
-        
-        public eliminarProductoPerecibleRequest() {
-        }
-        
-        public eliminarProductoPerecibleRequest(int idProductoPerecible) {
-            this.idProductoPerecible = idProductoPerecible;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoPerecibleResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class eliminarProductoPerecibleResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarProductoPerecibleResponse() {
-        }
-        
-        public eliminarProductoPerecibleResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoPerecible", WrapperNamespace="ZAP2WS", IsWrapped=true)]
     public partial class listarProductoPerecibleRequest {
         
@@ -11450,6 +11378,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         public listarProductoPerecibleResponse(InterfacesTrabajoGrupal.ServicioWS.productoPerecible[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPerecible", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarProductoPerecibleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible;
+        
+        public modificarProductoPerecibleRequest() {
+        }
+        
+        public modificarProductoPerecibleRequest(InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible) {
+            this.productoPerecible = productoPerecible;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPerecibleResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarProductoPerecibleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarProductoPerecibleResponse() {
+        }
+        
+        public modificarProductoPerecibleResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -11490,6 +11454,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoPerecible", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarProductoPerecibleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idProductoPerecible;
+        
+        public eliminarProductoPerecibleRequest() {
+        }
+        
+        public eliminarProductoPerecibleRequest(int idProductoPerecible) {
+            this.idProductoPerecible = idProductoPerecible;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoPerecibleResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class eliminarProductoPerecibleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarProductoPerecibleResponse() {
+        }
+        
+        public eliminarProductoPerecibleResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ProductoPerecibleWSChannel : InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS, System.ServiceModel.IClientChannel {
     }
@@ -11518,29 +11518,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.modificarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request) {
-            return base.Channel.modificarProductoPerecible(request);
-        }
-        
-        public int modificarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest();
-            inValue.productoPerecible = productoPerecible;
-            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).modificarProductoPerecible(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.modificarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request) {
-            return base.Channel.modificarProductoPerecibleAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse> modificarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest();
-            inValue.productoPerecible = productoPerecible;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).modificarProductoPerecibleAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.insertarProductoPerecibleResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.insertarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.insertarProductoPerecibleRequest request) {
             return base.Channel.insertarProductoPerecible(request);
         }
@@ -11561,29 +11538,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.insertarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarProductoPerecibleRequest();
             inValue.productoPerecible = productoPerecible;
             return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).insertarProductoPerecibleAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.eliminarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request) {
-            return base.Channel.eliminarProductoPerecible(request);
-        }
-        
-        public int eliminarProductoPerecible(int idProductoPerecible) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest();
-            inValue.idProductoPerecible = idProductoPerecible;
-            InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).eliminarProductoPerecible(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.eliminarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request) {
-            return base.Channel.eliminarProductoPerecibleAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse> eliminarProductoPerecibleAsync(int idProductoPerecible) {
-            InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest();
-            inValue.idProductoPerecible = idProductoPerecible;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).eliminarProductoPerecibleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -11608,6 +11562,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.modificarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request) {
+            return base.Channel.modificarProductoPerecible(request);
+        }
+        
+        public int modificarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest();
+            inValue.productoPerecible = productoPerecible;
+            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).modificarProductoPerecible(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.modificarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest request) {
+            return base.Channel.modificarProductoPerecibleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleResponse> modificarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.productoPerecible productoPerecible) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPerecibleRequest();
+            inValue.productoPerecible = productoPerecible;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).modificarProductoPerecibleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.buscarProductoPerecibleResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.buscarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.buscarProductoPerecibleRequest request) {
             return base.Channel.buscarProductoPerecible(request);
         }
@@ -11629,31 +11606,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             inValue.idProductoPerecible = idProductoPerecible;
             return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).buscarProductoPerecibleAsync(inValue);
         }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.eliminarProductoPerecible(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request) {
+            return base.Channel.eliminarProductoPerecible(request);
+        }
+        
+        public int eliminarProductoPerecible(int idProductoPerecible) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest();
+            inValue.idProductoPerecible = idProductoPerecible;
+            InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).eliminarProductoPerecible(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS.eliminarProductoPerecibleAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest request) {
+            return base.Channel.eliminarProductoPerecibleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleResponse> eliminarProductoPerecibleAsync(int idProductoPerecible) {
+            InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPerecibleRequest();
+            inValue.idProductoPerecible = idProductoPerecible;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPerecibleWS)(this)).eliminarProductoPerecibleAsync(inValue);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="ZAP2WS", ConfigurationName="ServicioWS.ProductoPrecioWS")]
     public interface ProductoPrecioWS {
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse modificarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse> modificarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/listarProductoPrecioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioResponse listarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/listarProductoPrecioResponse")]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioResponse> listarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioResponse")]
@@ -11666,6 +11646,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse> insertarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/listarProductoPrecioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioResponse listarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/listarProductoPrecioResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioResponse> listarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
@@ -11674,70 +11664,16 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioResponse")]
         System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPrecioResponse> eliminarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPrecioRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPrecio", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarProductoPrecioRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(persona))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse modificarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request);
         
-        public modificarProductoPrecioRequest() {
-        }
-        
-        public modificarProductoPrecioRequest(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
-            this.productoPrecio = productoPrecio;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPrecioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class modificarProductoPrecioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public modificarProductoPrecioResponse() {
-        }
-        
-        public modificarProductoPrecioResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoPrecio", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarProductoPrecioRequest {
-        
-        public listarProductoPrecioRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoPrecioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
-    public partial class listarProductoPrecioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public InterfacesTrabajoGrupal.ServicioWS.productoPrecio[] @return;
-        
-        public listarProductoPrecioResponse() {
-        }
-        
-        public listarProductoPrecioResponse(InterfacesTrabajoGrupal.ServicioWS.productoPrecio[] @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioRequest", ReplyAction="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioResponse")]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse> modificarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -11779,6 +11715,34 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoPrecio", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarProductoPrecioRequest {
+        
+        public listarProductoPrecioRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProductoPrecioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class listarProductoPrecioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.productoPrecio[] @return;
+        
+        public listarProductoPrecioResponse() {
+        }
+        
+        public listarProductoPrecioResponse(InterfacesTrabajoGrupal.ServicioWS.productoPrecio[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProductoPrecio", WrapperNamespace="ZAP2WS", IsWrapped=true)]
     public partial class eliminarProductoPrecioRequest {
         
@@ -11812,6 +11776,42 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPrecio", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarProductoPrecioRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio;
+        
+        public modificarProductoPrecioRequest() {
+        }
+        
+        public modificarProductoPrecioRequest(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
+            this.productoPrecio = productoPrecio;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="modificarProductoPrecioResponse", WrapperNamespace="ZAP2WS", IsWrapped=true)]
+    public partial class modificarProductoPrecioResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="ZAP2WS", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public modificarProductoPrecioResponse() {
+        }
+        
+        public modificarProductoPrecioResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ProductoPrecioWSChannel : InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS, System.ServiceModel.IClientChannel {
     }
@@ -11840,26 +11840,26 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.modificarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request) {
-            return base.Channel.modificarProductoPrecio(request);
+        InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.insertarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest request) {
+            return base.Channel.insertarProductoPrecio(request);
         }
         
-        public int modificarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest();
+        public int insertarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest();
             inValue.productoPrecio = productoPrecio;
-            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).modificarProductoPrecio(inValue);
+            InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).insertarProductoPrecio(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.modificarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request) {
-            return base.Channel.modificarProductoPrecioAsync(request);
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.insertarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest request) {
+            return base.Channel.insertarProductoPrecioAsync(request);
         }
         
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse> modificarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
-            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest();
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse> insertarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
+            InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest();
             inValue.productoPrecio = productoPrecio;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).modificarProductoPrecioAsync(inValue);
+            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).insertarProductoPrecioAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -11884,29 +11884,6 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.insertarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest request) {
-            return base.Channel.insertarProductoPrecio(request);
-        }
-        
-        public int insertarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest();
-            inValue.productoPrecio = productoPrecio;
-            InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).insertarProductoPrecio(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.insertarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest request) {
-            return base.Channel.insertarProductoPrecioAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioResponse> insertarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
-            InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.insertarProductoPrecioRequest();
-            inValue.productoPrecio = productoPrecio;
-            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).insertarProductoPrecioAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPrecioResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.eliminarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPrecioRequest request) {
             return base.Channel.eliminarProductoPrecio(request);
         }
@@ -11927,6 +11904,29 @@ namespace InterfacesTrabajoGrupal.ServicioWS {
             InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.eliminarProductoPrecioRequest();
             inValue.idProductoPrecio = idProductoPrecio;
             return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).eliminarProductoPrecioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.modificarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request) {
+            return base.Channel.modificarProductoPrecio(request);
+        }
+        
+        public int modificarProductoPrecio(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest();
+            inValue.productoPrecio = productoPrecio;
+            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse retVal = ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).modificarProductoPrecio(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse> InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS.modificarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest request) {
+            return base.Channel.modificarProductoPrecioAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioResponse> modificarProductoPrecioAsync(InterfacesTrabajoGrupal.ServicioWS.productoPrecio productoPrecio) {
+            InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest inValue = new InterfacesTrabajoGrupal.ServicioWS.modificarProductoPrecioRequest();
+            inValue.productoPrecio = productoPrecio;
+            return ((InterfacesTrabajoGrupal.ServicioWS.ProductoPrecioWS)(this)).modificarProductoPrecioAsync(inValue);
         }
     }
 }
