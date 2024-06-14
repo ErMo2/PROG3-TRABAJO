@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarPedido" type="tns:buscarPedido" />
+  <xs:element name="buscarPedidoResponse" type="tns:buscarPedidoResponse" />
   <xs:element name="eliminarPedido" type="tns:eliminarPedido" />
   <xs:element name="eliminarPedidoResponse" type="tns:eliminarPedidoResponse" />
   <xs:element name="insertarPedido" type="tns:insertarPedido" />
@@ -151,6 +153,16 @@
   <xs:complexType name="modificarPedidoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarPedido">
+    <xs:sequence>
+      <xs:element name="idPedido" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarPedidoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:pedido" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoDeMotivoMovimientoAlmacen">

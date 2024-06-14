@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarCajero" type="tns:buscarCajero" />
+  <xs:element name="buscarCajeroResponse" type="tns:buscarCajeroResponse" />
   <xs:element name="eliminarCajero" type="tns:eliminarCajero" />
   <xs:element name="eliminarCajeroResponse" type="tns:eliminarCajeroResponse" />
   <xs:element name="insertarCajero" type="tns:insertarCajero" />
@@ -8,9 +10,14 @@
   <xs:element name="listarCajerosResponse" type="tns:listarCajerosResponse" />
   <xs:element name="modificarCajero" type="tns:modificarCajero" />
   <xs:element name="modificarCajeroResponse" type="tns:modificarCajeroResponse" />
-  <xs:complexType name="insertarCajero">
+  <xs:complexType name="buscarCajero">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cajero" type="tns:cajero" />
+      <xs:element name="idCajero" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarCajeroResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:cajero" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cajero">
@@ -177,6 +184,11 @@
       <xs:element name="idCuenta" type="xs:int" />
       <xs:element minOccurs="0" name="personaNatural" type="tns:personaNatural" />
       <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCajero">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cajero" type="tns:cajero" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarCajeroResponse">

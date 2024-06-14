@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarEmpleadoArea" type="tns:buscarEmpleadoArea" />
+  <xs:element name="buscarEmpleadoAreaResponse" type="tns:buscarEmpleadoAreaResponse" />
   <xs:element name="eliminarEmpleadoDeArea" type="tns:eliminarEmpleadoDeArea" />
   <xs:element name="eliminarEmpleadoDeAreaResponse" type="tns:eliminarEmpleadoDeAreaResponse" />
   <xs:element name="insertarEmpleadoDeArea" type="tns:insertarEmpleadoDeArea" />
@@ -210,6 +212,16 @@
   <xs:complexType name="modificarEmpleadoDeAreaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarEmpleadoArea">
+    <xs:sequence>
+      <xs:element name="idEmpleadoArea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarEmpleadoAreaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:empleadoDeArea" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoPuesto">

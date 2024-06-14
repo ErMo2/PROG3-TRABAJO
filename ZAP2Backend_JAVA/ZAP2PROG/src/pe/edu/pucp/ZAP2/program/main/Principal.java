@@ -322,7 +322,7 @@ public class Principal {
         /*======================================================================*/
         /*============================== Pedido ================================*/
         /*======================================================================*/
-//        PedidoDao daoPedido = new PedidoMySql();
+        PedidoDao daoPedido = new PedidoMySql();
         
         /*######### Insertar ########*/
 //        Pedido pedido = new Pedido(1, 500.6, Estado_Pedido.COMPLETADO, fecha1, 468.8, null);
@@ -333,6 +333,10 @@ public class Principal {
         /*######## Eliminar #########*/
         
         /*########## Listar #########*/
+        ArrayList<Pedido> pedidos = daoPedido.listarTodas();
+        for(Pedido ped:pedidos){
+            ped.imprimir();
+        }
         
         /*======================================================================*/
         /*=========================== Detalle_Pedido ==========================*/

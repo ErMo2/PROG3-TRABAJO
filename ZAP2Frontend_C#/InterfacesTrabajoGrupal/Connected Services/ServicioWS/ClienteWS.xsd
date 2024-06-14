@@ -7,6 +7,8 @@
   <xs:element name="insertarCliente" type="tns:insertarCliente" />
   <xs:element name="insertarClienteResponse" type="tns:insertarClienteResponse" />
   <xs:element name="listarClientes" type="tns:listarClientes" />
+  <xs:element name="listarClientesPorNombre" type="tns:listarClientesPorNombre" />
+  <xs:element name="listarClientesPorNombreResponse" type="tns:listarClientesPorNombreResponse" />
   <xs:element name="listarClientesResponse" type="tns:listarClientesResponse" />
   <xs:element name="modificarCliente" type="tns:modificarCliente" />
   <xs:element name="modificarClienteResponse" type="tns:modificarClienteResponse" />
@@ -20,9 +22,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarCliente">
+  <xs:complexType name="listarClientesPorNombre">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClientesPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cliente" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="cliente">
@@ -67,6 +74,11 @@
       <xs:element name="idCuenta" type="xs:int" />
       <xs:element minOccurs="0" name="personaNatural" type="tns:personaNatural" />
       <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarClienteResponse">
