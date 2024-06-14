@@ -11,17 +11,17 @@
   <message name="eliminarClienteResponse">
     <part name="parameters" element="tns:eliminarClienteResponse" />
   </message>
-  <message name="buscarCliente">
-    <part name="parameters" element="tns:buscarCliente" />
-  </message>
-  <message name="buscarClienteResponse">
-    <part name="parameters" element="tns:buscarClienteResponse" />
-  </message>
   <message name="insertarCliente">
     <part name="parameters" element="tns:insertarCliente" />
   </message>
   <message name="insertarClienteResponse">
     <part name="parameters" element="tns:insertarClienteResponse" />
+  </message>
+  <message name="listarClientes">
+    <part name="parameters" element="tns:listarClientes" />
+  </message>
+  <message name="listarClientesResponse">
+    <part name="parameters" element="tns:listarClientesResponse" />
   </message>
   <message name="modificarCliente">
     <part name="parameters" element="tns:modificarCliente" />
@@ -29,11 +29,11 @@
   <message name="modificarClienteResponse">
     <part name="parameters" element="tns:modificarClienteResponse" />
   </message>
-  <message name="listarClientes">
-    <part name="parameters" element="tns:listarClientes" />
+  <message name="buscarCliente">
+    <part name="parameters" element="tns:buscarCliente" />
   </message>
-  <message name="listarClientesResponse">
-    <part name="parameters" element="tns:listarClientesResponse" />
+  <message name="buscarClienteResponse">
+    <part name="parameters" element="tns:buscarClienteResponse" />
   </message>
   <message name="listarClientesPorNombre">
     <part name="parameters" element="tns:listarClientesPorNombre" />
@@ -46,21 +46,21 @@
       <input wsam:Action="ZAP2WS/ClienteWS/eliminarClienteRequest" message="tns:eliminarCliente" />
       <output wsam:Action="ZAP2WS/ClienteWS/eliminarClienteResponse" message="tns:eliminarClienteResponse" />
     </operation>
-    <operation name="buscarCliente">
-      <input wsam:Action="ZAP2WS/ClienteWS/buscarClienteRequest" message="tns:buscarCliente" />
-      <output wsam:Action="ZAP2WS/ClienteWS/buscarClienteResponse" message="tns:buscarClienteResponse" />
-    </operation>
     <operation name="insertarCliente">
       <input wsam:Action="ZAP2WS/ClienteWS/insertarClienteRequest" message="tns:insertarCliente" />
       <output wsam:Action="ZAP2WS/ClienteWS/insertarClienteResponse" message="tns:insertarClienteResponse" />
+    </operation>
+    <operation name="listarClientes">
+      <input wsam:Action="ZAP2WS/ClienteWS/listarClientesRequest" message="tns:listarClientes" />
+      <output wsam:Action="ZAP2WS/ClienteWS/listarClientesResponse" message="tns:listarClientesResponse" />
     </operation>
     <operation name="modificarCliente">
       <input wsam:Action="ZAP2WS/ClienteWS/modificarClienteRequest" message="tns:modificarCliente" />
       <output wsam:Action="ZAP2WS/ClienteWS/modificarClienteResponse" message="tns:modificarClienteResponse" />
     </operation>
-    <operation name="listarClientes">
-      <input wsam:Action="ZAP2WS/ClienteWS/listarClientesRequest" message="tns:listarClientes" />
-      <output wsam:Action="ZAP2WS/ClienteWS/listarClientesResponse" message="tns:listarClientesResponse" />
+    <operation name="buscarCliente">
+      <input wsam:Action="ZAP2WS/ClienteWS/buscarClienteRequest" message="tns:buscarCliente" />
+      <output wsam:Action="ZAP2WS/ClienteWS/buscarClienteResponse" message="tns:buscarClienteResponse" />
     </operation>
     <operation name="listarClientesPorNombre">
       <input wsam:Action="ZAP2WS/ClienteWS/listarClientesPorNombreRequest" message="tns:listarClientesPorNombre" />
@@ -78,7 +78,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="buscarCliente">
+    <operation name="insertarCliente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,7 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarCliente">
+    <operation name="listarClientes">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +105,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarClientes">
+    <operation name="buscarCliente">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

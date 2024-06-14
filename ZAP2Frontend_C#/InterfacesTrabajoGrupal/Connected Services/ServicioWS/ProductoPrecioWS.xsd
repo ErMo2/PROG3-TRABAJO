@@ -18,9 +18,12 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarProductoPrecio">
+  <xs:complexType name="listarProductoPrecio">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarProductoPrecioResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="productoPrecio" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="productoPrecio">
@@ -110,17 +113,14 @@
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="modificarProductoPrecio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productoPrecio" type="tns:productoPrecio" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarProductoPrecioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarProductoPrecio">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarProductoPrecioResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarProductoPrecio">

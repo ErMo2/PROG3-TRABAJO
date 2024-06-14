@@ -25,6 +25,7 @@
             <asp:BoundField DataField="apellido_materno" HeaderText="Apellido Materno" />
             <asp:BoundField DataField="telefono" HeaderText="Telefono" />
             <asp:BoundField DataField="email" HeaderText="Email" />
+     
             <asp:TemplateField>
                 <HeaderTemplate>
                     Acciones
@@ -57,4 +58,5 @@
             </div>
         </div>
     </div>
+</div>
 </asp:Content>
