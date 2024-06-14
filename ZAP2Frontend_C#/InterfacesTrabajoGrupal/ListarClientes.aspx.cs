@@ -24,7 +24,7 @@ namespace InterfacesTrabajoGrupal
 
         private void BindGridView()
         {
-           /* daoCliente = new ClienteWSClient();
+           daoCliente = new ClienteWSClient();
            cliente[] arregloClientes = daoCliente.listarClientes();
             if (arregloClientes != null)
             {
@@ -32,7 +32,7 @@ namespace InterfacesTrabajoGrupal
                 gvClientes.DataSource = listaClientes;
                 gvClientes.DataBind();
                 ViewState["Clientes"] = listaClientes; // Guardar en ViewState
-            }*/
+            }
         }
 
         protected void gvClientes_PageIndexChanging(object sender, GridViewPageEventArgs e)

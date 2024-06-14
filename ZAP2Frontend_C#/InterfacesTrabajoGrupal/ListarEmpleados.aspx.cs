@@ -39,10 +39,18 @@ namespace InterfacesTrabajoGrupal
 
             if (listaEmpleadosArea != null)
                 empleadosArea = new BindingList<empleadoDeArea>(listaEmpleadosArea);
+            else
+                empleadosArea = new BindingList<empleadoDeArea>(); // Inicializa aunque esté vacío
+
             if (listaCajeros != null)
                 cajeros = new BindingList<cajero>(listaCajeros);
+            else
+                cajeros = new BindingList<cajero>(); // Inicializa aunque esté vacío
+
             if (listaSupervisores != null)
                 supervisores = new BindingList<supervisor>(listaSupervisores);
+            else
+                supervisores = new BindingList<supervisor>(); // Inicializa aunque esté vacío
 
             gvEmpleadosArea.DataSource = empleadosArea;
             gvCajeros.DataSource = cajeros;
@@ -70,29 +78,29 @@ namespace InterfacesTrabajoGrupal
             if (empleado != null)
             {
                 lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
-                                          $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
-                                          $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
-                                          $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
-                                          $"<strong>Email:</strong> {empleado.email}<br/>" +
-                                          $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
+                                           $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
+                                           $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
+                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                           $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
 
         protected void VerCajero_Click(object sender, EventArgs e)
         {
+
             int idEmpleado = Int32.Parse(((LinkButton)sender).CommandArgument);
             BindingList<cajero> empleados = ViewState["Cajeros"] as BindingList<cajero>;
             var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleado);
             if (empleado != null)
             {
                 lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
-                                          $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
-                                          $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
-                                          $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
-                                          $"<strong>Email:</strong> {empleado.email}<br/>" +
-                                          $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
-
+                                           $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
+                                           $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
+                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                           $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
@@ -105,18 +113,19 @@ namespace InterfacesTrabajoGrupal
             if (empleado != null)
             {
                 lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
-                                          $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
-                                          $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
-                                          $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
-                                          $"<strong>Email:</strong> {empleado.email}<br/>" +
-                                          $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
-
+                                           $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
+                                           $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
+                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                           $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
+
         protected void gvEmpleadosArea_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvEmpleadosArea.PageIndex = e.NewPageIndex;
+            gvEmpleadosArea.DataSource = ViewState["EmpleadosArea"] as BindingList<empleadoDeArea>;
             gvEmpleadosArea.DataBind();
         }
 
@@ -134,6 +143,7 @@ namespace InterfacesTrabajoGrupal
                 CargarEmpleadosArea();
             }
         }
+
         private void CargarEmpleadosArea()
         {
             daoEmpleadoArea = new EmpleadoDeAreaWSClient();
@@ -149,6 +159,7 @@ namespace InterfacesTrabajoGrupal
         protected void gvCajeros_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvCajeros.PageIndex = e.NewPageIndex;
+            gvCajeros.DataSource = ViewState["Cajeros"] as BindingList<cajero>;
             gvCajeros.DataBind();
         }
 
@@ -166,6 +177,7 @@ namespace InterfacesTrabajoGrupal
                 CargarCajeros();
             }
         }
+
         private void CargarCajeros()
         {
             daoCajero = new CajeroWSClient();
@@ -177,9 +189,11 @@ namespace InterfacesTrabajoGrupal
                 gvCajeros.DataBind();
             }
         }
+
         protected void gvSupervisores_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvSupervisores.PageIndex = e.NewPageIndex;
+            gvSupervisores.DataSource = ViewState["Supervisores"] as BindingList<supervisor>;
             gvSupervisores.DataBind();
         }
 
@@ -197,6 +211,7 @@ namespace InterfacesTrabajoGrupal
                 CargarSupervisores();
             }
         }
+
         private void CargarSupervisores()
         {
             daoSupervisor = new SupervisorWSClient();
@@ -208,5 +223,8 @@ namespace InterfacesTrabajoGrupal
                 gvSupervisores.DataBind();
             }
         }
+
+
+
     }
 }

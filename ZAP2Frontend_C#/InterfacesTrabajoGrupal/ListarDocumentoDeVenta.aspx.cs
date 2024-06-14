@@ -85,9 +85,9 @@ namespace InterfacesTrabajoGrupal
                                          $"<strong>Monto Total:</strong> {boleta.montoTotal}<br/>" +
                                          $"<strong>Moneda:</strong> {boleta.moneda}<br/>" +
                                          $"<strong>Detalles:</strong> {boleta.detalles}<br/>" +
-                                         $"<strong>Empleado:</strong> {boleta.empleado}<br/>" +
-                                         $"<strong>Tarjeta:</strong> {boleta.tarjeta}<br/>" +
-                                         $"<strong>Líneas Doc Venta:</strong> {boleta.lineasDocVenta}<br/>";
+                                         $"<strong>Empleado:</strong> {boleta.empleado.nombre + boleta.empleado.apellido_paterno}<br/>" +
+                                         $"<strong>Tarjeta:</strong> {boleta.tarjeta}<br/>";
+                                        // $"<strong>Líneas Doc Venta:</strong> {boleta.lineasDocVenta}<br/>";
             }
             ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verBoletaModal').modal('show');", true);
         }
