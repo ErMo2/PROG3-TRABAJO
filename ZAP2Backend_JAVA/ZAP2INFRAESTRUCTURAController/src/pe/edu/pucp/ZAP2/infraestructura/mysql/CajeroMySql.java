@@ -187,13 +187,23 @@ public class CajeroMySql implements CajeroDao{
             while(rs.next()){
                  
                 cajero.setId_Persona(rs.getInt("id_persona"));
-                cajero.setNombre(rs.getString("nombre"));
                 cajero.setIdEmpleado(rs.getInt("id_persona"));
-                
+                cajero.setNombre(rs.getString("nombre"));
                 cajero.setApellido_paterno(rs.getString("apellido_paterno"));
                 cajero.setApellido_materno(rs.getString("apellido_materno"));
+                cajero.setTelefono(rs.getInt("telefono"));
+                cajero.setEmail(rs.getString("email"));
+                cajero.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                cajero.setNro_documento(rs.getInt("numDocumento"));
+                
                 cajero.setSexo(rs.getString("sexo").charAt(0));
+                cajero.setDireccion(rs.getString("direccion"));
+                
                 cajero.setSalario(rs.getDouble("salario"));
+                Date fecha = rs.getDate("fechaContratacion");
+                cajero.setFechaContratacion(fecha);
+                cajero.setTipoContrato(TipoContrato.valueOf(rs.getString("tipoContrato")));
+                cajero.setHorario(TurnosHorario.valueOf(rs.getString("horario")));
                 
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
