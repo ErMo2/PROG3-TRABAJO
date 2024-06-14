@@ -11,6 +11,21 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
 import pe.edu.pucp.ZAP2.documentos.mySql.Boleta_VentaMySql;
+import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
+import pe.edu.pucp.ZAP2.documentos.model.Banco;
+import pe.edu.pucp.ZAP2.documentos.model.Moneda;
+import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
+import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Cajero;
+import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
+import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
+import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
+import pe.edu.pucp.ZAP2.infraestructura.model.TurnosHorario;
+import pe.edu.pucp.ZAP2.personas.model.Persona;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 /**
  *
  * @author Alejandro

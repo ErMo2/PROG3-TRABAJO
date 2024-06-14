@@ -10,14 +10,25 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.SQLException;
+import java.util.Date;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
+import pe.edu.pucp.ZAP2.documentos.model.Banco;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
+import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Cajero;
 import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
+import pe.edu.pucp.ZAP2.infraestructura.model.CuentaUsuario;
 import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
+import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
+import pe.edu.pucp.ZAP2.infraestructura.model.TurnosHorario;
 import pe.edu.pucp.ZAP2.personas.model.Persona;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
 /**
  *
  * @author Alejandro
@@ -110,36 +121,96 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
         ArrayList<Boleta_Venta> boletasVenta =  new ArrayList<>();
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call LISTAR_BOLETA_VENTA( )}");
+            cs = con.prepareCall("{call LISTAR_BOLETA_VENTA_COMPLETO( )}");
             rs = cs.executeQuery();
             while(rs.next()){
                 Boleta_Venta bolVenta = new Boleta_Venta();
-                bolVenta.setId_doc_venta(rs.getInt("id_boleta_venta"));
+                bolVenta.setId_doc_venta(rs.getInt("id_documento"));
+                bolVenta.setId_documento(rs.getInt("id_documento"));
+                Date fecha = rs.getDate("fecha_emision");
+                bolVenta.setFecha_emision(fecha);
+                bolVenta.setTotal(rs.getDouble("total"));
                 
-                Empleado empleado = new Empleado(){};
-                empleado.setId_Persona(rs.getInt("fid_id_persona"));//Cambiar el fid_id_persona por fid_id_empleado
-                empleado.setIdEmpleado(rs.getInt("fid_id_persona"));//Cambiar el fid_id_persona por fid_id_empleado
-                bolVenta.setEmpleado(empleado);
-                
-                Cliente cliente = new Cliente(){};
-                cliente.setId_cliente(rs.getInt("fid_id_persona"));
-                cliente.setId_Persona(rs.getInt("fid_id_persona"));
-                bolVenta.setCliente(cliente);
+                bolVenta.setMontoTotal(rs.getDouble("montoTotal"));
                 
                 bolVenta.setNumSerie(rs.getInt("numSerie"));
                 bolVenta.setDetalles(rs.getString("detalles"));
                 bolVenta.setImpuestos(rs.getDouble("impuestos"));
                 
-                Tarjeta tarjeta = new Tarjeta();
-                tarjeta.setIdTarjeta(rs.getInt("fid_id_tarjeta"));
-                bolVenta.setTarjeta(tarjeta);
-                bolVenta.setMontoTotal(rs.getDouble("montoTotal"));
+                Cliente cliente = new Cliente(){};
+                cliente.setId_cliente(rs.getInt("id_p_cliente"));
+                cliente.setId_Persona(rs.getInt("id_p_cliente"));
+                cliente.setNombre(rs.getString("nombre_cliente"));
+                cliente.setApellido_paterno(rs.getString("apellido_paterno_cliente"));
+                cliente.setApellido_materno(rs.getString("apellido_materno_cliente"));
+                cliente.setTelefono(rs.getInt("telefono_cliente"));               
+                cliente.setEmail(rs.getString("email_cliente"));
+                cliente.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento_cliente")));
+                cliente.setNro_documento(rs.getInt("numDocumento_cliente"));
+                cliente.setSexo(rs.getString("sexo_cliente").charAt(0));
+                cliente.setDireccion(rs.getString("direccion_cliente"));
+                cliente.setDni(rs.getString("dni_cliente"));
+                cliente.setPuntosBonus(rs.getInt("puntosBonus_cliente"));
+                CuentaUsuario cuentaCliente = new CuentaUsuario(){};
+                cliente.setCuenta_usuario(cuentaCliente);
+                bolVenta.setCliente(cliente);
                 
-                Moneda moneda = new Moneda();
-                moneda.setIdMoneda(rs.getInt("fid_moneda"));
+                Cajero cajero = new Cajero(){};
+                cajero.setIdEmpleado(rs.getInt("id_p_empleado"));
+                cajero.setId_Persona(rs.getInt("id_p_empleado"));
+                cajero.setNombre(rs.getString("nombre_empleado"));
+                cajero.setApellido_paterno(rs.getString("apellido_paterno_empleado"));
+                cajero.setApellido_materno(rs.getString("apellido_materno_empleado"));
+                cajero.setTelefono(rs.getInt("telefono_empleado"));               
+                cajero.setEmail(rs.getString("email_empleado"));
+                cajero.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento_empleado")));
+                cajero.setNro_documento(rs.getInt("numDocumento_empleado"));
+                cajero.setSexo(rs.getString("sexo_empleado").charAt(0));
+                cajero.setDireccion(rs.getString("direccion_empleado"));
+                
+                CuentaUsuario cuentaEmpleado = new CuentaUsuario(){};
+                cajero.setCuenta_usuario(cuentaEmpleado);
+                Area area  = new  Area (){};
+                Sucursal sucursal = new Sucursal(){};
+                sucursal.setId_sucursal(rs.getInt("id_sucursal"));
+                sucursal.setDireccion(rs.getString("sc_direccion"));
+                sucursal.setNombre(rs.getString("sc_nombre"));
+                sucursal.setTam_metros(rs.getDouble("tam_metros"));
+                area.setSucursal(sucursal);
+                
+                cajero.setSalario(rs.getDouble("salario_empleado"));
+                Date fechaContrato = rs.getDate("fechaContratacion_empleado");
+                cajero.setFechaContratacion(fechaContrato);
+                cajero.setTipoContrato(TipoContrato.valueOf(rs.getString("tipoContrato_empleado")));
+                cajero.setHorario(TurnosHorario.valueOf(rs.getString("horario_empleado")));
+                
+                cajero.setArea(area);
+                Supervisor supervisor = new  Supervisor(){};
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                cajero.setSupervisor(supervisor);
+                cajero.setNumeroCaja(rs.getInt("numeroCaja"));
+                cajero.setCantidadCaja(rs.getDouble("cantidadCaja"));
+                
+                bolVenta.setEmpleado(cajero);
+                
+                Moneda moneda = new Moneda(){};
+                moneda.setIdMoneda(rs.getInt("m_id_moneda"));
+                moneda.setNombre(rs.getString("m_nombre"));
+                moneda.setAbreviacion(rs.getString("abreviacion"));
                 bolVenta.setMoneda(moneda);
-                bolVenta.setFecha_emision(rs.getDate("fecha_emision"));
-                bolVenta.setTotal(rs.getDouble("total"));
+                
+                Tarjeta tarjeta = new Tarjeta(){};
+                tarjeta.setIdTarjeta(rs.getInt("t_id_tarjeta"));
+                
+                Banco banco = new Banco(){};
+                banco.setIdBanco(rs.getInt("fid_banco"));
+                banco.setNombre(rs.getString("b_nombre"));
+                tarjeta.setBanco(banco);
+                
+                tarjeta.setCodTarjeta(rs.getInt("codTarjeta"));
+                tarjeta.setTipoTarjeta(Tipo_Tarjeta.valueOf(rs.getString("tipoTarjeta")));
+                bolVenta.setTarjeta(tarjeta);
                 
                 boletasVenta.add(bolVenta);
             }
