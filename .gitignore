@@ -40,5 +40,6 @@
 !/ZAP2Backend_JAVA/ZAP2PROG/src/pe/edu/pucp/ZAP2/program/lib/mysql-connector-j-8.3.0.jar
 !/ZAP2Backend_JAVA/ZAP2WS/src/java/pe/edu/pucp/ZAP2/lib/mysql-connector-j-8.3.0.jar
 !/ZAP2Backend_JAVA/ZAP2WS/src/java/pe/edu/pucp/ZAP2/lib/jakarta.xml.ws-api-4.0.1.jar
+!/ZAP2Backend_JAVA/jakarta.xml.bind-api-4.0.2.jar
 /ZAP2Backend_JAVA/ZAP2WS/build/
 /ZAP2Backend_JAVA/ZAP2WS/dist/
