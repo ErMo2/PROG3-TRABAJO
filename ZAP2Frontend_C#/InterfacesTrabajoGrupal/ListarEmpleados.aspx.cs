@@ -114,5 +114,99 @@ namespace InterfacesTrabajoGrupal
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
             }
         }
+        protected void gvEmpleadosArea_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvEmpleadosArea.PageIndex = e.NewPageIndex;
+            gvEmpleadosArea.DataBind();
+        }
+
+        protected void gvEmpleadosArea_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            daoEmpleadoArea = new EmpleadoDeAreaWSClient();
+            int idEmpleadoArea = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "ModificarEmpleadoArea")
+            {
+                Response.Redirect($"GestionarEmpleadoArea.aspx?id={idEmpleadoArea}");
+            }
+            else if (e.CommandName == "EliminarEmpleadoArea")
+            {
+                daoEmpleadoArea.eliminarEmpleadoDeArea(idEmpleadoArea);
+                CargarEmpleadosArea();
+            }
+        }
+        private void CargarEmpleadosArea()
+        {
+            daoEmpleadoArea = new EmpleadoDeAreaWSClient();
+            empleadoDeArea[] arregloEmpleadoAreas = daoEmpleadoArea.listarEmpleadoArea();
+            if (arregloEmpleadoAreas != null)
+            {
+                empleadosArea = new BindingList<empleadoDeArea>(arregloEmpleadoAreas);
+                gvEmpleadosArea.DataSource = empleadosArea;
+                gvEmpleadosArea.DataBind();
+            }
+        }
+
+        protected void gvCajeros_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvCajeros.PageIndex = e.NewPageIndex;
+            gvCajeros.DataBind();
+        }
+
+        protected void gvCajeros_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            daoCajero = new CajeroWSClient();
+            int idCajero = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "ModificarCajero")
+            {
+                Response.Redirect($"GestionarCajero.aspx?id={idCajero}");
+            }
+            else if (e.CommandName == "EliminarCajero")
+            {
+                daoCajero.eliminarCajero(idCajero);
+                CargarCajeros();
+            }
+        }
+        private void CargarCajeros()
+        {
+            daoCajero = new CajeroWSClient();
+            cajero[] arreglocajeros = daoCajero.listarCajeros();
+            if (arreglocajeros != null)
+            {
+                cajeros = new BindingList<cajero>(arreglocajeros);
+                gvCajeros.DataSource = cajeros;
+                gvCajeros.DataBind();
+            }
+        }
+        protected void gvSupervisores_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvSupervisores.PageIndex = e.NewPageIndex;
+            gvSupervisores.DataBind();
+        }
+
+        protected void gvSupervisores_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            daoSupervisor = new SupervisorWSClient();
+            int idSupervisor = Convert.ToInt32(e.CommandArgument);
+            if (e.CommandName == "ModificarSupervisor")
+            {
+                Response.Redirect($"GestionarSupervisor.aspx?id={idSupervisor}");
+            }
+            else if (e.CommandName == "EliminarSupervisor")
+            {
+                daoSupervisor.eliminarSupervisor(idSupervisor);
+                CargarSupervisores();
+            }
+        }
+        private void CargarSupervisores()
+        {
+            daoSupervisor = new SupervisorWSClient();
+            supervisor[] arregloSupervisores = daoSupervisor.listarSupervisores();
+            if (arregloSupervisores != null)
+            {
+                supervisores = new BindingList<supervisor>(arregloSupervisores);
+                gvSupervisores.DataSource = supervisores;
+                gvSupervisores.DataBind();
+            }
+        }
     }
 }

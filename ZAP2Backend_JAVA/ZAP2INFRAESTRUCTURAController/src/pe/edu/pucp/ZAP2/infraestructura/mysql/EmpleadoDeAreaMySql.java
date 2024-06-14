@@ -140,8 +140,8 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 
                 empleado.setSexo(rs.getString("sexo").charAt(0));
                 empleado.setSalario(rs.getDouble("salario"));
-//                empleado.setEmail(rs.getString("email"));
-//                empleado.setTelefono(rs.getInt("telefono"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setTelefono(rs.getInt("telefono"));
                 String puesto = rs.getString("puesto");
                 TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
                 empleado.setPuesto(tipopuesto);
@@ -198,6 +198,22 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 TipoPuesto tipopuesto = TipoPuesto.valueOf(puesto);
                 empleado.setPuesto(tipopuesto);
                 
+
+                String tipo_doc = rs.getString("tipoDocumento");
+                TipoDocumento tipoDoc = TipoDocumento.valueOf(tipo_doc);
+                empleado.setTipo_documento(tipoDoc);
+                empleado.setNro_documento(rs.getInt("numDocumento"));
+                empleado.setDireccion("direccion");
+                empleado.setFechaContratacion(rs.getDate("fechaContratacion"));
+                String tipo_horario = rs.getString("horario");
+                TurnosHorario tipoHorario = TurnosHorario.valueOf(tipo_horario);
+                empleado.setHorario(tipoHorario);
+                String tipo_contrato = rs.getString("tipoContrato");
+                TipoContrato tipoContrato = TipoContrato.valueOf(tipo_contrato);
+                empleado.setTipoContrato(tipoContrato);
+                empleado.setEmail(rs.getString("email"));
+                empleado.setTelefono(rs.getInt("telefono"));
+
                 
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));

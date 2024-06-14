@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="buscarSupervisor" type="tns:buscarSupervisor" />
+  <xs:element name="buscarSupervisorResponse" type="tns:buscarSupervisorResponse" />
   <xs:element name="eliminarSupervisor" type="tns:eliminarSupervisor" />
   <xs:element name="eliminarSupervisorResponse" type="tns:eliminarSupervisorResponse" />
   <xs:element name="insertarSupervisor" type="tns:insertarSupervisor" />
@@ -200,6 +202,16 @@
   <xs:complexType name="listarSupervisoresResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarSupervisor">
+    <xs:sequence>
+      <xs:element name="idSupervisor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarSupervisorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:supervisor" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarSupervisor">
