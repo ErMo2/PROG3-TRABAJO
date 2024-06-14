@@ -13,10 +13,21 @@ import java.sql.SQLException;
 import java.util.Date;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.documentos.dao.Factura_VentaDao;
+import pe.edu.pucp.ZAP2.documentos.model.Banco;
 import pe.edu.pucp.ZAP2.documentos.model.Factura_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.documentos.model.Tipo_Tarjeta;
+import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Cajero;
+import pe.edu.pucp.ZAP2.infraestructura.model.CuentaUsuario;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
+import pe.edu.pucp.ZAP2.infraestructura.model.Supervisor;
+import pe.edu.pucp.ZAP2.infraestructura.model.TipoContrato;
+import pe.edu.pucp.ZAP2.infraestructura.model.TurnosHorario;
 import pe.edu.pucp.ZAP2.personas.model.PersonaJuridica;
+import pe.edu.pucp.ZAP2.personas.model.TipoDocumento;
+import pe.edu.pucp.ZAP2.personas.model.TipoEntidad;
 
 /**
  *
@@ -118,31 +129,102 @@ public class Factura_VentaMySql implements Factura_VentaDao{
          ArrayList<Factura_Venta> facturasVentas =  new ArrayList<>();
         try{
             con=DBManager.getInstance().getConnection();           
-            cs = con.prepareCall("{call LISTAR_FACTURA_VENTA"
+            cs = con.prepareCall("{call LISTAR_FACTURA_VENTA_TOTAL"
                     +"( )}");
             
             rs = cs.executeQuery();
             while(rs.next()){
+                
                 Factura_Venta factVent = new Factura_Venta();
-                factVent.setIdFactura(rs.getInt("id_factura"));
-                factVent.setId_doc_venta(rs.getInt("id_factura"));
-                factVent.setId_documento(rs.getInt("id_factura"));
-                PersonaJuridica personaJuridica = new PersonaJuridica();
-                personaJuridica.setId_Persona(rs.getInt("fid_persona_juridica"));
-                factVent.setPersonaJuridica(personaJuridica);
+                factVent.setId_doc_venta(rs.getInt("id_documento"));
+                factVent.setId_documento(rs.getInt("id_documento"));
+                factVent.setIdFactura(rs.getInt("id_documento"));
+                Date fecha = rs.getDate("fecha_emision");
+                factVent.setFecha_emision(fecha);
+                factVent.setTotal(rs.getDouble("total"));
+                
+                factVent.setMontoTotal(rs.getDouble("montoTotal"));
+                
+                
                 factVent.setDetalles(rs.getString("detalles"));
                 Date fechaVenc = rs.getDate("fechaVenc");
                 factVent.setFechaVenc(fechaVenc);
-                Tarjeta tarjeta = new Tarjeta();
-                tarjeta.setIdTarjeta(rs.getInt("fid_id_tarjeta"));
-                factVent.setTarjeta(tarjeta);
-                factVent.setMontoTotal(rs.getDouble("montoTotal"));
-                Moneda moneda = new Moneda();
-                moneda.setIdMoneda(rs.getInt("fid_moneda"));
+                
+                PersonaJuridica pj = new PersonaJuridica(){};
+                
+                pj.setId_Persona(rs.getInt("id_p_cliente"));
+                pj.setNombre(rs.getString("nombre_cliente"));
+                pj.setApellido_paterno(rs.getString("apellido_paterno_cliente"));
+                pj.setApellido_materno(rs.getString("apellido_materno_cliente"));
+                pj.setTelefono(rs.getInt("telefono_cliente"));               
+                pj.setEmail(rs.getString("email_cliente"));
+                pj.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento_cliente")));
+                pj.setNro_documento(rs.getInt("numDocumento_cliente"));
+                
+                pj.setTipoEntidad(TipoEntidad.valueOf(rs.getString("tipoEntidad")));
+                pj.setNumIdentificadorFiscal(rs.getInt("numIdentificadorFiscal"));
+                pj.setDireccionLegal(rs.getString("direccionLegal"));
+                pj.setRUC(rs.getString("RUC"));
+                factVent.setPersonaJuridica(pj);
+                
+                Cajero cajero = new Cajero(){};
+                cajero.setIdEmpleado(rs.getInt("id_p_empleado"));
+                cajero.setId_Persona(rs.getInt("id_p_empleado"));
+                cajero.setNombre(rs.getString("nombre_empleado"));
+                cajero.setApellido_paterno(rs.getString("apellido_paterno_empleado"));
+                cajero.setApellido_materno(rs.getString("apellido_materno_empleado"));
+                cajero.setTelefono(rs.getInt("telefono_empleado"));               
+                cajero.setEmail(rs.getString("email_empleado"));
+                cajero.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento_empleado")));
+                cajero.setNro_documento(rs.getInt("numDocumento_empleado"));
+                cajero.setSexo(rs.getString("sexo_empleado").charAt(0));
+                cajero.setDireccion(rs.getString("direccion_empleado"));
+                
+                CuentaUsuario cuentaEmpleado = new CuentaUsuario(){};
+                cajero.setCuenta_usuario(cuentaEmpleado);
+                Area area  = new  Area (){};
+                Sucursal sucursal = new Sucursal(){};
+                sucursal.setId_sucursal(rs.getInt("id_sucursal"));
+                sucursal.setDireccion(rs.getString("sc_direccion"));
+                sucursal.setNombre(rs.getString("sc_nombre"));
+                sucursal.setTam_metros(rs.getDouble("tam_metros"));
+                area.setSucursal(sucursal);
+                
+                cajero.setSalario(rs.getDouble("salario_empleado"));
+                Date fechaContrato = rs.getDate("fechaContratacion_empleado");
+                cajero.setFechaContratacion(fechaContrato);
+                cajero.setTipoContrato(TipoContrato.valueOf(rs.getString("tipoContrato_empleado")));
+                cajero.setHorario(TurnosHorario.valueOf(rs.getString("horario_empleado")));
+                
+                cajero.setArea(area);
+                Supervisor supervisor = new  Supervisor(){};
+                supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
+                supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                cajero.setSupervisor(supervisor);
+                cajero.setNumeroCaja(rs.getInt("numeroCaja"));
+                cajero.setCantidadCaja(rs.getDouble("cantidadCaja"));
+                
+                factVent.setEmpleado(cajero);
+                
+                Moneda moneda = new Moneda(){};
+                moneda.setIdMoneda(rs.getInt("m_id_moneda"));
+                moneda.setNombre(rs.getString("m_nombre"));
+                moneda.setAbreviacion(rs.getString("abreviacion"));
                 factVent.setMoneda(moneda);
-                Date fechaEmi = rs.getDate("fecha_emision");
-                factVent.setFecha_emision(fechaEmi);
-                factVent.setTotal(rs.getDouble("total"));
+                
+                Tarjeta tarjeta = new Tarjeta(){};
+                tarjeta.setIdTarjeta(rs.getInt("t_id_tarjeta"));
+                
+                Banco banco = new Banco(){};
+                banco.setIdBanco(rs.getInt("fid_banco"));
+                banco.setNombre(rs.getString("b_nombre"));
+                tarjeta.setBanco(banco);
+                
+                tarjeta.setCodTarjeta(rs.getInt("codTarjeta"));
+                tarjeta.setTipoTarjeta(Tipo_Tarjeta.valueOf(rs.getString("tipoTarjeta")));
+                factVent.setTarjeta(tarjeta);
+                
+                facturasVentas.add(factVent);
                 
                 facturasVentas.add(factVent);
             }
