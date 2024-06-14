@@ -70,58 +70,6 @@ namespace InterfacesTrabajoGrupal
             Response.Redirect("SeleccionarTipoDeEmpleado.aspx");
         }
 
-        protected void VerArea_Click(object sender, EventArgs e)
-        {
-            int idEmpleado = Int32.Parse(((LinkButton)sender).CommandArgument);
-            BindingList<empleadoDeArea> empleados = ViewState["EmpleadosArea"] as BindingList<empleadoDeArea>;
-            var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleado);
-            if (empleado != null)
-            {
-                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
-                                           $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
-                                           $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
-                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
-                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
-                                           $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
-            }
-        }
-
-        protected void VerCajero_Click(object sender, EventArgs e)
-        {
-
-            int idEmpleado = Int32.Parse(((LinkButton)sender).CommandArgument);
-            BindingList<cajero> empleados = ViewState["Cajeros"] as BindingList<cajero>;
-            var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleado);
-            if (empleado != null)
-            {
-                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
-                                           $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
-                                           $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
-                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
-                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
-                                           $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
-            }
-        }
-
-        protected void VerSupervisor_Click(object sender, EventArgs e)
-        {
-            int idEmpleado = Int32.Parse(((LinkButton)sender).CommandArgument);
-            BindingList<supervisor> empleados = ViewState["Supervisores"] as BindingList<supervisor>;
-            var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleado);
-            if (empleado != null)
-            {
-                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
-                                           $"<strong>Apellido Paterno:</strong> {empleado.apellido_paterno}<br/>" +
-                                           $"<strong>Apellido Materno:</strong> {empleado.apellido_materno}<br/>" +
-                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
-                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
-                                           $"<strong>Dirección:</strong> {empleado.direccion}<br/>";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
-            }
-        }
-
         protected void gvEmpleadosArea_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvEmpleadosArea.PageIndex = e.NewPageIndex;
@@ -142,17 +90,9 @@ namespace InterfacesTrabajoGrupal
                 daoEmpleadoArea.eliminarEmpleadoDeArea(idEmpleadoArea);
                 CargarEmpleadosArea();
             }
-        }
-
-        private void CargarEmpleadosArea()
-        {
-            daoEmpleadoArea = new EmpleadoDeAreaWSClient();
-            empleadoDeArea[] arregloEmpleadoAreas = daoEmpleadoArea.listarEmpleadoArea();
-            if (arregloEmpleadoAreas != null)
+            else if (e.CommandName == "VerEmpleadoArea")
             {
-                empleadosArea = new BindingList<empleadoDeArea>(arregloEmpleadoAreas);
-                gvEmpleadosArea.DataSource = empleadosArea;
-                gvEmpleadosArea.DataBind();
+                VerEmpleadoArea(idEmpleadoArea);
             }
         }
 
@@ -176,17 +116,9 @@ namespace InterfacesTrabajoGrupal
                 daoCajero.eliminarCajero(idCajero);
                 CargarCajeros();
             }
-        }
-
-        private void CargarCajeros()
-        {
-            daoCajero = new CajeroWSClient();
-            cajero[] arreglocajeros = daoCajero.listarCajeros();
-            if (arreglocajeros != null)
+            else if (e.CommandName == "VerCajero")
             {
-                cajeros = new BindingList<cajero>(arreglocajeros);
-                gvCajeros.DataSource = cajeros;
-                gvCajeros.DataBind();
+                VerCajero(idCajero);
             }
         }
 
@@ -210,6 +142,82 @@ namespace InterfacesTrabajoGrupal
                 daoSupervisor.eliminarSupervisor(idSupervisor);
                 CargarSupervisores();
             }
+            else if (e.CommandName == "VerSupervisor")
+            {
+                VerSupervisor(idSupervisor);
+            }
+        }
+
+        private void VerEmpleadoArea(int idEmpleadoArea)
+        {
+            BindingList<empleadoDeArea> empleados = ViewState["EmpleadosArea"] as BindingList<empleadoDeArea>;
+            var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idEmpleadoArea);
+            if (empleado != null)
+            {
+                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
+                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                           $"<strong>Sexo:</strong> {empleado.sexo}<br/>" +
+                                           $"<strong>Salario:</strong> {empleado.salario}<br/>" +
+                                           $"<strong>Horario:</strong> {empleado.horario}<br/>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
+            }
+        }
+
+        private void VerCajero(int idCajero)
+        {
+            BindingList<cajero> empleados = ViewState["Cajeros"] as BindingList<cajero>;
+            var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idCajero);
+            if (empleado != null)
+            {
+                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
+                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                           $"<strong>Sexo:</strong> {empleado.sexo}<br/>" +
+                                           $"<strong>Salario:</strong> {empleado.salario}<br/>" +
+                                           $"<strong>Horario:</strong> {empleado.horario}<br/>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
+            }
+        }
+
+        private void VerSupervisor(int idSupervisor)
+        {
+            BindingList<supervisor> empleados = ViewState["Supervisores"] as BindingList<supervisor>;
+            var empleado = empleados.FirstOrDefault(x => x.idEmpleado == idSupervisor);
+            if (empleado != null)
+            {
+                lblDetallesEmpleado.Text = $"<strong>Nombre:</strong> {empleado.nombre}<br/>" +
+                                           $"<strong>Teléfono:</strong> {empleado.telefono}<br/>" +
+                                           $"<strong>Email:</strong> {empleado.email}<br/>" +
+                                           $"<strong>Sexo:</strong> {empleado.sexo}<br/>" +
+                                           $"<strong>Salario:</strong> {empleado.salario}<br/>" +
+                                           $"<strong>Horario:</strong> {empleado.horario}<br/>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verEmpleadoModal').modal('show');", true);
+            }
+        }
+
+        private void CargarEmpleadosArea()
+        {
+            daoEmpleadoArea = new EmpleadoDeAreaWSClient();
+            empleadoDeArea[] arregloEmpleadoAreas = daoEmpleadoArea.listarEmpleadoArea();
+            if (arregloEmpleadoAreas != null)
+            {
+                empleadosArea = new BindingList<empleadoDeArea>(arregloEmpleadoAreas);
+                gvEmpleadosArea.DataSource = empleadosArea;
+                gvEmpleadosArea.DataBind();
+            }
+        }
+
+        private void CargarCajeros()
+        {
+            daoCajero = new CajeroWSClient();
+            cajero[] arreglocajeros = daoCajero.listarCajeros();
+            if (arreglocajeros != null)
+            {
+                cajeros = new BindingList<cajero>(arreglocajeros);
+                gvCajeros.DataSource = cajeros;
+                gvCajeros.DataBind();
+            }
         }
 
         private void CargarSupervisores()
@@ -223,8 +231,6 @@ namespace InterfacesTrabajoGrupal
                 gvSupervisores.DataBind();
             }
         }
-
-
 
     }
 }
