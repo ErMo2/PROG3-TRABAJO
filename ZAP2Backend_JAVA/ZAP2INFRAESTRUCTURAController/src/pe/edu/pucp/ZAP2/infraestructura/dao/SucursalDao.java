@@ -17,4 +17,5 @@ public interface SucursalDao {
     int eliminar(int idSucursal);
     ArrayList<Sucursal> listarTodas();
     Sucursal buscar(int id);
+    ArrayList<Sucursal> listarTodaSinProductoConPrecioActivo(int idProducto);
 }

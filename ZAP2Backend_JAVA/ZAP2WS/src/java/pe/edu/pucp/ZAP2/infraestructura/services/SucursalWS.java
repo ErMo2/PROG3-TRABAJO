@@ -80,4 +80,16 @@ public class SucursalWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "listarSucursalesDeUnProductoSinPrecio")
+    public ArrayList<Sucursal> listarSucursalesDeUnProductoSinPrecio(@WebParam(name = "idProducto") int id) {
+        ArrayList<Sucursal> sucursales = null;
+        try{
+            daoSucursal = new SucursalMySql();
+            sucursales = daoSucursal.listarTodaSinProductoConPrecioActivo(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return sucursales;
+    }
 }
