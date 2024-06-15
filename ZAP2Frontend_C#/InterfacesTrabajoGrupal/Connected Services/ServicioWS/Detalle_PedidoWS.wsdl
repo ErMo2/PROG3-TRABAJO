@@ -5,17 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/Detalle_PedidoWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="insertarDetallePedido">
-    <part name="parameters" element="tns:insertarDetallePedido" />
+  <message name="listarDetallePedidosXId">
+    <part name="parameters" element="tns:listarDetallePedidosXId" />
   </message>
-  <message name="insertarDetallePedidoResponse">
-    <part name="parameters" element="tns:insertarDetallePedidoResponse" />
-  </message>
-  <message name="eliminarDetallePedido">
-    <part name="parameters" element="tns:eliminarDetallePedido" />
-  </message>
-  <message name="eliminarDetallePedidoResponse">
-    <part name="parameters" element="tns:eliminarDetallePedidoResponse" />
+  <message name="listarDetallePedidosXIdResponse">
+    <part name="parameters" element="tns:listarDetallePedidosXIdResponse" />
   </message>
   <message name="listarDetallePedidos">
     <part name="parameters" element="tns:listarDetallePedidos" />
@@ -23,11 +17,17 @@
   <message name="listarDetallePedidosResponse">
     <part name="parameters" element="tns:listarDetallePedidosResponse" />
   </message>
-  <message name="listarDetallePedidosXId">
-    <part name="parameters" element="tns:listarDetallePedidosXId" />
+  <message name="eliminarDetallePedido">
+    <part name="parameters" element="tns:eliminarDetallePedido" />
   </message>
-  <message name="listarDetallePedidosXIdResponse">
-    <part name="parameters" element="tns:listarDetallePedidosXIdResponse" />
+  <message name="eliminarDetallePedidoResponse">
+    <part name="parameters" element="tns:eliminarDetallePedidoResponse" />
+  </message>
+  <message name="insertarDetallePedido">
+    <part name="parameters" element="tns:insertarDetallePedido" />
+  </message>
+  <message name="insertarDetallePedidoResponse">
+    <part name="parameters" element="tns:insertarDetallePedidoResponse" />
   </message>
   <message name="modificarDetallePedido">
     <part name="parameters" element="tns:modificarDetallePedido" />
@@ -36,21 +36,21 @@
     <part name="parameters" element="tns:modificarDetallePedidoResponse" />
   </message>
   <portType name="Detalle_PedidoWS">
-    <operation name="insertarDetallePedido">
-      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoRequest" message="tns:insertarDetallePedido" />
-      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoResponse" message="tns:insertarDetallePedidoResponse" />
-    </operation>
-    <operation name="eliminarDetallePedido">
-      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/eliminarDetallePedidoRequest" message="tns:eliminarDetallePedido" />
-      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/eliminarDetallePedidoResponse" message="tns:eliminarDetallePedidoResponse" />
+    <operation name="listarDetallePedidosXId">
+      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdRequest" message="tns:listarDetallePedidosXId" />
+      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdResponse" message="tns:listarDetallePedidosXIdResponse" />
     </operation>
     <operation name="listarDetallePedidos">
       <input wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosRequest" message="tns:listarDetallePedidos" />
       <output wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosResponse" message="tns:listarDetallePedidosResponse" />
     </operation>
-    <operation name="listarDetallePedidosXId">
-      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdRequest" message="tns:listarDetallePedidosXId" />
-      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdResponse" message="tns:listarDetallePedidosXIdResponse" />
+    <operation name="eliminarDetallePedido">
+      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/eliminarDetallePedidoRequest" message="tns:eliminarDetallePedido" />
+      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/eliminarDetallePedidoResponse" message="tns:eliminarDetallePedidoResponse" />
+    </operation>
+    <operation name="insertarDetallePedido">
+      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoRequest" message="tns:insertarDetallePedido" />
+      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoResponse" message="tns:insertarDetallePedidoResponse" />
     </operation>
     <operation name="modificarDetallePedido">
       <input wsam:Action="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoRequest" message="tns:modificarDetallePedido" />
@@ -59,16 +59,7 @@
   </portType>
   <binding name="Detalle_PedidoWSPortBinding" type="tns:Detalle_PedidoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarDetallePedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarDetallePedido">
+    <operation name="listarDetallePedidosXId">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +77,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarDetallePedidosXId">
+    <operation name="eliminarDetallePedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarDetallePedido">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

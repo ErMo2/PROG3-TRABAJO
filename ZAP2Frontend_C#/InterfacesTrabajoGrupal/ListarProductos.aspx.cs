@@ -115,7 +115,9 @@ namespace InterfacesTrabajoGrupal
         protected void EditProductElectrodomestico_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            Response.Redirect($"EditarElectrodomestico.aspx?idProducto={idProducto}");
+            Session["idElectrodomestico"] = idProducto;
+            Response.Redirect($"GestionarElectrodomestico.aspx?idElectrodomestico={idProducto}");
+
         }
 
         protected void DeleteProductElectrodomestico_Click(object sender, EventArgs e)
@@ -179,7 +181,6 @@ namespace InterfacesTrabajoGrupal
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoRopa.eliminarRopa(idProducto);
             Response.Redirect("ListarProductos.aspx");
-            //CargarDatos();
         }
 
         protected void VerProductRopa_Click(object sender, EventArgs e)

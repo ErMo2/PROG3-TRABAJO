@@ -35,19 +35,6 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label for="txtPrecioProducto" class="col-sm-2 col-form-label">Precio del Producto:</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox ID="txtPrecioProducto" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="txtStock" class="col-sm-2 col-form-label">Stock del Producto:</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox ID="txtStock" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
 
                 <div class="form-group row">
                     <label for="txtModelo" class="col-sm-2 col-form-label">Modelo:</label>
@@ -55,14 +42,6 @@
                         <asp:TextBox ID="txtModelo" runat="server" CssClass="form-control"></asp:TextBox>
                     </div>
                 </div>
-
-                <div class="form-group row">
-                    <label for="dtpTiempoGarantia" class="col-sm-2 col-form-label">Tiempo de Garantía:</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="date" id="dtpTiempoGarantia" runat="server">
-                    </div>
-                </div>
-
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Tiene Garantía:</label>
                     <div class="col-sm-10">
@@ -72,23 +51,15 @@
                         </asp:RadioButtonList>
                     </div>
                 </div>
-                <!-- New field for selecting a Sucursal -->
+
                 <div class="form-group row">
-                    <label for="ddlSucursal" class="col-sm-2 col-form-label">Sucursal:</label>
+                    <label for="dtpTiempoGarantia" class="col-sm-2 col-form-label">Duración de la Garantía:</label>
                     <div class="col-sm-10">
-                        <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control">
-                        </asp:DropDownList>
+                        Ignorar en caso no tener garantía
+        <input class="form-control" type="date" id="dtpTiempoGarantia" runat="server">
                     </div>
                 </div>
-                <br />
-                <!-- New field for applying a Discount -->
-                <div class="form-group row">
-                    <label for="txtDescuento" class="col-sm-2 col-form-label">Descuento (%):</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox ID="txtDescuento" runat="server" CssClass="form-control" TextMode="Number" />
-                    </div>
-                </div>
-                <br />
+
                 <div class="form-group row">
                     <div class="col-sm-10 offset-sm-2">
                         <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />

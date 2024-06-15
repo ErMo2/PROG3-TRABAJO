@@ -42,24 +42,6 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionProducto;
 
         /// <summary>
-        /// Control txtPrecioProducto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrecioProducto;
-
-        /// <summary>
-        /// Control txtStock.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStock;
-
-        /// <summary>
         /// Control txtModelo.
         /// </summary>
         /// <remarks>
@@ -67,15 +49,6 @@ namespace InterfacesTrabajoGrupal
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtModelo;
-
-        /// <summary>
-        /// Control dtpTiempoGarantia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpTiempoGarantia;
 
         /// <summary>
         /// Control rblGarantia.
@@ -87,22 +60,13 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.RadioButtonList rblGarantia;
 
         /// <summary>
-        /// Control ddlSucursal.
+        /// Control dtpTiempoGarantia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
-
-        /// <summary>
-        /// Control txtDescuento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescuento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpTiempoGarantia;
 
         /// <summary>
         /// Control btnRegistrar.

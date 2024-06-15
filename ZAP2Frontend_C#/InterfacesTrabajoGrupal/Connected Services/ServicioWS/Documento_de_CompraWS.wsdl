@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/Documento_de_CompraWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarEgresos">
-    <part name="parameters" element="tns:listarEgresos" />
+  <message name="listarDocumentosCompras">
+    <part name="parameters" element="tns:listarDocumentosCompras" />
   </message>
-  <message name="listarEgresosResponse">
-    <part name="parameters" element="tns:listarEgresosResponse" />
+  <message name="listarDocumentosComprasResponse">
+    <part name="parameters" element="tns:listarDocumentosComprasResponse" />
   </message>
   <message name="eliminarDocumentoCompra">
     <part name="parameters" element="tns:eliminarDocumentoCompra" />
@@ -29,16 +29,16 @@
   <message name="modificarDocumentoCompraResponse">
     <part name="parameters" element="tns:modificarDocumentoCompraResponse" />
   </message>
-  <message name="listarDocumentosCompras">
-    <part name="parameters" element="tns:listarDocumentosCompras" />
+  <message name="listarEgresos">
+    <part name="parameters" element="tns:listarEgresos" />
   </message>
-  <message name="listarDocumentosComprasResponse">
-    <part name="parameters" element="tns:listarDocumentosComprasResponse" />
+  <message name="listarEgresosResponse">
+    <part name="parameters" element="tns:listarEgresosResponse" />
   </message>
   <portType name="Documento_de_CompraWS">
-    <operation name="listarEgresos">
-      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest" message="tns:listarEgresos" />
-      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarEgresosResponse" message="tns:listarEgresosResponse" />
+    <operation name="listarDocumentosCompras">
+      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest" message="tns:listarDocumentosCompras" />
+      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse" message="tns:listarDocumentosComprasResponse" />
     </operation>
     <operation name="eliminarDocumentoCompra">
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/eliminarDocumentoCompraRequest" message="tns:eliminarDocumentoCompra" />
@@ -52,14 +52,14 @@
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraRequest" message="tns:modificarDocumentoCompra" />
       <output wsam:Action="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraResponse" message="tns:modificarDocumentoCompraResponse" />
     </operation>
-    <operation name="listarDocumentosCompras">
-      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest" message="tns:listarDocumentosCompras" />
-      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse" message="tns:listarDocumentosComprasResponse" />
+    <operation name="listarEgresos">
+      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest" message="tns:listarEgresos" />
+      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarEgresosResponse" message="tns:listarEgresosResponse" />
     </operation>
   </portType>
   <binding name="Documento_de_CompraWSPortBinding" type="tns:Documento_de_CompraWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarEgresos">
+    <operation name="listarDocumentosCompras">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarDocumentosCompras">
+    <operation name="listarEgresos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
