@@ -388,7 +388,7 @@ public class Principal {
         /*======================================================================*/
         /*========================= ProductoPerecible ==========================*/
         /*======================================================================*/
-//        ProductoPerecibleDao daoProdPerec = new ProductoPerecibleMySql();
+        ProductoPerecibleDao daoProdPerec = new ProductoPerecibleMySql();
         /*######### Insertar ########*/
 //        ProductoPerecible prodPerecible = new ProductoPerecible(fecha1, TipoProductoPerecible.DESPENSA, UnidadDeMedida.UNIDAD, 
 //                0, "Lata atún", "Lata Atún Florida En Trozos", null, 1, null);
@@ -397,7 +397,7 @@ public class Principal {
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
-        
+        daoProdPerec.eliminar(1);
         /*########## Listar #########*/   
         
         
