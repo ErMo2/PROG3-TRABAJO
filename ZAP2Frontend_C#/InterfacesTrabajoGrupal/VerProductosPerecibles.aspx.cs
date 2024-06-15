@@ -1,6 +1,7 @@
 ﻿using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,8 @@ namespace InterfacesTrabajoGrupal
         private ProductoPerecibleWSClient productoDao;
         private productoPerecible producto;
         private ProductoPrecioWSClient productoPrecioDao;
-        private productoPrecio productoPrecio;
+        private productoPrecio prodPrec;
+        private BindingList<productoPrecio> productoPrecios;
         //private DescuentoWSClient descuentoDao;
         private descuento descuento;
         protected void Page_Load(object sender, EventArgs e)
@@ -40,6 +42,13 @@ namespace InterfacesTrabajoGrupal
                 }
             }
 
+            
+           // daoArea = new AreaWSClient();
+            //area[] ArregloAreas = daoArea.listarArea();
+            //if (ArregloAreas != null)
+             //   areas = new BindingList<area>(ArregloAreas);
+            //gvAreas.DataSource = areas;
+            //gvAreas.DataBind();
         }
         protected void cargarDatos()
         {
@@ -112,6 +121,17 @@ namespace InterfacesTrabajoGrupal
             producto.unidad_de_medidaSpecified = true;
             //  productoPrecio.descuentos[0].idDescuento = descuentoDao.insertarDescuento(descuentoProducto);
             Response.Redirect("listarProductos.aspx");
+        }
+        protected void gvSucursales_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].Text = DataBinder.Eval(e.Row.DataItem, "idProducto").ToString;
+            }
+        }
+        protected void gvSucursales_PageIndexChanging(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -64,6 +64,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="container row">
+            <asp:GridView ID="gvSucursales" runat="server"
+                AutoGenerateColumns="false"
+                CssClass="table table-hover table-responsive"
+                AllowPaging="true"
+                PageSize="5"
+                OnPageIndexChanging="gvSucursales_PageIndexChanging"
+                OnRowDataBound="gvSucursales_RowDataBound">
+                <Columns>
+                    <asp:BoundField HeaderText="Id" DataField="idSucursal" />
+                    <asp:BoundField HeaderText="Nombre" DataField="nombre" />
+                    <asp:BoundField HeaderText="Precio" DataField="precio" />
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("idProducto") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar esta sucursal?');" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
+
         <div class="card-footer text-right">
             <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary" OnClick="btnRegresar_Click" />
         </div>
