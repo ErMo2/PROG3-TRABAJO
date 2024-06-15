@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace InterfacesTrabajoGrupal
 {
-    public partial class ProdPerecible : System.Web.UI.Page
+    public partial class VerProductosPerecibles : System.Web.UI.Page
     {
         private ProductoPerecibleWSClient productoDao;
         private productoPerecible producto;
@@ -23,7 +23,7 @@ namespace InterfacesTrabajoGrupal
             if (Session["idPerecible"] != null)
             {
                 idProductoPerecible = (int)Session["idPerecible"];
-                producto=productoDao.buscarProductoPerecible(idProductoPerecible);
+                producto = productoDao.buscarProductoPerecible(idProductoPerecible);
                 if (!IsPostBack)
                 {
                     cargarDatos();
@@ -46,7 +46,7 @@ namespace InterfacesTrabajoGrupal
             txtIdProducto.Text = producto.idProducto.ToString();
             txtNombreProducto.Text = producto.nombre;
             txtDescripcionProducto.Text = producto.descripcion.ToString();
-            dtpFechaNacimiento.Value = producto.fechVencimiento.ToString("yyyy-MM-dd");
+            dtpFechaNacimiento.Text = producto.fechVencimiento.ToString("yyyy-MM-dd");
             ddlTipoProductoPerecible.SelectedValue = producto.tipo_producto_perecible.ToString();
             ddlUnidadMedida.SelectedValue = producto.unidad_de_medida.ToString();
         }
@@ -60,7 +60,7 @@ namespace InterfacesTrabajoGrupal
             producto = new productoPerecible();
             producto.nombre = txtNombreProducto.Text;
             producto.descripcion = txtDescripcionProducto.Text;
-            if (DateTime.TryParse(dtpFechaNacimiento.Value, out DateTime fechaVencimiento))
+            if (DateTime.TryParse(dtpFechaNacimiento.Text, out DateTime fechaVencimiento))
             {
                 producto.fechVencimiento = fechaVencimiento;
 
@@ -90,27 +90,27 @@ namespace InterfacesTrabajoGrupal
             producto.activo = 1;
             producto.fechVencimientoSpecified = true;
             producto.tipo_producto_perecibleSpecified = true;
-            producto.unidad_de_medidaSpecified= true;
+            producto.unidad_de_medidaSpecified = true;
             productoPrecio = new productoPrecio();
             productoPrecioDao = new ProductoPrecioWSClient();
-            
-            if (Session["idModificarPerecible"] !=null)
+
+            if (Session["idModificarPerecible"] != null)
             {
                 producto.idProducto = (int)Session["idModificarPerecible"];
-                int resultado=productoDao.modificarProductoPerecible(producto);
+                int resultado = productoDao.modificarProductoPerecible(producto);
             }
             else
             {
                 producto.idProducto = productoDao.insertarProductoPerecible(producto);
             }
-            
+
             productoPrecio.producto = new producto();
             productoPrecio.producto.idProducto = producto.idProducto;
-            
-            producto.fechVencimientoSpecified= true;
-            producto.tipo_producto_perecibleSpecified= true;
+
+            producto.fechVencimientoSpecified = true;
+            producto.tipo_producto_perecibleSpecified = true;
             producto.unidad_de_medidaSpecified = true;
-          //  productoPrecio.descuentos[0].idDescuento = descuentoDao.insertarDescuento(descuentoProducto);
+            //  productoPrecio.descuentos[0].idDescuento = descuentoDao.insertarDescuento(descuentoProducto);
             Response.Redirect("listarProductos.aspx");
         }
     }

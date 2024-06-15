@@ -193,6 +193,38 @@
       <xs:element minOccurs="0" name="usuario" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="cajero">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:empleado">
+        <xs:sequence>
+          <xs:element name="cantidadCaja" type="xs:double" />
+          <xs:element name="numeroCaja" type="xs:int" />
+          <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="supervisor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:empleado">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="cajeros" nillable="true" type="tns:cajero" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="empleadosArea" nillable="true" type="tns:empleadoDeArea" />
+          <xs:element name="numempleados" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="empleadoDeArea">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:empleado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="puesto" type="tns:tipoPuesto" />
+          <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="tarjeta">
     <xs:sequence>
       <xs:element minOccurs="0" name="banco" type="tns:banco" />
@@ -230,22 +262,22 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarFacturaVenta">
-    <xs:sequence>
-      <xs:element name="idFacturaVenta" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarFacturaVentaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarFacturaVenta">
     <xs:sequence>
       <xs:element minOccurs="0" name="facturaVenta" type="tns:facturaVenta" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarFacturaVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVenta">
+    <xs:sequence>
+      <xs:element name="idFacturaVenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVentaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -306,6 +338,12 @@
       <xs:enumeration value="TiempoParcial" />
       <xs:enumeration value="TiempoCompleto" />
       <xs:enumeration value="ContratoEspecial" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoPuesto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Empacador" />
+      <xs:enumeration value="Consultor" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="tipoTarjeta">

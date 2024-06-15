@@ -25,36 +25,41 @@ namespace InterfacesTrabajoGrupal
         {
             daoProdPerecible = new ProductoPerecibleWSClient();
             daoProdCuiHog = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
-            daoElectrodomestico =    new ElectrodomesticosWSClient();
+            daoElectrodomestico = new ElectrodomesticosWSClient();
             daoRopa = new RopaWSClient();
+            
+                
 
-            ropa[] ropaArreglo = daoRopa.listarRopa();
-            electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticos();
-            productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCH();
-            productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecible();
+                ropa[] ropaArreglo = daoRopa.listarRopa();
+                electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticos();
+                productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCH();
+                productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecible();
 
-            if (ropaArreglo != null)
-                listaRopa = new BindingList<ropa>(ropaArreglo);
+                if (ropaArreglo != null)
+                    listaRopa = new BindingList<ropa>(ropaArreglo);
 
-            if (electrodomesticosArreglo != null)
-                listaElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArreglo);
+                if (electrodomesticosArreglo != null)
+                    listaElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArreglo);
 
-            if (prodCuiHogArreglo != null)
-                listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>(prodCuiHogArreglo);
+                if (prodCuiHogArreglo != null)
+                    listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>(prodCuiHogArreglo);
 
-            if (prodPerecibleArreglo != null)
-                listaProdPerecibles = new BindingList<productoPerecible>(prodPerecibleArreglo);
+                if (prodPerecibleArreglo != null)
+                    listaProdPerecibles = new BindingList<productoPerecible>(prodPerecibleArreglo);
 
-            gvElectrodomesticos.DataSource = listaElectrodomesticos;
-            gvLimpiezayHogar.DataSource = listaProdCuiHog;
-            gvProductosPerecibles.DataSource = listaProdPerecibles;
-            gvRopa.DataSource = listaRopa;
+                gvElectrodomesticos.DataSource = listaElectrodomesticos;
+                gvLimpiezayHogar.DataSource = listaProdCuiHog;
+                gvProductosPerecibles.DataSource = listaProdPerecibles;
+                gvRopa.DataSource = listaRopa;
 
-            gvElectrodomesticos.DataBind();
-            gvLimpiezayHogar.DataBind();
-            gvProductosPerecibles.DataBind();
-            gvRopa.DataBind();
+                gvElectrodomesticos.DataBind();
+                gvLimpiezayHogar.DataBind();
+                gvProductosPerecibles.DataBind();
+                gvRopa.DataBind();
+            
+            
         }
+        
 
         protected void lbRegistrarProducto_Click(object sender, EventArgs e)
         {
@@ -76,6 +81,7 @@ namespace InterfacesTrabajoGrupal
         protected void gvRopa_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvRopa.PageIndex = e.NewPageIndex;
+            gvRopa.DataSource = listaRopa;
             gvRopa.DataBind();
         }
 
@@ -88,7 +94,8 @@ namespace InterfacesTrabajoGrupal
         protected void EditProductPerecible_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            Response.Redirect($"EditarProductoPerecible.aspx?idProducto={idProducto}");
+            Session["idPerecible"] = idProducto;
+            Response.Redirect($"GestionarProdPerecible.aspx?idPerecible={idProducto}");
         }
 
         protected void DeleteProductPerecible_Click(object sender, EventArgs e)
@@ -101,15 +108,8 @@ namespace InterfacesTrabajoGrupal
         protected void VerProductPerecible_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            if (listaProdPerecibles != null)
-            {
-                var producto = listaProdPerecibles.FirstOrDefault(p => p.idProducto == idProducto);
-                if (producto != null)
-                {
-                    lblDetalles.Text = $"ID: {producto.idProducto}<br/>Nombre: {producto.nombre}<br/>Descripción: {producto.descripcion}<br/>Fecha Vencimiento: {producto.fechVencimiento}<br/>Tipo: {producto.tipo_producto_perecible}";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                }
-            }
+            Session["idPerecibleVisualizar"] = idProducto;
+            Response.Redirect($"VerProductosPerecibles.aspx?idPerecibleVisualizar={idProducto}");
         }
 
         protected void EditProductElectrodomestico_Click(object sender, EventArgs e)
@@ -122,6 +122,7 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoElectrodomestico.eliminarElectrodomestico(idProducto);
+            Response.Redirect("ListarProductos.aspx");
             //CargarDatos();
         }
 
@@ -149,6 +150,7 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoProdCuiHog.eliminarPCH(idProducto);
+            Response.Redirect("ListarProductos.aspx");
             //CargarDatos();
         }
 
@@ -176,6 +178,7 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoRopa.eliminarRopa(idProducto);
+            Response.Redirect("ListarProductos.aspx");
             //CargarDatos();
         }
 

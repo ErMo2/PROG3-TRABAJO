@@ -58,7 +58,7 @@ public class ProductoPerecibleMySql implements ProductoPerecibleDao{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_PRODUCTO_PERECIBLE"
                     +"(?,?,?,?,?,?)}");
-            cs.setInt("_id_productoPerecible", productoPerecible.getIdProducto());
+            cs.setInt("_id_producto", productoPerecible.getIdProducto());
             cs.setString("_nombre",productoPerecible.getNombre());
             cs.setString("_descripcion", productoPerecible.getDescripcion());
             Date fecha1 = new Date(productoPerecible.getFechVencimiento().getTime());
@@ -66,7 +66,6 @@ public class ProductoPerecibleMySql implements ProductoPerecibleDao{
             cs.setString("_tipo_producto_perecible", productoPerecible.getTipo_producto_perecible().toString());
             cs.setString("_unidad_de_medida", productoPerecible.getUnidad_de_medida().toString());
             resultado = cs.executeUpdate();
-            productoPerecible.setIdProducto(cs.getInt("_id_productoPerecible"));
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
