@@ -11,11 +11,11 @@
   <message name="insertarBoletaVentaResponse">
     <part name="parameters" element="tns:insertarBoletaVentaResponse" />
   </message>
-  <message name="listarBoletaVentaTodos">
-    <part name="parameters" element="tns:listarBoletaVentaTodos" />
+  <message name="eliminarBoletaVenta">
+    <part name="parameters" element="tns:eliminarBoletaVenta" />
   </message>
-  <message name="listarBoletaVentaTodosResponse">
-    <part name="parameters" element="tns:listarBoletaVentaTodosResponse" />
+  <message name="eliminarBoletaVentaResponse">
+    <part name="parameters" element="tns:eliminarBoletaVentaResponse" />
   </message>
   <message name="modificarBoletaVenta">
     <part name="parameters" element="tns:modificarBoletaVenta" />
@@ -23,28 +23,28 @@
   <message name="modificarBoletaVentaResponse">
     <part name="parameters" element="tns:modificarBoletaVentaResponse" />
   </message>
-  <message name="eliminarBoletaVenta">
-    <part name="parameters" element="tns:eliminarBoletaVenta" />
+  <message name="listarBoletaVentaTodos">
+    <part name="parameters" element="tns:listarBoletaVentaTodos" />
   </message>
-  <message name="eliminarBoletaVentaResponse">
-    <part name="parameters" element="tns:eliminarBoletaVentaResponse" />
+  <message name="listarBoletaVentaTodosResponse">
+    <part name="parameters" element="tns:listarBoletaVentaTodosResponse" />
   </message>
   <portType name="Boleta_VentaWS">
     <operation name="insertarBoletaVenta">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaRequest" message="tns:insertarBoletaVenta" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaResponse" message="tns:insertarBoletaVentaResponse" />
     </operation>
-    <operation name="listarBoletaVentaTodos">
-      <input wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest" message="tns:listarBoletaVentaTodos" />
-      <output wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse" message="tns:listarBoletaVentaTodosResponse" />
+    <operation name="eliminarBoletaVenta">
+      <input wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaRequest" message="tns:eliminarBoletaVenta" />
+      <output wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaResponse" message="tns:eliminarBoletaVentaResponse" />
     </operation>
     <operation name="modificarBoletaVenta">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaRequest" message="tns:modificarBoletaVenta" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaResponse" message="tns:modificarBoletaVentaResponse" />
     </operation>
-    <operation name="eliminarBoletaVenta">
-      <input wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaRequest" message="tns:eliminarBoletaVenta" />
-      <output wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaResponse" message="tns:eliminarBoletaVentaResponse" />
+    <operation name="listarBoletaVentaTodos">
+      <input wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest" message="tns:listarBoletaVentaTodos" />
+      <output wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse" message="tns:listarBoletaVentaTodosResponse" />
     </operation>
   </portType>
   <binding name="Boleta_VentaWSPortBinding" type="tns:Boleta_VentaWS">
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarBoletaVentaTodos">
+    <operation name="eliminarBoletaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarBoletaVenta">
+    <operation name="listarBoletaVentaTodos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

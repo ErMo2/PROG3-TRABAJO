@@ -25,17 +25,9 @@ namespace InterfacesTrabajoGrupal
         {
             daoProdPerecible = new ProductoPerecibleWSClient();
             daoProdCuiHog = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
-            daoElectrodomestico = new ElectrodomesticosWSClient();
+            daoElectrodomestico =    new ElectrodomesticosWSClient();
             daoRopa = new RopaWSClient();
 
-            if (!IsPostBack)
-            {
-                CargarDatos();
-            }
-        }
-
-        private void CargarDatos()
-        {
             ropa[] ropaArreglo = daoRopa.listarRopa();
             electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticos();
             productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCH();
@@ -43,23 +35,15 @@ namespace InterfacesTrabajoGrupal
 
             if (ropaArreglo != null)
                 listaRopa = new BindingList<ropa>(ropaArreglo);
-            else
-                listaRopa = new BindingList<ropa>();
 
             if (electrodomesticosArreglo != null)
                 listaElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArreglo);
-            else
-                listaElectrodomesticos = new BindingList<electrodomesticos>();
 
             if (prodCuiHogArreglo != null)
                 listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>(prodCuiHogArreglo);
-            else
-                listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>();
 
             if (prodPerecibleArreglo != null)
                 listaProdPerecibles = new BindingList<productoPerecible>(prodPerecibleArreglo);
-            else
-                listaProdPerecibles = new BindingList<productoPerecible>();
 
             gvElectrodomesticos.DataSource = listaElectrodomesticos;
             gvLimpiezayHogar.DataSource = listaProdCuiHog;
@@ -111,7 +95,7 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoProdPerecible.eliminarProductoPerecible(idProducto);
-            CargarDatos();
+            Response.Redirect("ListarProductos.aspx");
         }
 
         protected void VerProductPerecible_Click(object sender, EventArgs e)
@@ -138,7 +122,7 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoElectrodomestico.eliminarElectrodomestico(idProducto);
-            CargarDatos();
+            //CargarDatos();
         }
 
         protected void VerProductElectrodomestico_Click(object sender, EventArgs e)
@@ -165,7 +149,7 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoProdCuiHog.eliminarPCH(idProducto);
-            CargarDatos();
+            //CargarDatos();
         }
 
         protected void VerProductLimpiezaHogar_Click(object sender, EventArgs e)
@@ -192,7 +176,7 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoRopa.eliminarRopa(idProducto);
-            CargarDatos();
+            //CargarDatos();
         }
 
         protected void VerProductRopa_Click(object sender, EventArgs e)
