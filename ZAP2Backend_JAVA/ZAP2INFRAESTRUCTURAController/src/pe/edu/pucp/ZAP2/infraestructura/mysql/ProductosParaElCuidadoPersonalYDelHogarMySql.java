@@ -60,7 +60,7 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
             cs.setString("_unidad_de_medida", String.valueOf(productoParaElCuidadoPersonalYDelHogar.getUnidadMedida()));
             cs.setString("_tipo", productoParaElCuidadoPersonalYDelHogar.getTipo());
             resultado = cs.executeUpdate();
-            productoParaElCuidadoPersonalYDelHogar.setIdProducto(cs.getInt("_id_PCH"));
+            
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
