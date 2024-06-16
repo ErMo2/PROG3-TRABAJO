@@ -80,5 +80,7 @@ public class ProductoPrecio {
         System.out.println("ProductoPrecio{" + "idProductoPrecio=" + idProductoPrecio + ", precio=" + precio + ", "
                 + "activo=" + activo + ", sucursal=" + sucursal.getNombre() + ", descuento=" + descuento.getIdDescuento() + ", producto=" + producto.getNombre());
     }
-    
+    public String obtenerNombreSucursal(){
+        return sucursal.getNombre();
+    }
 }

@@ -11,7 +11,7 @@ namespace InterfacesTrabajoGrupal
 {
 
 
-    public partial class VerProductosPerecibles
+    public partial class VerElectrodomesticos
     {
 
         /// <summary>
@@ -42,31 +42,31 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionProducto;
 
         /// <summary>
-        /// Control dtpFechaNacimiento.
+        /// Control txtModelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dtpFechaNacimiento;
+        protected global::System.Web.UI.WebControls.TextBox txtModelo;
 
         /// <summary>
-        /// Control ddlTipoProductoPerecible.
+        /// Control rblGarantia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTipoProductoPerecible;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblGarantia;
 
         /// <summary>
-        /// Control ddlUnidadMedida.
+        /// Control dtpTiempoGarantia2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUnidadMedida;
+        protected global::System.Web.UI.WebControls.TextBox dtpTiempoGarantia2;
 
         /// <summary>
         /// Control gvSucursales.

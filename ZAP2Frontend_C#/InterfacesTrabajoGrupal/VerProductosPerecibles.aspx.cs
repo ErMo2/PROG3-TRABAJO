@@ -1,6 +1,7 @@
 ﻿using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,24 +13,18 @@ namespace InterfacesTrabajoGrupal
     {
         private ProductoPerecibleWSClient productoDao;
         private productoPerecible producto;
-        private ProductoPrecioWSClient productoPrecioDao;
-        private productoPrecio productoPrecio;
         //private DescuentoWSClient descuentoDao;
         private descuento descuento;
+        private ProductoPrecioWSClient productoPrecioDao;
+        private BindingList<productoPrecio> prodPred;
+        private productoPrecio Producto;
+        private SucursalWSClient sucursalDao;
+        private 
         protected void Page_Load(object sender, EventArgs e)
         {
             int idProductoPerecible;
             productoDao = new ProductoPerecibleWSClient();
-            if (Session["idPerecible"] != null)
-            {
-                idProductoPerecible = (int)Session["idPerecible"];
-                producto = productoDao.buscarProductoPerecible(idProductoPerecible);
-                if (!IsPostBack)
-                {
-                    cargarDatos();
-                }
-                Session["idModificarPerecible"] = idProductoPerecible;
-            }
+
             if (Session["idPerecibleVisualizar"] != null)
             {
                 idProductoPerecible = (int)Session["idPerecibleVisualizar"];
@@ -38,8 +33,18 @@ namespace InterfacesTrabajoGrupal
                 {
                     cargarDatos();
                 }
+                productoPrecioDao = new ProductoPrecioWSClient();
+                productoPrecio[] ArregloProdPre = productoPrecioDao.listarProductoPrecioProducto(idProductoPerecible);
+                if (ArregloProdPre != null)
+                {
+                    prodPred = new BindingList<productoPrecio>(ArregloProdPre);
+                }
+                
+                gvSucursales.DataSource = prodPred;
+                gvSucursales.DataBind();
             }
 
+              
         }
         protected void cargarDatos()
         {
@@ -49,10 +54,22 @@ namespace InterfacesTrabajoGrupal
             dtpFechaNacimiento.Text = producto.fechVencimiento.ToString("yyyy-MM-dd");
             ddlTipoProductoPerecible.SelectedValue = producto.tipo_producto_perecible.ToString();
             ddlUnidadMedida.SelectedValue = producto.unidad_de_medida.ToString();
+            sucursalDao = new SucursalWSClient();
+            var sucursales = sucursalDao.listarSucursal();
+            ddlSucursal.Items.Clear();
+            foreach (var sucursal in sucursales)
+            {
+                //if (sucursal.id_sucursal?)
+                //{
+                //    ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
+                //}
+                ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
+
+            }
         }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            Response.Redirect("ListarProductos.aspx");
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -91,8 +108,6 @@ namespace InterfacesTrabajoGrupal
             producto.fechVencimientoSpecified = true;
             producto.tipo_producto_perecibleSpecified = true;
             producto.unidad_de_medidaSpecified = true;
-            productoPrecio = new productoPrecio();
-            productoPrecioDao = new ProductoPrecioWSClient();
 
             if (Session["idModificarPerecible"] != null)
             {
@@ -104,14 +119,49 @@ namespace InterfacesTrabajoGrupal
                 producto.idProducto = productoDao.insertarProductoPerecible(producto);
             }
 
-            productoPrecio.producto = new producto();
-            productoPrecio.producto.idProducto = producto.idProducto;
 
             producto.fechVencimientoSpecified = true;
             producto.tipo_producto_perecibleSpecified = true;
             producto.unidad_de_medidaSpecified = true;
             //  productoPrecio.descuentos[0].idDescuento = descuentoDao.insertarDescuento(descuentoProducto);
             Response.Redirect("listarProductos.aspx");
+        }
+        protected void gvSucursales_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[0].Text = DataBinder.Eval(e.Row.DataItem, "idProductoPrecio").ToString();
+                e.Row.Cells[1].Text = DataBinder.Eval(e.Row.DataItem, "sucursal.nombre").ToString();
+                e.Row.Cells[2].Text = DataBinder.Eval(e.Row.DataItem, "precio").ToString();
+
+            }
+        }
+        protected void btnRegistrarProductoPrecio_Click(object sender, EventArgs e)
+        {
+            //Producto.sucursal= new sucursal();
+            Producto = new productoPrecio();
+            Producto.sucursal = new sucursal();
+            Producto.sucursal.id_sucursal = int.Parse(ddlSucursal.SelectedValue);
+
+            Producto.precio = double.Parse(txtNuevoPrecio.Text);
+            Producto.producto = new producto();
+            Producto.producto.idProducto = Int32.Parse(txtIdProducto.Text);
+            productoPrecioDao.insertarProductoPrecio(Producto);
+            gvSucursales.DataBind();
+
+            Response.Redirect(Request.RawUrl);
+        }
+        protected void gvSucursales_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvSucursales.PageIndex = e.NewPageIndex;
+            gvSucursales.DataBind();
+        }
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            productoPrecioDao = new ProductoPrecioWSClient();
+            int idProductoPrecio = Int32.Parse(((LinkButton)sender).CommandArgument);
+            productoPrecioDao.eliminarProductoPrecio(idProductoPrecio);
+            Response.Redirect(Request.RawUrl);
         }
     }
 }
