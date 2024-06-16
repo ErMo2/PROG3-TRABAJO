@@ -9,49 +9,43 @@ using System.Web.UI.WebControls;
 
 namespace InterfacesTrabajoGrupal
 {
-    public partial class GestionPedidos : System.Web.UI.Page
+    public partial class ListarPedidos : System.Web.UI.Page
     {
-        private Documento_de_CompraWSClient documentoCompraDAO;
-        private BindingList<documentoDeCompra> listarDocumentosDeCompra;
-
+        private PedidoWSClient daoPedido;
+        private pedido pedido;
+        private BindingList<pedido> pedidos;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                CargarDatos();
-            }
+            daoPedido = new PedidoWSClient();
+
+            pedido[] arregloPedidos = daoPedido.listarPedidos();//Creo un arreglo genérico para resibir un ArrayList<> de JAVA
+
+            if (arregloPedidos != null)
+                pedidos = new BindingList<pedido>(arregloPedidos);
+
+            gvPedidos.DataSource = pedidos;
+            gvPedidos.DataBind();
         }
 
-        private void CargarDatos()
+        protected void lbRegistrarPedido_Click(object sender, EventArgs e)
         {
-            try
-            {
-                documentoCompraDAO = new Documento_de_CompraWSClient();
-                documentoDeCompra[] arregloDocumentos = documentoCompraDAO.listarDocumentosCompras();
-                if (arregloDocumentos != null)
-                    listarDocumentosDeCompra = new BindingList<documentoDeCompra>(arregloDocumentos);
-
-                gvListaDocumentoDeCompra.DataSource = listarDocumentosDeCompra;
-                gvListaDocumentoDeCompra.DataBind();
-                ViewState["DocumentosDeCompra"] = listarDocumentosDeCompra; // Guardar en ViewState
-            }
-            catch (Exception ex)
-            {
-                // Manejo de errores
-                //lblError.Text = "Error al cargar datos: " + ex.Message;
-            }
+            Response.Redirect("GestionarPedido.aspx");
         }
 
-        protected void gvListaDocumentoDeCompra_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void btnModificar_Click(object sender, EventArgs e)
         {
-            gvListaDocumentoDeCompra.PageIndex = e.NewPageIndex;
-            CargarDatos();
+            Response.Redirect("GestionarPedido.aspx");
         }
 
-        protected void lbRegistrarDocumentoDeCompra_Click(object sender, EventArgs e)
+        protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RegistrarDocumentoDeCompra.aspx");
+            Response.Redirect("GestionarPedido.aspx");
         }
 
+        protected void gvPedidos_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvPedidos.PageIndex = e.NewPageIndex;
+            gvPedidos.DataBind();
+        }
     }
 }

@@ -9,7 +9,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-       <h2 class="mb-4 text-center">Listado de Clientes</h2>
+    <h2 class="mb-4 text-center">Listado de Clientes</h2>
 
     <div class="text-end mb-3">
         <asp:LinkButton ID="lbRegistrarCliente" runat="server" CssClass="btn btn-success"
@@ -25,7 +25,7 @@
             <asp:BoundField DataField="apellido_materno" HeaderText="Apellido Materno" />
             <asp:BoundField DataField="telefono" HeaderText="Telefono" />
             <asp:BoundField DataField="email" HeaderText="Email" />
-     
+
             <asp:TemplateField>
                 <HeaderTemplate>
                     Acciones
@@ -38,25 +38,24 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-</div>
 
-<!-- Modal for viewing client details -->
-<div class="modal fade" id="verClienteModal" tabindex="-1" aria-labelledby="verClienteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="verClienteModalLabel">Detalles del Cliente</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <asp:Label ID="lblDetallesCliente" runat="server" Text=""></asp:Label>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    <!-- Modal for viewing client details -->
+    <div class="modal fade" id="verClienteModal" tabindex="-1" aria-labelledby="verClienteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="verClienteModalLabel">Detalles del Cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <asp:Label ID="lblDetallesCliente" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </asp:Content>

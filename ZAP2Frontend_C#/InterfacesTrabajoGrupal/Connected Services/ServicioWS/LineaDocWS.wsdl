@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/LineaDocWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarLineaDoc">
-    <part name="parameters" element="tns:listarLineaDoc" />
-  </message>
-  <message name="listarLineaDocResponse">
-    <part name="parameters" element="tns:listarLineaDocResponse" />
-  </message>
   <message name="insertarLineaDoc">
     <part name="parameters" element="tns:insertarLineaDoc" />
   </message>
   <message name="insertarLineaDocResponse">
     <part name="parameters" element="tns:insertarLineaDocResponse" />
+  </message>
+  <message name="listarLineaDoc">
+    <part name="parameters" element="tns:listarLineaDoc" />
+  </message>
+  <message name="listarLineaDocResponse">
+    <part name="parameters" element="tns:listarLineaDocResponse" />
   </message>
   <message name="modificarLineaDoc">
     <part name="parameters" element="tns:modificarLineaDoc" />
@@ -30,13 +30,13 @@
     <part name="parameters" element="tns:eliminarLineaDocResponse" />
   </message>
   <portType name="LineaDocWS">
-    <operation name="listarLineaDoc">
-      <input wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocRequest" message="tns:listarLineaDoc" />
-      <output wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocResponse" message="tns:listarLineaDocResponse" />
-    </operation>
     <operation name="insertarLineaDoc">
       <input wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest" message="tns:insertarLineaDoc" />
       <output wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocResponse" message="tns:insertarLineaDocResponse" />
+    </operation>
+    <operation name="listarLineaDoc">
+      <input wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocRequest" message="tns:listarLineaDoc" />
+      <output wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocResponse" message="tns:listarLineaDocResponse" />
     </operation>
     <operation name="modificarLineaDoc">
       <input wsam:Action="ZAP2WS/LineaDocWS/modificarLineaDocRequest" message="tns:modificarLineaDoc" />
@@ -49,7 +49,7 @@
   </portType>
   <binding name="LineaDocWSPortBinding" type="tns:LineaDocWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarLineaDoc">
+    <operation name="insertarLineaDoc">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarLineaDoc">
+    <operation name="listarLineaDoc">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
