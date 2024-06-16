@@ -59,7 +59,7 @@ public class CajeroMySql implements CajeroDao{
             cs.setString("_tipoContrato",cajero.getTipoContrato().toString());
             cs.setString("_horario",cajero.getHorario().toString());
             
-            cs.setInt("_fid_supervisor",cajero.getSupervisor().getIdEmpleado());
+            cs.setInt("_fid_supervisor",cajero.getSupervisor().getId_Persona());
             cs.setInt("_numeroCaja",cajero.getNumeroCaja());
             cs.setDouble("_cantidadCaja",cajero.getCantidadCaja());
             

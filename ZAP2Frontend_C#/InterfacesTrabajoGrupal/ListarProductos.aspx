@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="ListarProductos.aspx.cs" Inherits="InterfacesTrabajoGrupal.GestionProducto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="ListarProductos.aspx.cs" Inherits="InterfacesTrabajoGrupal.GestionProducto" MaintainScrollPositionOnPostBack="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
@@ -72,9 +72,10 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-
         <h3>Ropa</h3>
-        <asp:GridView ID="gvRopa" runat="server" AutoGenerateColumns="false" CssClass="table table-hover table-responsive" AllowPaging="true" OnPageIndexChanging="gvRopa_PageIndexChanging" PageSize="5">
+        <asp:GridView ID="gvRopa" runat="server" AutoGenerateColumns="false"
+            CssClass="table table-hover table-responsive" AllowPaging="true"
+            OnPageIndexChanging="gvRopa_PageIndexChanging" PageSize="5">
             <Columns>
                 <asp:BoundField HeaderText="Id" DataField="idProducto" />
                 <asp:BoundField HeaderText="Nombre" DataField="nombre" />

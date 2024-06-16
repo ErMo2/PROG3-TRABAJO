@@ -27,50 +27,39 @@ namespace InterfacesTrabajoGrupal
             daoProdCuiHog = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
             daoElectrodomestico = new ElectrodomesticosWSClient();
             daoRopa = new RopaWSClient();
+            
+                
 
-            if (!IsPostBack)
-            {
-                CargarDatos();
-            }
+                ropa[] ropaArreglo = daoRopa.listarRopa();
+                electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticos();
+                productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCH();
+                productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecible();
+
+                if (ropaArreglo != null)
+                    listaRopa = new BindingList<ropa>(ropaArreglo);
+
+                if (electrodomesticosArreglo != null)
+                    listaElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArreglo);
+
+                if (prodCuiHogArreglo != null)
+                    listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>(prodCuiHogArreglo);
+
+                if (prodPerecibleArreglo != null)
+                    listaProdPerecibles = new BindingList<productoPerecible>(prodPerecibleArreglo);
+
+                gvElectrodomesticos.DataSource = listaElectrodomesticos;
+                gvLimpiezayHogar.DataSource = listaProdCuiHog;
+                gvProductosPerecibles.DataSource = listaProdPerecibles;
+                gvRopa.DataSource = listaRopa;
+
+                gvElectrodomesticos.DataBind();
+                gvLimpiezayHogar.DataBind();
+                gvProductosPerecibles.DataBind();
+                gvRopa.DataBind();
+            
+            
         }
-
-        private void CargarDatos()
-        {
-            ropa[] ropaArreglo = daoRopa.listarRopa();
-            electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticos();
-            productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCH();
-            productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecible();
-
-            if (ropaArreglo != null)
-                listaRopa = new BindingList<ropa>(ropaArreglo);
-            else
-                listaRopa = new BindingList<ropa>();
-
-            if (electrodomesticosArreglo != null)
-                listaElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArreglo);
-            else
-                listaElectrodomesticos = new BindingList<electrodomesticos>();
-
-            if (prodCuiHogArreglo != null)
-                listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>(prodCuiHogArreglo);
-            else
-                listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>();
-
-            if (prodPerecibleArreglo != null)
-                listaProdPerecibles = new BindingList<productoPerecible>(prodPerecibleArreglo);
-            else
-                listaProdPerecibles = new BindingList<productoPerecible>();
-
-            gvElectrodomesticos.DataSource = listaElectrodomesticos;
-            gvLimpiezayHogar.DataSource = listaProdCuiHog;
-            gvProductosPerecibles.DataSource = listaProdPerecibles;
-            gvRopa.DataSource = listaRopa;
-
-            gvElectrodomesticos.DataBind();
-            gvLimpiezayHogar.DataBind();
-            gvProductosPerecibles.DataBind();
-            gvRopa.DataBind();
-        }
+        
 
         protected void lbRegistrarProducto_Click(object sender, EventArgs e)
         {
@@ -92,6 +81,7 @@ namespace InterfacesTrabajoGrupal
         protected void gvRopa_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvRopa.PageIndex = e.NewPageIndex;
+            gvRopa.DataSource = listaRopa;
             gvRopa.DataBind();
         }
 
@@ -104,28 +94,22 @@ namespace InterfacesTrabajoGrupal
         protected void EditProductPerecible_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            Response.Redirect($"EditarProductoPerecible.aspx?idProducto={idProducto}");
+            Session["idPerecible"] = idProducto;
+            Response.Redirect($"GestionarProdPerecible.aspx?idPerecible={idProducto}");
         }
 
         protected void DeleteProductPerecible_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoProdPerecible.eliminarProductoPerecible(idProducto);
-            CargarDatos();
+            Response.Redirect("ListarProductos.aspx");
         }
 
         protected void VerProductPerecible_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            if (listaProdPerecibles != null)
-            {
-                var producto = listaProdPerecibles.FirstOrDefault(p => p.idProducto == idProducto);
-                if (producto != null)
-                {
-                    lblDetalles.Text = $"ID: {producto.idProducto}<br/>Nombre: {producto.nombre}<br/>Descripción: {producto.descripcion}<br/>Fecha Vencimiento: {producto.fechVencimiento}<br/>Tipo: {producto.tipo_producto_perecible}";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                }
-            }
+            Session["idPerecibleVisualizar"] = idProducto;
+            Response.Redirect($"VerProductosPerecibles.aspx?idPerecibleVisualizar={idProducto}");
         }
 
         protected void EditProductElectrodomestico_Click(object sender, EventArgs e)
@@ -138,7 +122,8 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoElectrodomestico.eliminarElectrodomestico(idProducto);
-            CargarDatos();
+            Response.Redirect("ListarProductos.aspx");
+            //CargarDatos();
         }
 
         protected void VerProductElectrodomestico_Click(object sender, EventArgs e)
@@ -165,7 +150,8 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoProdCuiHog.eliminarPCH(idProducto);
-            CargarDatos();
+            Response.Redirect("ListarProductos.aspx");
+            //CargarDatos();
         }
 
         protected void VerProductLimpiezaHogar_Click(object sender, EventArgs e)
@@ -192,7 +178,8 @@ namespace InterfacesTrabajoGrupal
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             daoRopa.eliminarRopa(idProducto);
-            CargarDatos();
+            Response.Redirect("ListarProductos.aspx");
+            //CargarDatos();
         }
 
         protected void VerProductRopa_Click(object sender, EventArgs e)

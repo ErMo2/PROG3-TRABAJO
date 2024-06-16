@@ -13,23 +13,19 @@ namespace InterfacesTrabajoGrupal
         {
 
         }
-
-
-        protected void lblGerente_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("GestionarSupervisor.aspx");
-        }
-
         protected void lblEmpleadoArea_Click(object sender, EventArgs e)
         {
             Response.Redirect("GestionarEmpleadoArea.aspx");
-
         }
 
         protected void lblCajero_Click(object sender, EventArgs e)
         {
             Response.Redirect("GestionarCajero.aspx");
+        }
 
+        protected void lblSupervisor_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("GestionarSupervisor.aspx");
         }
     }
 }

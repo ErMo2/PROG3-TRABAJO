@@ -33,18 +33,6 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="txtPrecioProducto" class="col-sm-2 col-form-label">Precio:</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox ID="txtPrecioProducto" runat="server" CssClass="form-control" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="txtStock" class="col-sm-2 col-form-label">Stock:</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox ID="txtStock" runat="server" CssClass="form-control" />
-                    </div>
-                </div>
-                <div class="form-group row">
                     <label for="dtpFechaNacimiento" class="col-sm-2 col-form-label">Fecha de Vencimiento:</label>
                     <div class="col-sm-10">
                         <input class="form-control" type="date" id="dtpFechaNacimiento" runat="server" />
@@ -73,23 +61,6 @@
                             <asp:ListItem Text="LT" Value="LT"></asp:ListItem>
                             <asp:ListItem Text="NA" Value="NA"></asp:ListItem>
                         </asp:DropDownList>
-                    </div>
-                </div>
-
-                <!-- New field for selecting a Sucursal -->
-                <div class="form-group row">
-                    <label for="ddlSucursal" class="col-sm-2 col-form-label">Sucursal:</label>
-                    <div class="col-sm-10">
-                        <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control">
-                        </asp:DropDownList>
-                    </div>
-                </div>
-
-                <!-- New field for applying a Discount -->
-                <div class="form-group row">
-                    <label for="txtDescuento" class="col-sm-2 col-form-label">Descuento (%):</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox ID="txtDescuento" runat="server" CssClass="form-control" TextMode="Number" />
                     </div>
                 </div>
             </div>
