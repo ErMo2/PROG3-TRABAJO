@@ -54,7 +54,7 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_PCH"
                     +"(?,?,?,?,?)}");
-            cs.setInt("_id_PCH", productoParaElCuidadoPersonalYDelHogar.getIdProducto());
+            cs.setInt("_id_producto", productoParaElCuidadoPersonalYDelHogar.getIdProducto());
             cs.setString("_nombre", productoParaElCuidadoPersonalYDelHogar.getNombre());
             cs.setString("_descripcion", productoParaElCuidadoPersonalYDelHogar.getDescripcion());
             cs.setString("_unidad_de_medida", String.valueOf(productoParaElCuidadoPersonalYDelHogar.getUnidadMedida()));
