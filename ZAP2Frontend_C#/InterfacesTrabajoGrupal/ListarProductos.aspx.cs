@@ -131,21 +131,15 @@ namespace InterfacesTrabajoGrupal
         protected void VerProductElectrodomestico_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            if (listaElectrodomesticos != null)
-            {
-                var producto = listaElectrodomesticos.FirstOrDefault(p => p.idProducto == idProducto);
-                if (producto != null)
-                {
-                    lblDetalles.Text = $"ID: {producto.idProducto}<br/>Nombre: {producto.nombre}<br/>Descripción: {producto.descripcion}<br/>Tiene Garantía: {producto.tieneGarantia}<br/>Tiempo Garantía: {producto.tiempoGarantia}";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                }
-            }
+            Session["idElectrodomesticoVisualizar"] = idProducto;
+            Response.Redirect($"VerElectrodomesticos.aspx?idElectrodomesticoVisualizar={idProducto}");
         }
 
         protected void EditProductLimpiezaHogar_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            Response.Redirect($"EditarLimpiezaHogar.aspx?idProducto={idProducto}");
+            Session["idHigiene"] = idProducto;
+            Response.Redirect($"GestionarProductoPersonalYHogar.aspx?idHigiene={idProducto}");
         }
 
         protected void DeleteProductLimpiezaHogar_Click(object sender, EventArgs e)
@@ -173,7 +167,8 @@ namespace InterfacesTrabajoGrupal
         protected void EditProductRopa_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            Response.Redirect($"EditarRopa.aspx?idProducto={idProducto}");
+            Session["idRopa"] = idProducto;
+            Response.Redirect($"GestionarRopa.aspx?idRopa={idProducto}");
         }
 
         protected void DeleteProductRopa_Click(object sender, EventArgs e)

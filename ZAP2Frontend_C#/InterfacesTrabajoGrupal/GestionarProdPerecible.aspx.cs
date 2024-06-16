@@ -23,21 +23,13 @@ namespace InterfacesTrabajoGrupal
             if (Session["idPerecible"] != null)
             {
                 idProductoPerecible = (int)Session["idPerecible"];
+                Session["idPerecible"] = null;
                 producto=productoDao.buscarProductoPerecible(idProductoPerecible);
                 if (!IsPostBack)
                 {
                     cargarDatos();
                 }
                 Session["idModificarPerecible"] = idProductoPerecible;
-            }
-            if (Session["idPerecibleVisualizar"] != null)
-            {
-                idProductoPerecible = (int)Session["idPerecibleVisualizar"];
-                producto = productoDao.buscarProductoPerecible(idProductoPerecible);
-                if (!IsPostBack)
-                {
-                    cargarDatos();
-                }
             }
 
         }

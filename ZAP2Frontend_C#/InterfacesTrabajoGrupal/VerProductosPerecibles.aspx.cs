@@ -54,7 +54,7 @@ namespace InterfacesTrabajoGrupal
             dtpFechaNacimiento.Text = producto.fechVencimiento.ToString("yyyy-MM-dd");
             ddlTipoProductoPerecible.SelectedValue = producto.tipo_producto_perecible.ToString();
             ddlUnidadMedida.SelectedValue = producto.unidad_de_medida.ToString();
-           sucursalDao = new SucursalWSClient();
+            sucursalDao = new SucursalWSClient();
             var sucursales = sucursalDao.listarSucursal();
             ddlSucursal.Items.Clear();
             foreach (var sucursal in sucursales)

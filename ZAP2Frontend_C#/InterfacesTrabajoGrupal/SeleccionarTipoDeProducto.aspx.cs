@@ -30,6 +30,9 @@ namespace InterfacesTrabajoGrupal
         {
             Response.Redirect("GestionarProdPerecible.aspx");
         }
-
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ListarProductos.aspx");
+        }
     }
 }

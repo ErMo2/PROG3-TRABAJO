@@ -19,21 +19,13 @@ namespace InterfacesTrabajoGrupal
             if (Session["idElectrodomestico"] != null)
             {
                 idProducto = (int)Session["idElectrodomestico"];
+                Session["idElectrodomestico"] = null;
                 producto = productoDao.buscarElectrodomestico(idProducto);
                 if (!IsPostBack)
                 {
                     cargarDatos();
                 }
                 Session["idModificarElectrodomestico"] = idProducto;
-            }
-            if (Session["idElectrodomesticoVisualizar"] != null)
-            {
-                idProducto = (int)Session["idElectrodomesticoVisualizar"];
-                producto = productoDao.buscarElectrodomestico(idProducto);
-                if (!IsPostBack)
-                {
-                    cargarDatos();
-                }
             }
 
         }

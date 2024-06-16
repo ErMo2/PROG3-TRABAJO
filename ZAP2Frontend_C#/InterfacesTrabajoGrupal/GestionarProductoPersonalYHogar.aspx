@@ -36,20 +36,6 @@
             </div>
 
             <div class="mb-3 row">
-                <asp:Label ID="lblPrecio" runat="server" Text="Precio del Producto:" CssClass="col-sm-2 col-form-label" />
-                <div class="col-sm-8">
-                    <asp:TextBox ID="txtPrecioProducto" runat="server" CssClass="form-control" />
-                </div>
-            </div>
-
-            <div class="mb-3 row">
-                <asp:Label ID="lblStock" runat="server" Text="Stock del Producto:" CssClass="col-sm-2 col-form-label" />
-                <div class="col-sm-8">
-                    <asp:TextBox ID="txtStock" runat="server" CssClass="form-control" />
-                </div>
-            </div>
-
-            <div class="mb-3 row">
                 <asp:Label ID="lblUnidadMedida" runat="server" Text="Unidad de Medida:" CssClass="col-sm-2 col-form-label" />
                 <div class="col-sm-4">
                     <asp:DropDownList ID="ddlUnidadMedida" runat="server" CssClass="form-control">
@@ -68,23 +54,6 @@
                     <asp:TextBox ID="txtTipo" runat="server" CssClass="form-control" />
                 </div>
             </div>
-            <!-- New field for selecting a Sucursal -->
-            <div class="form-group row">
-                <label for="ddlSucursal" class="col-sm-2 col-form-label">Sucursal:</label>
-                <div class="col-sm-10">
-                    <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control">
-                    </asp:DropDownList>
-                </div>
-            </div>
-            <br />
-            <!-- New field for applying a Discount -->
-            <div class="form-group row">
-                <label for="txtDescuento" class="col-sm-2 col-form-label">Descuento (%):</label>
-                <div class="col-sm-10">
-                    <asp:TextBox ID="txtDescuento" runat="server" CssClass="form-control" TextMode="Number" />
-                </div>
-            </div>
-
 
         </div>
         <hr />

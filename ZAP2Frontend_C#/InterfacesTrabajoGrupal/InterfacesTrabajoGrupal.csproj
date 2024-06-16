@@ -833,6 +833,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="VerElectrodomesticos.aspx" />
     <Content Include="VerProductosPerecibles.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -1095,6 +1096,13 @@
     </Compile>
     <Compile Include="SeleccionarTipoDeProducto.aspx.designer.cs">
       <DependentUpon>SeleccionarTipoDeProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerElectrodomesticos.aspx.cs">
+      <DependentUpon>VerElectrodomesticos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerElectrodomesticos.aspx.designer.cs">
+      <DependentUpon>VerElectrodomesticos.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerProductosPerecibles.aspx.cs">
       <DependentUpon>VerProductosPerecibles.aspx</DependentUpon>

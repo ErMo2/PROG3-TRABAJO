@@ -54,7 +54,7 @@ public class RopaMySql implements RopaDao{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_ROPA"
                     +"(?,?,?,?,?)}");
-            cs.setInt("_id_ropa", ropa.getIdProducto());
+            cs.setInt("_id_producto", ropa.getIdProducto());
             cs.setString("_nombre", ropa.getNombre());
             cs.setString("_descripcion", ropa.getDescripcion());
             cs.setString("_material", ropa.getMaterial());
