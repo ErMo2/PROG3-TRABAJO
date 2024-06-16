@@ -51,13 +51,14 @@
                         AllowPaging="true"
                         PageSize="4"
                         OnPageIndexChanging="gvEmpleadosArea_PageIndexChanging"
-                        OnRowCommand="gvEmpleadosArea_RowCommand">
+                        OnRowCommand="gvEmpleadosArea_RowCommand"
+                        OnRowDataBound="gvEmpleadosArea_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="idEmpleado" HeaderText="Id Empleado" />
                             <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                             <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
                             <asp:BoundField DataField="email" HeaderText="Email" />
-                            <asp:BoundField DataField="sexo" HeaderText="Sexo" />
+                            <asp:BoundField HeaderText="Sexo" />
                             <asp:BoundField DataField="salario" HeaderText="Salario" />
                             <asp:BoundField DataField="horario" HeaderText="Horario" />
                             <asp:TemplateField>
@@ -86,13 +87,14 @@
                         AllowPaging="true"
                         PageSize="4"
                         OnPageIndexChanging="gvCajeros_PageIndexChanging"
-                        OnRowCommand="gvCajeros_RowCommand">
+                        OnRowCommand="gvCajeros_RowCommand"
+                        OnRowDataBound="gvCajeros_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="idEmpleado" HeaderText="Id Empleado" />
                             <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                             <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
                             <asp:BoundField DataField="email" HeaderText="Email" />
-                            <asp:BoundField DataField="sexo" HeaderText="Sexo" />
+                            <asp:BoundField HeaderText="Sexo" />
                             <asp:BoundField DataField="salario" HeaderText="Salario" />
                             <asp:BoundField DataField="horario" HeaderText="Horario" />
                             <asp:TemplateField>
@@ -121,13 +123,14 @@
                         AllowPaging="true"
                         PageSize="4"
                         OnPageIndexChanging="gvSupervisores_PageIndexChanging"
-                        OnRowCommand="gvSupervisores_RowCommand">
+                        OnRowCommand="gvSupervisores_RowCommand"
+                        OnRowDataBound="gvSupervisores_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="idEmpleado" HeaderText="Id Empleado" />
                             <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                             <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
                             <asp:BoundField DataField="email" HeaderText="Email" />
-                            <asp:BoundField DataField="sexo" HeaderText="Sexo" />
+                            <asp:BoundField HeaderText="Sexo" />
                             <asp:BoundField DataField="salario" HeaderText="Salario" />
                             <asp:BoundField DataField="horario" HeaderText="Horario" />
                             <asp:TemplateField>

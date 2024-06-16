@@ -223,6 +223,7 @@ public class CajeroMySql implements CajeroDao{
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
                 supervisor.setId_Persona(rs.getInt("fid_supervisor"));
+                cajero.setSupervisor(supervisor);
                 cajero.setNumeroCaja(rs.getInt("numeroCaja"));
                 
                 
