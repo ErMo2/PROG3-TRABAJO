@@ -6,16 +6,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-
- <!
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head >
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registrar Factura de Venta</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1">
@@ -26,26 +23,23 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3 row">
-                        <asp:Label ID="Label1" runat="server" Text="Número de Factura:" CssClass="col-sm-2 col-form-label" />
+                        <asp:Label ID="lblNumeroFactura" runat="server" Text="Número de Factura:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
-                            <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" />
+                            <asp:TextBox ID="txtNumeroFactura" runat="server" CssClass="form-control" />
                         </div>
                     </div>
-
                     <div class="mb-3 row">
-                        <asp:Label ID="Label2" runat="server" Text="Fecha de Emisión:" CssClass="col-sm-2 col-form-label" />
+                        <asp:Label ID="lblFechaEmision" runat="server" Text="Fecha de Emisión:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
-                            <input type="date" id="Date1" runat="server" class="form-control" />
+                            <asp:TextBox ID="dtpFechaEmision" runat="server" CssClass="form-control" TextMode="Date" />
                         </div>
                     </div>
-
                     <div class="mb-3 row">
-                        <asp:Label ID="Label3" runat="server" Text="RUC:" CssClass="col-sm-2 col-form-label" />
+                        <asp:Label ID="lblRUC" runat="server" Text="RUC:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
                             <asp:TextBox ID="txtRUC" runat="server" CssClass="form-control" />
                         </div>
                     </div>
-
                     <div class="mb-3 row">
                         <asp:Label ID="lblPersonaJuridica" runat="server" Text="Persona Jurídica:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-8">
@@ -53,54 +47,60 @@
                             </asp:DropDownList>
                         </div>
                     </div>
-
-                      <div class="mb-3 row">
-                          <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
-                          <div class="col-sm-8">
-                              <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control">
-                              </asp:DropDownList>
-                          </div>
-                      </div>
-
+                    <div class="mb-3 row">
+                        <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
                     <div class="mb-3 row">
                         <asp:Label ID="lblProducto" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
-                        <div class="col-sm-4">
+                        <div class="col-sm-8">
                             <asp:DropDownList ID="ddlProducto" runat="server" CssClass="form-control">
                             </asp:DropDownList>
                         </div>
-                        <div class="col-sm-2">
-                            <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" placeholder="Cantidad" />
+                    </div>
+                    <div class="mb-3 row">
+                        <asp:Label ID="lblCantidad" runat="server" Text="Cantidad:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-4">
+                            <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" />
                         </div>
-                        <div class="col-sm-2">
-                            <asp:Button ID="btnAgregarProducto" runat="server" Text="Agregar" CssClass="btn btn-primary" OnClick="btnAgregarProducto_Click" />
+                        <div class="col-sm-4">
+                            <asp:Button ID="btnAgregarProducto" runat="server" Text="Agregar Producto" CssClass="btn btn-success" OnClick="btnAgregarProducto_Click" />
                         </div>
                     </div>
 
-
-                  <h3>Productos Agregados</h3>
-                    <asp:GridView ID="gvProductosSeleccionados" runat="server" AutoGenerateColumns="False" CssClass="table table-striped mt-4">
+                    <h3>Productos Agregados</h3>
+                    <asp:GridView ID="gvProductosSeleccionados" runat="server" AutoGenerateColumns="False" CssClass="table table-striped">
                         <Columns>
-                            <asp:BoundField DataField="Nombre" HeaderText="Producto" />
-                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
-                            <asp:BoundField DataField="Precio" HeaderText="Precio Unitario" DataFormatString="{0:C}" />
-                            <asp:BoundField DataField="Total" HeaderText="Total" DataFormatString="{0:C}" />
+                            <asp:BoundField DataField="nombre" HeaderText="Producto" />
+                            <asp:BoundField DataField="descripcion" HeaderText="Descripción" />
+                            <asp:BoundField DataField="cantidadComprada" HeaderText="Cantidad" />
+                            <asp:BoundField DataField="prodPrecio.precio" HeaderText="Precio Unitario" DataFormatString="{0:C}" />
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:Button ID="btnEliminarProducto" runat="server" CommandArgument='<%# Container.DataItemIndex %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClick="btnEliminarProducto_Click" />
+                                    <asp:Button ID="btnEliminarProducto" runat="server" Text="Eliminar" CommandArgument='<%# Container.DataItemIndex %>' OnClick="btnEliminarProducto_Click" CssClass="btn btn-danger" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
-                </div>
-                </div>
 
-                <div class="card-footer clearfix">
-                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
-                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="float-end btn btn-primary" OnClick="btnRegistrar_Click" />
+                    <div class="mb-3 row">
+                        <asp:Label ID="lblTotalTexto" runat="server" Text="Total:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-4">
+                            <asp:Label ID="lblTotal" runat="server" CssClass="form-control-plaintext" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar Factura" CssClass="btn btn-primary float-right" OnClick="btnRegistrar_Click" />
+                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary float-left" OnClick="btnRegresar_Click" />
                 </div>
             </div>
         </div>
     </form>
 </body>
 </html>
+
 </asp:Content>

@@ -8,6 +8,8 @@
   <xs:element name="insertarSucursalResponse" type="tns:insertarSucursalResponse" />
   <xs:element name="listarSucursal" type="tns:listarSucursal" />
   <xs:element name="listarSucursalResponse" type="tns:listarSucursalResponse" />
+  <xs:element name="listarSucursalesDeUnProductoSinPrecio" type="tns:listarSucursalesDeUnProductoSinPrecio" />
+  <xs:element name="listarSucursalesDeUnProductoSinPrecioResponse" type="tns:listarSucursalesDeUnProductoSinPrecioResponse" />
   <xs:element name="modificarSucursal" type="tns:modificarSucursal" />
   <xs:element name="modificarSucursalResponse" type="tns:modificarSucursalResponse" />
   <xs:complexType name="listarSucursal">
@@ -133,6 +135,16 @@
   <xs:complexType name="eliminarSucursalResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarSucursalesDeUnProductoSinPrecio">
+    <xs:sequence>
+      <xs:element name="idProducto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarSucursalesDeUnProductoSinPrecioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarSucursal">

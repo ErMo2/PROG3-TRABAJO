@@ -11,11 +11,11 @@
   <message name="eliminarPersonaJuridicaResponse">
     <part name="parameters" element="tns:eliminarPersonaJuridicaResponse" />
   </message>
-  <message name="insertarPersonaJuridica">
-    <part name="parameters" element="tns:insertarPersonaJuridica" />
+  <message name="modificarPersonaJuridica">
+    <part name="parameters" element="tns:modificarPersonaJuridica" />
   </message>
-  <message name="insertarPersonaJuridicaResponse">
-    <part name="parameters" element="tns:insertarPersonaJuridicaResponse" />
+  <message name="modificarPersonaJuridicaResponse">
+    <part name="parameters" element="tns:modificarPersonaJuridicaResponse" />
   </message>
   <message name="listarPersonasJuridicas">
     <part name="parameters" element="tns:listarPersonasJuridicas" />
@@ -23,28 +23,28 @@
   <message name="listarPersonasJuridicasResponse">
     <part name="parameters" element="tns:listarPersonasJuridicasResponse" />
   </message>
-  <message name="modificarPersonaJuridica">
-    <part name="parameters" element="tns:modificarPersonaJuridica" />
+  <message name="insertarPersonaJuridica">
+    <part name="parameters" element="tns:insertarPersonaJuridica" />
   </message>
-  <message name="modificarPersonaJuridicaResponse">
-    <part name="parameters" element="tns:modificarPersonaJuridicaResponse" />
+  <message name="insertarPersonaJuridicaResponse">
+    <part name="parameters" element="tns:insertarPersonaJuridicaResponse" />
   </message>
   <portType name="PersonaJuridicaWS">
     <operation name="eliminarPersonaJuridica">
       <input wsam:Action="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaRequest" message="tns:eliminarPersonaJuridica" />
       <output wsam:Action="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaResponse" message="tns:eliminarPersonaJuridicaResponse" />
     </operation>
-    <operation name="insertarPersonaJuridica">
-      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaRequest" message="tns:insertarPersonaJuridica" />
-      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaResponse" message="tns:insertarPersonaJuridicaResponse" />
+    <operation name="modificarPersonaJuridica">
+      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaRequest" message="tns:modificarPersonaJuridica" />
+      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaResponse" message="tns:modificarPersonaJuridicaResponse" />
     </operation>
     <operation name="listarPersonasJuridicas">
       <input wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest" message="tns:listarPersonasJuridicas" />
       <output wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse" message="tns:listarPersonasJuridicasResponse" />
     </operation>
-    <operation name="modificarPersonaJuridica">
-      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaRequest" message="tns:modificarPersonaJuridica" />
-      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaResponse" message="tns:modificarPersonaJuridicaResponse" />
+    <operation name="insertarPersonaJuridica">
+      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaRequest" message="tns:insertarPersonaJuridica" />
+      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaResponse" message="tns:insertarPersonaJuridicaResponse" />
     </operation>
   </portType>
   <binding name="PersonaJuridicaWSPortBinding" type="tns:PersonaJuridicaWS">
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarPersonaJuridica">
+    <operation name="modificarPersonaJuridica">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPersonaJuridica">
+    <operation name="insertarPersonaJuridica">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -11,11 +11,11 @@
   <message name="listarEgresosResponse">
     <part name="parameters" element="tns:listarEgresosResponse" />
   </message>
-  <message name="listarDocumentosCompras">
-    <part name="parameters" element="tns:listarDocumentosCompras" />
+  <message name="insertarDocumentoCompra">
+    <part name="parameters" element="tns:insertarDocumentoCompra" />
   </message>
-  <message name="listarDocumentosComprasResponse">
-    <part name="parameters" element="tns:listarDocumentosComprasResponse" />
+  <message name="insertarDocumentoCompraResponse">
+    <part name="parameters" element="tns:insertarDocumentoCompraResponse" />
   </message>
   <message name="modificarDocumentoCompra">
     <part name="parameters" element="tns:modificarDocumentoCompra" />
@@ -23,11 +23,11 @@
   <message name="modificarDocumentoCompraResponse">
     <part name="parameters" element="tns:modificarDocumentoCompraResponse" />
   </message>
-  <message name="insertarDocumentoCompra">
-    <part name="parameters" element="tns:insertarDocumentoCompra" />
+  <message name="listarDocumentosCompras">
+    <part name="parameters" element="tns:listarDocumentosCompras" />
   </message>
-  <message name="insertarDocumentoCompraResponse">
-    <part name="parameters" element="tns:insertarDocumentoCompraResponse" />
+  <message name="listarDocumentosComprasResponse">
+    <part name="parameters" element="tns:listarDocumentosComprasResponse" />
   </message>
   <message name="eliminarDocumentoCompra">
     <part name="parameters" element="tns:eliminarDocumentoCompra" />
@@ -40,17 +40,17 @@
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest" message="tns:listarEgresos" />
       <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarEgresosResponse" message="tns:listarEgresosResponse" />
     </operation>
-    <operation name="listarDocumentosCompras">
-      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest" message="tns:listarDocumentosCompras" />
-      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse" message="tns:listarDocumentosComprasResponse" />
+    <operation name="insertarDocumentoCompra">
+      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraRequest" message="tns:insertarDocumentoCompra" />
+      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraResponse" message="tns:insertarDocumentoCompraResponse" />
     </operation>
     <operation name="modificarDocumentoCompra">
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraRequest" message="tns:modificarDocumentoCompra" />
       <output wsam:Action="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraResponse" message="tns:modificarDocumentoCompraResponse" />
     </operation>
-    <operation name="insertarDocumentoCompra">
-      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraRequest" message="tns:insertarDocumentoCompra" />
-      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraResponse" message="tns:insertarDocumentoCompraResponse" />
+    <operation name="listarDocumentosCompras">
+      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest" message="tns:listarDocumentosCompras" />
+      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse" message="tns:listarDocumentosComprasResponse" />
     </operation>
     <operation name="eliminarDocumentoCompra">
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/eliminarDocumentoCompraRequest" message="tns:eliminarDocumentoCompra" />
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarDocumentosCompras">
+    <operation name="insertarDocumentoCompra">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarDocumentoCompra">
+    <operation name="listarDocumentosCompras">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
