@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing.Printing;
 using System.Linq;
 using System.ServiceModel.Channels;
 using System.Web;
@@ -16,17 +17,13 @@ namespace InterfacesTrabajoGrupal
         private Factura_VentaWSClient facturaVentaDAO;
         private PersonaJuridicaWSClient personaJuridicaDAO;
         private SucursalWSClient sucursalDAO;
+        private ProductoPrecioWSClient productoPrecioDAO;
+
         private BindingList<personaJuridica> listaPersonasJuridicas;
         private BindingList<producto> listaProductos;
         private BindingList<sucursal> listaSucursales;
-
-        // Productos DAO
-        private ProductoPerecibleWSClient productoPerDAO;
-        private ProductosParaElCuidadoPersonalYDelHogarWSClient productoPHDAO;
-        private RopaWSClient ropaDAO;
-        private ElectrodomesticosWSClient electrodomesticoDAO;
-
         private BindingList<producto> productosSeleccionados;
+        private productoPrecio[] arregloProductoPrecios;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +33,6 @@ namespace InterfacesTrabajoGrupal
                 Session["ProductosSeleccionados"] = productosSeleccionados;
 
                 CargarPersonasJuridicas();
-                CargarProductos();
                 CargarSucursales();
             }
             else
@@ -49,103 +45,72 @@ namespace InterfacesTrabajoGrupal
         {
             personaJuridicaDAO = new PersonaJuridicaWSClient();
             personaJuridica[] arregloPersonasJuridicas = personaJuridicaDAO.listarPersonasJuridicas();
-            if (arregloPersonasJuridicas != null)
-            {
-                listaPersonasJuridicas = new BindingList<personaJuridica>(arregloPersonasJuridicas);
-                ddlPersonaJuridica.DataSource = listaPersonasJuridicas;
-                ddlPersonaJuridica.DataTextField = "nombre";
-                ddlPersonaJuridica.DataValueField = "id_persona";
-                ddlPersonaJuridica.DataBind();
-            }
-        }
-
-        private void CargarProductos()
-        {
-            listaProductos = new BindingList<producto>();
-
-            // Producto Perecible
-            productoPerDAO = new ProductoPerecibleWSClient();
-            producto[] arregloProductoPerecible = productoPerDAO.listarProductoPerecible();
-            if (arregloProductoPerecible != null)
-            {
-                foreach (var producto in arregloProductoPerecible)
-                {
-                    listaProductos.Add(producto);
-                }
-            }
-
-            // Producto Personal y Hogar
-            productoPHDAO = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
-            producto[] arregloProductoPH = productoPHDAO.listarPCH();
-            if (arregloProductoPH != null)
-            {
-                foreach (var producto in arregloProductoPH)
-                {
-                    listaProductos.Add(producto);
-                }
-            }
-
-            // Ropa
-            ropaDAO = new RopaWSClient();
-            producto[] arregloRopa = ropaDAO.listarRopa();
-            if (arregloRopa != null)
-            {
-                foreach (var producto in arregloRopa)
-                {
-                    listaProductos.Add(producto);
-                }
-            }
-
-            // Electrodoméstico
-            electrodomesticoDAO = new ElectrodomesticosWSClient();
-            producto[] arregloElectrodomestico = electrodomesticoDAO.listarElectrodomesticos();
-            if (arregloElectrodomestico != null)
-            {
-                foreach (var producto in arregloElectrodomestico)
-                {
-                    listaProductos.Add(producto);
-                }
-            }
-
-            ddlProducto.DataSource = listaProductos;
-            ddlProducto.DataTextField = "nombre";
-            ddlProducto.DataValueField = "idProducto";
-
-            ddlProducto.DataBind();
+            listaPersonasJuridicas = new BindingList<personaJuridica>(arregloPersonasJuridicas);
+            ddlPersonaJuridica.DataSource = listaPersonasJuridicas;
+            ddlPersonaJuridica.DataTextField = "nombre";
+            ddlPersonaJuridica.DataValueField = "id_persona";
+            ddlPersonaJuridica.DataBind();
         }
 
         private void CargarSucursales()
         {
             sucursalDAO = new SucursalWSClient();
             sucursal[] arregloSucursales = sucursalDAO.listarSucursal();
-            if (arregloSucursales != null)
-            {
-                listaSucursales = new BindingList<sucursal>(arregloSucursales);
-                ddlSucursal.DataSource = listaSucursales;
-                ddlSucursal.DataTextField = "nombre";
-                ddlSucursal.DataValueField = "id_sucursal";
-                ddlSucursal.DataBind();
-            }
+            listaSucursales = new BindingList<sucursal>(arregloSucursales);
+            ddlSucursal.DataSource = listaSucursales;
+            ddlSucursal.DataTextField = "nombre";
+            ddlSucursal.DataValueField = "id_sucursal";
+            ddlSucursal.DataBind();
+        }
+
+        private void CargarProductosPorSucursal()
+        {
+            int idSucursal = int.Parse(ddlSucursal.SelectedValue);
+            productoPrecioDAO = new ProductoPrecioWSClient();
+            arregloProductoPrecios = productoPrecioDAO.listarProductoPrecioProductoDeUnaSucursal(idSucursal);
+
+            listaProductos = new BindingList<producto>(
+                arregloProductoPrecios.Select(pp => pp.producto).Where(p => p != null).ToList()
+            );
+
+            ddlProducto.DataSource = listaProductos;
+            ddlProducto.DataTextField = "nombre";
+            ddlProducto.DataValueField = "idProducto";
+            ddlProducto.DataBind();
+        }
+
+        protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarProductosPorSucursal();
         }
 
         protected void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             int idProducto = int.Parse(ddlProducto.SelectedValue);
             int cantidad = int.Parse(txtCantidad.Text);
+            int idSucursal = int.Parse(ddlSucursal.SelectedValue);
+            productoPrecioDAO = new ProductoPrecioWSClient();
+            arregloProductoPrecios = productoPrecioDAO.listarProductoPrecioProductoDeUnaSucursal(idSucursal);
 
-            producto prod = listaProductos.FirstOrDefault(p => p.idProducto == idProducto);
+            productoPrecio prodPrecio = arregloProductoPrecios.FirstOrDefault(pp => pp.producto.idProducto == idProducto);
+            producto prod = prodPrecio.producto;
+
             if (prod != null)
             {
-                producto prodSel = new producto();
-                prodSel.nombre = prod.nombre;
-                prodSel.cantidadComprada = cantidad;
-                prodSel.prodPrecio.precio = prod.prodPrecio.precio;
+                producto prodSel = new producto
+                {
+                    idProducto = prod.idProducto,
+                    descripcion=prod.descripcion,
+                    prodPrecio = new productoPrecio { precio = prodPrecio.precio },
+                    cantidadComprada = cantidad
+                };
 
-                //Total = prod.precio * cantidad
                 productosSeleccionados.Add(prodSel);
 
                 gvProductosSeleccionados.DataSource = productosSeleccionados;
                 gvProductosSeleccionados.DataBind();
+
+                CalcularTotal();
             }
         }
 
@@ -157,6 +122,8 @@ namespace InterfacesTrabajoGrupal
 
             gvProductosSeleccionados.DataSource = productosSeleccionados;
             gvProductosSeleccionados.DataBind();
+
+            CalcularTotal();
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
@@ -166,9 +133,28 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // Lógica de registro aquí
+           /* facturaVenta = new FacturaVenta
+            {
+                NumeroFactura = txtNumeroFactura.Text,
+                FechaEmision = DateTime.Parse(dtpFechaEmision.Text),
+                RUC = txtRUC.Text,
+                PersonaJuridica = ddlPersonaJuridica.SelectedValue,
+                Productos = productosSeleccionados.ToList(),
+                Total = decimal.Parse(lblTotal.Text, System.Globalization.NumberStyles.Currency)
+            };
 
+            facturaVentaDAO = new Factura_VentaWSClient();
+            facturaVentaDAO.RegistrarFacturaVenta(facturaVenta);
+           */
+            // Limpiar la sesión y redirigir a la página de listado
+            Session["ProductosSeleccionados"] = null;
             Response.Redirect("ListarDocumentoDeVenta.aspx");
+        }
+
+        private void CalcularTotal()
+        {
+            double total = productosSeleccionados.Sum(p => p.prodPrecio.precio * p.cantidadComprada);
+            lblTotal.Text = total.ToString("C");
         }
     }
 }
