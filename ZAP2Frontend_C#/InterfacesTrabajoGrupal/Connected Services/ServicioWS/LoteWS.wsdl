@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/LoteWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarLote">
-    <part name="parameters" element="tns:listarLote" />
-  </message>
-  <message name="listarLoteResponse">
-    <part name="parameters" element="tns:listarLoteResponse" />
-  </message>
   <message name="modificarLote">
     <part name="parameters" element="tns:modificarLote" />
   </message>
@@ -29,11 +23,13 @@
   <message name="insertarLoteResponse">
     <part name="parameters" element="tns:insertarLoteResponse" />
   </message>
+  <message name="listarLote">
+    <part name="parameters" element="tns:listarLote" />
+  </message>
+  <message name="listarLoteResponse">
+    <part name="parameters" element="tns:listarLoteResponse" />
+  </message>
   <portType name="LoteWS">
-    <operation name="listarLote">
-      <input wsam:Action="ZAP2WS/LoteWS/listarLoteRequest" message="tns:listarLote" />
-      <output wsam:Action="ZAP2WS/LoteWS/listarLoteResponse" message="tns:listarLoteResponse" />
-    </operation>
     <operation name="modificarLote">
       <input wsam:Action="ZAP2WS/LoteWS/modificarLoteRequest" message="tns:modificarLote" />
       <output wsam:Action="ZAP2WS/LoteWS/modificarLoteResponse" message="tns:modificarLoteResponse" />
@@ -46,18 +42,13 @@
       <input wsam:Action="ZAP2WS/LoteWS/insertarLoteRequest" message="tns:insertarLote" />
       <output wsam:Action="ZAP2WS/LoteWS/insertarLoteResponse" message="tns:insertarLoteResponse" />
     </operation>
+    <operation name="listarLote">
+      <input wsam:Action="ZAP2WS/LoteWS/listarLoteRequest" message="tns:listarLote" />
+      <output wsam:Action="ZAP2WS/LoteWS/listarLoteResponse" message="tns:listarLoteResponse" />
+    </operation>
   </portType>
   <binding name="LoteWSPortBinding" type="tns:LoteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarLote">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarLote">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="insertarLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarLote">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

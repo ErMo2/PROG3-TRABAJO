@@ -11,12 +11,6 @@
   <message name="insertarCajeroResponse">
     <part name="parameters" element="tns:insertarCajeroResponse" />
   </message>
-  <message name="eliminarCajero">
-    <part name="parameters" element="tns:eliminarCajero" />
-  </message>
-  <message name="eliminarCajeroResponse">
-    <part name="parameters" element="tns:eliminarCajeroResponse" />
-  </message>
   <message name="listarCajeros">
     <part name="parameters" element="tns:listarCajeros" />
   </message>
@@ -35,14 +29,16 @@
   <message name="buscarCajeroResponse">
     <part name="parameters" element="tns:buscarCajeroResponse" />
   </message>
+  <message name="eliminarCajero">
+    <part name="parameters" element="tns:eliminarCajero" />
+  </message>
+  <message name="eliminarCajeroResponse">
+    <part name="parameters" element="tns:eliminarCajeroResponse" />
+  </message>
   <portType name="CajeroWS">
     <operation name="insertarCajero">
       <input wsam:Action="ZAP2WS/CajeroWS/insertarCajeroRequest" message="tns:insertarCajero" />
       <output wsam:Action="ZAP2WS/CajeroWS/insertarCajeroResponse" message="tns:insertarCajeroResponse" />
-    </operation>
-    <operation name="eliminarCajero">
-      <input wsam:Action="ZAP2WS/CajeroWS/eliminarCajeroRequest" message="tns:eliminarCajero" />
-      <output wsam:Action="ZAP2WS/CajeroWS/eliminarCajeroResponse" message="tns:eliminarCajeroResponse" />
     </operation>
     <operation name="listarCajeros">
       <input wsam:Action="ZAP2WS/CajeroWS/listarCajerosRequest" message="tns:listarCajeros" />
@@ -56,19 +52,14 @@
       <input wsam:Action="ZAP2WS/CajeroWS/buscarCajeroRequest" message="tns:buscarCajero" />
       <output wsam:Action="ZAP2WS/CajeroWS/buscarCajeroResponse" message="tns:buscarCajeroResponse" />
     </operation>
+    <operation name="eliminarCajero">
+      <input wsam:Action="ZAP2WS/CajeroWS/eliminarCajeroRequest" message="tns:eliminarCajero" />
+      <output wsam:Action="ZAP2WS/CajeroWS/eliminarCajeroResponse" message="tns:eliminarCajeroResponse" />
+    </operation>
   </portType>
   <binding name="CajeroWSPortBinding" type="tns:CajeroWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="insertarCajero">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarCajero">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,6 +87,15 @@
       </output>
     </operation>
     <operation name="buscarCajero">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCajero">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

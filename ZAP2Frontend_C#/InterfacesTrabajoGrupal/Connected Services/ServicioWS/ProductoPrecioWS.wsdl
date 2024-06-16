@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ProductoPrecioWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="insertarProductoPrecio">
-    <part name="parameters" element="tns:insertarProductoPrecio" />
-  </message>
-  <message name="insertarProductoPrecioResponse">
-    <part name="parameters" element="tns:insertarProductoPrecioResponse" />
-  </message>
-  <message name="eliminarProductoPrecio">
-    <part name="parameters" element="tns:eliminarProductoPrecio" />
-  </message>
-  <message name="eliminarProductoPrecioResponse">
-    <part name="parameters" element="tns:eliminarProductoPrecioResponse" />
-  </message>
   <message name="listarProductoPrecio">
     <part name="parameters" element="tns:listarProductoPrecio" />
   </message>
@@ -29,15 +17,19 @@
   <message name="modificarProductoPrecioResponse">
     <part name="parameters" element="tns:modificarProductoPrecioResponse" />
   </message>
+  <message name="eliminarProductoPrecio">
+    <part name="parameters" element="tns:eliminarProductoPrecio" />
+  </message>
+  <message name="eliminarProductoPrecioResponse">
+    <part name="parameters" element="tns:eliminarProductoPrecioResponse" />
+  </message>
+  <message name="insertarProductoPrecio">
+    <part name="parameters" element="tns:insertarProductoPrecio" />
+  </message>
+  <message name="insertarProductoPrecioResponse">
+    <part name="parameters" element="tns:insertarProductoPrecioResponse" />
+  </message>
   <portType name="ProductoPrecioWS">
-    <operation name="insertarProductoPrecio">
-      <input wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioRequest" message="tns:insertarProductoPrecio" />
-      <output wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioResponse" message="tns:insertarProductoPrecioResponse" />
-    </operation>
-    <operation name="eliminarProductoPrecio">
-      <input wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioRequest" message="tns:eliminarProductoPrecio" />
-      <output wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioResponse" message="tns:eliminarProductoPrecioResponse" />
-    </operation>
     <operation name="listarProductoPrecio">
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioRequest" message="tns:listarProductoPrecio" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioResponse" message="tns:listarProductoPrecioResponse" />
@@ -46,10 +38,27 @@
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioRequest" message="tns:modificarProductoPrecio" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioResponse" message="tns:modificarProductoPrecioResponse" />
     </operation>
+    <operation name="eliminarProductoPrecio">
+      <input wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioRequest" message="tns:eliminarProductoPrecio" />
+      <output wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioResponse" message="tns:eliminarProductoPrecioResponse" />
+    </operation>
+    <operation name="insertarProductoPrecio">
+      <input wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioRequest" message="tns:insertarProductoPrecio" />
+      <output wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioResponse" message="tns:insertarProductoPrecioResponse" />
+    </operation>
   </portType>
   <binding name="ProductoPrecioWSPortBinding" type="tns:ProductoPrecioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarProductoPrecio">
+    <operation name="listarProductoPrecio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarProductoPrecio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,16 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarProductoPrecio">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarProductoPrecio">
+    <operation name="insertarProductoPrecio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
