@@ -139,6 +139,38 @@ public class ProductoPrecioMySql implements ProductoPrecioDao{
         return productosPrecios;
     }
 
+    @Override
+    public ArrayList<ProductoPrecio> listarPreciosProductoDeUnaSucursal(int idsucursal) {
+        ArrayList<ProductoPrecio> productosPrecios =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTOS_DE_SUCURSAL_CON_PRECIO"
+                    +"(?)}");
+            cs.setInt("_id_sucursal", idsucursal);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                ProductoPrecio productoPrecio = new ProductoPrecio();
+                
+                productoPrecio.setIdProductoPrecio(rs.getInt("id_producto_precio"));
+                
+                Producto producto = new  Producto();
+                producto.setIdProducto(rs.getInt("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
+                //DATOS PROPIOS
+                productoPrecio.setPrecio(rs.getDouble("precio"));
+                productoPrecio.setProducto(producto);
+                productosPrecios.add(productoPrecio);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return productosPrecios;
+    }
+
     
     
 }

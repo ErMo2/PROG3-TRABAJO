@@ -76,4 +76,16 @@ public class ProductoPrecioWS {
         }
         return prodPere;
     }
+    
+     @WebMethod(operationName = "listarProductoPrecioProductoDeUnaSucursal")
+    public ArrayList<ProductoPrecio> listarProductoPrecioProductoDeUnaSucursal(@WebParam(name = "idSucursal") int id) {
+        ArrayList<ProductoPrecio> prodPere = null;
+        try{
+            daoProductoPrecio = new ProductoPrecioMySql();
+            prodPere = daoProductoPrecio.listarPreciosProductoDeUnaSucursal(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return prodPere;
+    }
 }

@@ -30,7 +30,7 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_ELECTRODOMESTICOS"
+            cs = con.prepareCall("{call INSERTAR_ELECTRODOMESTICO"
                     +"(?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_electrodomesticos", java.sql.Types.INTEGER);
             cs.setString("_nombre", electrodomesticos.getNombre());
