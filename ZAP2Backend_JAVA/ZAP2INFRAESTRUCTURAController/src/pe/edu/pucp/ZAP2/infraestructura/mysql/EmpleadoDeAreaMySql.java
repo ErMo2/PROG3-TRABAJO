@@ -53,7 +53,7 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
             cs.setDate("_fechaContratacion", sqlDate);
             cs.setString("_tipoContrato", empleadoDeArea.getTipoContrato().toString());
             cs.setString("_horario", empleadoDeArea.getHorario().toString());
-            cs.setInt("_fid_supervisor",empleadoDeArea.getSupervisor().getIdEmpleado());
+            cs.setInt("_fid_supervisor",empleadoDeArea.getSupervisor().getId_Persona());
             cs.setInt("_fid_area",empleadoDeArea.getArea().getIdArea());
             cs.setString("_puesto",empleadoDeArea.getPuesto().toString());
             cs.executeUpdate();
@@ -218,7 +218,7 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 Supervisor supervisor = new Supervisor();
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
                 supervisor.setId_Persona(rs.getInt("fid_supervisor"));
-                
+                empleado.setSupervisor(supervisor);
                 
             }
         }catch(Exception ex){

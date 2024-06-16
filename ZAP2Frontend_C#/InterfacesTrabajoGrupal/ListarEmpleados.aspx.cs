@@ -232,5 +232,28 @@ namespace InterfacesTrabajoGrupal
             }
         }
 
+        protected void gvEmpleadosArea_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if(e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[4].Text = Convert.ToChar(DataBinder.Eval(e.Row.DataItem, "sexo")).ToString();
+            }
+        }
+
+        protected void gvCajeros_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[4].Text = Convert.ToChar(DataBinder.Eval(e.Row.DataItem, "sexo")).ToString();
+            }
+        }
+
+        protected void gvSupervisores_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Cells[4].Text = Convert.ToChar(DataBinder.Eval(e.Row.DataItem, "sexo")).ToString();
+            }
+        }
     }
 }

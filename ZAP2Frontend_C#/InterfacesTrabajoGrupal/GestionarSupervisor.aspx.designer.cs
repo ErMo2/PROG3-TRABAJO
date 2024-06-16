@@ -132,13 +132,22 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblTipoDocumento;
 
         /// <summary>
-        /// Control TxtTipoDocumento.
+        /// Control rbDni.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTipoDocumento;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbDni;
+
+        /// <summary>
+        /// Control rbCarnet_Extranjeria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbCarnet_Extranjeria;
 
         /// <summary>
         /// Control lblNumeroDocumento.
@@ -240,22 +249,31 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpFechaContratacion;
 
         /// <summary>
-        /// Control lblTurno.
+        /// Control lblHorario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTurno;
+        protected global::System.Web.UI.WebControls.Label lblHorario;
 
         /// <summary>
-        /// Control txtTurno.
+        /// Control rbMañana.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTurno;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbMañana;
+
+        /// <summary>
+        /// Control rbNoche.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbNoche;
 
         /// <summary>
         /// Control lblContrato.
@@ -267,13 +285,31 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblContrato;
 
         /// <summary>
-        /// Control txtContrato.
+        /// Control rbTiempoParcial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContrato;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbTiempoParcial;
+
+        /// <summary>
+        /// Control rbTiempoCompleto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbTiempoCompleto;
+
+        /// <summary>
+        /// Control rbContratoEspecial.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbContratoEspecial;
 
         /// <summary>
         /// Control Button1.

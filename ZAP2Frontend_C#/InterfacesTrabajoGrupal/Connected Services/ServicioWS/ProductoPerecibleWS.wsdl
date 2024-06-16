@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ProductoPerecibleWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="eliminarProductoPerecible">
-    <part name="parameters" element="tns:eliminarProductoPerecible" />
-  </message>
-  <message name="eliminarProductoPerecibleResponse">
-    <part name="parameters" element="tns:eliminarProductoPerecibleResponse" />
-  </message>
   <message name="insertarProductoPerecible">
     <part name="parameters" element="tns:insertarProductoPerecible" />
   </message>
@@ -29,6 +23,12 @@
   <message name="listarProductoPerecibleResponse">
     <part name="parameters" element="tns:listarProductoPerecibleResponse" />
   </message>
+  <message name="eliminarProductoPerecible">
+    <part name="parameters" element="tns:eliminarProductoPerecible" />
+  </message>
+  <message name="eliminarProductoPerecibleResponse">
+    <part name="parameters" element="tns:eliminarProductoPerecibleResponse" />
+  </message>
   <message name="modificarProductoPerecible">
     <part name="parameters" element="tns:modificarProductoPerecible" />
   </message>
@@ -36,10 +36,6 @@
     <part name="parameters" element="tns:modificarProductoPerecibleResponse" />
   </message>
   <portType name="ProductoPerecibleWS">
-    <operation name="eliminarProductoPerecible">
-      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest" message="tns:eliminarProductoPerecible" />
-      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse" message="tns:eliminarProductoPerecibleResponse" />
-    </operation>
     <operation name="insertarProductoPerecible">
       <input wsam:Action="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleRequest" message="tns:insertarProductoPerecible" />
       <output wsam:Action="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleResponse" message="tns:insertarProductoPerecibleResponse" />
@@ -52,6 +48,10 @@
       <input wsam:Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleRequest" message="tns:listarProductoPerecible" />
       <output wsam:Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleResponse" message="tns:listarProductoPerecibleResponse" />
     </operation>
+    <operation name="eliminarProductoPerecible">
+      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest" message="tns:eliminarProductoPerecible" />
+      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse" message="tns:eliminarProductoPerecibleResponse" />
+    </operation>
     <operation name="modificarProductoPerecible">
       <input wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest" message="tns:modificarProductoPerecible" />
       <output wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse" message="tns:modificarProductoPerecibleResponse" />
@@ -59,15 +59,6 @@
   </portType>
   <binding name="ProductoPerecibleWSPortBinding" type="tns:ProductoPerecibleWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarProductoPerecible">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarProductoPerecible">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +78,15 @@
       </output>
     </operation>
     <operation name="listarProductoPerecible">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarProductoPerecible">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

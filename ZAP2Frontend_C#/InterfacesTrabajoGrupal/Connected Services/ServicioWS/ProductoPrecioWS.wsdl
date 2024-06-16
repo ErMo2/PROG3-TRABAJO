@@ -11,17 +11,17 @@
   <message name="insertarProductoPrecioResponse">
     <part name="parameters" element="tns:insertarProductoPrecioResponse" />
   </message>
-  <message name="eliminarProductoPrecio">
-    <part name="parameters" element="tns:eliminarProductoPrecio" />
-  </message>
-  <message name="eliminarProductoPrecioResponse">
-    <part name="parameters" element="tns:eliminarProductoPrecioResponse" />
-  </message>
   <message name="listarProductoPrecio">
     <part name="parameters" element="tns:listarProductoPrecio" />
   </message>
   <message name="listarProductoPrecioResponse">
     <part name="parameters" element="tns:listarProductoPrecioResponse" />
+  </message>
+  <message name="eliminarProductoPrecio">
+    <part name="parameters" element="tns:eliminarProductoPrecio" />
+  </message>
+  <message name="eliminarProductoPrecioResponse">
+    <part name="parameters" element="tns:eliminarProductoPrecioResponse" />
   </message>
   <message name="modificarProductoPrecio">
     <part name="parameters" element="tns:modificarProductoPrecio" />
@@ -34,13 +34,13 @@
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioRequest" message="tns:insertarProductoPrecio" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioResponse" message="tns:insertarProductoPrecioResponse" />
     </operation>
-    <operation name="eliminarProductoPrecio">
-      <input wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioRequest" message="tns:eliminarProductoPrecio" />
-      <output wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioResponse" message="tns:eliminarProductoPrecioResponse" />
-    </operation>
     <operation name="listarProductoPrecio">
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioRequest" message="tns:listarProductoPrecio" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioResponse" message="tns:listarProductoPrecioResponse" />
+    </operation>
+    <operation name="eliminarProductoPrecio">
+      <input wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioRequest" message="tns:eliminarProductoPrecio" />
+      <output wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioResponse" message="tns:eliminarProductoPrecioResponse" />
     </operation>
     <operation name="modificarProductoPrecio">
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioRequest" message="tns:modificarProductoPrecio" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarProductoPrecio">
+    <operation name="listarProductoPrecio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarProductoPrecio">
+    <operation name="eliminarProductoPrecio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
