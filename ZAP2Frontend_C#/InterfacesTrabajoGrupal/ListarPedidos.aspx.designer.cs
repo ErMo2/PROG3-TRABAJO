@@ -11,25 +11,25 @@ namespace InterfacesTrabajoGrupal
 {
 
 
-    public partial class GestionPedidos
+    public partial class ListarPedidos
     {
 
         /// <summary>
-        /// Control lbRegistrarDocumentoDeCompra.
+        /// Control lbRegistrarPedido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbRegistrarDocumentoDeCompra;
+        protected global::System.Web.UI.WebControls.LinkButton lbRegistrarPedido;
 
         /// <summary>
-        /// Control gvListaDocumentoDeCompra.
+        /// Control gvPedidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvListaDocumentoDeCompra;
+        protected global::System.Web.UI.WebControls.GridView gvPedidos;
     }
 }

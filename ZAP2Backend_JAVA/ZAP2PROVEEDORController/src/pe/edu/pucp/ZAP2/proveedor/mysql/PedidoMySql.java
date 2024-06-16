@@ -100,8 +100,11 @@ public class PedidoMySql implements PedidoDao{
                 Pedido ped = new Pedido();
                 ped.setId_pedido(rs.getInt("id_pedido"));
                 ped.setSaldo(rs.getDouble("saldo"));
-                Estado_Pedido estPed = Estado_Pedido.valueOf("estado");
-                ped.setEstado(estPed);
+                
+                String estadoPedStr = rs.getString("estado");
+                Estado_Pedido est_pedido = Estado_Pedido.valueOf(estadoPedStr);
+                ped.setEstado(est_pedido);
+                
                 Date fecha = rs.getDate("fecha_pedido");
                 ped.setFecha_Pedido(fecha);
                 ped.setTotal(rs.getDouble("total"));
