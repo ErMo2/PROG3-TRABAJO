@@ -133,7 +133,9 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-           /* facturaVenta = new FacturaVenta
+            facturaVenta facturaVenta = new facturaVenta();
+          /*  facturaVenta.
+            
             {
                 NumeroFactura = txtNumeroFactura.Text,
                 FechaEmision = DateTime.Parse(dtpFechaEmision.Text),
@@ -146,6 +148,7 @@ namespace InterfacesTrabajoGrupal
             facturaVentaDAO = new Factura_VentaWSClient();
             facturaVentaDAO.RegistrarFacturaVenta(facturaVenta);
            */
+
             // Limpiar la sesión y redirigir a la página de listado
             Session["ProductosSeleccionados"] = null;
             Response.Redirect("ListarDocumentoDeVenta.aspx");
