@@ -65,4 +65,28 @@ public class ProductoWS {
         }
         return productos;
     }
+    
+    @WebMethod(operationName = "listarProductosBase")
+    public ArrayList<Producto> listarProductosBase() {
+        ArrayList<Producto> productos = null;
+        try{
+            daoProducto = new ProductoMySql();
+            productos = daoProducto.listarProductos();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return productos;
+    }
+    
+    @WebMethod(operationName = "listarProductosXnombre")
+    public ArrayList<Producto> listarProductosXnombre(@WebParam(name = "nombreProd") String nombreProd) {
+        ArrayList<Producto> productos = null;
+        try{
+            daoProducto = new ProductoMySql();
+            productos = daoProducto.listarProductosPorNombre(nombreProd);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return productos;
+    }
 }
