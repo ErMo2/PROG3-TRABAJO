@@ -9,52 +9,47 @@ using System.Web.UI.WebControls;
 
 namespace InterfacesTrabajoGrupal
 {
-    public partial class VerProductosPerecibles : System.Web.UI.Page
+    public partial class VerProductoPersonalYHogar : System.Web.UI.Page
     {
-        private ProductoPerecibleWSClient productoDao;
-        private productoPerecible producto;
-        //private DescuentoWSClient descuentoDao;
-        private descuento descuento;
+        private ProductosParaElCuidadoPersonalYDelHogarWSClient productoDao;
+        private productosParaElCuidadoPersonalYDelHogar producto;
         private ProductoPrecioWSClient productoPrecioDao;
-        private BindingList<productoPrecio> prodPred;
         private productoPrecio Producto;
+        private BindingList<productoPrecio> prodPred;
         private SucursalWSClient sucursalDao;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int idProductoPerecible;
-            productoDao = new ProductoPerecibleWSClient();
+            int idProductoHogar;
+            productoDao = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
 
-            if (Session["idPerecibleVisualizar"] != null)
+            if (Session["idHigieneVisualizar"] != null)
             {
-                idProductoPerecible = (int)Session["idPerecibleVisualizar"];
-                producto = productoDao.buscarProductoPerecible(idProductoPerecible);
+                idProductoHogar = (int)Session["idHigieneVisualizar"];
+                producto = productoDao.buscarProductoPCH(idProductoHogar);
                 if (!IsPostBack)
                 {
-                    cargarDatos(idProductoPerecible);
+                    cargarDatos(idProductoHogar);
                 }
                 productoPrecioDao = new ProductoPrecioWSClient();
-                productoPrecio[] ArregloProdPre = productoPrecioDao.listarProductoPrecioProducto(idProductoPerecible);
+                productoPrecio[] ArregloProdPre = productoPrecioDao.listarProductoPrecioProducto(idProductoHogar);
                 if (ArregloProdPre != null)
                 {
                     prodPred = new BindingList<productoPrecio>(ArregloProdPre);
                 }
-                
+
                 gvSucursales.DataSource = prodPred;
                 gvSucursales.DataBind();
             }
-
-              
         }
-        protected void cargarDatos(int idProductoPerecible)
+        protected void cargarDatos(int idProductoHogar)
         {
             txtIdProducto.Text = producto.idProducto.ToString();
             txtNombreProducto.Text = producto.nombre;
             txtDescripcionProducto.Text = producto.descripcion.ToString();
-            dtpFechaNacimiento.Text = producto.fechVencimiento.ToString("yyyy-MM-dd");
-            ddlTipoProductoPerecible.SelectedValue = producto.tipo_producto_perecible.ToString();
-            ddlUnidadMedida.SelectedValue = producto.unidad_de_medida.ToString();
+            ddlUnidadMedida.SelectedValue = producto.unidadMedida.ToString();
+            txtTipo.Text = producto.tipo.ToString();
             sucursalDao = new SucursalWSClient();
-            var sucursales = sucursalDao.listarSucursalesDeUnProductoSinPrecio(idProductoPerecible);
+            var sucursales = sucursalDao.listarSucursalesDeUnProductoSinPrecio(idProductoHogar);
             ddlSucursal.Items.Clear();
             foreach (var sucursal in sucursales)
             {
@@ -68,61 +63,46 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ListarProductos.aspx");
+            Response.Redirect("SeleccionarTipoDeProducto.aspx");
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            productoDao = new ProductoPerecibleWSClient();
-            producto = new productoPerecible();
-            producto.nombre = txtNombreProducto.Text;
+            productoDao = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
+            producto = new productosParaElCuidadoPersonalYDelHogar();
             producto.descripcion = txtDescripcionProducto.Text;
-            if (DateTime.TryParse(dtpFechaNacimiento.Text, out DateTime fechaVencimiento))
-            {
-                producto.fechVencimiento = fechaVencimiento;
-
-            }
-            if (ddlTipoProductoPerecible.SelectedValue == "Cereales")
-                producto.tipo_producto_perecible = tipoProductoPerecible.Cereales;
-            else if (ddlTipoProductoPerecible.SelectedValue == "Lacteos")
-                producto.tipo_producto_perecible = tipoProductoPerecible.Lacteos;
-            else if (ddlTipoProductoPerecible.SelectedValue == "Frutas")
-                producto.tipo_producto_perecible = tipoProductoPerecible.Frutas;
-            else if (ddlTipoProductoPerecible.SelectedValue == "Verduras")
-                producto.tipo_producto_perecible = tipoProductoPerecible.Verduras;
-            else if (ddlTipoProductoPerecible.SelectedValue == "Congelados")
-                producto.tipo_producto_perecible = tipoProductoPerecible.Congelados;
-            else
-                producto.tipo_producto_perecible = tipoProductoPerecible.Despensa;
+            producto.nombre = txtNombreProducto.Text;
+            producto.tipo = txtTipo.Text;
             if (ddlUnidadMedida.SelectedValue == "Unidad")
-                producto.unidad_de_medida = unidadDeMedida.unidad;
+            {
+                producto.unidadMedida = unidadDeMedida.unidad;
+            }
             else if (ddlUnidadMedida.SelectedValue == "Paquete")
-                producto.unidad_de_medida = unidadDeMedida.paquete;
+            {
+                producto.unidadMedida = unidadDeMedida.paquete;
+            }
             else if (ddlUnidadMedida.SelectedValue == "KG")
-                producto.unidad_de_medida = unidadDeMedida.KG;
+            {
+                producto.unidadMedida = unidadDeMedida.KG;
+            }
             else if (ddlUnidadMedida.SelectedValue == "LT")
-                producto.unidad_de_medida = unidadDeMedida.LT;
-            else
-                producto.unidad_de_medida = unidadDeMedida.NA;
-            producto.activo = 1;
-            producto.fechVencimientoSpecified = true;
-            producto.tipo_producto_perecibleSpecified = true;
-            producto.unidad_de_medidaSpecified = true;
-
-            if (Session["idModificarPerecible"] != null)
             {
-                producto.idProducto = (int)Session["idModificarPerecible"];
-                int resultado = productoDao.modificarProductoPerecible(producto);
+                producto.unidadMedida = unidadDeMedida.LT;
             }
             else
             {
-                producto.idProducto = productoDao.insertarProductoPerecible(producto);
+                producto.unidadMedida = unidadDeMedida.NA;
             }
-
-
-            producto.fechVencimientoSpecified = true;
-            producto.tipo_producto_perecibleSpecified = true;
-            producto.unidad_de_medidaSpecified = true;
-            //  productoPrecio.descuentos[0].idDescuento = descuentoDao.insertarDescuento(descuentoProducto);
+            producto.unidadMedidaSpecified = true;
+            producto.idProducto = productoDao.insertarPCH(producto);
+            if (Session["idModificarHigiene"] != null)
+            {
+                producto.idProducto = (int)Session["idModificarHigiene"];
+                int resultado = productoDao.modificarPCH(producto);
+            }
+            else
+            {
+                producto.idProducto = productoDao.insertarPCH(producto);
+            }
             Response.Redirect("listarProductos.aspx");
         }
         protected void gvSucursales_RowDataBound(object sender, GridViewRowEventArgs e)

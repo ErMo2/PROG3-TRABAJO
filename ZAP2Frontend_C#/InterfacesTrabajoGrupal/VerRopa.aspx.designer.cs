@@ -11,7 +11,7 @@ namespace InterfacesTrabajoGrupal
 {
 
 
-    public partial class Ropa
+    public partial class VerRopa
     {
 
         /// <summary>
@@ -123,13 +123,58 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoRopa;
 
         /// <summary>
-        /// Control btnRegistrar.
+        /// Control gvSucursales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegistrar;
+        protected global::System.Web.UI.WebControls.GridView gvSucursales;
+
+        /// <summary>
+        /// Control lblSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSucursal;
+
+        /// <summary>
+        /// Control ddlSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
+
+        /// <summary>
+        /// Control lblNuevoPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNuevoPrecio;
+
+        /// <summary>
+        /// Control txtNuevoPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNuevoPrecio;
+
+        /// <summary>
+        /// Control BtnInsertarProductoPrecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnInsertarProductoPrecio;
 
         /// <summary>
         /// Control btnRegresar.

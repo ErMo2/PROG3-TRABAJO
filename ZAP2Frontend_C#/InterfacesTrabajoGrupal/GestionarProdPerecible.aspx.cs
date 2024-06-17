@@ -44,7 +44,15 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            if (Session["idModificarPerecible"] != null)
+            {
+                Response.Redirect("ListarProductos.aspx");
+            }
+            else
+            {
+                Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            }
+
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {

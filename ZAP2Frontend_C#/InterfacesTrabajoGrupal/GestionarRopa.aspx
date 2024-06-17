@@ -67,13 +67,10 @@
 
         </div>
 
-        <div class="card-footer clearfix">
-            <asp:Button ID="btnRegresar" runat="server" Text="Regresar"
-                CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
-            <asp:Button ID="btnRegistrar" runat="server" Text="Registrar"
-                CssClass="float-end btn btn-primary" OnClick="btnRegistrar_Click" />
+        <div class="card-footer text-right">
+            <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />
+            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary" OnClick="btnRegresar_Click" />
         </div>
-
     </div>
 
 </asp:Content>

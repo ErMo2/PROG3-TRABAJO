@@ -29,7 +29,7 @@ namespace InterfacesTrabajoGrupal
                 producto = productoDao.buscarElectrodomestico(idElectrodomestico);
                 if (!IsPostBack)
                 {
-                    cargarDatos();
+                    cargarDatos(idElectrodomestico);
                 }
                 productoPrecioDao = new ProductoPrecioWSClient();
                 productoPrecio[] ArregloProdPre = productoPrecioDao.listarProductoPrecioProducto(idElectrodomestico);
@@ -42,7 +42,7 @@ namespace InterfacesTrabajoGrupal
                 gvSucursales.DataBind();
             }
         }
-        protected void cargarDatos()
+        protected void cargarDatos(int idElectrodomestico)
         {
             txtIdProducto.Text = producto.idProducto.ToString();
             txtNombreProducto.Text = producto.nombre;
@@ -51,7 +51,7 @@ namespace InterfacesTrabajoGrupal
             rblGarantia.SelectedValue = producto.tieneGarantia.ToString();
             dtpTiempoGarantia2.Text = producto.tiempoGarantia.ToString("yyyy-MM-dd");
             sucursalDao = new SucursalWSClient();
-            var sucursales = sucursalDao.listarSucursal();
+            var sucursales = sucursalDao.listarSucursalesDeUnProductoSinPrecio(idElectrodomestico);
             ddlSucursal.Items.Clear();
             foreach (var sucursal in sucursales)
             {

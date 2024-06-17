@@ -81,20 +81,26 @@
                 </asp:GridView>
             </div>
             <div class="mb-3 row">
-                <div class="mb-3 row">
-                    <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
-                    <div class="col-sm-8">
-                        <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control"></asp:DropDownList>
-                        <asp:TextBox ID="txtNuevoPrecio" runat="server" CssClass="form-control" />
-                        <asp:Button ID="BtnInsertarProductoPrecio" runat="server" Text="Registrar Sucursal" CssClass="btn btn-primary" OnClick="btnRegistrarProductoPrecio_Click" />
-                    </div>
+                <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+                <div class="col-sm-4">
+                    <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control"></asp:DropDownList>
+
                 </div>
             </div>
-
-        <div class="card-footer text-right">
-                <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary" OnClick="btnRegresar_Click" />
+            <div class="mb-3 row">
+                <asp:Label ID="lblNuevoPrecio" runat="server" Text="Nuevo Precio:" CssClass="col-sm-2 col-form-label" />
+                <div class="col-sm-8">
+                    <asp:TextBox ID="txtNuevoPrecio" runat="server" CssClass="form-control" />
+                </div>
+            </div>
+            <div class="card-footer clearfix">
+                <asp:Button ID="BtnInsertarProductoPrecio" runat="server" Text="Registrar Sucursal" CssClass="btn btn-primary" OnClick="btnRegistrarProductoPrecio_Click" />
+            </div>
+            <div class="card-footer clearfix">
+                <asp:Button ID="btnRegresar" runat="server" Text="Regresar"
+                    CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
             </div>
         </div>
     </div>
-</div>
+    </div>
 </asp:Content>

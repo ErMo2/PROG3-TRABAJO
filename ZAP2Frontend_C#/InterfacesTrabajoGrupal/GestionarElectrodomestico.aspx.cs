@@ -79,7 +79,15 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SeleccionarTipoDeProducto.aspx");
+
+            if (Session["idModificarElectrodomestico"] != null)
+            {
+                Response.Redirect("ListarProductos.aspx");
+            }
+            else
+            {
+                Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            }
         }
     }
 }

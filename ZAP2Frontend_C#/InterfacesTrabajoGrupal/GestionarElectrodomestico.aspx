@@ -60,11 +60,9 @@
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-sm-10 offset-sm-2">
-                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />
-                        <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary" OnClick="btnRegresar_Click" />
-                    </div>
+                <div class="card-footer text-right">
+                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" OnClick="btnRegistrar_Click" />
+                    <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary" OnClick="btnRegresar_Click" />
                 </div>
             </div>
         </div>

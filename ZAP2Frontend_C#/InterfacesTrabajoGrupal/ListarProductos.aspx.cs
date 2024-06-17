@@ -153,15 +153,8 @@ namespace InterfacesTrabajoGrupal
         protected void VerProductLimpiezaHogar_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            if (listaProdCuiHog != null)
-            {
-                var producto = listaProdCuiHog.FirstOrDefault(p => p.idProducto == idProducto);
-                if (producto != null)
-                {
-                    lblDetalles.Text = $"ID: {producto.idProducto}<br/>Nombre: {producto.nombre}<br/>Descripción: {producto.descripcion}<br/>Unidad de Medida: {producto.unidadMedida}<br/>Tipo: {producto.tipo}";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                }
-            }
+            Session["idHigieneVisualizar"] = idProducto;
+            Response.Redirect($"VerProductoPersonalYHogar.aspx?idHigieneVisualizar={idProducto}");
         }
 
         protected void EditProductRopa_Click(object sender, EventArgs e)
@@ -181,15 +174,8 @@ namespace InterfacesTrabajoGrupal
         protected void VerProductRopa_Click(object sender, EventArgs e)
         {
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
-            if (listaRopa != null)
-            {
-                var producto = listaRopa.FirstOrDefault(p => p.idProducto == idProducto);
-                if (producto != null)
-                {
-                    lblDetalles.Text = $"ID: {producto.idProducto}<br/>Nombre: {producto.nombre}<br/>Descripción: {producto.descripcion}<br/>Temporada: {producto.temporada}<br/>Material: {producto.material}";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
-                }
-            }
+            Session["idRopaVisualizar"] = idProducto;
+            Response.Redirect($"VerRopa.aspx?idRopaVisualizar={idProducto}");
         }
     }
 }
