@@ -70,9 +70,11 @@ namespace InterfacesTrabajoGrupal
         protected void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             int idCliente;
+            cliente []arregloClientes;
             if (int.TryParse(txtCliente.Text, out idCliente))
             {
-                //cliente = clienteDAO.listarClientesPorNombre(txtCliente.Text.ToString());
+                arregloClientes = clienteDAO.listarClientesPorNombre(txtCliente.Text);
+                cliente = arregloClientes[0];
                 if (cliente != null)
                 {
                     txtCliente.Text = cliente.nombre;

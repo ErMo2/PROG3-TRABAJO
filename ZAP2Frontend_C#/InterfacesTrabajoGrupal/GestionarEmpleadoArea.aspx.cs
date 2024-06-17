@@ -73,7 +73,7 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("GestionarEmpleados.aspx");
+            Response.Redirect("ListarEmpleados.aspx");
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {

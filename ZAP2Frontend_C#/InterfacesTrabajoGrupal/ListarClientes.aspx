@@ -16,7 +16,7 @@
             Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Cliente" OnClick="lbRegistrarCliente_Click" />
     </div>
 
-    <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive"
+    <asp:GridView ID="gvClientes" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive table-striped"
         AllowPaging="True" PageSize="5" OnPageIndexChanging="gvClientes_PageIndexChanging">
         <Columns>
             <asp:BoundField DataField="id_cliente" HeaderText="Id Cliente" />
