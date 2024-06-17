@@ -235,5 +235,32 @@ public class CajeroMySql implements CajeroDao{
         }
         return cajero;
     }
+
+    @Override
+    public ArrayList<Cajero> listarTodasPorSucursal(int idSucursal) {
+        ArrayList<Cajero> cajeros =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_CAJEROS_POR_SUCURSAL"
+                    +"(?)}");
+            cs.setInt("_id_sucursal", idSucursal);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Cajero cajero = new Cajero();
+                
+                cajero.setId_Persona(rs.getInt("id_cajero"));
+                cajero.setNombre(rs.getString("nombre_completo"));
+                cajeros.add(cajero);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return cajeros;
+    
+    }
     
 }
