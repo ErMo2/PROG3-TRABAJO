@@ -117,8 +117,6 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-        Producto producto = new ProductoPerecible();
-        producto.setIdProducto(1);
         
         String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
         String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
@@ -324,19 +322,33 @@ public class Principal {
         /*======================================================================*/
         PedidoDao daoPedido = new PedidoMySql();
         
+        Producto producto = new ProductoPerecible();
+        producto.setIdProducto(2);
+        
+        Detalle_PedidoDao daoDetPed = new Detalle_PedidoMySql();
+        Detalle_Pedido detPed = new Detalle_Pedido();
+        detPed.setPrecioTotal(50);
+        detPed.setPrecioUnitario(10);
+        detPed.setProducto(producto);
+        detPed.setSubtotal(59);
+        
         /*######### Insertar ########*/
-//        Pedido pedido = new Pedido(1, 500.6, Estado_Pedido.COMPLETADO, fecha1, 468.8, null);
-//        daoPedido.insertar(pedido);
+        Pedido pedido = new Pedido(5, 999, Estado_Pedido.EN_PROCESO, fecha2, 468.8, null);
+        //daoPedido.insertar(pedido);
+        
+        detPed.setPedido(pedido);
+        daoDetPed.insertar(detPed);
         
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
+//        daoPedido.eliminar(1);
         
         /*########## Listar #########*/
-        ArrayList<Pedido> pedidos = daoPedido.listarTodas();
-        for(Pedido ped:pedidos){
-            ped.imprimir();
-        }
+//        ArrayList<Pedido> pedidos = daoPedido.listarTodas();
+//        for(Pedido ped:pedidos){
+//            ped.imprimir();
+//        }
         
         /*======================================================================*/
         /*=========================== Detalle_Pedido ==========================*/
@@ -392,7 +404,7 @@ public class Principal {
         /*======================================================================*/
         /*========================= ProductoPerecible ==========================*/
         /*======================================================================*/
-        ProductoPerecibleDao daoProdPerec = new ProductoPerecibleMySql();
+//        ProductoPerecibleDao daoProdPerec = new ProductoPerecibleMySql();
         /*######### Insertar ########*/
 //        ProductoPerecible prodPerecible = new ProductoPerecible(fecha1, TipoProductoPerecible.DESPENSA, UnidadDeMedida.UNIDAD, 
 //                0, "Lata atún", "Lata Atún Florida En Trozos", null, 1, null);
@@ -401,7 +413,7 @@ public class Principal {
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
-        daoProdPerec.eliminar(1);
+//        daoProdPerec.eliminar(1);
         /*########## Listar #########*/   
         
         

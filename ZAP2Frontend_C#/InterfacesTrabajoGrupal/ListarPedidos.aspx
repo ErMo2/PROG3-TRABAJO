@@ -18,9 +18,8 @@
                 AllowPaging="True" PageSize="5" OnPageIndexChanging="gvPedidos_PageIndexChanging">
                 <Columns>
                     <asp:BoundField HeaderText="Id" DataField="id_pedido" />
-                    <asp:BoundField HeaderText="Saldo" DataField="saldo" />
                     <asp:BoundField HeaderText="Estado" DataField="estado" />
-                    <asp:BoundField HeaderText="Fecha" DataField="fecha_Pedido" />
+                    <asp:BoundField HeaderText="Fecha y Hora" DataField="fecha_Pedido" />
                     <asp:BoundField HeaderText="Total" DataField="total" />
 
                     <asp:TemplateField>
@@ -28,8 +27,8 @@
                             Acciones
                         </HeaderTemplate>
                         <ItemTemplate>
-                            <asp:Button ID="btnModificar" runat="server" Text="Modificar" CommandArgument='<%# Eval("id_pedido") %>' CssClass="btn btn-primary btn-sm" OnClick="btnModificar_Click" />
-                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("id_pedido") %>' CssClass="btn btn-danger btn-sm" OnClick="btnEliminar_Click" />
+                            <asp:LinkButton ID="btnVer" runat="server" Text="Ver" CommandArgument='<%# Eval("id_pedido") %>' CssClass="btn btn-info btn-sm" OnClick="btnVer_Click" data-toggle="modal"/>
+                            <asp:LinkButton ID="btnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("id_pedido") %>' CssClass="btn btn-danger btn-sm" OnClick="btnEliminar_Click" />
                         </ItemTemplate>
                     </asp:TemplateField>
 

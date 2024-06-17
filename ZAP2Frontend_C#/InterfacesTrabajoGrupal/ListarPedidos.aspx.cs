@@ -32,14 +32,16 @@ namespace InterfacesTrabajoGrupal
             Response.Redirect("GestionarPedido.aspx");
         }
 
-        protected void btnModificar_Click(object sender, EventArgs e)
+        protected void btnVer_Click(object sender, EventArgs e)
         {
             Response.Redirect("GestionarPedido.aspx");
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("GestionarPedido.aspx");
+            int idPedido = Int32.Parse(((LinkButton)sender).CommandArgument);
+            daoPedido.eliminarPedido(idPedido);
+            Response.Redirect("ListarPedidos.aspx");
         }
 
         protected void gvPedidos_PageIndexChanging(object sender, GridViewPageEventArgs e)
