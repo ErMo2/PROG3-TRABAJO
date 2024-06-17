@@ -72,7 +72,7 @@ namespace InterfacesTrabajoGrupal
             int idCliente;
             if (int.TryParse(txtCliente.Text, out idCliente))
             {
-                cliente = clienteDAO.listarClientesPorNombre(txtCliente.Text);
+                //cliente = clienteDAO.listarClientesPorNombre(txtCliente.Text.ToString());
                 if (cliente != null)
                 {
                     txtCliente.Text = cliente.nombre;
