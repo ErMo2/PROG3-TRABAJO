@@ -37,6 +37,7 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
             cs.setInt("_fid_pedido", detallePedido.getPedido().getId_pedido());
             cs.setDouble("_precioUnitario", detallePedido.getPrecioUnitario());
             cs.setDouble("_precioTotal", detallePedido.getPrecioTotal());
+            cs.setInt("_fidProducto", detallePedido.getProducto().getIdProducto());
             resultado = cs.executeUpdate();
             detallePedido.setId_DetallePedido(cs.getInt("_id_DetallePedido"));
         }catch(SQLException ex){
