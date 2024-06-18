@@ -17,7 +17,7 @@ public class Boleta_Venta extends Documento_de_Venta{
     private String detalles;
     private double impuestos;
     private Cliente cliente;
-
+    private int idCliente;
     public Boleta_Venta() {
     }
 
@@ -68,6 +68,14 @@ public class Boleta_Venta extends Documento_de_Venta{
         System.out.println("Boleta_Venta{" + "numSerie=" + numSerie + ", detalles=" 
                 + detalles + ", impuestos=" + impuestos + ", persona=" + 
                 cliente.getId_Persona() + '}');
+    }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
     
 }

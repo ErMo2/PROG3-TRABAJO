@@ -76,4 +76,16 @@ public class CajeroWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "listarCajerosPorSucursal")
+    public ArrayList<Cajero> listarCajerosPorSucursal(@WebParam(name = "idCajero") int id) {
+        ArrayList<Cajero> cajeros = null;
+        try{
+            daoCajero = new CajeroMySql();
+            cajeros = daoCajero.listarTodasPorSucursal(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return cajeros;
+    }
 }

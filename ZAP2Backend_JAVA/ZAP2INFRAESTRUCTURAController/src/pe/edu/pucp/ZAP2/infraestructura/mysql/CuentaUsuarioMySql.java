@@ -97,7 +97,7 @@ public class CuentaUsuarioMySql implements CuentaUsuarioDao{
                 cuentaUsu.setUsuario(rs.getString("usuario"));
                 cuentaUsu.setContrasena(rs.getString("contraseña"));
                 PersonaNatural persNat = new PersonaNatural();
-                persNat.setId_Persona(rs.getInt("fid_personaNatural"));
+                persNat.setId_Persona(rs.getInt("id_personaNatural"));
                 persNat.setNombre(rs.getString("nombre"));
                 persNat.setApellido_paterno(rs.getString("apellido_paterno"));
                 cuentaUsu.setPersonaNatural(persNat);
