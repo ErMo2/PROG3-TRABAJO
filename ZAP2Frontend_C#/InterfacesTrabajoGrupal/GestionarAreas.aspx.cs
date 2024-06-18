@@ -14,6 +14,8 @@ namespace InterfacesTrabajoGrupal
     {
         private AreaWSClient daoArea;
         private area area;
+        private SucursalWSClient sucursalDao;
+        private sucursal SUCURSAL;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -34,7 +36,17 @@ namespace InterfacesTrabajoGrupal
             {
                 txtIdArea.Text = area.idArea.ToString();
                 txtNombreArea.Text = area.nombre;
-                txtIdSucursal.Text = area.sucursal.id_sucursal.ToString();
+                var sucursales = sucursalDao.listarSucursal();
+                ddlSucursal.Items.Clear();
+                foreach (var sucursal in sucursales)
+                {
+                    //if (sucursal.id_sucursal?)
+                    //{
+                    //    ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
+                    //}
+                    ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
+                    
+                }
             }
             
         }
@@ -52,8 +64,7 @@ namespace InterfacesTrabajoGrupal
             }
             area.nombre = txtNombreArea.Text;
             area.sucursal = new sucursal();
-            area.sucursal.id_sucursal = int.Parse(txtIdSucursal.Text);
-
+            area.sucursal.id_sucursal = int.Parse(ddlSucursal.SelectedValue);
             if (area.idArea > 0)
             {
                 // Actualizar sucursal existente

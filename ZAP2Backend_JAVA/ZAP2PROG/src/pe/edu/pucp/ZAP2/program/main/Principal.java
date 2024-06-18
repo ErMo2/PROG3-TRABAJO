@@ -771,12 +771,12 @@ public class Principal {
         /*=============================== LineaDoc =============================*/
         /*======================================================================*/
         ProductoPrecio producPrecio = new ProductoPrecio();
-        producPrecio.setIdProductoPrecio(69);
+        producPrecio.setIdProductoPrecio(71);
         
         Documento doc = new Documento();
         doc.setId_documento(43);
         
-        LineaDoc linea_doc = new LineaDoc(1,200,500,5,2,producPrecio,doc);
+        LineaDoc linea_doc = new LineaDoc(1,200,500,51,2,producPrecio,doc);
         
         LineaDocDao daoLineaDoc = new LineaDocMySql();
 

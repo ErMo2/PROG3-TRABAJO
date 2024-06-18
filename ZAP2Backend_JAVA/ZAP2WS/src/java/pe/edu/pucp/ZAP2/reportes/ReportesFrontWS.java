@@ -93,7 +93,7 @@ public class ReportesFrontWS {
             JasperPrint jp =
                     JasperFillManager.fillReport(jr, hm, con);
 
-            JasperExportManager.exportReportToPdf(jp);
+            reporte = JasperExportManager.exportReportToPdf(jp);
         }catch(JRException ex){
             System.out.println(ex.getMessage());
         }

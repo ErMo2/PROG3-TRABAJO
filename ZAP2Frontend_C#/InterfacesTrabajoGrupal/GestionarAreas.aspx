@@ -30,11 +30,10 @@
             </div>
 
 
-            <div class="mb-3 row">
-                <asp:Label ID="lblArea" runat="server" Text="Id Sucursal:" CssClass="col-sm-2 col-form-label" />
-                <div class="col-sm-8">
-                    <asp:TextBox ID="txtIdSucursal" runat="server" CssClass="form-control" />
-                </div>
+            <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+            <div class="col-sm-4">
+                <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control"></asp:DropDownList>
+
             </div>
 
         </div>

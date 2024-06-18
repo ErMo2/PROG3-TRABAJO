@@ -37,7 +37,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_BOLETA_VENTA(?,?,?,?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_boleta_venta",java.sql.Types.INTEGER);
-            cs.setInt("_fid_id_persona", boletaVenta.getCliente().getId_Persona());
+            cs.setInt("_fid_id_persona", boletaVenta.getIdCliente());
             cs.setInt("_numSerie", boletaVenta.getNumSerie());
             cs.setString("_detalles", boletaVenta.getDetalles());
             cs.setDouble("_impuestos", boletaVenta.getImpuestos());

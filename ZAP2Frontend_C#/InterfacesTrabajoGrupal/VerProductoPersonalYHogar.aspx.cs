@@ -93,7 +93,7 @@ namespace InterfacesTrabajoGrupal
                 producto.unidadMedida = unidadDeMedida.NA;
             }
             producto.unidadMedidaSpecified = true;
-            producto.idProducto = productoDao.insertarPCH(producto);
+            //producto.idProducto = productoDao.insertarPCH(producto);
             if (Session["idModificarHigiene"] != null)
             {
                 producto.idProducto = (int)Session["idModificarHigiene"];
