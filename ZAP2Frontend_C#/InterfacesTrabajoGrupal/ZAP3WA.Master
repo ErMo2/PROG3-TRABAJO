@@ -84,13 +84,10 @@
                             <button class="btn btn-outline-light dropdown-toggle"
                                 id="btnUsuario" data-bs-toggle="dropdown" type="button"
                                 aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>Iniciar Sesion  
+                                <i class="fas fa-user me-2"></i>Cuenta
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="btnUsuario">
-                                <li><a class="dropdown-item" href="CrearCuenta.aspx">Crear Cuenta</a></li>
                                 <li><a class="dropdown-item" href="PerfilUsuario.aspx">Perfil</a></li>
-                                <li><a class="dropdown-item" href="CambiarContrasenia.aspx">Cambiar Contraseña</a></li>
-                                <li><a class="dropdown-item" href="CerrarSesion.aspx">Cerrar Sesión</a></li>
                             </ul>
                         </div>
                     </form>

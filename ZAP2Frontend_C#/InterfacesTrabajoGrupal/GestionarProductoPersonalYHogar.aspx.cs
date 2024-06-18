@@ -12,8 +12,6 @@ namespace InterfacesTrabajoGrupal
     {
         private ProductosParaElCuidadoPersonalYDelHogarWSClient productoDao;
         private productosParaElCuidadoPersonalYDelHogar producto;
-        private ProductoPrecioWSClient productoPrecioDao;
-        private productoPrecio productoPrecio;
         protected void Page_Load(object sender, EventArgs e)
         {
             int idHigiene;

@@ -13,8 +13,6 @@ namespace InterfacesTrabajoGrupal
     {
         private ProductoPerecibleWSClient productoDao;
         private productoPerecible producto;
-        //private DescuentoWSClient descuentoDao;
-        private descuento descuento;
         private ProductoPrecioWSClient productoPrecioDao;
         private BindingList<productoPrecio> prodPred;
         private productoPrecio Producto;

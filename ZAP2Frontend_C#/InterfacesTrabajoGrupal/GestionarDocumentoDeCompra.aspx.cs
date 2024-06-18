@@ -18,7 +18,6 @@ namespace InterfacesTrabajoGrupal
     public partial class GestionarDocumentoDeCompra : System.Web.UI.Page
     {
         private PedidoWSClient pedidoDao;
-        private BindingList<pedido> listaPedidos;
         private pedido pedido;
 
         protected void Page_Load(object sender, EventArgs e)

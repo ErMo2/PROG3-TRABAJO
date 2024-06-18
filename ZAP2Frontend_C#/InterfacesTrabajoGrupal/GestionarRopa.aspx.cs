@@ -13,8 +13,6 @@ namespace InterfacesTrabajoGrupal
     {
         private RopaWSClient productoDao;
         private ropa producto;
-        private ProductoPrecioWSClient productoPrecioDao;
-        private productoPrecio productoPrecio;
         protected void Page_Load(object sender, EventArgs e)
         {
             int idRopa;

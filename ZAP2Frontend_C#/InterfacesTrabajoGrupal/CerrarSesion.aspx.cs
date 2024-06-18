@@ -15,7 +15,7 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Home.aspx");
+            Response.Redirect("IniciarSesion.aspx");
         }
     }
 }

@@ -13,8 +13,6 @@ namespace InterfacesTrabajoGrupal
 {
     public partial class FacturaVenta : System.Web.UI.Page
     {
-        private FacturaVenta facturaVenta;
-        private Factura_VentaWSClient facturaVentaDAO;
         private PersonaJuridicaWSClient personaJuridicaDAO;
         private SucursalWSClient sucursalDAO;
         private ProductoPrecioWSClient productoPrecioDAO;

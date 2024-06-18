@@ -14,8 +14,6 @@ namespace InterfacesTrabajoGrupal
         private productoPerecible producto;
         private ProductoPrecioWSClient productoPrecioDao;
         private productoPrecio productoPrecio;
-        //private DescuentoWSClient descuentoDao;
-        private descuento descuento;
         protected void Page_Load(object sender, EventArgs e)
         {
             int idProductoPerecible;

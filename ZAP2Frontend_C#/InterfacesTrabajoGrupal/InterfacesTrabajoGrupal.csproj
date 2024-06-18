@@ -716,6 +716,7 @@
     <Content Include="GestionarProductos.aspx" />
     <Content Include="GestionarAlmacenes.aspx" />
     <Content Include="GestionarSucursales.aspx" />
+    <Content Include="IniciarSesion.aspx" />
     <Content Include="ListarAreas.aspx" />
     <Content Include="ListarBancos.aspx" />
     <Content Include="ListarDocumentoDeVenta.aspx" />
@@ -978,6 +979,13 @@
     </Compile>
     <Compile Include="GestionarSucursales.aspx.designer.cs">
       <DependentUpon>GestionarSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSesion.aspx.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IniciarSesion.aspx.designer.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarAreas.aspx.cs">
       <DependentUpon>ListarAreas.aspx</DependentUpon>

@@ -44,11 +44,11 @@
      </style>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
-      <div class="container">
+    <div class="container">
         <h1>Perfil de Usuario</h1>
         <div class="info-group">
             <span class="info-label">Nombre Usuario:</span>
-            <span class="info-value">Ronnie Cueva Moscoso</span>
+            <asp:Label ID="lblNombreUsuario" runat="server" />
         </div>
         <div class="info-group">
             <span class="info-label">DNI:</span>
@@ -58,6 +58,12 @@
             <span class="info-label">Sexo:</span>
             <span class="info-value">Masculino</span>
         </div>
-          <img src="Imagenes/FotoPerfil.png" alt="Foto de perfil" class="profile-image" 
+        <img src="Imagenes/FotoPerfil.png" alt="Foto de perfil" class="profile-image" />
+
+        <div class="modal-footer">
+            <asp:Button ID="btnCerrarSesion" runat="server" Text="Cerrar sesión" CssClass="btn btn-primary" OnClick="btnCerrarSesion_Click" />
+        </div>
+
     </div>
+
 </asp:Content>
