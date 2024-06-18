@@ -30,7 +30,7 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            bancoDao = new LoteWSClient();
+            /*bancoDao = new LoteWSClient();
             if (Page.IsValid)
             {
                 banco = new lote();
@@ -56,7 +56,7 @@ namespace InterfacesTrabajoGrupal
                     // Manejar la excepción y mostrar un mensaje de error
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error al guardar el banco: {ex.Message}');", true);
                 }
-            }
+            }*/
         }
     }
 }
