@@ -712,6 +712,7 @@
     <Content Include="GestionarElectrodomestico.aspx" />
     <Content Include="GestionarEmpleadoArea.aspx" />
     <Content Include="GestionarFacturaVenta.aspx" />
+    <Content Include="GestionarLotes.aspx" />
     <Content Include="GestionarSupervisor.aspx" />
     <Content Include="GestionarAreas.aspx" />
     <Content Include="GestionarBancos.aspx" />
@@ -727,6 +728,7 @@
     <Content Include="ListarBancos.aspx" />
     <Content Include="ListarDocumentoDeVenta.aspx" />
     <Content Include="ListarEmpleados.aspx" />
+    <Content Include="ListarLotes.aspx" />
     <Content Include="ListarPedidos.aspx" />
     <Content Include="ListarProductos.aspx" />
     <Content Include="Home.aspx" />
@@ -916,6 +918,13 @@
     <Compile Include="GestionarFacturaVenta.aspx.designer.cs">
       <DependentUpon>GestionarFacturaVenta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GestionarLotes.aspx.cs">
+      <DependentUpon>GestionarLotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarLotes.aspx.designer.cs">
+      <DependentUpon>GestionarLotes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GestionarSupervisor.aspx.cs">
       <DependentUpon>GestionarSupervisor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1020,6 +1029,13 @@
     </Compile>
     <Compile Include="ListarEmpleados.aspx.designer.cs">
       <DependentUpon>ListarEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarLotes.aspx.cs">
+      <DependentUpon>ListarLotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarLotes.aspx.designer.cs">
+      <DependentUpon>ListarLotes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarPedidos.aspx.cs">
       <DependentUpon>ListarPedidos.aspx</DependentUpon>

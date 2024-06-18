@@ -59,6 +59,9 @@
                 <li class="nav-item mb-1">
                     <a href="ListarAlmacenes.aspx"><i class="fa-solid fa-warehouse pe-2"></i>Almacenes</a>
                 </li>
+                <li class="nav-item mb-1">
+                    <a href="ListarLotes.aspx"><i class="fa-solid fa-warehouse pe-2"></i>Lotes</a>
+                </li>
             </ul>
             <hr>
             <div class="d-flex">
