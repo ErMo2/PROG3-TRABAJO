@@ -12,6 +12,16 @@
   <xs:element name="listarProductoPrecioResponse" type="tns:listarProductoPrecioResponse" />
   <xs:element name="modificarProductoPrecio" type="tns:modificarProductoPrecio" />
   <xs:element name="modificarProductoPrecioResponse" type="tns:modificarProductoPrecioResponse" />
+  <xs:complexType name="eliminarProductoPrecio">
+    <xs:sequence>
+      <xs:element name="idProductoPrecio" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarProductoPrecioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarProductoPrecioProductoDeUnaSucursal">
     <xs:sequence>
       <xs:element name="idSucursal" type="xs:int" />
@@ -73,7 +83,9 @@
       <xs:element name="capacidadMaximaProductos" type="xs:double" />
       <xs:element name="id_almacen" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lote" nillable="true" type="tns:lote" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lotes" nillable="true" type="tns:lote" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="movimientosLote" nillable="true" type="tns:movimientoLote" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
       <xs:element minOccurs="0" name="tipoAlmacen" type="tns:tipoAlmacen" />
     </xs:sequence>
@@ -110,12 +122,12 @@
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarProductoPrecio">
+  <xs:complexType name="modificarProductoPrecio">
     <xs:sequence>
-      <xs:element name="idProductoPrecio" type="xs:int" />
+      <xs:element minOccurs="0" name="productoPrecio" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarProductoPrecioResponse">
+  <xs:complexType name="modificarProductoPrecioResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -126,16 +138,6 @@
   <xs:complexType name="listarProductoPrecioResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productoPrecio" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarProductoPrecio">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="productoPrecio" type="tns:productoPrecio" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="modificarProductoPrecioResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarProductoPrecioProducto">

@@ -23,17 +23,17 @@
   <message name="eliminarRopaResponse">
     <part name="parameters" element="tns:eliminarRopaResponse" />
   </message>
-  <message name="modificarRopa">
-    <part name="parameters" element="tns:modificarRopa" />
-  </message>
-  <message name="modificarRopaResponse">
-    <part name="parameters" element="tns:modificarRopaResponse" />
-  </message>
   <message name="insertarRopa">
     <part name="parameters" element="tns:insertarRopa" />
   </message>
   <message name="insertarRopaResponse">
     <part name="parameters" element="tns:insertarRopaResponse" />
+  </message>
+  <message name="modificarRopa">
+    <part name="parameters" element="tns:modificarRopa" />
+  </message>
+  <message name="modificarRopaResponse">
+    <part name="parameters" element="tns:modificarRopaResponse" />
   </message>
   <portType name="RopaWS">
     <operation name="listarRopa">
@@ -48,13 +48,13 @@
       <input wsam:Action="ZAP2WS/RopaWS/eliminarRopaRequest" message="tns:eliminarRopa" />
       <output wsam:Action="ZAP2WS/RopaWS/eliminarRopaResponse" message="tns:eliminarRopaResponse" />
     </operation>
-    <operation name="modificarRopa">
-      <input wsam:Action="ZAP2WS/RopaWS/modificarRopaRequest" message="tns:modificarRopa" />
-      <output wsam:Action="ZAP2WS/RopaWS/modificarRopaResponse" message="tns:modificarRopaResponse" />
-    </operation>
     <operation name="insertarRopa">
       <input wsam:Action="ZAP2WS/RopaWS/insertarRopaRequest" message="tns:insertarRopa" />
       <output wsam:Action="ZAP2WS/RopaWS/insertarRopaResponse" message="tns:insertarRopaResponse" />
+    </operation>
+    <operation name="modificarRopa">
+      <input wsam:Action="ZAP2WS/RopaWS/modificarRopaRequest" message="tns:modificarRopa" />
+      <output wsam:Action="ZAP2WS/RopaWS/modificarRopaResponse" message="tns:modificarRopaResponse" />
     </operation>
   </portType>
   <binding name="RopaWSPortBinding" type="tns:RopaWS">
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarRopa">
+    <operation name="insertarRopa">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarRopa">
+    <operation name="modificarRopa">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

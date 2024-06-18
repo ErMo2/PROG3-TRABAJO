@@ -38,7 +38,6 @@ public class PedidoMySql implements PedidoDao{
             cs.setString("_estado", pedido.getEstado().toString());
             java.sql.Date fechaPedido = new java.sql.Date(pedido.getFecha_Pedido().getTime()); 
             cs.setDate("_fecha_pedido", fechaPedido);
-            cs.setDouble("_total", pedido.getTotal());
             resultado = cs.executeUpdate();
             pedido.setId_pedido(cs.getInt("_id_pedido"));
         }catch(SQLException ex){

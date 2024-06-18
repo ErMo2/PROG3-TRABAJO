@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/AlmacenWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="buscarAlmacen">
-    <part name="parameters" element="tns:buscarAlmacen" />
-  </message>
-  <message name="buscarAlmacenResponse">
-    <part name="parameters" element="tns:buscarAlmacenResponse" />
-  </message>
   <message name="modificarAlmacen">
     <part name="parameters" element="tns:modificarAlmacen" />
   </message>
@@ -22,6 +16,12 @@
   </message>
   <message name="insertarAlmacenResponse">
     <part name="parameters" element="tns:insertarAlmacenResponse" />
+  </message>
+  <message name="buscarAlmacen">
+    <part name="parameters" element="tns:buscarAlmacen" />
+  </message>
+  <message name="buscarAlmacenResponse">
+    <part name="parameters" element="tns:buscarAlmacenResponse" />
   </message>
   <message name="eliminarAlmacen">
     <part name="parameters" element="tns:eliminarAlmacen" />
@@ -36,10 +36,6 @@
     <part name="parameters" element="tns:listarAlmacenResponse" />
   </message>
   <portType name="AlmacenWS">
-    <operation name="buscarAlmacen">
-      <input wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest" message="tns:buscarAlmacen" />
-      <output wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenResponse" message="tns:buscarAlmacenResponse" />
-    </operation>
     <operation name="modificarAlmacen">
       <input wsam:Action="ZAP2WS/AlmacenWS/modificarAlmacenRequest" message="tns:modificarAlmacen" />
       <output wsam:Action="ZAP2WS/AlmacenWS/modificarAlmacenResponse" message="tns:modificarAlmacenResponse" />
@@ -47,6 +43,10 @@
     <operation name="insertarAlmacen">
       <input wsam:Action="ZAP2WS/AlmacenWS/insertarAlmacenRequest" message="tns:insertarAlmacen" />
       <output wsam:Action="ZAP2WS/AlmacenWS/insertarAlmacenResponse" message="tns:insertarAlmacenResponse" />
+    </operation>
+    <operation name="buscarAlmacen">
+      <input wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest" message="tns:buscarAlmacen" />
+      <output wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenResponse" message="tns:buscarAlmacenResponse" />
     </operation>
     <operation name="eliminarAlmacen">
       <input wsam:Action="ZAP2WS/AlmacenWS/eliminarAlmacenRequest" message="tns:eliminarAlmacen" />
@@ -59,15 +59,6 @@
   </portType>
   <binding name="AlmacenWSPortBinding" type="tns:AlmacenWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="buscarAlmacen">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarAlmacen">
       <soap:operation soapAction="" />
       <input>
@@ -78,6 +69,15 @@
       </output>
     </operation>
     <operation name="insertarAlmacen">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarAlmacen">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

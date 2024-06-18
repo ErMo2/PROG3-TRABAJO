@@ -32,7 +32,7 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_DETALLE_PEDIDO"
-                    +"(?,?,?,?)}");
+                    +"(?,?,?,?,?)}");
             cs.registerOutParameter("_id_DetallePedido", java.sql.Types.INTEGER);
             cs.setInt("_fid_pedido", detallePedido.getPedido().getId_pedido());
             cs.setDouble("_precioUnitario", detallePedido.getPrecioUnitario());

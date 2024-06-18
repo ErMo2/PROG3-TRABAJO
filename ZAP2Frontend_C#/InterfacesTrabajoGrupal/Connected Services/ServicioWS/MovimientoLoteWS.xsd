@@ -5,12 +5,19 @@
   <xs:element name="insertarMovimientoLote" type="tns:insertarMovimientoLote" />
   <xs:element name="insertarMovimientoLoteResponse" type="tns:insertarMovimientoLoteResponse" />
   <xs:element name="listarMovimientoLote" type="tns:listarMovimientoLote" />
+  <xs:element name="listarMovimientoLoteDeUnLote" type="tns:listarMovimientoLoteDeUnLote" />
+  <xs:element name="listarMovimientoLoteDeUnLoteResponse" type="tns:listarMovimientoLoteDeUnLoteResponse" />
   <xs:element name="listarMovimientoLoteResponse" type="tns:listarMovimientoLoteResponse" />
   <xs:element name="modificarMovimientoLote" type="tns:modificarMovimientoLote" />
   <xs:element name="modificarMovimientoLoteResponse" type="tns:modificarMovimientoLoteResponse" />
-  <xs:complexType name="modificarMovimientoLote">
+  <xs:complexType name="listarMovimientoLoteDeUnLote">
     <xs:sequence>
-      <xs:element minOccurs="0" name="movimientoLote" type="tns:movimientoLote" />
+      <xs:element name="idLote" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMovimientoLoteDeUnLoteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:movimientoLote" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="movimientoLote">
@@ -33,7 +40,9 @@
       <xs:element name="capacidadMaximaProductos" type="xs:double" />
       <xs:element name="id_almacen" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lote" nillable="true" type="tns:lote" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lotes" nillable="true" type="tns:lote" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="movimientosLote" nillable="true" type="tns:movimientoLote" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
       <xs:element minOccurs="0" name="tipoAlmacen" type="tns:tipoAlmacen" />
     </xs:sequence>
@@ -99,6 +108,11 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="productos" nillable="true" type="tns:producto" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="modificarMovimientoLote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="movimientoLote" type="tns:movimientoLote" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarMovimientoLoteResponse">
