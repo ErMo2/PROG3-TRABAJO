@@ -26,7 +26,6 @@ public class Detalle_PedidoWS {
         int resultado = 0;
         try{
             daoDetallePedido = new Detalle_PedidoMySql();
-            detalle.getNombreProducto();
             resultado = daoDetallePedido.insertar(detalle_Pedido);
         }catch(Exception ex){
             System.out.println(ex.getMessage());

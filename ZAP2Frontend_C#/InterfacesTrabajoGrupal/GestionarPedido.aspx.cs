@@ -35,12 +35,24 @@ namespace InterfacesTrabajoGrupal
             if (productosArr != null)
                 productos = new BindingList<producto>(productosArr);
 
-
-            pedido = new pedido();
-            if (!IsPostBack)
+            String accion = Request.QueryString["accion"];
+            if (accion != null && accion == "ver" && Session["idPedido"] != null)
             {
-                Session["detallesPedido"] = null;
-                Session["producto"] = null;
+                int idPedido = (int)Session["idPedido"];
+                pedido = daoPedido.buscarPedido(idPedido);
+                //detallesPedido = new BindingList<detallePedido>(daoDetPedido.listarDetallesPedPorIDPedido(idPedido).ToList());
+                Session["detallesPedido"] = detallesPedido;
+                mostrarDatos();
+            }
+            else
+            {
+                pedido = new pedido();
+                if (!IsPostBack)
+                {
+                    Session["idPedido"] = null;
+                    Session["detallesPedido"] = null;
+                    Session["producto"] = null;
+                }
             }
 
             if (Session["detallesPedido"] == null)
@@ -50,6 +62,15 @@ namespace InterfacesTrabajoGrupal
 
             gvDetallesPedidos.DataSource = detallesPedido;
             gvDetallesPedidos.DataBind();
+        }
+
+        protected void mostrarDatos()
+        {
+            btnBuscarProducto.Enabled = false;
+            txtPrecioUnitProducto.Enabled = false;
+            txtCantidadUnidades.Enabled = false;
+            lbAgregarDetPed.Enabled = false;
+            txtTotal.Text = pedido.total.ToString("N2");
         }
 
         protected void gvDetallePedido_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -119,7 +140,7 @@ namespace InterfacesTrabajoGrupal
             pedido.total = 0;
             foreach (detallePedido detPed in detallesPedido)
                 pedido.total += detPed.subtotal;
-            txtTotal.Text = pedido.total.ToString("N2");
+            txtTotal.Text = pedido.total.ToString();
         }
 
         
@@ -146,7 +167,12 @@ namespace InterfacesTrabajoGrupal
             int resultado = daoPedido.insertarPedido(pedido);
 
             foreach (detallePedido detPed in detallesPedido)
-                resultado = daoDetPedido.insertarDetallePedido(detPed);
+            {
+                detPed.pedido=new pedido();
+                detPed.pedido.id_pedido = resultado;
+                daoDetPedido.insertarDetallePedido(detPed);
+            }
+                
 
             Response.Redirect("ListarPedidos.aspx");
         }

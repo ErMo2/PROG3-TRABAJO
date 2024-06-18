@@ -11,23 +11,11 @@
   <message name="insertarPedidoResponse">
     <part name="parameters" element="tns:insertarPedidoResponse" />
   </message>
-  <message name="modificarPedido">
-    <part name="parameters" element="tns:modificarPedido" />
-  </message>
-  <message name="modificarPedidoResponse">
-    <part name="parameters" element="tns:modificarPedidoResponse" />
-  </message>
   <message name="listarPedidos">
     <part name="parameters" element="tns:listarPedidos" />
   </message>
   <message name="listarPedidosResponse">
     <part name="parameters" element="tns:listarPedidosResponse" />
-  </message>
-  <message name="buscarPedido">
-    <part name="parameters" element="tns:buscarPedido" />
-  </message>
-  <message name="buscarPedidoResponse">
-    <part name="parameters" element="tns:buscarPedidoResponse" />
   </message>
   <message name="eliminarPedido">
     <part name="parameters" element="tns:eliminarPedido" />
@@ -35,26 +23,38 @@
   <message name="eliminarPedidoResponse">
     <part name="parameters" element="tns:eliminarPedidoResponse" />
   </message>
+  <message name="modificarPedido">
+    <part name="parameters" element="tns:modificarPedido" />
+  </message>
+  <message name="modificarPedidoResponse">
+    <part name="parameters" element="tns:modificarPedidoResponse" />
+  </message>
+  <message name="buscarPedido">
+    <part name="parameters" element="tns:buscarPedido" />
+  </message>
+  <message name="buscarPedidoResponse">
+    <part name="parameters" element="tns:buscarPedidoResponse" />
+  </message>
   <portType name="PedidoWS">
     <operation name="insertarPedido">
       <input wsam:Action="ZAP2WS/PedidoWS/insertarPedidoRequest" message="tns:insertarPedido" />
       <output wsam:Action="ZAP2WS/PedidoWS/insertarPedidoResponse" message="tns:insertarPedidoResponse" />
     </operation>
-    <operation name="modificarPedido">
-      <input wsam:Action="ZAP2WS/PedidoWS/modificarPedidoRequest" message="tns:modificarPedido" />
-      <output wsam:Action="ZAP2WS/PedidoWS/modificarPedidoResponse" message="tns:modificarPedidoResponse" />
-    </operation>
     <operation name="listarPedidos">
       <input wsam:Action="ZAP2WS/PedidoWS/listarPedidosRequest" message="tns:listarPedidos" />
       <output wsam:Action="ZAP2WS/PedidoWS/listarPedidosResponse" message="tns:listarPedidosResponse" />
     </operation>
-    <operation name="buscarPedido">
-      <input wsam:Action="ZAP2WS/PedidoWS/buscarPedidoRequest" message="tns:buscarPedido" />
-      <output wsam:Action="ZAP2WS/PedidoWS/buscarPedidoResponse" message="tns:buscarPedidoResponse" />
-    </operation>
     <operation name="eliminarPedido">
       <input wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoRequest" message="tns:eliminarPedido" />
       <output wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoResponse" message="tns:eliminarPedidoResponse" />
+    </operation>
+    <operation name="modificarPedido">
+      <input wsam:Action="ZAP2WS/PedidoWS/modificarPedidoRequest" message="tns:modificarPedido" />
+      <output wsam:Action="ZAP2WS/PedidoWS/modificarPedidoResponse" message="tns:modificarPedidoResponse" />
+    </operation>
+    <operation name="buscarPedido">
+      <input wsam:Action="ZAP2WS/PedidoWS/buscarPedidoRequest" message="tns:buscarPedido" />
+      <output wsam:Action="ZAP2WS/PedidoWS/buscarPedidoResponse" message="tns:buscarPedidoResponse" />
     </operation>
   </portType>
   <binding name="PedidoWSPortBinding" type="tns:PedidoWS">
@@ -68,15 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="listarPedidos">
       <soap:operation soapAction="" />
       <input>
@@ -86,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="buscarPedido">
+    <operation name="eliminarPedido">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPedido">
+    <operation name="modificarPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPedido">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

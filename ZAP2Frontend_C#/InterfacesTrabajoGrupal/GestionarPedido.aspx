@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <asp:Label ID="lblPrecioUnitProducto" runat="server" Text="Precio Unitario(S/):" CssClass="col-sm-2 col-form-label" />
+                            <asp:Label ID="lblPrecioUnitProducto" runat="server" Text="Precio Unitario:" CssClass="col-sm-2 col-form-label" />
                             <div class="col-sm-3">
                                 <asp:TextBox ID="txtPrecioUnitProducto" runat="server" CssClass="form-control" />
                             </div>
@@ -65,7 +65,7 @@
                                 <asp:TextBox ID="txtCantidadUnidades" runat="server" CssClass="form-control" />
                             </div>
                             <div class="col-sm-3">
-                                <asp:LinkButton ID="lbAgregarLOV" CssClass="btn btn-success" runat="server" Text=" Agregar" OnClick="lbAgregarDetPed_Click" />
+                                <asp:LinkButton ID="lbAgregarDetPed" CssClass="btn btn-success" runat="server" Text=" Agregar" OnClick="lbAgregarDetPed_Click" />
                             </div>
                         </div>
                         <div class="row">
@@ -86,8 +86,8 @@
                         </div>
                         <div class="row align-items-center justify-content-end">
                             <asp:Label ID="lblTotal" runat="server" Text="Total:" CssClass="col-form-label col-sm-2 text-end" />
-                            <div class="col-sm-2">
-                                <asp:TextBox ID="txtTotal" CssClass="form-control col-sm-2" Enabled="false" runat="server"></asp:TextBox>
+                            <div class="col-sm-4">
+                                <asp:TextBox ID="txtTotal" CssClass="form-control col-sm-4" Enabled="false" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
