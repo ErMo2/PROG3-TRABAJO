@@ -11,23 +11,34 @@
   <message name="listarSucursalesDeUnProductoSinPrecioResponse">
     <part name="parameters" element="tns:listarSucursalesDeUnProductoSinPrecioResponse" />
   </message>
+<<<<<<< HEAD
   <message name="buscarSucursal">
     <part name="parameters" element="tns:buscarSucursal" />
   </message>
   <message name="buscarSucursalResponse">
     <part name="parameters" element="tns:buscarSucursalResponse" />
   </message>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="modificarSucursal">
     <part name="parameters" element="tns:modificarSucursal" />
   </message>
   <message name="modificarSucursalResponse">
     <part name="parameters" element="tns:modificarSucursalResponse" />
   </message>
+<<<<<<< HEAD
   <message name="listarSucursal">
     <part name="parameters" element="tns:listarSucursal" />
   </message>
   <message name="listarSucursalResponse">
     <part name="parameters" element="tns:listarSucursalResponse" />
+=======
+  <message name="buscarSucursal">
+    <part name="parameters" element="tns:buscarSucursal" />
+  </message>
+  <message name="buscarSucursalResponse">
+    <part name="parameters" element="tns:buscarSucursalResponse" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <message name="insertarSucursal">
     <part name="parameters" element="tns:insertarSucursal" />
@@ -35,6 +46,15 @@
   <message name="insertarSucursalResponse">
     <part name="parameters" element="tns:insertarSucursalResponse" />
   </message>
+<<<<<<< HEAD
+=======
+  <message name="listarSucursal">
+    <part name="parameters" element="tns:listarSucursal" />
+  </message>
+  <message name="listarSucursalResponse">
+    <part name="parameters" element="tns:listarSucursalResponse" />
+  </message>
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="eliminarSucursal">
     <part name="parameters" element="tns:eliminarSucursal" />
   </message>
@@ -46,22 +66,38 @@
       <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioRequest" message="tns:listarSucursalesDeUnProductoSinPrecio" />
       <output wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioResponse" message="tns:listarSucursalesDeUnProductoSinPrecioResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="buscarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/buscarSucursalRequest" message="tns:buscarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/buscarSucursalResponse" message="tns:buscarSucursalResponse" />
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="modificarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/modificarSucursalRequest" message="tns:modificarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/modificarSucursalResponse" message="tns:modificarSucursalResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="listarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalRequest" message="tns:listarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/listarSucursalResponse" message="tns:listarSucursalResponse" />
+=======
+    <operation name="buscarSucursal">
+      <input wsam:Action="ZAP2WS/SucursalWS/buscarSucursalRequest" message="tns:buscarSucursal" />
+      <output wsam:Action="ZAP2WS/SucursalWS/buscarSucursalResponse" message="tns:buscarSucursalResponse" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
     <operation name="insertarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/insertarSucursalRequest" message="tns:insertarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/insertarSucursalResponse" message="tns:insertarSucursalResponse" />
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="listarSucursal">
+      <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalRequest" message="tns:listarSucursal" />
+      <output wsam:Action="ZAP2WS/SucursalWS/listarSucursalResponse" message="tns:listarSucursalResponse" />
+    </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="eliminarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/eliminarSucursalRequest" message="tns:eliminarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/eliminarSucursalResponse" message="tns:eliminarSucursalResponse" />
@@ -78,6 +114,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="buscarSucursal">
       <soap:operation soapAction="" />
       <input>
@@ -97,6 +134,21 @@
       </output>
     </operation>
     <operation name="listarSucursal">
+=======
+    <operation name="modificarSucursal">
+>>>>>>> AvazandoConMuchaFe_Leonardo
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+<<<<<<< HEAD
+    <operation name="insertarSucursal">
+=======
+    <operation name="buscarSucursal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -106,6 +158,16 @@
       </output>
     </operation>
     <operation name="insertarSucursal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarSucursal">
+>>>>>>> AvazandoConMuchaFe_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

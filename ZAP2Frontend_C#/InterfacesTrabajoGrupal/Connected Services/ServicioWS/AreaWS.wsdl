@@ -17,12 +17,8 @@
   <message name="listarAreaResponse">
     <part name="parameters" element="tns:listarAreaResponse" />
   </message>
-  <message name="eliminarArea">
-    <part name="parameters" element="tns:eliminarArea" />
-  </message>
-  <message name="eliminarAreaResponse">
-    <part name="parameters" element="tns:eliminarAreaResponse" />
-  </message>
+<<<<<<< HEAD
+=======
   <message name="modificarArea">
     <part name="parameters" element="tns:modificarArea" />
   </message>
@@ -35,6 +31,28 @@
   <message name="insertarAreaResponse">
     <part name="parameters" element="tns:insertarAreaResponse" />
   </message>
+>>>>>>> AvazandoConMuchaFe_Leonardo
+  <message name="eliminarArea">
+    <part name="parameters" element="tns:eliminarArea" />
+  </message>
+  <message name="eliminarAreaResponse">
+    <part name="parameters" element="tns:eliminarAreaResponse" />
+  </message>
+<<<<<<< HEAD
+  <message name="modificarArea">
+    <part name="parameters" element="tns:modificarArea" />
+  </message>
+  <message name="modificarAreaResponse">
+    <part name="parameters" element="tns:modificarAreaResponse" />
+  </message>
+  <message name="insertarArea">
+    <part name="parameters" element="tns:insertarArea" />
+  </message>
+  <message name="insertarAreaResponse">
+    <part name="parameters" element="tns:insertarAreaResponse" />
+  </message>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <portType name="AreaWS">
     <operation name="buscarArea">
       <input wsam:Action="ZAP2WS/AreaWS/buscarAreaRequest" message="tns:buscarArea" />
@@ -44,10 +62,8 @@
       <input wsam:Action="ZAP2WS/AreaWS/listarAreaRequest" message="tns:listarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/listarAreaResponse" message="tns:listarAreaResponse" />
     </operation>
-    <operation name="eliminarArea">
-      <input wsam:Action="ZAP2WS/AreaWS/eliminarAreaRequest" message="tns:eliminarArea" />
-      <output wsam:Action="ZAP2WS/AreaWS/eliminarAreaResponse" message="tns:eliminarAreaResponse" />
-    </operation>
+<<<<<<< HEAD
+=======
     <operation name="modificarArea">
       <input wsam:Action="ZAP2WS/AreaWS/modificarAreaRequest" message="tns:modificarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/modificarAreaResponse" message="tns:modificarAreaResponse" />
@@ -56,6 +72,22 @@
       <input wsam:Action="ZAP2WS/AreaWS/insertarAreaRequest" message="tns:insertarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/insertarAreaResponse" message="tns:insertarAreaResponse" />
     </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
+    <operation name="eliminarArea">
+      <input wsam:Action="ZAP2WS/AreaWS/eliminarAreaRequest" message="tns:eliminarArea" />
+      <output wsam:Action="ZAP2WS/AreaWS/eliminarAreaResponse" message="tns:eliminarAreaResponse" />
+    </operation>
+<<<<<<< HEAD
+    <operation name="modificarArea">
+      <input wsam:Action="ZAP2WS/AreaWS/modificarAreaRequest" message="tns:modificarArea" />
+      <output wsam:Action="ZAP2WS/AreaWS/modificarAreaResponse" message="tns:modificarAreaResponse" />
+    </operation>
+    <operation name="insertarArea">
+      <input wsam:Action="ZAP2WS/AreaWS/insertarAreaRequest" message="tns:insertarArea" />
+      <output wsam:Action="ZAP2WS/AreaWS/insertarAreaResponse" message="tns:insertarAreaResponse" />
+    </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </portType>
   <binding name="AreaWSPortBinding" type="tns:AreaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -77,15 +109,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarArea">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
+<<<<<<< HEAD
+=======
     <operation name="modificarArea">
       <soap:operation soapAction="" />
       <input>
@@ -104,6 +129,37 @@
         <soap:body use="literal" />
       </output>
     </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
+    <operation name="eliminarArea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+<<<<<<< HEAD
+    <operation name="modificarArea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarArea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </binding>
   <service name="AreaWS">
     <port name="AreaWSPort" binding="tns:AreaWSPortBinding">

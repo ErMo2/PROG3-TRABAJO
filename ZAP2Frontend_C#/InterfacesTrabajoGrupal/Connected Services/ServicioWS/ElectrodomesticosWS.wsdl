@@ -23,12 +23,15 @@
   <message name="eliminarElectrodomesticoResponse">
     <part name="parameters" element="tns:eliminarElectrodomesticoResponse" />
   </message>
+<<<<<<< HEAD
   <message name="listarElectrodomesticos">
     <part name="parameters" element="tns:listarElectrodomesticos" />
   </message>
   <message name="listarElectrodomesticosResponse">
     <part name="parameters" element="tns:listarElectrodomesticosResponse" />
   </message>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="insertarElectrodomestico">
     <part name="parameters" element="tns:insertarElectrodomestico" />
   </message>
@@ -48,10 +51,13 @@
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/eliminarElectrodomesticoRequest" message="tns:eliminarElectrodomestico" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/eliminarElectrodomesticoResponse" message="tns:eliminarElectrodomesticoResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="listarElectrodomesticos">
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest" message="tns:listarElectrodomesticos" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse" message="tns:listarElectrodomesticosResponse" />
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="insertarElectrodomestico">
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest" message="tns:insertarElectrodomestico" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse" message="tns:insertarElectrodomesticoResponse" />
@@ -77,6 +83,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarElectrodomestico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarElectrodomestico">
       <soap:operation soapAction="" />
       <input>
@@ -95,6 +110,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="insertarElectrodomestico">
       <soap:operation soapAction="" />
       <input>
@@ -104,6 +120,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </binding>
   <service name="ElectrodomesticosWS">
     <port name="ElectrodomesticosWSPort" binding="tns:ElectrodomesticosWSPortBinding">

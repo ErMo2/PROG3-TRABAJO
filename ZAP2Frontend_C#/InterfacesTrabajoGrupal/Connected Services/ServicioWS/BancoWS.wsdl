@@ -7,6 +7,21 @@
   </types>
   <message name="modificarBanco">
     <part name="parameters" element="tns:modificarBanco" />
+<<<<<<< HEAD
+=======
+  </message>
+  <message name="modificarBancoResponse">
+    <part name="parameters" element="tns:modificarBancoResponse" />
+  </message>
+  <message name="buscarBanco">
+    <part name="parameters" element="tns:buscarBanco" />
+  </message>
+  <message name="buscarBancoResponse">
+    <part name="parameters" element="tns:buscarBancoResponse" />
+  </message>
+  <message name="eliminarBanco">
+    <part name="parameters" element="tns:eliminarBanco" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <message name="modificarBancoResponse">
     <part name="parameters" element="tns:modificarBancoResponse" />
@@ -17,6 +32,7 @@
   <message name="listarBancosTodosResponse">
     <part name="parameters" element="tns:listarBancosTodosResponse" />
   </message>
+<<<<<<< HEAD
   <message name="eliminarBanco">
     <part name="parameters" element="tns:eliminarBanco" />
   </message>
@@ -29,6 +45,8 @@
   <message name="buscarBancoResponse">
     <part name="parameters" element="tns:buscarBancoResponse" />
   </message>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="insertarBanco">
     <part name="parameters" element="tns:insertarBanco" />
   </message>
@@ -39,11 +57,23 @@
     <operation name="modificarBanco">
       <input wsam:Action="ZAP2WS/BancoWS/modificarBancoRequest" message="tns:modificarBanco" />
       <output wsam:Action="ZAP2WS/BancoWS/modificarBancoResponse" message="tns:modificarBancoResponse" />
+<<<<<<< HEAD
+=======
+    </operation>
+    <operation name="buscarBanco">
+      <input wsam:Action="ZAP2WS/BancoWS/buscarBancoRequest" message="tns:buscarBanco" />
+      <output wsam:Action="ZAP2WS/BancoWS/buscarBancoResponse" message="tns:buscarBancoResponse" />
+    </operation>
+    <operation name="eliminarBanco">
+      <input wsam:Action="ZAP2WS/BancoWS/eliminarBancoRequest" message="tns:eliminarBanco" />
+      <output wsam:Action="ZAP2WS/BancoWS/eliminarBancoResponse" message="tns:eliminarBancoResponse" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
     <operation name="listarBancosTodos">
       <input wsam:Action="ZAP2WS/BancoWS/listarBancosTodosRequest" message="tns:listarBancosTodos" />
       <output wsam:Action="ZAP2WS/BancoWS/listarBancosTodosResponse" message="tns:listarBancosTodosResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarBanco">
       <input wsam:Action="ZAP2WS/BancoWS/eliminarBancoRequest" message="tns:eliminarBanco" />
       <output wsam:Action="ZAP2WS/BancoWS/eliminarBancoResponse" message="tns:eliminarBancoResponse" />
@@ -52,6 +82,8 @@
       <input wsam:Action="ZAP2WS/BancoWS/buscarBancoRequest" message="tns:buscarBanco" />
       <output wsam:Action="ZAP2WS/BancoWS/buscarBancoResponse" message="tns:buscarBancoResponse" />
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="insertarBanco">
       <input wsam:Action="ZAP2WS/BancoWS/insertarBancoRequest" message="tns:insertarBanco" />
       <output wsam:Action="ZAP2WS/BancoWS/insertarBancoResponse" message="tns:insertarBancoResponse" />
@@ -60,6 +92,27 @@
   <binding name="BancoWSPortBinding" type="tns:BancoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="modificarBanco">
+<<<<<<< HEAD
+=======
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarBanco">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarBanco">
+>>>>>>> AvazandoConMuchaFe_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,6 +130,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarBanco">
       <soap:operation soapAction="" />
       <input>
@@ -95,6 +149,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="insertarBanco">
       <soap:operation soapAction="" />
       <input>

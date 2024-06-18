@@ -11,6 +11,7 @@
   <message name="listarPCHResponse">
     <part name="parameters" element="tns:listarPCHResponse" />
   </message>
+<<<<<<< HEAD
   <message name="eliminarPCH">
     <part name="parameters" element="tns:eliminarPCH" />
   </message>
@@ -23,6 +24,8 @@
   <message name="buscarProductoPCHResponse">
     <part name="parameters" element="tns:buscarProductoPCHResponse" />
   </message>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="modificarPCH">
     <part name="parameters" element="tns:modificarPCH" />
   </message>
@@ -35,11 +38,27 @@
   <message name="insertarPCHResponse">
     <part name="parameters" element="tns:insertarPCHResponse" />
   </message>
+<<<<<<< HEAD
+=======
+  <message name="eliminarPCH">
+    <part name="parameters" element="tns:eliminarPCH" />
+  </message>
+  <message name="eliminarPCHResponse">
+    <part name="parameters" element="tns:eliminarPCHResponse" />
+  </message>
+  <message name="buscarProductoPCH">
+    <part name="parameters" element="tns:buscarProductoPCH" />
+  </message>
+  <message name="buscarProductoPCHResponse">
+    <part name="parameters" element="tns:buscarProductoPCHResponse" />
+  </message>
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <portType name="ProductosParaElCuidadoPersonalYDelHogarWS">
     <operation name="listarPCH">
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHRequest" message="tns:listarPCH" />
       <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHResponse" message="tns:listarPCHResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarPCH">
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest" message="tns:eliminarPCH" />
       <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse" message="tns:eliminarPCHResponse" />
@@ -48,6 +67,8 @@
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/buscarProductoPCHRequest" message="tns:buscarProductoPCH" />
       <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/buscarProductoPCHResponse" message="tns:buscarProductoPCHResponse" />
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="modificarPCH">
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHRequest" message="tns:modificarPCH" />
       <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHResponse" message="tns:modificarPCHResponse" />
@@ -56,6 +77,17 @@
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/insertarPCHRequest" message="tns:insertarPCH" />
       <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/insertarPCHResponse" message="tns:insertarPCHResponse" />
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="eliminarPCH">
+      <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest" message="tns:eliminarPCH" />
+      <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse" message="tns:eliminarPCHResponse" />
+    </operation>
+    <operation name="buscarProductoPCH">
+      <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/buscarProductoPCHRequest" message="tns:buscarProductoPCH" />
+      <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/buscarProductoPCHResponse" message="tns:buscarProductoPCHResponse" />
+    </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </portType>
   <binding name="ProductosParaElCuidadoPersonalYDelHogarWSPortBinding" type="tns:ProductosParaElCuidadoPersonalYDelHogarWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -68,6 +100,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarPCH">
       <soap:operation soapAction="" />
       <input>
@@ -86,6 +119,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="modificarPCH">
       <soap:operation soapAction="" />
       <input>
@@ -104,6 +139,27 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="eliminarPCH">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarProductoPCH">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </binding>
   <service name="ProductosParaElCuidadoPersonalYDelHogarWS">
     <port name="ProductosParaElCuidadoPersonalYDelHogarWSPort" binding="tns:ProductosParaElCuidadoPersonalYDelHogarWSPortBinding">

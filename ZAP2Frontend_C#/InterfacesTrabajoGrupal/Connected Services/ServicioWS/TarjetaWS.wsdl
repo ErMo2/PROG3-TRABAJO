@@ -5,8 +5,19 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/TarjetaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="buscarTarjeta">
     <part name="parameters" element="tns:buscarTarjeta" />
+=======
+  <message name="eliminarTarjeta">
+    <part name="parameters" element="tns:eliminarTarjeta" />
+  </message>
+  <message name="eliminarTarjetaResponse">
+    <part name="parameters" element="tns:eliminarTarjetaResponse" />
+  </message>
+  <message name="insertarTarjeta">
+    <part name="parameters" element="tns:insertarTarjeta" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <message name="buscarTarjetaResponse">
     <part name="parameters" element="tns:buscarTarjetaResponse" />
@@ -23,6 +34,7 @@
   <message name="insertarTarjetaResponse">
     <part name="parameters" element="tns:insertarTarjetaResponse" />
   </message>
+<<<<<<< HEAD
   <message name="eliminarTarjeta">
     <part name="parameters" element="tns:eliminarTarjeta" />
   </message>
@@ -31,14 +43,28 @@
   </message>
   <message name="listarTarjeta">
     <part name="parameters" element="tns:listarTarjeta" />
+=======
+  <message name="buscarTarjeta">
+    <part name="parameters" element="tns:buscarTarjeta" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <message name="listarTarjetaResponse">
     <part name="parameters" element="tns:listarTarjetaResponse" />
   </message>
   <portType name="TarjetaWS">
+<<<<<<< HEAD
     <operation name="buscarTarjeta">
       <input wsam:Action="ZAP2WS/TarjetaWS/buscarTarjetaRequest" message="tns:buscarTarjeta" />
       <output wsam:Action="ZAP2WS/TarjetaWS/buscarTarjetaResponse" message="tns:buscarTarjetaResponse" />
+=======
+    <operation name="eliminarTarjeta">
+      <input wsam:Action="ZAP2WS/TarjetaWS/eliminarTarjetaRequest" message="tns:eliminarTarjeta" />
+      <output wsam:Action="ZAP2WS/TarjetaWS/eliminarTarjetaResponse" message="tns:eliminarTarjetaResponse" />
+    </operation>
+    <operation name="insertarTarjeta">
+      <input wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaRequest" message="tns:insertarTarjeta" />
+      <output wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaResponse" message="tns:insertarTarjetaResponse" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
     <operation name="modificarTarjeta">
       <input wsam:Action="ZAP2WS/TarjetaWS/modificarTarjetaRequest" message="tns:modificarTarjeta" />
@@ -48,6 +74,7 @@
       <input wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaRequest" message="tns:insertarTarjeta" />
       <output wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaResponse" message="tns:insertarTarjetaResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarTarjeta">
       <input wsam:Action="ZAP2WS/TarjetaWS/eliminarTarjetaRequest" message="tns:eliminarTarjeta" />
       <output wsam:Action="ZAP2WS/TarjetaWS/eliminarTarjetaResponse" message="tns:eliminarTarjetaResponse" />
@@ -55,11 +82,29 @@
     <operation name="listarTarjeta">
       <input wsam:Action="ZAP2WS/TarjetaWS/listarTarjetaRequest" message="tns:listarTarjeta" />
       <output wsam:Action="ZAP2WS/TarjetaWS/listarTarjetaResponse" message="tns:listarTarjetaResponse" />
+=======
+    <operation name="buscarTarjeta">
+      <input wsam:Action="ZAP2WS/TarjetaWS/buscarTarjetaRequest" message="tns:buscarTarjeta" />
+      <output wsam:Action="ZAP2WS/TarjetaWS/buscarTarjetaResponse" message="tns:buscarTarjetaResponse" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
   </portType>
   <binding name="TarjetaWSPortBinding" type="tns:TarjetaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<<<<<<< HEAD
     <operation name="buscarTarjeta">
+=======
+    <operation name="eliminarTarjeta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarTarjeta">
+>>>>>>> AvazandoConMuchaFe_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,6 +131,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarTarjeta">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +142,9 @@
       </output>
     </operation>
     <operation name="listarTarjeta">
+=======
+    <operation name="buscarTarjeta">
+>>>>>>> AvazandoConMuchaFe_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

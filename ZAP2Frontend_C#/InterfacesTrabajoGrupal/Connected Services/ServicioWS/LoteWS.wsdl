@@ -11,17 +11,26 @@
   <message name="listarLoteResponse">
     <part name="parameters" element="tns:listarLoteResponse" />
   </message>
+<<<<<<< HEAD
+=======
+  <message name="insertarLote">
+    <part name="parameters" element="tns:insertarLote" />
+  </message>
+  <message name="insertarLoteResponse">
+    <part name="parameters" element="tns:insertarLoteResponse" />
+  </message>
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="eliminarLote">
     <part name="parameters" element="tns:eliminarLote" />
   </message>
   <message name="eliminarLoteResponse">
     <part name="parameters" element="tns:eliminarLoteResponse" />
   </message>
-  <message name="insertarLote">
-    <part name="parameters" element="tns:insertarLote" />
+  <message name="modificarLote">
+    <part name="parameters" element="tns:modificarLote" />
   </message>
-  <message name="insertarLoteResponse">
-    <part name="parameters" element="tns:insertarLoteResponse" />
+  <message name="modificarLoteResponse">
+    <part name="parameters" element="tns:modificarLoteResponse" />
   </message>
   <message name="modificarLote">
     <part name="parameters" element="tns:modificarLote" />
@@ -34,13 +43,20 @@
       <input wsam:Action="ZAP2WS/LoteWS/listarLoteRequest" message="tns:listarLote" />
       <output wsam:Action="ZAP2WS/LoteWS/listarLoteResponse" message="tns:listarLoteResponse" />
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="insertarLote">
+      <input wsam:Action="ZAP2WS/LoteWS/insertarLoteRequest" message="tns:insertarLote" />
+      <output wsam:Action="ZAP2WS/LoteWS/insertarLoteResponse" message="tns:insertarLoteResponse" />
+    </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="eliminarLote">
       <input wsam:Action="ZAP2WS/LoteWS/eliminarLoteRequest" message="tns:eliminarLote" />
       <output wsam:Action="ZAP2WS/LoteWS/eliminarLoteResponse" message="tns:eliminarLoteResponse" />
     </operation>
-    <operation name="insertarLote">
-      <input wsam:Action="ZAP2WS/LoteWS/insertarLoteRequest" message="tns:insertarLote" />
-      <output wsam:Action="ZAP2WS/LoteWS/insertarLoteResponse" message="tns:insertarLoteResponse" />
+    <operation name="modificarLote">
+      <input wsam:Action="ZAP2WS/LoteWS/modificarLoteRequest" message="tns:modificarLote" />
+      <output wsam:Action="ZAP2WS/LoteWS/modificarLoteResponse" message="tns:modificarLoteResponse" />
     </operation>
     <operation name="modificarLote">
       <input wsam:Action="ZAP2WS/LoteWS/modificarLoteRequest" message="tns:modificarLote" />
@@ -58,6 +74,18 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="insertarLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="eliminarLote">
       <soap:operation soapAction="" />
       <input>
@@ -67,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarLote">
+    <operation name="modificarLote">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

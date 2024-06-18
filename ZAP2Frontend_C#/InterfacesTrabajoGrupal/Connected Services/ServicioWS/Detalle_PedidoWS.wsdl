@@ -5,6 +5,21 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/Detalle_PedidoWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
+=======
+  <message name="listarDetallePedidosXId">
+    <part name="parameters" element="tns:listarDetallePedidosXId" />
+  </message>
+  <message name="listarDetallePedidosXIdResponse">
+    <part name="parameters" element="tns:listarDetallePedidosXIdResponse" />
+  </message>
+  <message name="insertarDetallePedido">
+    <part name="parameters" element="tns:insertarDetallePedido" />
+  </message>
+  <message name="insertarDetallePedidoResponse">
+    <part name="parameters" element="tns:insertarDetallePedidoResponse" />
+  </message>
+>>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="modificarDetallePedido">
     <part name="parameters" element="tns:modificarDetallePedido" />
   </message>
@@ -17,6 +32,7 @@
   <message name="listarDetallePedidosResponse">
     <part name="parameters" element="tns:listarDetallePedidosResponse" />
   </message>
+<<<<<<< HEAD
   <message name="insertarDetallePedido">
     <part name="parameters" element="tns:insertarDetallePedido" />
   </message>
@@ -36,6 +52,17 @@
     <part name="parameters" element="tns:eliminarDetallePedidoResponse" />
   </message>
   <portType name="Detalle_PedidoWS">
+=======
+  <portType name="Detalle_PedidoWS">
+    <operation name="listarDetallePedidosXId">
+      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdRequest" message="tns:listarDetallePedidosXId" />
+      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosXIdResponse" message="tns:listarDetallePedidosXIdResponse" />
+    </operation>
+    <operation name="insertarDetallePedido">
+      <input wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoRequest" message="tns:insertarDetallePedido" />
+      <output wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoResponse" message="tns:insertarDetallePedidoResponse" />
+    </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="modificarDetallePedido">
       <input wsam:Action="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoRequest" message="tns:modificarDetallePedido" />
       <output wsam:Action="ZAP2WS/Detalle_PedidoWS/modificarDetallePedidoResponse" message="tns:modificarDetallePedidoResponse" />
@@ -44,6 +71,7 @@
       <input wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosRequest" message="tns:listarDetallePedidos" />
       <output wsam:Action="ZAP2WS/Detalle_PedidoWS/listarDetallePedidosResponse" message="tns:listarDetallePedidosResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="insertarDetallePedido">
       <input wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoRequest" message="tns:insertarDetallePedido" />
       <output wsam:Action="ZAP2WS/Detalle_PedidoWS/insertarDetallePedidoResponse" message="tns:insertarDetallePedidoResponse" />
@@ -59,6 +87,29 @@
   </portType>
   <binding name="Detalle_PedidoWSPortBinding" type="tns:Detalle_PedidoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+=======
+  </portType>
+  <binding name="Detalle_PedidoWSPortBinding" type="tns:Detalle_PedidoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarDetallePedidosXId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarDetallePedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="modificarDetallePedido">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +128,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="insertarDetallePedido">
       <soap:operation soapAction="" />
       <input>
@@ -104,6 +156,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </binding>
   <service name="Detalle_PedidoWS">
     <port name="Detalle_PedidoWSPort" binding="tns:Detalle_PedidoWSPortBinding">

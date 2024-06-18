@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="ZAP2WS" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ProductoWS" targetNamespace="ZAP2WS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ProductoWS?xsd=1" namespace="ZAP2WS" />
+    </xsd:schema>
+  </types>
+  <message name="listarProductosBase">
+    <part name="parameters" element="tns:listarProductosBase" />
+  </message>
+  <message name="listarProductosBaseResponse">
+    <part name="parameters" element="tns:listarProductosBaseResponse" />
+  </message>
+  <message name="listarProductosXnombre">
+    <part name="parameters" element="tns:listarProductosXnombre" />
+  </message>
+  <message name="listarProductosXnombreResponse">
+    <part name="parameters" element="tns:listarProductosXnombreResponse" />
+  </message>
+  <message name="listarProductosConDescuentoEnFecha">
+    <part name="parameters" element="tns:listarProductosConDescuentoEnFecha" />
+  </message>
+  <message name="listarProductosConDescuentoEnFechaResponse">
+    <part name="parameters" element="tns:listarProductosConDescuentoEnFechaResponse" />
+  </message>
+  <message name="listarDescuentoDeUnProducto">
+    <part name="parameters" element="tns:listarDescuentoDeUnProducto" />
+  </message>
+  <message name="listarDescuentoDeUnProductoResponse">
+    <part name="parameters" element="tns:listarDescuentoDeUnProductoResponse" />
+  </message>
+  <message name="listarProductosMasConsumidos">
+    <part name="parameters" element="tns:listarProductosMasConsumidos" />
+  </message>
+  <message name="listarProductosMasConsumidosResponse">
+    <part name="parameters" element="tns:listarProductosMasConsumidosResponse" />
+  </message>
+  <message name="listarProductosConDescuento">
+    <part name="parameters" element="tns:listarProductosConDescuento" />
+  </message>
+  <message name="listarProductosConDescuentoResponse">
+    <part name="parameters" element="tns:listarProductosConDescuentoResponse" />
+  </message>
+  <portType name="ProductoWS">
+    <operation name="listarProductosBase">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosBaseRequest" message="tns:listarProductosBase" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosBaseResponse" message="tns:listarProductosBaseResponse" />
+    </operation>
+    <operation name="listarProductosXnombre">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosXnombreRequest" message="tns:listarProductosXnombre" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosXnombreResponse" message="tns:listarProductosXnombreResponse" />
+    </operation>
+    <operation name="listarProductosConDescuentoEnFecha">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaRequest" message="tns:listarProductosConDescuentoEnFecha" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaResponse" message="tns:listarProductosConDescuentoEnFechaResponse" />
+    </operation>
+    <operation name="listarDescuentoDeUnProducto">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarDescuentoDeUnProductoRequest" message="tns:listarDescuentoDeUnProducto" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarDescuentoDeUnProductoResponse" message="tns:listarDescuentoDeUnProductoResponse" />
+    </operation>
+    <operation name="listarProductosMasConsumidos">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosRequest" message="tns:listarProductosMasConsumidos" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosResponse" message="tns:listarProductosMasConsumidosResponse" />
+    </operation>
+    <operation name="listarProductosConDescuento">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoRequest" message="tns:listarProductosConDescuento" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoResponse" message="tns:listarProductosConDescuentoResponse" />
+    </operation>
+  </portType>
+  <binding name="ProductoWSPortBinding" type="tns:ProductoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarProductosBase">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductosXnombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductosConDescuentoEnFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDescuentoDeUnProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductosMasConsumidos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductosConDescuento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ProductoWS">
+    <port name="ProductoWSPort" binding="tns:ProductoWSPortBinding">
+      <soap:address location="http://localhost:8080/ZAP2WS/ProductoWS" />
+    </port>
+  </service>
+</definitions>

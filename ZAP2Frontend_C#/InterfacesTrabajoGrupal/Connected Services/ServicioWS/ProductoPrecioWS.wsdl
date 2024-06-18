@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ProductoPrecioWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="listarProductoPrecioProducto">
     <part name="parameters" element="tns:listarProductoPrecioProducto" />
   </message>
@@ -16,6 +17,19 @@
   </message>
   <message name="listarProductoPrecioProductoDeUnaSucursalResponse">
     <part name="parameters" element="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
+=======
+  <message name="insertarProductoPrecio">
+    <part name="parameters" element="tns:insertarProductoPrecio" />
+  </message>
+  <message name="insertarProductoPrecioResponse">
+    <part name="parameters" element="tns:insertarProductoPrecioResponse" />
+  </message>
+  <message name="modificarProductoPrecio">
+    <part name="parameters" element="tns:modificarProductoPrecio" />
+  </message>
+  <message name="modificarProductoPrecioResponse">
+    <part name="parameters" element="tns:modificarProductoPrecioResponse" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <message name="eliminarProductoPrecio">
     <part name="parameters" element="tns:eliminarProductoPrecio" />
@@ -41,7 +55,14 @@
   <message name="insertarProductoPrecioResponse">
     <part name="parameters" element="tns:insertarProductoPrecioResponse" />
   </message>
+  <message name="listarProductoPrecioProductoDeUnaSucursal">
+    <part name="parameters" element="tns:listarProductoPrecioProductoDeUnaSucursal" />
+  </message>
+  <message name="listarProductoPrecioProductoDeUnaSucursalResponse">
+    <part name="parameters" element="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
+  </message>
   <portType name="ProductoPrecioWS">
+<<<<<<< HEAD
     <operation name="listarProductoPrecioProducto">
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoRequest" message="tns:listarProductoPrecioProducto" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoResponse" message="tns:listarProductoPrecioProductoResponse" />
@@ -49,6 +70,15 @@
     <operation name="listarProductoPrecioProductoDeUnaSucursal">
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoDeUnaSucursalRequest" message="tns:listarProductoPrecioProductoDeUnaSucursal" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoDeUnaSucursalResponse" message="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
+=======
+    <operation name="insertarProductoPrecio">
+      <input wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioRequest" message="tns:insertarProductoPrecio" />
+      <output wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioResponse" message="tns:insertarProductoPrecioResponse" />
+    </operation>
+    <operation name="modificarProductoPrecio">
+      <input wsam:Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioRequest" message="tns:modificarProductoPrecio" />
+      <output wsam:Action="ZAP2WS/ProductoPrecioWS/modificarProductoPrecioResponse" message="tns:modificarProductoPrecioResponse" />
+>>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
     <operation name="eliminarProductoPrecio">
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/eliminarProductoPrecioRequest" message="tns:eliminarProductoPrecio" />
@@ -66,9 +96,14 @@
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioRequest" message="tns:insertarProductoPrecio" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioResponse" message="tns:insertarProductoPrecioResponse" />
     </operation>
+    <operation name="listarProductoPrecioProductoDeUnaSucursal">
+      <input wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoDeUnaSucursalRequest" message="tns:listarProductoPrecioProductoDeUnaSucursal" />
+      <output wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoDeUnaSucursalResponse" message="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
+    </operation>
   </portType>
   <binding name="ProductoPrecioWSPortBinding" type="tns:ProductoPrecioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<<<<<<< HEAD
     <operation name="listarProductoPrecioProducto">
       <soap:operation soapAction="" />
       <input>
@@ -79,6 +114,9 @@
       </output>
     </operation>
     <operation name="listarProductoPrecioProductoDeUnaSucursal">
+=======
+    <operation name="insertarProductoPrecio">
+>>>>>>> AvazandoConMuchaFe_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,6 +125,17 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarProductoPrecio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+<<<<<<< HEAD
+=======
     <operation name="eliminarProductoPrecio">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +145,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+>>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="listarProductoPrecio">
       <soap:operation soapAction="" />
       <input>
@@ -115,6 +165,15 @@
       </output>
     </operation>
     <operation name="insertarProductoPrecio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductoPrecioProductoDeUnaSucursal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

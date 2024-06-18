@@ -1,35 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="eliminarProductoPrecio" type="tns:eliminarProductoPrecio" />
-  <xs:element name="eliminarProductoPrecioResponse" type="tns:eliminarProductoPrecioResponse" />
-  <xs:element name="insertarProductoPrecio" type="tns:insertarProductoPrecio" />
-  <xs:element name="insertarProductoPrecioResponse" type="tns:insertarProductoPrecioResponse" />
-  <xs:element name="listarProductoPrecio" type="tns:listarProductoPrecio" />
-  <xs:element name="listarProductoPrecioProducto" type="tns:listarProductoPrecioProducto" />
-  <xs:element name="listarProductoPrecioProductoDeUnaSucursal" type="tns:listarProductoPrecioProductoDeUnaSucursal" />
-  <xs:element name="listarProductoPrecioProductoDeUnaSucursalResponse" type="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
-  <xs:element name="listarProductoPrecioProductoResponse" type="tns:listarProductoPrecioProductoResponse" />
-  <xs:element name="listarProductoPrecioResponse" type="tns:listarProductoPrecioResponse" />
-  <xs:element name="modificarProductoPrecio" type="tns:modificarProductoPrecio" />
-  <xs:element name="modificarProductoPrecioResponse" type="tns:modificarProductoPrecioResponse" />
-  <xs:complexType name="eliminarProductoPrecio">
+  <xs:element name="listarDescuentoDeUnProducto" type="tns:listarDescuentoDeUnProducto" />
+  <xs:element name="listarDescuentoDeUnProductoResponse" type="tns:listarDescuentoDeUnProductoResponse" />
+  <xs:element name="listarProductosBase" type="tns:listarProductosBase" />
+  <xs:element name="listarProductosBaseResponse" type="tns:listarProductosBaseResponse" />
+  <xs:element name="listarProductosConDescuento" type="tns:listarProductosConDescuento" />
+  <xs:element name="listarProductosConDescuentoEnFecha" type="tns:listarProductosConDescuentoEnFecha" />
+  <xs:element name="listarProductosConDescuentoEnFechaResponse" type="tns:listarProductosConDescuentoEnFechaResponse" />
+  <xs:element name="listarProductosConDescuentoResponse" type="tns:listarProductosConDescuentoResponse" />
+  <xs:element name="listarProductosMasConsumidos" type="tns:listarProductosMasConsumidos" />
+  <xs:element name="listarProductosMasConsumidosResponse" type="tns:listarProductosMasConsumidosResponse" />
+  <xs:element name="listarProductosXnombre" type="tns:listarProductosXnombre" />
+  <xs:element name="listarProductosXnombreResponse" type="tns:listarProductosXnombreResponse" />
+  <xs:complexType name="listarDescuentoDeUnProducto">
     <xs:sequence>
-      <xs:element name="idProductoPrecio" type="xs:int" />
+      <xs:element name="idProducto" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarProductoPrecioResponse">
+  <xs:complexType name="listarDescuentoDeUnProductoResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarProductoPrecioProductoDeUnaSucursal">
+  <xs:complexType name="producto">
     <xs:sequence>
-      <xs:element name="idSucursal" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarProductoPrecioProductoDeUnaSucursalResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productoPrecio" />
+      <xs:element name="activo" type="xs:int" />
+      <xs:element name="cantidadComprada" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idProducto" type="xs:int" />
+      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="productoPrecio">
@@ -51,18 +52,6 @@
       <xs:element name="idDescuento" type="xs:int" />
       <xs:element name="pp" type="xs:double" />
       <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="producto">
-    <xs:sequence>
-      <xs:element name="activo" type="xs:int" />
-      <xs:element name="cantidadComprada" type="xs:int" />
-      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element name="idProducto" type="xs:int" />
-      <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
-      <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="productosPrecio" nillable="true" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="sucursal">
@@ -120,55 +109,46 @@
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
-<<<<<<< HEAD
-  <xs:complexType name="eliminarProductoPrecio">
-    <xs:sequence>
-      <xs:element name="idProductoPrecio" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarProductoPrecioResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarProductoPrecio">
+  <xs:complexType name="listarProductosBase">
     <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="listarProductoPrecioResponse">
+  <xs:complexType name="listarProductosBaseResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
     </xs:sequence>
   </xs:complexType>
-=======
->>>>>>> AvazandoConMuchaFe_Leonardo
-  <xs:complexType name="modificarProductoPrecio">
+  <xs:complexType name="listarProductosXnombre">
     <xs:sequence>
-      <xs:element minOccurs="0" name="productoPrecio" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" name="nombreProd" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarProductoPrecioResponse">
+  <xs:complexType name="listarProductosXnombreResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarProductoPrecioProducto">
+  <xs:complexType name="listarProductosConDescuento">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarProductosConDescuentoResponse">
     <xs:sequence>
-      <xs:element name="idProductoPrecio" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarProductoPrecioProductoResponse">
+  <xs:complexType name="listarProductosMasConsumidos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarProductosMasConsumidosResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarProductoPrecio">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="productoPrecio" type="tns:productoPrecio" />
-    </xs:sequence>
+  <xs:complexType name="listarProductosConDescuentoEnFecha">
+    <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="insertarProductoPrecioResponse">
+  <xs:complexType name="listarProductosConDescuentoEnFechaResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoDeMotivoMovimientoAlmacen">
