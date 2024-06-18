@@ -156,7 +156,9 @@
       <xs:element name="capacidadMaximaProductos" type="xs:double" />
       <xs:element name="id_almacen" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lote" nillable="true" type="tns:lote" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lotes" nillable="true" type="tns:lote" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="movimientosLote" nillable="true" type="tns:movimientoLote" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
       <xs:element minOccurs="0" name="tipoAlmacen" type="tns:tipoAlmacen" />
     </xs:sequence>
@@ -263,22 +265,22 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarFacturaVenta">
-    <xs:sequence>
-      <xs:element name="idFacturaVenta" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarFacturaVentaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarFacturaVenta">
     <xs:sequence>
       <xs:element minOccurs="0" name="facturaVenta" type="tns:facturaVenta" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarFacturaVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVenta">
+    <xs:sequence>
+      <xs:element name="idFacturaVenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVentaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

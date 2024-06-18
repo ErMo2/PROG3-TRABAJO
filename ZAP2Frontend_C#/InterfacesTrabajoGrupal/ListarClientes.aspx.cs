@@ -66,6 +66,7 @@ namespace InterfacesTrabajoGrupal
                 cliente clienteSeleccionado = clientes.SingleOrDefault(c => c.id_cliente == idCliente);
                 if (clienteSeleccionado != null)
                 {
+                    Session["id"]=idCliente;
                     Response.Redirect("GestionarClientes.aspx?id=" + idCliente);
                 }
             }

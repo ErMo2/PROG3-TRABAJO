@@ -20,9 +20,9 @@ namespace InterfacesTrabajoGrupal
             {
                 daoCliente = new ClienteWSClient();
 
-                if (Request.QueryString["id"] != null)
+                if (Session["id"] != null)
                 {
-                    int idCliente = int.Parse(Request.QueryString["id"]);
+                    int idCliente = (int)Session["id"];
                     CargarDatosCliente(idCliente);
                 }
             }
@@ -62,20 +62,13 @@ namespace InterfacesTrabajoGrupal
             cliente.telefono=int.Parse(txtTelefono.Text);
             cliente.email = txtEmail.Text;
             cliente.tipo_documento = ddlTipoDocumento.SelectedValue == "DNI" ? tipoDocumento.DNI : tipoDocumento.CARNET_EXTRANJERIA;
-            if (cliente.tipo_documento == tipoDocumento.DNI)
-            {
-                cliente.dni = (txtNumeroDocumento.Text);
-            }
-            else
-            {
-                cliente.nro_documento = int.Parse(txtNumeroDocumento.Text);
-            }
+            cliente.nro_documento = int.Parse(txtNumeroDocumento.Text);
             cliente.sexo = ddlGenero.SelectedValue == "M" ? 'M' : 'F';
             cliente.direccion = txtDireccion.Text;
             cliente.activo = 1;
             cliente.tipo_documentoSpecified = true;
-
-            if (Request.QueryString["id"] != null)
+            cliente.dni = "0";
+            if (Session["id"] != null)
             {
                 // Modificar el cliente existente
                 cliente.id_cliente = int.Parse(txtIdCliente.Text);
