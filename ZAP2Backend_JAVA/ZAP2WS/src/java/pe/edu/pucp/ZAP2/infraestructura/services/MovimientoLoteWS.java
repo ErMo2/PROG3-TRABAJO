@@ -64,4 +64,16 @@ public class MovimientoLoteWS {
         }
         return movLotes;
     }
+    
+    @WebMethod(operationName = "listarMovimientoLoteDeUnLote")
+    public ArrayList<MovimientoLote> listarMovimientoLoteDeUnLote(@WebParam(name = "idLote") int idLote) {
+        ArrayList<MovimientoLote> movLotes = null;
+        try{
+            daoMovimientoLote = new MovimientoLoteMySql();
+            movLotes = daoMovimientoLote.listarTodosDeUnLote(idLote);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return movLotes;
+    }
 }
