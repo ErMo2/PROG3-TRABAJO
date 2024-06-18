@@ -52,6 +52,7 @@
   </xs:complexType>
   <xs:complexType name="detallePedido">
     <xs:sequence>
+      <xs:element name="cantidad" type="xs:int" />
       <xs:element name="id_DetallePedido" type="xs:int" />
       <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
       <xs:element name="precioTotal" type="xs:double" />

@@ -17,6 +17,7 @@ public class Detalle_Pedido {
     private double subtotal;
     private Producto producto;
     private Pedido pedido;
+    private int cantidad;
     public Detalle_Pedido() {
     }
 
@@ -66,7 +67,7 @@ public class Detalle_Pedido {
     public Producto getProducto() {
         return producto;
     }
-
+    
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
@@ -86,6 +87,13 @@ public class Detalle_Pedido {
                 producto.getIdProducto() + '}');
     }
 
-   
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
     
 }
