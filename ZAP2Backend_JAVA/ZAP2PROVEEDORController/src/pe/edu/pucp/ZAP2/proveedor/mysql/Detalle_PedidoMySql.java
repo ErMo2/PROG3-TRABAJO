@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
+import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
 import pe.edu.pucp.ZAP2.proveedor.dao.Detalle_PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.model.Detalle_Pedido;
 import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
@@ -131,6 +132,11 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
                 detalles.setPrecioTotal(rs.getDouble("precioTotal"));
                 detalles.setPrecioUnitario(rs.getDouble("precioUnitario"));
                 detalles.setSubtotal(rs.getDouble("subtotal"));
+                
+                Producto prod = new Producto();
+                prod.setIdProducto(rs.getInt("fid_producto"));
+                prod.setNombre(rs.getString("nombre"));
+                detalles.setProducto(prod);
                 detallesArray.add(detalles);
             }
         }catch(Exception ex){
