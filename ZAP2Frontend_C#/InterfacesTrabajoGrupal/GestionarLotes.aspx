@@ -23,22 +23,22 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3 row">
-                        <asp:Label ID="lblIdLote" runat="server" Text="Id Banco:" CssClass="col-sm-2 col-form-label" />
+                        <asp:Label ID="lblIdLote" runat="server" Text="Id Lote:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
-                            <asp:TextBox ID="txtIdBanco" runat="server" CssClass="form-control" Enabled="false" />
+                            <asp:TextBox ID="txtIdLote" runat="server" CssClass="form-control" Enabled="false" />
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <asp:Label ID="lblNombreBanco" runat="server" Text="Nombre del Banco:" CssClass="col-sm-2 col-form-label" />
+                        <asp:Label ID="lblStockInicial" runat="server" Text="Stock Inicial:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-8">
-                            <asp:TextBox ID="txtNombreBanco" runat="server" CssClass="form-control" />
+                            <asp:TextBox ID="txtStockInicial" runat="server" CssClass="form-control" />
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+                        <asp:Label ID="lblStockFinal" runat="server" Text="Stock Final:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-8">
-                            <asp:TextBox ID="txtMaterial" runat="server" CssClass="form-control" />
+                            <asp:TextBox ID="txtStockFinal" runat="server" CssClass="form-control" />
                         </div>
                     </div>
 

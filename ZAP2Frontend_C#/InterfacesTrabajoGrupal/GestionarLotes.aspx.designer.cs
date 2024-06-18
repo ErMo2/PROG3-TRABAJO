@@ -33,49 +33,49 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblIdLote;
 
         /// <summary>
-        /// Control txtIdBanco.
+        /// Control txtIdLote.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdBanco;
+        protected global::System.Web.UI.WebControls.TextBox txtIdLote;
 
         /// <summary>
-        /// Control lblNombreBanco.
+        /// Control lblStockInicial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreBanco;
+        protected global::System.Web.UI.WebControls.Label lblStockInicial;
 
         /// <summary>
-        /// Control txtNombreBanco.
+        /// Control txtStockInicial.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreBanco;
+        protected global::System.Web.UI.WebControls.TextBox txtStockInicial;
 
         /// <summary>
-        /// Control lblSucursal.
+        /// Control lblStockFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSucursal;
+        protected global::System.Web.UI.WebControls.Label lblStockFinal;
 
         /// <summary>
-        /// Control txtMaterial.
+        /// Control txtStockFinal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMaterial;
+        protected global::System.Web.UI.WebControls.TextBox txtStockFinal;
 
         /// <summary>
         /// Control btnRegresar.
