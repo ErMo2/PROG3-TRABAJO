@@ -5,27 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/AlmacenWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-<<<<<<< HEAD
-=======
-  <message name="insertarAlmacen">
-    <part name="parameters" element="tns:insertarAlmacen" />
-  </message>
-  <message name="insertarAlmacenResponse">
-    <part name="parameters" element="tns:insertarAlmacenResponse" />
-  </message>
-  <message name="eliminarAlmacen">
-    <part name="parameters" element="tns:eliminarAlmacen" />
-  </message>
-  <message name="eliminarAlmacenResponse">
-    <part name="parameters" element="tns:eliminarAlmacenResponse" />
-  </message>
-  <message name="listarAlmacen">
-    <part name="parameters" element="tns:listarAlmacen" />
-  </message>
-  <message name="listarAlmacenResponse">
-    <part name="parameters" element="tns:listarAlmacenResponse" />
-  </message>
->>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="buscarAlmacen">
     <part name="parameters" element="tns:buscarAlmacen" />
   </message>
@@ -38,7 +17,6 @@
   <message name="modificarAlmacenResponse">
     <part name="parameters" element="tns:modificarAlmacenResponse" />
   </message>
-<<<<<<< HEAD
   <message name="insertarAlmacen">
     <part name="parameters" element="tns:insertarAlmacen" />
   </message>
@@ -58,21 +36,6 @@
     <part name="parameters" element="tns:listarAlmacenResponse" />
   </message>
   <portType name="AlmacenWS">
-=======
-  <portType name="AlmacenWS">
-    <operation name="insertarAlmacen">
-      <input wsam:Action="ZAP2WS/AlmacenWS/insertarAlmacenRequest" message="tns:insertarAlmacen" />
-      <output wsam:Action="ZAP2WS/AlmacenWS/insertarAlmacenResponse" message="tns:insertarAlmacenResponse" />
-    </operation>
-    <operation name="eliminarAlmacen">
-      <input wsam:Action="ZAP2WS/AlmacenWS/eliminarAlmacenRequest" message="tns:eliminarAlmacen" />
-      <output wsam:Action="ZAP2WS/AlmacenWS/eliminarAlmacenResponse" message="tns:eliminarAlmacenResponse" />
-    </operation>
-    <operation name="listarAlmacen">
-      <input wsam:Action="ZAP2WS/AlmacenWS/listarAlmacenRequest" message="tns:listarAlmacen" />
-      <output wsam:Action="ZAP2WS/AlmacenWS/listarAlmacenResponse" message="tns:listarAlmacenResponse" />
-    </operation>
->>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="buscarAlmacen">
       <input wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest" message="tns:buscarAlmacen" />
       <output wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenResponse" message="tns:buscarAlmacenResponse" />
@@ -81,7 +44,6 @@
       <input wsam:Action="ZAP2WS/AlmacenWS/modificarAlmacenRequest" message="tns:modificarAlmacen" />
       <output wsam:Action="ZAP2WS/AlmacenWS/modificarAlmacenResponse" message="tns:modificarAlmacenResponse" />
     </operation>
-<<<<<<< HEAD
     <operation name="insertarAlmacen">
       <input wsam:Action="ZAP2WS/AlmacenWS/insertarAlmacenRequest" message="tns:insertarAlmacen" />
       <output wsam:Action="ZAP2WS/AlmacenWS/insertarAlmacenResponse" message="tns:insertarAlmacenResponse" />
@@ -97,38 +59,6 @@
   </portType>
   <binding name="AlmacenWSPortBinding" type="tns:AlmacenWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-=======
-  </portType>
-  <binding name="AlmacenWSPortBinding" type="tns:AlmacenWS">
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarAlmacen">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarAlmacen">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarAlmacen">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
->>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="buscarAlmacen">
       <soap:operation soapAction="" />
       <input>
@@ -147,7 +77,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< HEAD
     <operation name="insertarAlmacen">
       <soap:operation soapAction="" />
       <input>
@@ -175,8 +104,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-=======
->>>>>>> AvazandoConMuchaFe_Leonardo
   </binding>
   <service name="AlmacenWS">
     <port name="AlmacenWSPort" binding="tns:AlmacenWSPortBinding">

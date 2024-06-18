@@ -5,49 +5,29 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/CuentaUsuarioWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-<<<<<<< HEAD
   <message name="listarCuentaUsuarios">
     <part name="parameters" element="tns:listarCuentaUsuarios" />
   </message>
   <message name="listarCuentaUsuariosResponse">
     <part name="parameters" element="tns:listarCuentaUsuariosResponse" />
   </message>
-=======
->>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="insertarCuentaUsuario">
     <part name="parameters" element="tns:insertarCuentaUsuario" />
   </message>
   <message name="insertarCuentaUsuarioResponse">
     <part name="parameters" element="tns:insertarCuentaUsuarioResponse" />
   </message>
-<<<<<<< HEAD
-=======
-  <message name="modificarCuentaUsuario">
-    <part name="parameters" element="tns:modificarCuentaUsuario" />
-  </message>
-  <message name="modificarCuentaUsuarioResponse">
-    <part name="parameters" element="tns:modificarCuentaUsuarioResponse" />
-  </message>
->>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="eliminarCuentaUsuario">
     <part name="parameters" element="tns:eliminarCuentaUsuario" />
   </message>
   <message name="eliminarCuentaUsuarioResponse">
     <part name="parameters" element="tns:eliminarCuentaUsuarioResponse" />
   </message>
-<<<<<<< HEAD
   <message name="modificarCuentaUsuario">
     <part name="parameters" element="tns:modificarCuentaUsuario" />
   </message>
   <message name="modificarCuentaUsuarioResponse">
     <part name="parameters" element="tns:modificarCuentaUsuarioResponse" />
-=======
-  <message name="listarCuentaUsuarios">
-    <part name="parameters" element="tns:listarCuentaUsuarios" />
-  </message>
-  <message name="listarCuentaUsuariosResponse">
-    <part name="parameters" element="tns:listarCuentaUsuariosResponse" />
->>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <message name="VerificarCuenta">
     <part name="parameters" element="tns:VerificarCuenta" />
@@ -56,37 +36,21 @@
     <part name="parameters" element="tns:VerificarCuentaResponse" />
   </message>
   <portType name="CuentaUsuarioWS">
-<<<<<<< HEAD
     <operation name="listarCuentaUsuarios">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosRequest" message="tns:listarCuentaUsuarios" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosResponse" message="tns:listarCuentaUsuariosResponse" />
     </operation>
-=======
->>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="insertarCuentaUsuario">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioRequest" message="tns:insertarCuentaUsuario" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioResponse" message="tns:insertarCuentaUsuarioResponse" />
     </operation>
-<<<<<<< HEAD
-=======
-    <operation name="modificarCuentaUsuario">
-      <input wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest" message="tns:modificarCuentaUsuario" />
-      <output wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse" message="tns:modificarCuentaUsuarioResponse" />
-    </operation>
->>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="eliminarCuentaUsuario">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioRequest" message="tns:eliminarCuentaUsuario" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioResponse" message="tns:eliminarCuentaUsuarioResponse" />
     </operation>
-<<<<<<< HEAD
     <operation name="modificarCuentaUsuario">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest" message="tns:modificarCuentaUsuario" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse" message="tns:modificarCuentaUsuarioResponse" />
-=======
-    <operation name="listarCuentaUsuarios">
-      <input wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosRequest" message="tns:listarCuentaUsuarios" />
-      <output wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosResponse" message="tns:listarCuentaUsuariosResponse" />
->>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
     <operation name="VerificarCuenta">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest" message="tns:VerificarCuenta" />
@@ -95,10 +59,7 @@
   </portType>
   <binding name="CuentaUsuarioWSPortBinding" type="tns:CuentaUsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-<<<<<<< HEAD
     <operation name="listarCuentaUsuarios">
-=======
-    <operation name="insertarCuentaUsuario">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -107,26 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCuentaUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarCuentaUsuario">
->>>>>>> AvazandoConMuchaFe_Leonardo
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-<<<<<<< HEAD
     <operation name="insertarCuentaUsuario">
       <soap:operation soapAction="" />
       <input>
@@ -137,9 +78,6 @@
       </output>
     </operation>
     <operation name="eliminarCuentaUsuario">
-=======
-    <operation name="listarCuentaUsuarios">
->>>>>>> AvazandoConMuchaFe_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

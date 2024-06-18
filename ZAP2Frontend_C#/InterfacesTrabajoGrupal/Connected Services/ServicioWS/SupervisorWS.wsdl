@@ -11,15 +11,6 @@
   <message name="modificarSupervisorResponse">
     <part name="parameters" element="tns:modificarSupervisorResponse" />
   </message>
-<<<<<<< HEAD
-=======
-  <message name="insertarSupervisor">
-    <part name="parameters" element="tns:insertarSupervisor" />
-  </message>
-  <message name="insertarSupervisorResponse">
-    <part name="parameters" element="tns:insertarSupervisorResponse" />
-  </message>
->>>>>>> AvazandoConMuchaFe_Leonardo
   <message name="listarSupervisores">
     <part name="parameters" element="tns:listarSupervisores" />
   </message>
@@ -49,13 +40,6 @@
       <input wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest" message="tns:modificarSupervisor" />
       <output wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorResponse" message="tns:modificarSupervisorResponse" />
     </operation>
-<<<<<<< HEAD
-=======
-    <operation name="insertarSupervisor">
-      <input wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorRequest" message="tns:insertarSupervisor" />
-      <output wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorResponse" message="tns:insertarSupervisorResponse" />
-    </operation>
->>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="listarSupervisores">
       <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
       <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
@@ -84,18 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< HEAD
-=======
-    <operation name="insertarSupervisor">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
->>>>>>> AvazandoConMuchaFe_Leonardo
     <operation name="listarSupervisores">
       <soap:operation soapAction="" />
       <input>

@@ -113,11 +113,7 @@
   </xs:complexType>
   <xs:complexType name="listarAlmacenResponse">
     <xs:sequence>
-<<<<<<< HEAD
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
-=======
-      <xs:element minOccurs="0" name="return" type="tns:almacen" />
->>>>>>> AvazandoConMuchaFe_Leonardo
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarAlmacen">

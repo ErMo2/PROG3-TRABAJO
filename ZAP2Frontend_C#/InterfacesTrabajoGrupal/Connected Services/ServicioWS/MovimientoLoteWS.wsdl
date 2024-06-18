@@ -11,19 +11,11 @@
   <message name="modificarMovimientoLoteResponse">
     <part name="parameters" element="tns:modificarMovimientoLoteResponse" />
   </message>
-<<<<<<< HEAD
   <message name="eliminarMovimientoLote">
     <part name="parameters" element="tns:eliminarMovimientoLote" />
   </message>
   <message name="eliminarMovimientoLoteResponse">
     <part name="parameters" element="tns:eliminarMovimientoLoteResponse" />
-=======
-  <message name="listarMovimientoLote">
-    <part name="parameters" element="tns:listarMovimientoLote" />
-  </message>
-  <message name="listarMovimientoLoteResponse">
-    <part name="parameters" element="tns:listarMovimientoLoteResponse" />
->>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <message name="insertarMovimientoLote">
     <part name="parameters" element="tns:insertarMovimientoLote" />
@@ -31,48 +23,28 @@
   <message name="insertarMovimientoLoteResponse">
     <part name="parameters" element="tns:insertarMovimientoLoteResponse" />
   </message>
-<<<<<<< HEAD
   <message name="listarMovimientoLote">
     <part name="parameters" element="tns:listarMovimientoLote" />
   </message>
   <message name="listarMovimientoLoteResponse">
     <part name="parameters" element="tns:listarMovimientoLoteResponse" />
-=======
-  <message name="eliminarMovimientoLote">
-    <part name="parameters" element="tns:eliminarMovimientoLote" />
-  </message>
-  <message name="eliminarMovimientoLoteResponse">
-    <part name="parameters" element="tns:eliminarMovimientoLoteResponse" />
->>>>>>> AvazandoConMuchaFe_Leonardo
   </message>
   <portType name="MovimientoLoteWS">
     <operation name="modificarMovimientoLote">
       <input wsam:Action="ZAP2WS/MovimientoLoteWS/modificarMovimientoLoteRequest" message="tns:modificarMovimientoLote" />
       <output wsam:Action="ZAP2WS/MovimientoLoteWS/modificarMovimientoLoteResponse" message="tns:modificarMovimientoLoteResponse" />
     </operation>
-<<<<<<< HEAD
     <operation name="eliminarMovimientoLote">
       <input wsam:Action="ZAP2WS/MovimientoLoteWS/eliminarMovimientoLoteRequest" message="tns:eliminarMovimientoLote" />
       <output wsam:Action="ZAP2WS/MovimientoLoteWS/eliminarMovimientoLoteResponse" message="tns:eliminarMovimientoLoteResponse" />
-=======
-    <operation name="listarMovimientoLote">
-      <input wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteRequest" message="tns:listarMovimientoLote" />
-      <output wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteResponse" message="tns:listarMovimientoLoteResponse" />
->>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
     <operation name="insertarMovimientoLote">
       <input wsam:Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteRequest" message="tns:insertarMovimientoLote" />
       <output wsam:Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteResponse" message="tns:insertarMovimientoLoteResponse" />
     </operation>
-<<<<<<< HEAD
     <operation name="listarMovimientoLote">
       <input wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteRequest" message="tns:listarMovimientoLote" />
       <output wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteResponse" message="tns:listarMovimientoLoteResponse" />
-=======
-    <operation name="eliminarMovimientoLote">
-      <input wsam:Action="ZAP2WS/MovimientoLoteWS/eliminarMovimientoLoteRequest" message="tns:eliminarMovimientoLote" />
-      <output wsam:Action="ZAP2WS/MovimientoLoteWS/eliminarMovimientoLoteResponse" message="tns:eliminarMovimientoLoteResponse" />
->>>>>>> AvazandoConMuchaFe_Leonardo
     </operation>
   </portType>
   <binding name="MovimientoLoteWSPortBinding" type="tns:MovimientoLoteWS">
@@ -86,7 +58,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-<<<<<<< HEAD
     <operation name="eliminarMovimientoLote">
       <soap:operation soapAction="" />
       <input>
@@ -97,9 +68,6 @@
       </output>
     </operation>
     <operation name="insertarMovimientoLote">
-=======
-    <operation name="listarMovimientoLote">
->>>>>>> AvazandoConMuchaFe_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -109,15 +77,6 @@
       </output>
     </operation>
     <operation name="listarMovimientoLote">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarMovimientoLote">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
