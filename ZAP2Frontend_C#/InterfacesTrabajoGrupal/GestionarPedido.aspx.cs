@@ -71,6 +71,7 @@ namespace InterfacesTrabajoGrupal
         protected void mostrarDatos()
         {
             txtIdPedido.Text = pedido.id_pedido.ToString();
+            btnGuardar.Enabled=false;
             btnBuscarProducto.Enabled = false;
             txtPrecioUnitProducto.Enabled = false;
             txtCantidadUnidades.Enabled = false;
