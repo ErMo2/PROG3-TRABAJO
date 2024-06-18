@@ -15,6 +15,7 @@ import pe.edu.pucp.ZAP2.infraestructura.model.Lote;
 import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.infraestructura.model.Almacen;
 import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
 
 /**
  *
@@ -104,6 +105,10 @@ public class LoteMySql implements LoteDao{
                 lote.setIdPedido(rs.getInt("fid_pedido"));
                 Almacen almacen = new Almacen();
                 almacen.setId_almacen(rs.getInt("fid_almacen"));
+                
+                Sucursal sur = new  Sucursal();
+                sur.setNombre(rs.getString("nombre"));
+                almacen.setSucursal(sur);
                 lote.setAlmacen(almacen);
                 Producto producto = new Producto() ;
                 producto.setIdProducto(rs.getInt("fid_producto"));
@@ -120,7 +125,10 @@ public class LoteMySql implements LoteDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return lotes;
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin/BACK2
     }
     
 }
