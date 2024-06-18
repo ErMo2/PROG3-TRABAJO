@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="Scripts/ZAP2PROG/gestionarPedidos.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="container">
@@ -12,6 +13,7 @@
                 <h2>Registrar Pedido</h2>
             </div>
             <div class="card-body">
+                <%--Información General--%>
                 <div class="card border">
                     <div class="card-header bg-light">
                         <h5 class="card-title mb-0">Información General</h5>
@@ -31,6 +33,8 @@
                         </div>
                     </div>
                 </div>
+
+                <%--Detalle del Pedido--%>
                 <div class="card border">
                     <div class="card-header bg-light">
                         <h5 class="card-title mb-0">Detalle del Pedido</h5>
@@ -50,7 +54,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <asp:Label ID="lblPrecioUnitProducto" runat="server" Text="Precio Unitario:" CssClass="col-sm-2 col-form-label" />
+                            <asp:Label ID="lblPrecioUnitProducto" runat="server" Text="Precio Unitario(S/):" CssClass="col-sm-2 col-form-label" />
                             <div class="col-sm-3">
                                 <asp:TextBox ID="txtPrecioUnitProducto" runat="server" CssClass="form-control" />
                             </div>
@@ -67,9 +71,9 @@
                         <div class="row">
                             <asp:GridView ID="gvDetallesPedidos" runat="server" AllowPaging="true" PageSize="5" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" OnRowDataBound="gvDetallePedido_RowDataBound">
                                 <Columns>
-                                    <asp:BoundField HeaderText="Nombre Producto" />
+                                    <asp:BoundField HeaderText="Nombre Producto"/>
                                     <asp:BoundField HeaderText="Precio Unit." />
-                                    <asp:BoundField HeaderText="Cant" />
+                                    <asp:BoundField HeaderText="Cant"/>
                                     <asp:BoundField HeaderText="precioTotal" />
                                     <asp:BoundField HeaderText="subtotal" />
                                     <asp:TemplateField>
@@ -91,7 +95,7 @@
             </div>
             <div class="card-footer clearfix">
                 <asp:Button ID="btnRegresar" runat="server" Text="Regresar"
-                    CssClass="float-start btn btn-secondary" />
+                    CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click"/>
                 <asp:Button ID="btnGuardar" runat="server" Text="Guardar"
                     CssClass="float-end btn btn-primary" OnClick="btnGuardar_Click" />
             </div>
@@ -103,10 +107,12 @@
     <div class="modal" id="form-modal-producto">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
+
                 <div class="modal-header">
                     <h5 class="modal-title">Búsqueda de Productos</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <asp:UpdatePanel runat="server">
                         <ContentTemplate>
@@ -125,10 +131,11 @@
                                 </div>
                             </div>
                             <div class="container row">
-                                <asp:GridView ID="gvProductos" runat="server" AllowPaging="true" PageSize="5" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-striped" OnRowDataBound="gvProductos_RowDataBound">
+                                <asp:GridView ID="gvProductos" runat="server" AllowPaging="true" PageSize="5" AutoGenerateColumns="false"
+                                    CssClass="table table-hover table-responsive table-striped" OnRowDataBound="gvProductos_RowDataBound">
                                     <Columns>
-                                        <asp:BoundField HeaderText="Nombre del Producto" />
-                                        <asp:BoundField HeaderText="Descripción" />
+                                        <asp:BoundField HeaderText="Nombre del Producto"/>
+                                        <asp:BoundField HeaderText="Descripción"/>
                                         <asp:TemplateField>
                                             <ItemTemplate>
                                                 <asp:LinkButton class="btn btn-success" runat="server" Text="<i class='fa-solid fa-check ps-2'></i> Seleccionar" OnClick="btnSeleccionarProductoModal_Click" CommandArgument='<%# Eval("IdProducto") %>' />

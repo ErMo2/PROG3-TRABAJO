@@ -11,6 +11,12 @@
   <message name="modificarSupervisorResponse">
     <part name="parameters" element="tns:modificarSupervisorResponse" />
   </message>
+  <message name="listarSupervisores">
+    <part name="parameters" element="tns:listarSupervisores" />
+  </message>
+  <message name="listarSupervisoresResponse">
+    <part name="parameters" element="tns:listarSupervisoresResponse" />
+  </message>
   <message name="insertarSupervisor">
     <part name="parameters" element="tns:insertarSupervisor" />
   </message>
@@ -23,12 +29,6 @@
   <message name="eliminarSupervisorResponse">
     <part name="parameters" element="tns:eliminarSupervisorResponse" />
   </message>
-  <message name="listarSupervisores">
-    <part name="parameters" element="tns:listarSupervisores" />
-  </message>
-  <message name="listarSupervisoresResponse">
-    <part name="parameters" element="tns:listarSupervisoresResponse" />
-  </message>
   <message name="buscarSupervisor">
     <part name="parameters" element="tns:buscarSupervisor" />
   </message>
@@ -40,6 +40,10 @@
       <input wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest" message="tns:modificarSupervisor" />
       <output wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorResponse" message="tns:modificarSupervisorResponse" />
     </operation>
+    <operation name="listarSupervisores">
+      <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
+      <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
+    </operation>
     <operation name="insertarSupervisor">
       <input wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorRequest" message="tns:insertarSupervisor" />
       <output wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorResponse" message="tns:insertarSupervisorResponse" />
@@ -47,10 +51,6 @@
     <operation name="eliminarSupervisor">
       <input wsam:Action="ZAP2WS/SupervisorWS/eliminarSupervisorRequest" message="tns:eliminarSupervisor" />
       <output wsam:Action="ZAP2WS/SupervisorWS/eliminarSupervisorResponse" message="tns:eliminarSupervisorResponse" />
-    </operation>
-    <operation name="listarSupervisores">
-      <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
-      <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
     </operation>
     <operation name="buscarSupervisor">
       <input wsam:Action="ZAP2WS/SupervisorWS/buscarSupervisorRequest" message="tns:buscarSupervisor" />
@@ -68,6 +68,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarSupervisores">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarSupervisor">
       <soap:operation soapAction="" />
       <input>
@@ -78,15 +87,6 @@
       </output>
     </operation>
     <operation name="eliminarSupervisor">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarSupervisores">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -75,4 +75,7 @@ ref="http://localhost:8080/ZAP2WS/Detalle_PedidoWS?WSDL" />
     <contractRef 
 xmlns="http://schemas.xmlsoap.org/disco/scl/" 
 ref="http://localhost:8080/ZAP2WS/PedidoWS?WSDL" />
+    <contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/ProductoWS?WSDL" />
 </discovery>

@@ -11,17 +11,17 @@
   <message name="insertarEmpleadoDeAreaResponse">
     <part name="parameters" element="tns:insertarEmpleadoDeAreaResponse" />
   </message>
-  <message name="eliminarEmpleadoDeArea">
-    <part name="parameters" element="tns:eliminarEmpleadoDeArea" />
-  </message>
-  <message name="eliminarEmpleadoDeAreaResponse">
-    <part name="parameters" element="tns:eliminarEmpleadoDeAreaResponse" />
-  </message>
   <message name="modificarEmpleadoDeArea">
     <part name="parameters" element="tns:modificarEmpleadoDeArea" />
   </message>
   <message name="modificarEmpleadoDeAreaResponse">
     <part name="parameters" element="tns:modificarEmpleadoDeAreaResponse" />
+  </message>
+  <message name="eliminarEmpleadoDeArea">
+    <part name="parameters" element="tns:eliminarEmpleadoDeArea" />
+  </message>
+  <message name="eliminarEmpleadoDeAreaResponse">
+    <part name="parameters" element="tns:eliminarEmpleadoDeAreaResponse" />
   </message>
   <message name="buscarEmpleadoArea">
     <part name="parameters" element="tns:buscarEmpleadoArea" />
@@ -40,13 +40,13 @@
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaRequest" message="tns:insertarEmpleadoDeArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaResponse" message="tns:insertarEmpleadoDeAreaResponse" />
     </operation>
-    <operation name="eliminarEmpleadoDeArea">
-      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaRequest" message="tns:eliminarEmpleadoDeArea" />
-      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaResponse" message="tns:eliminarEmpleadoDeAreaResponse" />
-    </operation>
     <operation name="modificarEmpleadoDeArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaRequest" message="tns:modificarEmpleadoDeArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaResponse" message="tns:modificarEmpleadoDeAreaResponse" />
+    </operation>
+    <operation name="eliminarEmpleadoDeArea">
+      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaRequest" message="tns:eliminarEmpleadoDeArea" />
+      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaResponse" message="tns:eliminarEmpleadoDeAreaResponse" />
     </operation>
     <operation name="buscarEmpleadoArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/buscarEmpleadoAreaRequest" message="tns:buscarEmpleadoArea" />
@@ -68,7 +68,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarEmpleadoDeArea">
+    <operation name="modificarEmpleadoDeArea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarEmpleadoDeArea">
+    <operation name="eliminarEmpleadoDeArea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

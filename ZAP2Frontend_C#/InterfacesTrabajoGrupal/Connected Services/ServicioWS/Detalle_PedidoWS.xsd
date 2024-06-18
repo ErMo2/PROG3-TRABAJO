@@ -17,6 +17,7 @@
   </xs:complexType>
   <xs:complexType name="detallePedido">
     <xs:sequence>
+      <xs:element name="cantidad" type="xs:int" />
       <xs:element name="id_DetallePedido" type="xs:int" />
       <xs:element minOccurs="0" name="pedido" type="tns:pedido" />
       <xs:element name="precioTotal" type="xs:double" />
@@ -147,6 +148,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarDetallePedidos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarDetallePedidosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:detallePedido" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarDetallePedido">
     <xs:sequence>
       <xs:element minOccurs="0" name="detalle_Pedido" type="tns:detallePedido" />
@@ -155,14 +164,6 @@
   <xs:complexType name="insertarDetallePedidoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarDetallePedidos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarDetallePedidosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:detallePedido" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="estadoPedido">
