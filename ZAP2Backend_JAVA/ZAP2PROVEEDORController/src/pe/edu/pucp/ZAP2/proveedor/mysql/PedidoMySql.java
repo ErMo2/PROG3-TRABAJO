@@ -46,7 +46,7 @@ public class PedidoMySql implements PedidoDao{
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
         }
-        return resultado;
+        return pedido.getId_pedido();
     }
 
     @Override
