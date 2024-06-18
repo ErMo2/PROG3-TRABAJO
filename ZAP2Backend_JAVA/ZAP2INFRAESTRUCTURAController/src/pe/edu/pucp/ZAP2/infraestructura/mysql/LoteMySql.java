@@ -109,7 +109,7 @@ public class LoteMySql implements LoteDao{
                 producto.setIdProducto(rs.getInt("fid_producto"));
                 lote.setProducto(producto);
 
-                lote.setStockActual(rs.getInt("stockInicial"));
+                lote.setStockInicial(rs.getInt("stockInicial"));
                 lote.setStockActual(rs.getInt("stockActual"));
                 lotes.add(lote);
             }
@@ -120,7 +120,7 @@ public class LoteMySql implements LoteDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return lotes;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
     
 }
