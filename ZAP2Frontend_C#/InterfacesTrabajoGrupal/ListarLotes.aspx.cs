@@ -34,13 +34,15 @@ namespace InterfacesTrabajoGrupal
             if (arregloLotes != null)
             {
                 lotes = new BindingList<lote>(arregloLotes);
-                foreach(lote lote in lotes)
-                {
-                    alma = daoAlmacen.buscarAlmacen(lote.almacen.id_almacen);
-                    sucur=daoSucursal.buscarSucursal(alma.sucursal.id_sucursal);
-                    lote.almacen.sucursal = new sucursal();
-                    lote.almacen.sucursal.nombre = sucur.nombre;
-                }
+                //foreach(lote lote in lotes)
+                //{
+                //    alma = daoAlmacen.
+                //    alma = daoAlmacen.buscarAlmacen(lote.almacen.id_almacen);
+                //    sucur=daoSucursal.buscarSucursal(alma.sucursal.id_sucursal);
+                //    lote.almacen.sucursal = new sucursal();
+                //    lote.almacen.sucursal.nombre = sucur.nombre;
+                //    lote.almacen.sucursal.
+                //}
                 gvLotes.DataSource = lotes;
                 gvLotes.DataBind();
             }

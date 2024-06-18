@@ -23,7 +23,7 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3 row">
-                        <asp:Label ID="lblIdBanco" runat="server" Text="Id Banco:" CssClass="col-sm-2 col-form-label" />
+                        <asp:Label ID="lblIdLote" runat="server" Text="Id Banco:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
                             <asp:TextBox ID="txtIdBanco" runat="server" CssClass="form-control" Enabled="false" />
                         </div>
@@ -34,6 +34,14 @@
                             <asp:TextBox ID="txtNombreBanco" runat="server" CssClass="form-control" />
                         </div>
                     </div>
+
+                    <div class="mb-3 row">
+                        <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-8">
+                            <asp:TextBox ID="txtMaterial" runat="server" CssClass="form-control" />
+                        </div>
+                    </div>
+
                     <div class="card-footer clearfix">
                         <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
                         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="float-end btn btn-primary" OnClick="btnGuardar_Click" />

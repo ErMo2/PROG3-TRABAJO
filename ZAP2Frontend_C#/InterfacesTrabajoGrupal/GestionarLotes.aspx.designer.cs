@@ -24,13 +24,13 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblTitulo;
 
         /// <summary>
-        /// Control lblIdBanco.
+        /// Control lblIdLote.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdBanco;
+        protected global::System.Web.UI.WebControls.Label lblIdLote;
 
         /// <summary>
         /// Control txtIdBanco.
@@ -58,6 +58,24 @@ namespace InterfacesTrabajoGrupal
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreBanco;
+
+        /// <summary>
+        /// Control lblSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSucursal;
+
+        /// <summary>
+        /// Control txtMaterial.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaterial;
 
         /// <summary>
         /// Control btnRegresar.

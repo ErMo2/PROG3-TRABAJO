@@ -125,10 +125,6 @@ public class LoteMySql implements LoteDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return lotes;
-<<<<<<< HEAD
-        
-=======
->>>>>>> origin/BACK2
     }
     
 }
