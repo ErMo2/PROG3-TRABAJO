@@ -18,6 +18,7 @@
       <xs:extension base="tns:documentoDeVenta">
         <xs:sequence>
           <xs:element minOccurs="0" name="detalles" type="xs:string" />
+          <xs:element name="idCliente" type="xs:int" />
           <xs:element name="impuestos" type="xs:double" />
           <xs:element name="numSerie" type="xs:int" />
         </xs:sequence>
@@ -100,6 +101,7 @@
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productosPrecio" nillable="true" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="productoPrecio">

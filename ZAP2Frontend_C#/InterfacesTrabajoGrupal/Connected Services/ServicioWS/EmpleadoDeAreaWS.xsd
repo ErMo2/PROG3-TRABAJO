@@ -105,6 +105,7 @@
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productosPrecio" nillable="true" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="productoPrecio">
@@ -204,16 +205,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="buscarEmpleadoArea">
-    <xs:sequence>
-      <xs:element name="idEmpleadoArea" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="buscarEmpleadoAreaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:empleadoDeArea" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="modificarEmpleadoDeArea">
     <xs:sequence>
       <xs:element minOccurs="0" name="empleadoDeArea" type="tns:empleadoDeArea" />
@@ -222,6 +213,16 @@
   <xs:complexType name="modificarEmpleadoDeAreaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarEmpleadoArea">
+    <xs:sequence>
+      <xs:element name="idEmpleadoArea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarEmpleadoAreaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:empleadoDeArea" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoPuesto">
