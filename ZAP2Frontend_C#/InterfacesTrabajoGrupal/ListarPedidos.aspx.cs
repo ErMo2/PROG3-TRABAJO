@@ -34,9 +34,7 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnVer_Click(object sender, EventArgs e)
         {
-            int idPedido = Int32.Parse(((LinkButton)sender).CommandArgument);
-            Session["idPedido"] = idPedido;
-            Response.Redirect("GestionarPedido.aspx?accion=ver");
+            Response.Redirect("GestionarPedido.aspx");
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)

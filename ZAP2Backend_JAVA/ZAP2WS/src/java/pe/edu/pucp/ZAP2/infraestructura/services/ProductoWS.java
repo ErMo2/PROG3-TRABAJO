@@ -16,7 +16,7 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.ProductoMySql;
  *
  * @author Alejandro
  */
-@WebService(serviceName = "ProductoWS", targetNamespace = "ZAP2WS")
+@WebService(serviceName = "ProductoWS")
 public class ProductoWS {
 
     private ProductoDao daoProducto;

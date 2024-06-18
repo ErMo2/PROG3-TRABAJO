@@ -20,7 +20,6 @@ import pe.edu.pucp.ZAP2.proveedor.mysql.Detalle_PedidoMySql;
 public class Detalle_PedidoWS {
 
     Detalle_PedidoDao daoDetallePedido;
-    Detalle_Pedido detalle;
     @WebMethod(operationName = "insertarDetallePedido")
     public int insertarDetallePedido(@WebParam(name="detalle_Pedido") Detalle_Pedido detalle_Pedido) {
         int resultado = 0;
