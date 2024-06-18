@@ -202,5 +202,40 @@ public class ClienteMySql implements ClienteDao{
         return clientes;   
     
     }
+
+    @Override
+    public Cliente buscarPNatural(int id) {
+        
+        Cliente cliente = null;
+        try{
+            
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call RF_BUSCAR_PERSONA_NATURAL_X_ID(?)}");
+            cs.setInt("_id_persona", id);
+            rs = cs.executeQuery();
+            cliente = new Cliente();
+            while(rs.next()){
+                 
+                cliente.setId_cliente(rs.getInt("id_persona"));
+                cliente.setNombre(rs.getString("nombre"));
+                cliente.setApellido_paterno(rs.getString("apellido_paterno"));
+                cliente.setApellido_materno(rs.getString("apellido_materno"));
+                
+                cliente.setEmail(rs.getString("email"));
+                cliente.setNro_documento(rs.getInt("numDocumento"));
+                cliente.setTelefono(rs.getInt("telefono"));
+                cliente.setTipo_documento(TipoDocumento.valueOf(rs.getString("tipoDocumento")));
+                
+                cliente.setSexo(rs.getString("sexo").charAt(0));
+                cliente.setDireccion(rs.getString("direccion"));     
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return cliente;
+    }
     
 }
