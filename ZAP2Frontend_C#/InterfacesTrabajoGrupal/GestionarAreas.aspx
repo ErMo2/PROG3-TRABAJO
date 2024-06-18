@@ -27,14 +27,13 @@
                 <div class="col-sm-8">
                     <asp:TextBox ID="txtNombreArea" runat="server" CssClass="form-control" />
                 </div>
+                <div class="col-sm-8">
+                    <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+                    <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control"></asp:DropDownList>
+                </div>
             </div>
 
 
-            <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
-            <div class="col-sm-4">
-                <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control"></asp:DropDownList>
-
-            </div>
 
         </div>
 

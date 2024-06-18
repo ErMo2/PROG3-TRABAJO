@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/LoteWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarLote">
-    <part name="parameters" element="tns:listarLote" />
+  <message name="eliminarLote">
+    <part name="parameters" element="tns:eliminarLote" />
   </message>
-  <message name="listarLoteResponse">
-    <part name="parameters" element="tns:listarLoteResponse" />
+  <message name="eliminarLoteResponse">
+    <part name="parameters" element="tns:eliminarLoteResponse" />
   </message>
   <message name="modificarLote">
     <part name="parameters" element="tns:modificarLote" />
@@ -23,16 +23,16 @@
   <message name="insertarLoteResponse">
     <part name="parameters" element="tns:insertarLoteResponse" />
   </message>
-  <message name="eliminarLote">
-    <part name="parameters" element="tns:eliminarLote" />
+  <message name="listarLote">
+    <part name="parameters" element="tns:listarLote" />
   </message>
-  <message name="eliminarLoteResponse">
-    <part name="parameters" element="tns:eliminarLoteResponse" />
+  <message name="listarLoteResponse">
+    <part name="parameters" element="tns:listarLoteResponse" />
   </message>
   <portType name="LoteWS">
-    <operation name="listarLote">
-      <input wsam:Action="ZAP2WS/LoteWS/listarLoteRequest" message="tns:listarLote" />
-      <output wsam:Action="ZAP2WS/LoteWS/listarLoteResponse" message="tns:listarLoteResponse" />
+    <operation name="eliminarLote">
+      <input wsam:Action="ZAP2WS/LoteWS/eliminarLoteRequest" message="tns:eliminarLote" />
+      <output wsam:Action="ZAP2WS/LoteWS/eliminarLoteResponse" message="tns:eliminarLoteResponse" />
     </operation>
     <operation name="modificarLote">
       <input wsam:Action="ZAP2WS/LoteWS/modificarLoteRequest" message="tns:modificarLote" />
@@ -42,14 +42,14 @@
       <input wsam:Action="ZAP2WS/LoteWS/insertarLoteRequest" message="tns:insertarLote" />
       <output wsam:Action="ZAP2WS/LoteWS/insertarLoteResponse" message="tns:insertarLoteResponse" />
     </operation>
-    <operation name="eliminarLote">
-      <input wsam:Action="ZAP2WS/LoteWS/eliminarLoteRequest" message="tns:eliminarLote" />
-      <output wsam:Action="ZAP2WS/LoteWS/eliminarLoteResponse" message="tns:eliminarLoteResponse" />
+    <operation name="listarLote">
+      <input wsam:Action="ZAP2WS/LoteWS/listarLoteRequest" message="tns:listarLote" />
+      <output wsam:Action="ZAP2WS/LoteWS/listarLoteResponse" message="tns:listarLoteResponse" />
     </operation>
   </portType>
   <binding name="LoteWSPortBinding" type="tns:LoteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarLote">
+    <operation name="eliminarLote">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarLote">
+    <operation name="listarLote">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

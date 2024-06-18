@@ -26,29 +26,27 @@ namespace InterfacesTrabajoGrupal
                     CargarArea(idArea);
                 }
             }
+            sucursalDao = new SucursalWSClient();
+            var sucursales = sucursalDao.listarSucursal();
+            ddlSucursal.Items.Clear();
+            foreach (var sucursal in sucursales)
+            {
+                ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
+
+            }
         }
         private void CargarArea(int idArea)
         {
             daoArea = new AreaWSClient();
-
             area = daoArea.buscarArea(idArea);
             if (area != null)
             {
                 txtIdArea.Text = area.idArea.ToString();
                 txtNombreArea.Text = area.nombre;
-                var sucursales = sucursalDao.listarSucursal();
-                ddlSucursal.Items.Clear();
-                foreach (var sucursal in sucursales)
-                {
-                    //if (sucursal.id_sucursal?)
-                    //{
-                    //    ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
-                    //}
-                    ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
-                    
-                }
+               
             }
             
+
         }
         protected void Page_Init(object sender, EventArgs e)
         {

@@ -26,7 +26,7 @@
     <MetadataFile FileName="ClienteWS.xsd" MetadataType="Schema" ID="96244f96-ff63-4a09-aafb-5cab5ddf1286" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ClienteWS?xsd=1" />
     <MetadataFile FileName="EmpleadoDeAreaWS.xsd" MetadataType="Schema" ID="c9672e3a-f424-4d12-9734-ed46cf633c89" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/EmpleadoDeAreaWS?xsd=1" />
     <MetadataFile FileName="EmpleadoDeAreaWS.wsdl" MetadataType="Wsdl" ID="d8c7eef7-114d-4013-8667-542cb9a49b7d" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/EmpleadoDeAreaWS?WSDL" />
-    <MetadataFile FileName="ProductoWS.xsd" MetadataType="Schema" ID="edc03abd-f4da-45d1-a6b8-80a393431014" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoWS?xsd=1" />
+    <MetadataFile FileName="ProductoWS.xsd" MetadataType="Schema" ID="05b1f938-a002-4605-8a60-af293a62200b" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoWS?xsd=1" />
     <MetadataFile FileName="PersonaJuridicaWS.wsdl" MetadataType="Wsdl" ID="18d75d01-4c41-4b87-987a-3716a86f6af9" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/PersonaJuridicaWS?WSDL" />
     <MetadataFile FileName="SupervisorWS.xsd" MetadataType="Schema" ID="77debc56-9613-417c-878c-8f36b79ccf0e" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/SupervisorWS?xsd=1" />
     <MetadataFile FileName="ProductosParaElCuidadoPersonalYDelHogarWS.xsd" MetadataType="Schema" ID="ec104b58-8354-47b7-b27f-721442440b68" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS?xsd=1" />
@@ -63,7 +63,7 @@
     <MetadataFile FileName="MovimientoLoteWS.xsd" MetadataType="Schema" ID="01b45be3-d017-426e-a068-4967f2c29690" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/MovimientoLoteWS?xsd=1" />
     <MetadataFile FileName="ElectrodomesticosWS.xsd" MetadataType="Schema" ID="bd3f59a2-105a-49e1-a9d5-2cf1ad73c53e" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ElectrodomesticosWS?xsd=1" />
     <MetadataFile FileName="SucursalWS.xsd" MetadataType="Schema" ID="21d0a8c6-2f2a-4296-b50a-19758298316f" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/SucursalWS?xsd=1" />
-    <MetadataFile FileName="ProductoWS.wsdl" MetadataType="Wsdl" ID="3b4c2c2e-4156-4e69-a12d-ab5363f99bf9" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoWS?WSDL" />
+    <MetadataFile FileName="ProductoWS.wsdl" MetadataType="Wsdl" ID="c5d4b6c8-23df-40b6-a890-0445c0479065" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductoWS?WSDL" />
     <MetadataFile FileName="ClienteWS.wsdl" MetadataType="Wsdl" ID="c28dd523-1524-4842-a7b9-c75b18c0eae7" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ClienteWS?WSDL" />
     <MetadataFile FileName="SucursalWS.wsdl" MetadataType="Wsdl" ID="3701df2f-4a0b-4a6f-a443-0d6f5130d7fb" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/SucursalWS?WSDL" />
     <MetadataFile FileName="BancoWS.xsd" MetadataType="Schema" ID="cb157b5d-5519-4f53-bc01-03abb04af1ec" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/BancoWS?xsd=1" />
