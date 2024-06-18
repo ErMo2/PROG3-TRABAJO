@@ -19,7 +19,7 @@ public class Almacen {
     private boolean activo;
     private Sucursal sucursal;
     private ArrayList<Lote> lotes;
-
+    private String nombre;
     public Almacen() {
     }
 
@@ -103,6 +103,22 @@ public class Almacen {
         System.out.println("Almacen{" + "id_almacen=" + id_almacen + ", tipoAlmacen=" + tipoAlmacen + ", "
                 + "capacidadMaximaProductos=" + capacidadMaximaProductos + ", capacidadActualProductos=" + 
                 capacidadActualProductos + ", activo=" + activo + ", sucursal=" + sucursal.getId_sucursal() + "\n"); 
+    }
+
+    public ArrayList<Lote> getLotes() {
+        return lotes;
+    }
+
+    public void setLotes(ArrayList<Lote> lotes) {
+        this.lotes = lotes;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     
