@@ -186,8 +186,8 @@ namespace InterfacesTrabajoGrupal
             if (reporte != null && reporte.Length > 0)
             {
                 Response.Clear();
-                Response.ContentType = "application/json";
-                Response.AddHeader("Content-Disposition", "inline; filename=ReporteMasVendidos");
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "inline; filename=ReporteMasVendidos.pdf");
                 Response.BinaryWrite(reporte);
                 Response.End();
             }

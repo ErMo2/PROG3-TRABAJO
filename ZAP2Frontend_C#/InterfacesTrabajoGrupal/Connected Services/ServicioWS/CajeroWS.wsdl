@@ -5,17 +5,23 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/CajeroWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+  <message name="listarCajerosPorSucursal">
+    <part name="parameters" element="tns:listarCajerosPorSucursal" />
+  </message>
+  <message name="listarCajerosPorSucursalResponse">
+    <part name="parameters" element="tns:listarCajerosPorSucursalResponse" />
+  </message>
   <message name="listarCajeros">
     <part name="parameters" element="tns:listarCajeros" />
   </message>
   <message name="listarCajerosResponse">
     <part name="parameters" element="tns:listarCajerosResponse" />
   </message>
-  <message name="modificarCajero">
-    <part name="parameters" element="tns:modificarCajero" />
+  <message name="buscarCajero">
+    <part name="parameters" element="tns:buscarCajero" />
   </message>
-  <message name="modificarCajeroResponse">
-    <part name="parameters" element="tns:modificarCajeroResponse" />
+  <message name="buscarCajeroResponse">
+    <part name="parameters" element="tns:buscarCajeroResponse" />
   </message>
   <message name="eliminarCajero">
     <part name="parameters" element="tns:eliminarCajero" />
@@ -29,26 +35,24 @@
   <message name="insertarCajeroResponse">
     <part name="parameters" element="tns:insertarCajeroResponse" />
   </message>
-  <message name="buscarCajero">
-    <part name="parameters" element="tns:buscarCajero" />
+  <message name="modificarCajero">
+    <part name="parameters" element="tns:modificarCajero" />
   </message>
-  <message name="buscarCajeroResponse">
-    <part name="parameters" element="tns:buscarCajeroResponse" />
-  </message>
-  <message name="listarCajerosPorSucursal">
-    <part name="parameters" element="tns:listarCajerosPorSucursal" />
-  </message>
-  <message name="listarCajerosPorSucursalResponse">
-    <part name="parameters" element="tns:listarCajerosPorSucursalResponse" />
+  <message name="modificarCajeroResponse">
+    <part name="parameters" element="tns:modificarCajeroResponse" />
   </message>
   <portType name="CajeroWS">
+    <operation name="listarCajerosPorSucursal">
+      <input wsam:Action="ZAP2WS/CajeroWS/listarCajerosPorSucursalRequest" message="tns:listarCajerosPorSucursal" />
+      <output wsam:Action="ZAP2WS/CajeroWS/listarCajerosPorSucursalResponse" message="tns:listarCajerosPorSucursalResponse" />
+    </operation>
     <operation name="listarCajeros">
       <input wsam:Action="ZAP2WS/CajeroWS/listarCajerosRequest" message="tns:listarCajeros" />
       <output wsam:Action="ZAP2WS/CajeroWS/listarCajerosResponse" message="tns:listarCajerosResponse" />
     </operation>
-    <operation name="modificarCajero">
-      <input wsam:Action="ZAP2WS/CajeroWS/modificarCajeroRequest" message="tns:modificarCajero" />
-      <output wsam:Action="ZAP2WS/CajeroWS/modificarCajeroResponse" message="tns:modificarCajeroResponse" />
+    <operation name="buscarCajero">
+      <input wsam:Action="ZAP2WS/CajeroWS/buscarCajeroRequest" message="tns:buscarCajero" />
+      <output wsam:Action="ZAP2WS/CajeroWS/buscarCajeroResponse" message="tns:buscarCajeroResponse" />
     </operation>
     <operation name="eliminarCajero">
       <input wsam:Action="ZAP2WS/CajeroWS/eliminarCajeroRequest" message="tns:eliminarCajero" />
@@ -58,17 +62,22 @@
       <input wsam:Action="ZAP2WS/CajeroWS/insertarCajeroRequest" message="tns:insertarCajero" />
       <output wsam:Action="ZAP2WS/CajeroWS/insertarCajeroResponse" message="tns:insertarCajeroResponse" />
     </operation>
-    <operation name="buscarCajero">
-      <input wsam:Action="ZAP2WS/CajeroWS/buscarCajeroRequest" message="tns:buscarCajero" />
-      <output wsam:Action="ZAP2WS/CajeroWS/buscarCajeroResponse" message="tns:buscarCajeroResponse" />
-    </operation>
-    <operation name="listarCajerosPorSucursal">
-      <input wsam:Action="ZAP2WS/CajeroWS/listarCajerosPorSucursalRequest" message="tns:listarCajerosPorSucursal" />
-      <output wsam:Action="ZAP2WS/CajeroWS/listarCajerosPorSucursalResponse" message="tns:listarCajerosPorSucursalResponse" />
+    <operation name="modificarCajero">
+      <input wsam:Action="ZAP2WS/CajeroWS/modificarCajeroRequest" message="tns:modificarCajero" />
+      <output wsam:Action="ZAP2WS/CajeroWS/modificarCajeroResponse" message="tns:modificarCajeroResponse" />
     </operation>
   </portType>
   <binding name="CajeroWSPortBinding" type="tns:CajeroWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarCajerosPorSucursal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarCajeros">
       <soap:operation soapAction="" />
       <input>
@@ -78,7 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCajero">
+    <operation name="buscarCajero">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,16 +114,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="buscarCajero">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarCajerosPorSucursal">
+    <operation name="modificarCajero">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
