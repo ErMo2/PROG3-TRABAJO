@@ -24,6 +24,15 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.LinkButton lbRegistrarProducto;
 
         /// <summary>
+        /// Control lbImprimirReporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbImprimirReporte;
+
+        /// <summary>
         /// Control gvProductosPerecibles.
         /// </summary>
         /// <remarks>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://reportes.ZAP2.pucp.edu.pe/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ReportesFrontWS" targetNamespace="http://reportes.ZAP2.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ReportesFrontWS?xsd=1" namespace="http://reportes.ZAP2.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="generarBoletaVenta">
+    <part name="parameters" element="tns:generarBoletaVenta" />
+  </message>
+  <message name="generarBoletaVentaResponse">
+    <part name="parameters" element="tns:generarBoletaVentaResponse" />
+  </message>
+  <message name="generarReporteProductosConsumidos">
+    <part name="parameters" element="tns:generarReporteProductosConsumidos" />
+  </message>
+  <message name="generarReporteProductosConsumidosResponse">
+    <part name="parameters" element="tns:generarReporteProductosConsumidosResponse" />
+  </message>
+  <portType name="ReportesFrontWS">
+    <operation name="generarBoletaVenta">
+      <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
+      <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
+    </operation>
+    <operation name="generarReporteProductosConsumidos">
+      <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosRequest" message="tns:generarReporteProductosConsumidos" />
+      <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosResponse" message="tns:generarReporteProductosConsumidosResponse" />
+    </operation>
+  </portType>
+  <binding name="ReportesFrontWSPortBinding" type="tns:ReportesFrontWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generarBoletaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteProductosConsumidos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ReportesFrontWS">
+    <port name="ReportesFrontWSPort" binding="tns:ReportesFrontWSPortBinding">
+      <soap:address location="http://localhost:8080/ZAP2WS/ReportesFrontWS" />
+    </port>
+  </service>
+</definitions>

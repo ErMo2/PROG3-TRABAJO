@@ -670,6 +670,12 @@
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.producto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.generarBoletaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.generarReporteProductosConsumidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -835,6 +841,10 @@
     </None>
     <None Include="Connected Services\ServicioWS\ProductosParaElCuidadoPersonalYDelHogarWS.wsdl" />
     <None Include="Connected Services\ServicioWS\ProductosParaElCuidadoPersonalYDelHogarWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioWS\ReportesFrontWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ReportesFrontWS.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServicioWS\RopaWS.wsdl" />

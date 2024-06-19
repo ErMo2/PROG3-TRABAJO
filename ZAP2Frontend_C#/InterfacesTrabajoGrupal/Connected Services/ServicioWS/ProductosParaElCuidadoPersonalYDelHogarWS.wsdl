@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="modificarPCH">
-    <part name="parameters" element="tns:modificarPCH" />
+  <message name="eliminarPCH">
+    <part name="parameters" element="tns:eliminarPCH" />
   </message>
-  <message name="modificarPCHResponse">
-    <part name="parameters" element="tns:modificarPCHResponse" />
+  <message name="eliminarPCHResponse">
+    <part name="parameters" element="tns:eliminarPCHResponse" />
   </message>
   <message name="buscarProductoPCH">
     <part name="parameters" element="tns:buscarProductoPCH" />
@@ -23,11 +23,11 @@
   <message name="insertarPCHResponse">
     <part name="parameters" element="tns:insertarPCHResponse" />
   </message>
-  <message name="eliminarPCH">
-    <part name="parameters" element="tns:eliminarPCH" />
+  <message name="modificarPCH">
+    <part name="parameters" element="tns:modificarPCH" />
   </message>
-  <message name="eliminarPCHResponse">
-    <part name="parameters" element="tns:eliminarPCHResponse" />
+  <message name="modificarPCHResponse">
+    <part name="parameters" element="tns:modificarPCHResponse" />
   </message>
   <message name="listarPCH">
     <part name="parameters" element="tns:listarPCH" />
@@ -36,9 +36,9 @@
     <part name="parameters" element="tns:listarPCHResponse" />
   </message>
   <portType name="ProductosParaElCuidadoPersonalYDelHogarWS">
-    <operation name="modificarPCH">
-      <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHRequest" message="tns:modificarPCH" />
-      <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHResponse" message="tns:modificarPCHResponse" />
+    <operation name="eliminarPCH">
+      <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest" message="tns:eliminarPCH" />
+      <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse" message="tns:eliminarPCHResponse" />
     </operation>
     <operation name="buscarProductoPCH">
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/buscarProductoPCHRequest" message="tns:buscarProductoPCH" />
@@ -48,9 +48,9 @@
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/insertarPCHRequest" message="tns:insertarPCH" />
       <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/insertarPCHResponse" message="tns:insertarPCHResponse" />
     </operation>
-    <operation name="eliminarPCH">
-      <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHRequest" message="tns:eliminarPCH" />
-      <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/eliminarPCHResponse" message="tns:eliminarPCHResponse" />
+    <operation name="modificarPCH">
+      <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHRequest" message="tns:modificarPCH" />
+      <output wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/modificarPCHResponse" message="tns:modificarPCHResponse" />
     </operation>
     <operation name="listarPCH">
       <input wsam:Action="ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS/listarPCHRequest" message="tns:listarPCH" />
@@ -59,7 +59,7 @@
   </portType>
   <binding name="ProductosParaElCuidadoPersonalYDelHogarWSPortBinding" type="tns:ProductosParaElCuidadoPersonalYDelHogarWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="modificarPCH">
+    <operation name="eliminarPCH">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarPCH">
+    <operation name="modificarPCH">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/PedidoWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarPedidos">
-    <part name="parameters" element="tns:listarPedidos" />
-  </message>
-  <message name="listarPedidosResponse">
-    <part name="parameters" element="tns:listarPedidosResponse" />
-  </message>
-  <message name="eliminarPedido">
-    <part name="parameters" element="tns:eliminarPedido" />
-  </message>
-  <message name="eliminarPedidoResponse">
-    <part name="parameters" element="tns:eliminarPedidoResponse" />
-  </message>
   <message name="insertarPedido">
     <part name="parameters" element="tns:insertarPedido" />
   </message>
@@ -35,15 +23,19 @@
   <message name="modificarPedidoResponse">
     <part name="parameters" element="tns:modificarPedidoResponse" />
   </message>
+  <message name="listarPedidos">
+    <part name="parameters" element="tns:listarPedidos" />
+  </message>
+  <message name="listarPedidosResponse">
+    <part name="parameters" element="tns:listarPedidosResponse" />
+  </message>
+  <message name="eliminarPedido">
+    <part name="parameters" element="tns:eliminarPedido" />
+  </message>
+  <message name="eliminarPedidoResponse">
+    <part name="parameters" element="tns:eliminarPedidoResponse" />
+  </message>
   <portType name="PedidoWS">
-    <operation name="listarPedidos">
-      <input wsam:Action="ZAP2WS/PedidoWS/listarPedidosRequest" message="tns:listarPedidos" />
-      <output wsam:Action="ZAP2WS/PedidoWS/listarPedidosResponse" message="tns:listarPedidosResponse" />
-    </operation>
-    <operation name="eliminarPedido">
-      <input wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoRequest" message="tns:eliminarPedido" />
-      <output wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoResponse" message="tns:eliminarPedidoResponse" />
-    </operation>
     <operation name="insertarPedido">
       <input wsam:Action="ZAP2WS/PedidoWS/insertarPedidoRequest" message="tns:insertarPedido" />
       <output wsam:Action="ZAP2WS/PedidoWS/insertarPedidoResponse" message="tns:insertarPedidoResponse" />
@@ -56,27 +48,17 @@
       <input wsam:Action="ZAP2WS/PedidoWS/modificarPedidoRequest" message="tns:modificarPedido" />
       <output wsam:Action="ZAP2WS/PedidoWS/modificarPedidoResponse" message="tns:modificarPedidoResponse" />
     </operation>
+    <operation name="listarPedidos">
+      <input wsam:Action="ZAP2WS/PedidoWS/listarPedidosRequest" message="tns:listarPedidos" />
+      <output wsam:Action="ZAP2WS/PedidoWS/listarPedidosResponse" message="tns:listarPedidosResponse" />
+    </operation>
+    <operation name="eliminarPedido">
+      <input wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoRequest" message="tns:eliminarPedido" />
+      <output wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoResponse" message="tns:eliminarPedidoResponse" />
+    </operation>
   </portType>
   <binding name="PedidoWSPortBinding" type="tns:PedidoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarPedidos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarPedido">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarPedido">
       <soap:operation soapAction="" />
       <input>
@@ -96,6 +78,24 @@
       </output>
     </operation>
     <operation name="modificarPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPedidos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPedido">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

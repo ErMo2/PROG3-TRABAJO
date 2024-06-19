@@ -36,8 +36,8 @@ public class ReportesFrontWS {
     /**
      * This is a sample web service operation
      */
+    
     @WebMethod(operationName = "generarReporteProductosConsumidos")
-
     public byte[] generarReporteProductosConsumidos() {
 
         byte[] reporte = null;

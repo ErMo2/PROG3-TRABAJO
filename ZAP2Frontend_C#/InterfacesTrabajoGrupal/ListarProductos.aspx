@@ -18,7 +18,10 @@
             <asp:LinkButton ID="lbRegistrarProducto" runat="server" CssClass="btn btn-success"
                 Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Producto" OnClick="lbRegistrarProducto_Click" />
         </div>
-
+        <div class="text-end mb-3">
+            <asp:LinkButton ID="lbImprimirReporte" runat="server" CssClass="btn btn-success"
+                Text="<i class='fa-solid fa-plus pe-2'></i>Productos más vendidos" OnClick="lbimprimirReporte_Click" />
+        </div>
         <h3>Productos Perecibles</h3>
         <asp:GridView ID="gvProductosPerecibles" runat="server" AutoGenerateColumns="false" CssClass="table table-hover table-responsive" AllowPaging="true" OnPageIndexChanging="gvProductosPerecibles_PageIndexChanging" PageSize="5">
             <Columns>

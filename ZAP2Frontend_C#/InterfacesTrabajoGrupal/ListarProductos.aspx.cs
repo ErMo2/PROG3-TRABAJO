@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -21,6 +22,7 @@ namespace InterfacesTrabajoGrupal
         private BindingList<electrodomesticos> listaElectrodomesticos;
         private BindingList<ropa> listaRopa;
 
+        private ReportesFrontWSClient daoReportesFrontWSClient;
         protected void Page_Load(object sender, EventArgs e)
         {
             daoProdPerecible = new ProductoPerecibleWSClient();
@@ -176,6 +178,20 @@ namespace InterfacesTrabajoGrupal
             int idProducto = Int32.Parse(((LinkButton)sender).CommandArgument);
             Session["idRopaVisualizar"] = idProducto;
             Response.Redirect($"VerRopa.aspx?idRopaVisualizar={idProducto}");
+        }
+        protected void lbimprimirReporte_Click(object sender, EventArgs e)
+        {
+            daoReportesFrontWSClient = new ReportesFrontWSClient();
+            byte[] reporte = daoReportesFrontWSClient.generarReporteProductosConsumidos();
+            if (reporte != null && reporte.Length > 0)
+            {
+                Response.Clear();
+                Response.ContentType = "application/json";
+                Response.AddHeader("Content-Disposition", "inline; filename=ReporteMasVendidos");
+                Response.BinaryWrite(reporte);
+                Response.End();
+            }
+            
         }
     }
 }
