@@ -18,14 +18,14 @@
     <asp:GridView ID="gvBoletasDeVenta" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive"
         AllowPaging="True" PageSize="5" OnPageIndexChanging="gvBoletasDeVenta_PageIndexChanging">
         <Columns>
-            <asp:BoundField HeaderText="Id Documento" DataField="id_documento" />
+            <asp:BoundField HeaderText="Id Documento" DataField="id_doc_venta" />
             <asp:BoundField HeaderText="Fecha de Emisión" DataField="fecha_emision" />
             <asp:BoundField HeaderText="Monto Total" DataField="montoTotal" />
           
             <asp:TemplateField>
                 <HeaderTemplate>Acciones</HeaderTemplate>
                 <ItemTemplate>
-                    <asp:Button ID="btnVerBoleta" runat="server" Text="Ver" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-info btn-sm" OnClick="btnVerBoleta_Click" data-toggle="modal" data-target="#verBoletaModal" />
+                    <asp:Button ID="btnVerBoleta" runat="server" Text="Ver" CommandArgument='<%# Eval("id_doc_venta") %>' CssClass="btn btn-info btn-sm" OnClick="btnVerBoleta_Click"  />
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
