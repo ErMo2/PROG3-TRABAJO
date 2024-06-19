@@ -38,6 +38,7 @@ namespace InterfacesTrabajoGrupal
             String accion = Request.QueryString["accion"];
             if (accion != null && accion == "ver" && Session["idPedido"] != null)
             {
+                lblTitulo.Text = "Ver Pedido";
                 int idPedido = (int)Session["idPedido"];
                 pedido = daoPedido.buscarPedido(idPedido);
                 detallesPedido = new BindingList<detallePedido>(daoDetPedido.listarDetallePedidosXId(idPedido).ToList());
@@ -50,6 +51,7 @@ namespace InterfacesTrabajoGrupal
             }
             else
             {
+                lblTitulo.Text = "Registrar Pedido";
                 pedido = new pedido();
                 if (!IsPostBack)
                 {
