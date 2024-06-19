@@ -33,11 +33,11 @@ namespace InterfacesTrabajoGrupal
                 CargarMovimientosDeLote();
                 CargarLotes();
 
-                lblTitulo.Text = "Registrar Almacen";
+                lblTituloAlmacenes.Text = "Registrar Almacen";
 
                 if (Request.QueryString["id"] != null)
                 {
-                    lblTitulo.Text = "Modificar Almacen";
+                    lblTituloAlmacenes.Text = "Modificar Almacen";
                     int idAlmacen = int.Parse(Request.QueryString["id"]);
                     CargarDatosAlmacen(idAlmacen);
                 }

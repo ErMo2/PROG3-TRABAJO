@@ -18,7 +18,7 @@
             <div class="card">
 
                 <div class="card-header">
-                    <h2><asp:Label ID="lblTitulo" runat="server" Text="Label"></asp:Label></h2>
+                    <h2><asp:Label ID="lblTituloAlmacenes" runat="server" Text="Label"></asp:Label></h2>
                 </div>
 
                 <hr />
