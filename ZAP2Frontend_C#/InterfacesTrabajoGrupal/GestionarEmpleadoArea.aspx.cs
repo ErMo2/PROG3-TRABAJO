@@ -30,8 +30,11 @@ namespace InterfacesTrabajoGrupal
                 {
                     CargarEmpleadoArea(idEmpleadoArea);
                 }
-                cargarAreasXSucursales();
-                CargarSupervisoresXArea();
+                else
+                {
+                    cargarAreasXSucursales();
+                    CargarSupervisoresXArea();
+                }
             }
         }
         private void cargarAreasXSucursales()
@@ -88,7 +91,25 @@ namespace InterfacesTrabajoGrupal
                     rbEmpacador.Checked = true;
                 else
                     rbConsultor.Checked = true;
-                //txtIdSupervisor.Text = empleado.supervisor.id_Persona.ToString();
+                /*
+                BindingList<area> cargar_area = new BindingList<area>();
+                cargar_area.Add(empleado.area);
+                ddlAreaXSucursal.DataSource = cargar_area;
+                ddlAreaXSucursal.DataTextField = "nombre";
+                ddlAreaXSucursal.DataValueField = "idArea";
+                ddlAreaXSucursal.DataBind();
+                */
+
+                supervisor = new supervisor();
+                daoSupervisor = new SupervisorWSClient();
+                supervisor = daoSupervisor.buscarSupervisor(empleado.supervisor.id_Persona);
+                BindingList<supervisor> cargar_supervisor = new BindingList<supervisor>();
+                supervisor.nombre = supervisor.nombre + " " + supervisor.apellido_paterno + " " + supervisor.apellido_materno;
+                cargar_supervisor.Add(supervisor);
+                ddlSupervisor.DataSource = cargar_supervisor;
+                ddlSupervisor.DataTextField = "nombre";
+                ddlSupervisor.DataValueField = "id_Persona";
+                ddlSupervisor.DataBind();
             }
 
         }
@@ -140,7 +161,7 @@ namespace InterfacesTrabajoGrupal
             }
             empleado.tipoContratoSpecified = true;
             area area_ = new area();
-            area_.idArea = 1;
+            area_.idArea = int.Parse(ddlAreaXSucursal.SelectedValue);
             empleado.area = area_;
             if (rbEmpacador.Checked == true)
                 empleado.puesto = tipoPuesto.Empacador;
@@ -148,10 +169,9 @@ namespace InterfacesTrabajoGrupal
                 empleado.puesto = tipoPuesto.Consultor;
             empleado.puestoSpecified = true;
             supervisor superv = new supervisor();
-            superv.idEmpleado = 1;
+            superv.idEmpleado = int.Parse(ddlSupervisor.SelectedValue);
+            superv.id_Persona = int.Parse(ddlSupervisor.SelectedValue);
             empleado.supervisor = superv;
-            //empleado.supervisor.id_Persona = int.Parse(txtIdSupervisor.Text);
-
             if (empleado.id_Persona > 0)
             {
                 resultado = daoEmpleado.modificarEmpleadoDeArea(empleado);

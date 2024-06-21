@@ -10,14 +10,12 @@
   <xs:element name="listarAlmacenResponse" type="tns:listarAlmacenResponse" />
   <xs:element name="modificarAlmacen" type="tns:modificarAlmacen" />
   <xs:element name="modificarAlmacenResponse" type="tns:modificarAlmacenResponse" />
-  <xs:complexType name="buscarAlmacen">
-    <xs:sequence>
-      <xs:element name="idAlmacen" type="xs:int" />
-    </xs:sequence>
+  <xs:complexType name="listarAlmacen">
+    <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="buscarAlmacenResponse">
+  <xs:complexType name="listarAlmacenResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:almacen" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="almacen">
@@ -63,6 +61,7 @@
       <xs:element name="activo" type="xs:int" />
       <xs:element name="cantidadComprada" type="xs:int" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element name="idProducto" type="xs:int" />
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -105,17 +104,20 @@
   <xs:complexType name="area">
     <xs:sequence>
       <xs:element name="idArea" type="xs:int" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="productos" nillable="true" type="tns:producto" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarAlmacen">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarAlmacenResponse">
+  <xs:complexType name="buscarAlmacen">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
+      <xs:element name="idAlmacen" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarAlmacenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarAlmacen">

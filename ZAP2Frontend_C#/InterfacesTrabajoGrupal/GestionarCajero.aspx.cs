@@ -87,16 +87,14 @@ namespace InterfacesTrabajoGrupal
                     else
                         rbContratoEspecial.Checked = true;
                 }
-                /*
-                area = new area();
-                daoArea = new AreaWSClient();
-                area = daoArea.buscarArea(empleado.area.idArea);
+                
                 BindingList<area> cargar_area = new BindingList<area>();
-                cargar_area.Add(area);
+                cargar_area.Add(empleado.area);
                 ddlAreaXSucursal.DataSource = cargar_area;
                 ddlAreaXSucursal.DataTextField = "nombre";
+                ddlAreaXSucursal.DataValueField = "idArea";
                 ddlAreaXSucursal.DataBind();
-                */
+                
 
                 supervisor = new supervisor();
                 daoSupervisor = new SupervisorWSClient();
@@ -106,6 +104,7 @@ namespace InterfacesTrabajoGrupal
                 cargar_supervisor.Add(supervisor);
                 ddlSupervisor.DataSource = cargar_supervisor;
                 ddlSupervisor.DataTextField = "nombre";
+                ddlSupervisor.DataValueField = "id_Persona";
                 ddlSupervisor.DataBind();
             }
 
@@ -163,8 +162,8 @@ namespace InterfacesTrabajoGrupal
             cajero.numeroCaja = 0;
             cajero.cantidadCaja = 0;
             supervisor superv = new supervisor();
-            superv.idEmpleado = int.Parse(ddlSupervisor.DataValueField);
-            superv.id_Persona = int.Parse(ddlSupervisor.DataValueField);
+            superv.idEmpleado = int.Parse(ddlSupervisor.SelectedValue);
+            superv.id_Persona = int.Parse(ddlSupervisor.SelectedValue);
             cajero.supervisor = superv;
             if (cajero.id_Persona > 0)
             {

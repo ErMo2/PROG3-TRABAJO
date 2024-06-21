@@ -5,6 +5,18 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/AreaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+  <message name="ListarProductosDelArea">
+    <part name="parameters" element="tns:ListarProductosDelArea" />
+  </message>
+  <message name="ListarProductosDelAreaResponse">
+    <part name="parameters" element="tns:ListarProductosDelAreaResponse" />
+  </message>
+  <message name="listarAreaConSucursales">
+    <part name="parameters" element="tns:listarAreaConSucursales" />
+  </message>
+  <message name="listarAreaConSucursalesResponse">
+    <part name="parameters" element="tns:listarAreaConSucursalesResponse" />
+  </message>
   <message name="insertarArea">
     <part name="parameters" element="tns:insertarArea" />
   </message>
@@ -35,13 +47,15 @@
   <message name="buscarAreaResponse">
     <part name="parameters" element="tns:buscarAreaResponse" />
   </message>
-  <message name="listarAreaConSucursales">
-    <part name="parameters" element="tns:listarAreaConSucursales" />
-  </message>
-  <message name="listarAreaConSucursalesResponse">
-    <part name="parameters" element="tns:listarAreaConSucursalesResponse" />
-  </message>
   <portType name="AreaWS">
+    <operation name="ListarProductosDelArea">
+      <input wsam:Action="ZAP2WS/AreaWS/ListarProductosDelAreaRequest" message="tns:ListarProductosDelArea" />
+      <output wsam:Action="ZAP2WS/AreaWS/ListarProductosDelAreaResponse" message="tns:ListarProductosDelAreaResponse" />
+    </operation>
+    <operation name="listarAreaConSucursales">
+      <input wsam:Action="ZAP2WS/AreaWS/listarAreaConSucursalesRequest" message="tns:listarAreaConSucursales" />
+      <output wsam:Action="ZAP2WS/AreaWS/listarAreaConSucursalesResponse" message="tns:listarAreaConSucursalesResponse" />
+    </operation>
     <operation name="insertarArea">
       <input wsam:Action="ZAP2WS/AreaWS/insertarAreaRequest" message="tns:insertarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/insertarAreaResponse" message="tns:insertarAreaResponse" />
@@ -62,13 +76,27 @@
       <input wsam:Action="ZAP2WS/AreaWS/buscarAreaRequest" message="tns:buscarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/buscarAreaResponse" message="tns:buscarAreaResponse" />
     </operation>
-    <operation name="listarAreaConSucursales">
-      <input wsam:Action="ZAP2WS/AreaWS/listarAreaConSucursalesRequest" message="tns:listarAreaConSucursales" />
-      <output wsam:Action="ZAP2WS/AreaWS/listarAreaConSucursalesResponse" message="tns:listarAreaConSucursalesResponse" />
-    </operation>
   </portType>
   <binding name="AreaWSPortBinding" type="tns:AreaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ListarProductosDelArea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAreaConSucursales">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarArea">
       <soap:operation soapAction="" />
       <input>
@@ -106,15 +134,6 @@
       </output>
     </operation>
     <operation name="buscarArea">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarAreaConSucursales">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -100,6 +100,7 @@
   <xs:complexType name="area">
     <xs:sequence>
       <xs:element name="idArea" type="xs:int" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="productos" nillable="true" type="tns:producto" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
@@ -110,6 +111,7 @@
       <xs:element name="activo" type="xs:int" />
       <xs:element name="cantidadComprada" type="xs:int" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element name="idProducto" type="xs:int" />
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -265,22 +267,22 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarFacturaVenta">
-    <xs:sequence>
-      <xs:element name="idFacturaVenta" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarFacturaVentaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarFacturaVenta">
     <xs:sequence>
       <xs:element minOccurs="0" name="facturaVenta" type="tns:facturaVenta" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarFacturaVentaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVenta">
+    <xs:sequence>
+      <xs:element name="idFacturaVenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFacturaVentaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -295,9 +297,9 @@
   </xs:complexType>
   <xs:simpleType name="tipoEntidad">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Corporacion" />
+      <xs:enumeration value="Corporación" />
       <xs:enumeration value="Asociación" />
-      <xs:enumeration value="Fundacion" />
+      <xs:enumeration value="Fundación" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="tipoDocumento">

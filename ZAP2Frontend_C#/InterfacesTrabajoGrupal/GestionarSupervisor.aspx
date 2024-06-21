@@ -140,6 +140,14 @@
                 </div>
             </div>
         </div>
+
+        <div class="mb-3 row">
+            <asp:Label ID="lblAreaXSucursal" runat="server" Text="Area:" CssClass="col-sm-2 col-form-label" />
+            <div class="col-sm-8">
+                <asp:DropDownList ID="ddlAreaXSucursal" runat="server" CssClass="form-control" AutoPostBack="true">
+                </asp:DropDownList>
+            </div>
+        </div>
         <hr />
 
         <hr />
