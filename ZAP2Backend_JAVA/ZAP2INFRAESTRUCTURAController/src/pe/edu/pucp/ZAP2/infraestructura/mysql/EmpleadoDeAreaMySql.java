@@ -219,7 +219,10 @@ public class EmpleadoDeAreaMySql implements EmpleadoDeAreaDao{
                 supervisor.setIdEmpleado(rs.getInt("fid_supervisor"));
                 supervisor.setId_Persona(rs.getInt("fid_supervisor"));
                 empleado.setSupervisor(supervisor);
-                
+                Area area = new Area();
+                area.setIdArea(rs.getInt("fid_area"));
+                area.setNombre(rs.getString("nombre_Area"));
+                empleado.setArea(area);
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
