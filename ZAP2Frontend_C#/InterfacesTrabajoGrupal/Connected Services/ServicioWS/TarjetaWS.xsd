@@ -10,9 +10,12 @@
   <xs:element name="listarTarjetaResponse" type="tns:listarTarjetaResponse" />
   <xs:element name="modificarTarjeta" type="tns:modificarTarjeta" />
   <xs:element name="modificarTarjetaResponse" type="tns:modificarTarjetaResponse" />
-  <xs:complexType name="insertarTarjeta">
+  <xs:complexType name="listarTarjeta">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTarjetaResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="tarjeta" type="tns:tarjeta" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarjeta" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="tarjeta">
@@ -29,17 +32,14 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="insertarTarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tarjeta" type="tns:tarjeta" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarTarjetaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTarjeta">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarTarjetaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarjeta" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarTarjeta">
@@ -52,16 +52,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="buscarTarjeta">
-    <xs:sequence>
-      <xs:element name="idTarjeta" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="buscarTarjetaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:tarjeta" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="eliminarTarjeta">
     <xs:sequence>
       <xs:element name="idTarjeta" type="xs:int" />
@@ -70,6 +60,16 @@
   <xs:complexType name="eliminarTarjetaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarTarjeta">
+    <xs:sequence>
+      <xs:element name="idTarjeta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarTarjetaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tarjeta" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoTarjeta">

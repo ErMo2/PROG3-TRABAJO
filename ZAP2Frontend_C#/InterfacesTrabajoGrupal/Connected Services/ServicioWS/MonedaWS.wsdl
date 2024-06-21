@@ -23,17 +23,17 @@
   <message name="buscarMonedaResponse">
     <part name="parameters" element="tns:buscarMonedaResponse" />
   </message>
-  <message name="insertarMoneda">
-    <part name="parameters" element="tns:insertarMoneda" />
-  </message>
-  <message name="insertarMonedaResponse">
-    <part name="parameters" element="tns:insertarMonedaResponse" />
-  </message>
   <message name="listarMoneda">
     <part name="parameters" element="tns:listarMoneda" />
   </message>
   <message name="listarMonedaResponse">
     <part name="parameters" element="tns:listarMonedaResponse" />
+  </message>
+  <message name="insertarMoneda">
+    <part name="parameters" element="tns:insertarMoneda" />
+  </message>
+  <message name="insertarMonedaResponse">
+    <part name="parameters" element="tns:insertarMonedaResponse" />
   </message>
   <portType name="MonedaWS">
     <operation name="eliminarMoneda">
@@ -48,13 +48,13 @@
       <input wsam:Action="ZAP2WS/MonedaWS/buscarMonedaRequest" message="tns:buscarMoneda" />
       <output wsam:Action="ZAP2WS/MonedaWS/buscarMonedaResponse" message="tns:buscarMonedaResponse" />
     </operation>
-    <operation name="insertarMoneda">
-      <input wsam:Action="ZAP2WS/MonedaWS/insertarMonedaRequest" message="tns:insertarMoneda" />
-      <output wsam:Action="ZAP2WS/MonedaWS/insertarMonedaResponse" message="tns:insertarMonedaResponse" />
-    </operation>
     <operation name="listarMoneda">
       <input wsam:Action="ZAP2WS/MonedaWS/listarMonedaRequest" message="tns:listarMoneda" />
       <output wsam:Action="ZAP2WS/MonedaWS/listarMonedaResponse" message="tns:listarMonedaResponse" />
+    </operation>
+    <operation name="insertarMoneda">
+      <input wsam:Action="ZAP2WS/MonedaWS/insertarMonedaRequest" message="tns:insertarMoneda" />
+      <output wsam:Action="ZAP2WS/MonedaWS/insertarMonedaResponse" message="tns:insertarMonedaResponse" />
     </operation>
   </portType>
   <binding name="MonedaWSPortBinding" type="tns:MonedaWS">
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarMoneda">
+    <operation name="listarMoneda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarMoneda">
+    <operation name="insertarMoneda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

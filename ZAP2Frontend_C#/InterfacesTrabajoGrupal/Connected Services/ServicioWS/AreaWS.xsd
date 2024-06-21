@@ -7,6 +7,8 @@
   <xs:element name="insertarArea" type="tns:insertarArea" />
   <xs:element name="insertarAreaResponse" type="tns:insertarAreaResponse" />
   <xs:element name="listarArea" type="tns:listarArea" />
+  <xs:element name="listarAreaConSucursales" type="tns:listarAreaConSucursales" />
+  <xs:element name="listarAreaConSucursalesResponse" type="tns:listarAreaConSucursalesResponse" />
   <xs:element name="listarAreaResponse" type="tns:listarAreaResponse" />
   <xs:element name="modificarArea" type="tns:modificarArea" />
   <xs:element name="modificarAreaResponse" type="tns:modificarAreaResponse" />
@@ -144,6 +146,14 @@
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarAreaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:area" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAreaConSucursales">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAreaConSucursalesResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:area" />
     </xs:sequence>

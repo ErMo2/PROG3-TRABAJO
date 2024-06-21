@@ -312,22 +312,40 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbContratoEspecial;
 
         /// <summary>
-        /// Control lblIdSupervisor.
+        /// Control lblAreaXSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdSupervisor;
+        protected global::System.Web.UI.WebControls.Label lblAreaXSucursal;
 
         /// <summary>
-        /// Control txtIdSupervisor.
+        /// Control ddlAreaXSucursal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdSupervisor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAreaXSucursal;
+
+        /// <summary>
+        /// Control Label2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+
+        /// <summary>
+        /// Control ddlSupervisor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSupervisor;
 
         /// <summary>
         /// Control btnRegresar.

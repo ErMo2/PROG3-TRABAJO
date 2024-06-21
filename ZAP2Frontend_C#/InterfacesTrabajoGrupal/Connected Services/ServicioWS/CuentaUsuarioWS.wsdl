@@ -5,6 +5,18 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/CuentaUsuarioWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+  <message name="VerificarCuenta">
+    <part name="parameters" element="tns:VerificarCuenta" />
+  </message>
+  <message name="VerificarCuentaResponse">
+    <part name="parameters" element="tns:VerificarCuentaResponse" />
+  </message>
+  <message name="modificarCuentaUsuario">
+    <part name="parameters" element="tns:modificarCuentaUsuario" />
+  </message>
+  <message name="modificarCuentaUsuarioResponse">
+    <part name="parameters" element="tns:modificarCuentaUsuarioResponse" />
+  </message>
   <message name="insertarCuentaUsuario">
     <part name="parameters" element="tns:insertarCuentaUsuario" />
   </message>
@@ -17,25 +29,21 @@
   <message name="listarCuentaUsuariosResponse">
     <part name="parameters" element="tns:listarCuentaUsuariosResponse" />
   </message>
-  <message name="modificarCuentaUsuario">
-    <part name="parameters" element="tns:modificarCuentaUsuario" />
-  </message>
-  <message name="modificarCuentaUsuarioResponse">
-    <part name="parameters" element="tns:modificarCuentaUsuarioResponse" />
-  </message>
   <message name="eliminarCuentaUsuario">
     <part name="parameters" element="tns:eliminarCuentaUsuario" />
   </message>
   <message name="eliminarCuentaUsuarioResponse">
     <part name="parameters" element="tns:eliminarCuentaUsuarioResponse" />
   </message>
-  <message name="VerificarCuenta">
-    <part name="parameters" element="tns:VerificarCuenta" />
-  </message>
-  <message name="VerificarCuentaResponse">
-    <part name="parameters" element="tns:VerificarCuentaResponse" />
-  </message>
   <portType name="CuentaUsuarioWS">
+    <operation name="VerificarCuenta">
+      <input wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest" message="tns:VerificarCuenta" />
+      <output wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse" message="tns:VerificarCuentaResponse" />
+    </operation>
+    <operation name="modificarCuentaUsuario">
+      <input wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest" message="tns:modificarCuentaUsuario" />
+      <output wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse" message="tns:modificarCuentaUsuarioResponse" />
+    </operation>
     <operation name="insertarCuentaUsuario">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioRequest" message="tns:insertarCuentaUsuario" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/insertarCuentaUsuarioResponse" message="tns:insertarCuentaUsuarioResponse" />
@@ -44,21 +52,31 @@
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosRequest" message="tns:listarCuentaUsuarios" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosResponse" message="tns:listarCuentaUsuariosResponse" />
     </operation>
-    <operation name="modificarCuentaUsuario">
-      <input wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioRequest" message="tns:modificarCuentaUsuario" />
-      <output wsam:Action="ZAP2WS/CuentaUsuarioWS/modificarCuentaUsuarioResponse" message="tns:modificarCuentaUsuarioResponse" />
-    </operation>
     <operation name="eliminarCuentaUsuario">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioRequest" message="tns:eliminarCuentaUsuario" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioResponse" message="tns:eliminarCuentaUsuarioResponse" />
     </operation>
-    <operation name="VerificarCuenta">
-      <input wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest" message="tns:VerificarCuenta" />
-      <output wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse" message="tns:VerificarCuentaResponse" />
-    </operation>
   </portType>
   <binding name="CuentaUsuarioWSPortBinding" type="tns:CuentaUsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="VerificarCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarCuentaUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarCuentaUsuario">
       <soap:operation soapAction="" />
       <input>
@@ -77,25 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCuentaUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="eliminarCuentaUsuario">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="VerificarCuenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

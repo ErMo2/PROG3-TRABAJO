@@ -156,11 +156,21 @@
         </div>
 
         <div class="mb-3 row">
-            <asp:Label ID="lblIdSupervisor" runat="server" Text="Supervisor:" CssClass="col-sm-2 col-form-label" />
+            <asp:Label ID="lblAreaXSucursal" runat="server" Text="Area:" CssClass="col-sm-2 col-form-label" />
             <div class="col-sm-8">
-                <asp:TextBox ID="txtIdSupervisor" runat="server" CssClass="form-control" />
+                <asp:DropDownList ID="ddlAreaXSucursal" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSupervisor_SelectedIndexChanged">
+                </asp:DropDownList>
             </div>
         </div>
+
+        <div class="mb-3 row">
+            <asp:Label ID="lblIdSupervisor" runat="server" Text="Supervisor:" CssClass="col-sm-2 col-form-label" />
+            <div class="col-sm-8">
+                <asp:DropDownList ID="ddlSupervisor" runat="server" CssClass="form-control">
+                </asp:DropDownList>
+            </div>
+        </div>
+
         <hr />
 
         <hr />

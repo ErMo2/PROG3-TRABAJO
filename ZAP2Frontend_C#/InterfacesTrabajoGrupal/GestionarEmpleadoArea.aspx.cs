@@ -1,6 +1,7 @@
 ﻿using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,14 @@ namespace InterfacesTrabajoGrupal
     {
         private EmpleadoDeAreaWSClient daoEmpleado;
         private empleadoDeArea empleado;
+
+        private AreaWSClient daoArea;
+        private area area;
+        private BindingList<area> listaAreaxSucursales;
+
+        private SupervisorWSClient daoSupervisor;
+        private supervisor supervisor;
+        private BindingList<supervisor> listarSupervisoresXSucursal;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -21,7 +30,19 @@ namespace InterfacesTrabajoGrupal
                 {
                     CargarEmpleadoArea(idEmpleadoArea);
                 }
+                cargarAreasXSucursales();
+                CargarSupervisoresXArea();
             }
+        }
+        private void cargarAreasXSucursales()
+        {
+            daoArea = new AreaWSClient();
+            area[] arregloAreas = daoArea.listarAreaConSucursales();
+            listaAreaxSucursales = new BindingList<area>(arregloAreas);
+            ddlAreaXSucursal.DataSource = listaAreaxSucursales;
+            ddlAreaXSucursal.DataTextField = "nombre";
+            ddlAreaXSucursal.DataValueField = "idArea";
+            ddlAreaXSucursal.DataBind();
         }
         private void CargarEmpleadoArea(int idEmpleadoArea)
         {
@@ -67,7 +88,7 @@ namespace InterfacesTrabajoGrupal
                     rbEmpacador.Checked = true;
                 else
                     rbConsultor.Checked = true;
-                txtIdSupervisor.Text = empleado.supervisor.id_Persona.ToString();
+                //txtIdSupervisor.Text = empleado.supervisor.id_Persona.ToString();
             }
 
         }
@@ -129,7 +150,7 @@ namespace InterfacesTrabajoGrupal
             supervisor superv = new supervisor();
             superv.idEmpleado = 1;
             empleado.supervisor = superv;
-            empleado.supervisor.id_Persona = int.Parse(txtIdSupervisor.Text);
+            //empleado.supervisor.id_Persona = int.Parse(txtIdSupervisor.Text);
 
             if (empleado.id_Persona > 0)
             {
@@ -144,6 +165,32 @@ namespace InterfacesTrabajoGrupal
                 Response.Redirect("ListarEmpleados.aspx");
                 Response.Write("Se ha registrado con exito...");
             }
+        }
+        protected void CargarSupervisoresXArea()
+        {
+            area = new area();
+            daoArea = new AreaWSClient();
+            int idArea = int.Parse(ddlAreaXSucursal.SelectedValue);
+            area = daoArea.buscarArea(idArea);
+            int idSucursal = area.sucursal.id_sucursal;
+            daoSupervisor = new SupervisorWSClient();
+            supervisor[] arregloSupervisores = daoSupervisor.listarSupervisoresDeUnaSucursal(idSucursal);
+
+            ddlSupervisor.Items.Clear();
+
+            if (arregloSupervisores != null)
+            {
+                listarSupervisoresXSucursal = new BindingList<supervisor>(arregloSupervisores);
+
+                ddlSupervisor.DataSource = listarSupervisoresXSucursal;
+                ddlSupervisor.DataTextField = "nombre";
+                
+                ddlSupervisor.DataBind();
+            }
+        }
+        protected void ddlSupervisor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarSupervisoresXArea();
         }
     }
 }

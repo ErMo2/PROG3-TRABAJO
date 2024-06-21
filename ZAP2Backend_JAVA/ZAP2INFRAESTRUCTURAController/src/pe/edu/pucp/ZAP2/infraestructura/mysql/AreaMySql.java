@@ -152,7 +152,7 @@ public class AreaMySql implements AreaDao{
                 Area area = new Area();
                 Sucursal sucursal = new Sucursal();
                 area.setIdArea(rs.getInt("id_area"));
-                sucursal.setId_sucursal(rs.getInt("id_area"));
+                sucursal.setId_sucursal(rs.getInt("id_sucursal"));
                 area.setSucursal(sucursal);
                 area.setNombre(rs.getString("nombre_Area"));
                 
