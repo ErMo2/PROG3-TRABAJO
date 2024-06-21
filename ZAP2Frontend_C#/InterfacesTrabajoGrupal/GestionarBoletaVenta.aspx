@@ -50,7 +50,19 @@
                             <asp:DropDownList ID="ddlSucursales" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursales_SelectedIndexChanged" />
                         </div>
                     </div>
-
+                     <div class="mb-3 row">
+                        <asp:Label ID="lblCajero" runat="server" Text="Cajero:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="ddlCajeros" runat="server" CssClass="form-control">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                     <asp:Label ID="lblMoneda" runat="server" Text="Moneda:" CssClass="col-sm-2 col-form-label" />
+                     <div class="col-sm-6">
+                         <asp:DropDownList ID="ddlMonedas" runat="server" CssClass="form-control" />
+                     </div>
+                 </div>
                     <div class="mb-3 row">
                         <asp:Label ID="lblProducto" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-6">

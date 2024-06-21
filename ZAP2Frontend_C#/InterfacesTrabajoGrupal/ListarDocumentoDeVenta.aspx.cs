@@ -41,7 +41,7 @@ namespace InterfacesTrabajoGrupal
             facturaVenta[] arregloFacturas = daoFacturaVenta.listarFacturaVenta();
             if (arregloFacturas != null)
                 listaFacturasDeVenta = new BindingList<facturaVenta>(arregloFacturas);
-           
+
             gvFacturasDeVenta.DataSource = listaFacturasDeVenta;
             gvFacturasDeVenta.DataBind();
         }
