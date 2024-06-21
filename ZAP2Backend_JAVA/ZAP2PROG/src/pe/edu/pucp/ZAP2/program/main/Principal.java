@@ -150,14 +150,14 @@ public class Principal {
         
         /*======================================================================*/
         /*================================ Area ================================*/
-        /*======================================================================*/
-        AreaDao daoArea = new AreaMySql();
-        Area area = new Area();
-        area.setIdArea(1);
-        Producto producto = new  Producto();
-        producto.setIdProducto(89);
-        daoArea.insertProductoArea(area, producto);
-        /*######### Insertar ########*/
+//        /*======================================================================*/
+//        AreaDao daoArea = new AreaMySql();
+//        Area area = new Area();
+//        area.setIdArea(1);
+//        Producto producto = new  Producto();
+//        producto.setIdProducto(89);
+//        daoArea.insertProductoArea(area, producto);
+//        /*######### Insertar ########*/
 //        Area areaB = new Area(1, "Zona de Electrodomesticos",sucursal, null);
 //        daoArea.insertar(areaB);
         
@@ -755,12 +755,13 @@ public class Principal {
         /*======================================================================*/
         /*=========================== PersonaJuridica ==========================*/
         /*======================================================================*/
-//        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociación,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
-//                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
-//        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
+        PersonaJuridica persona_juridica = new PersonaJuridica("Bodega Pepitos",
+                TipoEntidad.Fundación,3403333,"Av ayacucho 3334","000010024",1,"Jose","Mendoza","Vega",12345,"Bpepito@gmail.com",
+                TipoDocumento.DNI,93443353);
+        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
 
         /*######### Insertar ########*/
-//        daopersona_juridica.insertar(persona_juridica);
+        daopersona_juridica.insertar(persona_juridica);
 
         /*######## Modificar ########*/
 //        persona_juridica.setDireccionLegal("CAMBIO");

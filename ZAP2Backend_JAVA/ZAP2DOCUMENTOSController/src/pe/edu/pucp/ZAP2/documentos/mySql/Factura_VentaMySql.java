@@ -165,6 +165,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
                 pj.setNumIdentificadorFiscal(rs.getInt("numIdentificadorFiscal"));
                 pj.setDireccionLegal(rs.getString("direccionLegal"));
                 pj.setRUC(rs.getString("RUC"));
+                pj.setNombreLegal(rs.getString("nombre_cliente"));
                 factVent.setPersonaJuridica(pj);
                 
                 Cajero cajero = new Cajero(){};
@@ -226,7 +227,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
                 
                 facturasVentas.add(factVent);
                 
-                facturasVentas.add(factVent);
+                
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());

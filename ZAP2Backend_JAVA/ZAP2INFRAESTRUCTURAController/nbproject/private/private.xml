@@ -3,19 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/AreaMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ProductosParaElCuidadoPersonalYDelHogarMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/AlmacenMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ClienteMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/MovimientoLoteMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ElectrodomesticosMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/SucursalMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ProductoPrecioMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/LoteMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/RopaMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/CuentaUsuarioMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/EmpleadoDeAreaMySql.java</file>
-            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/ProductoPerecibleMySql.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/SupervisorMySql.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/mysql/AreaMySql.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/dao/SupervisorDao.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/GitHub/PROG3-TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAController/src/pe/edu/pucp/ZAP2/infraestructura/dao/AreaDao.java</file>
         </group>
     </open-files>
 </project-private>
