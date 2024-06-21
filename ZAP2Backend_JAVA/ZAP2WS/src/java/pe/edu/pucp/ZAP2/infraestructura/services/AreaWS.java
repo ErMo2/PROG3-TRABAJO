@@ -91,4 +91,16 @@ public class AreaWS {
         }
         return areas;
     }
+    
+    @WebMethod(operationName = "ListarProductosDelArea")
+    public Area ListarProductosDelArea(@WebParam(name = "idArea") int id) {
+        Area dato = null;
+        try{
+            daoArea = new AreaMySql();
+            dato = daoArea.ListarProductosDelArea(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

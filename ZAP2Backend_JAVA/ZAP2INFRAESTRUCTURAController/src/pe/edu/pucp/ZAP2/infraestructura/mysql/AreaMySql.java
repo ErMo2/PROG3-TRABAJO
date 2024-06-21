@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
+import pe.edu.pucp.ZAP2.infraestructura.model.ProductoPrecio;
 import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
 
 /**
@@ -152,7 +154,7 @@ public class AreaMySql implements AreaDao{
                 Area area = new Area();
                 Sucursal sucursal = new Sucursal();
                 area.setIdArea(rs.getInt("id_area"));
-                sucursal.setId_sucursal(rs.getInt("id_area"));
+                sucursal.setId_sucursal(rs.getInt("id_sucursal"));
                 area.setSucursal(sucursal);
                 area.setNombre(rs.getString("nombre_Area"));
                 
@@ -165,6 +167,81 @@ public class AreaMySql implements AreaDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return areas;
+    }
+
+    @Override
+    public int insertProductoArea(Area area, Producto producto) {
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call INSERTAR_AREA_PRODUCTO"
+                    +"(?,?,?)}");
+            cs.registerOutParameter("_id_Out", java.sql.Types.INTEGER);
+            cs.setInt("_id_Producto", producto.getIdProducto());
+            cs.setInt("_id_Area",area.getIdArea());   
+            cs.executeUpdate();           
+            area.setIdAreaProducto(cs.getInt("_id_Out"));
+            resultado =  area.getIdAreaProducto();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    
+    }
+
+    @Override
+    public int eliminarAreaProducto(int idAreaProducto) {
+        
+        int resultado = 0;
+        try{
+            con = DBManager.getInstance().getConnection();
+            cs = con.prepareCall("{call  ELIMINAR_AREA_PRODUCTO(?)}");
+            cs.setInt("_id_AP",idAreaProducto);
+            resultado = cs.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(SQLException ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+
+    @Override
+    public Area ListarProductosDelArea(int idArea) {
+        Area area = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTO_AREA"
+                    +"(?)}");
+            cs.setInt("id_Area", idArea);
+            rs = cs.executeQuery();
+            area = new Area();
+            ArrayList<Producto> productos = new ArrayList();
+            while(rs.next()){
+                Producto producto = new Producto();
+                producto.setIdAreaProducto(rs.getInt("fid_producto"));
+                producto.setIdAreaProducto(rs.getInt("id_area_producto"));
+                producto.setNombre(rs.getString("Nombre_Descrip"));
+                ProductoPrecio productoPrecio = new  ProductoPrecio();
+                productoPrecio.setPrecio(rs.getDouble("precio"));
+                producto.setProdPrecio(productoPrecio);
+                productos.add(producto);
+                area.setNombre(rs.getString("nombre"));
+            }
+            
+            area.setProductos(productos);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }    
+        
+        return area;
+    
     }
     
 }

@@ -64,9 +64,9 @@ public class Factura_VentaMySql implements Factura_VentaDao{
             cs.setDouble("_total", facturaVenta.getTotal());
             
             cs.executeUpdate();
-            //facturaVenta.setId_doc_venta(cs.getInt("_id_boleta_venta"));
-            //facturaVenta.setId_documento(cs.getInt("_id_boleta_venta"));
-            //resultado = facturaVenta.getId_doc_venta();
+            facturaVenta.setId_doc_venta(cs.getInt("_id_factura_venta"));
+            facturaVenta.setId_documento(cs.getInt("_id_factura_venta"));
+            resultado = facturaVenta.getId_doc_venta();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
