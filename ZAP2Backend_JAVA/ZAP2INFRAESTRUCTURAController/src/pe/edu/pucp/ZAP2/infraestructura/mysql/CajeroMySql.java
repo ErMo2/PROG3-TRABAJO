@@ -225,8 +225,10 @@ public class CajeroMySql implements CajeroDao{
                 supervisor.setId_Persona(rs.getInt("fid_supervisor"));
                 cajero.setSupervisor(supervisor);
                 cajero.setNumeroCaja(rs.getInt("numeroCaja"));
-                
-                
+                Area area = new Area();
+                area.setIdArea(rs.getInt("fid_area"));
+                area.setNombre(rs.getString("nombre_Area"));
+                cajero.setArea(area);
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
