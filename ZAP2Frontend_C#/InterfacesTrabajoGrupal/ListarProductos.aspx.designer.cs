@@ -33,6 +33,24 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.LinkButton lbImprimirReporte;
 
         /// <summary>
+        /// Control txtNombreProdPerecible.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombreProdPerecible;
+
+        /// <summary>
+        /// Control lbBusquedaProdPerecible.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbBusquedaProdPerecible;
+
+        /// <summary>
         /// Control gvProductosPerecibles.
         /// </summary>
         /// <remarks>

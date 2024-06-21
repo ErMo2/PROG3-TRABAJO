@@ -23,6 +23,20 @@
                 Text="<i class='fa-solid fa-plus pe-2'></i>Productos más vendidos" OnClick="lbimprimirReporte_Click" />
         </div>
         <h3>Productos Perecibles</h3>
+        <div class="container row pb-3 pt-3">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <asp:Label CssClass="form-label" runat="server" Text="Ingresar nombre del producto:"></asp:Label>
+                </div>
+                <div class="col-sm-3">
+                    <asp:TextBox CssClass="form-control" ID="txtNombreProdPerecible" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-sm-2">
+                    <asp:LinkButton ID="lbBusquedaProdPerecible" runat="server" CssClass="btn btn-info"
+                        Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" OnClick="lbBusquedaProdPerecible_Click" />
+                </div>
+            </div>
+        </div>
         <asp:GridView ID="gvProductosPerecibles" runat="server" AutoGenerateColumns="false" CssClass="table table-hover table-responsive" AllowPaging="true" OnPageIndexChanging="gvProductosPerecibles_PageIndexChanging" PageSize="5">
             <Columns>
                 <asp:BoundField HeaderText="Id" DataField="idProducto" />
