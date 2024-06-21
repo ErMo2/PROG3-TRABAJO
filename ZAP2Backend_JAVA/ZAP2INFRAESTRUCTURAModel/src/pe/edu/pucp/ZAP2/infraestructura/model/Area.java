@@ -15,7 +15,7 @@ public class Area {
     private String nombre;
     private Sucursal sucursal;
     private ArrayList<Producto> productos;
-
+    private int idAreaProducto; //este id es para hacer mas facil el insertado, pero en teoria es el mismo de producto.java
     public Area() {
     }
 
@@ -61,6 +61,14 @@ public class Area {
     public void imprimir() {
         System.out.println("Area{" + "idArea=" + idArea + ", nombre=" + nombre 
                 + ", sucursal=" + sucursal + ", productos=" + productos + '}');
+    }
+
+    public int getIdAreaProducto() {
+        return idAreaProducto;
+    }
+
+    public void setIdAreaProducto(int idAreaProducto) {
+        this.idAreaProducto = idAreaProducto;
     }
     
 }
