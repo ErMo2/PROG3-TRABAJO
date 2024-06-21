@@ -225,9 +225,7 @@ public class Factura_VentaMySql implements Factura_VentaDao{
                 factVent.setTarjeta(tarjeta);
                 
                 facturasVentas.add(factVent);
-                
-                facturasVentas.add(factVent);
-            }
+                            }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{

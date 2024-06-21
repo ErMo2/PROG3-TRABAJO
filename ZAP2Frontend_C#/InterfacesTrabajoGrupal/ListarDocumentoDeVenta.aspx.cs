@@ -26,6 +26,7 @@ namespace InterfacesTrabajoGrupal
 
         private void CargarDatos()
         {
+            
             // Cargar Boletas de Venta
             daoBoletaDeVenta = new Boleta_VentaWSClient();
             boletaVenta[] arregloBoletas = daoBoletaDeVenta.listarBoletaVentaTodos();
@@ -40,7 +41,7 @@ namespace InterfacesTrabajoGrupal
             facturaVenta[] arregloFacturas = daoFacturaVenta.listarFacturaVenta();
             if (arregloFacturas != null)
                 listaFacturasDeVenta = new BindingList<facturaVenta>(arregloFacturas);
-
+           
             gvFacturasDeVenta.DataSource = listaFacturasDeVenta;
             gvFacturasDeVenta.DataBind();
         }
