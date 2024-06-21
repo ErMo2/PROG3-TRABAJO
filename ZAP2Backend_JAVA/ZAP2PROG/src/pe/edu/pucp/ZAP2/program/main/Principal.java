@@ -150,10 +150,14 @@ public class Principal {
         
         /*======================================================================*/
         /*================================ Area ================================*/
-        /*======================================================================*/
+//        /*======================================================================*/
 //        AreaDao daoArea = new AreaMySql();
-        
-        /*######### Insertar ########*/
+//        Area area = new Area();
+//        area.setIdArea(1);
+//        Producto producto = new  Producto();
+//        producto.setIdProducto(89);
+//        daoArea.insertProductoArea(area, producto);
+//        /*######### Insertar ########*/
 //        Area areaB = new Area(1, "Zona de Electrodomesticos",sucursal, null);
 //        daoArea.insertar(areaB);
         
@@ -171,6 +175,7 @@ public class Principal {
 //            System.out.println("ID: " + area.getIdArea() + " Nombre: " + area.getNombre() + "\n");
 //        }
         
+
         /*======================================================================*/
         /*============================== Almacen ===============================*/
         /*======================================================================*/
@@ -320,25 +325,25 @@ public class Principal {
         /*======================================================================*/
         /*============================== Pedido ================================*/
         /*======================================================================*/
-        PedidoDao daoPedido = new PedidoMySql();
-        
-        Producto producto = new ProductoPerecible();
-        producto.setIdProducto(2);
-        
-        Detalle_PedidoDao daoDetPed = new Detalle_PedidoMySql();
-        Detalle_Pedido detPed = new Detalle_Pedido();
-        detPed.setPrecioTotal(50);
-        detPed.setPrecioUnitario(10);
-        detPed.setProducto(producto);
-        detPed.setSubtotal(59);
-        
-        /*######### Insertar ########*/
-        Pedido pedido = new Pedido(5, 999, Estado_Pedido.EN_PROCESO, fecha2, 468.8, null);
-        //daoPedido.insertar(pedido);
-        
-        detPed.setPedido(pedido);
-        daoDetPed.insertar(detPed);
-        
+//        PedidoDao daoPedido = new PedidoMySql();
+//        
+//        Producto producto = new ProductoPerecible();
+//        producto.setIdProducto(2);
+//        
+//        Detalle_PedidoDao daoDetPed = new Detalle_PedidoMySql();
+//        Detalle_Pedido detPed = new Detalle_Pedido();
+//        detPed.setPrecioTotal(50);
+//        detPed.setPrecioUnitario(10);
+//        detPed.setProducto(producto);
+//        detPed.setSubtotal(59);
+//        
+//        /*######### Insertar ########*/
+////        Pedido pedido = new Pedido(5, 999, Estado_Pedido.EN_PROCESO, fecha2, 468.8, null);
+//        //daoPedido.insertar(pedido);
+//        
+//        detPed.setPedido(pedido);
+//        daoDetPed.insertar(detPed);
+//        
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
@@ -388,11 +393,15 @@ public class Principal {
         
         /*======================================================================*/
         /*=========================== ProductoPrecio ===========================*/
-        /*======================================================================*/
+//        /*======================================================================*/
+//        Sucursal sucursal = new Sucursal();
+//        sucursal.setId_sucursal(1);
+//        Producto producto = new Producto();
+//        producto.setIdProducto(89);
 //        ProductoPrecioDao daoProdPrecio = new ProductoPrecioMySql();
-        
-        /*######### Insertar ########*/
-//        ProductoPrecio prodPrecio = new ProductoPrecio(1, 15.5, 1, sucursal, null, producto);
+//        
+//        /*######### Insertar ########*/
+//        ProductoPrecio prodPrecio = new ProductoPrecio(1, 40.50, 1, sucursal, null, producto);
 //        daoProdPrecio.insertar(prodPrecio);
         
         /*######## Modificar ########*/
@@ -405,9 +414,9 @@ public class Principal {
         /*========================= ProductoPerecible ==========================*/
         /*======================================================================*/
 //        ProductoPerecibleDao daoProdPerec = new ProductoPerecibleMySql();
-        /*######### Insertar ########*/
-//        ProductoPerecible prodPerecible = new ProductoPerecible(fecha1, TipoProductoPerecible.DESPENSA, UnidadDeMedida.UNIDAD, 
-//                0, "Lata atún", "Lata Atún Florida En Trozos", null, 1, null);
+//        /*######### Insertar ########*/
+//        ProductoPerecible prodPerecible = new ProductoPerecible(fecha1, TipoProductoPerecible.Despensa, UnidadDeMedida.paquete, 
+//                0, "Keke Sabores", "Marmoleado", null, 1, null);
 //        daoProdPerec.insertar(prodPerecible);
         
         /*######## Modificar ########*/
@@ -743,14 +752,15 @@ public class Principal {
 //            System.out.println("ID: " + tarjetaL.getIdTarjeta() + " Cod Tarjeta: " + tarjetaL.getCodTarjeta());
 //        }
 
-        /*======================================================================*/
-        /*=========================== PersonaJuridica ==========================*/
-        /*======================================================================*/
-//        PersonaJuridica persona_juridica = new PersonaJuridica("CAMBIAR",TipoEntidad.Asociación,12223,"DIRECCION","123",1,"NOMBRE","APP","APM",12345,"EMAIL",
-//                                                                TipoDocumento.CARNET_EXTRANJERIA,1234);
+//        /*======================================================================*/
+//        /*=========================== PersonaJuridica ==========================*/
+//        /*======================================================================*/
+//        PersonaJuridica persona_juridica = new PersonaJuridica("Bodega Pepitos",
+//                TipoEntidad.Fundación,3403333,"Av ayacucho 3334","000010024",1,"Jose","Mendoza","Vega",12345,"Bpepito@gmail.com",
+//                TipoDocumento.DNI,93443353);
 //        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
-
-        /*######### Insertar ########*/
+//
+//        /*######### Insertar ########*/
 //        daopersona_juridica.insertar(persona_juridica);
 
         /*######## Modificar ########*/
@@ -770,18 +780,18 @@ public class Principal {
         /*======================================================================*/
         /*=============================== LineaDoc =============================*/
         /*======================================================================*/
-        ProductoPrecio producPrecio = new ProductoPrecio();
-        producPrecio.setIdProductoPrecio(71);
-        
-        Documento doc = new Documento();
-        doc.setId_documento(43);
-        
-        LineaDoc linea_doc = new LineaDoc(1,200,500,51,2,producPrecio,doc);
-        
-        LineaDocDao daoLineaDoc = new LineaDocMySql();
-
-        /*######### Insertar ########*/
-        daoLineaDoc.insertar(linea_doc);
+//        ProductoPrecio producPrecio = new ProductoPrecio();
+//        producPrecio.setIdProductoPrecio(71);
+//        
+//        Documento doc = new Documento();
+//        doc.setId_documento(43);
+//        
+//        LineaDoc linea_doc = new LineaDoc(1,200,500,51,2,producPrecio,doc);
+//        
+//        LineaDocDao daoLineaDoc = new LineaDocMySql();
+//
+//        /*######### Insertar ########*/
+//        daoLineaDoc.insertar(linea_doc);
 
         /*######## Modificar ########*/
 //        linea_doc.setCantidad(1);

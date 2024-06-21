@@ -6,6 +6,7 @@ package pe.edu.pucp.ZAP2.infraestructura.dao;
 
 import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
 
 /**
  *
@@ -17,4 +18,8 @@ public interface AreaDao {
     int eliminar(int idArea);
     ArrayList<Area> listarTodas();
     Area buscar(int id);
+    ArrayList<Area> listarTodaDeConSucursal();
+    int insertProductoArea(int idarea, int idproducto);
+    int eliminarAreaProducto(int idAreaProducto);
+    Area ListarProductosDelArea(int idArea);
 }
