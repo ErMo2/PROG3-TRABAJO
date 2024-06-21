@@ -106,7 +106,6 @@ public class AreaMySql implements AreaDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return areas;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
@@ -137,6 +136,35 @@ public class AreaMySql implements AreaDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }    
         return area;
+    }
+
+    @Override
+    public ArrayList<Area> listarTodaDeConSucursal() {
+        ArrayList<Area> areas =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_SUCURSALES_MAS_AREAS"
+                    +"( )}");
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Area area = new Area();
+                Sucursal sucursal = new Sucursal();
+                area.setIdArea(rs.getInt("id_area"));
+                sucursal.setId_sucursal(rs.getInt("id_area"));
+                area.setSucursal(sucursal);
+                area.setNombre(rs.getString("nombre_Area"));
+                
+                areas.add(area);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return areas;
     }
     
 }

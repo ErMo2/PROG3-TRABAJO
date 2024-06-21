@@ -76,4 +76,16 @@ public class SupervisorWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "listarSupervisoresDeUnaSucursal")
+    public ArrayList<Supervisor> listarSupervisoresDeUnaSucursal(@WebParam(name = "idSucursal") int id) {
+        ArrayList<Supervisor> supervisores = null;
+        try{
+            daoSupervisor = new SupervisorMySql();
+            supervisores = daoSupervisor.listarTodasDeUnaSucursal(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return supervisores;
+    }
 }

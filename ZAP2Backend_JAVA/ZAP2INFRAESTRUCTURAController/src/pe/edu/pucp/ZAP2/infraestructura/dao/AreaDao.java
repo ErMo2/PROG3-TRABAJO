@@ -17,4 +17,5 @@ public interface AreaDao {
     int eliminar(int idArea);
     ArrayList<Area> listarTodas();
     Area buscar(int id);
+    ArrayList<Area> listarTodaDeConSucursal();
 }
