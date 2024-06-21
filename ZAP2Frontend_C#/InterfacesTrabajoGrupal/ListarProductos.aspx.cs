@@ -23,6 +23,11 @@ namespace InterfacesTrabajoGrupal
         private BindingList<ropa> listaRopa;
 
         private ReportesFrontWSClient daoReportesFrontWSClient;
+
+        private BindingList<productoPerecible> productosPerecibles;
+        private BindingList<Electrodomestico> electrodomesticos;
+        private BindingList<productosParaElCuidadoPersonalYDelHogar> productosCuiPerYHogar;
+        private BindingList<ropa> productosRopa;
         protected void Page_Load(object sender, EventArgs e)
         {
             daoProdPerecible = new ProductoPerecibleWSClient();
@@ -192,6 +197,50 @@ namespace InterfacesTrabajoGrupal
                 Response.End();
             }
             
+        }
+
+        protected void lbBusquedaProdPerecible_Click(object sender, EventArgs e)
+        {
+            productoPerecible[] productosPerecibleArr = daoProdPerecible.listarProductosXnombre(txtNombreProdPerecible.Text);
+            if (productosPerecibleArr != null)
+            {
+                productosPerecibles = new BindingList<productoPerecible>(productosPerecibleArr);
+                gvProductosPerecibles.DataSource = productosPerecibles;
+                gvProductosPerecibles.DataBind();
+            }
+        }
+
+        protected void lbBusquedaElectrodomestico_Click(object sender, EventArgs e)
+        {
+            Electrodomestico[] ElectrodomesticosArr = daoElectrodomestico.listarProductosXnombre(txtNombreElectrodomestico.Text);
+            if (ElectrodomesticosArr != null)
+            {
+                electrodomesticos = new BindingList<Electrodomestico>(ElectrodomesticosArr);
+                gvElectrodomesticos.DataSource = electrodomesticos;
+                gvElectrodomesticos.DataBind();
+            }
+        }
+
+        protected void lbBusquedaProdLimpYHog_Click(object sender, EventArgs e)
+        {
+            productosParaElCuidadoPersonalYDelHogar[] productosCuidaoPerYHogarArr = daoProdCuiHog.listarProductosXnombre(txtNombreProdLimpiezaYHogar.Text);
+            if (productosCuidaoPerYHogarArr != null)
+            {
+                productosCuiPerYHogar = new BindingList<productosParaElCuidadoPersonalYDelHogar>(productosCuidaoPerYHogarArr);
+                gvLimpiezayHogar.DataSource = productosCuiPerYHogar;
+                gvLimpiezayHogar.DataBind();
+            }
+        }
+
+        protected void lbBusquedaRopa_Click(object sender, EventArgs e)
+        {
+            ropa[] ropaArr = daoRopa.listarProductosXnombre(txtNombreRopa.Text);
+            if (ropaArr != null)
+            {
+                productosRopa = new BindingList<ropa>(ropaArr);
+                gvRopa.DataSource = productosRopa;
+                gvRopa.DataBind();
+            }
         }
     }
 }

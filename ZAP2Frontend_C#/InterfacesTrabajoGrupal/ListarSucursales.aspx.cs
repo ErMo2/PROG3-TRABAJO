@@ -63,10 +63,5 @@ namespace InterfacesTrabajoGrupal
             // Aquí deberías llamar a tu lógica para obtener los datos y enlazarlos al GridView
             gvSucursales.DataBind();
         }
-
-        protected void lbBusquedaProdPerecible_Click(Object sender, EventArgs e)
-        {
-            
-        }
     }
 }
