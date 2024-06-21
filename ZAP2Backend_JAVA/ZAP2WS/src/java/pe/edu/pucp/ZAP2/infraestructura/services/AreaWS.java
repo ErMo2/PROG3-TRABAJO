@@ -103,4 +103,30 @@ public class AreaWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "insertarAreaProducto")
+    public int insertarAreaProducto(@WebParam(name = "Idarea") int Idarea,@WebParam(name = "IdProducto") int IdProducto) {
+        int resultado = 0;
+        try{
+            daoArea = new AreaMySql();
+            resultado = daoArea.insertProductoArea(Idarea,IdProducto);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "eliminarAreaProducto")
+    public int eliminarAreaProducto(@WebParam(name = "idAreaProducto") int idArea) {
+        int resultado = 0;
+        try{
+            daoArea = new AreaMySql();
+            resultado = daoArea.eliminarAreaProducto(idArea);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    
 }

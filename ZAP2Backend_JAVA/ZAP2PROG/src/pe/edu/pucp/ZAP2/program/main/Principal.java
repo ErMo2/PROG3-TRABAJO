@@ -752,16 +752,16 @@ public class Principal {
 //            System.out.println("ID: " + tarjetaL.getIdTarjeta() + " Cod Tarjeta: " + tarjetaL.getCodTarjeta());
 //        }
 
-        /*======================================================================*/
-        /*=========================== PersonaJuridica ==========================*/
-        /*======================================================================*/
-        PersonaJuridica persona_juridica = new PersonaJuridica("Bodega Pepitos",
-                TipoEntidad.Fundación,3403333,"Av ayacucho 3334","000010024",1,"Jose","Mendoza","Vega",12345,"Bpepito@gmail.com",
-                TipoDocumento.DNI,93443353);
-        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
-
-        /*######### Insertar ########*/
-        daopersona_juridica.insertar(persona_juridica);
+//        /*======================================================================*/
+//        /*=========================== PersonaJuridica ==========================*/
+//        /*======================================================================*/
+//        PersonaJuridica persona_juridica = new PersonaJuridica("Bodega Pepitos",
+//                TipoEntidad.Fundación,3403333,"Av ayacucho 3334","000010024",1,"Jose","Mendoza","Vega",12345,"Bpepito@gmail.com",
+//                TipoDocumento.DNI,93443353);
+//        PersonaJuridicaDao daopersona_juridica = new PersonaJuridicaMySql();
+//
+//        /*######### Insertar ########*/
+//        daopersona_juridica.insertar(persona_juridica);
 
         /*######## Modificar ########*/
 //        persona_juridica.setDireccionLegal("CAMBIO");
