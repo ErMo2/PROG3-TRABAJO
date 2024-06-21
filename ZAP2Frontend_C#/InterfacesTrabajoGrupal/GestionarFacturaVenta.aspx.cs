@@ -67,14 +67,19 @@ namespace InterfacesTrabajoGrupal
             productoPrecioDAO = new ProductoPrecioWSClient();
             arregloProductoPrecios = productoPrecioDAO.listarProductoPrecioProductoDeUnaSucursal(idSucursal);
 
-            listaProductos = new BindingList<producto>(
-                arregloProductoPrecios.Select(pp => pp.producto).Where(p => p != null).ToList()
-            );
+            ddlProducto.Items.Clear();
 
-            ddlProducto.DataSource = listaProductos;
-            ddlProducto.DataTextField = "nombre";
-            ddlProducto.DataValueField = "idProducto";
-            ddlProducto.DataBind();
+            if (arregloProductoPrecios != null)
+            {
+                listaProductos = new BindingList<producto>(
+                arregloProductoPrecios.Select(pp => pp.producto).Where(p => p != null).ToList()
+                );
+
+                ddlProducto.DataSource = listaProductos;
+                ddlProducto.DataTextField = "nombre";
+                ddlProducto.DataValueField = "idProducto";
+                ddlProducto.DataBind();
+            }    
         }
 
         protected void ddlSucursal_SelectedIndexChanged(object sender, EventArgs e)
