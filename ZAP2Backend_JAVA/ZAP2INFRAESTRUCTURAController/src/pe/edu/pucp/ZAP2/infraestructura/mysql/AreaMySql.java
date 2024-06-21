@@ -170,18 +170,17 @@ public class AreaMySql implements AreaDao{
     }
 
     @Override
-    public int insertProductoArea(Area area, Producto producto) {
+    public int insertProductoArea(int idarea, int idproducto) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_AREA_PRODUCTO"
                     +"(?,?,?)}");
             cs.registerOutParameter("_id_Out", java.sql.Types.INTEGER);
-            cs.setInt("_id_Producto", producto.getIdProducto());
-            cs.setInt("_id_Area",area.getIdArea());   
+            cs.setInt("_id_Producto", idproducto);
+            cs.setInt("_id_Area",idarea);   
             cs.executeUpdate();           
-            area.setIdAreaProducto(cs.getInt("_id_Out"));
-            resultado =  area.getIdAreaProducto();
+            resultado = cs.getInt("_id_Out");           
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{

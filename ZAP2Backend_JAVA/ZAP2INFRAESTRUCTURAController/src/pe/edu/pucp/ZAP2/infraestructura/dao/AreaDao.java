@@ -19,7 +19,7 @@ public interface AreaDao {
     ArrayList<Area> listarTodas();
     Area buscar(int id);
     ArrayList<Area> listarTodaDeConSucursal();
-    int insertProductoArea(Area area, Producto producto);
+    int insertProductoArea(int idarea, int idproducto);
     int eliminarAreaProducto(int idAreaProducto);
     Area ListarProductosDelArea(int idArea);
 }
