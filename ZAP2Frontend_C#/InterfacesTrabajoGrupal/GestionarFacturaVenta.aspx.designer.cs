@@ -51,24 +51,6 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.TextBox dtpFechaEmision;
 
         /// <summary>
-        /// Control lblRUC.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRUC;
-
-        /// <summary>
-        /// Control txtRUC.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRUC;
-
-        /// <summary>
         /// Control lblPersonaJuridica.
         /// </summary>
         /// <remarks>
@@ -87,6 +69,24 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.DropDownList ddlPersonaJuridica;
 
         /// <summary>
+        /// Control lblRUC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRUC;
+
+        /// <summary>
+        /// Control txtRUC.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRUC;
+
+        /// <summary>
         /// Control lblSucursal.
         /// </summary>
         /// <remarks>
@@ -103,6 +103,42 @@ namespace InterfacesTrabajoGrupal
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
+
+        /// <summary>
+        /// Control lblCajero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCajero;
+
+        /// <summary>
+        /// Control ddlCajeros.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlCajeros;
+
+        /// <summary>
+        /// Control lblMoneda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMoneda;
+
+        /// <summary>
+        /// Control ddlMonedas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlMonedas;
 
         /// <summary>
         /// Control lblProducto.

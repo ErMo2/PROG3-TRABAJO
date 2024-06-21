@@ -25,7 +25,7 @@
                     <div class="mb-3 row">
                         <asp:Label ID="lblNumeroFactura" runat="server" Text="Número de Factura:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
-                            <asp:TextBox ID="txtNumeroFactura" runat="server" CssClass="form-control" />
+                            <asp:TextBox ID="txtNumeroFactura" runat="server" CssClass="form-control" Enabled="false" />
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -34,19 +34,20 @@
                             <asp:TextBox ID="dtpFechaEmision" runat="server" CssClass="form-control" TextMode="Date" />
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <asp:Label ID="lblRUC" runat="server" Text="RUC:" CssClass="col-sm-2 col-form-label" />
-                        <div class="col-sm-4">
-                            <asp:TextBox ID="txtRUC" runat="server" CssClass="form-control" />
-                        </div>
+                   
+                 <div class="mb-3 row">
+                    <asp:Label ID="lblPersonaJuridica" runat="server" Text="Persona Jurídica:" CssClass="col-sm-2 col-form-label" />
+                    <div class="col-sm-8">
+                        <asp:DropDownList ID="ddlPersonaJuridica" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlPersonaJuridica_SelectedIndexChanged">
+                        </asp:DropDownList>
                     </div>
-                    <div class="mb-3 row">
-                        <asp:Label ID="lblPersonaJuridica" runat="server" Text="Persona Jurídica:" CssClass="col-sm-2 col-form-label" />
-                        <div class="col-sm-8">
-                            <asp:DropDownList ID="ddlPersonaJuridica" runat="server" CssClass="form-control">
-                            </asp:DropDownList>
-                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <asp:Label ID="lblRUC" runat="server" Text="RUC:" CssClass="col-sm-2 col-form-label" />
+                    <div class="col-sm-4">
+                        <asp:TextBox ID="txtRUC" runat="server" CssClass="form-control" Enabled="false" />
                     </div>
+                </div>
                     <div class="mb-3 row">
                         <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-8">
@@ -54,6 +55,21 @@
                             </asp:DropDownList>
                         </div>
                     </div>
+                    
+                     <div class="mb-3 row">
+                        <asp:Label ID="lblCajero" runat="server" Text="Cajero:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-8">
+                            <asp:DropDownList ID="ddlCajeros" runat="server" CssClass="form-control">
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                       <div class="mb-3 row">
+                            <asp:Label ID="lblMoneda" runat="server" Text="Moneda:" CssClass="col-sm-2 col-form-label" />
+                            <div class="col-sm-6">
+                                <asp:DropDownList ID="ddlMonedas" runat="server" CssClass="form-control" />
+                            </div>
+                        </div>
+
                     <div class="mb-3 row">
                         <asp:Label ID="lblProducto" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-8">
@@ -102,4 +118,5 @@
     </form>
 </body>
 </html>
+
 </asp:Content>

@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ElectrodomesticosWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarElectrodomesticos">
-    <part name="parameters" element="tns:listarElectrodomesticos" />
-  </message>
-  <message name="listarElectrodomesticosResponse">
-    <part name="parameters" element="tns:listarElectrodomesticosResponse" />
-  </message>
-  <message name="modificarElectrodomestico">
-    <part name="parameters" element="tns:modificarElectrodomestico" />
-  </message>
-  <message name="modificarElectrodomesticoResponse">
-    <part name="parameters" element="tns:modificarElectrodomesticoResponse" />
-  </message>
   <message name="buscarElectrodomestico">
     <part name="parameters" element="tns:buscarElectrodomestico" />
   </message>
@@ -29,6 +17,18 @@
   <message name="eliminarElectrodomesticoResponse">
     <part name="parameters" element="tns:eliminarElectrodomesticoResponse" />
   </message>
+  <message name="listarElectrodomesticos">
+    <part name="parameters" element="tns:listarElectrodomesticos" />
+  </message>
+  <message name="listarElectrodomesticosResponse">
+    <part name="parameters" element="tns:listarElectrodomesticosResponse" />
+  </message>
+  <message name="modificarElectrodomestico">
+    <part name="parameters" element="tns:modificarElectrodomestico" />
+  </message>
+  <message name="modificarElectrodomesticoResponse">
+    <part name="parameters" element="tns:modificarElectrodomesticoResponse" />
+  </message>
   <message name="insertarElectrodomestico">
     <part name="parameters" element="tns:insertarElectrodomestico" />
   </message>
@@ -36,14 +36,6 @@
     <part name="parameters" element="tns:insertarElectrodomesticoResponse" />
   </message>
   <portType name="ElectrodomesticosWS">
-    <operation name="listarElectrodomesticos">
-      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest" message="tns:listarElectrodomesticos" />
-      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse" message="tns:listarElectrodomesticosResponse" />
-    </operation>
-    <operation name="modificarElectrodomestico">
-      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoRequest" message="tns:modificarElectrodomestico" />
-      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoResponse" message="tns:modificarElectrodomesticoResponse" />
-    </operation>
     <operation name="buscarElectrodomestico">
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoRequest" message="tns:buscarElectrodomestico" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoResponse" message="tns:buscarElectrodomesticoResponse" />
@@ -52,6 +44,14 @@
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/eliminarElectrodomesticoRequest" message="tns:eliminarElectrodomestico" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/eliminarElectrodomesticoResponse" message="tns:eliminarElectrodomesticoResponse" />
     </operation>
+    <operation name="listarElectrodomesticos">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest" message="tns:listarElectrodomesticos" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse" message="tns:listarElectrodomesticosResponse" />
+    </operation>
+    <operation name="modificarElectrodomestico">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoRequest" message="tns:modificarElectrodomestico" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoResponse" message="tns:modificarElectrodomesticoResponse" />
+    </operation>
     <operation name="insertarElectrodomestico">
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest" message="tns:insertarElectrodomestico" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse" message="tns:insertarElectrodomesticoResponse" />
@@ -59,24 +59,6 @@
   </portType>
   <binding name="ElectrodomesticosWSPortBinding" type="tns:ElectrodomesticosWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarElectrodomesticos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarElectrodomestico">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="buscarElectrodomestico">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +69,24 @@
       </output>
     </operation>
     <operation name="eliminarElectrodomestico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarElectrodomesticos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarElectrodomestico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
