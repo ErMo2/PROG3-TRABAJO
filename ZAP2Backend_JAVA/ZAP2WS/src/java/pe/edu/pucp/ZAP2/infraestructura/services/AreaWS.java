@@ -79,4 +79,16 @@ public class AreaWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "listarAreaConSucursales")
+    public ArrayList<Area> listarAreaConSucursales() {
+        ArrayList<Area> areas = null;
+        try{
+            daoArea = new AreaMySql();
+            areas = daoArea.listarTodaDeConSucursal();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return areas;
+    }
 }

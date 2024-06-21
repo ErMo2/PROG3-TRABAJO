@@ -17,4 +17,5 @@ public interface SupervisorDao {
     int eliminar(int idSupervisor);
     ArrayList<Supervisor> listarTodas();
     Supervisor buscar(int id);
+    ArrayList<Supervisor> listarTodasDeUnaSucursal(int idSucursal);
 }
