@@ -16,5 +16,6 @@ public interface ProductosParaElCuidadoPersonalYDelHogarDao {
     int modificar(ProductosParaElCuidadoPersonalYDelHogar prodParaElCuidado);
     int eliminar(int idProducto);
     ArrayList<ProductosParaElCuidadoPersonalYDelHogar> listarTodos();
+    ArrayList<ProductosParaElCuidadoPersonalYDelHogar> listarTodosPorNombre(String nombre);
     ProductosParaElCuidadoPersonalYDelHogar buscarProducto(int idProd);
 }

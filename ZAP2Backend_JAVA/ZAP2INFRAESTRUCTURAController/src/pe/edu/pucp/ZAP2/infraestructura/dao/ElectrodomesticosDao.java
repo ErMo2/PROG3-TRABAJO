@@ -16,5 +16,6 @@ public interface ElectrodomesticosDao {
     int modificar(Electrodomesticos electrodomestico);
     int eliminar(int idElectrodomestico);
     ArrayList<Electrodomesticos> listarTodos();
+    ArrayList<Electrodomesticos> listarTodosPorNombre(String nombre);
     Electrodomesticos buscarProducto(int idProd);
 }

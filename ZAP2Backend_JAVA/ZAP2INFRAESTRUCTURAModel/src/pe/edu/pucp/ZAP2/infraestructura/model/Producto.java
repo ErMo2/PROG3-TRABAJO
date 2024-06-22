@@ -19,6 +19,7 @@ public class Producto {
     private ProductoPrecio prodPrecio;
     private int cantidadComprada;
     private ArrayList<ProductoPrecio> productosPrecio;
+    private int IdAreaProducto; //esta para cada producto al saber su area al momento de listar
     public Producto() {
     }
 
@@ -99,5 +100,13 @@ public class Producto {
     public void setProductosPrecio(ArrayList<ProductoPrecio> productosPrecio) {
         this.productosPrecio = productosPrecio;
     }
-    
+
+    public int getIdAreaProducto() {
+        return IdAreaProducto;
+    }
+
+    public void setIdAreaProducto(int IdAreaProducto) {
+        this.IdAreaProducto = IdAreaProducto;
+    }
+  
 }
