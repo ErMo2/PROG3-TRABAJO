@@ -676,6 +676,18 @@
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.generarReporteProductosConsumidosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarElectrodomesticosXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarPCHXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductoPerecibleXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarRopaXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -23,6 +23,12 @@
   <message name="listarProductosMasConsumidosResponse">
     <part name="parameters" element="tns:listarProductosMasConsumidosResponse" />
   </message>
+  <message name="listarProductosConDescuentoEnFecha">
+    <part name="parameters" element="tns:listarProductosConDescuentoEnFecha" />
+  </message>
+  <message name="listarProductosConDescuentoEnFechaResponse">
+    <part name="parameters" element="tns:listarProductosConDescuentoEnFechaResponse" />
+  </message>
   <message name="listarDescuentoDeUnProducto">
     <part name="parameters" element="tns:listarDescuentoDeUnProducto" />
   </message>
@@ -34,12 +40,6 @@
   </message>
   <message name="listarProductosConDescuentoResponse">
     <part name="parameters" element="tns:listarProductosConDescuentoResponse" />
-  </message>
-  <message name="listarProductosConDescuentoEnFecha">
-    <part name="parameters" element="tns:listarProductosConDescuentoEnFecha" />
-  </message>
-  <message name="listarProductosConDescuentoEnFechaResponse">
-    <part name="parameters" element="tns:listarProductosConDescuentoEnFechaResponse" />
   </message>
   <portType name="ProductoWS">
     <operation name="listarProductosBase">
@@ -54,6 +54,10 @@
       <input wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosRequest" message="tns:listarProductosMasConsumidos" />
       <output wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosResponse" message="tns:listarProductosMasConsumidosResponse" />
     </operation>
+    <operation name="listarProductosConDescuentoEnFecha">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaRequest" message="tns:listarProductosConDescuentoEnFecha" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaResponse" message="tns:listarProductosConDescuentoEnFechaResponse" />
+    </operation>
     <operation name="listarDescuentoDeUnProducto">
       <input wsam:Action="ZAP2WS/ProductoWS/listarDescuentoDeUnProductoRequest" message="tns:listarDescuentoDeUnProducto" />
       <output wsam:Action="ZAP2WS/ProductoWS/listarDescuentoDeUnProductoResponse" message="tns:listarDescuentoDeUnProductoResponse" />
@@ -61,10 +65,6 @@
     <operation name="listarProductosConDescuento">
       <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoRequest" message="tns:listarProductosConDescuento" />
       <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoResponse" message="tns:listarProductosConDescuentoResponse" />
-    </operation>
-    <operation name="listarProductosConDescuentoEnFecha">
-      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaRequest" message="tns:listarProductosConDescuentoEnFecha" />
-      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaResponse" message="tns:listarProductosConDescuentoEnFechaResponse" />
     </operation>
   </portType>
   <binding name="ProductoWSPortBinding" type="tns:ProductoWS">
@@ -96,6 +96,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarProductosConDescuentoEnFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarDescuentoDeUnProducto">
       <soap:operation soapAction="" />
       <input>
@@ -106,15 +115,6 @@
       </output>
     </operation>
     <operation name="listarProductosConDescuento">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarProductosConDescuentoEnFecha">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

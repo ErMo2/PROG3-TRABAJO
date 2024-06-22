@@ -8,11 +8,18 @@
   <xs:element name="insertarElectrodomesticoResponse" type="tns:insertarElectrodomesticoResponse" />
   <xs:element name="listarElectrodomesticos" type="tns:listarElectrodomesticos" />
   <xs:element name="listarElectrodomesticosResponse" type="tns:listarElectrodomesticosResponse" />
+  <xs:element name="listarElectrodomesticosXnombre" type="tns:listarElectrodomesticosXnombre" />
+  <xs:element name="listarElectrodomesticosXnombreResponse" type="tns:listarElectrodomesticosXnombreResponse" />
   <xs:element name="modificarElectrodomestico" type="tns:modificarElectrodomestico" />
   <xs:element name="modificarElectrodomesticoResponse" type="tns:modificarElectrodomesticoResponse" />
-  <xs:complexType name="modificarElectrodomestico">
+  <xs:complexType name="listarElectrodomesticosXnombre">
     <xs:sequence>
-      <xs:element minOccurs="0" name="electrodomestico" type="tns:electrodomesticos" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarElectrodomesticosXnombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:electrodomesticos" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="electrodomesticos">
@@ -31,6 +38,7 @@
       <xs:element name="activo" type="xs:int" />
       <xs:element name="cantidadComprada" type="xs:int" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element name="idProducto" type="xs:int" />
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -116,6 +124,11 @@
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="modificarElectrodomestico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="electrodomestico" type="tns:electrodomesticos" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarElectrodomesticoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
@@ -141,14 +154,6 @@
       <xs:element minOccurs="0" name="return" type="tns:electrodomesticos" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarElectrodomesticos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarElectrodomesticosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:electrodomesticos" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarElectrodomestico">
     <xs:sequence>
       <xs:element minOccurs="0" name="electrodomestico" type="tns:electrodomesticos" />
@@ -157,6 +162,14 @@
   <xs:complexType name="insertarElectrodomesticoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarElectrodomesticos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarElectrodomesticosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:electrodomesticos" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="tipoDeMotivoMovimientoAlmacen">

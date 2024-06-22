@@ -17,11 +17,11 @@
   <message name="modificarAlmacenResponse">
     <part name="parameters" element="tns:modificarAlmacenResponse" />
   </message>
-  <message name="eliminarAlmacen">
-    <part name="parameters" element="tns:eliminarAlmacen" />
+  <message name="listarAlmacen">
+    <part name="parameters" element="tns:listarAlmacen" />
   </message>
-  <message name="eliminarAlmacenResponse">
-    <part name="parameters" element="tns:eliminarAlmacenResponse" />
+  <message name="listarAlmacenResponse">
+    <part name="parameters" element="tns:listarAlmacenResponse" />
   </message>
   <message name="buscarAlmacen">
     <part name="parameters" element="tns:buscarAlmacen" />
@@ -29,11 +29,11 @@
   <message name="buscarAlmacenResponse">
     <part name="parameters" element="tns:buscarAlmacenResponse" />
   </message>
-  <message name="listarAlmacen">
-    <part name="parameters" element="tns:listarAlmacen" />
+  <message name="eliminarAlmacen">
+    <part name="parameters" element="tns:eliminarAlmacen" />
   </message>
-  <message name="listarAlmacenResponse">
-    <part name="parameters" element="tns:listarAlmacenResponse" />
+  <message name="eliminarAlmacenResponse">
+    <part name="parameters" element="tns:eliminarAlmacenResponse" />
   </message>
   <portType name="AlmacenWS">
     <operation name="insertarAlmacen">
@@ -44,17 +44,17 @@
       <input wsam:Action="ZAP2WS/AlmacenWS/modificarAlmacenRequest" message="tns:modificarAlmacen" />
       <output wsam:Action="ZAP2WS/AlmacenWS/modificarAlmacenResponse" message="tns:modificarAlmacenResponse" />
     </operation>
-    <operation name="eliminarAlmacen">
-      <input wsam:Action="ZAP2WS/AlmacenWS/eliminarAlmacenRequest" message="tns:eliminarAlmacen" />
-      <output wsam:Action="ZAP2WS/AlmacenWS/eliminarAlmacenResponse" message="tns:eliminarAlmacenResponse" />
+    <operation name="listarAlmacen">
+      <input wsam:Action="ZAP2WS/AlmacenWS/listarAlmacenRequest" message="tns:listarAlmacen" />
+      <output wsam:Action="ZAP2WS/AlmacenWS/listarAlmacenResponse" message="tns:listarAlmacenResponse" />
     </operation>
     <operation name="buscarAlmacen">
       <input wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenRequest" message="tns:buscarAlmacen" />
       <output wsam:Action="ZAP2WS/AlmacenWS/buscarAlmacenResponse" message="tns:buscarAlmacenResponse" />
     </operation>
-    <operation name="listarAlmacen">
-      <input wsam:Action="ZAP2WS/AlmacenWS/listarAlmacenRequest" message="tns:listarAlmacen" />
-      <output wsam:Action="ZAP2WS/AlmacenWS/listarAlmacenResponse" message="tns:listarAlmacenResponse" />
+    <operation name="eliminarAlmacen">
+      <input wsam:Action="ZAP2WS/AlmacenWS/eliminarAlmacenRequest" message="tns:eliminarAlmacen" />
+      <output wsam:Action="ZAP2WS/AlmacenWS/eliminarAlmacenResponse" message="tns:eliminarAlmacenResponse" />
     </operation>
   </portType>
   <binding name="AlmacenWSPortBinding" type="tns:AlmacenWS">
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarAlmacen">
+    <operation name="listarAlmacen">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarAlmacen">
+    <operation name="eliminarAlmacen">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

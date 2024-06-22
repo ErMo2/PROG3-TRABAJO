@@ -101,6 +101,7 @@
       <xs:element name="activo" type="xs:int" />
       <xs:element name="cantidadComprada" type="xs:int" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element name="idProducto" type="xs:int" />
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />

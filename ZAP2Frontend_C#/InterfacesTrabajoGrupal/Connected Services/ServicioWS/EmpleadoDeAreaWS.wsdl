@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/EmpleadoDeAreaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="insertarEmpleadoDeArea">
-    <part name="parameters" element="tns:insertarEmpleadoDeArea" />
-  </message>
-  <message name="insertarEmpleadoDeAreaResponse">
-    <part name="parameters" element="tns:insertarEmpleadoDeAreaResponse" />
-  </message>
   <message name="eliminarEmpleadoDeArea">
     <part name="parameters" element="tns:eliminarEmpleadoDeArea" />
   </message>
@@ -22,6 +16,12 @@
   </message>
   <message name="modificarEmpleadoDeAreaResponse">
     <part name="parameters" element="tns:modificarEmpleadoDeAreaResponse" />
+  </message>
+  <message name="insertarEmpleadoDeArea">
+    <part name="parameters" element="tns:insertarEmpleadoDeArea" />
+  </message>
+  <message name="insertarEmpleadoDeAreaResponse">
+    <part name="parameters" element="tns:insertarEmpleadoDeAreaResponse" />
   </message>
   <message name="listarEmpleadoArea">
     <part name="parameters" element="tns:listarEmpleadoArea" />
@@ -36,10 +36,6 @@
     <part name="parameters" element="tns:buscarEmpleadoAreaResponse" />
   </message>
   <portType name="EmpleadoDeAreaWS">
-    <operation name="insertarEmpleadoDeArea">
-      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaRequest" message="tns:insertarEmpleadoDeArea" />
-      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaResponse" message="tns:insertarEmpleadoDeAreaResponse" />
-    </operation>
     <operation name="eliminarEmpleadoDeArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaRequest" message="tns:eliminarEmpleadoDeArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/eliminarEmpleadoDeAreaResponse" message="tns:eliminarEmpleadoDeAreaResponse" />
@@ -47,6 +43,10 @@
     <operation name="modificarEmpleadoDeArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaRequest" message="tns:modificarEmpleadoDeArea" />
       <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/modificarEmpleadoDeAreaResponse" message="tns:modificarEmpleadoDeAreaResponse" />
+    </operation>
+    <operation name="insertarEmpleadoDeArea">
+      <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaRequest" message="tns:insertarEmpleadoDeArea" />
+      <output wsam:Action="ZAP2WS/EmpleadoDeAreaWS/insertarEmpleadoDeAreaResponse" message="tns:insertarEmpleadoDeAreaResponse" />
     </operation>
     <operation name="listarEmpleadoArea">
       <input wsam:Action="ZAP2WS/EmpleadoDeAreaWS/listarEmpleadoAreaRequest" message="tns:listarEmpleadoArea" />
@@ -59,15 +59,6 @@
   </portType>
   <binding name="EmpleadoDeAreaWSPortBinding" type="tns:EmpleadoDeAreaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarEmpleadoDeArea">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="eliminarEmpleadoDeArea">
       <soap:operation soapAction="" />
       <input>
@@ -78,6 +69,15 @@
       </output>
     </operation>
     <operation name="modificarEmpleadoDeArea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarEmpleadoDeArea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -17,17 +17,17 @@
   <message name="modificarMonedaResponse">
     <part name="parameters" element="tns:modificarMonedaResponse" />
   </message>
-  <message name="buscarMoneda">
-    <part name="parameters" element="tns:buscarMoneda" />
-  </message>
-  <message name="buscarMonedaResponse">
-    <part name="parameters" element="tns:buscarMonedaResponse" />
-  </message>
   <message name="insertarMoneda">
     <part name="parameters" element="tns:insertarMoneda" />
   </message>
   <message name="insertarMonedaResponse">
     <part name="parameters" element="tns:insertarMonedaResponse" />
+  </message>
+  <message name="buscarMoneda">
+    <part name="parameters" element="tns:buscarMoneda" />
+  </message>
+  <message name="buscarMonedaResponse">
+    <part name="parameters" element="tns:buscarMonedaResponse" />
   </message>
   <message name="listarMoneda">
     <part name="parameters" element="tns:listarMoneda" />
@@ -44,13 +44,13 @@
       <input wsam:Action="ZAP2WS/MonedaWS/modificarMonedaRequest" message="tns:modificarMoneda" />
       <output wsam:Action="ZAP2WS/MonedaWS/modificarMonedaResponse" message="tns:modificarMonedaResponse" />
     </operation>
-    <operation name="buscarMoneda">
-      <input wsam:Action="ZAP2WS/MonedaWS/buscarMonedaRequest" message="tns:buscarMoneda" />
-      <output wsam:Action="ZAP2WS/MonedaWS/buscarMonedaResponse" message="tns:buscarMonedaResponse" />
-    </operation>
     <operation name="insertarMoneda">
       <input wsam:Action="ZAP2WS/MonedaWS/insertarMonedaRequest" message="tns:insertarMoneda" />
       <output wsam:Action="ZAP2WS/MonedaWS/insertarMonedaResponse" message="tns:insertarMonedaResponse" />
+    </operation>
+    <operation name="buscarMoneda">
+      <input wsam:Action="ZAP2WS/MonedaWS/buscarMonedaRequest" message="tns:buscarMoneda" />
+      <output wsam:Action="ZAP2WS/MonedaWS/buscarMonedaResponse" message="tns:buscarMonedaResponse" />
     </operation>
     <operation name="listarMoneda">
       <input wsam:Action="ZAP2WS/MonedaWS/listarMonedaRequest" message="tns:listarMoneda" />
@@ -77,7 +77,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="buscarMoneda">
+    <operation name="insertarMoneda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -86,7 +86,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarMoneda">
+    <operation name="buscarMoneda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
