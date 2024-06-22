@@ -154,5 +154,40 @@ public class PedidoMySql implements PedidoDao{
         }
         return ped;
     }
+
+    @Override
+    public ArrayList<Pedido> listarTodasXnombre(String id) {
+        
+        ArrayList<Pedido> pedidos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PEDIDO_X_NOMBRE"
+                    +"(?)}");
+            cs.setString("_nombre", id);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Pedido ped = new Pedido();
+                ped.setId_pedido(rs.getInt("id_pedido"));
+                ped.setSaldo(rs.getDouble("saldo"));
+                
+                String estadoPedStr = rs.getString("estado");
+                Estado_Pedido est_pedido = Estado_Pedido.valueOf(estadoPedStr);
+                ped.setEstado(est_pedido);
+                
+                Date fecha = rs.getDate("fecha_pedido");
+                ped.setFecha_Pedido(fecha);
+                ped.setTotal(rs.getDouble("total"));
+                ped.setNombre(rs.getString("nombre"));
+                pedidos.add(ped);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return pedidos;
+    }
     
 }

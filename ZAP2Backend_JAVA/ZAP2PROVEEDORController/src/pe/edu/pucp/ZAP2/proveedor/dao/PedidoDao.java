@@ -16,5 +16,6 @@ public interface PedidoDao {
     int modificar(Pedido pedido);
     int eliminar(int idpedido);
     ArrayList<Pedido> listarTodas();
+    ArrayList<Pedido> listarTodasXnombre(String id);
     Pedido buscar(int id);
 }
