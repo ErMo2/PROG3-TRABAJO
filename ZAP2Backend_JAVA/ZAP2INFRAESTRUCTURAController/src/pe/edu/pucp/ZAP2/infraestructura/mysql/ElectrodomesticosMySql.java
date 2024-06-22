@@ -156,5 +156,37 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
         return electrodomestico;
     
     }
+
+    @Override
+    public ArrayList<Electrodomesticos> listarTodosPorNombre(String nombre) {
+        ArrayList<Electrodomesticos> electrodomesticos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_ELECTRODOMESTICOS_X_NOMBRE"
+                    +"(?)}");
+            cs.setString("_nombre",nombre);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Electrodomesticos electrodomestico = new Electrodomesticos();
+                electrodomestico.setIdProducto(rs.getInt("id_producto"));
+                electrodomestico.setNombre(rs.getString("nombre"));
+                electrodomestico.setDescripcion(rs.getString("descripcion"));
+                electrodomestico.setModelo(rs.getString("modelo"));
+                
+                Date fechaGarantia = rs.getDate("tiempoGarantia");
+                electrodomestico.setTiempoGarantia(fechaGarantia);
+                
+                electrodomestico.setTieneGarantia(rs.getBoolean("tieneGarantia"));
+                electrodomesticos.add(electrodomestico);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return electrodomesticos;
+    }
     
 }

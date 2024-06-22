@@ -146,5 +146,35 @@ public class RopaMySql implements RopaDao{
         }
         return ropa;
     }
+
+    @Override
+    public ArrayList<Ropa> listarTodosPorNombre(String nombre) {
+        ArrayList<Ropa> ropas =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_ROPA_X_NOMBRE"
+                    +"(?)}");
+            cs.setString("_nombre",nombre);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Ropa ropa = new Ropa();
+                ropa.setIdProducto(rs.getInt("id_producto"));
+                ropa.setNombre(rs.getString("nombre"));
+                ropa.setDescripcion(rs.getString("descripcion"));
+                ropa.setMaterial(rs.getString("material"));
+                String tipoRopa = rs.getString("tipo");
+                TipoRopa tipo = TipoRopa.valueOf(tipoRopa);
+                ropa.setTipo(tipo);
+                ropas.add(ropa);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return ropas;
+    }
     
 }

@@ -157,5 +157,40 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
         }
         return producto;
     }
+
+    @Override
+    public ArrayList<ProductosParaElCuidadoPersonalYDelHogar> listarTodosPorNombre(String nombre) {
+        ArrayList<ProductosParaElCuidadoPersonalYDelHogar> Productos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PCH_X_NOMBRE"
+                    +"(?)}");
+            cs.setString("_nombre",nombre);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                ProductosParaElCuidadoPersonalYDelHogar producto = new ProductosParaElCuidadoPersonalYDelHogar();
+                producto.setIdProducto(rs.getInt("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
+                producto.setDescripcion(rs.getString("descripcion")); 
+                
+               
+                
+                String tipoUnidad = rs.getString("unidad_de_medida");
+                
+                UnidadDeMedida unidad = UnidadDeMedida.valueOf(tipoUnidad);
+                producto.setUnidadMedida(unidad);
+                
+                producto.setTipo(rs.getString("tipo")); 
+                Productos.add(producto);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return Productos;
+    }
     
 }

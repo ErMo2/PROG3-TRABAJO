@@ -76,4 +76,16 @@ public class RopaWS {
         }
         return prod;
     }
+    
+    @WebMethod(operationName = "listarRopaXnombre")
+    public ArrayList<Ropa> listarRopaXnombre(@WebParam(name = "nombre") String dato) {
+        ArrayList<Ropa> ropas = null;
+        try{
+            daoRopa = new RopaMySql();
+            ropas = daoRopa.listarTodas();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return ropas;
+    }
 }
