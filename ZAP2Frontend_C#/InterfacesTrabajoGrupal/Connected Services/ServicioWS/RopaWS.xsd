@@ -8,6 +8,8 @@
   <xs:element name="insertarRopaResponse" type="tns:insertarRopaResponse" />
   <xs:element name="listarRopa" type="tns:listarRopa" />
   <xs:element name="listarRopaResponse" type="tns:listarRopaResponse" />
+  <xs:element name="listarRopaXnombre" type="tns:listarRopaXnombre" />
+  <xs:element name="listarRopaXnombreResponse" type="tns:listarRopaXnombreResponse" />
   <xs:element name="modificarRopa" type="tns:modificarRopa" />
   <xs:element name="modificarRopaResponse" type="tns:modificarRopaResponse" />
   <xs:complexType name="insertarRopa">
@@ -137,6 +139,16 @@
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarRopaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ropa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRopaXnombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRopaXnombreResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ropa" />
     </xs:sequence>

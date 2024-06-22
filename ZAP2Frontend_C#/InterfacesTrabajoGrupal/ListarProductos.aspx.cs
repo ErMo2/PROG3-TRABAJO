@@ -23,6 +23,11 @@ namespace InterfacesTrabajoGrupal
         private BindingList<ropa> listaRopa;
 
         private ReportesFrontWSClient daoReportesFrontWSClient;
+
+        private BindingList<productoPerecible> productosPerecibles;
+        private BindingList<electrodomesticos> productosElectrodomesticos;
+        private BindingList<productosParaElCuidadoPersonalYDelHogar> productosCuiPerYHogar;
+        private BindingList<ropa> productosRopa;
         protected void Page_Load(object sender, EventArgs e)
         {
             daoProdPerecible = new ProductoPerecibleWSClient();
@@ -32,10 +37,10 @@ namespace InterfacesTrabajoGrupal
             
                 
 
-                ropa[] ropaArreglo = daoRopa.listarRopa();
-                electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticos();
-                productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCH();
-                productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecible();
+                ropa[] ropaArreglo = daoRopa.listarRopaXnombre(txtNombreRopa.Text);
+                electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticosXnombre(txtNombreElectrodomestico.Text);
+                productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCHXnombre(txtNombreProdLimpiezaYHogar.Text);
+                productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecibleXnombre(txtNombreProdPerecible.Text);
 
                 if (ropaArreglo != null)
                     listaRopa = new BindingList<ropa>(ropaArreglo);
@@ -192,6 +197,50 @@ namespace InterfacesTrabajoGrupal
                 Response.End();
             }
             
+        }
+
+        protected void lbBusquedaProdPerecible_Click(object sender, EventArgs e)
+        {
+            productoPerecible[] productosPerecibleArr = daoProdPerecible.listarProductoPerecibleXnombre(txtNombreProdPerecible.Text);
+            if (productosPerecibleArr != null)
+            {
+                productosPerecibles = new BindingList<productoPerecible>(productosPerecibleArr);
+                gvProductosPerecibles.DataSource = productosPerecibles;
+                gvProductosPerecibles.DataBind();
+            }
+        }
+
+        protected void lbBusquedaElectrodomestico_Click(object sender, EventArgs e)
+        {
+            electrodomesticos[] electrodomesticosArr = daoElectrodomestico.listarElectrodomesticosXnombre(txtNombreElectrodomestico.Text);
+            if (electrodomesticosArr != null)
+            {
+                productosElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArr);
+                gvElectrodomesticos.DataSource = productosElectrodomesticos;
+                gvElectrodomesticos.DataBind();
+            }
+        }
+
+        protected void lbBusquedaProdLimpYHog_Click(object sender, EventArgs e)
+        {
+            productosParaElCuidadoPersonalYDelHogar[] productosCuidaoPerYHogarArr = daoProdCuiHog.listarPCHXnombre(txtNombreProdLimpiezaYHogar.Text);
+            if (productosCuidaoPerYHogarArr != null)
+            {
+                productosCuiPerYHogar = new BindingList<productosParaElCuidadoPersonalYDelHogar>(productosCuidaoPerYHogarArr);
+                gvLimpiezayHogar.DataSource = productosCuiPerYHogar;
+                gvLimpiezayHogar.DataBind();
+            }
+        }
+
+        protected void lbBusquedaRopa_Click(object sender, EventArgs e)
+        {
+            ropa[] ropaArr = daoRopa.listarRopaXnombre(txtNombreRopa.Text);
+            if (ropaArr != null)
+            {
+                productosRopa = new BindingList<ropa>(ropaArr);
+                gvRopa.DataSource = productosRopa;
+                gvRopa.DataBind();
+            }
         }
     }
 }

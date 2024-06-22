@@ -33,7 +33,7 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_PERSONA_JURIDICA"
-                    +"(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+                    +"(?,?,?,?,?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_persona_juridica", java.sql.Types.INTEGER);
             cs.setString("_nombre", personaJuridica.getNombre());
             cs.setString("_apellido_paterno", personaJuridica.getApellido_paterno());
@@ -48,7 +48,6 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
             cs.setInt("_numIdentificadorFiscal", personaJuridica.getNumIdentificadorFiscal());
             cs.setString("_direccionLegal", personaJuridica.getDireccionLegal());
             cs.setString("_RUC", personaJuridica.getRUC());
-            cs.setString("_nombreLegal",personaJuridica.getNombreLegal());
             resultado = cs.executeUpdate();
             personaJuridica.setId_Persona(cs.getInt("_id_persona_juridica"));
         }catch(SQLException ex){
@@ -67,7 +66,7 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_PERSONA_JURIDICA (?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            cs = con.prepareCall("{call MODIFICAR_PERSONA_JURIDICA (?,?,?,?,?,?,?,?,?,?,?,?)}");
             cs.setInt("_id_persona", personaJuridica.getId_Persona());
             cs.setString("_nombre", personaJuridica.getNombre());
             cs.setString("_apellido_paterno", personaJuridica.getApellido_paterno());
@@ -82,7 +81,6 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
             cs.setInt("_numIdentificadorFiscal", personaJuridica.getNumIdentificadorFiscal());
             cs.setString("_direccionLegal", personaJuridica.getDireccionLegal());
             cs.setString("_RUC", personaJuridica.getRUC());
-            cs.setString("_nombreLegal",personaJuridica.getNombreLegal());
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -134,7 +132,7 @@ public class PersonaJuridicaMySql implements PersonaJuridicaDao{
                 PJ.setDireccionLegal(rs.getString("direccionLegal"));
                 PJ.setNumIdentificadorFiscal(rs.getInt("numIdentificadorFiscal"));
                 PJ.setRUC(rs.getString("RUC"));
-                PJ.setNombreLegal(rs.getString("nombreLegal"));
+                
                 PJs.add(PJ);
             }
         }catch(SQLException ex){

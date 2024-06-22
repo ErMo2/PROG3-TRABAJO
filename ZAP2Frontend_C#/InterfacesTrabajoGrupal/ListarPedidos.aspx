@@ -20,7 +20,7 @@
                     <asp:BoundField HeaderText="Id" DataField="id_pedido" />
                     <asp:BoundField HeaderText="Estado" DataField="estado" />
                     <asp:BoundField HeaderText="Fecha y Hora" DataField="fecha_Pedido" />
-                    <asp:BoundField HeaderText="Total" DataField="total" />
+                    <asp:BoundField HeaderText="Total(S/.)" DataField="total" />
 
                     <asp:TemplateField>
                         <HeaderTemplate>

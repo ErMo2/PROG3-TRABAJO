@@ -76,4 +76,16 @@ public class ProductosParaElCuidadoPersonalYDelHogarWS {
         }
         return prod;
     }
+    
+    @WebMethod(operationName = "listarPCHXnombre")
+    public ArrayList<ProductosParaElCuidadoPersonalYDelHogar> listarPCHXnombre(@WebParam(name = "nombre") String dato) {
+        ArrayList<ProductosParaElCuidadoPersonalYDelHogar> PCHs = null;
+        try{
+            daoPCH = new ProductosParaElCuidadoPersonalYDelHogarMySql();
+            PCHs = daoPCH.listarTodosPorNombre(dato);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return PCHs;
+    }
 }

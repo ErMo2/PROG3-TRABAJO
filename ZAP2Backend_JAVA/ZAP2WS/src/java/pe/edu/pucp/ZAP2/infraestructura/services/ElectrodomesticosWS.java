@@ -79,4 +79,16 @@ public class ElectrodomesticosWS {
         }
         return prod;
     }
+    
+    @WebMethod(operationName = "listarElectrodomesticosXnombre")
+    public ArrayList<Electrodomesticos> listarElectrodomesticosXnombre(@WebParam(name = "nombre") String dato) {
+        ArrayList<Electrodomesticos> electrodomesticos = null;
+        try{
+            daoElectrodomesticos = new ElectrodomesticosMySql();
+            electrodomesticos = daoElectrodomesticos.listarTodosPorNombre(dato);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return electrodomesticos;
+    }
 }

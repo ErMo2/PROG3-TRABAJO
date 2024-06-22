@@ -168,5 +168,44 @@ public class ProductoPerecibleMySql implements ProductoPerecibleDao{
         }
         return producto;
     }
+
+    @Override
+    public ArrayList<ProductoPerecible> listarTodosPorNombre(String nombre) {
+        ArrayList<ProductoPerecible> Productos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTOS_PERECIBLES_X_NOMBRE"
+                    +"(?)}");
+            cs.setString("_nombre",nombre);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                ProductoPerecible producto = new ProductoPerecible();
+                producto.setIdProducto(rs.getInt("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
+                producto.setDescripcion(rs.getString("descripcion")); 
+                
+                Date fechaVencimiento = rs.getDate("fechaVencimiento");
+                producto.setFechVencimiento(fechaVencimiento);
+                
+                // Reemplaza TipoProductoPerecible con el nombre de tu enum
+                TipoProductoPerecible tipoProductoPerecible = TipoProductoPerecible.valueOf(rs.getString("tipo_producto_perecible"));
+                producto.setTipo_producto_perecible(tipoProductoPerecible);
+                
+                
+                // Reemplaza UnidadMedida con el nombre de tu enum
+                UnidadDeMedida unidadMedida = UnidadDeMedida.valueOf(rs.getString("unidad_de_medida"));
+                producto.setUnidad_de_medida(unidadMedida);
+                Productos.add(producto);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return Productos;
+    
+    }
     
 }

@@ -76,4 +76,16 @@ public class ProductoPerecibleWS {
         }
         return prodPere;
     }
+    
+    @WebMethod(operationName = "listarProductoPerecibleXnombre")
+    public ArrayList<ProductoPerecible> listarProductoPerecibleXnombre(@WebParam(name = "nombre") String dato) {
+        ArrayList<ProductoPerecible> prodPere = null;
+        try{
+            daoProductoPerecible = new ProductoPerecibleMySql();
+            prodPere = daoProductoPerecible.listarTodosPorNombre(dato);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return prodPere;
+    }
 }

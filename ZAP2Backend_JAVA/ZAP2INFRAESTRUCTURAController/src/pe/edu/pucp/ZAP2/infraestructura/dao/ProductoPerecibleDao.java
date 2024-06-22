@@ -16,6 +16,7 @@ public interface ProductoPerecibleDao {
     int modificar(ProductoPerecible prodPerecible);
     int eliminar(int idProdPere);
     ArrayList<ProductoPerecible> listarTodos();
+    ArrayList<ProductoPerecible> listarTodosPorNombre(String nombre);
     ProductoPerecible buscarProducto(int idProdPere);
     
 }
