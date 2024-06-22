@@ -26,7 +26,13 @@
                             <asp:TextBox ID="txtBoletaId" runat="server" CssClass="form-control" Enabled="false" />
                         </div>
                     </div>
-
+                    
+                    <div class="mb-3 row">
+                        <asp:Label ID="lblNumeroSerie" runat="server" Text="Numero de Serie:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-4">
+                            <asp:TextBox ID="txtNumeroSerie" runat="server" CssClass="form-control" />
+                        </div>
+                    </div>
                     <div class="mb-3 row">
                         <asp:Label ID="lblFechaEmision" runat="server" Text="Fecha de Emisión:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
@@ -34,15 +40,23 @@
                         </div>
                     </div>
 
-                    <div class="mb-3 row">
-                        <asp:Label ID="lblCliente" runat="server" Text="Cliente:" CssClass="col-sm-2 col-form-label" />
-                        <div class="col-sm-6">
-                            <asp:TextBox ID="txtCliente" runat="server" CssClass="form-control" />
-                        </div>
-                        <div class="col-sm-2">
-                            <asp:Button ID="btnBuscarCliente" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="btnBuscarCliente_Click" />
-                        </div>
+                  <div class="mb-3 row">
+                    <asp:Label ID="lblNombreCliente" runat="server" Text="Nombre Cliente:" CssClass="col-sm-2 col-form-label" />
+                    <div class="col-sm-4">
+                        <asp:TextBox ID="txtNombreCliente" runat="server" CssClass="form-control" />
                     </div>
+                    <div class="col-sm-2">
+                        <asp:Button ID="btnBuscarCliente" runat="server" Text="Buscar" CssClass="btn btn-info" OnClick="btnBuscarCliente_Click" />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <asp:Label ID="lblClientes" runat="server" Text="Seleccionar Cliente:" CssClass="col-sm-2 col-form-label" />
+                    <div class="col-sm-4">
+                        <asp:DropDownList ID="ddlClientes" runat="server" CssClass="form-control">
+                        </asp:DropDownList>
+                    </div>
+                </div>
+
 
                     <div class="mb-3 row">
                         <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
@@ -50,19 +64,22 @@
                             <asp:DropDownList ID="ddlSucursales" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursales_SelectedIndexChanged" />
                         </div>
                     </div>
-                     <div class="mb-3 row">
+
+                    <div class="mb-3 row">
                         <asp:Label ID="lblCajero" runat="server" Text="Cajero:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-8">
                             <asp:DropDownList ID="ddlCajeros" runat="server" CssClass="form-control">
                             </asp:DropDownList>
                         </div>
                     </div>
+                    
                     <div class="mb-3 row">
-                     <asp:Label ID="lblMoneda" runat="server" Text="Moneda:" CssClass="col-sm-2 col-form-label" />
-                     <div class="col-sm-6">
-                         <asp:DropDownList ID="ddlMonedas" runat="server" CssClass="form-control" />
-                     </div>
-                 </div>
+                        <asp:Label ID="lblMoneda" runat="server" Text="Moneda:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-6">
+                            <asp:DropDownList ID="ddlMonedas" runat="server" CssClass="form-control" />
+                        </div>
+                    </div>
+
                     <div class="mb-3 row">
                         <asp:Label ID="lblProducto" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-6">

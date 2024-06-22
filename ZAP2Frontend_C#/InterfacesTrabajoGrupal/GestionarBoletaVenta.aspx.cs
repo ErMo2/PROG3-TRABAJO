@@ -17,12 +17,12 @@ namespace InterfacesTrabajoGrupal
         private ProductoPrecioWSClient precioDAO = new ProductoPrecioWSClient();
         private boletaVenta boletaVenta = new boletaVenta();
 
-        //Listar Cajeros
+        // Listar Cajeros
         private BindingList<cajero> listarCajeros;
         private cajero cajero = new cajero();
         private CajeroWSClient cajeroDAO;
 
-        //Listar Monedas
+        // Listar Monedas
         private BindingList<moneda> listarMonedas;
         private moneda moneda = new moneda();
         private MonedaWSClient monedaDAO;
@@ -33,11 +33,16 @@ namespace InterfacesTrabajoGrupal
         private productoPrecio[] arregloProductoPrecios;
         private SucursalWSClient sucursalDAO;
 
+        private BindingList<cliente> todosLosClientes;
+        private BindingList<cliente> clientesFiltrados;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
+                todosLosClientes = new BindingList<cliente>(clienteDAO.listarClientes());
+                Session["TodosLosClientes"] = todosLosClientes;
+
                 productosSeleccionados = new BindingList<productoPrecio>();
                 Session["ProductosSeleccionados"] = productosSeleccionados;
                 txtFechaEmision.Text = DateTime.Now.ToString("yyyy-MM-dd");
@@ -48,10 +53,12 @@ namespace InterfacesTrabajoGrupal
             }
             else
             {
+                todosLosClientes = Session["TodosLosClientes"] as BindingList<cliente>;
                 productosSeleccionados = Session["ProductosSeleccionados"] as BindingList<productoPrecio>;
                 BindGridView();
             }
         }
+
         private void CargarCajeros()
         {
             cajeroDAO = new CajeroWSClient();
@@ -61,6 +68,7 @@ namespace InterfacesTrabajoGrupal
             ddlCajeros.DataValueField = "idEmpleado";
             ddlCajeros.DataBind();
         }
+
         private void CargarMonedas()
         {
             // Asume que existe un método en monedaDAO para listar las monedas
@@ -74,7 +82,6 @@ namespace InterfacesTrabajoGrupal
 
         private void CargarSucursales()
         {
-
             sucursalDAO = new SucursalWSClient();
             sucursalList = new BindingList<sucursal>(sucursalDAO.listarSucursal());
             ddlSucursales.DataSource = sucursalList;
@@ -109,26 +116,38 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            int idCliente;
-            if (int.TryParse(txtCliente.Text, out idCliente))
+            string nombreCliente = txtNombreCliente.Text.Trim();
+            if (!string.IsNullOrEmpty(nombreCliente))
             {
-                cliente = clienteDAO.buscarCliente(idCliente);
-                if (cliente != null)
-                {
-                    txtCliente.Text = cliente.nombre;
-                    Session["IdCliente"] = idCliente; // Guardar el idCliente en la sesión
+                clientesFiltrados = new BindingList<cliente>(
+                    todosLosClientes.Where(c => c.nombre.IndexOf(nombreCliente, StringComparison.OrdinalIgnoreCase) >= 0).ToList()
+                );
 
+                if (clientesFiltrados.Count > 0)
+                {
+                    var clientesParaMostrar = clientesFiltrados.Select(c => new
+                    {
+                        idCliente = c.id_cliente,
+                        nombreCompleto = $"{c.nombre} {c.apellido_paterno} {c.apellido_materno}"
+                    }).ToList();
+
+                    ddlClientes.DataSource = clientesParaMostrar;
+                    ddlClientes.DataTextField = "nombreCompleto";
+                    ddlClientes.DataValueField = "idCliente";
+                    ddlClientes.DataBind();
                 }
                 else
                 {
-                    lblMensaje.Text = "Cliente no encontrado";
+                    lblMensaje.Text = "No se encontraron clientes con ese nombre.";
+                    ddlClientes.Items.Clear();
                 }
             }
             else
             {
-                lblMensaje.Text = "ID de cliente no válido";
+                lblMensaje.Text = "Por favor, ingrese un nombre para buscar.";
             }
         }
+
 
         protected void btnBuscarProducto_Click(object sender, EventArgs e)
         {
@@ -158,7 +177,6 @@ namespace InterfacesTrabajoGrupal
                     },
                     precio = prodPrecio.precio,
                 };
-
 
                 productosSeleccionados.Add(prodSel);
 
@@ -190,22 +208,16 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            int idCliente = (int)Session["IdCliente"];
+            int idCliente = int.Parse(ddlClientes.SelectedValue);
 
             // Configurar los datos de la boleta de venta
             boletaVenta.fecha_emision = DateTime.Now;
             boletaVenta.fecha_emisionSpecified = true;
-            //Moneda
-            //Ingresar moneda
-            moneda moneda = new moneda();
-            moneda.idMoneda = Int32.Parse(ddlMonedas.SelectedValue);            /*boletaVenta.moneda = new moneda
-            {
-                idMoneda = int.Parse(ddlMonedas.SelectedValue),
-                abreviacion = listarMonedas.FirstOrDefault(m => m.idMoneda == int.Parse(ddlMonedas.SelectedValue))?.abreviacion,
-                nombre = listarMonedas.FirstOrDefault(m => m.idMoneda == int.Parse(ddlMonedas.SelectedValue))?.nombre
-            };*/
-            boletaVenta.moneda = moneda;
 
+            // Ingresar moneda
+            moneda moneda = new moneda();
+            moneda.idMoneda = Int32.Parse(ddlMonedas.SelectedValue);
+            boletaVenta.moneda = moneda;
 
             // Tipo Tarjeta
             boletaVenta.tarjeta = new tarjeta
@@ -216,15 +228,17 @@ namespace InterfacesTrabajoGrupal
                 banco = new banco() // Configura esto según sea necesario
             };
 
-            //Banco Afiliado
+            // Banco Afiliado
             boletaVenta.tarjeta.banco = new banco();
             boletaVenta.impuestos = 0.18;
             boletaVenta.detalles = "Compra realizada por un cliente regular";
+
             // Cajero
             boletaVenta.empleado = new cajero
             {
                 idEmpleado = int.Parse(ddlCajeros.SelectedValue)
             };
+
             // Crear las líneas de documento de venta a partir de los productos seleccionados
             var lineasDocVenta = new BindingList<lineaDoc>();
             foreach (var producto in productosSeleccionados)
@@ -240,11 +254,12 @@ namespace InterfacesTrabajoGrupal
                 lineasDocVenta.Add(linea);
             }
 
-            boletaVenta.numSerie = 292;
+            boletaVenta.numSerie = int.Parse(txtNumeroSerie.Text);
             boletaVenta.montoTotal = devuelve() * 1.18;
             boletaVenta.total = devuelve();
             boletaVenta.lineasDocVenta = lineasDocVenta.ToArray();
             boletaVenta.idCliente = idCliente;
+
             // Registrar la boleta de venta
             int resultado = boletaVentaDAO.insertarBoletaVenta(boletaVenta);
 
@@ -263,7 +278,6 @@ namespace InterfacesTrabajoGrupal
             {
                 lblMensaje.Text = "Error al registrar la boleta de venta";
             }
-
         }
 
         private void BindGridView()
@@ -277,6 +291,7 @@ namespace InterfacesTrabajoGrupal
             double total = productosSeleccionados.Sum(p => p.precio * p.producto.cantidadComprada);
             lblTotalValue.Text = total.ToString("C");
         }
+
         private double devuelve()
         {
             return productosSeleccionados.Sum(p => p.precio * p.producto.cantidadComprada);
