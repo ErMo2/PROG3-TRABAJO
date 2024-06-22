@@ -23,3 +23,4 @@ public interface AreaDao {
     int eliminarAreaProducto(int idAreaProducto);
     Area ListarProductosDelArea(int idArea);
 }
+

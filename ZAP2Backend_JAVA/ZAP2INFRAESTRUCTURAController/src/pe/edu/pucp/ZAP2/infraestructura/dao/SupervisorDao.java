@@ -19,3 +19,4 @@ public interface SupervisorDao {
     Supervisor buscar(int id);
     ArrayList<Supervisor> listarTodasDeUnaSucursal(int idSucursal);
 }
+
