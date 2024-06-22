@@ -26,7 +26,7 @@
             <asp:TemplateField>
                 <HeaderTemplate>Acciones</HeaderTemplate>
                 <ItemTemplate>
-                    <asp:Button ID="btnVerBoleta" runat="server" Text="Ver" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-info btn-sm" OnClick="btnVerBoleta_Click" data-toggle="modal" data-target="#verBoletaModal" />
+                    <asp:Button ID="btnVerBoleta" runat="server" Text="Ver" CommandArgument='<%# Eval("id_doc_venta") %>' CssClass="btn btn-info btn-sm" OnClick="btnVerBoleta_Click"  />    
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

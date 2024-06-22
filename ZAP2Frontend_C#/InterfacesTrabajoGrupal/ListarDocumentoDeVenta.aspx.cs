@@ -16,6 +16,8 @@ namespace InterfacesTrabajoGrupal
         private Factura_VentaWSClient daoFacturaVenta;
         private BindingList<facturaVenta> listaFacturasDeVenta;
 
+        private ReportesFrontWSClient daoReportesFrontWSClient;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -70,27 +72,17 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnVerBoleta_Click(object sender, EventArgs e)
         {
-            daoBoletaDeVenta = new Boleta_VentaWSClient();
-            boletaVenta[] arregloBoletas = daoBoletaDeVenta.listarBoletaVentaTodos();
-            if (arregloBoletas != null)
-                listaBoletasDeVenta = new BindingList<boletaVenta>(arregloBoletas);
-
-            Button btn = (Button)sender;
-            int index = int.Parse(btn.CommandArgument);
-            boletaVenta boleta = listaBoletasDeVenta[index];
-
-            if (boleta != null)
+            daoReportesFrontWSClient = new ReportesFrontWSClient();
+            int id = Int32.Parse(((Button)sender).CommandArgument);
+            byte[] reporte = daoReportesFrontWSClient.generarBoletaVenta(id);
+            if (reporte != null && reporte.Length > 0)
             {
-                lblDetallesBoleta.Text = $"<strong>Id Documento:</strong> {boleta.id_documento}<br/>" +
-                                         $"<strong>Fecha de Emisión:</strong> {boleta.fecha_emision}<br/>" +
-                                         $"<strong>Monto Total:</strong> {boleta.montoTotal}<br/>" +
-                                         $"<strong>Moneda:</strong> {boleta.moneda}<br/>" +
-                                         $"<strong>Detalles:</strong> {boleta.detalles}<br/>" +
-                                         $"<strong>Empleado:</strong> {boleta.empleado.nombre + boleta.empleado.apellido_paterno}<br/>" +
-                                         $"<strong>Tarjeta:</strong> {boleta.tarjeta}<br/>";
-                                        // $"<strong>Líneas Doc Venta:</strong> {boleta.lineasDocVenta}<br/>";
+                Response.Clear();
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("Content-Disposition", "inline; filename=ReporteMasVendidos.pdf");
+                Response.BinaryWrite(reporte);
+                Response.End();
             }
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verBoletaModal').modal('show');", true);
         }
 
         protected void btnVerFactura_Click(object sender, EventArgs e)
