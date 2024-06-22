@@ -91,14 +91,14 @@ namespace InterfacesTrabajoGrupal
                     rbEmpacador.Checked = true;
                 else
                     rbConsultor.Checked = true;
-                /*
+                
                 BindingList<area> cargar_area = new BindingList<area>();
                 cargar_area.Add(empleado.area);
                 ddlAreaXSucursal.DataSource = cargar_area;
                 ddlAreaXSucursal.DataTextField = "nombre";
                 ddlAreaXSucursal.DataValueField = "idArea";
                 ddlAreaXSucursal.DataBind();
-                */
+                
 
                 supervisor = new supervisor();
                 daoSupervisor = new SupervisorWSClient();
@@ -204,7 +204,8 @@ namespace InterfacesTrabajoGrupal
 
                 ddlSupervisor.DataSource = listarSupervisoresXSucursal;
                 ddlSupervisor.DataTextField = "nombre";
-                
+                ddlSupervisor.DataValueField = "id_Persona";
+
                 ddlSupervisor.DataBind();
             }
         }
