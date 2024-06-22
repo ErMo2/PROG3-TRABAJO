@@ -339,6 +339,24 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton rbConsultor;
 
         /// <summary>
+        /// Control lblAreaXSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAreaXSucursal;
+
+        /// <summary>
+        /// Control ddlAreaXSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAreaXSucursal;
+
+        /// <summary>
         /// Control lblIdSupervisor.
         /// </summary>
         /// <remarks>
@@ -348,13 +366,13 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.Label lblIdSupervisor;
 
         /// <summary>
-        /// Control txtIdSupervisor.
+        /// Control ddlSupervisor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIdSupervisor;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSupervisor;
 
         /// <summary>
         /// Control btnRegresar.

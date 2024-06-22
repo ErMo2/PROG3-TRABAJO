@@ -2,6 +2,7 @@
 using Org.BouncyCastle.Asn1.X500;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,6 +14,10 @@ namespace InterfacesTrabajoGrupal
     {
         private SupervisorWSClient daoSupervisor;
         private supervisor empleado;
+
+        private AreaWSClient daoArea;
+        private area area;
+        private BindingList<area> listaAreaxSucursales;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,7 +27,21 @@ namespace InterfacesTrabajoGrupal
                 {
                     cargarSupervisores(idEmpleadoArea);
                 }
+                else
+                {
+                    cargarAreasXSucursales();
+                }
             }
+        }
+        private void cargarAreasXSucursales()
+        {
+            daoArea = new AreaWSClient();
+            area[] arregloAreas = daoArea.listarAreaConSucursales();
+            listaAreaxSucursales = new BindingList<area>(arregloAreas);
+            ddlAreaXSucursal.DataSource = listaAreaxSucursales;
+            ddlAreaXSucursal.DataTextField = "nombre";
+            ddlAreaXSucursal.DataValueField = "idArea";
+            ddlAreaXSucursal.DataBind();
         }
         private void cargarSupervisores(int idSupervisor)
         {
@@ -63,6 +82,12 @@ namespace InterfacesTrabajoGrupal
                     else
                         rbContratoEspecial.Checked = true;
                 }
+                BindingList<area> cargar_area = new BindingList<area>();
+                cargar_area.Add(empleado.area);
+                ddlAreaXSucursal.DataSource = cargar_area;
+                ddlAreaXSucursal.DataTextField = "nombre";
+                ddlAreaXSucursal.DataValueField = "idArea";
+                ddlAreaXSucursal.DataBind();
             }
 
         }
@@ -114,7 +139,7 @@ namespace InterfacesTrabajoGrupal
             }
             empleado.tipoContratoSpecified = true;
             area area_ = new area();
-            area_.idArea = 1;
+            area_.idArea = int.Parse(ddlAreaXSucursal.SelectedValue);
             empleado.area = area_;
 
             if (empleado.id_Persona > 0)

@@ -242,5 +242,6 @@ public class AreaMySql implements AreaDao{
         return area;
     
     }
+
     
 }

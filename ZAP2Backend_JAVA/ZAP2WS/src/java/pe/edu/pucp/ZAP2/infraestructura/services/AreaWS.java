@@ -126,6 +126,7 @@ public class AreaWS {
             System.out.println(ex.getMessage());
         }
         return resultado;
+        
     }
     
     
