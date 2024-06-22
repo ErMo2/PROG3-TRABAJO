@@ -82,7 +82,7 @@ public class RopaWS {
         ArrayList<Ropa> ropas = null;
         try{
             daoRopa = new RopaMySql();
-            ropas = daoRopa.listarTodas();
+            ropas = daoRopa.listarTodosPorNombre(dato);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
