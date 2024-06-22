@@ -788,6 +788,7 @@
     <Content Include="ListarAreas.aspx" />
     <Content Include="ListarBancos.aspx" />
     <Content Include="ListarDocumentoDeVenta.aspx" />
+    <Content Include="ListarEgresosIngresos.aspx" />
     <Content Include="ListarEmpleados.aspx" />
     <Content Include="ListarLotes.aspx" />
     <Content Include="ListarPedidos.aspx" />
@@ -1087,6 +1088,13 @@
     </Compile>
     <Compile Include="ListarDocumentoDeVenta.aspx.designer.cs">
       <DependentUpon>ListarDocumentoDeVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEgresosIngresos.aspx.cs">
+      <DependentUpon>ListarEgresosIngresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEgresosIngresos.aspx.designer.cs">
+      <DependentUpon>ListarEgresosIngresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarEmpleados.aspx.cs">
       <DependentUpon>ListarEmpleados.aspx</DependentUpon>

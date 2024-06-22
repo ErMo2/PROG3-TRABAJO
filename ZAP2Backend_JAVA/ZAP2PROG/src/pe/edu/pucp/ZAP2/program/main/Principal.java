@@ -117,12 +117,12 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-        
-        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
-        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        Date fecha1 = formato.parse(fechaStr);
-        Date fecha2 = formato.parse(fechaStr2);
+//        
+//        String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
+//        String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
+//        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+//        Date fecha1 = formato.parse(fechaStr);
+//        Date fecha2 = formato.parse(fechaStr2);
         
         /*======================================================================*/
         /*============================== Sucursal ==============================*/
@@ -319,27 +319,27 @@ public class Principal {
     
         /*======================================================================*/
         /*============================== Pedido ================================*/
-        /*======================================================================*/
-        PedidoDao daoPedido = new PedidoMySql();
-        
-        Producto producto = new ProductoPerecible();
-        producto.setIdProducto(2);
-        
-        Detalle_PedidoDao daoDetPed = new Detalle_PedidoMySql();
-        Detalle_Pedido detPed = new Detalle_Pedido();
-        detPed.setPrecioTotal(50);
-        detPed.setPrecioUnitario(10);
-        detPed.setProducto(producto);
-        detPed.setSubtotal(59);
-        
-        /*######### Insertar ########*/
-        Pedido pedido = new Pedido(5, 999, Estado_Pedido.EN_PROCESO, fecha2, 468.8, null);
-        //daoPedido.insertar(pedido);
-        
-        detPed.setPedido(pedido);
-        daoDetPed.insertar(detPed);
-        
-        /*######## Modificar ########*/
+//        /*======================================================================*/
+//        PedidoDao daoPedido = new PedidoMySql();
+//        
+//        Producto producto = new ProductoPerecible();
+//        producto.setIdProducto(2);
+//        
+//        Detalle_PedidoDao daoDetPed = new Detalle_PedidoMySql();
+//        Detalle_Pedido detPed = new Detalle_Pedido();
+//        detPed.setPrecioTotal(50);
+//        detPed.setPrecioUnitario(10);
+//        detPed.setProducto(producto);
+//        detPed.setSubtotal(59);
+//        
+//        /*######### Insertar ########*/
+//        Pedido pedido = new Pedido(5, 999, Estado_Pedido.EN_PROCESO, fecha2, 468.8, null);
+//        //daoPedido.insertar(pedido);
+//        
+//        detPed.setPedido(pedido);
+//        daoDetPed.insertar(detPed);
+//        
+//        /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
 //        daoPedido.eliminar(1);
@@ -615,6 +615,7 @@ public class Principal {
 //        }
         
         /*########## Listar Egresos #########*/
+//        Documento_de_CompraDao daoDoc_Comra = new Documento_de_CompraMySql();
 //        String fechaStr = "2022-05-05"; // Formato de fecha: "yyyy-MM-dd"
 //        String fechaStr2 = "2022-08-20"; // Formato de fecha: "yyyy-MM-dd"
 //        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
