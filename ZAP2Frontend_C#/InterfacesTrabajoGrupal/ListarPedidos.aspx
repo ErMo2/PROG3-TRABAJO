@@ -28,7 +28,7 @@
                         </HeaderTemplate>
                         <ItemTemplate>
                             <asp:LinkButton ID="btnVer" runat="server" Text="Ver" CommandArgument='<%# Eval("id_pedido") %>' CssClass="btn btn-info btn-sm" OnClick="btnVer_Click" data-toggle="modal"/>
-                            <asp:LinkButton ID="btnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("id_pedido") %>' CssClass="btn btn-danger btn-sm" OnClick="btnEliminar_Click" />
+                            <asp:LinkButton ID="btnEliminar" runat="server" Text="Eliminar" CommandArgument='<%# Eval("id_pedido") %>' CssClass="btn btn-danger btn-sm" OnClick="btnEliminar_Click" OnClientClick="return confirm('¿Está seguro que desea eliminar?');"/>
                         </ItemTemplate>
                     </asp:TemplateField>
 
