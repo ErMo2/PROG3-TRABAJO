@@ -38,6 +38,7 @@ public class PedidoMySql implements PedidoDao{
             cs.setString("_estado", pedido.getEstado().toString());
             java.sql.Date fechaPedido = new java.sql.Date(pedido.getFecha_Pedido().getTime()); 
             cs.setDate("_fecha_pedido", fechaPedido);
+            cs.setString("_nombre",pedido.getNombre());
             resultado = cs.executeUpdate();
             pedido.setId_pedido(cs.getInt("_id_pedido"));
         }catch(SQLException ex){
@@ -60,6 +61,7 @@ public class PedidoMySql implements PedidoDao{
             cs.setString("_estado", pedido.getEstado().toString());
             java.sql.Date fechaPedido = new java.sql.Date(pedido.getFecha_Pedido().getTime()); 
             cs.setDate("_fecha_pedido", fechaPedido);
+            cs.setString("_nombre",pedido.getNombre());
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
@@ -107,7 +109,7 @@ public class PedidoMySql implements PedidoDao{
                 Date fecha = rs.getDate("fecha_pedido");
                 ped.setFecha_Pedido(fecha);
                 ped.setTotal(rs.getDouble("total"));
-                
+                ped.setNombre(rs.getString("nombre"));
                 pedidos.add(ped);
             }
         }catch(Exception ex){
