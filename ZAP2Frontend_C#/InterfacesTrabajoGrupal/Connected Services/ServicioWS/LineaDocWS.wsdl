@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/LineaDocWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="insertarLineaDoc">
-    <part name="parameters" element="tns:insertarLineaDoc" />
+  <message name="listarLineaDoc">
+    <part name="parameters" element="tns:listarLineaDoc" />
   </message>
-  <message name="insertarLineaDocResponse">
-    <part name="parameters" element="tns:insertarLineaDocResponse" />
+  <message name="listarLineaDocResponse">
+    <part name="parameters" element="tns:listarLineaDocResponse" />
   </message>
   <message name="modificarLineaDoc">
     <part name="parameters" element="tns:modificarLineaDoc" />
@@ -17,39 +17,39 @@
   <message name="modificarLineaDocResponse">
     <part name="parameters" element="tns:modificarLineaDocResponse" />
   </message>
+  <message name="insertarLineaDoc">
+    <part name="parameters" element="tns:insertarLineaDoc" />
+  </message>
+  <message name="insertarLineaDocResponse">
+    <part name="parameters" element="tns:insertarLineaDocResponse" />
+  </message>
   <message name="eliminarLineaDoc">
     <part name="parameters" element="tns:eliminarLineaDoc" />
   </message>
   <message name="eliminarLineaDocResponse">
     <part name="parameters" element="tns:eliminarLineaDocResponse" />
   </message>
-  <message name="listarLineaDoc">
-    <part name="parameters" element="tns:listarLineaDoc" />
-  </message>
-  <message name="listarLineaDocResponse">
-    <part name="parameters" element="tns:listarLineaDocResponse" />
-  </message>
   <portType name="LineaDocWS">
-    <operation name="insertarLineaDoc">
-      <input wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest" message="tns:insertarLineaDoc" />
-      <output wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocResponse" message="tns:insertarLineaDocResponse" />
+    <operation name="listarLineaDoc">
+      <input wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocRequest" message="tns:listarLineaDoc" />
+      <output wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocResponse" message="tns:listarLineaDocResponse" />
     </operation>
     <operation name="modificarLineaDoc">
       <input wsam:Action="ZAP2WS/LineaDocWS/modificarLineaDocRequest" message="tns:modificarLineaDoc" />
       <output wsam:Action="ZAP2WS/LineaDocWS/modificarLineaDocResponse" message="tns:modificarLineaDocResponse" />
     </operation>
+    <operation name="insertarLineaDoc">
+      <input wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest" message="tns:insertarLineaDoc" />
+      <output wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocResponse" message="tns:insertarLineaDocResponse" />
+    </operation>
     <operation name="eliminarLineaDoc">
       <input wsam:Action="ZAP2WS/LineaDocWS/eliminarLineaDocRequest" message="tns:eliminarLineaDoc" />
       <output wsam:Action="ZAP2WS/LineaDocWS/eliminarLineaDocResponse" message="tns:eliminarLineaDocResponse" />
     </operation>
-    <operation name="listarLineaDoc">
-      <input wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocRequest" message="tns:listarLineaDoc" />
-      <output wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocResponse" message="tns:listarLineaDocResponse" />
-    </operation>
   </portType>
   <binding name="LineaDocWSPortBinding" type="tns:LineaDocWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarLineaDoc">
+    <operation name="listarLineaDoc">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarLineaDoc">
+    <operation name="insertarLineaDoc">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarLineaDoc">
+    <operation name="eliminarLineaDoc">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

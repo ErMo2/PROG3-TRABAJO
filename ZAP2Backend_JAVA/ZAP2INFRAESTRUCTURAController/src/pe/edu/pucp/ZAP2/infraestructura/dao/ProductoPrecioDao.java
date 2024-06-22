@@ -16,4 +16,6 @@ public interface ProductoPrecioDao {
     int modificar(ProductoPrecio productoPrecio);
     int eliminar(int idProductoPrecio);
     ArrayList<ProductoPrecio> listarTodos();
+    ArrayList<ProductoPrecio> listarPreciosProducto(int idProd);
+    ArrayList<ProductoPrecio> listarPreciosProductoDeUnaSucursal(int idsucursal);
 }

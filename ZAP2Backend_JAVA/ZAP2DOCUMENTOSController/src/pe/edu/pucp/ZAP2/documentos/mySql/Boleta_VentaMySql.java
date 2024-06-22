@@ -15,6 +15,7 @@ import pe.edu.pucp.ZAP2.documentos.dao.Boleta_VentaDao;
 import pe.edu.pucp.ZAP2.documentos.model.Boleta_Venta;
 import pe.edu.pucp.ZAP2.documentos.model.Moneda;
 import pe.edu.pucp.ZAP2.documentos.model.Tarjeta;
+import pe.edu.pucp.ZAP2.infraestructura.model.Cajero;
 import pe.edu.pucp.ZAP2.infraestructura.model.Cliente;
 import pe.edu.pucp.ZAP2.infraestructura.model.Empleado;
 import pe.edu.pucp.ZAP2.personas.model.Persona;
@@ -36,7 +37,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_BOLETA_VENTA(?,?,?,?,?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_boleta_venta",java.sql.Types.INTEGER);
-            cs.setInt("_fid_id_persona", boletaVenta.getCliente().getId_Persona());
+            cs.setInt("_fid_id_persona", boletaVenta.getIdCliente());
             cs.setInt("_numSerie", boletaVenta.getNumSerie());
             cs.setString("_detalles", boletaVenta.getDetalles());
             cs.setDouble("_impuestos", boletaVenta.getImpuestos());
@@ -116,7 +117,7 @@ public class Boleta_VentaMySql implements Boleta_VentaDao{
                 Boleta_Venta bolVenta = new Boleta_Venta();
                 bolVenta.setId_doc_venta(rs.getInt("id_boleta_venta"));
                 
-                Empleado empleado = new Empleado(){};
+                Empleado empleado = new Cajero();
                 empleado.setId_Persona(rs.getInt("fid_id_persona"));//Cambiar el fid_id_persona por fid_id_empleado
                 empleado.setIdEmpleado(rs.getInt("fid_id_persona"));//Cambiar el fid_id_persona por fid_id_empleado
                 bolVenta.setEmpleado(empleado);

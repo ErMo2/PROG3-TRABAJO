@@ -33,8 +33,11 @@ namespace InterfacesTrabajoGrupal
                 CargarMovimientosDeLote();
                 CargarLotes();
 
+                lblTituloAlmacenes.Text = "Registrar Almacen";
+
                 if (Request.QueryString["id"] != null)
                 {
+                    lblTituloAlmacenes.Text = "Modificar Almacen";
                     int idAlmacen = int.Parse(Request.QueryString["id"]);
                     CargarDatosAlmacen(idAlmacen);
                 }
@@ -82,24 +85,24 @@ namespace InterfacesTrabajoGrupal
 
         private void CargarMovimientosDeLote()
         {
-            movimientosLoteList = new BindingList<movimientoLote>(movimientoLoteDAO.listarMovimientoLote());
-            ddlMovimientoLote.Items.Clear();
-            foreach (var movimiento in movimientosLoteList)
-            {
-                ddlMovimientoLote.Items.Add(new ListItem(movimiento.motivo.ToString(), movimiento.idMovimientoLote.ToString()));
-            }
+            //movimientosLoteList = new BindingList<movimientoLote>(movimientoLoteDAO.listarMovimientoLote());
+            //ddlMovimientoLote.Items.Clear();
+            //foreach (var movimiento in movimientosLoteList)
+            //{
+            //    ddlMovimientoLote.Items.Add(new ListItem(movimiento.motivo.ToString(), movimiento.idMovimientoLote.ToString()));
+            //}
         }
 
         private void CargarLotes()
         {
-            lotesList = new BindingList<lote>(loteDAO.listarLote());
-            ddlLote.Items.Clear();
-            foreach (lote lote in lotesList)
-            {
-                // Verificar si movLote no es null antes de agregarlo a la lista
-                string movLoteText = lote.movLote != null ? lote.movLote.ToString() : "N/A";
-                ddlLote.Items.Add(new ListItem(movLoteText, lote.idLote.ToString()));
-            }
+            //lotesList = new BindingList<lote>(loteDAO.listarLote());
+            //ddlLote.Items.Clear();
+            //foreach (lote lote in lotesList)
+            //{
+            //    // Verificar si movLote no es null antes de agregarlo a la lista
+            //    string movLoteText = lote.movLote != null ? lote.movLote.ToString() : "N/A";
+            //    ddlLote.Items.Add(new ListItem(movLoteText, lote.idLote.ToString()));
+            //}
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)

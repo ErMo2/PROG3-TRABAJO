@@ -111,6 +111,7 @@ public class AlmacenMySql implements AlmacenDao{
                 almacen.setCapacidadActualProductos(rs.getDouble("capacidadActualProductos"));
                 String tipoAlmacenStr = rs.getString("tipoAlmacen");
                 TipoAlmacen tipoAlmacen = TipoAlmacen.valueOf(tipoAlmacenStr);
+                almacen.setNombre(rs.getString("nombre_id_almacen"));
                 almacen.setTipoAlmacen(tipoAlmacen);
                 
                 almacenes.add(almacen);
@@ -122,7 +123,7 @@ public class AlmacenMySql implements AlmacenDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return almacenes;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 
     @Override

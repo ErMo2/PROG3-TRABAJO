@@ -15,21 +15,57 @@ namespace InterfacesTrabajoGrupal
     {
 
         /// <summary>
-        /// Control lbRegistrarDocumentoDeCompra.
+        /// Control lbRegistrarBoletaDeVenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbRegistrarDocumentoDeCompra;
+        protected global::System.Web.UI.WebControls.LinkButton lbRegistrarBoletaDeVenta;
 
         /// <summary>
-        /// Control gvListaDocumentoDeVenta.
+        /// Control gvBoletasDeVenta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvListaDocumentoDeVenta;
+        protected global::System.Web.UI.WebControls.GridView gvBoletasDeVenta;
+
+        /// <summary>
+        /// Control lbRegistrarFacturaDeVenta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbRegistrarFacturaDeVenta;
+
+        /// <summary>
+        /// Control gvFacturasDeVenta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvFacturasDeVenta;
+
+        /// <summary>
+        /// Control lblDetallesBoleta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetallesBoleta;
+
+        /// <summary>
+        /// Control lblDetallesFactura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDetallesFactura;
     }
 }

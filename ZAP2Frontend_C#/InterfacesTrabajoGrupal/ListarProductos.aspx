@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="ListarProductos.aspx.cs" Inherits="InterfacesTrabajoGrupal.GestionProducto" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ZAP3WA.Master" AutoEventWireup="true" CodeBehind="ListarProductos.aspx.cs" Inherits="InterfacesTrabajoGrupal.GestionProducto" MaintainScrollPositionOnPostBack="true" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
@@ -18,7 +18,10 @@
             <asp:LinkButton ID="lbRegistrarProducto" runat="server" CssClass="btn btn-success"
                 Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Producto" OnClick="lbRegistrarProducto_Click" />
         </div>
-
+        <div class="text-end mb-3">
+            <asp:LinkButton ID="lbImprimirReporte" runat="server" CssClass="btn btn-success"
+                Text="<i class='fa-solid fa-plus pe-2'></i>Productos más vendidos" OnClick="lbimprimirReporte_Click" />
+        </div>
         <h3>Productos Perecibles</h3>
         <asp:GridView ID="gvProductosPerecibles" runat="server" AutoGenerateColumns="false" CssClass="table table-hover table-responsive" AllowPaging="true" OnPageIndexChanging="gvProductosPerecibles_PageIndexChanging" PageSize="5">
             <Columns>
@@ -72,9 +75,10 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-
         <h3>Ropa</h3>
-        <asp:GridView ID="gvRopa" runat="server" AutoGenerateColumns="false" CssClass="table table-hover table-responsive" AllowPaging="true" OnPageIndexChanging="gvRopa_PageIndexChanging" PageSize="5">
+        <asp:GridView ID="gvRopa" runat="server" AutoGenerateColumns="false"
+            CssClass="table table-hover table-responsive" AllowPaging="true"
+            OnPageIndexChanging="gvRopa_PageIndexChanging" PageSize="5">
             <Columns>
                 <asp:BoundField HeaderText="Id" DataField="idProducto" />
                 <asp:BoundField HeaderText="Nombre" DataField="nombre" />

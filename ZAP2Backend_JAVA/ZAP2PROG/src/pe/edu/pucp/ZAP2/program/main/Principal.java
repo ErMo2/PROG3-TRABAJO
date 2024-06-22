@@ -117,8 +117,6 @@ public class Principal {
         /*=============================*/
         /*==== Objetos compartidos ====*/
         /*=============================*/
-        Producto producto = new ProductoPerecible();
-        producto.setIdProducto(1);
         
         String fechaStr = "2022-05-10"; // Formato de fecha: "yyyy-MM-dd"
         String fechaStr2 = "2022-08-10"; // Formato de fecha: "yyyy-MM-dd"
@@ -322,17 +320,35 @@ public class Principal {
         /*======================================================================*/
         /*============================== Pedido ================================*/
         /*======================================================================*/
-//        PedidoDao daoPedido = new PedidoMySql();
+        PedidoDao daoPedido = new PedidoMySql();
+        
+        Producto producto = new ProductoPerecible();
+        producto.setIdProducto(2);
+        
+        Detalle_PedidoDao daoDetPed = new Detalle_PedidoMySql();
+        Detalle_Pedido detPed = new Detalle_Pedido();
+        detPed.setPrecioTotal(50);
+        detPed.setPrecioUnitario(10);
+        detPed.setProducto(producto);
+        detPed.setSubtotal(59);
         
         /*######### Insertar ########*/
-//        Pedido pedido = new Pedido(1, 500.6, Estado_Pedido.COMPLETADO, fecha1, 468.8, null);
-//        daoPedido.insertar(pedido);
+        Pedido pedido = new Pedido(5, 999, Estado_Pedido.EN_PROCESO, fecha2, 468.8, null);
+        //daoPedido.insertar(pedido);
+        
+        detPed.setPedido(pedido);
+        daoDetPed.insertar(detPed);
         
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
+//        daoPedido.eliminar(1);
         
         /*########## Listar #########*/
+//        ArrayList<Pedido> pedidos = daoPedido.listarTodas();
+//        for(Pedido ped:pedidos){
+//            ped.imprimir();
+//        }
         
         /*======================================================================*/
         /*=========================== Detalle_Pedido ==========================*/
@@ -397,7 +413,7 @@ public class Principal {
         /*######## Modificar ########*/
         
         /*######## Eliminar #########*/
-        
+//        daoProdPerec.eliminar(1);
         /*########## Listar #########*/   
         
         
@@ -754,18 +770,18 @@ public class Principal {
         /*======================================================================*/
         /*=============================== LineaDoc =============================*/
         /*======================================================================*/
-//        ProductoPrecio producPrecio = new ProductoPrecio();
-//        producPrecio.setIdProductoPrecio(1);
-//        
-//        Documento doc = new Documento();
-//        doc.setId_documento(3);
-//        
-//        LineaDoc linea_doc = new LineaDoc(1,200,500,10,2,producPrecio,doc);
-//        
-//        LineaDocDao daoLineaDoc = new LineaDocMySql();
+        ProductoPrecio producPrecio = new ProductoPrecio();
+        producPrecio.setIdProductoPrecio(71);
+        
+        Documento doc = new Documento();
+        doc.setId_documento(43);
+        
+        LineaDoc linea_doc = new LineaDoc(1,200,500,51,2,producPrecio,doc);
+        
+        LineaDocDao daoLineaDoc = new LineaDocMySql();
 
         /*######### Insertar ########*/
-//        daoLineaDoc.insertar(linea_doc);
+        daoLineaDoc.insertar(linea_doc);
 
         /*######## Modificar ########*/
 //        linea_doc.setCantidad(1);

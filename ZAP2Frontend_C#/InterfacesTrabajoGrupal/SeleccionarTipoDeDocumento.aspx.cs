@@ -19,7 +19,7 @@ namespace InterfacesTrabajoGrupal
         }
         protected void lblDocumentoCompra_Click(object sender,EventArgs e)
         {
-            Response.Redirect("listarDocumentoDeCompra.aspx");
+            Response.Redirect("GestionarDocumentoDeCompra.aspx");
         }
     }
 }

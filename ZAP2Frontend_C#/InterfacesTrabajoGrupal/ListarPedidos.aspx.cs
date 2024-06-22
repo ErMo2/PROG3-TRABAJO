@@ -9,30 +9,47 @@ using System.Web.UI.WebControls;
 
 namespace InterfacesTrabajoGrupal
 {
-    public partial class GestionPedidos : System.Web.UI.Page
+    public partial class ListarPedidos : System.Web.UI.Page
     {
-        private PedidoWSClient pedidoDao;
-        private BindingList<pedido> listaPedidos;
+        private PedidoWSClient daoPedido;
         private pedido pedido;
+        private BindingList<pedido> pedidos;
         protected void Page_Load(object sender, EventArgs e)
         {
-            pedidoDao= new PedidoWSClient();
-            pedido[] arregloPedidos=pedidoDao.listarPedidos();
+            daoPedido = new PedidoWSClient();
+
+            pedido[] arregloPedidos = daoPedido.listarPedidos();//Creo un arreglo genérico para resibir un ArrayList<> de JAVA
+
             if (arregloPedidos != null)
-                listaPedidos = new BindingList<pedido>(arregloPedidos);
-            
-            gvPedidos.DataSource = listaPedidos;
+                pedidos = new BindingList<pedido>(arregloPedidos);
+
+            gvPedidos.DataSource = pedidos;
             gvPedidos.DataBind();
         }
+
         protected void lbRegistrarPedido_Click(object sender, EventArgs e)
         {
             Response.Redirect("GestionarPedido.aspx");
         }
+
+        protected void btnVer_Click(object sender, EventArgs e)
+        {
+            int idPedido = Int32.Parse(((LinkButton)sender).CommandArgument);
+            Session["idPedido"] = idPedido;
+            Response.Redirect("GestionarPedido.aspx?accion=ver");
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int idPedido = Int32.Parse(((LinkButton)sender).CommandArgument);
+            daoPedido.eliminarPedido(idPedido);
+            Response.Redirect("ListarPedidos.aspx");
+        }
+
         protected void gvPedidos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             gvPedidos.PageIndex = e.NewPageIndex;
-            // Recarga tus datos aquí para refrescar el GridView
+            gvPedidos.DataBind();
         }
-
     }
 }

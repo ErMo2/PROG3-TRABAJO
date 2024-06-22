@@ -88,4 +88,16 @@ public class ClienteWS {
         }
         return clientes;
     }
+    
+    @WebMethod(operationName = "buscarPersonaNatural")
+    public Cliente buscarPersonaNatural(@WebParam(name = "idPnatural") int id) {
+        Cliente dato = null;
+        try{
+            daoCliente = new ClienteMySql();
+            dato = daoCliente.buscarPNatural(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

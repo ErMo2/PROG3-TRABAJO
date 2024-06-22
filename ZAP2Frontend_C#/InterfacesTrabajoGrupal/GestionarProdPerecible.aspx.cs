@@ -14,22 +14,50 @@ namespace InterfacesTrabajoGrupal
         private productoPerecible producto;
         private ProductoPrecioWSClient productoPrecioDao;
         private productoPrecio productoPrecio;
-        //private DescuentoWSClient descuentoDao;
-        private descuento descuento;
         protected void Page_Load(object sender, EventArgs e)
         {
+            int idProductoPerecible;
+            productoDao = new ProductoPerecibleWSClient();
+            if (Session["idPerecible"] != null)
+            {
+                idProductoPerecible = (int)Session["idPerecible"];
+                Session["idPerecible"] = null;
+                producto=productoDao.buscarProductoPerecible(idProductoPerecible);
+                if (!IsPostBack)
+                {
+                    cargarDatos();
+                }
+                Session["idModificarPerecible"] = idProductoPerecible;
+            }
 
+        }
+        protected void cargarDatos()
+        {
+            txtIdProducto.Text = producto.idProducto.ToString();
+            txtNombreProducto.Text = producto.nombre;
+            txtDescripcionProducto.Text = producto.descripcion.ToString();
+            dtpFechaNacimiento.Value = producto.fechVencimiento.ToString("yyyy-MM-dd");
+            ddlTipoProductoPerecible.SelectedValue = producto.tipo_producto_perecible.ToString();
+            ddlUnidadMedida.SelectedValue = producto.unidad_de_medida.ToString();
         }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            if (Session["idModificarPerecible"] != null)
+            {
+                Response.Redirect("ListarProductos.aspx");
+            }
+            else
+            {
+                Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            }
+
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             productoDao = new ProductoPerecibleWSClient();
             producto = new productoPerecible();
+            producto.nombre = txtNombreProducto.Text;
             producto.descripcion = txtDescripcionProducto.Text;
-            producto.prodPrecio = null;
             if (DateTime.TryParse(dtpFechaNacimiento.Value, out DateTime fechaVencimiento))
             {
                 producto.fechVencimiento = fechaVencimiento;
@@ -61,11 +89,19 @@ namespace InterfacesTrabajoGrupal
             producto.fechVencimientoSpecified = true;
             producto.tipo_producto_perecibleSpecified = true;
             producto.unidad_de_medidaSpecified= true;
-            
             productoPrecio = new productoPrecio();
             productoPrecioDao = new ProductoPrecioWSClient();
-            productoPrecio.precio = Double.Parse(txtPrecioProducto.Text);
-            producto.idProducto = productoDao.insertarProductoPerecible(producto);
+            
+            if (Session["idModificarPerecible"] !=null)
+            {
+                producto.idProducto = (int)Session["idModificarPerecible"];
+                int resultado=productoDao.modificarProductoPerecible(producto);
+            }
+            else
+            {
+                producto.idProducto = productoDao.insertarProductoPerecible(producto);
+            }
+            
             productoPrecio.producto = new producto();
             productoPrecio.producto.idProducto = producto.idProducto;
             

@@ -32,13 +32,12 @@ public class PedidoMySql implements PedidoDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_PEDIDO"
-                    +"(?,?,?,?,?)}");
+                    +"(?,?,?,?)}");
             cs.registerOutParameter("_id_pedido", java.sql.Types.INTEGER);
             cs.setDouble("_saldo", pedido.getSaldo());
             cs.setString("_estado", pedido.getEstado().toString());
             java.sql.Date fechaPedido = new java.sql.Date(pedido.getFecha_Pedido().getTime()); 
             cs.setDate("_fecha_pedido", fechaPedido);
-            cs.setDouble("_total", pedido.getTotal());
             resultado = cs.executeUpdate();
             pedido.setId_pedido(cs.getInt("_id_pedido"));
         }catch(SQLException ex){
@@ -46,7 +45,7 @@ public class PedidoMySql implements PedidoDao{
         }finally{
             try{con.close();}catch(Exception ex){ System.out.println(ex.getMessage());}
         }
-        return resultado;
+        return pedido.getId_pedido();
     }
 
     @Override
@@ -100,8 +99,11 @@ public class PedidoMySql implements PedidoDao{
                 Pedido ped = new Pedido();
                 ped.setId_pedido(rs.getInt("id_pedido"));
                 ped.setSaldo(rs.getDouble("saldo"));
-                Estado_Pedido estPed = Estado_Pedido.valueOf("estado");
-                ped.setEstado(estPed);
+                
+                String estadoPedStr = rs.getString("estado");
+                Estado_Pedido est_pedido = Estado_Pedido.valueOf(estadoPedStr);
+                ped.setEstado(est_pedido);
+                
                 Date fecha = rs.getDate("fecha_pedido");
                 ped.setFecha_Pedido(fecha);
                 ped.setTotal(rs.getDouble("total"));

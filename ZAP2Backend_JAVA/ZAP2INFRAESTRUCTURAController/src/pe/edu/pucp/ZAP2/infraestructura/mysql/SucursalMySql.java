@@ -137,5 +137,33 @@ public class SucursalMySql implements SucursalDao{
         }
         return sucursal;
     }
+
+    @Override
+    public ArrayList<Sucursal> listarTodaSinProductoConPrecioActivo(int idProducto) {
+        
+        ArrayList<Sucursal> sucursales =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_SUCURSALES_SIN_PRECIO_PRODUCTO"
+                    +"(?)}");
+            cs.setInt("_id_producto", idProducto);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Sucursal sucursal = new Sucursal();
+                sucursal.setId_sucursal(rs.getInt("id_sucursal"));
+                
+                sucursal.setNombre(rs.getString("nombre"));
+                     
+                sucursales.add(sucursal);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return sucursales;        
+    }
     
 }

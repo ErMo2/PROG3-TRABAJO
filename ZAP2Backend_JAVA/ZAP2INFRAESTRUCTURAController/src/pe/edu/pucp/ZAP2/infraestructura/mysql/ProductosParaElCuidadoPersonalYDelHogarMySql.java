@@ -54,13 +54,13 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_PCH"
                     +"(?,?,?,?,?)}");
-            cs.setInt("_id_PCH", productoParaElCuidadoPersonalYDelHogar.getIdProducto());
+            cs.setInt("_id_producto", productoParaElCuidadoPersonalYDelHogar.getIdProducto());
             cs.setString("_nombre", productoParaElCuidadoPersonalYDelHogar.getNombre());
             cs.setString("_descripcion", productoParaElCuidadoPersonalYDelHogar.getDescripcion());
             cs.setString("_unidad_de_medida", String.valueOf(productoParaElCuidadoPersonalYDelHogar.getUnidadMedida()));
             cs.setString("_tipo", productoParaElCuidadoPersonalYDelHogar.getTipo());
             resultado = cs.executeUpdate();
-            productoParaElCuidadoPersonalYDelHogar.setIdProducto(cs.getInt("_id_PCH"));
+            
         }catch(SQLException ex){
             System.out.println(ex.getMessage());
         }finally{
@@ -75,7 +75,7 @@ public class ProductosParaElCuidadoPersonalYDelHogarMySql implements ProductosPa
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call  ELIMINAR_PRODUCTO(?)}");
-            cs.setInt("_id_PCH",idProducto);
+            cs.setInt("_id_producto",idProducto);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());

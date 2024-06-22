@@ -4,6 +4,8 @@
  */
 package pe.edu.pucp.ZAP2.infraestructura.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author User
@@ -16,6 +18,7 @@ public class Producto {
     private int activo;
     private ProductoPrecio prodPrecio;
     private int cantidadComprada;
+    private ArrayList<ProductoPrecio> productosPrecio;
     public Producto() {
     }
 
@@ -88,4 +91,13 @@ public class Producto {
         System.out.println("Producto{" + "idProducto=" + idProducto + ", nombre=" 
                 + nombre + ", descripcion=" + descripcion + ", activo=" + activo + ", prodPrecio=" + prodPrecio );
     }
+
+    public ArrayList<ProductoPrecio> getProductosPrecio() {
+        return productosPrecio;
+    }
+
+    public void setProductosPrecio(ArrayList<ProductoPrecio> productosPrecio) {
+        this.productosPrecio = productosPrecio;
+    }
+    
 }

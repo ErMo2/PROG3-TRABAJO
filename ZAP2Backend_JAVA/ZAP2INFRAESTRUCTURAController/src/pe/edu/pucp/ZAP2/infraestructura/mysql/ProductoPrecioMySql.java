@@ -101,7 +101,74 @@ public class ProductoPrecioMySql implements ProductoPrecioDao{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return productosPrecios;
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       
+    }
+
+    @Override
+    public ArrayList<ProductoPrecio> listarPreciosProducto(int idProd) {
+     
+        ArrayList<ProductoPrecio> productosPrecios =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTO_PRECIO_PRODUCTO"
+                    +"(?)}");
+            cs.setInt("_fid_producto", idProd);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                ProductoPrecio productoPrecio = new ProductoPrecio();
+                
+                productoPrecio.setIdProductoPrecio(rs.getInt("id_producto_precio"));
+                
+                //SUCURSAL ASOCIADO
+                Sucursal sucursal = new Sucursal();
+                sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                sucursal.setNombre(rs.getString("nombre_sucursal"));
+                productoPrecio.setSucursal(sucursal);
+                //DATOS PROPIOS
+                productoPrecio.setPrecio(rs.getDouble("precio"));
+                productoPrecio.setActivo(rs.getInt("activo"));
+                productosPrecios.add(productoPrecio);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return productosPrecios;
+    }
+
+    @Override
+    public ArrayList<ProductoPrecio> listarPreciosProductoDeUnaSucursal(int idsucursal) {
+        ArrayList<ProductoPrecio> productosPrecios =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTOS_DE_SUCURSAL_CON_PRECIO"
+                    +"(?)}");
+            cs.setInt("_id_sucursal", idsucursal);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                ProductoPrecio productoPrecio = new ProductoPrecio();
+                
+                productoPrecio.setIdProductoPrecio(rs.getInt("id_producto_precio"));
+                
+                Producto producto = new  Producto();
+                producto.setIdProducto(rs.getInt("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
+                //DATOS PROPIOS
+                productoPrecio.setPrecio(rs.getDouble("precio"));
+                productoPrecio.setProducto(producto);
+                productosPrecios.add(productoPrecio);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return productosPrecios;
     }
 
     

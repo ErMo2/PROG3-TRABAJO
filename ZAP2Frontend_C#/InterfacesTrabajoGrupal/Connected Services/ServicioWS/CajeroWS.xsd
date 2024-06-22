@@ -7,6 +7,8 @@
   <xs:element name="insertarCajero" type="tns:insertarCajero" />
   <xs:element name="insertarCajeroResponse" type="tns:insertarCajeroResponse" />
   <xs:element name="listarCajeros" type="tns:listarCajeros" />
+  <xs:element name="listarCajerosPorSucursal" type="tns:listarCajerosPorSucursal" />
+  <xs:element name="listarCajerosPorSucursalResponse" type="tns:listarCajerosPorSucursalResponse" />
   <xs:element name="listarCajerosResponse" type="tns:listarCajerosResponse" />
   <xs:element name="modificarCajero" type="tns:modificarCajero" />
   <xs:element name="modificarCajeroResponse" type="tns:modificarCajeroResponse" />
@@ -107,6 +109,7 @@
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productosPrecio" nillable="true" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="productoPrecio">
@@ -148,7 +151,9 @@
       <xs:element name="capacidadMaximaProductos" type="xs:double" />
       <xs:element name="id_almacen" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lote" nillable="true" type="tns:lote" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lotes" nillable="true" type="tns:lote" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="movimientosLote" nillable="true" type="tns:movimientoLote" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
       <xs:element minOccurs="0" name="tipoAlmacen" type="tns:tipoAlmacen" />
     </xs:sequence>
@@ -206,6 +211,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarCajeros">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarCajerosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cajero" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="eliminarCajero">
     <xs:sequence>
       <xs:element name="idCajero" type="xs:int" />
@@ -216,10 +229,12 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarCajeros">
-    <xs:sequence />
+  <xs:complexType name="listarCajerosPorSucursal">
+    <xs:sequence>
+      <xs:element name="idCajero" type="xs:int" />
+    </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarCajerosResponse">
+  <xs:complexType name="listarCajerosPorSucursalResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cajero" />
     </xs:sequence>

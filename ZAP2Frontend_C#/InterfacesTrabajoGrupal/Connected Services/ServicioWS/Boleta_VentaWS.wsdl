@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/Boleta_VentaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="insertarBoletaVenta">
-    <part name="parameters" element="tns:insertarBoletaVenta" />
+  <message name="eliminarBoletaVenta">
+    <part name="parameters" element="tns:eliminarBoletaVenta" />
   </message>
-  <message name="insertarBoletaVentaResponse">
-    <part name="parameters" element="tns:insertarBoletaVentaResponse" />
+  <message name="eliminarBoletaVentaResponse">
+    <part name="parameters" element="tns:eliminarBoletaVentaResponse" />
   </message>
   <message name="listarBoletaVentaTodos">
     <part name="parameters" element="tns:listarBoletaVentaTodos" />
@@ -17,39 +17,39 @@
   <message name="listarBoletaVentaTodosResponse">
     <part name="parameters" element="tns:listarBoletaVentaTodosResponse" />
   </message>
+  <message name="insertarBoletaVenta">
+    <part name="parameters" element="tns:insertarBoletaVenta" />
+  </message>
+  <message name="insertarBoletaVentaResponse">
+    <part name="parameters" element="tns:insertarBoletaVentaResponse" />
+  </message>
   <message name="modificarBoletaVenta">
     <part name="parameters" element="tns:modificarBoletaVenta" />
   </message>
   <message name="modificarBoletaVentaResponse">
     <part name="parameters" element="tns:modificarBoletaVentaResponse" />
   </message>
-  <message name="eliminarBoletaVenta">
-    <part name="parameters" element="tns:eliminarBoletaVenta" />
-  </message>
-  <message name="eliminarBoletaVentaResponse">
-    <part name="parameters" element="tns:eliminarBoletaVentaResponse" />
-  </message>
   <portType name="Boleta_VentaWS">
-    <operation name="insertarBoletaVenta">
-      <input wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaRequest" message="tns:insertarBoletaVenta" />
-      <output wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaResponse" message="tns:insertarBoletaVentaResponse" />
+    <operation name="eliminarBoletaVenta">
+      <input wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaRequest" message="tns:eliminarBoletaVenta" />
+      <output wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaResponse" message="tns:eliminarBoletaVentaResponse" />
     </operation>
     <operation name="listarBoletaVentaTodos">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest" message="tns:listarBoletaVentaTodos" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse" message="tns:listarBoletaVentaTodosResponse" />
     </operation>
+    <operation name="insertarBoletaVenta">
+      <input wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaRequest" message="tns:insertarBoletaVenta" />
+      <output wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaResponse" message="tns:insertarBoletaVentaResponse" />
+    </operation>
     <operation name="modificarBoletaVenta">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaRequest" message="tns:modificarBoletaVenta" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaResponse" message="tns:modificarBoletaVentaResponse" />
     </operation>
-    <operation name="eliminarBoletaVenta">
-      <input wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaRequest" message="tns:eliminarBoletaVenta" />
-      <output wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaResponse" message="tns:eliminarBoletaVentaResponse" />
-    </operation>
   </portType>
   <binding name="Boleta_VentaWSPortBinding" type="tns:Boleta_VentaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarBoletaVenta">
+    <operation name="eliminarBoletaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarBoletaVenta">
+    <operation name="insertarBoletaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarBoletaVenta">
+    <operation name="modificarBoletaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

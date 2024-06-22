@@ -16,4 +16,5 @@ public interface MovimientoLoteDao {
     int modificar(MovimientoLote movLote);
     int eliminar(int idMovimientoLote);
     ArrayList<MovimientoLote> listarTodos();
+    ArrayList<MovimientoLote> listarTodosDeUnLote(int id);
 }

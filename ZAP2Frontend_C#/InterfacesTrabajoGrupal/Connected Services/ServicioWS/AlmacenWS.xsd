@@ -10,12 +10,14 @@
   <xs:element name="listarAlmacenResponse" type="tns:listarAlmacenResponse" />
   <xs:element name="modificarAlmacen" type="tns:modificarAlmacen" />
   <xs:element name="modificarAlmacenResponse" type="tns:modificarAlmacenResponse" />
-  <xs:complexType name="listarAlmacen">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarAlmacenResponse">
+  <xs:complexType name="buscarAlmacen">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
+      <xs:element name="idAlmacen" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarAlmacenResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="almacen">
@@ -25,7 +27,9 @@
       <xs:element name="capacidadMaximaProductos" type="xs:double" />
       <xs:element name="id_almacen" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lote" nillable="true" type="tns:lote" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lotes" nillable="true" type="tns:lote" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="movimientosLote" nillable="true" type="tns:movimientoLote" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
       <xs:element minOccurs="0" name="tipoAlmacen" type="tns:tipoAlmacen" />
     </xs:sequence>
@@ -63,6 +67,7 @@
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" name="prodPrecio" type="tns:productoPrecio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productosPrecio" nillable="true" type="tns:productoPrecio" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="productoPrecio">
@@ -105,14 +110,12 @@
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="buscarAlmacen">
-    <xs:sequence>
-      <xs:element name="idAlmacen" type="xs:int" />
-    </xs:sequence>
+  <xs:complexType name="listarAlmacen">
+    <xs:sequence />
   </xs:complexType>
-  <xs:complexType name="buscarAlmacenResponse">
+  <xs:complexType name="listarAlmacenResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:almacen" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarAlmacen">

@@ -118,5 +118,52 @@ public class MovimientoLoteMySql implements MovimientoLoteDao{
         return lotes;
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    @Override
+    public ArrayList<MovimientoLote> listarTodosDeUnLote(int id) {
+        ArrayList<MovimientoLote> lotes =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+
+            cs = con.prepareCall("{call LISTAR_MOVIMIENTO_LOTE"
+                    +"( )}");
+
+            rs = cs.executeQuery();
+            while(rs.next()){
+                MovimientoLote MovLote = new MovimientoLote();
+                MovLote.setIdMovimientoLote(rs.getInt("idMovimientoLote"));
+                Almacen entrada = new Almacen();
+                Almacen salida = new Almacen();
+                entrada.setId_almacen(rs.getInt("idAlmacenEntrada"));
+                
+                MovLote.setAlmacenEntrada(entrada);
+                
+                Date fecha = rs.getDate("fechaMovimiento");
+                MovLote.setFechaMovimiento(fecha);
+                TipoDeMotivoMovimientoAlmacen tip = TipoDeMotivoMovimientoAlmacen.valueOf(rs.getString("motivo"));
+                MovLote.setMotivo(tip);
+                MovLote.setMovimientoEntrada(rs.getInt("movimientoEntrada"));
+                if("compra".equalsIgnoreCase(String.valueOf(tip))){
+                    MovLote.setAlmacenSalida(null);
+                }else{
+                    salida.setId_almacen(rs.getInt("idAlmacenSalida"));
+                    MovLote.setAlmacenSalida(salida);
+                }
+                    
+                
+                MovLote.setCantidadProductosMovidos(rs.getDouble("cantidadProductosMovidos"));
+                Lote lote = new Lote();
+                lote.setIdLote(rs.getInt("fid_lote"));
+                MovLote.setLote(lote);
+                lotes.add(MovLote);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return lotes;
+    }
     
 }

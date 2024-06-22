@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.sql.SQLException;
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
+import pe.edu.pucp.ZAP2.infraestructura.model.Producto;
 import pe.edu.pucp.ZAP2.proveedor.dao.Detalle_PedidoDao;
 import pe.edu.pucp.ZAP2.proveedor.model.Detalle_Pedido;
 import pe.edu.pucp.ZAP2.proveedor.model.Pedido;
@@ -31,11 +32,12 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_DETALLE_PEDIDO"
-                    +"(?,?,?,?)}");
+                    +"(?,?,?,?,?)}");
             cs.registerOutParameter("_id_DetallePedido", java.sql.Types.INTEGER);
             cs.setInt("_fid_pedido", detallePedido.getPedido().getId_pedido());
             cs.setDouble("_precioUnitario", detallePedido.getPrecioUnitario());
             cs.setDouble("_precioTotal", detallePedido.getPrecioTotal());
+            cs.setInt("_fidProducto", detallePedido.getProducto().getIdProducto());
             resultado = cs.executeUpdate();
             detallePedido.setId_DetallePedido(cs.getInt("_id_DetallePedido"));
         }catch(SQLException ex){
@@ -131,6 +133,11 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
                 detalles.setPrecioTotal(rs.getDouble("precioTotal"));
                 detalles.setPrecioUnitario(rs.getDouble("precioUnitario"));
                 detalles.setSubtotal(rs.getDouble("subtotal"));
+                
+                Producto prod = new Producto();
+                prod.setIdProducto(rs.getInt("fid_producto"));
+                prod.setNombre(rs.getString("nombre"));
+                detalles.setProducto(prod);
                 detallesArray.add(detalles);
             }
         }catch(Exception ex){

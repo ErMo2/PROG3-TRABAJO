@@ -51,6 +51,10 @@
                 </asp:LinkButton>
             </div>
         </div>
+        <div class="card-footer text-right">
+            <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="btn btn-secondary" OnClick="btnRegresar_Click" />
+        </div>
+    </div>
     </div>
 
 </asp:Content>

@@ -30,7 +30,7 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_ELECTRODOMESTICOS"
+            cs = con.prepareCall("{call INSERTAR_ELECTRODOMESTICO"
                     +"(?,?,?,?,?,?)}");
             cs.registerOutParameter("_id_electrodomesticos", java.sql.Types.INTEGER);
             cs.setString("_nombre", electrodomesticos.getNombre());
@@ -55,7 +55,7 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call MODIFICAR_ELECTRODOMESTICOS"
+            cs = con.prepareCall("{call MODIFICAR_ELECTRODOMESTICO"
                     +"(?,?,?,?,?,?)}");
             cs.setInt("_id_producto", electrodomesticos.getIdProducto());
             cs.setString("_nombre", electrodomesticos.getNombre());
@@ -79,7 +79,7 @@ public class ElectrodomesticosMySql implements ElectrodomesticosDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call  ELIMINAR_PRODUCTO(?)}");
-            cs.setInt("_id_electrodomesticos",idElectrodomestico);
+            cs.setInt("_id_producto",idElectrodomestico);
             resultado = cs.executeUpdate();
         }catch(SQLException ex){
             System.out.println(ex.getMessage());

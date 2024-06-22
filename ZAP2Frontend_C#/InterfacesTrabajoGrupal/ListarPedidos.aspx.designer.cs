@@ -11,7 +11,7 @@ namespace InterfacesTrabajoGrupal
 {
 
 
-    public partial class GestionPedidos
+    public partial class ListarPedidos
     {
 
         /// <summary>

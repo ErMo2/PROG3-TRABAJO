@@ -11,71 +11,73 @@ namespace InterfacesTrabajoGrupal
 {
     public partial class Ropa : System.Web.UI.Page
     {
-        private RopaWSClient ropaDao;
-        private ropa ropa;
-        private SucursalWSClient sucursalDao;
-        private BindingList<sucursal> sucursales;
+        private RopaWSClient productoDao;
+        private ropa producto;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            int idRopa;
+            productoDao = new RopaWSClient();
+            if (Session["idRopa"] != null)
             {
-                CargarSucursales();  // Carga las sucursales al cargar la página por primera vez
-                ddlTipoRopa_SelectedIndexChanged(sender, e); // Para inicializar el estado dependiente de la selección.
+                idRopa = (int)Session["idRopa"];
+                Session["idRopa"] = null;
+                producto = productoDao.buscarRopa(idRopa);
+                if (!IsPostBack)
+                {
+                    cargarDatos();
+                }
+                Session["idModificarRopa"] = idRopa;
             }
         }
-
-        private void CargarSucursales()
+        protected void cargarDatos()
         {
-            
-            sucursalDao = new SucursalWSClient();
-            sucursal[] ArregloSucursales = sucursalDao.listarSucursal(); // Método hipotético para obtener sucursales
-            if (ArregloSucursales != null)
-                sucursales = new BindingList<sucursal>(ArregloSucursales);
-            ddlSucursal.DataSource = sucursales;
-            ddlSucursal.DataTextField = "nombre";  // Asumiendo que el objeto sucursal tiene una propiedad 'nombre'
-            ddlSucursal.DataValueField = "id_sucursal";     // Asumiendo que el objeto sucursal tiene una propiedad 'id'
-            ddlSucursal.DataBind();
+            txtIdProducto.Text = producto.idProducto.ToString();
+            txtNombreProducto.Text = producto.nombre;
+            txtDescripcionProducto.Text = producto.descripcion.ToString();
+            ddlTemporada.SelectedValue = producto.temporada;
+            txtMaterial.Text = producto.material;
+            ddlTipoRopa.SelectedValue = producto.tipo.ToString();
+        }
+        protected void btnRegresar_Click(object sender, EventArgs e) {
 
-            ddlSucursal.Items.Insert(0, new ListItem("-- Seleccionar Sucursal --", "0"));  // Opción predeterminada
-        }
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            
-        }
-        protected void btnRegresar_Click(object sender, EventArgs e) { 
-        
-            Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            if (Session["idModificarRopa"] != null)
+            {
+                Response.Redirect("ListarProductos.aspx");
+            }
+            else
+            {
+                Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            }
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            ropa = new ropa();
-            ropaDao = new RopaWSClient();
-            ropa.nombre = txtNombreProducto.Text;
-            ropa.descripcion = txtDescripcionProducto.Text;
-            ropa.temporada = ddlTemporada.SelectedValue;
-            ropa.material = ddlMaterial.SelectedValue;
-            ropa.prodPrecio = new productoPrecio();
+            productoDao = new RopaWSClient();
+            producto = new ropa();
+            producto.nombre = txtNombreProducto.Text;
+            producto.descripcion = txtDescripcionProducto.Text;
+            producto.temporada = ddlTemporada.SelectedValue;
+            producto.material = txtMaterial.Text;
 
-            // Asignar el ID de la sucursal seleccionada al productoPrecio
-            ropa.prodPrecio.sucursal=new sucursal();
-            ropa.prodPrecio.sucursal.id_sucursal = int.Parse(ddlSucursal.SelectedValue);
 
             if (ddlTipoRopa.SelectedValue == "RopaHombre")
-                ropa.tipo = tipoRopa.RopaHombre;
+                producto.tipo = tipoRopa.RopaHombre;
             else if (ddlTipoRopa.SelectedValue == "RopaMujer")
-                ropa.tipo = tipoRopa.RopaMujer;
+                producto.tipo = tipoRopa.RopaMujer;
             else
-                ropa.tipo = tipoRopa.Calzado;
-            ropa.tipoSpecified = true;
+                producto.tipo = tipoRopa.Calzado;
+            producto.tipoSpecified = true;
 
-            ropa.idProducto = ropaDao.insertarRopa(ropa);
+            if (Session["idModificarRopa"] != null)
+            {
+                producto.idProducto = (int)Session["idModificarRopa"];
+                int resultado = productoDao.modificarRopa(producto);
+            }
+            else
+            {
+                producto.idProducto = productoDao.insertarRopa(producto);
+            }
             Response.Redirect("ListarProductos.aspx");
         }
 
-        protected void ddlTipoRopa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-
-        }
     }
 }

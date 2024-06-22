@@ -18,4 +18,5 @@ public interface ClienteDao {
     ArrayList<Cliente> listarTodos();
     Cliente buscar(int id);
     ArrayList<Cliente> listarPorNombre(String nombre);
+    Cliente buscarPNatural(int id);
 }

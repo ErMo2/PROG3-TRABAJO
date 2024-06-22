@@ -631,6 +631,51 @@
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarClientesPorNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductoPrecioProductoDeUnaSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarSucursalesDeUnProductoSinPrecioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.buscarPersonaNaturalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarCajerosPorSucursalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarDescuentoDeUnProductoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarMovimientoLoteDeUnLoteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductosBaseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductosConDescuentoEnFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductosConDescuentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductosMasConsumidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductosXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.generarBoletaVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.generarReporteProductosConsumidosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -650,6 +695,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServicioWS\ProductoPrecioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ProductoWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ProductoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\Referencia.disco" />
     <None Include="Connected Services\ServicioWS\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioWS\configuration.svcinfo" />
@@ -697,6 +746,7 @@
     <Content Include="GestionarElectrodomestico.aspx" />
     <Content Include="GestionarEmpleadoArea.aspx" />
     <Content Include="GestionarFacturaVenta.aspx" />
+    <Content Include="GestionarLotes.aspx" />
     <Content Include="GestionarSupervisor.aspx" />
     <Content Include="GestionarAreas.aspx" />
     <Content Include="GestionarBancos.aspx" />
@@ -707,11 +757,12 @@
     <Content Include="GestionarProductos.aspx" />
     <Content Include="GestionarAlmacenes.aspx" />
     <Content Include="GestionarSucursales.aspx" />
+    <Content Include="IniciarSesion.aspx" />
     <Content Include="ListarAreas.aspx" />
     <Content Include="ListarBancos.aspx" />
-    <Content Include="ListarDocumentoDeCompra.aspx" />
     <Content Include="ListarDocumentoDeVenta.aspx" />
     <Content Include="ListarEmpleados.aspx" />
+    <Content Include="ListarLotes.aspx" />
     <Content Include="ListarPedidos.aspx" />
     <Content Include="ListarProductos.aspx" />
     <Content Include="Home.aspx" />
@@ -792,6 +843,10 @@
     <None Include="Connected Services\ServicioWS\ProductosParaElCuidadoPersonalYDelHogarWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServicioWS\ReportesFrontWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\ReportesFrontWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\RopaWS.wsdl" />
     <None Include="Connected Services\ServicioWS\RopaWS.xsd">
       <SubType>Designer</SubType>
@@ -814,6 +869,7 @@
     <Content Include="Scripts\jquery-3.7.1.min.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\ZAP2PROG\gestionarPedidos.js" />
     <Content Include="SeleccionarTipoDeDocumento.aspx" />
     <Content Include="SeleccionarTipoDeDocumentoDeVenta.aspx" />
     <Content Include="SeleccionarTipoDeEmpleado.aspx" />
@@ -831,6 +887,10 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="VerElectrodomesticos.aspx" />
+    <Content Include="VerProductoPersonalYHogar.aspx" />
+    <Content Include="VerProductosPerecibles.aspx" />
+    <Content Include="VerRopa.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -895,6 +955,13 @@
     </Compile>
     <Compile Include="GestionarFacturaVenta.aspx.designer.cs">
       <DependentUpon>GestionarFacturaVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarLotes.aspx.cs">
+      <DependentUpon>GestionarLotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionarLotes.aspx.designer.cs">
+      <DependentUpon>GestionarLotes.aspx</DependentUpon>
     </Compile>
     <Compile Include="GestionarSupervisor.aspx.cs">
       <DependentUpon>GestionarSupervisor.aspx</DependentUpon>
@@ -966,6 +1033,13 @@
     <Compile Include="GestionarSucursales.aspx.designer.cs">
       <DependentUpon>GestionarSucursales.aspx</DependentUpon>
     </Compile>
+    <Compile Include="IniciarSesion.aspx.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IniciarSesion.aspx.designer.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListarAreas.aspx.cs">
       <DependentUpon>ListarAreas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -980,13 +1054,6 @@
     <Compile Include="ListarBancos.aspx.designer.cs">
       <DependentUpon>ListarBancos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ListarDocumentoDeCompra.aspx.cs">
-      <DependentUpon>ListarDocumentoDeCompra.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListarDocumentoDeCompra.aspx.designer.cs">
-      <DependentUpon>ListarDocumentoDeCompra.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ListarDocumentoDeVenta.aspx.cs">
       <DependentUpon>ListarDocumentoDeVenta.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1000,6 +1067,13 @@
     </Compile>
     <Compile Include="ListarEmpleados.aspx.designer.cs">
       <DependentUpon>ListarEmpleados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarLotes.aspx.cs">
+      <DependentUpon>ListarLotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarLotes.aspx.designer.cs">
+      <DependentUpon>ListarLotes.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarPedidos.aspx.cs">
       <DependentUpon>ListarPedidos.aspx</DependentUpon>
@@ -1099,6 +1173,34 @@
     </Compile>
     <Compile Include="SeleccionarTipoDeProducto.aspx.designer.cs">
       <DependentUpon>SeleccionarTipoDeProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerElectrodomesticos.aspx.cs">
+      <DependentUpon>VerElectrodomesticos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerElectrodomesticos.aspx.designer.cs">
+      <DependentUpon>VerElectrodomesticos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerProductoPersonalYHogar.aspx.cs">
+      <DependentUpon>VerProductoPersonalYHogar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerProductoPersonalYHogar.aspx.designer.cs">
+      <DependentUpon>VerProductoPersonalYHogar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerProductosPerecibles.aspx.cs">
+      <DependentUpon>VerProductosPerecibles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerProductosPerecibles.aspx.designer.cs">
+      <DependentUpon>VerProductosPerecibles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerRopa.aspx.cs">
+      <DependentUpon>VerRopa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerRopa.aspx.designer.cs">
+      <DependentUpon>VerRopa.aspx</DependentUpon>
     </Compile>
     <Compile Include="ZAP3WA.Master.cs">
       <DependentUpon>ZAP3WA.Master</DependentUpon>

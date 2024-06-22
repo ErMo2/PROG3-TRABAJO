@@ -14,15 +14,39 @@ namespace InterfacesTrabajoGrupal
         private productosParaElCuidadoPersonalYDelHogar producto;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int idHigiene;
+            productoDao = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
+            if (Session["idHigiene"] != null)
+            {
+                idHigiene = (int)Session["idHigiene"];
+                Session["idHigiene"]=null;
+                producto = productoDao.buscarProductoPCH(idHigiene);
+                if (!IsPostBack)
+                {
+                    cargarDatos();
+                }
+                Session["idModificarHigiene"] = idHigiene;
+            }
         }
-        protected void Page_Init(object sender, EventArgs e)
+        protected void cargarDatos()
         {
-
+            txtIdProducto.Text = producto.idProducto.ToString();
+            txtNombreProducto.Text = producto.nombre;
+            txtDescripcionProducto.Text = producto.descripcion.ToString();
+            ddlUnidadMedida.SelectedValue = producto.unidadMedida.ToString();
+            txtTipo.Text = producto.tipo.ToString();
+            
         }
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            if (Session["idModificarHigiene"] != null)
+            {
+                Response.Redirect("ListarProductos.aspx");
+            }
+            else
+            {
+                Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            }
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -30,7 +54,7 @@ namespace InterfacesTrabajoGrupal
             producto = new productosParaElCuidadoPersonalYDelHogar();
             producto.descripcion = txtDescripcionProducto.Text;
             producto.nombre = txtNombreProducto.Text;
-
+            producto.tipo = txtTipo.Text;
             if (ddlUnidadMedida.SelectedValue == "Unidad")
             {
                 producto.unidadMedida = unidadDeMedida.unidad;
@@ -53,7 +77,16 @@ namespace InterfacesTrabajoGrupal
             }
             producto.unidadMedidaSpecified = true;
             producto.idProducto = productoDao.insertarPCH(producto);
-            Response.Redirect("SeleccionarTipoDeProducto.aspx");
+            if (Session["idModificarHigiene"] != null)
+            {
+                producto.idProducto = (int)Session["idModificarHigiene"];
+                int resultado = productoDao.modificarPCH(producto);
+            }
+            else
+            {
+                producto.idProducto = productoDao.insertarPCH(producto);
+            }
+            Response.Redirect("listarProductos.aspx");
         }
     }
 }

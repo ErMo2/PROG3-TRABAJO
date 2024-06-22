@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/BancoWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+  <message name="listarBancosTodos">
+    <part name="parameters" element="tns:listarBancosTodos" />
+  </message>
+  <message name="listarBancosTodosResponse">
+    <part name="parameters" element="tns:listarBancosTodosResponse" />
+  </message>
   <message name="buscarBanco">
     <part name="parameters" element="tns:buscarBanco" />
   </message>
@@ -17,25 +23,23 @@
   <message name="insertarBancoResponse">
     <part name="parameters" element="tns:insertarBancoResponse" />
   </message>
-  <message name="eliminarBanco">
-    <part name="parameters" element="tns:eliminarBanco" />
-  </message>
-  <message name="eliminarBancoResponse">
-    <part name="parameters" element="tns:eliminarBancoResponse" />
-  </message>
-  <message name="listarBancosTodos">
-    <part name="parameters" element="tns:listarBancosTodos" />
-  </message>
-  <message name="listarBancosTodosResponse">
-    <part name="parameters" element="tns:listarBancosTodosResponse" />
-  </message>
   <message name="modificarBanco">
     <part name="parameters" element="tns:modificarBanco" />
   </message>
   <message name="modificarBancoResponse">
     <part name="parameters" element="tns:modificarBancoResponse" />
   </message>
+  <message name="eliminarBanco">
+    <part name="parameters" element="tns:eliminarBanco" />
+  </message>
+  <message name="eliminarBancoResponse">
+    <part name="parameters" element="tns:eliminarBancoResponse" />
+  </message>
   <portType name="BancoWS">
+    <operation name="listarBancosTodos">
+      <input wsam:Action="ZAP2WS/BancoWS/listarBancosTodosRequest" message="tns:listarBancosTodos" />
+      <output wsam:Action="ZAP2WS/BancoWS/listarBancosTodosResponse" message="tns:listarBancosTodosResponse" />
+    </operation>
     <operation name="buscarBanco">
       <input wsam:Action="ZAP2WS/BancoWS/buscarBancoRequest" message="tns:buscarBanco" />
       <output wsam:Action="ZAP2WS/BancoWS/buscarBancoResponse" message="tns:buscarBancoResponse" />
@@ -44,21 +48,26 @@
       <input wsam:Action="ZAP2WS/BancoWS/insertarBancoRequest" message="tns:insertarBanco" />
       <output wsam:Action="ZAP2WS/BancoWS/insertarBancoResponse" message="tns:insertarBancoResponse" />
     </operation>
-    <operation name="eliminarBanco">
-      <input wsam:Action="ZAP2WS/BancoWS/eliminarBancoRequest" message="tns:eliminarBanco" />
-      <output wsam:Action="ZAP2WS/BancoWS/eliminarBancoResponse" message="tns:eliminarBancoResponse" />
-    </operation>
-    <operation name="listarBancosTodos">
-      <input wsam:Action="ZAP2WS/BancoWS/listarBancosTodosRequest" message="tns:listarBancosTodos" />
-      <output wsam:Action="ZAP2WS/BancoWS/listarBancosTodosResponse" message="tns:listarBancosTodosResponse" />
-    </operation>
     <operation name="modificarBanco">
       <input wsam:Action="ZAP2WS/BancoWS/modificarBancoRequest" message="tns:modificarBanco" />
       <output wsam:Action="ZAP2WS/BancoWS/modificarBancoResponse" message="tns:modificarBancoResponse" />
     </operation>
+    <operation name="eliminarBanco">
+      <input wsam:Action="ZAP2WS/BancoWS/eliminarBancoRequest" message="tns:eliminarBanco" />
+      <output wsam:Action="ZAP2WS/BancoWS/eliminarBancoResponse" message="tns:eliminarBancoResponse" />
+    </operation>
   </portType>
   <binding name="BancoWSPortBinding" type="tns:BancoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarBancosTodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="buscarBanco">
       <soap:operation soapAction="" />
       <input>
@@ -77,25 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarBanco">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarBancosTodos">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarBanco">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarBanco">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

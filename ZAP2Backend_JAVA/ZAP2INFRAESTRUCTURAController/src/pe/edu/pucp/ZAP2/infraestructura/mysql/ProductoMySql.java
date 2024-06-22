@@ -20,6 +20,7 @@ import pe.edu.pucp.ZAP2.infraestructura.model.Descuento;
  * @author Alejandro
  */
 public class ProductoMySql implements ProductoDao{
+    
     private Connection con;
     private Statement st;
     private ResultSet rs;
@@ -165,6 +166,63 @@ public class ProductoMySql implements ProductoDao{
         }
         return prodMasConsumidos;
     }
+
+    @Override
+    public ArrayList<Producto> listarProductos() {
+        
+        ArrayList<Producto> prodMasConsumidos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTOS"
+                    +"( )}");
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Producto prod = new Producto();
+                prod.setIdProducto(rs.getInt("id_producto"));
+                prod.setNombre(rs.getString("nombre"));
+                prod.setDescripcion(rs.getString("descripcion"));
+                
+                
+                prodMasConsumidos.add(prod);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return prodMasConsumidos;
+    }
+
+    @Override
+    public ArrayList<Producto> listarProductosPorNombre(String nombre) {
+        ArrayList<Producto> prodMasConsumidos =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTOS_NOMBRE"
+                    +"(?)}");
+            cs.setString("_nombre", nombre);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Producto prod = new Producto();
+                prod.setIdProducto(rs.getInt("id_producto"));
+                prod.setNombre(rs.getString("nombre"));
+                prod.setDescripcion(rs.getString("descripcion"));
+                
+                
+                prodMasConsumidos.add(prod);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return prodMasConsumidos;
     
+    }
+
     
 }

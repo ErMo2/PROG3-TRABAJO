@@ -31,7 +31,7 @@ namespace InterfacesTrabajoGrupal
 
             if (empleado != null)
             {
-                txtIdEmpleado.Text = empleado.idEmpleado.ToString();
+                txtIdEmpleado.Text = empleado.id_Persona.ToString();
                 txtNombre.Text = empleado.nombre;
                 txtApellido_Paterno.Text = empleado.apellido_paterno;
                 txtApellido_Materno.Text = empleado.apellido_materno;
@@ -49,19 +49,36 @@ namespace InterfacesTrabajoGrupal
                 txtDireccion.Text = empleado.direccion.ToString();
                 txtSalario.Text = empleado.salario.ToString();
                 dtpFechaContratacion.Value = empleado.fechaContratacion.ToString("yyyy-MM-dd");
-                txtTurno.Text = empleado.horario.ToString();
-                txtContrato.Text = empleado.tipoContrato.ToString();
+                if (empleado.horario.ToString() == "MAÑANA")
+                    rbMañana.Checked = true;
+                else
+                    rbNoche.Checked = true;
+                if (empleado.tipoContrato.ToString() == "TiempoCompleto")
+                    rbTiempoCompleto.Checked = true;
+                else
+                {
+                    if (empleado.tipoContrato.ToString() == "TiempoParcial")
+                        rbTiempoParcial.Checked = true;
+                    else
+                        rbContratoEspecial.Checked = true;
+                }
+                txtIdSupervisor.Text = empleado.supervisor.id_Persona.ToString();
             }
 
         }
         protected void btnRegresar_Click(object sender,EventArgs e) {
-            Response.Redirect("GestionarEmpleados.aspx");
+            Response.Redirect("ListarEmpleados.aspx");
         }
         protected void btnRegistrar_Click(object sender,EventArgs e)
         {
             int resultado = 0;
             daoCajero = new ServicioWS.CajeroWSClient();
             cajero cajero = new cajero();
+            if (!string.IsNullOrEmpty(txtIdEmpleado.Text))
+            {
+                cajero.id_Persona = int.Parse(txtIdEmpleado.Text);
+                cajero.idEmpleado = int.Parse(txtIdEmpleado.Text);
+            }
             cajero.nombre = txtNombre.Text;
             cajero.apellido_paterno = txtApellido_Paterno.Text;
             cajero.apellido_materno = txtApellido_Materno.Text;
@@ -81,19 +98,17 @@ namespace InterfacesTrabajoGrupal
             cajero.salario = Double.Parse(txtSalario.Text);
             cajero.fechaContratacion = DateTime.Parse(dtpFechaContratacion.Value);
             cajero.fechaContratacionSpecified = true;
-            if (txtTurno.Text == "MAÑANA")
+            if (rbMañana.Checked == true)
                 cajero.horario = turnosHorario.MAÑANA;
             else
                 cajero.horario = turnosHorario.NOCHE;
             cajero.horarioSpecified = true;
-            if(txtContrato.Text == "TiempoParcial")
-            {
-                cajero.tipoContrato = tipoContrato.TiempoParcial;
-            }
+            if (rbTiempoCompleto.Checked == true)
+                cajero.tipoContrato = tipoContrato.TiempoCompleto;
             else
             {
-                if (txtContrato.Text == "TiempoCompleto")
-                    cajero.tipoContrato = tipoContrato.TiempoCompleto;
+                if (rbTiempoParcial.Checked == true)
+                    cajero.tipoContrato = tipoContrato.TiempoParcial;
                 else
                     cajero.tipoContrato = tipoContrato.ContratoEspecial;
             }
@@ -106,8 +121,17 @@ namespace InterfacesTrabajoGrupal
             supervisor superv = new supervisor();
             superv.idEmpleado = 1;
             cajero.supervisor = superv;
-            resultado = daoCajero.insertarCajero(cajero);
-            if(resultado != 0)
+            cajero.supervisor.id_Persona = int.Parse(txtIdSupervisor.Text);
+            cajero.supervisor.idEmpleado = int.Parse(txtIdSupervisor.Text);
+            if (cajero.id_Persona > 0)
+            {
+                resultado = daoCajero.modificarCajero(cajero);
+            }
+            else
+            {
+                resultado = daoCajero.insertarCajero(cajero);
+            }
+            if (resultado != 0)
             {
                 Response.Redirect("ListarEmpleados.aspx");
                 Response.Write("Se ha registrado con exito...");

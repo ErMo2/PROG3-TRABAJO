@@ -108,19 +108,46 @@
                 <input class="form-control" type="date" id="dtpFechaContratacion" runat="server">
             </div>
         </div>
+
         <div class="mb-3 row">
-            <asp:Label ID="lblTurno" runat="server" Text="Turno del Empleado:" CssClass="col-sm-2 col-form-label" />
+            <asp:Label ID="lblHorario" runat="server" Text="Horario:" CssClass="col-sm-2 col-form-label" />
             <div class="col-sm-8">
-                <asp:TextBox ID="txtTurno" runat="server" CssClass="form-control" />
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="rbMañana" runat="server" value="MAÑANA" name="Horario">
+                    <label class="form-check-label" for="rbMañana" runat="server">Mañana</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="rbNoche" runat="server" value="NOCHE" name="Horario">
+                    <label class="form-check-label" for="rbNoche" runat="server">Noche</label>
+                </div>
             </div>
         </div>
 
         <div class="mb-3 row">
-            <asp:Label ID="lblContrato" runat="server" Text="Contrato del Empleado:" CssClass="col-sm-2 col-form-label" />
+            <asp:Label ID="lblContrato" runat="server" Text="Tipo de Contrato:" CssClass="col-sm-2 col-form-label" />
             <div class="col-sm-8">
-                <asp:TextBox ID="txtContrato" runat="server" CssClass="form-control" />
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="rbTiempoParcial" runat="server" value="TiempoParcial" name="Contrato">
+                    <label class="form-check-label" for="rbTiempoParcial" runat="server">TiempoParcial</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="rbTiempoCompleto" runat="server" value="TiempoCompleto" name="Contrato">
+                    <label class="form-check-label" for="rbTiempoCompleto" runat="server">TiempoCompleto</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="rbContratoEspecial" runat="server" value="ContratoEspecial" name="Contrato">
+                    <label class="form-check-label" for="rbContratoEspecial" runat="server">ContratoEspecial</label>
+                </div>
             </div>
         </div>
+
+        <div class="mb-3 row">
+            <asp:Label ID="lblIdSupervisor" runat="server" Text="Supervisor:" CssClass="col-sm-2 col-form-label" />
+            <div class="col-sm-8">
+                <asp:TextBox ID="txtIdSupervisor" runat="server" CssClass="form-control" />
+            </div>
+        </div>
+
         <hr />
 
         <hr />
