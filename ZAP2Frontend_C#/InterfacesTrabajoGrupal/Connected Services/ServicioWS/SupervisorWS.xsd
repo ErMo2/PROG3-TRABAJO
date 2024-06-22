@@ -211,16 +211,6 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:supervisor" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="buscarSupervisor">
-    <xs:sequence>
-      <xs:element name="idSupervisor" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="buscarSupervisorResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:supervisor" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarSupervisoresDeUnaSucursal">
     <xs:sequence>
       <xs:element name="idSucursal" type="xs:int" />
@@ -229,6 +219,16 @@
   <xs:complexType name="listarSupervisoresDeUnaSucursalResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarSupervisor">
+    <xs:sequence>
+      <xs:element name="idSupervisor" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarSupervisorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:supervisor" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarSupervisor">

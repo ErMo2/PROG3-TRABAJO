@@ -237,4 +237,30 @@ public class SupervisorMySql implements SupervisorDao{
     }
     
     
+    @Override
+    public ArrayList<Supervisor> listarTodasDeUnaSucursal(int idSucursal) {
+        ArrayList<Supervisor> supervisores =  new ArrayList<>();
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_SUPERVISORES_POR_SUCURSAL"
+                    +"(?)}");
+            cs.setInt("_id_sucursal", idSucursal);
+            rs = cs.executeQuery();
+            while(rs.next()){
+                Supervisor supervisor = new Supervisor();
+                supervisor.setId_Persona(rs.getInt("id_supervisor"));
+                supervisor.setIdEmpleado(rs.getInt("id_supervisor"));
+                supervisor.setNombre(rs.getString("nombre_completo"));
+                supervisores.add(supervisor);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return supervisores;
+    
+    }
 }
