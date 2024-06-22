@@ -79,4 +79,54 @@ public class AreaWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "listarAreaConSucursales")
+    public ArrayList<Area> listarAreaConSucursales() {
+        ArrayList<Area> areas = null;
+        try{
+            daoArea = new AreaMySql();
+            areas = daoArea.listarTodaDeConSucursal();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return areas;
+    }
+    
+    @WebMethod(operationName = "ListarProductosDelArea")
+    public Area ListarProductosDelArea(@WebParam(name = "idArea") int id) {
+        Area dato = null;
+        try{
+            daoArea = new AreaMySql();
+            dato = daoArea.ListarProductosDelArea(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
+    
+    @WebMethod(operationName = "insertarAreaProducto")
+    public int insertarAreaProducto(@WebParam(name = "Idarea") int Idarea,@WebParam(name = "IdProducto") int IdProducto) {
+        int resultado = 0;
+        try{
+            daoArea = new AreaMySql();
+            resultado = daoArea.insertProductoArea(Idarea,IdProducto);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "eliminarAreaProducto")
+    public int eliminarAreaProducto(@WebParam(name = "idAreaProducto") int idArea) {
+        int resultado = 0;
+        try{
+            daoArea = new AreaMySql();
+            resultado = daoArea.eliminarAreaProducto(idArea);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    
 }

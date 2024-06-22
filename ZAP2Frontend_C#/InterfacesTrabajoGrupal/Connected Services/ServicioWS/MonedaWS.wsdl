@@ -5,23 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/MonedaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="eliminarMoneda">
-    <part name="parameters" element="tns:eliminarMoneda" />
-  </message>
-  <message name="eliminarMonedaResponse">
-    <part name="parameters" element="tns:eliminarMonedaResponse" />
-  </message>
   <message name="modificarMoneda">
     <part name="parameters" element="tns:modificarMoneda" />
   </message>
   <message name="modificarMonedaResponse">
     <part name="parameters" element="tns:modificarMonedaResponse" />
-  </message>
-  <message name="buscarMoneda">
-    <part name="parameters" element="tns:buscarMoneda" />
-  </message>
-  <message name="buscarMonedaResponse">
-    <part name="parameters" element="tns:buscarMonedaResponse" />
   </message>
   <message name="insertarMoneda">
     <part name="parameters" element="tns:insertarMoneda" />
@@ -35,18 +23,22 @@
   <message name="listarMonedaResponse">
     <part name="parameters" element="tns:listarMonedaResponse" />
   </message>
+  <message name="eliminarMoneda">
+    <part name="parameters" element="tns:eliminarMoneda" />
+  </message>
+  <message name="eliminarMonedaResponse">
+    <part name="parameters" element="tns:eliminarMonedaResponse" />
+  </message>
+  <message name="buscarMoneda">
+    <part name="parameters" element="tns:buscarMoneda" />
+  </message>
+  <message name="buscarMonedaResponse">
+    <part name="parameters" element="tns:buscarMonedaResponse" />
+  </message>
   <portType name="MonedaWS">
-    <operation name="eliminarMoneda">
-      <input wsam:Action="ZAP2WS/MonedaWS/eliminarMonedaRequest" message="tns:eliminarMoneda" />
-      <output wsam:Action="ZAP2WS/MonedaWS/eliminarMonedaResponse" message="tns:eliminarMonedaResponse" />
-    </operation>
     <operation name="modificarMoneda">
       <input wsam:Action="ZAP2WS/MonedaWS/modificarMonedaRequest" message="tns:modificarMoneda" />
       <output wsam:Action="ZAP2WS/MonedaWS/modificarMonedaResponse" message="tns:modificarMonedaResponse" />
-    </operation>
-    <operation name="buscarMoneda">
-      <input wsam:Action="ZAP2WS/MonedaWS/buscarMonedaRequest" message="tns:buscarMoneda" />
-      <output wsam:Action="ZAP2WS/MonedaWS/buscarMonedaResponse" message="tns:buscarMonedaResponse" />
     </operation>
     <operation name="insertarMoneda">
       <input wsam:Action="ZAP2WS/MonedaWS/insertarMonedaRequest" message="tns:insertarMoneda" />
@@ -56,28 +48,18 @@
       <input wsam:Action="ZAP2WS/MonedaWS/listarMonedaRequest" message="tns:listarMoneda" />
       <output wsam:Action="ZAP2WS/MonedaWS/listarMonedaResponse" message="tns:listarMonedaResponse" />
     </operation>
+    <operation name="eliminarMoneda">
+      <input wsam:Action="ZAP2WS/MonedaWS/eliminarMonedaRequest" message="tns:eliminarMoneda" />
+      <output wsam:Action="ZAP2WS/MonedaWS/eliminarMonedaResponse" message="tns:eliminarMonedaResponse" />
+    </operation>
+    <operation name="buscarMoneda">
+      <input wsam:Action="ZAP2WS/MonedaWS/buscarMonedaRequest" message="tns:buscarMoneda" />
+      <output wsam:Action="ZAP2WS/MonedaWS/buscarMonedaResponse" message="tns:buscarMonedaResponse" />
+    </operation>
   </portType>
   <binding name="MonedaWSPortBinding" type="tns:MonedaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarMoneda">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarMoneda">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="buscarMoneda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,6 +78,24 @@
       </output>
     </operation>
     <operation name="listarMoneda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarMoneda">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarMoneda">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

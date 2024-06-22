@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/SucursalWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarSucursalesDeUnProductoSinPrecio">
-    <part name="parameters" element="tns:listarSucursalesDeUnProductoSinPrecio" />
-  </message>
-  <message name="listarSucursalesDeUnProductoSinPrecioResponse">
-    <part name="parameters" element="tns:listarSucursalesDeUnProductoSinPrecioResponse" />
-  </message>
-  <message name="modificarSucursal">
-    <part name="parameters" element="tns:modificarSucursal" />
-  </message>
-  <message name="modificarSucursalResponse">
-    <part name="parameters" element="tns:modificarSucursalResponse" />
-  </message>
   <message name="buscarSucursal">
     <part name="parameters" element="tns:buscarSucursal" />
   </message>
@@ -28,6 +16,12 @@
   </message>
   <message name="insertarSucursalResponse">
     <part name="parameters" element="tns:insertarSucursalResponse" />
+  </message>
+  <message name="modificarSucursal">
+    <part name="parameters" element="tns:modificarSucursal" />
+  </message>
+  <message name="modificarSucursalResponse">
+    <part name="parameters" element="tns:modificarSucursalResponse" />
   </message>
   <message name="listarSucursal">
     <part name="parameters" element="tns:listarSucursal" />
@@ -41,15 +35,13 @@
   <message name="eliminarSucursalResponse">
     <part name="parameters" element="tns:eliminarSucursalResponse" />
   </message>
+  <message name="listarSucursalesDeUnProductoSinPrecio">
+    <part name="parameters" element="tns:listarSucursalesDeUnProductoSinPrecio" />
+  </message>
+  <message name="listarSucursalesDeUnProductoSinPrecioResponse">
+    <part name="parameters" element="tns:listarSucursalesDeUnProductoSinPrecioResponse" />
+  </message>
   <portType name="SucursalWS">
-    <operation name="listarSucursalesDeUnProductoSinPrecio">
-      <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioRequest" message="tns:listarSucursalesDeUnProductoSinPrecio" />
-      <output wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioResponse" message="tns:listarSucursalesDeUnProductoSinPrecioResponse" />
-    </operation>
-    <operation name="modificarSucursal">
-      <input wsam:Action="ZAP2WS/SucursalWS/modificarSucursalRequest" message="tns:modificarSucursal" />
-      <output wsam:Action="ZAP2WS/SucursalWS/modificarSucursalResponse" message="tns:modificarSucursalResponse" />
-    </operation>
     <operation name="buscarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/buscarSucursalRequest" message="tns:buscarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/buscarSucursalResponse" message="tns:buscarSucursalResponse" />
@@ -57,6 +49,10 @@
     <operation name="insertarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/insertarSucursalRequest" message="tns:insertarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/insertarSucursalResponse" message="tns:insertarSucursalResponse" />
+    </operation>
+    <operation name="modificarSucursal">
+      <input wsam:Action="ZAP2WS/SucursalWS/modificarSucursalRequest" message="tns:modificarSucursal" />
+      <output wsam:Action="ZAP2WS/SucursalWS/modificarSucursalResponse" message="tns:modificarSucursalResponse" />
     </operation>
     <operation name="listarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalRequest" message="tns:listarSucursal" />
@@ -66,27 +62,13 @@
       <input wsam:Action="ZAP2WS/SucursalWS/eliminarSucursalRequest" message="tns:eliminarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/eliminarSucursalResponse" message="tns:eliminarSucursalResponse" />
     </operation>
+    <operation name="listarSucursalesDeUnProductoSinPrecio">
+      <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioRequest" message="tns:listarSucursalesDeUnProductoSinPrecio" />
+      <output wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioResponse" message="tns:listarSucursalesDeUnProductoSinPrecioResponse" />
+    </operation>
   </portType>
   <binding name="SucursalWSPortBinding" type="tns:SucursalWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarSucursalesDeUnProductoSinPrecio">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarSucursal">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="buscarSucursal">
       <soap:operation soapAction="" />
       <input>
@@ -105,6 +87,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarSucursal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarSucursal">
       <soap:operation soapAction="" />
       <input>
@@ -115,6 +106,15 @@
       </output>
     </operation>
     <operation name="eliminarSucursal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarSucursalesDeUnProductoSinPrecio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

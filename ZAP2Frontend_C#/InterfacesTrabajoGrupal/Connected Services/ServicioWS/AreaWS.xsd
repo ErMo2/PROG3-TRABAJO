@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ListarProductosDelArea" type="tns:ListarProductosDelArea" />
+  <xs:element name="ListarProductosDelAreaResponse" type="tns:ListarProductosDelAreaResponse" />
   <xs:element name="buscarArea" type="tns:buscarArea" />
   <xs:element name="buscarAreaResponse" type="tns:buscarAreaResponse" />
   <xs:element name="eliminarArea" type="tns:eliminarArea" />
+  <xs:element name="eliminarAreaProducto" type="tns:eliminarAreaProducto" />
+  <xs:element name="eliminarAreaProductoResponse" type="tns:eliminarAreaProductoResponse" />
   <xs:element name="eliminarAreaResponse" type="tns:eliminarAreaResponse" />
   <xs:element name="insertarArea" type="tns:insertarArea" />
+  <xs:element name="insertarAreaProducto" type="tns:insertarAreaProducto" />
+  <xs:element name="insertarAreaProductoResponse" type="tns:insertarAreaProductoResponse" />
   <xs:element name="insertarAreaResponse" type="tns:insertarAreaResponse" />
   <xs:element name="listarArea" type="tns:listarArea" />
+  <xs:element name="listarAreaConSucursales" type="tns:listarAreaConSucursales" />
+  <xs:element name="listarAreaConSucursalesResponse" type="tns:listarAreaConSucursalesResponse" />
   <xs:element name="listarAreaResponse" type="tns:listarAreaResponse" />
   <xs:element name="modificarArea" type="tns:modificarArea" />
   <xs:element name="modificarAreaResponse" type="tns:modificarAreaResponse" />
@@ -18,6 +26,7 @@
   <xs:complexType name="area">
     <xs:sequence>
       <xs:element name="idArea" type="xs:int" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="productos" nillable="true" type="tns:producto" />
       <xs:element minOccurs="0" name="sucursal" type="tns:sucursal" />
@@ -28,6 +37,7 @@
       <xs:element name="activo" type="xs:int" />
       <xs:element name="cantidadComprada" type="xs:int" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idAreaProducto" type="xs:int" />
       <xs:element name="idProducto" type="xs:int" />
       <xs:element minOccurs="0" name="imagen" type="xs:base64Binary" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -120,6 +130,37 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="insertarAreaProducto">
+    <xs:sequence>
+      <xs:element name="Idarea" type="xs:int" />
+      <xs:element name="IdProducto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarAreaProductoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarProductosDelArea">
+    <xs:sequence>
+      <xs:element name="idArea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarProductosDelAreaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:area" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAreaProducto">
+    <xs:sequence>
+      <xs:element name="idAreaProducto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAreaProductoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="modificarArea">
     <xs:sequence>
       <xs:element minOccurs="0" name="area" type="tns:area" />
@@ -144,6 +185,14 @@
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarAreaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:area" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAreaConSucursales">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAreaConSucursalesResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:area" />
     </xs:sequence>

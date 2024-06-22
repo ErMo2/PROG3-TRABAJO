@@ -26,6 +26,7 @@ namespace InterfacesTrabajoGrupal
 
         private void CargarDatos()
         {
+            
             // Cargar Boletas de Venta
             daoBoletaDeVenta = new Boleta_VentaWSClient();
             boletaVenta[] arregloBoletas = daoBoletaDeVenta.listarBoletaVentaTodos();

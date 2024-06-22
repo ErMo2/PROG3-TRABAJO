@@ -18,9 +18,10 @@
     <asp:GridView ID="gvBoletasDeVenta" runat="server" AutoGenerateColumns="False" CssClass="table table-hover table-responsive"
         AllowPaging="True" PageSize="5" OnPageIndexChanging="gvBoletasDeVenta_PageIndexChanging">
         <Columns>
-            <asp:BoundField HeaderText="Id Documento" DataField="id_documento" />
-            <asp:BoundField HeaderText="Fecha de Emisión" DataField="fecha_emision" />
-            <asp:BoundField HeaderText="Monto Total" DataField="montoTotal" />
+            <asp:BoundField HeaderText="Id Documento:" DataField="id_doc_venta" />
+            <asp:BoundField HeaderText="Detalle:" DataField="detalles" /> 
+            <asp:BoundField HeaderText="Fecha de Emisión:" DataField="fecha_emision" />
+            <asp:BoundField HeaderText="Monto Total:" DataField="total" />
           
             <asp:TemplateField>
                 <HeaderTemplate>Acciones</HeaderTemplate>
@@ -44,8 +45,10 @@
         <Columns>
             <asp:BoundField HeaderText="Id Documento" DataField="id_documento" />
             <asp:BoundField HeaderText="Fecha de Emisión" DataField="fecha_emision" />
-            <asp:BoundField HeaderText="Monto Total" DataField="montoTotal" />
-           
+            <asp:BoundField HeaderText="Tipo de tarjeta" DataField="tarjeta.tipoTarjeta" />
+            <asp:BoundField HeaderText="Fecha de Vencimiento" DataField="fechaVenc" />
+            <asp:BoundField HeaderText="Monto Total" DataField="total" />
+                     
             <asp:TemplateField>
                 <HeaderTemplate>Acciones</HeaderTemplate>
                 <ItemTemplate>
