@@ -112,10 +112,13 @@ public class LoteMySql implements LoteDao{
                 lote.setAlmacen(almacen);
                 Producto producto = new Producto() ;
                 producto.setIdProducto(rs.getInt("fid_producto"));
+                producto.setNombre(rs.getString("nombre"));
                 lote.setProducto(producto);
 
                 lote.setStockInicial(rs.getInt("stockInicial"));
                 lote.setStockActual(rs.getInt("stockActual"));
+                
+                
                 lotes.add(lote);
             }
         }catch(Exception ex){
