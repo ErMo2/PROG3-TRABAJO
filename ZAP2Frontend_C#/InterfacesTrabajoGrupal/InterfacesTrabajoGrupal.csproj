@@ -916,6 +916,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="VerElectrodomesticos.aspx" />
+    <Content Include="VerLote.aspx" />
     <Content Include="VerProductoPersonalYHogar.aspx" />
     <Content Include="VerProductosPerecibles.aspx" />
     <Content Include="VerRopa.aspx" />
@@ -1215,6 +1216,13 @@
     </Compile>
     <Compile Include="VerElectrodomesticos.aspx.designer.cs">
       <DependentUpon>VerElectrodomesticos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerLote.aspx.cs">
+      <DependentUpon>VerLote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerLote.aspx.designer.cs">
+      <DependentUpon>VerLote.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerProductoPersonalYHogar.aspx.cs">
       <DependentUpon>VerProductoPersonalYHogar.aspx</DependentUpon>

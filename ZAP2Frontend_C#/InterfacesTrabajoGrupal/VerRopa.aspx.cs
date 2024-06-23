@@ -54,10 +54,6 @@ namespace InterfacesTrabajoGrupal
             ddlSucursal.Items.Clear();
             foreach (var sucursal in sucursales)
             {
-                //if (sucursal.id_sucursal?)
-                //{
-                //    ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
-                //}
                 ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
 
             }

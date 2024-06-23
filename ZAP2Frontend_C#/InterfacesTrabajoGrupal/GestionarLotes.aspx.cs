@@ -12,15 +12,24 @@ namespace InterfacesTrabajoGrupal
     {
         private LoteWSClient bancoDao;
         private lote banco;
+        private AreaWSClient areaDao;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             lblTitulo.Text = "Registrar lote";
+            CargarBanco();
         }
 
         private void CargarBanco()
         {
-            
+            areaDao = new AreaWSClient();
+            var areas = areaDao.listarAreaConSucursales();
+            ddlSucursal.Items.Clear();
+            foreach (var area in areas)
+            {
+                ddlSucursal.Items.Add(new ListItem(area.nombre, area.sucursal.id_sucursal.ToString()));
+
+            }
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
@@ -30,33 +39,34 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            /*bancoDao = new LoteWSClient();
+            bancoDao = new LoteWSClient();
             if (Page.IsValid)
             {
                 banco = new lote();
-                banco.idLote = string.IsNullOrEmpty(txtIdBanco.Text) ? 0 : int.Parse(txtIdBanco.Text);
-                banco.stockInicial = txtNombreBanco.Text;
-                banco.stockActual = 
-            
+                banco.idLote = string.IsNullOrEmpty(txtIdLote.Text) ? 0 : int.Parse(txtIdLote.Text);
+                banco.stockInicial = Int32.Parse(txtStockInicial.Text);
+                banco.stockActual = Int32.Parse(txtStockFinal.Text);
+                banco.almacen = new almacen();
+                banco.almacen.id_almacen = Int32.Parse(ddlSucursal.SelectedValue);
 
                 try
                 {
-                    if (banco.idBanco > 0)
+                    if (banco.idLote > 0)
                     {
-                        bancoDao.modificarBanco(banco);
+                        bancoDao.modificarLote(banco);
                     }
                     else
                     {
-                        banco.idBanco = bancoDao.insertarBanco(banco);
+                        banco.idLote = bancoDao.insertarLote(banco);
                     }
-                    Response.Redirect("ListarBancos.aspx");
+                    Response.Redirect("ListarLotes.aspx");
                 }
                 catch (Exception ex)
                 {
                     // Manejar la excepción y mostrar un mensaje de error
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error al guardar el banco: {ex.Message}');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", $"alert('Error al guardar el lote: {ex.Message}');", true);
                 }
-            }*/
+            }
         }
     }
 }

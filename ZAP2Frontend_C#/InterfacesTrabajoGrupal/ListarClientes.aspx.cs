@@ -99,15 +99,25 @@ namespace InterfacesTrabajoGrupal
                 cliente clienteSeleccionado = clientes.SingleOrDefault(c => c.id_cliente == idCliente);
                 if (clienteSeleccionado != null)
                 {
+                    string sex;
+                    if(clienteSeleccionado.sexo == 70)
+                    {
+                        sex = "Femenino";
+                    }
+                    else
+                    {
+                        sex = "Masculino";
+                    }
                     lblDetallesCliente.Text = $"<strong>Nombre:</strong> {clienteSeleccionado.nombre}<br/>" +
                                               $"<strong>Apellido Paterno:</strong> {clienteSeleccionado.apellido_paterno}<br/>" +
                                               $"<strong>Apellido Materno:</strong> {clienteSeleccionado.apellido_materno}<br/>" +
                                               $"<strong>Teléfono:</strong> {clienteSeleccionado.telefono}<br/>" +
                                               $"<strong>Email:</strong> {clienteSeleccionado.email}<br/>" +
                                               $"<strong>Dirección:</strong> {clienteSeleccionado.direccion}<br/>" +
-                                              $"<strong>Sexo:</strong> {clienteSeleccionado.sexo}<br/>" +
+                                              $"<strong>Sexo:</strong> {sex}<br/>" +
                                                $"<strong>Tipo de Documento:</strong> {clienteSeleccionado.tipo_documento}<br/>" +
-                                               $"<strong>Numero de Documento:</strong> {clienteSeleccionado.dni}<br/>";
+                                               $"<strong>Puntos bonus:</strong> {clienteSeleccionado.puntosBonus}<br/>" +
+                                               $"<strong>Numero de Documento:</strong> {clienteSeleccionado.nro_documento}<br/>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verClienteModal').modal('show');", true);
                 }
             }
