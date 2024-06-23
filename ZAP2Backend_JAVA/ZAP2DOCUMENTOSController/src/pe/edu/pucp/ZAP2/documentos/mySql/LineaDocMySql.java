@@ -30,7 +30,7 @@ public class LineaDocMySql implements LineaDocDao{
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
-            cs = con.prepareCall("{call INSERTAR_LINEADOC(?,?,?,?)}");
+            cs = con.prepareCall("{call INSERTAR_LINEADOC_Mejorado(?,?,?,?)}");
             cs.registerOutParameter("_id_lineaDoc",java.sql.Types.INTEGER);
             cs.setInt("_fid_producto_precio", lineaDoc.getProducto().getIdProductoPrecio());
             cs.setInt("_fid_id_doc", lineaDoc.getDocumento().getId_documento());

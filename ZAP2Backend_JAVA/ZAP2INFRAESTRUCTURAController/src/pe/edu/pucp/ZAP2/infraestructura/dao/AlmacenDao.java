@@ -17,4 +17,5 @@ public interface AlmacenDao {
     int eliminar(int idAlmacen);
     ArrayList<Almacen> listarTodos();
     Almacen buscar(int id);
+    Almacen buscarAlmacenDisponible(int idSucursal, int cantidadAcolocar);
 }

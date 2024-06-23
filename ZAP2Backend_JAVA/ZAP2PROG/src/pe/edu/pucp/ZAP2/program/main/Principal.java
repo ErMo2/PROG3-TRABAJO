@@ -772,10 +772,10 @@ public class Principal {
         /*=============================== LineaDoc =============================*/
         /*======================================================================*/
         ProductoPrecio producPrecio = new ProductoPrecio();
-        producPrecio.setIdProductoPrecio(71);
+        producPrecio.setIdProductoPrecio(3);
         
         Documento doc = new Documento();
-        doc.setId_documento(43);
+        doc.setId_documento(13);
         
         LineaDoc linea_doc = new LineaDoc(1,200,500,51,2,producPrecio,doc);
         
