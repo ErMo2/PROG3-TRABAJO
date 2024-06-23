@@ -172,13 +172,15 @@ namespace InterfacesTrabajoGrupal
 
             productoPrecio prodPrecio = arregloProductoPrecios.FirstOrDefault(pp => pp.producto.idProducto == idProducto);
             producto prod = prodPrecio.producto;
- 
+
+            
 
             if (prod != null)
             {
 
                 producto prodSel = new producto
                 {
+                    nombre=prod.nombre,
                     idProducto = prod.idProducto,
                     descripcion = prod.descripcion,
                     prodPrecio = new productoPrecio
@@ -226,6 +228,19 @@ namespace InterfacesTrabajoGrupal
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            // Validar si los campos obligatorios están llenos
+            if (string.IsNullOrEmpty(dtpFechaEmision.Text) ||
+                ddlPersonaJuridica.SelectedValue == "" ||
+                ddlSucursal.SelectedValue == "" ||
+                ddlCajeros.SelectedValue == "" ||
+                ddlMonedas.SelectedValue == "" ||
+                ddlTarjetas.SelectedValue == "" ||
+                productosSeleccionados.Count == 0)
+            {
+                // Mostrar mensaje de error
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Por favor, complete todos los campos obligatorios y agregue al menos un producto.');", true);
+                return;
+            }
 
             Factura_VentaWSClient facturaVentaDAO;
             personaJuridica persona = new personaJuridica();

@@ -7,9 +7,13 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
   <h2 class="mb-4 text-center">Listado de Documentos de Venta</h2>
+         <asp:ScriptManager ID="ScriptManager2" runat="server" />
 
 <!-- Sección de Boletas de Venta -->
 <div class="mb-4">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+           <ContentTemplate>
+    
     <h3>Boletas de Venta</h3>
     <div class="text-end mb-3">
         <asp:LinkButton ID="lbRegistrarBoletaDeVenta" runat="server" CssClass="btn btn-success"
@@ -31,10 +35,14 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+           </ContentTemplate>
+            </asp:UpdatePanel>
 </div>
 
 <!-- Sección de Facturas de Venta -->
 <div class="mb-4">
+     <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
     <h3>Facturas de Venta</h3>
     <div class="text-end mb-3">
         <asp:LinkButton ID="lbRegistrarFacturaDeVenta" runat="server" CssClass="btn btn-success"
@@ -57,6 +65,8 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+              </ContentTemplate>
+   </asp:UpdatePanel>
 </div>
 
 <!-- Modal para ver detalles de Boleta de Venta -->
