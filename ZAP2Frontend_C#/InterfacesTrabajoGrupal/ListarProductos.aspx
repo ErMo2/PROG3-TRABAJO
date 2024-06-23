@@ -21,7 +21,36 @@
         <div class="text-end mb-3">
             <asp:LinkButton ID="lbImprimirReporte" runat="server" CssClass="btn btn-success"
                 Text="<i class='fa-solid fa-plus pe-2'></i>Productos más vendidos" OnClick="lbimprimirReporte_Click" />
+            <asp:Button ID="btnShowPopup" runat="server" CssClass="btn btn-primary" Text="Productos más vendidos" OnClientClick="$('#popupModal').modal('show'); return false;" />
         </div>
+        
+        
+            <!-- Botón para abrir el modal -->
+            
+
+            <!-- Modal de Bootstrap -->
+            <div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="popupModalLabel">Popup con Dos Botones</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Aquí puedes colocar el mensaje que desees -->
+                            <p>Seleccione una opción:</p>
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button ID="btnOption1" runat="server" CssClass="btn btn-secondary" Text="Opción 1" OnClick="btnOption1_Click" />
+                            <asp:Button ID="btnOption2" runat="server" CssClass="btn btn-secondary" Text="Opción 2" OnClick="btnOption2_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
         <h3>Productos Perecibles</h3>
         <div class="container row pb-3 pt-3">
             <div class="row align-items-center">

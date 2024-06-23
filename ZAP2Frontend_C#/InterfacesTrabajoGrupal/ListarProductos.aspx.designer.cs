@@ -33,6 +33,33 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.LinkButton lbImprimirReporte;
 
         /// <summary>
+        /// Control btnShowPopup.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnShowPopup;
+
+        /// <summary>
+        /// Control btnOption1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOption1;
+
+        /// <summary>
+        /// Control btnOption2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOption2;
+
+        /// <summary>
         /// Control txtNombreProdPerecible.
         /// </summary>
         /// <remarks>

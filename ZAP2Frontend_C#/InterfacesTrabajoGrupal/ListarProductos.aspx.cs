@@ -247,7 +247,19 @@ namespace InterfacesTrabajoGrupal
                 gvRopa.DataBind();
             }
         }
+        protected void btnOption1_Click(object sender, EventArgs e)
+        {
+            // Lógica para el botón Opción 1
+            // Ejemplo: Redirigir a otra página o mostrar un mensaje
+            Response.Write("<script>alert('Opción 1 seleccionada');</script>");
+        }
 
+        protected void btnOption2_Click(object sender, EventArgs e)
+        {
+            // Lógica para el botón Opción 2
+            // Ejemplo: Redirigir a otra página o mostrar un mensaje
+            Response.Write("<script>alert('Opción 2 seleccionada');</script>");
+        }
 
     }
 }
