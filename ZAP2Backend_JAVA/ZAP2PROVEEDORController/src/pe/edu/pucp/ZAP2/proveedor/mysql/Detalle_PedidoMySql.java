@@ -27,7 +27,7 @@ public class Detalle_PedidoMySql implements Detalle_PedidoDao{
     private ResultSet rs;
     private CallableStatement cs;
     @Override
-    public int insertar(Detalle_Pedido detallePedido) {
+    public synchronized int insertar(Detalle_Pedido detallePedido) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
