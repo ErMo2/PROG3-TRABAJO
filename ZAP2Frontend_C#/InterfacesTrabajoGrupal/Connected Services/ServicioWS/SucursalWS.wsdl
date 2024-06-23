@@ -17,6 +17,18 @@
   <message name="modificarSucursalResponse">
     <part name="parameters" element="tns:modificarSucursalResponse" />
   </message>
+  <message name="insertarSucursal">
+    <part name="parameters" element="tns:insertarSucursal" />
+  </message>
+  <message name="insertarSucursalResponse">
+    <part name="parameters" element="tns:insertarSucursalResponse" />
+  </message>
+  <message name="buscarSucursal">
+    <part name="parameters" element="tns:buscarSucursal" />
+  </message>
+  <message name="buscarSucursalResponse">
+    <part name="parameters" element="tns:buscarSucursalResponse" />
+  </message>
   <message name="listarSucursal">
     <part name="parameters" element="tns:listarSucursal" />
   </message>
@@ -29,18 +41,6 @@
   <message name="eliminarSucursalResponse">
     <part name="parameters" element="tns:eliminarSucursalResponse" />
   </message>
-  <message name="buscarSucursal">
-    <part name="parameters" element="tns:buscarSucursal" />
-  </message>
-  <message name="buscarSucursalResponse">
-    <part name="parameters" element="tns:buscarSucursalResponse" />
-  </message>
-  <message name="insertarSucursal">
-    <part name="parameters" element="tns:insertarSucursal" />
-  </message>
-  <message name="insertarSucursalResponse">
-    <part name="parameters" element="tns:insertarSucursalResponse" />
-  </message>
   <portType name="SucursalWS">
     <operation name="listarSucursalesDeUnProductoSinPrecio">
       <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioRequest" message="tns:listarSucursalesDeUnProductoSinPrecio" />
@@ -50,6 +50,14 @@
       <input wsam:Action="ZAP2WS/SucursalWS/modificarSucursalRequest" message="tns:modificarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/modificarSucursalResponse" message="tns:modificarSucursalResponse" />
     </operation>
+    <operation name="insertarSucursal">
+      <input wsam:Action="ZAP2WS/SucursalWS/insertarSucursalRequest" message="tns:insertarSucursal" />
+      <output wsam:Action="ZAP2WS/SucursalWS/insertarSucursalResponse" message="tns:insertarSucursalResponse" />
+    </operation>
+    <operation name="buscarSucursal">
+      <input wsam:Action="ZAP2WS/SucursalWS/buscarSucursalRequest" message="tns:buscarSucursal" />
+      <output wsam:Action="ZAP2WS/SucursalWS/buscarSucursalResponse" message="tns:buscarSucursalResponse" />
+    </operation>
     <operation name="listarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalRequest" message="tns:listarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/listarSucursalResponse" message="tns:listarSucursalResponse" />
@@ -57,14 +65,6 @@
     <operation name="eliminarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/eliminarSucursalRequest" message="tns:eliminarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/eliminarSucursalResponse" message="tns:eliminarSucursalResponse" />
-    </operation>
-    <operation name="buscarSucursal">
-      <input wsam:Action="ZAP2WS/SucursalWS/buscarSucursalRequest" message="tns:buscarSucursal" />
-      <output wsam:Action="ZAP2WS/SucursalWS/buscarSucursalResponse" message="tns:buscarSucursalResponse" />
-    </operation>
-    <operation name="insertarSucursal">
-      <input wsam:Action="ZAP2WS/SucursalWS/insertarSucursalRequest" message="tns:insertarSucursal" />
-      <output wsam:Action="ZAP2WS/SucursalWS/insertarSucursalResponse" message="tns:insertarSucursalResponse" />
     </operation>
   </portType>
   <binding name="SucursalWSPortBinding" type="tns:SucursalWS">
@@ -87,16 +87,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarSucursal">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarSucursal">
+    <operation name="insertarSucursal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +105,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarSucursal">
+    <operation name="listarSucursal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarSucursal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

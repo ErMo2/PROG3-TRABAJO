@@ -32,7 +32,7 @@ public class PedidoMySql implements PedidoDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call INSERTAR_PEDIDO"
-                    +"(?,?,?,?)}");
+                    +"(?,?,?,?,?)}");
             cs.registerOutParameter("_id_pedido", java.sql.Types.INTEGER);
             cs.setDouble("_saldo", pedido.getSaldo());
             cs.setString("_estado", pedido.getEstado().toString());
@@ -56,7 +56,7 @@ public class PedidoMySql implements PedidoDao{
         try{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call MODIFICAR_PEDIDO"
-                    +"(?,?,?,?)}");
+                    +"(?,?,?,?,?)}");
             cs.setInt("_id_pedido", pedido.getId_pedido());
             cs.setDouble("_saldo", pedido.getSaldo());
             cs.setString("_estado", pedido.getEstado().toString());

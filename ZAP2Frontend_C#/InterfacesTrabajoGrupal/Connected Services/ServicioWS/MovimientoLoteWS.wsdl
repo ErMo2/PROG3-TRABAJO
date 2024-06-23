@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/MovimientoLoteWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarMovimientoLote">
-    <part name="parameters" element="tns:listarMovimientoLote" />
-  </message>
-  <message name="listarMovimientoLoteResponse">
-    <part name="parameters" element="tns:listarMovimientoLoteResponse" />
-  </message>
   <message name="modificarMovimientoLote">
     <part name="parameters" element="tns:modificarMovimientoLote" />
   </message>
@@ -29,6 +23,12 @@
   <message name="insertarMovimientoLoteResponse">
     <part name="parameters" element="tns:insertarMovimientoLoteResponse" />
   </message>
+  <message name="listarMovimientoLote">
+    <part name="parameters" element="tns:listarMovimientoLote" />
+  </message>
+  <message name="listarMovimientoLoteResponse">
+    <part name="parameters" element="tns:listarMovimientoLoteResponse" />
+  </message>
   <message name="listarMovimientoLoteDeUnLote">
     <part name="parameters" element="tns:listarMovimientoLoteDeUnLote" />
   </message>
@@ -36,10 +36,6 @@
     <part name="parameters" element="tns:listarMovimientoLoteDeUnLoteResponse" />
   </message>
   <portType name="MovimientoLoteWS">
-    <operation name="listarMovimientoLote">
-      <input wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteRequest" message="tns:listarMovimientoLote" />
-      <output wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteResponse" message="tns:listarMovimientoLoteResponse" />
-    </operation>
     <operation name="modificarMovimientoLote">
       <input wsam:Action="ZAP2WS/MovimientoLoteWS/modificarMovimientoLoteRequest" message="tns:modificarMovimientoLote" />
       <output wsam:Action="ZAP2WS/MovimientoLoteWS/modificarMovimientoLoteResponse" message="tns:modificarMovimientoLoteResponse" />
@@ -52,6 +48,10 @@
       <input wsam:Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteRequest" message="tns:insertarMovimientoLote" />
       <output wsam:Action="ZAP2WS/MovimientoLoteWS/insertarMovimientoLoteResponse" message="tns:insertarMovimientoLoteResponse" />
     </operation>
+    <operation name="listarMovimientoLote">
+      <input wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteRequest" message="tns:listarMovimientoLote" />
+      <output wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteResponse" message="tns:listarMovimientoLoteResponse" />
+    </operation>
     <operation name="listarMovimientoLoteDeUnLote">
       <input wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteDeUnLoteRequest" message="tns:listarMovimientoLoteDeUnLote" />
       <output wsam:Action="ZAP2WS/MovimientoLoteWS/listarMovimientoLoteDeUnLoteResponse" message="tns:listarMovimientoLoteDeUnLoteResponse" />
@@ -59,15 +59,6 @@
   </portType>
   <binding name="MovimientoLoteWSPortBinding" type="tns:MovimientoLoteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarMovimientoLote">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="modificarMovimientoLote">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +78,15 @@
       </output>
     </operation>
     <operation name="insertarMovimientoLote">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMovimientoLote">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
