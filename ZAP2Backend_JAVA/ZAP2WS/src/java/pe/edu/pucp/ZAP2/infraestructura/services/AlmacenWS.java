@@ -75,4 +75,16 @@ public class AlmacenWS {
         }
         return dato;
     }
+    
+     @WebMethod(operationName = "buscarAlmacenDisponible")
+    public Almacen buscarAlmacenDisponible(@WebParam(name = "idSucursal") int idSucursal,@WebParam(name = "cantidad") int cantidad) {
+        Almacen dato = null;
+        try{
+            daoAlmacen = new AlmacenMySql();
+            dato = daoAlmacen.buscarAlmacenDisponible(idSucursal,cantidad);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }

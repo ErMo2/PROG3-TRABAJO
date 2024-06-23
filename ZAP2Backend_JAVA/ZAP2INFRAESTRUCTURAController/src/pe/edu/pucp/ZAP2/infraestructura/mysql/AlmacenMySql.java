@@ -163,5 +163,45 @@ public class AlmacenMySql implements AlmacenDao{
         }
         return almacen;
     }
+
+    @Override
+    public Almacen buscarAlmacenDisponible(int idSucursal, int cantidadAcolocar) {
+       Almacen almacen = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_ALMACEN_DE_UNA_SUCURSAL_CON_ESPACIO_DISPONIBLE(?,?)}");
+            cs.setInt("_id_sucursal", idSucursal);
+            cs.setInt("_cantidadIngresar", cantidadAcolocar);
+            rs = cs.executeQuery();
+            almacen =  new Almacen();
+            while(rs.next()){
+                
+                
+                Sucursal sucursal = new Sucursal();
+                almacen.setId_almacen(rs.getInt("id_almacen"));
+                sucursal.setId_sucursal(rs.getInt("fid_sucursal"));
+                sucursal.setNombre(rs.getString("nombre"));
+                sucursal.setDireccion(rs.getString("direccion"));
+                sucursal.setTam_metros(rs.getDouble("tam_metros"));
+                almacen.setSucursal(sucursal);
+                
+                almacen.setCapacidadMaximaProductos(rs.getDouble("capacidadMaximaProductos"));
+                almacen.setCapacidadActualProductos(rs.getDouble("capacidadActualProductos"));
+                String tipoAlmacenStr = rs.getString("tipoAlmacen");
+                TipoAlmacen tipoAlmacen = TipoAlmacen.valueOf(tipoAlmacenStr);
+                
+                almacen.setTipoAlmacen(tipoAlmacen);
+                
+                
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return almacen;
+    }
     
 }
