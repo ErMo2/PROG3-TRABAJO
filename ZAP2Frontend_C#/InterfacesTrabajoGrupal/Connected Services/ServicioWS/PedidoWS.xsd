@@ -8,6 +8,8 @@
   <xs:element name="insertarPedidoResponse" type="tns:insertarPedidoResponse" />
   <xs:element name="listarPedidos" type="tns:listarPedidos" />
   <xs:element name="listarPedidosResponse" type="tns:listarPedidosResponse" />
+  <xs:element name="listarPedidosXnombre" type="tns:listarPedidosXnombre" />
+  <xs:element name="listarPedidosXnombreResponse" type="tns:listarPedidosXnombreResponse" />
   <xs:element name="modificarPedido" type="tns:modificarPedido" />
   <xs:element name="modificarPedidoResponse" type="tns:modificarPedidoResponse" />
   <xs:complexType name="insertarPedido">
@@ -21,6 +23,7 @@
       <xs:element minOccurs="0" name="estado" type="tns:estadoPedido" />
       <xs:element minOccurs="0" name="fecha_Pedido" type="xs:dateTime" />
       <xs:element name="id_pedido" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element name="saldo" type="xs:double" />
       <xs:element name="total" type="xs:double" />
     </xs:sequence>
@@ -141,6 +144,16 @@
   <xs:complexType name="eliminarPedidoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosXnombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idPedido" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPedidosXnombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pedido" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarPedidos">

@@ -11,6 +11,12 @@
   <message name="insertarAreaProductoResponse">
     <part name="parameters" element="tns:insertarAreaProductoResponse" />
   </message>
+  <message name="eliminarAreaProducto">
+    <part name="parameters" element="tns:eliminarAreaProducto" />
+  </message>
+  <message name="eliminarAreaProductoResponse">
+    <part name="parameters" element="tns:eliminarAreaProductoResponse" />
+  </message>
   <message name="listarAreaConSucursales">
     <part name="parameters" element="tns:listarAreaConSucursales" />
   </message>
@@ -22,12 +28,6 @@
   </message>
   <message name="ListarProductosDelAreaResponse">
     <part name="parameters" element="tns:ListarProductosDelAreaResponse" />
-  </message>
-  <message name="eliminarAreaProducto">
-    <part name="parameters" element="tns:eliminarAreaProducto" />
-  </message>
-  <message name="eliminarAreaProductoResponse">
-    <part name="parameters" element="tns:eliminarAreaProductoResponse" />
   </message>
   <message name="buscarArea">
     <part name="parameters" element="tns:buscarArea" />
@@ -41,6 +41,12 @@
   <message name="listarAreaResponse">
     <part name="parameters" element="tns:listarAreaResponse" />
   </message>
+  <message name="insertarArea">
+    <part name="parameters" element="tns:insertarArea" />
+  </message>
+  <message name="insertarAreaResponse">
+    <part name="parameters" element="tns:insertarAreaResponse" />
+  </message>
   <message name="eliminarArea">
     <part name="parameters" element="tns:eliminarArea" />
   </message>
@@ -53,16 +59,14 @@
   <message name="modificarAreaResponse">
     <part name="parameters" element="tns:modificarAreaResponse" />
   </message>
-  <message name="insertarArea">
-    <part name="parameters" element="tns:insertarArea" />
-  </message>
-  <message name="insertarAreaResponse">
-    <part name="parameters" element="tns:insertarAreaResponse" />
-  </message>
   <portType name="AreaWS">
     <operation name="insertarAreaProducto">
       <input wsam:Action="ZAP2WS/AreaWS/insertarAreaProductoRequest" message="tns:insertarAreaProducto" />
       <output wsam:Action="ZAP2WS/AreaWS/insertarAreaProductoResponse" message="tns:insertarAreaProductoResponse" />
+    </operation>
+    <operation name="eliminarAreaProducto">
+      <input wsam:Action="ZAP2WS/AreaWS/eliminarAreaProductoRequest" message="tns:eliminarAreaProducto" />
+      <output wsam:Action="ZAP2WS/AreaWS/eliminarAreaProductoResponse" message="tns:eliminarAreaProductoResponse" />
     </operation>
     <operation name="listarAreaConSucursales">
       <input wsam:Action="ZAP2WS/AreaWS/listarAreaConSucursalesRequest" message="tns:listarAreaConSucursales" />
@@ -72,10 +76,6 @@
       <input wsam:Action="ZAP2WS/AreaWS/ListarProductosDelAreaRequest" message="tns:ListarProductosDelArea" />
       <output wsam:Action="ZAP2WS/AreaWS/ListarProductosDelAreaResponse" message="tns:ListarProductosDelAreaResponse" />
     </operation>
-    <operation name="eliminarAreaProducto">
-      <input wsam:Action="ZAP2WS/AreaWS/eliminarAreaProductoRequest" message="tns:eliminarAreaProducto" />
-      <output wsam:Action="ZAP2WS/AreaWS/eliminarAreaProductoResponse" message="tns:eliminarAreaProductoResponse" />
-    </operation>
     <operation name="buscarArea">
       <input wsam:Action="ZAP2WS/AreaWS/buscarAreaRequest" message="tns:buscarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/buscarAreaResponse" message="tns:buscarAreaResponse" />
@@ -84,6 +84,10 @@
       <input wsam:Action="ZAP2WS/AreaWS/listarAreaRequest" message="tns:listarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/listarAreaResponse" message="tns:listarAreaResponse" />
     </operation>
+    <operation name="insertarArea">
+      <input wsam:Action="ZAP2WS/AreaWS/insertarAreaRequest" message="tns:insertarArea" />
+      <output wsam:Action="ZAP2WS/AreaWS/insertarAreaResponse" message="tns:insertarAreaResponse" />
+    </operation>
     <operation name="eliminarArea">
       <input wsam:Action="ZAP2WS/AreaWS/eliminarAreaRequest" message="tns:eliminarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/eliminarAreaResponse" message="tns:eliminarAreaResponse" />
@@ -91,10 +95,6 @@
     <operation name="modificarArea">
       <input wsam:Action="ZAP2WS/AreaWS/modificarAreaRequest" message="tns:modificarArea" />
       <output wsam:Action="ZAP2WS/AreaWS/modificarAreaResponse" message="tns:modificarAreaResponse" />
-    </operation>
-    <operation name="insertarArea">
-      <input wsam:Action="ZAP2WS/AreaWS/insertarAreaRequest" message="tns:insertarArea" />
-      <output wsam:Action="ZAP2WS/AreaWS/insertarAreaResponse" message="tns:insertarAreaResponse" />
     </operation>
   </portType>
   <binding name="AreaWSPortBinding" type="tns:AreaWS">
@@ -108,6 +108,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="eliminarAreaProducto">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarAreaConSucursales">
       <soap:operation soapAction="" />
       <input>
@@ -118,15 +127,6 @@
       </output>
     </operation>
     <operation name="ListarProductosDelArea">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="eliminarAreaProducto">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -153,6 +153,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="insertarArea">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarArea">
       <soap:operation soapAction="" />
       <input>
@@ -163,15 +172,6 @@
       </output>
     </operation>
     <operation name="modificarArea">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarArea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -22,6 +22,7 @@ namespace InterfacesTrabajoGrupal
         private ProductoPrecioWSClient productoPrecioDAO;
         private BindingList<producto> listaProductos;
         private productoPrecio[] arregloProductoPrecios;
+        private AlmacenWSClient daoAlmacen;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -86,8 +87,9 @@ namespace InterfacesTrabajoGrupal
                 lote.idLote = string.IsNullOrEmpty(txtIdLote.Text) ? 0 : int.Parse(txtIdLote.Text);
                 lote.stockInicial = Int32.Parse(txtStockInicial.Text);
                 lote.stockActual = 0;
+                daoAlmacen = new AlmacenWSClient();
                 lote.almacen = new almacen();
-                lote.almacen.id_almacen = Int32.Parse(ddlSucursal.SelectedValue); // BUSCAR EL ALMACEN DISPONIBLE DE LA SUCURSAL
+                lote.almacen = daoAlmacen.buscarAlmacenDisponible(Int32.Parse(ddlSucursal.SelectedValue), lote.stockInicial);
                 lote.producto = new producto();
                 lote.producto.idProducto = Int32.Parse(ddlProducto.SelectedValue);
                 try

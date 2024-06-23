@@ -5,23 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/Factura_VentaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarFacturaVenta">
-    <part name="parameters" element="tns:listarFacturaVenta" />
-  </message>
-  <message name="listarFacturaVentaResponse">
-    <part name="parameters" element="tns:listarFacturaVentaResponse" />
-  </message>
   <message name="eliminarFacturaVenta">
     <part name="parameters" element="tns:eliminarFacturaVenta" />
   </message>
   <message name="eliminarFacturaVentaResponse">
     <part name="parameters" element="tns:eliminarFacturaVentaResponse" />
-  </message>
-  <message name="modificarFacturaVenta">
-    <part name="parameters" element="tns:modificarFacturaVenta" />
-  </message>
-  <message name="modificarFacturaVentaResponse">
-    <part name="parameters" element="tns:modificarFacturaVentaResponse" />
   </message>
   <message name="insertarFacturaVenta">
     <part name="parameters" element="tns:insertarFacturaVenta" />
@@ -29,27 +17,39 @@
   <message name="insertarFacturaVentaResponse">
     <part name="parameters" element="tns:insertarFacturaVentaResponse" />
   </message>
+  <message name="modificarFacturaVenta">
+    <part name="parameters" element="tns:modificarFacturaVenta" />
+  </message>
+  <message name="modificarFacturaVentaResponse">
+    <part name="parameters" element="tns:modificarFacturaVentaResponse" />
+  </message>
+  <message name="listarFacturaVenta">
+    <part name="parameters" element="tns:listarFacturaVenta" />
+  </message>
+  <message name="listarFacturaVentaResponse">
+    <part name="parameters" element="tns:listarFacturaVentaResponse" />
+  </message>
   <portType name="Factura_VentaWS">
-    <operation name="listarFacturaVenta">
-      <input wsam:Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaRequest" message="tns:listarFacturaVenta" />
-      <output wsam:Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaResponse" message="tns:listarFacturaVentaResponse" />
-    </operation>
     <operation name="eliminarFacturaVenta">
       <input wsam:Action="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaRequest" message="tns:eliminarFacturaVenta" />
       <output wsam:Action="ZAP2WS/Factura_VentaWS/eliminarFacturaVentaResponse" message="tns:eliminarFacturaVentaResponse" />
-    </operation>
-    <operation name="modificarFacturaVenta">
-      <input wsam:Action="ZAP2WS/Factura_VentaWS/modificarFacturaVentaRequest" message="tns:modificarFacturaVenta" />
-      <output wsam:Action="ZAP2WS/Factura_VentaWS/modificarFacturaVentaResponse" message="tns:modificarFacturaVentaResponse" />
     </operation>
     <operation name="insertarFacturaVenta">
       <input wsam:Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaRequest" message="tns:insertarFacturaVenta" />
       <output wsam:Action="ZAP2WS/Factura_VentaWS/insertarFacturaVentaResponse" message="tns:insertarFacturaVentaResponse" />
     </operation>
+    <operation name="modificarFacturaVenta">
+      <input wsam:Action="ZAP2WS/Factura_VentaWS/modificarFacturaVentaRequest" message="tns:modificarFacturaVenta" />
+      <output wsam:Action="ZAP2WS/Factura_VentaWS/modificarFacturaVentaResponse" message="tns:modificarFacturaVentaResponse" />
+    </operation>
+    <operation name="listarFacturaVenta">
+      <input wsam:Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaRequest" message="tns:listarFacturaVenta" />
+      <output wsam:Action="ZAP2WS/Factura_VentaWS/listarFacturaVentaResponse" message="tns:listarFacturaVentaResponse" />
+    </operation>
   </portType>
   <binding name="Factura_VentaWSPortBinding" type="tns:Factura_VentaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarFacturaVenta">
+    <operation name="eliminarFacturaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarFacturaVenta">
+    <operation name="insertarFacturaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarFacturaVenta">
+    <operation name="listarFacturaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
