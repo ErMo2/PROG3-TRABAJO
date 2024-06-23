@@ -224,5 +224,51 @@ public class ProductoMySql implements ProductoDao{
     
     }
 
-    
+
+    @Override
+    public String listarProductosConStockaAgotarse(int umbral) {
+        StringBuilder result = new StringBuilder();
+        
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call LISTAR_PRODUCTOS_CON_STOCK_CASI_POR_TERMINAR"
+                    +"(?)}");
+            cs.setInt("_umbralStock", umbral);
+            rs = cs.executeQuery();
+            result.append("<table border='1' style='border-collapse: collapse; width: 100%;'>");
+            result.append("<tr><th>Producto</th><th>Stock Actual</th><th>Urgencia</th></tr>");
+            while(rs.next()){
+                
+                
+                String nombre = (rs.getString("nombre"));
+                int totalStockActual =(rs.getInt("totalStockActual"));  
+                String urgencia = calcularUrgencia(totalStockActual, umbral);
+                //result.append(String.format("Producto: %-50s Stock Actual: %-10d %-s \n", nombre, totalStockActual, urgencia));
+                result.append(String.format(
+                    "<tr><td>%s</td><td>%d</td><td>%s</td></tr>", 
+                    nombre, totalStockActual, urgencia));
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        return result.toString();
+    }
+
+    private static String calcularUrgencia(int stockActual, int umbralStock) {
+        int primerTercio = umbralStock / 3;
+        int segundoTercio = 2 * umbralStock / 3;
+
+        if (stockActual < primerTercio) {
+            return "Extremadamente urgente";
+        } else if (stockActual < segundoTercio) {
+            return "Muy urgente";
+        } else {
+            return "Urgente";
+        }
+    }
 }

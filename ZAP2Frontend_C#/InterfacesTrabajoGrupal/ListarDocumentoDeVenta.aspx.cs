@@ -87,22 +87,23 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnVerFactura_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            int index = int.Parse(btn.CommandArgument);
-            facturaVenta factura = listaFacturasDeVenta[index];
+            Response.Redirect("https://herta.eu.org/");
+            //Button btn = (Button)sender;
+            //int index = int.Parse(btn.CommandArgument);
+            //facturaVenta factura = listaFacturasDeVenta[index];
 
-            if (factura != null)
-            {
-                lblDetallesFactura.Text = $"<strong>Id Documento:</strong> {factura.id_documento}<br/>" +
-                                          $"<strong>Fecha de Emisión:</strong> {factura.fecha_emision}<br/>" +
-                                          $"<strong>Monto Total:</strong> {factura.montoTotal}<br/>" +
-                                          $"<strong>Moneda:</strong> {factura.moneda}<br/>" +
-                                          $"<strong>Detalles:</strong> {factura.detalles}<br/>" +
-                                          $"<strong>Empleado:</strong> {factura.empleado}<br/>" +
-                                          $"<strong>Tarjeta:</strong> {factura.tarjeta}<br/>" +
-                                          $"<strong>Líneas Doc Venta:</strong> {factura.lineasDocVenta}<br/>";
-            }
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verFacturaModal').modal('show');", true);
+            //if (factura != null)
+            //{
+            //    lblDetallesFactura.Text = $"<strong>Id Documento:</strong> {factura.id_documento}<br/>" +
+            //                              $"<strong>Fecha de Emisión:</strong> {factura.fecha_emision}<br/>" +
+            //                              $"<strong>Monto Total:</strong> {factura.montoTotal}<br/>" +
+            //                              $"<strong>Moneda:</strong> {factura.moneda}<br/>" +
+            //                              $"<strong>Detalles:</strong> {factura.detalles}<br/>" +
+            //                              $"<strong>Empleado:</strong> {factura.empleado}<br/>" +
+            //                              $"<strong>Tarjeta:</strong> {factura.tarjeta}<br/>" +
+            //                              $"<strong>Líneas Doc Venta:</strong> {factura.lineasDocVenta}<br/>";
+            //}
+            //ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verFacturaModal').modal('show');", true);
         }
     }
 }
