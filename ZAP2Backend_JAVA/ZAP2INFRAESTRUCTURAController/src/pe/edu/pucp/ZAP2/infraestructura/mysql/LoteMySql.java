@@ -107,7 +107,7 @@ public class LoteMySql implements LoteDao{
                 almacen.setId_almacen(rs.getInt("fid_almacen"));
                 
                 Sucursal sur = new  Sucursal();
-                sur.setNombre(rs.getString("nombre"));
+                sur.setNombre(rs.getString("nombre_Almacen"));
                 almacen.setSucursal(sur);
                 lote.setAlmacen(almacen);
                 Producto producto = new Producto() ;
