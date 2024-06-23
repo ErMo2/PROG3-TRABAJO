@@ -76,4 +76,16 @@ public class PedidoWS {
         }
         return dato;
     }
+    
+    @WebMethod(operationName = "listarPedidosXnombre")
+    public ArrayList<Pedido> listarPedidosXnombre(@WebParam(name = "idPedido")String dato) {
+        ArrayList<Pedido> pedidos = null;
+        try{
+            daoPedido = new PedidoMySql();
+            pedidos = daoPedido.listarTodasXnombre(dato);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return pedidos;
+    }
 }

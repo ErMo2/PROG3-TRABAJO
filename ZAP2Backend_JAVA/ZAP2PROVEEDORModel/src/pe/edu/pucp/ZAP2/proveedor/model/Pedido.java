@@ -20,6 +20,7 @@ public class Pedido {
     private double total;
     ArrayList<Detalle_Pedido> detallesPedido;
     ArrayList<Lote> lotes;
+    private String nombre;
     public Pedido() {
     }
 
@@ -86,6 +87,15 @@ public class Pedido {
         System.out.println("Pedido{" + "id_pedido=" + id_pedido + ", saldo=" + 
                 saldo + ", estado=" + estado + ", fecha_Pedido=" + fecha_Pedido 
                 + ", total=" + total +  '}');
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 }

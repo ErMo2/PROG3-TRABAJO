@@ -125,7 +125,7 @@ namespace InterfacesTrabajoGrupal
             detallePedido detPed = new detallePedido();
             detPed.producto = new producto();
             detPed.producto = (producto)Session["producto"];
-            detPed.precioUnitario = Int32.Parse(txtPrecioUnitProducto.Text);
+            detPed.precioUnitario = double.Parse(txtPrecioUnitProducto.Text);
             detPed.cantidad = Int32.Parse(txtCantidadUnidades.Text);
             detPed.precioTotal = detPed.precioUnitario * detPed.cantidad;
             detPed.subtotal = detPed.precioTotal * 1.18;
