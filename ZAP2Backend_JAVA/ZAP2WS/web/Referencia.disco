@@ -81,4 +81,7 @@ ref="http://localhost:8080/ZAP2WS/ProductoWS?WSDL" />
     <contractRef 
 xmlns="http://schemas.xmlsoap.org/disco/scl/" 
 ref="http://localhost:8080/ZAP2WS/ReportesFrontWS?WSDL" />
+<contractRef 
+xmlns="http://schemas.xmlsoap.org/disco/scl/" 
+ref="http://localhost:8080/ZAP2WS/Documento_de_VentaWS?WSDL" />
 </discovery>

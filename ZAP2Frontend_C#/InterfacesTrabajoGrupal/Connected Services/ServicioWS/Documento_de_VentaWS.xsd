@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="buscarCajero" type="tns:buscarCajero" />
-  <xs:element name="buscarCajeroResponse" type="tns:buscarCajeroResponse" />
-  <xs:element name="eliminarCajero" type="tns:eliminarCajero" />
-  <xs:element name="eliminarCajeroResponse" type="tns:eliminarCajeroResponse" />
-  <xs:element name="insertarCajero" type="tns:insertarCajero" />
-  <xs:element name="insertarCajeroResponse" type="tns:insertarCajeroResponse" />
-  <xs:element name="listarCajeros" type="tns:listarCajeros" />
-  <xs:element name="listarCajerosPorSucursal" type="tns:listarCajerosPorSucursal" />
-  <xs:element name="listarCajerosPorSucursalResponse" type="tns:listarCajerosPorSucursalResponse" />
-  <xs:element name="listarCajerosResponse" type="tns:listarCajerosResponse" />
-  <xs:element name="modificarCajero" type="tns:modificarCajero" />
-  <xs:element name="modificarCajeroResponse" type="tns:modificarCajeroResponse" />
-  <xs:complexType name="buscarCajero">
+  <xs:element name="listarIngresos" type="tns:listarIngresos" />
+  <xs:element name="listarIngresosResponse" type="tns:listarIngresosResponse" />
+  <xs:complexType name="listarIngresos">
     <xs:sequence>
-      <xs:element name="idCajero" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaIni" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="buscarCajeroResponse">
+  <xs:complexType name="listarIngresosResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:cajero" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:documentoDeVenta" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="cajero">
+  <xs:complexType name="documentoDeVenta">
     <xs:complexContent mixed="false">
-      <xs:extension base="tns:empleado">
+      <xs:extension base="tns:documento">
         <xs:sequence>
-          <xs:element name="cantidadCaja" type="xs:double" />
-          <xs:element name="numeroCaja" type="xs:int" />
-          <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
+          <xs:element minOccurs="0" name="empleado" type="tns:empleado" />
+          <xs:element name="id_doc_venta" type="xs:int" />
+          <xs:element name="montoTotal" type="xs:double" />
+          <xs:element minOccurs="0" name="tarjeta" type="tns:tarjeta" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="documento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha_emision" type="xs:dateTime" />
+      <xs:element name="id_documento" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasDocVenta" nillable="true" type="tns:lineaDoc" />
+      <xs:element minOccurs="0" name="moneda" type="tns:moneda" />
+      <xs:element name="total" type="xs:double" />
+    </xs:sequence>
   </xs:complexType>
   <xs:complexType name="empleado" abstract="true">
     <xs:complexContent mixed="false">
@@ -70,27 +71,6 @@
       <xs:element name="telefono" type="xs:int" />
       <xs:element minOccurs="0" name="tipo_documento" type="tns:tipoDocumento" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="supervisor">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:empleado">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="cajeros" nillable="true" type="tns:cajero" />
-          <xs:element minOccurs="0" maxOccurs="unbounded" name="empleadosArea" nillable="true" type="tns:empleadoDeArea" />
-          <xs:element name="numempleados" type="xs:int" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="empleadoDeArea">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:empleado">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="puesto" type="tns:tipoPuesto" />
-          <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="area">
     <xs:sequence>
@@ -193,60 +173,70 @@
       <xs:element minOccurs="0" name="usuario" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarCajero">
+  <xs:complexType name="cajero">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:empleado">
+        <xs:sequence>
+          <xs:element name="cantidadCaja" type="xs:double" />
+          <xs:element name="numeroCaja" type="xs:int" />
+          <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="supervisor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:empleado">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="cajeros" nillable="true" type="tns:cajero" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="empleadosArea" nillable="true" type="tns:empleadoDeArea" />
+          <xs:element name="numempleados" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="empleadoDeArea">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:empleado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="puesto" type="tns:tipoPuesto" />
+          <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tarjeta">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cajero" type="tns:cajero" />
+      <xs:element minOccurs="0" name="banco" type="tns:banco" />
+      <xs:element name="codTarjeta" type="xs:int" />
+      <xs:element name="idTarjeta" type="xs:int" />
+      <xs:element minOccurs="0" name="tipoTarjeta" type="tns:tipoTarjeta" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarCajeroResponse">
+  <xs:complexType name="banco">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element name="idBanco" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarCajero">
+  <xs:complexType name="lineaDoc">
     <xs:sequence>
-      <xs:element minOccurs="0" name="cajero" type="tns:cajero" />
+      <xs:element name="cantidad" type="xs:double" />
+      <xs:element minOccurs="0" name="documento" type="tns:documento" />
+      <xs:element name="idLineDoc" type="xs:int" />
+      <xs:element name="precioTotal" type="xs:double" />
+      <xs:element name="precioUnitario" type="xs:double" />
+      <xs:element minOccurs="0" name="producto" type="tns:productoPrecio" />
+      <xs:element name="subTotal" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="modificarCajeroResponse">
+  <xs:complexType name="moneda">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" name="abreviacion" type="xs:string" />
+      <xs:element name="idMoneda" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarCajeros">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarCajerosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cajero" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarCajero">
-    <xs:sequence>
-      <xs:element name="idCajero" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarCajeroResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarCajerosPorSucursal">
-    <xs:sequence>
-      <xs:element name="idCajero" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarCajerosPorSucursalResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cajero" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:simpleType name="tipoPuesto">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="Empacador" />
-      <xs:enumeration value="Consultor" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="tipoDeMotivoMovimientoAlmacen">
     <xs:restriction base="xs:string">
       <xs:enumeration value="traslado" />
@@ -288,6 +278,19 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="DNI" />
       <xs:enumeration value="CARNET_EXTRANJERIA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoPuesto">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Empacador" />
+      <xs:enumeration value="Consultor" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoTarjeta">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEBITO" />
+      <xs:enumeration value="CREDITO" />
+      <xs:enumeration value="CUENTA_CORRIENTE" />
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

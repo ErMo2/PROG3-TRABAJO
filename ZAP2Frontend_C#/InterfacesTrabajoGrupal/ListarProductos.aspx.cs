@@ -1,4 +1,9 @@
 ﻿using InterfacesTrabajoGrupal.ServicioWS;
+using System.ComponentModel;
+using System.Web.UI.WebControls;
+using System;
+
+using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,39 +39,39 @@ namespace InterfacesTrabajoGrupal
             daoProdCuiHog = new ProductosParaElCuidadoPersonalYDelHogarWSClient();
             daoElectrodomestico = new ElectrodomesticosWSClient();
             daoRopa = new RopaWSClient();
-            
-                
 
-                ropa[] ropaArreglo = daoRopa.listarRopaXnombre(txtNombreRopa.Text);
-                electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticosXnombre(txtNombreElectrodomestico.Text);
-                productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCHXnombre(txtNombreProdLimpiezaYHogar.Text);
-                productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecibleXnombre(txtNombreProdPerecible.Text);
 
-                if (ropaArreglo != null)
-                    listaRopa = new BindingList<ropa>(ropaArreglo);
 
-                if (electrodomesticosArreglo != null)
-                    listaElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArreglo);
+            ropa[] ropaArreglo = daoRopa.listarRopaXnombre(txtNombreRopa.Text);
+            electrodomesticos[] electrodomesticosArreglo = daoElectrodomestico.listarElectrodomesticosXnombre(txtNombreElectrodomestico.Text);
+            productosParaElCuidadoPersonalYDelHogar[] prodCuiHogArreglo = daoProdCuiHog.listarPCHXnombre(txtNombreProdLimpiezaYHogar.Text);
+            productoPerecible[] prodPerecibleArreglo = daoProdPerecible.listarProductoPerecibleXnombre(txtNombreProdPerecible.Text);
 
-                if (prodCuiHogArreglo != null)
-                    listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>(prodCuiHogArreglo);
+            if (ropaArreglo != null)
+                listaRopa = new BindingList<ropa>(ropaArreglo);
 
-                if (prodPerecibleArreglo != null)
-                    listaProdPerecibles = new BindingList<productoPerecible>(prodPerecibleArreglo);
+            if (electrodomesticosArreglo != null)
+                listaElectrodomesticos = new BindingList<electrodomesticos>(electrodomesticosArreglo);
 
-                gvElectrodomesticos.DataSource = listaElectrodomesticos;
-                gvLimpiezayHogar.DataSource = listaProdCuiHog;
-                gvProductosPerecibles.DataSource = listaProdPerecibles;
-                gvRopa.DataSource = listaRopa;
+            if (prodCuiHogArreglo != null)
+                listaProdCuiHog = new BindingList<productosParaElCuidadoPersonalYDelHogar>(prodCuiHogArreglo);
 
-                gvElectrodomesticos.DataBind();
-                gvLimpiezayHogar.DataBind();
-                gvProductosPerecibles.DataBind();
-                gvRopa.DataBind();
-            
-            
+            if (prodPerecibleArreglo != null)
+                listaProdPerecibles = new BindingList<productoPerecible>(prodPerecibleArreglo);
+
+            gvElectrodomesticos.DataSource = listaElectrodomesticos;
+            gvLimpiezayHogar.DataSource = listaProdCuiHog;
+            gvProductosPerecibles.DataSource = listaProdPerecibles;
+            gvRopa.DataSource = listaRopa;
+
+            gvElectrodomesticos.DataBind();
+            gvLimpiezayHogar.DataBind();
+            gvProductosPerecibles.DataBind();
+            gvRopa.DataBind();
+
+
         }
-        
+
 
         protected void lbRegistrarProducto_Click(object sender, EventArgs e)
         {
@@ -196,7 +201,7 @@ namespace InterfacesTrabajoGrupal
                 Response.BinaryWrite(reporte);
                 Response.End();
             }
-            
+
         }
 
         protected void lbBusquedaProdPerecible_Click(object sender, EventArgs e)
@@ -242,5 +247,7 @@ namespace InterfacesTrabajoGrupal
                 gvRopa.DataBind();
             }
         }
+
+
     }
 }

@@ -32,6 +32,7 @@
       <xs:element minOccurs="0" name="estado" type="tns:estadoPedido" />
       <xs:element minOccurs="0" name="fecha_Pedido" type="xs:dateTime" />
       <xs:element name="id_pedido" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element name="saldo" type="xs:double" />
       <xs:element name="total" type="xs:double" />
     </xs:sequence>

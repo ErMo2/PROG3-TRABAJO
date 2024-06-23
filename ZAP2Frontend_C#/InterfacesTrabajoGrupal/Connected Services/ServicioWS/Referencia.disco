@@ -27,4 +27,5 @@
   <contractRef ref="http://localhost:8080/ZAP2WS/PedidoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/ZAP2WS/ProductoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/ZAP2WS/ReportesFrontWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/ZAP2WS/Documento_de_VentaWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
 </discovery>

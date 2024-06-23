@@ -8,6 +8,8 @@
   <xs:element name="listarProductosConDescuentoEnFecha" type="tns:listarProductosConDescuentoEnFecha" />
   <xs:element name="listarProductosConDescuentoEnFechaResponse" type="tns:listarProductosConDescuentoEnFechaResponse" />
   <xs:element name="listarProductosConDescuentoResponse" type="tns:listarProductosConDescuentoResponse" />
+  <xs:element name="listarProductosConStockBajo" type="tns:listarProductosConStockBajo" />
+  <xs:element name="listarProductosConStockBajoResponse" type="tns:listarProductosConStockBajoResponse" />
   <xs:element name="listarProductosMasConsumidos" type="tns:listarProductosMasConsumidos" />
   <xs:element name="listarProductosMasConsumidosResponse" type="tns:listarProductosMasConsumidosResponse" />
   <xs:element name="listarProductosXnombre" type="tns:listarProductosXnombre" />
@@ -138,6 +140,14 @@
   <xs:complexType name="listarProductosConDescuentoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProductosConStockBajo">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarProductosConStockBajoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarProductosMasConsumidos">

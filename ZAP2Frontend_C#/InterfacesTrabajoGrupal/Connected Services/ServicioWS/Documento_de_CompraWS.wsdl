@@ -11,12 +11,6 @@
   <message name="listarDocumentosComprasResponse">
     <part name="parameters" element="tns:listarDocumentosComprasResponse" />
   </message>
-  <message name="eliminarDocumentoCompra">
-    <part name="parameters" element="tns:eliminarDocumentoCompra" />
-  </message>
-  <message name="eliminarDocumentoCompraResponse">
-    <part name="parameters" element="tns:eliminarDocumentoCompraResponse" />
-  </message>
   <message name="insertarDocumentoCompra">
     <part name="parameters" element="tns:insertarDocumentoCompra" />
   </message>
@@ -29,6 +23,12 @@
   <message name="modificarDocumentoCompraResponse">
     <part name="parameters" element="tns:modificarDocumentoCompraResponse" />
   </message>
+  <message name="eliminarDocumentoCompra">
+    <part name="parameters" element="tns:eliminarDocumentoCompra" />
+  </message>
+  <message name="eliminarDocumentoCompraResponse">
+    <part name="parameters" element="tns:eliminarDocumentoCompraResponse" />
+  </message>
   <message name="listarEgresos">
     <part name="parameters" element="tns:listarEgresos" />
   </message>
@@ -40,10 +40,6 @@
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasRequest" message="tns:listarDocumentosCompras" />
       <output wsam:Action="ZAP2WS/Documento_de_CompraWS/listarDocumentosComprasResponse" message="tns:listarDocumentosComprasResponse" />
     </operation>
-    <operation name="eliminarDocumentoCompra">
-      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/eliminarDocumentoCompraRequest" message="tns:eliminarDocumentoCompra" />
-      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/eliminarDocumentoCompraResponse" message="tns:eliminarDocumentoCompraResponse" />
-    </operation>
     <operation name="insertarDocumentoCompra">
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraRequest" message="tns:insertarDocumentoCompra" />
       <output wsam:Action="ZAP2WS/Documento_de_CompraWS/insertarDocumentoCompraResponse" message="tns:insertarDocumentoCompraResponse" />
@@ -51,6 +47,10 @@
     <operation name="modificarDocumentoCompra">
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraRequest" message="tns:modificarDocumentoCompra" />
       <output wsam:Action="ZAP2WS/Documento_de_CompraWS/modificarDocumentoCompraResponse" message="tns:modificarDocumentoCompraResponse" />
+    </operation>
+    <operation name="eliminarDocumentoCompra">
+      <input wsam:Action="ZAP2WS/Documento_de_CompraWS/eliminarDocumentoCompraRequest" message="tns:eliminarDocumentoCompra" />
+      <output wsam:Action="ZAP2WS/Documento_de_CompraWS/eliminarDocumentoCompraResponse" message="tns:eliminarDocumentoCompraResponse" />
     </operation>
     <operation name="listarEgresos">
       <input wsam:Action="ZAP2WS/Documento_de_CompraWS/listarEgresosRequest" message="tns:listarEgresos" />
@@ -68,15 +68,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarDocumentoCompra">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarDocumentoCompra">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +78,15 @@
       </output>
     </operation>
     <operation name="modificarDocumentoCompra">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarDocumentoCompra">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

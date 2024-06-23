@@ -97,6 +97,15 @@ namespace InterfacesTrabajoGrupal
             if (clientes != null)
             {
                 cliente clienteSeleccionado = clientes.SingleOrDefault(c => c.id_cliente == idCliente);
+                string sexo;
+                if(clienteSeleccionado.sexo == 77) {
+                    sexo = "M";
+                }
+                else
+                {
+                    sexo = "F";
+                }
+               
                 if (clienteSeleccionado != null)
                 {
                     lblDetallesCliente.Text = $"<strong>Nombre:</strong> {clienteSeleccionado.nombre}<br/>" +
@@ -105,9 +114,10 @@ namespace InterfacesTrabajoGrupal
                                               $"<strong>Teléfono:</strong> {clienteSeleccionado.telefono}<br/>" +
                                               $"<strong>Email:</strong> {clienteSeleccionado.email}<br/>" +
                                               $"<strong>Dirección:</strong> {clienteSeleccionado.direccion}<br/>" +
-                                              $"<strong>Sexo:</strong> {clienteSeleccionado.sexo}<br/>" +
+                                              $"<strong>Sexo:</strong> {sexo}<br/>" +
                                                $"<strong>Tipo de Documento:</strong> {clienteSeleccionado.tipo_documento}<br/>" +
-                                               $"<strong>Numero de Documento:</strong> {clienteSeleccionado.dni}<br/>";
+                                               $"<strong>Numero de Documento:</strong> {clienteSeleccionado.nro_documento}<br/>" +
+                                               $"<strong>Puntos bonus:</strong> {clienteSeleccionado.puntosBonus}<br/>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowModal", "$('#verClienteModal').modal('show');", true);
                 }
             }

@@ -37,6 +37,8 @@
     <MetadataFile FileName="TarjetaWS.wsdl" MetadataType="Wsdl" ID="fbe8c2ca-b30c-4cc8-9a54-78d83b9d77ca" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/TarjetaWS?WSDL" />
     <MetadataFile FileName="ReportesFrontWS.wsdl" MetadataType="Wsdl" ID="2a2b7ba8-79bf-4a53-986d-148ae0c4cfc3" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ReportesFrontWS?WSDL" />
     <MetadataFile FileName="MonedaWS.wsdl" MetadataType="Wsdl" ID="7867ff12-1048-4185-9d7f-d2224905955b" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/MonedaWS?WSDL" />
+    <MetadataFile FileName="Documento_de_VentaWS.wsdl" MetadataType="Wsdl" ID="63c10555-c120-4832-b074-777269470aef" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Documento_de_VentaWS?WSDL" />
+    <MetadataFile FileName="Documento_de_VentaWS.xsd" MetadataType="Schema" ID="d0db906f-3e55-4708-987f-bbcac4f91766" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Documento_de_VentaWS?xsd=1" />
     <MetadataFile FileName="ProductosParaElCuidadoPersonalYDelHogarWS.wsdl" MetadataType="Wsdl" ID="ffd7754f-a39f-4967-8fb3-9ed714258886" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/ProductosParaElCuidadoPersonalYDelHogarWS?WSDL" />
     <MetadataFile FileName="Factura_VentaWS.xsd" MetadataType="Schema" ID="3583d351-f988-437a-a177-82db543646dd" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/Factura_VentaWS?xsd=1" />
     <MetadataFile FileName="LineaDocWS.wsdl" MetadataType="Wsdl" ID="6f68b38a-0ec8-4827-a0fd-de45d1e39506" SourceId="1" SourceUrl="http://localhost:8080/ZAP2WS/LineaDocWS?WSDL" />

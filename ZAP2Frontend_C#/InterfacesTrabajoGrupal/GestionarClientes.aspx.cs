@@ -71,7 +71,7 @@ namespace InterfacesTrabajoGrupal
             if (Session["id"] != null)
             {
                 // Modificar el cliente existente
-                cliente.id_cliente = int.Parse(txtIdCliente.Text);
+                cliente.id_Persona = int.Parse(txtIdCliente.Text);
                 daoCliente.modificarCliente(cliente); // Método para modificar cliente
             }
             else

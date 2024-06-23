@@ -197,6 +197,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServicioWS\CuentaUsuarioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Documento_de_VentaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Documento_de_VentaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\ElectrodomesticosWS.wsdl" />
     <None Include="Connected Services\ServicioWS\Factura_VentaWS.wsdl" />
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.almacen.datasource">
@@ -703,6 +707,27 @@
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarRopaXnombreResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.buscarAlmacenDisponibleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.EnviarReporteProductoConStockBajoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.generarReporteProductosConsumidosYmandarPorCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarIngresosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarPedidosXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarProductosConStockBajoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.documentoDeVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -788,6 +813,7 @@
     <Content Include="ListarAreas.aspx" />
     <Content Include="ListarBancos.aspx" />
     <Content Include="ListarDocumentoDeVenta.aspx" />
+    <Content Include="ListarEgresosIngresos.aspx" />
     <Content Include="ListarEmpleados.aspx" />
     <Content Include="ListarLotes.aspx" />
     <Content Include="ListarPedidos.aspx" />
@@ -1087,6 +1113,13 @@
     </Compile>
     <Compile Include="ListarDocumentoDeVenta.aspx.designer.cs">
       <DependentUpon>ListarDocumentoDeVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListarEgresosIngresos.aspx.cs">
+      <DependentUpon>ListarEgresosIngresos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListarEgresosIngresos.aspx.designer.cs">
+      <DependentUpon>ListarEgresosIngresos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListarEmpleados.aspx.cs">
       <DependentUpon>ListarEmpleados.aspx</DependentUpon>

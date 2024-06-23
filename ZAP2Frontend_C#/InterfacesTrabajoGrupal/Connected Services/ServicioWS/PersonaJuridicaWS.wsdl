@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/PersonaJuridicaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="insertarPersonaJuridica">
-    <part name="parameters" element="tns:insertarPersonaJuridica" />
-  </message>
-  <message name="insertarPersonaJuridicaResponse">
-    <part name="parameters" element="tns:insertarPersonaJuridicaResponse" />
-  </message>
-  <message name="listarPersonasJuridicas">
-    <part name="parameters" element="tns:listarPersonasJuridicas" />
-  </message>
-  <message name="listarPersonasJuridicasResponse">
-    <part name="parameters" element="tns:listarPersonasJuridicasResponse" />
-  </message>
   <message name="eliminarPersonaJuridica">
     <part name="parameters" element="tns:eliminarPersonaJuridica" />
   </message>
@@ -29,15 +17,19 @@
   <message name="modificarPersonaJuridicaResponse">
     <part name="parameters" element="tns:modificarPersonaJuridicaResponse" />
   </message>
+  <message name="insertarPersonaJuridica">
+    <part name="parameters" element="tns:insertarPersonaJuridica" />
+  </message>
+  <message name="insertarPersonaJuridicaResponse">
+    <part name="parameters" element="tns:insertarPersonaJuridicaResponse" />
+  </message>
+  <message name="listarPersonasJuridicas">
+    <part name="parameters" element="tns:listarPersonasJuridicas" />
+  </message>
+  <message name="listarPersonasJuridicasResponse">
+    <part name="parameters" element="tns:listarPersonasJuridicasResponse" />
+  </message>
   <portType name="PersonaJuridicaWS">
-    <operation name="insertarPersonaJuridica">
-      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaRequest" message="tns:insertarPersonaJuridica" />
-      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaResponse" message="tns:insertarPersonaJuridicaResponse" />
-    </operation>
-    <operation name="listarPersonasJuridicas">
-      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest" message="tns:listarPersonasJuridicas" />
-      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse" message="tns:listarPersonasJuridicasResponse" />
-    </operation>
     <operation name="eliminarPersonaJuridica">
       <input wsam:Action="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaRequest" message="tns:eliminarPersonaJuridica" />
       <output wsam:Action="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaResponse" message="tns:eliminarPersonaJuridicaResponse" />
@@ -46,27 +38,17 @@
       <input wsam:Action="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaRequest" message="tns:modificarPersonaJuridica" />
       <output wsam:Action="ZAP2WS/PersonaJuridicaWS/modificarPersonaJuridicaResponse" message="tns:modificarPersonaJuridicaResponse" />
     </operation>
+    <operation name="insertarPersonaJuridica">
+      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaRequest" message="tns:insertarPersonaJuridica" />
+      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaResponse" message="tns:insertarPersonaJuridicaResponse" />
+    </operation>
+    <operation name="listarPersonasJuridicas">
+      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest" message="tns:listarPersonasJuridicas" />
+      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse" message="tns:listarPersonasJuridicasResponse" />
+    </operation>
   </portType>
   <binding name="PersonaJuridicaWSPortBinding" type="tns:PersonaJuridicaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarPersonaJuridica">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPersonasJuridicas">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="eliminarPersonaJuridica">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +59,24 @@
       </output>
     </operation>
     <operation name="modificarPersonaJuridica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPersonaJuridica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPersonasJuridicas">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
