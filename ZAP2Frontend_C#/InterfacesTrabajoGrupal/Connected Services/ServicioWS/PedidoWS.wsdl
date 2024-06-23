@@ -5,12 +5,15 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/PedidoWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="listarPedidosXnombre">
     <part name="parameters" element="tns:listarPedidosXnombre" />
   </message>
   <message name="listarPedidosXnombreResponse">
     <part name="parameters" element="tns:listarPedidosXnombreResponse" />
   </message>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
   <message name="eliminarPedido">
     <part name="parameters" element="tns:eliminarPedido" />
   </message>
@@ -29,23 +32,42 @@
   <message name="listarPedidosResponse">
     <part name="parameters" element="tns:listarPedidosResponse" />
   </message>
+<<<<<<< HEAD
   <message name="modificarPedido">
     <part name="parameters" element="tns:modificarPedido" />
   </message>
   <message name="modificarPedidoResponse">
     <part name="parameters" element="tns:modificarPedidoResponse" />
   </message>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
   <message name="buscarPedido">
     <part name="parameters" element="tns:buscarPedido" />
   </message>
   <message name="buscarPedidoResponse">
     <part name="parameters" element="tns:buscarPedidoResponse" />
   </message>
+<<<<<<< HEAD
   <portType name="PedidoWS">
     <operation name="listarPedidosXnombre">
       <input wsam:Action="ZAP2WS/PedidoWS/listarPedidosXnombreRequest" message="tns:listarPedidosXnombre" />
       <output wsam:Action="ZAP2WS/PedidoWS/listarPedidosXnombreResponse" message="tns:listarPedidosXnombreResponse" />
     </operation>
+=======
+  <message name="insertarPedido">
+    <part name="parameters" element="tns:insertarPedido" />
+  </message>
+  <message name="insertarPedidoResponse">
+    <part name="parameters" element="tns:insertarPedidoResponse" />
+  </message>
+  <message name="listarPedidosXnombre">
+    <part name="parameters" element="tns:listarPedidosXnombre" />
+  </message>
+  <message name="listarPedidosXnombreResponse">
+    <part name="parameters" element="tns:listarPedidosXnombreResponse" />
+  </message>
+  <portType name="PedidoWS">
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="eliminarPedido">
       <input wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoRequest" message="tns:eliminarPedido" />
       <output wsam:Action="ZAP2WS/PedidoWS/eliminarPedidoResponse" message="tns:eliminarPedidoResponse" />
@@ -58,14 +80,18 @@
       <input wsam:Action="ZAP2WS/PedidoWS/listarPedidosRequest" message="tns:listarPedidos" />
       <output wsam:Action="ZAP2WS/PedidoWS/listarPedidosResponse" message="tns:listarPedidosResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="modificarPedido">
       <input wsam:Action="ZAP2WS/PedidoWS/modificarPedidoRequest" message="tns:modificarPedido" />
       <output wsam:Action="ZAP2WS/PedidoWS/modificarPedidoResponse" message="tns:modificarPedidoResponse" />
     </operation>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="buscarPedido">
       <input wsam:Action="ZAP2WS/PedidoWS/buscarPedidoRequest" message="tns:buscarPedido" />
       <output wsam:Action="ZAP2WS/PedidoWS/buscarPedidoResponse" message="tns:buscarPedidoResponse" />
     </operation>
+<<<<<<< HEAD
   </portType>
   <binding name="PedidoWSPortBinding" type="tns:PedidoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -78,6 +104,19 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+    <operation name="insertarPedido">
+      <input wsam:Action="ZAP2WS/PedidoWS/insertarPedidoRequest" message="tns:insertarPedido" />
+      <output wsam:Action="ZAP2WS/PedidoWS/insertarPedidoResponse" message="tns:insertarPedidoResponse" />
+    </operation>
+    <operation name="listarPedidosXnombre">
+      <input wsam:Action="ZAP2WS/PedidoWS/listarPedidosXnombreRequest" message="tns:listarPedidosXnombre" />
+      <output wsam:Action="ZAP2WS/PedidoWS/listarPedidosXnombreResponse" message="tns:listarPedidosXnombreResponse" />
+    </operation>
+  </portType>
+  <binding name="PedidoWSPortBinding" type="tns:PedidoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="eliminarPedido">
       <soap:operation soapAction="" />
       <input>
@@ -105,6 +144,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="modificarPedido">
       <soap:operation soapAction="" />
       <input>
@@ -114,6 +154,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="buscarPedido">
       <soap:operation soapAction="" />
       <input>
@@ -123,6 +165,27 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
+=======
+    <operation name="insertarPedido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPedidosXnombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> origin/AvanzandoAndo_Leonardo
   </binding>
   <service name="PedidoWS">
     <port name="PedidoWSPort" binding="tns:PedidoWSPortBinding">

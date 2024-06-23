@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ReportesFrontWS?xsd=1" namespace="http://reportes.ZAP2.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="generarReporteProductosConsumidos">
     <part name="parameters" element="tns:generarReporteProductosConsumidos" />
   </message>
@@ -23,13 +24,28 @@
   <message name="generarReporteProductosConsumidosYmandarPorCorreoResponse">
     <part name="parameters" element="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
   </message>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
   <message name="generarBoletaVenta">
     <part name="parameters" element="tns:generarBoletaVenta" />
   </message>
   <message name="generarBoletaVentaResponse">
     <part name="parameters" element="tns:generarBoletaVentaResponse" />
   </message>
+  <message name="generarReporteProductosConsumidos">
+    <part name="parameters" element="tns:generarReporteProductosConsumidos" />
+  </message>
+  <message name="generarReporteProductosConsumidosResponse">
+    <part name="parameters" element="tns:generarReporteProductosConsumidosResponse" />
+  </message>
+  <message name="generarReporteProductosConsumidosYmandarPorCorreo">
+    <part name="parameters" element="tns:generarReporteProductosConsumidosYmandarPorCorreo" />
+  </message>
+  <message name="generarReporteProductosConsumidosYmandarPorCorreoResponse">
+    <part name="parameters" element="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
+  </message>
   <portType name="ReportesFrontWS">
+<<<<<<< HEAD
     <operation name="generarReporteProductosConsumidos">
       <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosRequest" message="tns:generarReporteProductosConsumidos" />
       <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosResponse" message="tns:generarReporteProductosConsumidosResponse" />
@@ -42,13 +58,32 @@
       <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoRequest" message="tns:generarReporteProductosConsumidosYmandarPorCorreo" />
       <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoResponse" message="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
     </operation>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="generarBoletaVenta">
       <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
       <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
     </operation>
+    <operation name="generarReporteProductosConsumidos">
+      <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosRequest" message="tns:generarReporteProductosConsumidos" />
+      <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosResponse" message="tns:generarReporteProductosConsumidosResponse" />
+    </operation>
+    <operation name="generarReporteProductosConsumidosYmandarPorCorreo">
+      <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoRequest" message="tns:generarReporteProductosConsumidosYmandarPorCorreo" />
+      <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoResponse" message="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
+    </operation>
   </portType>
   <binding name="ReportesFrontWSPortBinding" type="tns:ReportesFrontWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generarBoletaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="generarReporteProductosConsumidos">
       <soap:operation soapAction="" />
       <input>
@@ -58,6 +93,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="EnviarReporteProductoConStockBajo">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +113,9 @@
       </output>
     </operation>
     <operation name="generarBoletaVenta">
+=======
+    <operation name="generarReporteProductosConsumidosYmandarPorCorreo">
+>>>>>>> origin/AvanzandoAndo_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

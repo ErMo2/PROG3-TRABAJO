@@ -5,6 +5,15 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/CuentaUsuarioWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
+=======
+  <message name="VerificarCuenta">
+    <part name="parameters" element="tns:VerificarCuenta" />
+  </message>
+  <message name="VerificarCuentaResponse">
+    <part name="parameters" element="tns:VerificarCuentaResponse" />
+  </message>
+>>>>>>> origin/AvanzandoAndo_Leonardo
   <message name="eliminarCuentaUsuario">
     <part name="parameters" element="tns:eliminarCuentaUsuario" />
   </message>
@@ -29,6 +38,7 @@
   <message name="listarCuentaUsuariosResponse">
     <part name="parameters" element="tns:listarCuentaUsuariosResponse" />
   </message>
+<<<<<<< HEAD
   <message name="VerificarCuenta">
     <part name="parameters" element="tns:VerificarCuenta" />
   </message>
@@ -36,6 +46,13 @@
     <part name="parameters" element="tns:VerificarCuentaResponse" />
   </message>
   <portType name="CuentaUsuarioWS">
+=======
+  <portType name="CuentaUsuarioWS">
+    <operation name="VerificarCuenta">
+      <input wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest" message="tns:VerificarCuenta" />
+      <output wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse" message="tns:VerificarCuentaResponse" />
+    </operation>
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="eliminarCuentaUsuario">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioRequest" message="tns:eliminarCuentaUsuario" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/eliminarCuentaUsuarioResponse" message="tns:eliminarCuentaUsuarioResponse" />
@@ -52,6 +69,7 @@
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosRequest" message="tns:listarCuentaUsuarios" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/listarCuentaUsuariosResponse" message="tns:listarCuentaUsuariosResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="VerificarCuenta">
       <input wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaRequest" message="tns:VerificarCuenta" />
       <output wsam:Action="ZAP2WS/CuentaUsuarioWS/VerificarCuentaResponse" message="tns:VerificarCuentaResponse" />
@@ -59,6 +77,20 @@
   </portType>
   <binding name="CuentaUsuarioWSPortBinding" type="tns:CuentaUsuarioWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+=======
+  </portType>
+  <binding name="CuentaUsuarioWSPortBinding" type="tns:CuentaUsuarioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="VerificarCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="eliminarCuentaUsuario">
       <soap:operation soapAction="" />
       <input>
@@ -95,6 +127,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="VerificarCuenta">
       <soap:operation soapAction="" />
       <input>
@@ -104,6 +137,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
   </binding>
   <service name="CuentaUsuarioWS">
     <port name="CuentaUsuarioWSPort" binding="tns:CuentaUsuarioWSPortBinding">

@@ -5,6 +5,21 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/PersonaJuridicaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
+=======
+  <message name="listarPersonasJuridicas">
+    <part name="parameters" element="tns:listarPersonasJuridicas" />
+  </message>
+  <message name="listarPersonasJuridicasResponse">
+    <part name="parameters" element="tns:listarPersonasJuridicasResponse" />
+  </message>
+  <message name="insertarPersonaJuridica">
+    <part name="parameters" element="tns:insertarPersonaJuridica" />
+  </message>
+  <message name="insertarPersonaJuridicaResponse">
+    <part name="parameters" element="tns:insertarPersonaJuridicaResponse" />
+  </message>
+>>>>>>> origin/AvanzandoAndo_Leonardo
   <message name="eliminarPersonaJuridica">
     <part name="parameters" element="tns:eliminarPersonaJuridica" />
   </message>
@@ -30,6 +45,17 @@
     <part name="parameters" element="tns:listarPersonasJuridicasResponse" />
   </message>
   <portType name="PersonaJuridicaWS">
+<<<<<<< HEAD
+=======
+    <operation name="listarPersonasJuridicas">
+      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasRequest" message="tns:listarPersonasJuridicas" />
+      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/listarPersonasJuridicasResponse" message="tns:listarPersonasJuridicasResponse" />
+    </operation>
+    <operation name="insertarPersonaJuridica">
+      <input wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaRequest" message="tns:insertarPersonaJuridica" />
+      <output wsam:Action="ZAP2WS/PersonaJuridicaWS/insertarPersonaJuridicaResponse" message="tns:insertarPersonaJuridicaResponse" />
+    </operation>
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="eliminarPersonaJuridica">
       <input wsam:Action="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaRequest" message="tns:eliminarPersonaJuridica" />
       <output wsam:Action="ZAP2WS/PersonaJuridicaWS/eliminarPersonaJuridicaResponse" message="tns:eliminarPersonaJuridicaResponse" />
@@ -49,6 +75,27 @@
   </portType>
   <binding name="PersonaJuridicaWSPortBinding" type="tns:PersonaJuridicaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<<<<<<< HEAD
+=======
+    <operation name="listarPersonasJuridicas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPersonaJuridica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="eliminarPersonaJuridica">
       <soap:operation soapAction="" />
       <input>

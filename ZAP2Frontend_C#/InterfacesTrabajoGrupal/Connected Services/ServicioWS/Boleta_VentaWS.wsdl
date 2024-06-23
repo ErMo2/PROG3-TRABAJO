@@ -5,11 +5,19 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/Boleta_VentaWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="insertarBoletaVenta">
     <part name="parameters" element="tns:insertarBoletaVenta" />
   </message>
   <message name="insertarBoletaVentaResponse">
     <part name="parameters" element="tns:insertarBoletaVentaResponse" />
+=======
+  <message name="eliminarBoletaVenta">
+    <part name="parameters" element="tns:eliminarBoletaVenta" />
+  </message>
+  <message name="eliminarBoletaVentaResponse">
+    <part name="parameters" element="tns:eliminarBoletaVentaResponse" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
   </message>
   <message name="modificarBoletaVenta">
     <part name="parameters" element="tns:modificarBoletaVenta" />
@@ -17,6 +25,7 @@
   <message name="modificarBoletaVentaResponse">
     <part name="parameters" element="tns:modificarBoletaVentaResponse" />
   </message>
+<<<<<<< HEAD
   <message name="listarBoletaVentaTodos">
     <part name="parameters" element="tns:listarBoletaVentaTodos" />
   </message>
@@ -25,19 +34,36 @@
   </message>
   <message name="eliminarBoletaVenta">
     <part name="parameters" element="tns:eliminarBoletaVenta" />
+=======
+  <message name="insertarBoletaVenta">
+    <part name="parameters" element="tns:insertarBoletaVenta" />
   </message>
-  <message name="eliminarBoletaVentaResponse">
-    <part name="parameters" element="tns:eliminarBoletaVentaResponse" />
+  <message name="insertarBoletaVentaResponse">
+    <part name="parameters" element="tns:insertarBoletaVentaResponse" />
+  </message>
+  <message name="listarBoletaVentaTodos">
+    <part name="parameters" element="tns:listarBoletaVentaTodos" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
+  </message>
+  <message name="listarBoletaVentaTodosResponse">
+    <part name="parameters" element="tns:listarBoletaVentaTodosResponse" />
   </message>
   <portType name="Boleta_VentaWS">
+<<<<<<< HEAD
     <operation name="insertarBoletaVenta">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaRequest" message="tns:insertarBoletaVenta" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaResponse" message="tns:insertarBoletaVentaResponse" />
+=======
+    <operation name="eliminarBoletaVenta">
+      <input wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaRequest" message="tns:eliminarBoletaVenta" />
+      <output wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaResponse" message="tns:eliminarBoletaVentaResponse" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
     </operation>
     <operation name="modificarBoletaVenta">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaRequest" message="tns:modificarBoletaVenta" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/modificarBoletaVentaResponse" message="tns:modificarBoletaVentaResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="listarBoletaVentaTodos">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest" message="tns:listarBoletaVentaTodos" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse" message="tns:listarBoletaVentaTodosResponse" />
@@ -45,11 +71,33 @@
     <operation name="eliminarBoletaVenta">
       <input wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaRequest" message="tns:eliminarBoletaVenta" />
       <output wsam:Action="ZAP2WS/Boleta_VentaWS/eliminarBoletaVentaResponse" message="tns:eliminarBoletaVentaResponse" />
+=======
+    <operation name="insertarBoletaVenta">
+      <input wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaRequest" message="tns:insertarBoletaVenta" />
+      <output wsam:Action="ZAP2WS/Boleta_VentaWS/insertarBoletaVentaResponse" message="tns:insertarBoletaVentaResponse" />
+    </operation>
+    <operation name="listarBoletaVentaTodos">
+      <input wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosRequest" message="tns:listarBoletaVentaTodos" />
+      <output wsam:Action="ZAP2WS/Boleta_VentaWS/listarBoletaVentaTodosResponse" message="tns:listarBoletaVentaTodosResponse" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
     </operation>
   </portType>
   <binding name="Boleta_VentaWSPortBinding" type="tns:Boleta_VentaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<<<<<<< HEAD
     <operation name="insertarBoletaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarBoletaVenta">
+=======
+    <operation name="eliminarBoletaVenta">
+>>>>>>> origin/AvanzandoAndo_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +115,10 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarBoletaVentaTodos">
+<<<<<<< HEAD
+    <operation name="eliminarBoletaVenta">
+=======
+    <operation name="insertarBoletaVenta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +127,8 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarBoletaVenta">
+    <operation name="listarBoletaVentaTodos">
+>>>>>>> origin/AvanzandoAndo_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/LineaDocWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
+<<<<<<< HEAD
   <message name="modificarLineaDoc">
     <part name="parameters" element="tns:modificarLineaDoc" />
   </message>
@@ -17,6 +18,8 @@
   <message name="insertarLineaDocResponse">
     <part name="parameters" element="tns:insertarLineaDocResponse" />
   </message>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
   <message name="listarLineaDoc">
     <part name="parameters" element="tns:listarLineaDoc" />
   </message>
@@ -29,7 +32,20 @@
   <message name="eliminarLineaDocResponse">
     <part name="parameters" element="tns:eliminarLineaDocResponse" />
   </message>
+  <message name="insertarLineaDoc">
+    <part name="parameters" element="tns:insertarLineaDoc" />
+  </message>
+  <message name="insertarLineaDocResponse">
+    <part name="parameters" element="tns:insertarLineaDocResponse" />
+  </message>
+  <message name="eliminarLineaDoc">
+    <part name="parameters" element="tns:eliminarLineaDoc" />
+  </message>
+  <message name="eliminarLineaDocResponse">
+    <part name="parameters" element="tns:eliminarLineaDocResponse" />
+  </message>
   <portType name="LineaDocWS">
+<<<<<<< HEAD
     <operation name="modificarLineaDoc">
       <input wsam:Action="ZAP2WS/LineaDocWS/modificarLineaDocRequest" message="tns:modificarLineaDoc" />
       <output wsam:Action="ZAP2WS/LineaDocWS/modificarLineaDocResponse" message="tns:modificarLineaDocResponse" />
@@ -38,6 +54,8 @@
       <input wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest" message="tns:insertarLineaDoc" />
       <output wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocResponse" message="tns:insertarLineaDocResponse" />
     </operation>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="listarLineaDoc">
       <input wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocRequest" message="tns:listarLineaDoc" />
       <output wsam:Action="ZAP2WS/LineaDocWS/listarLineaDocResponse" message="tns:listarLineaDocResponse" />
@@ -46,9 +64,18 @@
       <input wsam:Action="ZAP2WS/LineaDocWS/eliminarLineaDocRequest" message="tns:eliminarLineaDoc" />
       <output wsam:Action="ZAP2WS/LineaDocWS/eliminarLineaDocResponse" message="tns:eliminarLineaDocResponse" />
     </operation>
+    <operation name="insertarLineaDoc">
+      <input wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocRequest" message="tns:insertarLineaDoc" />
+      <output wsam:Action="ZAP2WS/LineaDocWS/insertarLineaDocResponse" message="tns:insertarLineaDocResponse" />
+    </operation>
+    <operation name="eliminarLineaDoc">
+      <input wsam:Action="ZAP2WS/LineaDocWS/eliminarLineaDocRequest" message="tns:eliminarLineaDoc" />
+      <output wsam:Action="ZAP2WS/LineaDocWS/eliminarLineaDocResponse" message="tns:eliminarLineaDocResponse" />
+    </operation>
   </portType>
   <binding name="LineaDocWSPortBinding" type="tns:LineaDocWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<<<<<<< HEAD
     <operation name="modificarLineaDoc">
       <soap:operation soapAction="" />
       <input>
@@ -67,7 +94,27 @@
         <soap:body use="literal" />
       </output>
     </operation>
+=======
+>>>>>>> origin/AvanzandoAndo_Leonardo
     <operation name="listarLineaDoc">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarLineaDoc">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarLineaDoc">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

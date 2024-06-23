@@ -29,6 +29,7 @@
   <message name="listarSupervisoresResponse">
     <part name="parameters" element="tns:listarSupervisoresResponse" />
   </message>
+<<<<<<< HEAD
   <message name="insertarSupervisor">
     <part name="parameters" element="tns:insertarSupervisor" />
   </message>
@@ -37,9 +38,19 @@
   </message>
   <message name="eliminarSupervisor">
     <part name="parameters" element="tns:eliminarSupervisor" />
+=======
+  <message name="listarSupervisores">
+    <part name="parameters" element="tns:listarSupervisores" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
   </message>
   <message name="eliminarSupervisorResponse">
     <part name="parameters" element="tns:eliminarSupervisorResponse" />
+  </message>
+  <message name="insertarSupervisor">
+    <part name="parameters" element="tns:insertarSupervisor" />
+  </message>
+  <message name="insertarSupervisorResponse">
+    <part name="parameters" element="tns:insertarSupervisorResponse" />
   </message>
   <portType name="SupervisorWS">
     <operation name="modificarSupervisor">
@@ -58,6 +69,7 @@
       <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
       <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
     </operation>
+<<<<<<< HEAD
     <operation name="insertarSupervisor">
       <input wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorRequest" message="tns:insertarSupervisor" />
       <output wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorResponse" message="tns:insertarSupervisorResponse" />
@@ -65,6 +77,15 @@
     <operation name="eliminarSupervisor">
       <input wsam:Action="ZAP2WS/SupervisorWS/eliminarSupervisorRequest" message="tns:eliminarSupervisor" />
       <output wsam:Action="ZAP2WS/SupervisorWS/eliminarSupervisorResponse" message="tns:eliminarSupervisorResponse" />
+=======
+    <operation name="listarSupervisores">
+      <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
+      <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
+    </operation>
+    <operation name="insertarSupervisor">
+      <input wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorRequest" message="tns:insertarSupervisor" />
+      <output wsam:Action="ZAP2WS/SupervisorWS/insertarSupervisorResponse" message="tns:insertarSupervisorResponse" />
     </operation>
   </portType>
   <binding name="SupervisorWSPortBinding" type="tns:SupervisorWS">
@@ -105,7 +126,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarSupervisor">
+    <operation name="listarSupervisores">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +135,11 @@
         <soap:body use="literal" />
       </output>
     </operation>
+<<<<<<< HEAD
     <operation name="eliminarSupervisor">
+=======
+    <operation name="insertarSupervisor">
+>>>>>>> origin/AvanzandoAndo_Leonardo
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

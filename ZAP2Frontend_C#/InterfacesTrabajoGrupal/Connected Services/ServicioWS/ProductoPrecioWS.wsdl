@@ -11,11 +11,31 @@
   <message name="listarProductoPrecioProductoResponse">
     <part name="parameters" element="tns:listarProductoPrecioProductoResponse" />
   </message>
+<<<<<<< HEAD
   <message name="insertarProductoPrecio">
     <part name="parameters" element="tns:insertarProductoPrecio" />
   </message>
   <message name="insertarProductoPrecioResponse">
     <part name="parameters" element="tns:insertarProductoPrecioResponse" />
+=======
+  <message name="listarProductoPrecioProductoDeUnaSucursal">
+    <part name="parameters" element="tns:listarProductoPrecioProductoDeUnaSucursal" />
+  </message>
+  <message name="listarProductoPrecioProductoDeUnaSucursalResponse">
+    <part name="parameters" element="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
+  </message>
+  <message name="modificarProductoPrecio">
+    <part name="parameters" element="tns:modificarProductoPrecio" />
+  </message>
+  <message name="modificarProductoPrecioResponse">
+    <part name="parameters" element="tns:modificarProductoPrecioResponse" />
+  </message>
+  <message name="eliminarProductoPrecio">
+    <part name="parameters" element="tns:eliminarProductoPrecio" />
+  </message>
+  <message name="eliminarProductoPrecioResponse">
+    <part name="parameters" element="tns:eliminarProductoPrecioResponse" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
   </message>
   <message name="listarProductoPrecio">
     <part name="parameters" element="tns:listarProductoPrecio" />
@@ -23,6 +43,7 @@
   <message name="listarProductoPrecioResponse">
     <part name="parameters" element="tns:listarProductoPrecioResponse" />
   </message>
+<<<<<<< HEAD
   <message name="modificarProductoPrecio">
     <part name="parameters" element="tns:modificarProductoPrecio" />
   </message>
@@ -40,6 +61,13 @@
   </message>
   <message name="listarProductoPrecioProductoDeUnaSucursalResponse">
     <part name="parameters" element="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
+=======
+  <message name="insertarProductoPrecio">
+    <part name="parameters" element="tns:insertarProductoPrecio" />
+  </message>
+  <message name="insertarProductoPrecioResponse">
+    <part name="parameters" element="tns:insertarProductoPrecioResponse" />
+>>>>>>> origin/AvanzandoAndo_Leonardo
   </message>
   <portType name="ProductoPrecioWS">
     <operation name="listarProductoPrecioProducto">
@@ -65,6 +93,10 @@
     <operation name="listarProductoPrecioProductoDeUnaSucursal">
       <input wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoDeUnaSucursalRequest" message="tns:listarProductoPrecioProductoDeUnaSucursal" />
       <output wsam:Action="ZAP2WS/ProductoPrecioWS/listarProductoPrecioProductoDeUnaSucursalResponse" message="tns:listarProductoPrecioProductoDeUnaSucursalResponse" />
+    </operation>
+    <operation name="insertarProductoPrecio">
+      <input wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioRequest" message="tns:insertarProductoPrecio" />
+      <output wsam:Action="ZAP2WS/ProductoPrecioWS/insertarProductoPrecioResponse" message="tns:insertarProductoPrecioResponse" />
     </operation>
   </portType>
   <binding name="ProductoPrecioWSPortBinding" type="tns:ProductoPrecioWS">
@@ -115,6 +147,15 @@
       </output>
     </operation>
     <operation name="listarProductoPrecioProductoDeUnaSucursal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarProductoPrecio">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
