@@ -155,55 +155,21 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            String accion = Request.QueryString["accion"];
-            if (accion != null && accion == "registrar")
-            {
-                int posDetAEliminar = -1;
-                int idPedidoSelec = Int32.Parse(((LinkButton)sender).CommandArgument);
-                detallesPedido = (BindingList<detallePedido>)Session["detallesPedido"];
-                foreach (detallePedido detPed in detallesPedido)
-                {
-                    posDetAEliminar++;
-                    if (detPed.id_DetallePedido == idPedidoSelec)
-                        break;
-                }
-                if (posDetAEliminar > -1)
-                {
-                    detallesPedido.RemoveAt(posDetAEliminar);
-                    Session["detallesPedido"] = detallesPedido;
 
-                    gvDetallesPedidos.DataSource = detallesPedido;
-                    gvDetallesPedidos.DataBind();
-
-                    calcularTotal();
-                }
-            }
         }
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            pedido.detallesPedido = ((BindingList<detallePedido>)Session["detallesPedido"]).ToArray();
+            pedido.fecha_Pedido = DateTime.Parse(TextFechaPedido.Text);
+            pedido.total = Double.Parse(txtTotal.Text);
+            pedido.estadoSpecified = true;
+            pedido.fecha_PedidoSpecified = true;
 
             //Validacion de que exista por lo menos 1 linea de orden de venta
-            if (Session["detallesPedido"] == null)
+            if (pedido.detallesPedido == null || pedido.detallesPedido.Length == 0)
             {
                 Response.Write("Debe agregar un producto...");
                 return;
-            }
-            else
-            {
-                if (txtNombrePedido.Text=="")
-                {
-                    Response.Write("Debe agregar un nombre al pedido...");
-                    return;
-                }
-                else
-                {
-                    pedido.detallesPedido = ((BindingList<detallePedido>)Session["detallesPedido"]).ToArray();
-                    pedido.fecha_Pedido = DateTime.Parse(TextFechaPedido.Text);
-                    pedido.total = Double.Parse(txtTotal.Text);
-                    pedido.nombre = txtNombrePedido.Text;
-                    pedido.estadoSpecified = true;
-                    pedido.fecha_PedidoSpecified = true;
-                }
             }
 
             calcularTotal();
@@ -254,13 +220,6 @@ namespace InterfacesTrabajoGrupal
             txtIDProducto.Text = productoSeleccionado.idProducto.ToString();
             ScriptManager.RegisterStartupScript(this, GetType(), "", "__doPostBack('','');", true);
 
-        }
-
-        protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gvProductos.PageIndex = e.NewPageIndex;
-            gvProductos.DataSource = productos;
-            gvProductos.DataBind();
         }
     }
 }
