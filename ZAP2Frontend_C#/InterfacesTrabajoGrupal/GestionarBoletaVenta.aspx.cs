@@ -48,7 +48,6 @@ namespace InterfacesTrabajoGrupal
                 txtFechaEmision.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
                 CargarMonedas();
-                CargarCajeros();
                 CargarSucursales();
             }
             else
@@ -59,14 +58,18 @@ namespace InterfacesTrabajoGrupal
             }
         }
 
-        private void CargarCajeros()
+        private void CargarCajerosPorSucursal(int idSucursal)
         {
             cajeroDAO = new CajeroWSClient();
-            listarCajeros = new BindingList<cajero>(cajeroDAO.listarCajeros());
-            ddlCajeros.DataSource = listarCajeros;
-            ddlCajeros.DataTextField = "nombre";
-            ddlCajeros.DataValueField = "idEmpleado";
-            ddlCajeros.DataBind();
+            listarCajeros = new BindingList<cajero>(cajeroDAO.listarCajerosPorSucursal(idSucursal));
+            if (listarCajeros != null)
+            {
+                ddlCajeros.DataSource = listarCajeros;
+
+                ddlCajeros.DataTextField = "nombre";
+                ddlCajeros.DataValueField = "id_Persona";
+                ddlCajeros.DataBind();
+            }
         }
 
         private void CargarMonedas()
@@ -107,6 +110,8 @@ namespace InterfacesTrabajoGrupal
             ddlProducto.DataTextField = "nombre";
             ddlProducto.DataValueField = "idProducto";
             ddlProducto.DataBind();
+            CargarCajerosPorSucursal(idSucursal);
+
         }
 
         protected void ddlSucursales_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,9 +155,24 @@ namespace InterfacesTrabajoGrupal
 
 
         protected void btnBuscarProducto_Click(object sender, EventArgs e)
-        {
+        { // Validación para asegurar que un producto haya sido seleccionado
+            if (ddlProducto.SelectedValue == null || ddlProducto.SelectedValue == "")
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe seleccionar un producto.');", true);
+                return;
+            }
+
             int idProducto = int.Parse(ddlProducto.SelectedValue);
             int cantidad = int.Parse(txtCantidad.Text);
+
+           
+
+            // Validación para asegurar que una cantidad haya sido ingresada
+            if (string.IsNullOrWhiteSpace(txtCantidad.Text) || !int.TryParse(txtCantidad.Text, out int Cantidad) || cantidad <= 0)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Debe ingresar una cantidad válida.');", true);
+                return;
+            }
 
             int idSucursal = int.Parse(ddlSucursales.SelectedValue);
             arregloProductoPrecios = precioDAO.listarProductoPrecioProductoDeUnaSucursal(idSucursal);
@@ -164,6 +184,7 @@ namespace InterfacesTrabajoGrupal
             {
                 var prodSel = new productoPrecio
                 {
+                    idProductoPrecio= prodPrecio.idProductoPrecio,
                     producto = new producto
                     {
                         idProducto = prod.idProducto,
@@ -179,7 +200,7 @@ namespace InterfacesTrabajoGrupal
                 };
 
                 productosSeleccionados.Add(prodSel);
-
+       
                 gvProductos.DataSource = productosSeleccionados;
                 gvProductos.DataBind();
 
@@ -208,6 +229,24 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            // Validación para asegurar que el número de serie no esté vacío
+            if (string.IsNullOrWhiteSpace(txtNumeroSerie.Text))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El campo de número de serie es obligatorio.');", true);
+                return;
+            }
+
+            // Validación para asegurar que el nombre del cliente no esté vacío
+            if (string.IsNullOrWhiteSpace(txtNombreCliente.Text))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('El campo de nombre del cliente es obligatorio.');", true);
+                return;
+            }
+            if (productosSeleccionados == null || productosSeleccionados.Count == 0)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Primero debe llenar los campos de fechas y número de huéspedes.');", true);
+                return;
+            }
             int idCliente = int.Parse(ddlClientes.SelectedValue);
 
             // Configurar los datos de la boleta de venta
@@ -245,7 +284,8 @@ namespace InterfacesTrabajoGrupal
             {
                 var linea = new lineaDoc
                 {
-                    documento = new boletaVenta(),
+
+                    producto = new productoPrecio { idProductoPrecio = producto.idProductoPrecio },
                     precioUnitario = producto.precio, // Asumiendo que 'precio' es el precio unitario del producto
                     cantidad = producto.producto.cantidadComprada, // Ajusta esto según cómo obtienes la cantidad del producto
                     precioTotal = producto.precio * producto.producto.cantidadComprada,
@@ -263,13 +303,18 @@ namespace InterfacesTrabajoGrupal
             // Registrar la boleta de venta
             int resultado = boletaVentaDAO.insertarBoletaVenta(boletaVenta);
 
+            int result;
             if (resultado != 0)
             {
-                LineaDocWSClient lineaDocDAO = new LineaDocWSClient();
                 foreach (lineaDoc linea in lineasDocVenta)
                 {
+                    LineaDocWSClient lineaDocDAO = new LineaDocWSClient();
+
+                    linea.documento = boletaVenta;
+                    linea.documento=new documento();
                     linea.documento.id_documento = resultado;
-                    lineaDocDAO.insertarLineaDoc(linea);
+                    
+                    result=lineaDocDAO.insertarLineaDoc(linea);
                 }
                 Response.Redirect("ListarDocumentoDeVenta.aspx");
 

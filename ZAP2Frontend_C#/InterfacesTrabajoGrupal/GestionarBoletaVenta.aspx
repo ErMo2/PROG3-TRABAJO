@@ -14,6 +14,8 @@
 </head>
 <body>
     <form id="form1">
+                <asp:ScriptManager ID="ScriptManager1" runat="server" />
+
         <div class="container">
             <div class="card">
                 <div class="card-header">
@@ -79,6 +81,9 @@
                             <asp:DropDownList ID="ddlMonedas" runat="server" CssClass="form-control" />
                         </div>
                     </div>
+                
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                                <ContentTemplate>
 
                     <div class="mb-3 row">
                         <asp:Label ID="lblProducto" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
@@ -118,6 +123,9 @@
                         </div>
                     </div>
                 </div>
+                                                </ContentTemplate>
+     
+                </asp:UpdatePanel>
 
                 <div class="card-footer clearfix">
                     <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />

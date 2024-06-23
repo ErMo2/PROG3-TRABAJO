@@ -44,6 +44,7 @@ namespace InterfacesTrabajoGrupal
 
             gvFacturasDeVenta.DataSource = listaFacturasDeVenta;
             gvFacturasDeVenta.DataBind();
+            
         }
 
         protected void gvBoletasDeVenta_PageIndexChanging(object sender, GridViewPageEventArgs e)

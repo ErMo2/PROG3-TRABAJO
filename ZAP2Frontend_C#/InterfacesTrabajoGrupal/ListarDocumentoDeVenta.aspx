@@ -21,7 +21,7 @@
             <asp:BoundField HeaderText="Id Documento:" DataField="id_doc_venta" />
             <asp:BoundField HeaderText="Detalle:" DataField="detalles" /> 
             <asp:BoundField HeaderText="Fecha de Emisión:" DataField="fecha_emision" />
-            <asp:BoundField HeaderText="Monto Total:" DataField="total" />
+            <asp:BoundField HeaderText="Monto Total:" DataField="montoTotal" />
           
             <asp:TemplateField>
                 <HeaderTemplate>Acciones</HeaderTemplate>
