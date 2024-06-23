@@ -17,6 +17,12 @@
   <message name="insertarSucursalResponse">
     <part name="parameters" element="tns:insertarSucursalResponse" />
   </message>
+  <message name="modificarSucursal">
+    <part name="parameters" element="tns:modificarSucursal" />
+  </message>
+  <message name="modificarSucursalResponse">
+    <part name="parameters" element="tns:modificarSucursalResponse" />
+  </message>
   <message name="buscarSucursal">
     <part name="parameters" element="tns:buscarSucursal" />
   </message>
@@ -35,12 +41,6 @@
   <message name="listarSucursalResponse">
     <part name="parameters" element="tns:listarSucursalResponse" />
   </message>
-  <message name="modificarSucursal">
-    <part name="parameters" element="tns:modificarSucursal" />
-  </message>
-  <message name="modificarSucursalResponse">
-    <part name="parameters" element="tns:modificarSucursalResponse" />
-  </message>
   <portType name="SucursalWS">
     <operation name="listarSucursalesDeUnProductoSinPrecio">
       <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalesDeUnProductoSinPrecioRequest" message="tns:listarSucursalesDeUnProductoSinPrecio" />
@@ -49,6 +49,10 @@
     <operation name="insertarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/insertarSucursalRequest" message="tns:insertarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/insertarSucursalResponse" message="tns:insertarSucursalResponse" />
+    </operation>
+    <operation name="modificarSucursal">
+      <input wsam:Action="ZAP2WS/SucursalWS/modificarSucursalRequest" message="tns:modificarSucursal" />
+      <output wsam:Action="ZAP2WS/SucursalWS/modificarSucursalResponse" message="tns:modificarSucursalResponse" />
     </operation>
     <operation name="buscarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/buscarSucursalRequest" message="tns:buscarSucursal" />
@@ -61,10 +65,6 @@
     <operation name="listarSucursal">
       <input wsam:Action="ZAP2WS/SucursalWS/listarSucursalRequest" message="tns:listarSucursal" />
       <output wsam:Action="ZAP2WS/SucursalWS/listarSucursalResponse" message="tns:listarSucursalResponse" />
-    </operation>
-    <operation name="modificarSucursal">
-      <input wsam:Action="ZAP2WS/SucursalWS/modificarSucursalRequest" message="tns:modificarSucursal" />
-      <output wsam:Action="ZAP2WS/SucursalWS/modificarSucursalResponse" message="tns:modificarSucursalResponse" />
     </operation>
   </portType>
   <binding name="SucursalWSPortBinding" type="tns:SucursalWS">
@@ -87,6 +87,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="modificarSucursal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="buscarSucursal">
       <soap:operation soapAction="" />
       <input>
@@ -106,15 +115,6 @@
       </output>
     </operation>
     <operation name="listarSucursal">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarSucursal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -15,6 +15,7 @@ namespace InterfacesTrabajoGrupal
         private BindingList<lote> lotes;
         private AlmacenWSClient daoAlmacen;
         private SucursalWSClient daoSucursal;
+        private ReportesFrontWSClient  daoReporte;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -68,6 +69,23 @@ namespace InterfacesTrabajoGrupal
         protected void lbRegistrarLote_Click(object sender, EventArgs e)
         {
             Response.Redirect("GestionarLotes.aspx");
+        }
+        protected void btnOption1_Click(object sender, EventArgs e)
+        {
+            // Lógica para Opción 1
+            // Ejemplo: Mostrar un mensaje
+            daoReporte = new ReportesFrontWSClient();
+            String reporte = daoReporte.generarReporteProductosConsumidosYmandarPorCorreo("a20190315@pucp.edu.pe");
+           
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('reporte');", true);
+
+        }
+
+        protected void btnOption2_Click(object sender, EventArgs e)
+        {
+            // Lógica para Opción 2
+            // Ejemplo: Mostrar un mensaje
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Opción 2 seleccionada');", true);
         }
     }
 }

@@ -7,9 +7,15 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="design/estilosPersonalizados.css" rel="stylesheet" />
     <link href="design/bancoEstilo.css" rel="stylesheet" />
     <div class="container mt-5">
@@ -22,6 +28,33 @@
                     <asp:LinkButton ID="lbRegistrarLote" runat="server" CssClass="btn btn-success"
                         Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Lote" OnClick="lbRegistrarLote_Click" />
                 </div>
+
+                    <div class="container mt-5">
+            <asp:Button ID="btnShowPopup" runat="server" CssClass="btn btn-primary" Text="Mostrar Popup" OnClientClick="$('#popupModal').modal('show'); return false;" />
+        </div>
+
+                <!-- Modal de Bootstrap -->
+                <div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="popupModalLabel">Popup con Dos Botones</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Aquí puedes colocar el mensaje que desees -->
+                                <p>Modo de visualización:</p>
+                            </div>
+                            <div class="modal-footer">
+                                <asp:Button ID="btnOption1" runat="server" CssClass="btn btn-secondary" Text="Descargar" OnClick="btnOption1_Click" />
+                                <asp:Button ID="btnOption2" runat="server" CssClass="btn btn-secondary" Text="Correo" OnClick="btnOption2_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <asp:GridView ID="gvLotes" runat="server"
                     AutoGenerateColumns="false"

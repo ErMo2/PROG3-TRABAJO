@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/SupervisorWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="modificarSupervisor">
-    <part name="parameters" element="tns:modificarSupervisor" />
+  <message name="listarSupervisores">
+    <part name="parameters" element="tns:listarSupervisores" />
   </message>
-  <message name="modificarSupervisorResponse">
-    <part name="parameters" element="tns:modificarSupervisorResponse" />
+  <message name="listarSupervisoresResponse">
+    <part name="parameters" element="tns:listarSupervisoresResponse" />
   </message>
   <message name="buscarSupervisor">
     <part name="parameters" element="tns:buscarSupervisor" />
@@ -29,22 +29,22 @@
   <message name="eliminarSupervisorResponse">
     <part name="parameters" element="tns:eliminarSupervisorResponse" />
   </message>
-  <message name="listarSupervisores">
-    <part name="parameters" element="tns:listarSupervisores" />
-  </message>
-  <message name="listarSupervisoresResponse">
-    <part name="parameters" element="tns:listarSupervisoresResponse" />
-  </message>
   <message name="listarSupervisoresDeUnaSucursal">
     <part name="parameters" element="tns:listarSupervisoresDeUnaSucursal" />
   </message>
   <message name="listarSupervisoresDeUnaSucursalResponse">
     <part name="parameters" element="tns:listarSupervisoresDeUnaSucursalResponse" />
   </message>
+  <message name="modificarSupervisor">
+    <part name="parameters" element="tns:modificarSupervisor" />
+  </message>
+  <message name="modificarSupervisorResponse">
+    <part name="parameters" element="tns:modificarSupervisorResponse" />
+  </message>
   <portType name="SupervisorWS">
-    <operation name="modificarSupervisor">
-      <input wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest" message="tns:modificarSupervisor" />
-      <output wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorResponse" message="tns:modificarSupervisorResponse" />
+    <operation name="listarSupervisores">
+      <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
+      <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
     </operation>
     <operation name="buscarSupervisor">
       <input wsam:Action="ZAP2WS/SupervisorWS/buscarSupervisorRequest" message="tns:buscarSupervisor" />
@@ -58,18 +58,18 @@
       <input wsam:Action="ZAP2WS/SupervisorWS/eliminarSupervisorRequest" message="tns:eliminarSupervisor" />
       <output wsam:Action="ZAP2WS/SupervisorWS/eliminarSupervisorResponse" message="tns:eliminarSupervisorResponse" />
     </operation>
-    <operation name="listarSupervisores">
-      <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
-      <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
-    </operation>
     <operation name="listarSupervisoresDeUnaSucursal">
       <input wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresDeUnaSucursalRequest" message="tns:listarSupervisoresDeUnaSucursal" />
       <output wsam:Action="ZAP2WS/SupervisorWS/listarSupervisoresDeUnaSucursalResponse" message="tns:listarSupervisoresDeUnaSucursalResponse" />
     </operation>
+    <operation name="modificarSupervisor">
+      <input wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorRequest" message="tns:modificarSupervisor" />
+      <output wsam:Action="ZAP2WS/SupervisorWS/modificarSupervisorResponse" message="tns:modificarSupervisorResponse" />
+    </operation>
   </portType>
   <binding name="SupervisorWSPortBinding" type="tns:SupervisorWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="modificarSupervisor">
+    <operation name="listarSupervisores">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +105,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarSupervisores">
+    <operation name="listarSupervisoresDeUnaSucursal">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -114,7 +114,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarSupervisoresDeUnaSucursal">
+    <operation name="modificarSupervisor">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

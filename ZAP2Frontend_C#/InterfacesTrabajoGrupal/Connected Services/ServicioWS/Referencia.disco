@@ -3,6 +3,7 @@
   <contractRef ref="http://localhost:8080/ZAP2WS/BancoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/ZAP2WS/Boleta_VentaWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/ZAP2WS/Documento_de_CompraWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/ZAP2WS/Documento_de_VentaWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/ZAP2WS/Factura_VentaWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/ZAP2WS/LineaDocWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
   <contractRef ref="http://localhost:8080/ZAP2WS/MonedaWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />

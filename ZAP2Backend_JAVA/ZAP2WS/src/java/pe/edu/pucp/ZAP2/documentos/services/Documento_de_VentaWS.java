@@ -17,13 +17,13 @@ import pe.edu.pucp.ZAP2.documentos.mySql.Documento_de_VentaMySql;
  *
  * @author Alejandro
  */
-@WebService(serviceName = "Documento_de_VentaWS")
+@WebService(serviceName = "Documento_de_VentaWS", targetNamespace = "ZAP2WS")
 public class Documento_de_VentaWS {
 
     /**
      * This is a sample web service operation
      */
-    Documento_de_VentaDao daoDocVent;
+    private Documento_de_VentaDao daoDocVent;
     @WebMethod(operationName = "listarIngresos")
     public ArrayList<Documento_de_Venta> 
         listarIngresos(@WebParam(name = "fechaIni") Date fechaIni, 

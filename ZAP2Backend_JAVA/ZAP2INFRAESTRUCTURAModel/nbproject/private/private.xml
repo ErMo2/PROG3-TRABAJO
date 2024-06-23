@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/CuentaUsuario.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/Lote.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/Sucursal.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/Empleado.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/ProductoPrecio.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/MovimientoLote.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/Producto.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/Ropa.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/Electrodomesticos.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/PersonaNatural.java</file>
+            <file>file:/C:/Users/esteb/Desktop/PROG3%20TRABAJO/ZAP2Backend_JAVA/ZAP2INFRAESTRUCTURAModel/src/pe/edu/pucp/ZAP2/infraestructura/model/Almacen.java</file>
+        </group>
     </open-files>
 </project-private>

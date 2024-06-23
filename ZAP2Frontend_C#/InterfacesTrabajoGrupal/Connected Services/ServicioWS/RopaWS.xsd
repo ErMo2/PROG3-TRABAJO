@@ -135,20 +135,20 @@
       <xs:element minOccurs="0" name="return" type="tns:ropa" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarRopa">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarRopaResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ropa" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarRopaXnombre">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarRopaXnombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ropa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRopa">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarRopaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ropa" />
     </xs:sequence>

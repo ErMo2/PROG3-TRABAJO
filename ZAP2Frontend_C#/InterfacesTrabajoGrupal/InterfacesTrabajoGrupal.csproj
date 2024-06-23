@@ -197,6 +197,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ServicioWS\CuentaUsuarioWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Documento_de_VentaWS.wsdl" />
+    <None Include="Connected Services\ServicioWS\Documento_de_VentaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServicioWS\ElectrodomesticosWS.wsdl" />
     <None Include="Connected Services\ServicioWS\Factura_VentaWS.wsdl" />
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.almacen.datasource">
@@ -710,6 +714,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarPedidosXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.documentoDeVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarIngresosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">

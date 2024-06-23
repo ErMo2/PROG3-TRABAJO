@@ -51,6 +51,33 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.GridView gvEmpleadosArea;
 
         /// <summary>
+        /// Control dtpFechaIni2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpFechaIni2;
+
+        /// <summary>
+        /// Control dtpFechaFin2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dtpFechaFin2;
+
+        /// <summary>
+        /// Control lbLapso2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbLapso2;
+
+        /// <summary>
         /// Control gvCajeros.
         /// </summary>
         /// <remarks>
@@ -58,15 +85,6 @@ namespace InterfacesTrabajoGrupal
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvCajeros;
-
-        /// <summary>
-        /// Control gvSupervisores.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvSupervisores;
 
         /// <summary>
         /// Control lblDetallesEmpleado.

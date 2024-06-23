@@ -122,15 +122,14 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="buscarAlmacenDisponible">
+  <xs:complexType name="insertarAlmacen">
     <xs:sequence>
-      <xs:element name="idSucursal" type="xs:int" />
-      <xs:element name="cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="almacen" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="buscarAlmacenDisponibleResponse">
+  <xs:complexType name="insertarAlmacenResponse">
     <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:almacen" />
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarAlmacen">
@@ -143,14 +142,15 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarAlmacen">
+  <xs:complexType name="buscarAlmacenDisponible">
     <xs:sequence>
-      <xs:element minOccurs="0" name="almacen" type="tns:almacen" />
+      <xs:element name="idSucursal" type="xs:int" />
+      <xs:element name="cantidad" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarAlmacenResponse">
+  <xs:complexType name="buscarAlmacenDisponibleResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="modificarAlmacen">
