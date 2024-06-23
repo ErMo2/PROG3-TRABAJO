@@ -24,6 +24,24 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.LinkButton lbRegistrarPedido;
 
         /// <summary>
+        /// Control txtNombrePedido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombrePedido;
+
+        /// <summary>
+        /// Control lbBusquedaPedidoXNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbBusquedaPedidoXNombre;
+
+        /// <summary>
         /// Control gvPedidos.
         /// </summary>
         /// <remarks>

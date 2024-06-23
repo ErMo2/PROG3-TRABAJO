@@ -30,6 +30,8 @@ import net.sf.jasperreports.engine.util.JRLoader;
 
 
 import pe.edu.pucp.ZAP2.DBManager.DBManager;
+import pe.edu.pucp.ZAP2.infraestructura.dao.ProductoDao;
+import pe.edu.pucp.ZAP2.infraestructura.mysql.ProductoMySql;
 import pe.edu.pucp.ZAP2.servlet.ReportProductosMasConsumidos;
 import pe.edu.pucp.ZAP2.servlet.ReporteBoletaVenta;
 
@@ -144,7 +146,7 @@ public class ReportesFrontWS {
 
     }
     
-   private int enviarCorreoConAdjunto(String to, byte[] archivoAdjunto) {
+    private int enviarCorreoConAdjunto(String to, byte[] archivoAdjunto) {
         int resultado = 0;
         String from = "correoszap2@gmail.com"; // Tu correo
         String host = "smtp.gmail.com"; // Servidor SMTP (por ejemplo, Gmail)
@@ -190,6 +192,75 @@ public class ReportesFrontWS {
             multipart.addBodyPart(attachmentBodyPart);
 
             message.setContent(multipart);
+
+            Transport.send(message);
+            System.out.println("Correo enviado exitosamente....");
+            resultado = 1;
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "EnviarReporteProductoConStockBajo")
+    public String EnviarReporteProductoConStockBajo(String correo) {
+        int resultado = 0;
+        int umbral = 100;
+        ProductoDao daoProducto = new ProductoMySql();
+        String reporte = daoProducto.listarProductosConStockaAgotarse(umbral);
+        resultado = enviarCorreoSinAdjunto(correo,reporte);        
+
+        String cad;
+        if(resultado == 1){
+            cad = "Se ha enviado correctamente el correo a: " + correo;
+        }else{
+            cad= "No se ha enviado correctamente el correo a: " + correo;
+        }
+        
+        return cad;
+
+    }
+    
+    private int enviarCorreoSinAdjunto(String to, String texto) {
+        int resultado = 0;
+        String from = "correoszap2@gmail.com"; // Tu correo
+        String host = "smtp.gmail.com"; // Servidor SMTP (por ejemplo, Gmail)
+        final String username = "correoszap2@gmail.com"; // Tu correo (el mismo que `from`)
+        final String password = "trgp fimh qpqe nojj"; // Tu contraseña
+        //trgp fimh qpqe nojj
+        Properties properties = System.getProperties();
+        properties.put("mail.smtp.host",host);
+        properties.put("mail.smtp.ssl.trust",host);
+        properties.setProperty("mail.smtp.starttls.enable", "true");
+        properties.setProperty("mail.smtp.port", "587");
+        properties.setProperty("mail.smtp.user", from);
+        properties.setProperty("mail.smtp.ssl.protocols", "TLSv1.2");
+        properties.setProperty("mail.smtp.auth", "true");
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+        
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.setSubject("Reporte de Productos Con stock por agotarse");
+            message.setContent(texto, "text/html; charset=utf-8");
+//            BodyPart messageBodyPart = new MimeBodyPart();
+//            messageBodyPart.setText(texto); //el mensaje a enviar
+
+            
+            
+
+//            Multipart multipart = new MimeMultipart();
+//            multipart.addBodyPart(messageBodyPart);
+//           
+//
+//            message.setContent(multipart);
 
             Transport.send(message);
             System.out.println("Correo enviado exitosamente....");

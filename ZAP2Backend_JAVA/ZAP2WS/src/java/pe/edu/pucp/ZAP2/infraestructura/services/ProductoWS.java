@@ -18,7 +18,7 @@ import pe.edu.pucp.ZAP2.infraestructura.mysql.ProductoMySql;
  */
 @WebService(serviceName = "ProductoWS" , targetNamespace = "ZAP2WS")
 public class ProductoWS {
-
+    
     private ProductoDao daoProducto;
     @WebMethod(operationName = "listarProductosConDescuento")
     public ArrayList<Producto> listarProductosConDescuento() {
@@ -88,5 +88,19 @@ public class ProductoWS {
             System.out.println(ex.getMessage());
         }
         return productos;
+    }
+    
+    @WebMethod(operationName = "listarProductosConStockBajo")
+    public String listarProductosConStockBajo() {
+        //esta es la declariacion del umbral
+        int umbral = 100;
+        String reporte = null;
+        try{
+            daoProducto = new ProductoMySql();
+            reporte = daoProducto.listarProductosConStockaAgotarse(umbral);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return reporte;
     }
 }

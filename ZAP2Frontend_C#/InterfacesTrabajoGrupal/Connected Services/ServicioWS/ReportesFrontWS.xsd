@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://reportes.ZAP2.pucp.edu.pe/" targetNamespace="http://reportes.ZAP2.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="EnviarReporteProductoConStockBajo" type="tns:EnviarReporteProductoConStockBajo" />
+  <xs:element name="EnviarReporteProductoConStockBajoResponse" type="tns:EnviarReporteProductoConStockBajoResponse" />
   <xs:element name="generarBoletaVenta" type="tns:generarBoletaVenta" />
   <xs:element name="generarBoletaVentaResponse" type="tns:generarBoletaVentaResponse" />
   <xs:element name="generarReporteProductosConsumidos" type="tns:generarReporteProductosConsumidos" />
@@ -22,6 +24,16 @@
   <xs:complexType name="generarReporteProductosConsumidosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnviarReporteProductoConStockBajo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EnviarReporteProductoConStockBajoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="generarBoletaVenta">
