@@ -132,9 +132,11 @@ public class Documento_de_CompraMySql implements Documento_de_CompraDao{
             con = DBManager.getInstance().getConnection();
             cs = con.prepareCall("{call RF_OBTENER_EGRESOS(?,?)}");
             Date fechaIni = new Date(fechaInicial.getTime());
+            java.sql.Date sqlDate_i = new java.sql.Date(fechaInicial.getTime());
+            cs.setDate("_fecha_inicio", sqlDate_i);
+            java.sql.Date sqlDate_f = new java.sql.Date(fechaFinal.getTime());
             Date fechaFin = new Date(fechaFinal.getTime());
-            cs.setDate("_fecha_inicio", fechaIni);
-            cs.setDate( "_fecha_fin", fechaFin);
+            cs.setDate( "_fecha_fin", sqlDate_f);
             cs.executeUpdate();
             rs = cs.executeQuery();
             while(rs.next()){

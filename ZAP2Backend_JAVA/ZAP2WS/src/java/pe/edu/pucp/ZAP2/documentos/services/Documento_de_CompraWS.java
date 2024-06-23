@@ -76,6 +76,8 @@ public class Documento_de_CompraWS {
                 @WebParam(name = "fechaFin") Date fechaFin) {
         ArrayList<Documento_de_Compra> docCompras = null;
         try{
+            System.out.println("Fecha inicio: " + fechaIni);
+            System.out.println("Fecha Fin: " + fechaFin);
             daoDocumentoCompras = new Documento_de_CompraMySql();
             docCompras = daoDocumentoCompras.listarEgresos(fechaIni, fechaFin);
         }catch(Exception ex){

@@ -63,8 +63,7 @@
                         OnRowDataBound="gvEmpleadosArea_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="id_documento" HeaderText="Id Documento" />
-                            <asp:BoundField DataField="fecha" HeaderText="Fecha" />
-                            <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
+                            <asp:BoundField DataField="fecha_emision" HeaderText="Fecha" />
                             <asp:BoundField DataField="total" HeaderText="Total" />
                             <asp:TemplateField>
                                 <ItemTemplate>

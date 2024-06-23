@@ -23,7 +23,9 @@ namespace InterfacesTrabajoGrupal
         {
             if (!IsPostBack)
             {
-                CargarDatos(DateTime.Now, DateTime.Now);
+                DateTime inicio = new DateTime(2022,5,10);
+                DateTime final = new DateTime(2022, 5, 10);
+                CargarDatos(inicio, final);
             }
         }
 
@@ -33,7 +35,7 @@ namespace InterfacesTrabajoGrupal
             daoCajero = new CajeroWSClient();
             daoSupervisor = new SupervisorWSClient();
 
-            documentoDeCompra[] listaEmpleadosArea = daoEmpleadoArea.listarEgresos(ini,fin);
+            documentoDeCompra[] listaEmpleadosArea = daoEmpleadoArea.listarEgresos(ini, fin);
             cajero[] listaCajeros = daoCajero.listarCajeros();
             supervisor[] listaSupervisores = daoSupervisor.listarSupervisores();
 
@@ -218,10 +220,7 @@ namespace InterfacesTrabajoGrupal
 
         protected void gvEmpleadosArea_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                e.Row.Cells[4].Text = Convert.ToChar(DataBinder.Eval(e.Row.DataItem, "sexo")).ToString();
-            }
+
         }
 
         protected void gvCajeros_RowDataBound(object sender, GridViewRowEventArgs e)
