@@ -703,6 +703,12 @@
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarRopaXnombreResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.generarReporteProductosConsumidosYmandarPorCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.listarPedidosXnombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">
       <SubType>Designer</SubType>
     </None>

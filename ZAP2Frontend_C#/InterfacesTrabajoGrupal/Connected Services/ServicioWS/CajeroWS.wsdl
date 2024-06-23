@@ -11,12 +11,6 @@
   <message name="eliminarCajeroResponse">
     <part name="parameters" element="tns:eliminarCajeroResponse" />
   </message>
-  <message name="modificarCajero">
-    <part name="parameters" element="tns:modificarCajero" />
-  </message>
-  <message name="modificarCajeroResponse">
-    <part name="parameters" element="tns:modificarCajeroResponse" />
-  </message>
   <message name="insertarCajero">
     <part name="parameters" element="tns:insertarCajero" />
   </message>
@@ -28,6 +22,12 @@
   </message>
   <message name="listarCajerosResponse">
     <part name="parameters" element="tns:listarCajerosResponse" />
+  </message>
+  <message name="modificarCajero">
+    <part name="parameters" element="tns:modificarCajero" />
+  </message>
+  <message name="modificarCajeroResponse">
+    <part name="parameters" element="tns:modificarCajeroResponse" />
   </message>
   <message name="buscarCajero">
     <part name="parameters" element="tns:buscarCajero" />
@@ -46,10 +46,6 @@
       <input wsam:Action="ZAP2WS/CajeroWS/eliminarCajeroRequest" message="tns:eliminarCajero" />
       <output wsam:Action="ZAP2WS/CajeroWS/eliminarCajeroResponse" message="tns:eliminarCajeroResponse" />
     </operation>
-    <operation name="modificarCajero">
-      <input wsam:Action="ZAP2WS/CajeroWS/modificarCajeroRequest" message="tns:modificarCajero" />
-      <output wsam:Action="ZAP2WS/CajeroWS/modificarCajeroResponse" message="tns:modificarCajeroResponse" />
-    </operation>
     <operation name="insertarCajero">
       <input wsam:Action="ZAP2WS/CajeroWS/insertarCajeroRequest" message="tns:insertarCajero" />
       <output wsam:Action="ZAP2WS/CajeroWS/insertarCajeroResponse" message="tns:insertarCajeroResponse" />
@@ -57,6 +53,10 @@
     <operation name="listarCajeros">
       <input wsam:Action="ZAP2WS/CajeroWS/listarCajerosRequest" message="tns:listarCajeros" />
       <output wsam:Action="ZAP2WS/CajeroWS/listarCajerosResponse" message="tns:listarCajerosResponse" />
+    </operation>
+    <operation name="modificarCajero">
+      <input wsam:Action="ZAP2WS/CajeroWS/modificarCajeroRequest" message="tns:modificarCajero" />
+      <output wsam:Action="ZAP2WS/CajeroWS/modificarCajeroResponse" message="tns:modificarCajeroResponse" />
     </operation>
     <operation name="buscarCajero">
       <input wsam:Action="ZAP2WS/CajeroWS/buscarCajeroRequest" message="tns:buscarCajero" />
@@ -78,15 +78,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarCajero">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarCajero">
       <soap:operation soapAction="" />
       <input>
@@ -97,6 +88,15 @@
       </output>
     </operation>
     <operation name="listarCajeros">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarCajero">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

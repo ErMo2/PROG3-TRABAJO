@@ -120,22 +120,22 @@
       <xs:element minOccurs="0" name="return" type="tns:almacen" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarAlmacen">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="almacen" type="tns:almacen" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarAlmacenResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="eliminarAlmacen">
     <xs:sequence>
       <xs:element name="idAlmacen" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarAlmacenResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarAlmacen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="almacen" type="tns:almacen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarAlmacenResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

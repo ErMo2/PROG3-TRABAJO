@@ -11,11 +11,23 @@
   <message name="listarProductoPerecibleXnombreResponse">
     <part name="parameters" element="tns:listarProductoPerecibleXnombreResponse" />
   </message>
+  <message name="buscarProductoPerecible">
+    <part name="parameters" element="tns:buscarProductoPerecible" />
+  </message>
+  <message name="buscarProductoPerecibleResponse">
+    <part name="parameters" element="tns:buscarProductoPerecibleResponse" />
+  </message>
   <message name="eliminarProductoPerecible">
     <part name="parameters" element="tns:eliminarProductoPerecible" />
   </message>
   <message name="eliminarProductoPerecibleResponse">
     <part name="parameters" element="tns:eliminarProductoPerecibleResponse" />
+  </message>
+  <message name="modificarProductoPerecible">
+    <part name="parameters" element="tns:modificarProductoPerecible" />
+  </message>
+  <message name="modificarProductoPerecibleResponse">
+    <part name="parameters" element="tns:modificarProductoPerecibleResponse" />
   </message>
   <message name="listarProductoPerecible">
     <part name="parameters" element="tns:listarProductoPerecible" />
@@ -29,26 +41,22 @@
   <message name="insertarProductoPerecibleResponse">
     <part name="parameters" element="tns:insertarProductoPerecibleResponse" />
   </message>
-  <message name="buscarProductoPerecible">
-    <part name="parameters" element="tns:buscarProductoPerecible" />
-  </message>
-  <message name="buscarProductoPerecibleResponse">
-    <part name="parameters" element="tns:buscarProductoPerecibleResponse" />
-  </message>
-  <message name="modificarProductoPerecible">
-    <part name="parameters" element="tns:modificarProductoPerecible" />
-  </message>
-  <message name="modificarProductoPerecibleResponse">
-    <part name="parameters" element="tns:modificarProductoPerecibleResponse" />
-  </message>
   <portType name="ProductoPerecibleWS">
     <operation name="listarProductoPerecibleXnombre">
       <input wsam:Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleXnombreRequest" message="tns:listarProductoPerecibleXnombre" />
       <output wsam:Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleXnombreResponse" message="tns:listarProductoPerecibleXnombreResponse" />
     </operation>
+    <operation name="buscarProductoPerecible">
+      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleRequest" message="tns:buscarProductoPerecible" />
+      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleResponse" message="tns:buscarProductoPerecibleResponse" />
+    </operation>
     <operation name="eliminarProductoPerecible">
       <input wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleRequest" message="tns:eliminarProductoPerecible" />
       <output wsam:Action="ZAP2WS/ProductoPerecibleWS/eliminarProductoPerecibleResponse" message="tns:eliminarProductoPerecibleResponse" />
+    </operation>
+    <operation name="modificarProductoPerecible">
+      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest" message="tns:modificarProductoPerecible" />
+      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse" message="tns:modificarProductoPerecibleResponse" />
     </operation>
     <operation name="listarProductoPerecible">
       <input wsam:Action="ZAP2WS/ProductoPerecibleWS/listarProductoPerecibleRequest" message="tns:listarProductoPerecible" />
@@ -57,14 +65,6 @@
     <operation name="insertarProductoPerecible">
       <input wsam:Action="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleRequest" message="tns:insertarProductoPerecible" />
       <output wsam:Action="ZAP2WS/ProductoPerecibleWS/insertarProductoPerecibleResponse" message="tns:insertarProductoPerecibleResponse" />
-    </operation>
-    <operation name="buscarProductoPerecible">
-      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleRequest" message="tns:buscarProductoPerecible" />
-      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/buscarProductoPerecibleResponse" message="tns:buscarProductoPerecibleResponse" />
-    </operation>
-    <operation name="modificarProductoPerecible">
-      <input wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleRequest" message="tns:modificarProductoPerecible" />
-      <output wsam:Action="ZAP2WS/ProductoPerecibleWS/modificarProductoPerecibleResponse" message="tns:modificarProductoPerecibleResponse" />
     </operation>
   </portType>
   <binding name="ProductoPerecibleWSPortBinding" type="tns:ProductoPerecibleWS">
@@ -78,7 +78,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="buscarProductoPerecible">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarProductoPerecible">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarProductoPerecible">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -97,24 +115,6 @@
       </output>
     </operation>
     <operation name="insertarProductoPerecible">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="buscarProductoPerecible">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="modificarProductoPerecible">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ElectrodomesticosWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="buscarElectrodomestico">
-    <part name="parameters" element="tns:buscarElectrodomestico" />
+  <message name="listarElectrodomesticosXnombre">
+    <part name="parameters" element="tns:listarElectrodomesticosXnombre" />
   </message>
-  <message name="buscarElectrodomesticoResponse">
-    <part name="parameters" element="tns:buscarElectrodomesticoResponse" />
+  <message name="listarElectrodomesticosXnombreResponse">
+    <part name="parameters" element="tns:listarElectrodomesticosXnombreResponse" />
   </message>
   <message name="eliminarElectrodomestico">
     <part name="parameters" element="tns:eliminarElectrodomestico" />
@@ -23,28 +23,28 @@
   <message name="insertarElectrodomesticoResponse">
     <part name="parameters" element="tns:insertarElectrodomesticoResponse" />
   </message>
-  <message name="modificarElectrodomestico">
-    <part name="parameters" element="tns:modificarElectrodomestico" />
-  </message>
-  <message name="modificarElectrodomesticoResponse">
-    <part name="parameters" element="tns:modificarElectrodomesticoResponse" />
-  </message>
   <message name="listarElectrodomesticos">
     <part name="parameters" element="tns:listarElectrodomesticos" />
   </message>
   <message name="listarElectrodomesticosResponse">
     <part name="parameters" element="tns:listarElectrodomesticosResponse" />
   </message>
-  <message name="listarElectrodomesticosXnombre">
-    <part name="parameters" element="tns:listarElectrodomesticosXnombre" />
+  <message name="buscarElectrodomestico">
+    <part name="parameters" element="tns:buscarElectrodomestico" />
   </message>
-  <message name="listarElectrodomesticosXnombreResponse">
-    <part name="parameters" element="tns:listarElectrodomesticosXnombreResponse" />
+  <message name="buscarElectrodomesticoResponse">
+    <part name="parameters" element="tns:buscarElectrodomesticoResponse" />
+  </message>
+  <message name="modificarElectrodomestico">
+    <part name="parameters" element="tns:modificarElectrodomestico" />
+  </message>
+  <message name="modificarElectrodomesticoResponse">
+    <part name="parameters" element="tns:modificarElectrodomesticoResponse" />
   </message>
   <portType name="ElectrodomesticosWS">
-    <operation name="buscarElectrodomestico">
-      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoRequest" message="tns:buscarElectrodomestico" />
-      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoResponse" message="tns:buscarElectrodomesticoResponse" />
+    <operation name="listarElectrodomesticosXnombre">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosXnombreRequest" message="tns:listarElectrodomesticosXnombre" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosXnombreResponse" message="tns:listarElectrodomesticosXnombreResponse" />
     </operation>
     <operation name="eliminarElectrodomestico">
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/eliminarElectrodomesticoRequest" message="tns:eliminarElectrodomestico" />
@@ -54,22 +54,22 @@
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoRequest" message="tns:insertarElectrodomestico" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/insertarElectrodomesticoResponse" message="tns:insertarElectrodomesticoResponse" />
     </operation>
-    <operation name="modificarElectrodomestico">
-      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoRequest" message="tns:modificarElectrodomestico" />
-      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoResponse" message="tns:modificarElectrodomesticoResponse" />
-    </operation>
     <operation name="listarElectrodomesticos">
       <input wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosRequest" message="tns:listarElectrodomesticos" />
       <output wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosResponse" message="tns:listarElectrodomesticosResponse" />
     </operation>
-    <operation name="listarElectrodomesticosXnombre">
-      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosXnombreRequest" message="tns:listarElectrodomesticosXnombre" />
-      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/listarElectrodomesticosXnombreResponse" message="tns:listarElectrodomesticosXnombreResponse" />
+    <operation name="buscarElectrodomestico">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoRequest" message="tns:buscarElectrodomestico" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/buscarElectrodomesticoResponse" message="tns:buscarElectrodomesticoResponse" />
+    </operation>
+    <operation name="modificarElectrodomestico">
+      <input wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoRequest" message="tns:modificarElectrodomestico" />
+      <output wsam:Action="ZAP2WS/ElectrodomesticosWS/modificarElectrodomesticoResponse" message="tns:modificarElectrodomesticoResponse" />
     </operation>
   </portType>
   <binding name="ElectrodomesticosWSPortBinding" type="tns:ElectrodomesticosWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="buscarElectrodomestico">
+    <operation name="listarElectrodomesticosXnombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -96,15 +96,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="modificarElectrodomestico">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="listarElectrodomesticos">
       <soap:operation soapAction="" />
       <input>
@@ -114,7 +105,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarElectrodomesticosXnombre">
+    <operation name="buscarElectrodomestico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modificarElectrodomestico">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
