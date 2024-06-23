@@ -8,7 +8,7 @@
     <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head >
-    <title>Gestionar Banco</title>
+    <title>Gestionar Lotes</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="design/estilosPersonalizados.css" rel="stylesheet" />
     <link href="design/bancoEstilo.css" rel="stylesheet" />
@@ -37,7 +37,7 @@
                     <div class="mb-3 row">
                         <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
-                            <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control"></asp:DropDownList>
+                            <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="mb-3 row">
