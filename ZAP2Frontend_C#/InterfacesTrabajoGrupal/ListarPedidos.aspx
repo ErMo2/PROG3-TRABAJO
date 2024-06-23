@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
+    <script src="Scripts/ZAP2PROG/gestionarPedidos.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="container">
@@ -13,11 +14,27 @@
             </div>
         </div>
 
+        <div class="container row pb-3 pt-3">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <asp:Label CssClass="form-label" runat="server" Text="Ingresar nombre del pedido:"></asp:Label>
+                </div>
+                <div class="col-sm-3">
+                    <asp:TextBox CssClass="form-control" ID="txtNombrePedido" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-sm-2">
+                    <asp:LinkButton ID="lbBusquedaPedidoXNombre" runat="server" CssClass="btn btn-info"
+                        Text="<i class='fa-solid fa-magnifying-glass pe-2'></i> Buscar" OnClick="lbBusquedaPedidoXNombre_Click" />
+                </div>
+            </div>
+        </div>
+
         <div class="container row">
             <asp:GridView ID="gvPedidos" runat="server" AutoGenerateColumns="false" CssClass="table table-hover table-responsive"
                 AllowPaging="True" PageSize="5" OnPageIndexChanging="gvPedidos_PageIndexChanging">
                 <Columns>
                     <asp:BoundField HeaderText="Id" DataField="id_pedido" />
+                    <asp:BoundField HeaderText="Nombre" DataField="nombre" />
                     <asp:BoundField HeaderText="Estado" DataField="estado" />
                     <asp:BoundField HeaderText="Fecha y Hora" DataField="fecha_Pedido" />
                     <asp:BoundField HeaderText="Total(S/.)" DataField="total" />
@@ -36,4 +53,22 @@
             </asp:GridView>
         </div>
     </div>
+
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
+
+    <div class="modal" id="form-modal-confirmarEliminarPedido">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <div class="modal-header">
+                            <h5 class="modal-title">El pedido se ha eliminado con éxito !!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>
