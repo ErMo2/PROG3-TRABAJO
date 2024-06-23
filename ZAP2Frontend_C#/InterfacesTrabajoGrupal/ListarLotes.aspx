@@ -38,7 +38,6 @@
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <div class="btn-group" role="group">
-                                    <asp:LinkButton ID="lbVer" runat="server" CommandName="Ver" CommandArgument='<%# Eval("idLote") %>' Text="Ver" CssClass="btn btn-primary btn-sm"  />
                                     <asp:LinkButton ID="lbEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("idLote") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este lote?');" />
                                 </div>
                             </ItemTemplate>

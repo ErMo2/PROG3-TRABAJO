@@ -60,24 +60,6 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.TextBox txtStockInicial;
 
         /// <summary>
-        /// Control lblStockFinal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStockFinal;
-
-        /// <summary>
-        /// Control txtStockFinal.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStockFinal;
-
-        /// <summary>
         /// Control lblSucursal.
         /// </summary>
         /// <remarks>
@@ -94,6 +76,24 @@ namespace InterfacesTrabajoGrupal
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSucursal;
+
+        /// <summary>
+        /// Control lblProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProducto;
+
+        /// <summary>
+        /// Control ddlProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlProducto;
 
         /// <summary>
         /// Control btnRegresar.

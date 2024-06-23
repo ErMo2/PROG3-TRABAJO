@@ -34,17 +34,16 @@
                             <asp:TextBox ID="txtStockInicial" runat="server" CssClass="form-control" />
                         </div>
                     </div>
-
-                    <div class="mb-3 row">
-                        <asp:Label ID="lblStockFinal" runat="server" Text="Stock Final:" CssClass="col-sm-2 col-form-label" />
-                        <div class="col-sm-8">
-                            <asp:TextBox ID="txtStockFinal" runat="server" CssClass="form-control" />
-                        </div>
-                    </div>
                     <div class="mb-3 row">
                         <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
                         <div class="col-sm-4">
                             <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <asp:Label ID="lblProducto" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-4">
+                            <asp:DropDownList ID="ddlProducto" runat="server" CssClass="form-control"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="card-footer clearfix">

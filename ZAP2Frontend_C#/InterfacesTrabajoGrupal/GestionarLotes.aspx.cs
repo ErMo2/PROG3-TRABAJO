@@ -13,7 +13,7 @@ namespace InterfacesTrabajoGrupal
         private LoteWSClient bancoDao;
         private lote banco;
         private AreaWSClient areaDao;
-
+        private ProductoWSClient productoDao;   
         protected void Page_Load(object sender, EventArgs e)
         {
             lblTitulo.Text = "Registrar lote";
@@ -28,6 +28,15 @@ namespace InterfacesTrabajoGrupal
             foreach (var area in areas)
             {
                 ddlSucursal.Items.Add(new ListItem(area.nombre, area.sucursal.id_sucursal.ToString()));
+
+            }
+
+            productoDao = new ProductoWSClient();
+            var productos = productoDao.listarProductosBase();
+            ddlProducto.Items.Clear();
+            foreach (var producto in productos)
+            {
+                ddlProducto.Items.Add(new ListItem(producto.nombre, producto.idProducto.ToString()));
 
             }
         }
@@ -45,10 +54,11 @@ namespace InterfacesTrabajoGrupal
                 banco = new lote();
                 banco.idLote = string.IsNullOrEmpty(txtIdLote.Text) ? 0 : int.Parse(txtIdLote.Text);
                 banco.stockInicial = Int32.Parse(txtStockInicial.Text);
-                banco.stockActual = Int32.Parse(txtStockFinal.Text);
+                banco.stockActual = 0;
                 banco.almacen = new almacen();
                 banco.almacen.id_almacen = Int32.Parse(ddlSucursal.SelectedValue);
-
+                banco.producto = new producto();
+                banco.producto.idProducto = Int32.Parse(ddlProducto.SelectedValue);
                 try
                 {
                     if (banco.idLote > 0)
