@@ -27,7 +27,7 @@ public class PedidoMySql implements PedidoDao{
     private ResultSet rs;
     private CallableStatement cs;
     @Override
-    public int insertar(Pedido pedido) {
+    public synchronized int insertar(Pedido pedido) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
@@ -144,7 +144,7 @@ public class PedidoMySql implements PedidoDao{
                 Date fecha = rs.getDate("fecha_pedido");
                 ped.setFecha_Pedido(fecha);
                 ped.setTotal(rs.getDouble("total"));
-                
+                ped.setNombre(rs.getString("nombre"));
                 
             }
         }catch(Exception ex){

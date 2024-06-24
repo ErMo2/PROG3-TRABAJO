@@ -26,7 +26,7 @@ public class LineaDocMySql implements LineaDocDao{
     private ResultSet rs;
     private CallableStatement cs;
     @Override
-    public int insertar(LineaDoc lineaDoc) {
+    public synchronized int insertar(LineaDoc lineaDoc) {
         int resultado = 0;
         try{
             con = DBManager.getInstance().getConnection();
