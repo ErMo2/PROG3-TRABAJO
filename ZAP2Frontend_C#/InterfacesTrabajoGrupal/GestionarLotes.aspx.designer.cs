@@ -60,6 +60,24 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.TextBox txtStockInicial;
 
         /// <summary>
+        /// Control lblPedido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPedido;
+
+        /// <summary>
+        /// Control ddlPedido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlPedido;
+
+        /// <summary>
         /// Control lblSucursal.
         /// </summary>
         /// <remarks>
