@@ -45,6 +45,9 @@ namespace InterfacesTrabajoGrupal
             {
                 daoArea.eliminarArea(idArea);
                 CargarAreas();
+            }else if(e.CommandName == "Ver")
+            {
+                Response.Redirect($"VerArea.aspx?id={idArea}");
             }
         }
         private void CargarAreas()

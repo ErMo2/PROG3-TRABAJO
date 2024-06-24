@@ -33,6 +33,7 @@
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:LinkButton ID="lbModificar" runat="server" CommandName="Modificar" CommandArgument='<%# Eval("idArea") %>' Text="Modificar" CssClass="btn btn-primary btn-sm"  />
+                            <asp:LinkButton ID="lbVer" runat="server" CommandName="Ver" CommandArgument='<%# Eval("idArea") %>' Text="Ver" CssClass="btn btn-primary btn-sm"  />
                             <asp:LinkButton ID="lbEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("idArea") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar esta sucursal?');"/>
                         </ItemTemplate>
                     </asp:TemplateField>

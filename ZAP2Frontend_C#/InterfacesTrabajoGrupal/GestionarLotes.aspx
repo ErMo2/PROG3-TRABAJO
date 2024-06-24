@@ -8,7 +8,7 @@
     <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head >
-    <title>Gestionar Banco</title>
+    <title>Gestionar Lotes</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="design/estilosPersonalizados.css" rel="stylesheet" />
     <link href="design/bancoEstilo.css" rel="stylesheet" />
@@ -34,14 +34,18 @@
                             <asp:TextBox ID="txtStockInicial" runat="server" CssClass="form-control" />
                         </div>
                     </div>
-
                     <div class="mb-3 row">
-                        <asp:Label ID="lblStockFinal" runat="server" Text="Stock Final:" CssClass="col-sm-2 col-form-label" />
-                        <div class="col-sm-8">
-                            <asp:TextBox ID="txtStockFinal" runat="server" CssClass="form-control" />
+                        <asp:Label ID="lblSucursal" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-4">
+                            <asp:DropDownList ID="ddlSucursal" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlSucursal_SelectedIndexChanged"></asp:DropDownList>
                         </div>
                     </div>
-
+                    <div class="mb-3 row">
+                        <asp:Label ID="lblProducto" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
+                        <div class="col-sm-4">
+                            <asp:DropDownList ID="ddlProducto" runat="server" CssClass="form-control"></asp:DropDownList>
+                        </div>
+                    </div>
                     <div class="card-footer clearfix">
                         <asp:Button ID="btnRegresar" runat="server" Text="Regresar" CssClass="float-start btn btn-secondary" OnClick="btnRegresar_Click" />
                         <asp:Button ID="btnGuardar" runat="server" Text="Guardar" CssClass="float-end btn btn-primary" OnClick="btnGuardar_Click" />

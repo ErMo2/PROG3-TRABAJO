@@ -940,6 +940,7 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="VerArea.aspx" />
     <Content Include="VerElectrodomesticos.aspx" />
     <Content Include="VerProductoPersonalYHogar.aspx" />
     <Content Include="VerProductosPerecibles.aspx" />
@@ -1233,6 +1234,13 @@
     </Compile>
     <Compile Include="SeleccionarTipoDeProducto.aspx.designer.cs">
       <DependentUpon>SeleccionarTipoDeProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerArea.aspx.cs">
+      <DependentUpon>VerArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerArea.aspx.designer.cs">
+      <DependentUpon>VerArea.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerElectrodomesticos.aspx.cs">
       <DependentUpon>VerElectrodomesticos.aspx</DependentUpon>
