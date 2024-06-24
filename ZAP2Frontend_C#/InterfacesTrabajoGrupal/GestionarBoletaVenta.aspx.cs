@@ -109,14 +109,23 @@ namespace InterfacesTrabajoGrupal
         {
             int idSucursal = int.Parse(ddlSucursales.SelectedValue);
             arregloProductoPrecios = precioDAO.listarProductoPrecioProductoDeUnaSucursal(idSucursal);
+            if (arregloProductoPrecios == null)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('La sucursal seleccionada no tiene productos.');", true);
+                return;
+            }
 
             var listaProductos = new BindingList<producto>(
-                arregloProductoPrecios.Select(pp => pp.producto).Where(p => p != null).ToList()
+                arregloProductoPrecios
+                .Where(pp => pp.producto != null)
+                .Select(pp => pp.producto)
+                .ToList()
             );
-            if (listaProductos.Count == 0)
+
+            if (listaProductos == null || listaProductos.Count == 0)
             {
-                // Mostrar alerta de JavaScript si no hay productos
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('La sucursal seleccionada no tiene productos.');", true);
+                return;
             }
             ddlProducto.DataSource = listaProductos;
             ddlProducto.DataTextField = "nombre";

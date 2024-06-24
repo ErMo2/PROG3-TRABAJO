@@ -46,7 +46,6 @@ namespace InterfacesTrabajoGrupal
                 else
                 {
                     lblTitulo.Text = "Registrar lote";
-                    txtIdLote.Enabled = true;
                     txtStockInicial.Enabled = true;
                     ddlSucursal.Enabled = true;
                     ddlProducto.Enabled = true;
