@@ -5,23 +5,17 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ProductoWS?xsd=1" namespace="ZAP2WS" />
     </xsd:schema>
   </types>
-  <message name="listarProductosConDescuentoEnFecha">
-    <part name="parameters" element="tns:listarProductosConDescuentoEnFecha" />
+  <message name="listarProductosBase">
+    <part name="parameters" element="tns:listarProductosBase" />
   </message>
-  <message name="listarProductosConDescuentoEnFechaResponse">
-    <part name="parameters" element="tns:listarProductosConDescuentoEnFechaResponse" />
+  <message name="listarProductosBaseResponse">
+    <part name="parameters" element="tns:listarProductosBaseResponse" />
   </message>
-  <message name="listarProductosConStockBajo">
-    <part name="parameters" element="tns:listarProductosConStockBajo" />
+  <message name="listarProductosXnombre">
+    <part name="parameters" element="tns:listarProductosXnombre" />
   </message>
-  <message name="listarProductosConStockBajoResponse">
-    <part name="parameters" element="tns:listarProductosConStockBajoResponse" />
-  </message>
-  <message name="listarProductosMasConsumidos">
-    <part name="parameters" element="tns:listarProductosMasConsumidos" />
-  </message>
-  <message name="listarProductosMasConsumidosResponse">
-    <part name="parameters" element="tns:listarProductosMasConsumidosResponse" />
+  <message name="listarProductosXnombreResponse">
+    <part name="parameters" element="tns:listarProductosXnombreResponse" />
   </message>
   <message name="listarProductosConDescuento">
     <part name="parameters" element="tns:listarProductosConDescuento" />
@@ -35,30 +29,32 @@
   <message name="listarDescuentoDeUnProductoResponse">
     <part name="parameters" element="tns:listarDescuentoDeUnProductoResponse" />
   </message>
-  <message name="listarProductosBase">
-    <part name="parameters" element="tns:listarProductosBase" />
+  <message name="listarProductosMasConsumidos">
+    <part name="parameters" element="tns:listarProductosMasConsumidos" />
   </message>
-  <message name="listarProductosBaseResponse">
-    <part name="parameters" element="tns:listarProductosBaseResponse" />
+  <message name="listarProductosMasConsumidosResponse">
+    <part name="parameters" element="tns:listarProductosMasConsumidosResponse" />
   </message>
-  <message name="listarProductosXnombre">
-    <part name="parameters" element="tns:listarProductosXnombre" />
+  <message name="listarProductosConDescuentoEnFecha">
+    <part name="parameters" element="tns:listarProductosConDescuentoEnFecha" />
   </message>
-  <message name="listarProductosXnombreResponse">
-    <part name="parameters" element="tns:listarProductosXnombreResponse" />
+  <message name="listarProductosConDescuentoEnFechaResponse">
+    <part name="parameters" element="tns:listarProductosConDescuentoEnFechaResponse" />
+  </message>
+  <message name="listarProductosConStockBajo">
+    <part name="parameters" element="tns:listarProductosConStockBajo" />
+  </message>
+  <message name="listarProductosConStockBajoResponse">
+    <part name="parameters" element="tns:listarProductosConStockBajoResponse" />
   </message>
   <portType name="ProductoWS">
-    <operation name="listarProductosConDescuentoEnFecha">
-      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaRequest" message="tns:listarProductosConDescuentoEnFecha" />
-      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaResponse" message="tns:listarProductosConDescuentoEnFechaResponse" />
+    <operation name="listarProductosBase">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosBaseRequest" message="tns:listarProductosBase" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosBaseResponse" message="tns:listarProductosBaseResponse" />
     </operation>
-    <operation name="listarProductosConStockBajo">
-      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConStockBajoRequest" message="tns:listarProductosConStockBajo" />
-      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConStockBajoResponse" message="tns:listarProductosConStockBajoResponse" />
-    </operation>
-    <operation name="listarProductosMasConsumidos">
-      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosRequest" message="tns:listarProductosMasConsumidos" />
-      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosResponse" message="tns:listarProductosMasConsumidosResponse" />
+    <operation name="listarProductosXnombre">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosXnombreRequest" message="tns:listarProductosXnombre" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosXnombreResponse" message="tns:listarProductosXnombreResponse" />
     </operation>
     <operation name="listarProductosConDescuento">
       <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoRequest" message="tns:listarProductosConDescuento" />
@@ -68,18 +64,22 @@
       <input wsam:Action="ZAP2WS/ProductoWS/listarDescuentoDeUnProductoRequest" message="tns:listarDescuentoDeUnProducto" />
       <output wsam:Action="ZAP2WS/ProductoWS/listarDescuentoDeUnProductoResponse" message="tns:listarDescuentoDeUnProductoResponse" />
     </operation>
-    <operation name="listarProductosBase">
-      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosBaseRequest" message="tns:listarProductosBase" />
-      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosBaseResponse" message="tns:listarProductosBaseResponse" />
+    <operation name="listarProductosMasConsumidos">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosRequest" message="tns:listarProductosMasConsumidos" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosMasConsumidosResponse" message="tns:listarProductosMasConsumidosResponse" />
     </operation>
-    <operation name="listarProductosXnombre">
-      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosXnombreRequest" message="tns:listarProductosXnombre" />
-      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosXnombreResponse" message="tns:listarProductosXnombreResponse" />
+    <operation name="listarProductosConDescuentoEnFecha">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaRequest" message="tns:listarProductosConDescuentoEnFecha" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConDescuentoEnFechaResponse" message="tns:listarProductosConDescuentoEnFechaResponse" />
+    </operation>
+    <operation name="listarProductosConStockBajo">
+      <input wsam:Action="ZAP2WS/ProductoWS/listarProductosConStockBajoRequest" message="tns:listarProductosConStockBajo" />
+      <output wsam:Action="ZAP2WS/ProductoWS/listarProductosConStockBajoResponse" message="tns:listarProductosConStockBajoResponse" />
     </operation>
   </portType>
   <binding name="ProductoWSPortBinding" type="tns:ProductoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarProductosConDescuentoEnFecha">
+    <operation name="listarProductosBase">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -88,16 +88,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarProductosConStockBajo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarProductosMasConsumidos">
+    <operation name="listarProductosXnombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -124,7 +115,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarProductosBase">
+    <operation name="listarProductosMasConsumidos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -133,7 +124,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarProductosXnombre">
+    <operation name="listarProductosConDescuentoEnFecha">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProductosConStockBajo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

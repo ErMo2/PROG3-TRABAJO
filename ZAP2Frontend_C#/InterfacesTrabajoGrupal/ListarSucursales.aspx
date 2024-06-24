@@ -28,6 +28,7 @@
             OnRowCommand="gvSucursales_RowCommand">
             <Columns>
                 <asp:BoundField HeaderText="Id" DataField="id_sucursal" />
+                <asp:BoundField HeaderText="Nombre" DataField="nombre" />
                 <asp:BoundField HeaderText="Dirección" DataField="direccion" />
                 <asp:BoundField DataField="tam_metros" HeaderText="Tamaño <br/> (Metros Cuadrados)" HtmlEncode="False" />
 

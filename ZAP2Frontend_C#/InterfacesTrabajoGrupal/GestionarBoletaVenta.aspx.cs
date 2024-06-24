@@ -238,7 +238,7 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("GestionarDocumentoDeVenta.aspx");
+            Response.Redirect("ListarDocumentoDeVenta.aspx");
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)

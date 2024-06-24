@@ -38,12 +38,18 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
+                    <asp:Label ID="lblNombreSucursal" runat="server" Text="Nombre:" CssClass="col-sm-2 col-form-label" />
+                    <div class="col-sm-8">
+                        <asp:TextBox ID="txtNombreSucursal" runat="server" CssClass="form-control" />
+                    </div>
+                </div>
+                <div class="mb-3 row">
                     <asp:Label ID="lblUbicacionSucursal" runat="server" Text="Ubicación de la Sucursal:" CssClass="col-sm-2 col-form-label" />
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtUbicacionSucursal" runat="server" CssClass="form-control" />
                     </div>
                 </div>
-                 <div class="mb-3 row">
+                <div class="mb-3 row">
                     <asp:Label ID="lblTamanio" runat="server" Text="Tamaño en metros cuadrados:" CssClass="col-sm-2 col-form-label" />
                     <div class="col-sm-8">
                         <asp:TextBox ID="txtTamanio" runat="server" CssClass="form-control" placeholder="Metros cuadrados" />

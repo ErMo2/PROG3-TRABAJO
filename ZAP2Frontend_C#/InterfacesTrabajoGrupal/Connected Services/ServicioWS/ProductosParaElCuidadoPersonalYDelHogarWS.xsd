@@ -134,20 +134,20 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarPCH">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPCHResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productosParaElCuidadoPersonalYDelHogar" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarPCHXnombre">
     <xs:sequence>
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarPCHXnombreResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productosParaElCuidadoPersonalYDelHogar" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPCH">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarPCHResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:productosParaElCuidadoPersonalYDelHogar" />
     </xs:sequence>

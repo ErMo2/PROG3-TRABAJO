@@ -52,6 +52,7 @@ namespace InterfacesTrabajoGrupal
             }
             sucursal.direccion = txtUbicacionSucursal.Text;
             sucursal.tam_metros = double.Parse(txtTamanio.Text);
+            sucursal.nombre = txtNombreSucursal.Text;
 
             if (sucursal.id_sucursal > 0)
             {

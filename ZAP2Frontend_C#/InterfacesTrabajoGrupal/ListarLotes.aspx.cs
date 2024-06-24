@@ -77,7 +77,7 @@ namespace InterfacesTrabajoGrupal
             // Lógica para Opción 1
             // Ejemplo: Mostrar un mensaje
             daoReporte = new ReportesFrontWSClient();
-            String reporte = daoReporte.generarReporteProductosConsumidosYmandarPorCorreo(txtCorreo.Text);
+            String reporte = daoReporte.EnviarReporteProductoConStockBajo(txtCorreo.Text);
 
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('reporte');", true);
 

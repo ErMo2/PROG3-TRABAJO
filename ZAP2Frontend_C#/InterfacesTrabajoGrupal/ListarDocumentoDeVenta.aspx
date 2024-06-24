@@ -49,12 +49,12 @@
             <asp:BoundField HeaderText="Fecha de Vencimiento" DataField="fechaVenc" />
             <asp:BoundField HeaderText="Monto Total" DataField="total" />
                      
-            <asp:TemplateField>
+            <%--<asp:TemplateField>
                 <HeaderTemplate>Acciones</HeaderTemplate>
                 <ItemTemplate>
                     <asp:Button ID="btnVerFactura" runat="server" Text="Ver" CommandArgument='<%# Container.DataItemIndex %>' CssClass="btn btn-info btn-sm" OnClick="btnVerFactura_Click" data-toggle="modal" data-target="#verFacturaModal" />
                 </ItemTemplate>
-            </asp:TemplateField>
+            </asp:TemplateField>--%>
         </Columns>
     </asp:GridView>
 </div>

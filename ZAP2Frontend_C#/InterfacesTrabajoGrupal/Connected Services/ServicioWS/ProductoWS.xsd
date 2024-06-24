@@ -134,20 +134,20 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarProductosConStockBajo">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarProductosConStockBajoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarProductosConDescuento">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarProductosConDescuentoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:producto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProductosConStockBajo">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarProductosConStockBajoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarProductosMasConsumidos">

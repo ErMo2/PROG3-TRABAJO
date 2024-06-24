@@ -33,6 +33,24 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.TextBox txtIdSucursal;
 
         /// <summary>
+        /// Control lblNombreSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNombreSucursal;
+
+        /// <summary>
+        /// Control txtNombreSucursal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNombreSucursal;
+
+        /// <summary>
         /// Control lblUbicacionSucursal.
         /// </summary>
         /// <remarks>

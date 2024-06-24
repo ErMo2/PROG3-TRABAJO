@@ -11,6 +11,12 @@
   <message name="buscarTarjetaResponse">
     <part name="parameters" element="tns:buscarTarjetaResponse" />
   </message>
+  <message name="insertarTarjeta">
+    <part name="parameters" element="tns:insertarTarjeta" />
+  </message>
+  <message name="insertarTarjetaResponse">
+    <part name="parameters" element="tns:insertarTarjetaResponse" />
+  </message>
   <message name="eliminarTarjeta">
     <part name="parameters" element="tns:eliminarTarjeta" />
   </message>
@@ -29,16 +35,14 @@
   <message name="modificarTarjetaResponse">
     <part name="parameters" element="tns:modificarTarjetaResponse" />
   </message>
-  <message name="insertarTarjeta">
-    <part name="parameters" element="tns:insertarTarjeta" />
-  </message>
-  <message name="insertarTarjetaResponse">
-    <part name="parameters" element="tns:insertarTarjetaResponse" />
-  </message>
   <portType name="TarjetaWS">
     <operation name="buscarTarjeta">
       <input wsam:Action="ZAP2WS/TarjetaWS/buscarTarjetaRequest" message="tns:buscarTarjeta" />
       <output wsam:Action="ZAP2WS/TarjetaWS/buscarTarjetaResponse" message="tns:buscarTarjetaResponse" />
+    </operation>
+    <operation name="insertarTarjeta">
+      <input wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaRequest" message="tns:insertarTarjeta" />
+      <output wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaResponse" message="tns:insertarTarjetaResponse" />
     </operation>
     <operation name="eliminarTarjeta">
       <input wsam:Action="ZAP2WS/TarjetaWS/eliminarTarjetaRequest" message="tns:eliminarTarjeta" />
@@ -52,14 +56,19 @@
       <input wsam:Action="ZAP2WS/TarjetaWS/modificarTarjetaRequest" message="tns:modificarTarjeta" />
       <output wsam:Action="ZAP2WS/TarjetaWS/modificarTarjetaResponse" message="tns:modificarTarjetaResponse" />
     </operation>
-    <operation name="insertarTarjeta">
-      <input wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaRequest" message="tns:insertarTarjeta" />
-      <output wsam:Action="ZAP2WS/TarjetaWS/insertarTarjetaResponse" message="tns:insertarTarjetaResponse" />
-    </operation>
   </portType>
   <binding name="TarjetaWSPortBinding" type="tns:TarjetaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="buscarTarjeta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarTarjeta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -87,15 +96,6 @@
       </output>
     </operation>
     <operation name="modificarTarjeta">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarTarjeta">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
