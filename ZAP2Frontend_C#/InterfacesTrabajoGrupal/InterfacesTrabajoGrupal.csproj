@@ -923,6 +923,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\ZAP2PROG\gestionarPedidos.js" />
+    <Content Include="Scripts\ZAP2PROG\listarProductos.js" />
     <Content Include="SeleccionarTipoDeDocumento.aspx" />
     <Content Include="SeleccionarTipoDeDocumentoDeVenta.aspx" />
     <Content Include="SeleccionarTipoDeEmpleado.aspx" />

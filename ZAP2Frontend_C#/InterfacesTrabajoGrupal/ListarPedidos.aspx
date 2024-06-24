@@ -57,7 +57,7 @@
     <asp:ScriptManager runat="server"></asp:ScriptManager>
 
     <div class="modal" id="form-modal-confirmarEliminarPedido">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>

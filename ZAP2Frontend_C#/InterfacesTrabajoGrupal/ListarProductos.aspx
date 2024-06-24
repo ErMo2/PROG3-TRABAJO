@@ -3,11 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphScripts" runat="server">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="Scripts/ZAP2PROG/listarProductos.js"></script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphContenido" runat="server">
     <link href="Diseño/DiseñoListarProductos.css" rel="stylesheet" />
@@ -19,8 +18,8 @@
                 Text="<i class='fa-solid fa-plus pe-2'></i> Registrar Producto" OnClick="lbRegistrarProducto_Click" />
         </div>
         <div class="text-end mb-3">
-            <asp:LinkButton ID="lbImprimirReporte" runat="server" CssClass="btn btn-success"
-                Text="<i class='fa-solid fa-plus pe-2'></i>Productos más vendidos" OnClick="lbimprimirReporte_Click" />
+            <asp:LinkButton ID="lbDescargarOEnviarReporte" runat="server" CssClass="btn btn-success"
+                Text="<i class='fa-solid fa-plus pe-2'></i>Productos más vendidos" OnClick="lbDescargarOEnviarReporte_Click" />
         </div>
         <h3>Productos Perecibles</h3>
         <div class="container row pb-3 pt-3">
@@ -151,6 +150,8 @@
         </asp:GridView>
     </div>
 
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
+
     <!-- Modal for viewing product details -->
     <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -170,4 +171,58 @@
             </div>
         </div>
     </div>
+
+    <div class="modal" id="form-modal-reporteProd">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <%--<asp:UpdatePanel runat="server">
+                    <ContentTemplate>--%>
+                        <div class="modal-header">
+                            <h3 class="modal-title">Descargar o enviar reporte</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div>
+                                <div class="pb-1 pt-1">
+                                    <h5>Descargar reporte</h5>
+                                </div>
+                                <div class="pb-1 pt-1">
+                                    <asp:LinkButton ID="lbImprimirReporte" CssClass="btn btn-success" runat="server" Text="Imprimir" OnClick="lbimprimirReporte_Click" />
+                                </div>
+                            </div>
+                            <div class="pt-2">
+                                <div class="pb-1 pt-1">
+                                    <h5>Enviar reporte por correo</h5>
+                                </div>
+                                <div class="pb-1 pt-1">
+                                    <asp:TextBox CssClass="form-control" ID="txtCorreoAEnviar" runat="server"></asp:TextBox>
+                                </div>
+                                <div class="pb-1 pt-1">
+                                    <asp:LinkButton ID="lbEnviarRepXCorreo" CssClass="btn btn-success" runat="server" Text="Enviar" OnClick="lbEnviarRepXCorreo_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    <%--</ContentTemplate>
+                </asp:UpdatePanel>--%>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="form-modal-mensajeXEnvioDeCorreo">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <%--<asp:UpdatePanel runat="server">
+                    <ContentTemplate>--%>
+                        <div class="modal-header">
+                            <h3>
+                                <asp:Label ID="lblRespuestaCorreo" runat="server" Text="Label"></asp:Label></h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <%--</ContentTemplate>
+                </asp:UpdatePanel>--%>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>

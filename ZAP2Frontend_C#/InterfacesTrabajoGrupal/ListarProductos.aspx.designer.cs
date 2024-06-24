@@ -24,13 +24,13 @@ namespace InterfacesTrabajoGrupal
         protected global::System.Web.UI.WebControls.LinkButton lbRegistrarProducto;
 
         /// <summary>
-        /// Control lbImprimirReporte.
+        /// Control lbDescargarOEnviarReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbImprimirReporte;
+        protected global::System.Web.UI.WebControls.LinkButton lbDescargarOEnviarReporte;
 
         /// <summary>
         /// Control txtNombreProdPerecible.
@@ -148,5 +148,41 @@ namespace InterfacesTrabajoGrupal
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDetalles;
+
+        /// <summary>
+        /// Control lbImprimirReporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbImprimirReporte;
+
+        /// <summary>
+        /// Control txtCorreoAEnviar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoAEnviar;
+
+        /// <summary>
+        /// Control lbEnviarRepXCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbEnviarRepXCorreo;
+
+        /// <summary>
+        /// Control lblRespuestaCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRespuestaCorreo;
     }
 }
