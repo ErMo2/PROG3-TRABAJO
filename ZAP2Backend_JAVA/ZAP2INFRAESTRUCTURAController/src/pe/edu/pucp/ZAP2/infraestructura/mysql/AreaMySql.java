@@ -22,6 +22,7 @@ import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
  * @author Alejandro
  */
 public class AreaMySql implements AreaDao{
+    
     private Connection con;
     private Statement st;
     private ResultSet rs;
@@ -241,6 +242,36 @@ public class AreaMySql implements AreaDao{
         
         return area;
     
+    }
+
+    @Override
+    public Sucursal buscarSucursalPorElIdArea(int idArea) {
+        Sucursal sucursal = null;
+        try{
+            con=DBManager.getInstance().getConnection();
+            
+            cs = con.prepareCall("{call REGRESAR_SUCURSAL_DE_UN_AREA"
+                    +"(?)}");
+            cs.setInt("_id_Area", idArea);
+            rs = cs.executeQuery();
+            sucursal = new Sucursal();
+            
+            while(rs.next()){
+                sucursal.setId_sucursal(rs.getInt("id_sucursal"));
+                sucursal.setDireccion(rs.getString("direccion"));
+                sucursal.setNombre(rs.getString("nombre"));
+                sucursal.setTam_metros(rs.getDouble("tam_metros"));
+            }
+            
+           
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }    
+        
+        return sucursal;
     }
 
     

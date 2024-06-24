@@ -10,6 +10,7 @@ import jakarta.jws.WebParam;
 import java.util.ArrayList;
 import pe.edu.pucp.ZAP2.infraestructura.dao.AreaDao;
 import pe.edu.pucp.ZAP2.infraestructura.model.Area;
+import pe.edu.pucp.ZAP2.infraestructura.model.Sucursal;
 import pe.edu.pucp.ZAP2.infraestructura.mysql.AreaMySql;
 
 /**
@@ -129,5 +130,15 @@ public class AreaWS {
         
     }
     
-    
+    @WebMethod(operationName = "BuscarSucursalPorElIDAREA")
+    public Sucursal BuscarSucursalPorElIDAREA(@WebParam(name = "idArea") int id) {
+        Sucursal dato = null;
+        try{
+            daoArea = new AreaMySql();
+            dato = daoArea.buscarSucursalPorElIdArea(id);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return dato;
+    }
 }
