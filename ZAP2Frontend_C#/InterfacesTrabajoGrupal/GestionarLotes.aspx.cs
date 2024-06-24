@@ -14,6 +14,7 @@ namespace InterfacesTrabajoGrupal
         private LoteWSClient daoLote;
         private SucursalWSClient daoSucursal;
         private lote lote;
+        private BindingList<lote> listaLote;
         private AreaWSClient areaDao;
         private SucursalWSClient sucursalDAO;
         private BindingList<sucursal> listaSucursales;
@@ -23,21 +24,72 @@ namespace InterfacesTrabajoGrupal
         private BindingList<producto> listaProductos;
         private productoPrecio[] arregloProductoPrecios;
         private AlmacenWSClient daoAlmacen;
+        private PedidoWSClient daoPedido;
+        private BindingList<pedido> listaPedidos;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                int idEmpleadoArea;
-                if (int.TryParse(Request.QueryString["id"], out idEmpleadoArea))
+                int id_lote;
+                if (int.TryParse(Request.QueryString["id"], out id_lote))
                 {
                     lblTitulo.Text = "Modificar lote";
+                    CargarLote(id_lote);
                 }
                 else
                 {
                     lblTitulo.Text = "Registrar lote";
                     CargarSucursales();
                     CargarProductosPorSucursal();
+                    CargarPedidos();
                 }
+            }
+        }
+        private void CargarLote(int id_lote)
+        {
+            daoLote = new LoteWSClient();
+            daoPedido = new PedidoWSClient();
+            productoDao = new ProductoWSClient();
+            daoSucursal = new SucursalWSClient();
+            lote []arregloLotes = daoLote.listarLote();
+            listaLote = new BindingList<lote> (arregloLotes);
+            foreach (lote lot in listaLote)
+                if (lot.idLote == id_lote)
+                {
+                    lote = lot;
+                    break;
+                }
+                    
+            if(lote != null)
+            {
+                txtIdLote.Text = lote.idLote.ToString();
+                txtStockInicial.Text = lote.stockInicial.ToString();
+                BindingList<pedido> cargar_pedido = new BindingList<pedido>();
+                pedido[] arregloPedidos = daoPedido.listarPedidos();
+                foreach (pedido ped in arregloPedidos)
+                    if (ped.id_pedido == lote.idPedido)
+                    {
+                        cargar_pedido.Add(ped);
+                        break;
+                    }
+                ddlPedido.DataSource = cargar_pedido;
+                ddlPedido.DataTextField = "nombre";
+                ddlPedido.DataValueField = "id_pedido";
+                ddlPedido.DataBind();
+                BindingList<producto> cargar_producto = new BindingList<producto> ();
+                producto []arregloProductos = productoDao.listarProductosBase();
+                foreach (producto prod in arregloProductos)
+                    if (prod.idProducto == lote.producto.idProducto)
+                    {
+                        lote.producto = prod;
+                        break;
+                    }
+                cargar_producto.Add(lote.producto);
+                ddlProducto.DataSource = cargar_producto;
+                ddlProducto.DataTextField = "nombre";
+                ddlProducto.DataValueField = "idProducto";
+                ddlProducto .DataBind();
+                CargarSucursales();
             }
         }
         private void CargarSucursales()
@@ -61,7 +113,6 @@ namespace InterfacesTrabajoGrupal
                 listaProductos = new BindingList<producto>(
                 arregloProductoPrecios.Select(pp => pp.producto).Where(p => p != null).ToList()
             );
-
                 ddlProducto.DataSource = listaProductos;
                 ddlProducto.DataTextField = "nombre";
                 ddlProducto.DataValueField = "idProducto";
@@ -71,6 +122,17 @@ namespace InterfacesTrabajoGrupal
             {
                 ddlProducto.DataSource = null;
             }
+        }
+
+        private void CargarPedidos()
+        {
+            daoPedido = new PedidoWSClient();
+            pedido[] arregloPedidos = daoPedido.listarPedidos();
+            listaPedidos = new BindingList<pedido>(arregloPedidos);
+            ddlPedido.DataSource = listaPedidos;
+            ddlPedido.DataTextField = "nombre";
+            ddlPedido.DataValueField = "id_pedido";
+            ddlPedido.DataBind();
         }
 
         protected void btnRegresar_Click(object sender, EventArgs e)
@@ -85,13 +147,13 @@ namespace InterfacesTrabajoGrupal
             {
                 lote = new lote();
                 lote.idLote = string.IsNullOrEmpty(txtIdLote.Text) ? 0 : int.Parse(txtIdLote.Text);
-                lote.stockInicial = Int32.Parse(txtStockInicial.Text);
-                lote.stockActual = 0;
+                lote.stockInicial = string.IsNullOrEmpty(txtStockInicial.Text) ? 0 : int.Parse(txtStockInicial.Text);
                 daoAlmacen = new AlmacenWSClient();
                 lote.almacen = new almacen();
                 lote.almacen = daoAlmacen.buscarAlmacenDisponible(Int32.Parse(ddlSucursal.SelectedValue), lote.stockInicial);
                 lote.producto = new producto();
                 lote.producto.idProducto = Int32.Parse(ddlProducto.SelectedValue);
+                lote.idPedido = int.Parse(ddlPedido.SelectedValue);
                 try
                 {
                     if (lote.idLote > 0)

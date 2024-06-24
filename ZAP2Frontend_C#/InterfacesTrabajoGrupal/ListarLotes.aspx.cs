@@ -16,6 +16,8 @@ namespace InterfacesTrabajoGrupal
         private AlmacenWSClient daoAlmacen;
         private SucursalWSClient daoSucursal;
         private ReportesFrontWSClient  daoReporte;
+        private sucursal sucursal;
+        private almacen almacen;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -30,20 +32,16 @@ namespace InterfacesTrabajoGrupal
             daoAlmacen = new AlmacenWSClient(); 
             daoSucursal = new SucursalWSClient();
             lote[] arregloLotes = daoLotes.listarLote();
-            almacen alma;
-            sucursal sucur;
             if (arregloLotes != null)
             {
                 lotes = new BindingList<lote>(arregloLotes);
-                //foreach(lote lote in lotes)
-                //{
-                //    alma = daoAlmacen.
-                //    alma = daoAlmacen.buscarAlmacen(lote.almacen.id_almacen);
-                //    sucur=daoSucursal.buscarSucursal(alma.sucursal.id_sucursal);
-                //    lote.almacen.sucursal = new sucursal();
-                //    lote.almacen.sucursal.nombre = sucur.nombre;
-                //    lote.almacen.sucursal.
-                //}
+                foreach(lote lot in lotes)
+                {
+                    almacen = daoAlmacen.buscarAlmacen(lot.almacen.id_almacen);
+                    sucursal = daoSucursal.buscarSucursal(almacen.sucursal.id_sucursal);
+                    lot.almacen = almacen;
+                    lot.almacen.sucursal = sucursal;
+                }
                 gvLotes.DataSource = lotes;
                 gvLotes.DataBind();
             }
@@ -59,7 +57,11 @@ namespace InterfacesTrabajoGrupal
         {
             daoLotes = new LoteWSClient();
             int idLote = Convert.ToInt32(e.CommandArgument);
-            if(e.CommandName == "Eliminar")
+            if (e.CommandName == "ModificarLote")
+            {
+                Response.Redirect($"GestionarLotes.aspx?id={idLote}");
+            }
+            if (e.CommandName == "Eliminar")
             {
                 daoLotes.eliminarLote(idLote);
                 CargarLotes();

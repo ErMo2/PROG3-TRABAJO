@@ -67,10 +67,13 @@
                         <asp:BoundField HeaderText="Id" DataField="idLote" />
                         <asp:BoundField HeaderText="Stock Inicial" DataField="stockInicial" />
                         <asp:BoundField HeaderText="Stock Actual" DataField="stockActual" />
+                        <asp:BoundField HeaderText="Producto" DataField="producto.nombre" />
                         <asp:BoundField HeaderText="Sucursal" DataField="almacen.sucursal.nombre" />
+                        <asp:BoundField HeaderText="Almacen" DataField="almacen.tipoAlmacen" />
                         <asp:TemplateField>
                             <ItemTemplate>
                                 <div class="btn-group" role="group">
+                                    <asp:LinkButton ID="lbModificarLote" runat="server" CommandName="ModificarLote" CommandArgument='<%# Eval("idLote") %>' Text="Modificar" CssClass="btn btn-primary btn-sm" />
                                     <asp:LinkButton ID="lbEliminar" runat="server" CommandName="Eliminar" CommandArgument='<%# Eval("idLote") %>' Text="Eliminar" CssClass="btn btn-danger btn-sm" OnClientClick="return confirm('¿Está seguro de que desea eliminar este lote?');" />
                                 </div>
                             </ItemTemplate>

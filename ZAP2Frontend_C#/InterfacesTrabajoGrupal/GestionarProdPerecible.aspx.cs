@@ -108,7 +108,6 @@ namespace InterfacesTrabajoGrupal
             producto.fechVencimientoSpecified= true;
             producto.tipo_producto_perecibleSpecified= true;
             producto.unidad_de_medidaSpecified = true;
-          //  productoPrecio.descuentos[0].idDescuento = descuentoDao.insertarDescuento(descuentoProducto);
             Response.Redirect("listarProductos.aspx");
         }
     }
