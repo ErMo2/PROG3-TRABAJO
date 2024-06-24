@@ -213,6 +213,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarCajeros">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarCajerosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cajero" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="eliminarCajero">
     <xs:sequence>
       <xs:element name="idCajero" type="xs:int" />
@@ -221,14 +229,6 @@
   <xs:complexType name="eliminarCajeroResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarCajeros">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarCajerosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cajero" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarCajerosPorSucursal">

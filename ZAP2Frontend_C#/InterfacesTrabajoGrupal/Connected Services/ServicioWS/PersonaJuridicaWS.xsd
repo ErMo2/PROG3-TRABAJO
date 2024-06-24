@@ -74,9 +74,9 @@
   </xs:complexType>
   <xs:simpleType name="tipoEntidad">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="Corporacion" />
+      <xs:enumeration value="Corporación" />
       <xs:enumeration value="Asociación" />
-      <xs:enumeration value="Fundacion" />
+      <xs:enumeration value="Fundación" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="tipoDocumento">

@@ -79,6 +79,8 @@ namespace InterfacesTrabajoGrupal
             txtCantidadUnidades.Enabled = false;
             lbAgregarDetPed.Enabled = false;
             txtTotal.Text = pedido.total.ToString("N2");
+            txtNombrePedido.Text = pedido.nombre;
+            txtNombrePedido.Enabled = false;
         }
 
         protected void gvDetallePedido_RowDataBound(object sender, GridViewRowEventArgs e)

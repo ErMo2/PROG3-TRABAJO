@@ -58,17 +58,18 @@ namespace InterfacesTrabajoGrupal
 
             }
             prodPreDao = new ProductoPrecioWSClient();
-            /*var sucursales = prodPreDao.listarProductoPrecioProductoDeUnaSucursal(idRopa);
+            sucursal Sucur = daoArea.BuscarSucursalPorElIDAREA(idArea);
+            var Productos = prodPreDao.listarProductoPrecioProductoDeUnaSucursal(Sucur.id_sucursal);
             ddlSucursal.Items.Clear();
-            foreach (var sucursal in sucursales)
+            foreach (var productoAux in Productos)
             {
                 //if (sucursal.id_sucursal?)
                 //{
                 //    ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
                 //}
-                ddlSucursal.Items.Add(new ListItem(sucursal.nombre, sucursal.id_sucursal.ToString()));
+                ddlProductos.Items.Add(new ListItem(productoAux.producto.nombre, productoAux.producto.idProducto.ToString()));
 
-            }*/
+            }
 
         }
         protected void btnEliminar_Click(object sender, EventArgs e)
@@ -96,18 +97,12 @@ namespace InterfacesTrabajoGrupal
 
         protected void btnRegistrarProductoPrecio_Click(object sender, EventArgs e)
         {
-            /*//Producto.sucursal= new sucursal();
-            Producto = new productoPrecio();
-            Producto.sucursal = new sucursal();
-            Producto.sucursal.id_sucursal = int.Parse(ddlSucursal.SelectedValue);
 
-            Producto.precio = double.Parse(txtNuevoPrecio.Text);
-            Producto.producto = new producto();
-            Area.productos.idProducto = Int32.Parse(txtIdProducto.Text);
-            daoArea.insertarAreaProducto(txtIdArea,);
+            int idProd = Int32.Parse(ddlProductos.SelectedValue);
+            daoArea.insertarAreaProducto(Int32.Parse(txtIdArea.Text),idProd);
             gvSucursales.DataBind();
 
-            Response.Redirect(Request.RawUrl);*/
+            Response.Redirect(Request.RawUrl);
         }
         protected void Page_Init(object sender, EventArgs e)
         {

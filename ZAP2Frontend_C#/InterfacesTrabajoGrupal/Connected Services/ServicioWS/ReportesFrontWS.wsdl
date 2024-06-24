@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://localhost:8080/ZAP2WS/ReportesFrontWS?xsd=1" namespace="http://reportes.ZAP2.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="generarReporteProductosConsumidosYmandarPorCorreo">
-    <part name="parameters" element="tns:generarReporteProductosConsumidosYmandarPorCorreo" />
-  </message>
-  <message name="generarReporteProductosConsumidosYmandarPorCorreoResponse">
-    <part name="parameters" element="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
-  </message>
   <message name="EnviarReporteProductoConStockBajo">
     <part name="parameters" element="tns:EnviarReporteProductoConStockBajo" />
   </message>
@@ -29,11 +23,13 @@
   <message name="generarBoletaVentaResponse">
     <part name="parameters" element="tns:generarBoletaVentaResponse" />
   </message>
+  <message name="generarReporteProductosConsumidosYmandarPorCorreo">
+    <part name="parameters" element="tns:generarReporteProductosConsumidosYmandarPorCorreo" />
+  </message>
+  <message name="generarReporteProductosConsumidosYmandarPorCorreoResponse">
+    <part name="parameters" element="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
+  </message>
   <portType name="ReportesFrontWS">
-    <operation name="generarReporteProductosConsumidosYmandarPorCorreo">
-      <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoRequest" message="tns:generarReporteProductosConsumidosYmandarPorCorreo" />
-      <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoResponse" message="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
-    </operation>
     <operation name="EnviarReporteProductoConStockBajo">
       <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/EnviarReporteProductoConStockBajoRequest" message="tns:EnviarReporteProductoConStockBajo" />
       <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/EnviarReporteProductoConStockBajoResponse" message="tns:EnviarReporteProductoConStockBajoResponse" />
@@ -46,18 +42,13 @@
       <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarBoletaVentaRequest" message="tns:generarBoletaVenta" />
       <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarBoletaVentaResponse" message="tns:generarBoletaVentaResponse" />
     </operation>
+    <operation name="generarReporteProductosConsumidosYmandarPorCorreo">
+      <input wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoRequest" message="tns:generarReporteProductosConsumidosYmandarPorCorreo" />
+      <output wsam:Action="http://reportes.ZAP2.pucp.edu.pe/ReportesFrontWS/generarReporteProductosConsumidosYmandarPorCorreoResponse" message="tns:generarReporteProductosConsumidosYmandarPorCorreoResponse" />
+    </operation>
   </portType>
   <binding name="ReportesFrontWSPortBinding" type="tns:ReportesFrontWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="generarReporteProductosConsumidosYmandarPorCorreo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="EnviarReporteProductoConStockBajo">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="generarBoletaVenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteProductosConsumidosYmandarPorCorreo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

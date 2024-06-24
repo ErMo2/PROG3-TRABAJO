@@ -50,7 +50,7 @@
                 </li>
 
                 <li class="nav-item mb-1">
-                    <a href="SeleccionarTipoDeDocumento.aspx"><i class="fa-solid fa-receipt pe-2"></i>Tipo de Documento</a>
+                    <a href="ListarDocumentoDeVenta.aspx"><i class="fa-solid fa-receipt pe-2"></i>Tipo de Documento</a>
                 </li>
 
                 <li class="nav-item mb-1">

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="ZAP2WS" targetNamespace="ZAP2WS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BuscarSucursalPorElIDAREA" type="tns:BuscarSucursalPorElIDAREA" />
+  <xs:element name="BuscarSucursalPorElIDAREAResponse" type="tns:BuscarSucursalPorElIDAREAResponse" />
   <xs:element name="ListarProductosDelArea" type="tns:ListarProductosDelArea" />
   <xs:element name="ListarProductosDelAreaResponse" type="tns:ListarProductosDelAreaResponse" />
   <xs:element name="buscarArea" type="tns:buscarArea" />
@@ -149,6 +151,16 @@
   <xs:complexType name="ListarProductosDelAreaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:area" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarSucursalPorElIDAREA">
+    <xs:sequence>
+      <xs:element name="idArea" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarSucursalPorElIDAREAResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:sucursal" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarAreaProducto">

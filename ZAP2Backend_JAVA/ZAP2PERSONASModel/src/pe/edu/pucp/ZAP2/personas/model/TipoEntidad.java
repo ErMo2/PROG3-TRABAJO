@@ -9,5 +9,5 @@ package pe.edu.pucp.ZAP2.personas.model;
  * @author Alejandro
  */
 public enum TipoEntidad {
-    Corporacion,Asociación,Fundacion;
+    Corporación,Asociación,Fundación;
 }

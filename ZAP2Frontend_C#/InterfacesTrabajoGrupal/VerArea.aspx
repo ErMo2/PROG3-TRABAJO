@@ -36,7 +36,7 @@
 
     </div>
 
-        <h3>Lista de Precios en distintas sucursales</h3>
+        <h3>Lista de Productos por area</h3>
         <div class="text-center containermt-3 mt-5 row">
             <asp:GridView ID="gvSucursales" runat="server"
                 AutoGenerateColumns="false"
@@ -58,20 +58,14 @@
             </asp:GridView>
         </div>
         <div class="mb-3 row">
-            <asp:Label ID="Label1" runat="server" Text="Sucursal:" CssClass="col-sm-2 col-form-label" />
+            <asp:Label ID="Label1" runat="server" Text="Producto:" CssClass="col-sm-2 col-form-label" />
             <div class="col-sm-4">
-                <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control"></asp:DropDownList>
+                <asp:DropDownList ID="ddlProductos" runat="server" CssClass="form-control"></asp:DropDownList>
 
             </div>
         </div>
-        <div class="mb-3 row">
-            <asp:Label ID="lblNuevoPrecio" runat="server" Text="Nuevo Precio:" CssClass="col-sm-2 col-form-label" />
-            <div class="col-sm-8">
-                <asp:TextBox ID="txtNuevoPrecio" runat="server" CssClass="form-control" />
-            </div>
-        </div>
         <div class="card-footer clearfix">
-            <asp:Button ID="BtnInsertarProductoPrecio" runat="server" Text="Registrar Sucursal" CssClass="btn btn-primary" OnClick="btnRegistrarProductoPrecio_Click" />
+            <asp:Button ID="BtnInsertarProductoPrecio" runat="server" Text="Registrar producto" CssClass="btn btn-primary" OnClick="btnRegistrarProductoPrecio_Click" />
         </div>
 
         <div class="card-footer clearfix">

@@ -1,9 +1,4 @@
 ﻿using InterfacesTrabajoGrupal.ServicioWS;
-using System.ComponentModel;
-using System.Web.UI.WebControls;
-using System;
-
-using InterfacesTrabajoGrupal.ServicioWS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,7 +64,13 @@ namespace InterfacesTrabajoGrupal
             gvProductosPerecibles.DataBind();
             gvRopa.DataBind();
 
-
+            String accion = Request.QueryString["accion"];
+            if (accion != null && accion == "muestrarMensajeDelEnvioXCorreo")
+            {
+                lblRespuestaCorreo.Text = Session["respuestaEnvioCorreo"].ToString();
+                string script = "window.onload = function() { showModalFormMensajeXEnviarCorreo() };";
+                ClientScript.RegisterStartupScript(GetType(), "", script, true);
+            }
         }
 
 
@@ -204,6 +205,14 @@ namespace InterfacesTrabajoGrupal
 
         }
 
+        protected void lbEnviarRepXCorreo_Click(object sender, EventArgs e)
+        {
+            daoReportesFrontWSClient = new ReportesFrontWSClient();
+            string str = daoReportesFrontWSClient.generarReporteProductosConsumidosYmandarPorCorreo(txtCorreoAEnviar.Text);
+            Session["respuestaEnvioCorreo"] = str;
+            Response.Redirect("ListarProductos.aspx?accion=muestrarMensajeDelEnvioXCorreo");
+        }
+
         protected void lbBusquedaProdPerecible_Click(object sender, EventArgs e)
         {
             productoPerecible[] productosPerecibleArr = daoProdPerecible.listarProductoPerecibleXnombre(txtNombreProdPerecible.Text);
@@ -248,6 +257,10 @@ namespace InterfacesTrabajoGrupal
             }
         }
 
-
+        protected void lbDescargarOEnviarReporte_Click(object sender, EventArgs e)
+        {
+            string script = "window.onload = function() { showModalFormDescargarOEnviarReporte() };";
+            ClientScript.RegisterStartupScript(GetType(), "", script, true);
+        }
     }
 }

@@ -728,6 +728,9 @@
     <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.documentoDeVenta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\ServicioWS\InterfacesTrabajoGrupal.ServicioWS.BuscarSucursalPorElIDAREAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioWS\LineaDocWS.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -923,6 +926,7 @@
     <Content Include="Scripts\jquery-3.7.1.slim.js" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
     <Content Include="Scripts\ZAP2PROG\gestionarPedidos.js" />
+    <Content Include="Scripts\ZAP2PROG\listarProductos.js" />
     <Content Include="SeleccionarTipoDeDocumento.aspx" />
     <Content Include="SeleccionarTipoDeDocumentoDeVenta.aspx" />
     <Content Include="SeleccionarTipoDeEmpleado.aspx" />
